@@ -90,10 +90,10 @@ body {
 
 /* ---------- sections ---------- */
 main { padding-bottom: 4rem; }
-.shelf { padding-top: clamp(2.4rem, 6vw, 3.4rem); }
+.shelf { padding-top: clamp(2.2rem, 5vw, 3rem); }
 .shelf__head {
   display: flex; align-items: baseline; gap: 1rem;
-  padding-bottom: .9rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--rule);
+  padding-bottom: .7rem; margin-bottom: .1rem; border-bottom: 1px solid var(--rule);
 }
 .shelf__head h2 {
   margin: 0; font: 600 .74rem/1 var(--mono);
@@ -101,48 +101,53 @@ main { padding-bottom: 4rem; }
 }
 .shelf__head span { font: 500 .68rem/1 var(--mono); color: var(--ink-3); margin-left: auto; }
 
-.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+/* ---------- one-line rows ---------- */
+.list { display: flex; flex-direction: column; }
 
-/* ---------- card ---------- */
-.card {
-  position: relative; display: flex; flex-direction: column;
-  padding: 1.4rem 1.4rem 1.2rem;
-  background: var(--panel); border: 1px solid var(--rule); border-radius: 5px;
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 15rem) 7.5rem;
+  align-items: baseline;
+  gap: 0 1.4rem;
+  padding: .68rem .7rem .68rem .95rem;
+  border-bottom: 1px solid var(--rule);
   text-decoration: none; color: inherit;
-  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  transition: background-color .14s ease;
 }
-.card::before {
-  content: ""; position: absolute; inset: 0 auto 0 0; width: 3px;
-  background: var(--accent); opacity: 0; transition: opacity .18s ease;
-  border-radius: 5px 0 0 5px;
+.row::before {
+  content: ""; position: absolute; inset: 0 auto 0 0; width: 2px;
+  background: var(--accent); opacity: 0; transition: opacity .14s ease;
 }
-.card:hover { border-color: var(--rule-2); transform: translateY(-2px); box-shadow: var(--shadow); }
-.card:hover::before { opacity: 1; }
-.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.card__author {
-  margin: 0 0 .45rem; font: 600 .64rem/1.4 var(--mono);
-  letter-spacing: .13em; text-transform: uppercase; color: var(--accent);
-}
-.card__title {
-  margin: 0 0 .6rem; font-family: var(--display); font-weight: 600;
-  font-size: 1.42rem; line-height: 1.18; letter-spacing: -.01em;
-}
-.card__note { margin: 0; font-size: .92rem; line-height: 1.55; color: var(--ink-2); }
-.card__foot {
-  display: flex; align-items: center; gap: .55rem; flex-wrap: wrap;
-  margin-top: 1.1rem; padding-top: .85rem; border-top: 1px solid var(--rule);
-  font: 500 .64rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
-}
-.tag { padding: .3rem .55rem; background: var(--panel-2); border-radius: 3px; color: var(--ink-3); }
-.card__foot .arrow { margin-left: auto; color: var(--accent); font-size: .95rem; letter-spacing: 0; }
+.row:hover { background: var(--panel); }
+.row:hover::before { opacity: 1; }
+.row:hover .row__title { color: var(--accent); }
+.row:hover .row__arrow { opacity: 1; transform: none; }
+.row:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
-/* PDF link sits outside the card link so it stays independently tappable */
-.pdf {
-  display: inline-block; padding: .3rem .55rem; border-radius: 3px;
-  border: 1px solid var(--rule); color: var(--ink-2); text-decoration: none;
-  font: 500 .64rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+.row__title {
+  min-width: 0;
+  font-family: var(--display); font-weight: 600;
+  font-size: 1.12rem; line-height: 1.35; letter-spacing: -.005em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.pdf:hover { color: var(--accent); border-color: var(--accent); }
+.row__author {
+  min-width: 0;
+  font: 500 .68rem/1.5 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.row__meta {
+  display: flex; align-items: baseline; justify-content: flex-end; gap: .6rem;
+  font: 500 .64rem/1.5 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.row__arrow {
+  color: var(--accent); font-size: .8rem; letter-spacing: 0;
+  opacity: .35; transform: translateX(-2px);
+  transition: opacity .14s ease, transform .14s ease;
+}
 
 footer {
   border-top: 1px solid var(--rule); padding: 2rem 0 3rem; margin-top: 3rem;
@@ -150,14 +155,18 @@ footer {
 }
 footer a { color: var(--ink-2); }
 
+@media (max-width: 860px) {
+  .row { grid-template-columns: minmax(0, 1fr) minmax(0, 11rem) 1.6rem; gap: 0 1rem; }
+  .row__meta .tag { display: none; }
+}
 @media (max-width: 560px) {
-  .grid { grid-template-columns: 1fr; }
-  .card { padding: 1.2rem; }
+  .row { grid-template-columns: minmax(0, 1fr) 1.4rem; padding-left: .8rem; }
+  .row__author { display: none; }
+  .row__title { font-size: 1.04rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .card { transition: none; }
-  .card:hover { transform: none; }
+  .row, .row::before, .row__arrow { transition: none; }
 }
 </style>
 </head>
@@ -170,8 +179,7 @@ footer a { color: var(--ink-2); }
     <h1>Book Summaries</h1>
     <p class="sub">Chapter-by-chapter summaries of the books worth keeping close — built to be read on a phone, argued with, and returned to.</p>
     <ul class="hero__meta">
-      <li>11 books</li>
-      <li>4 print editions</li>
+      <li>12 books</li>
       <li>Updated August 2026</li>
     </ul>
   </div>
@@ -182,57 +190,39 @@ footer a { color: var(--ink-2); }
   <section class="shelf" aria-labelledby="shelf-history">
     <div class="shelf__head">
       <h2 id="shelf-history">History &amp; civilisation</h2>
-      <span>4</span>
+      <span>5</span>
     </div>
-    <div class="grid">
+    <div class="list">
 
-      <article class="card-wrap">
-        <a class="card" href="durant-story-of-civilization-i-iv.html">
-          <p class="card__author">Will Durant</p>
-          <h3 class="card__title">The Story of Civilization I–IV</h3>
-          <p class="card__note">Our Oriental Heritage, The Life of Greece, Caesar and Christ, and The Age of Faith — four volumes in one illustrated pass.</p>
-          <p class="card__foot">
-            <span class="tag">4 volumes</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="durant-story-of-civilization-i-iv.html">
+        <span class="row__title">The Story of Civilization I–IV</span>
+        <span class="row__author">Will Durant</span>
+        <span class="row__meta"><span class="tag">4 volumes</span><span class="row__arrow">→</span></span>
+      </a>
 
-      <article class="card-wrap">
-        <a class="card" href="livy-history-of-rome.html">
-          <p class="card__author">Livy</p>
-          <h3 class="card__title">The History of Rome</h3>
-          <p class="card__note">Ab Urbe Condita — the early history, Rome and Italy, the war with Hannibal, and Rome in the Mediterranean.</p>
-          <p class="card__foot">
-            <span class="tag">Ab Urbe Condita</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="livy-history-of-rome.html">
+        <span class="row__title">The History of Rome</span>
+        <span class="row__author">Livy</span>
+        <span class="row__meta"><span class="tag">Ab Urbe Condita</span><span class="row__arrow">→</span></span>
+      </a>
 
-      <article class="card-wrap">
-        <a class="card" href="lessons-of-history.html">
-          <p class="card__author">Will &amp; Ariel Durant · 1968</p>
-          <h3 class="card__title">The Lessons of History</h3>
-          <p class="card__note">Thirteen short chapters distilling five decades of writing history into what actually recurs. A survey in fifteen plates.</p>
-          <p class="card__foot">
-            <span class="tag">13 chapters</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="lessons-of-history.html">
+        <span class="row__title">The Lessons of History</span>
+        <span class="row__author">Will &amp; Ariel Durant</span>
+        <span class="row__meta"><span class="tag">13 chapters</span><span class="row__arrow">→</span></span>
+      </a>
 
-      <article class="card-wrap">
-        <a class="card" href="guns-germs-and-steel.html">
-          <p class="card__author">Jared Diamond</p>
-          <h3 class="card__title">Guns, Germs, and Steel</h3>
-          <p class="card__note">Yali's question, and the twenty-five year answer: why geography and not biology set the shape of the modern world.</p>
-          <p class="card__foot">
-            <span class="tag">Geography</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="guns-germs-and-steel.html">
+        <span class="row__title">Guns, Germs, and Steel</span>
+        <span class="row__author">Jared Diamond</span>
+        <span class="row__meta"><span class="tag">Geography</span><span class="row__arrow">→</span></span>
+      </a>
+
+      <a class="row" href="palma-causas-do-atraso-portugues.html">
+        <span class="row__title">The Causes of Portuguese Backwardness</span>
+        <span class="row__author">Nuno Palma</span>
+        <span class="row__meta"><span class="tag">Economic history</span><span class="row__arrow">→</span></span>
+      </a>
 
     </div>
   </section>
@@ -242,43 +232,25 @@ footer a { color: var(--ink-2); }
       <h2 id="shelf-knowledge">Knowledge &amp; mind</h2>
       <span>3</span>
     </div>
-    <div class="grid">
+    <div class="list">
 
-      <article class="card-wrap">
-        <a class="card" href="the-beginning-of-infinity.html">
-          <p class="card__author">David Deutsch</p>
-          <h3 class="card__title">The Beginning of Infinity</h3>
-          <p class="card__note">Progress comes from creating good explanations and exposing them to criticism. There is no final theory — only better ones.</p>
-          <p class="card__foot">
-            <span class="tag">18 chapters</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="the-beginning-of-infinity.html">
+        <span class="row__title">The Beginning of Infinity</span>
+        <span class="row__author">David Deutsch</span>
+        <span class="row__meta"><span class="tag">18 chapters</span><span class="row__arrow">→</span></span>
+      </a>
 
-      <article class="card-wrap">
-        <a class="card" href="popper-objective-knowledge.html">
-          <p class="card__author">Karl Popper · 1972</p>
-          <h3 class="card__title">Objective Knowledge</h3>
-          <p class="card__note">An evolutionary approach: the solution to induction, the three worlds, and the source of Deutsch's epistemology.</p>
-          <p class="card__foot">
-            <span class="tag">Epistemology</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="popper-objective-knowledge.html">
+        <span class="row__title">Objective Knowledge</span>
+        <span class="row__author">Karl Popper</span>
+        <span class="row__meta"><span class="tag">Epistemology</span><span class="row__arrow">→</span></span>
+      </a>
 
-      <article class="card-wrap">
-        <a class="card" href="marcus-aurelius-meditations.html">
-          <p class="card__author">Marcus Aurelius</p>
-          <h3 class="card__title">Meditations</h3>
-          <p class="card__note">The twelve books, the Stoic disciplines behind them, and what the emperor kept telling himself.</p>
-          <p class="card__foot">
-            <span class="tag">12 books</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="marcus-aurelius-meditations.html">
+        <span class="row__title">Meditations</span>
+        <span class="row__author">Marcus Aurelius</span>
+        <span class="row__meta"><span class="tag">12 books</span><span class="row__arrow">→</span></span>
+      </a>
 
     </div>
   </section>
@@ -288,97 +260,32 @@ footer a { color: var(--ink-2); }
       <h2 id="shelf-markets">Markets, risk &amp; enterprise</h2>
       <span>4</span>
     </div>
-    <div class="grid">
+    <div class="list">
 
-      <article class="card-wrap">
-        <a class="card" href="fooled-by-randomness.html">
-          <p class="card__author">Nassim Nicholas Taleb</p>
-          <h3 class="card__title">Fooled by Randomness</h3>
-          <p class="card__note">The hidden role of chance in life and in markets — and why a good outcome does not prove a good decision.</p>
-          <p class="card__foot">
-            <span class="tag">Incerto I</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="fooled-by-randomness.html">
+        <span class="row__title">Fooled by Randomness</span>
+        <span class="row__author">Nassim Nicholas Taleb</span>
+        <span class="row__meta"><span class="tag">Incerto I</span><span class="row__arrow">→</span></span>
+      </a>
 
-      <article class="card-wrap">
-        <a class="card" href="titan-rockefeller.html">
-          <p class="card__author">Ron Chernow · 1998</p>
-          <h3 class="card__title">Titan</h3>
-          <p class="card__note">The man who organised American oil, was broken up for it by the Supreme Court, then gave away more than anyone alive ever had.</p>
-          <p class="card__foot">
-            <span class="tag">21 plates</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="titan-rockefeller.html">
+        <span class="row__title">Titan</span>
+        <span class="row__author">Ron Chernow</span>
+        <span class="row__meta"><span class="tag">21 plates</span><span class="row__arrow">→</span></span>
+      </a>
 
-      <article class="card-wrap">
-        <a class="card" href="the-book-of-elon.html">
-          <p class="card__author">Eric Jorgenson · 2026</p>
-          <h3 class="card__title">The Book of Elon</h3>
-          <p class="card__note">Musk's method compiled from his own words: first-principles costing, The Algorithm, and how much weight a curated record can carry.</p>
-          <p class="card__foot">
-            <span class="tag">4 parts</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="the-book-of-elon.html">
+        <span class="row__title">The Book of Elon</span>
+        <span class="row__author">Eric Jorgenson</span>
+        <span class="row__meta"><span class="tag">4 parts</span><span class="row__arrow">→</span></span>
+      </a>
 
-      <article class="card-wrap">
-        <a class="card" href="the-mobile-wave.html">
-          <p class="card__author">Michael J. Saylor · 2012</p>
-          <h3 class="card__title">The Mobile Wave</h3>
-          <p class="card__note">A forecast from 2012, most striking where it has since become invisible infrastructure — and most useful in its blind spots.</p>
-          <p class="card__foot">
-            <span class="tag">Forecast</span>
-            <span class="arrow">→</span>
-          </p>
-        </a>
-      </article>
+      <a class="row" href="the-mobile-wave.html">
+        <span class="row__title">The Mobile Wave</span>
+        <span class="row__author">Michael J. Saylor</span>
+        <span class="row__meta"><span class="tag">Forecast</span><span class="row__arrow">→</span></span>
+      </a>
 
-    </div>
-  </section>
-
-  <section class="shelf" aria-labelledby="shelf-print">
-    <div class="shelf__head">
-      <h2 id="shelf-print">Print editions</h2>
-      <span>PDF</span>
-    </div>
-    <div class="grid">
-      <article class="card-wrap">
-        <a class="card" href="Durant%20%E2%80%94%20The%20Story%20of%20Civilization%20I%E2%80%93IV.pdf">
-          <p class="card__author">Will Durant</p>
-          <h3 class="card__title">The Story of Civilization I–IV</h3>
-          <p class="card__note">A4 print edition of the illustrated summary.</p>
-          <p class="card__foot"><span class="tag">677 KB</span><span class="arrow">↓</span></p>
-        </a>
-      </article>
-      <article class="card-wrap">
-        <a class="card" href="Livy%20%E2%80%94%20The%20History%20of%20Rome.pdf">
-          <p class="card__author">Livy</p>
-          <h3 class="card__title">The History of Rome</h3>
-          <p class="card__note">A4 print edition of the illustrated summary.</p>
-          <p class="card__foot"><span class="tag">418 KB</span><span class="arrow">↓</span></p>
-        </a>
-      </article>
-      <article class="card-wrap">
-        <a class="card" href="Marcus%20Aurelius%20%E2%80%94%20Meditations.pdf">
-          <p class="card__author">Marcus Aurelius</p>
-          <h3 class="card__title">Meditations</h3>
-          <p class="card__note">A4 print edition of the illustrated summary.</p>
-          <p class="card__foot"><span class="tag">444 KB</span><span class="arrow">↓</span></p>
-        </a>
-      </article>
-      <article class="card-wrap">
-        <a class="card" href="Popper%20%E2%80%94%20Objective%20Knowledge.pdf">
-          <p class="card__author">Karl Popper</p>
-          <h3 class="card__title">Objective Knowledge</h3>
-          <p class="card__note">A4 print edition of the illustrated summary.</p>
-          <p class="card__foot"><span class="tag">484 KB</span><span class="arrow">↓</span></p>
-        </a>
-      </article>
     </div>
   </section>
 

@@ -107,6 +107,13 @@
   top.className = "book-toc-top";
   top.id = "bookTocTop";
 
+  var home = document.createElement("a");
+  home.className = "book-toc-top__home";
+  home.href = "index.html";
+  home.title = "Back to all summaries";
+  home.innerHTML = '<span class="book-toc-top__home-icon" aria-hidden="true">←</span>' +
+    '<span class="book-toc-top__home-label">All summaries</span>';
+
   var toggle = document.createElement("button");
   toggle.className = "book-toc-top__toggle";
   toggle.type = "button";
@@ -165,6 +172,7 @@
     sideLinks.appendChild(makeLink(entry, "side"));
   });
 
+  top.appendChild(home);
   top.appendChild(toggle);
   top.appendChild(topLinks);
   side.appendChild(sideHead);
