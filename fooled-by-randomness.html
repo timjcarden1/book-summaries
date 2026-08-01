@@ -1,0 +1,1734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fooled by Randomness — Nassim Nicholas Taleb · Illustrated Summary</title>
+<meta name="description" content="An illustrated, chapter-by-chapter summary of Fooled by Randomness by Nassim Nicholas Taleb.">
+<link rel="stylesheet" href="reading-summary.css">
+<style>
+:root { --accent:#a7333b; --s1:#a7333b; --accent-2:#d08a2e; }
+:root[data-theme="dark"] { --accent:#e06b72; --s1:#e06b72; --accent-2:#e4a84e; }
+.fbr .hero { background:
+  radial-gradient(circle at 76% 23%, color-mix(in srgb,var(--accent) 18%,transparent),transparent 31%),
+  repeating-linear-gradient(125deg,transparent 0 42px,color-mix(in srgb,var(--rule) 28%,transparent) 42px 43px),
+  var(--panel); }
+.fbr .book-glyph { transform:rotate(7deg); background:#202326; border-color:#111; box-shadow:-9px 12px 0 var(--accent),0 24px 60px rgba(0,0,0,.22); }
+.coin { width:76px;height:76px;border:8px double var(--accent);border-radius:50%;display:grid;place-items:center;margin:auto;color:var(--accent);font:800 24px/1 var(--display);box-shadow:inset 0 0 0 3px var(--panel); }
+.distribution { display:flex;align-items:end;gap:5px;height:180px;padding-top:20px; }
+.distribution i { flex:1;height:var(--h);background:var(--accent);opacity:calc(.35 + var(--o));border-radius:2px 2px 0 0; }
+.distribution i.tail { background:var(--accent-2); }
+
+/* figure palette — crimson risk, ochre tail, steel process, olive robustness */
+:root { --f3:#3f6f8f; --f4:#6d7f5c; }
+:root[data-theme="dark"] { --f3:#7fa9c6; --f4:#9db487; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --f3:#7fa9c6; --f4:#9db487; } }
+.fbr .chapter-visual__body { padding-bottom: clamp(18px,3vw,26px); }
+</style>
+<link rel="stylesheet" href="book-toc.css">
+<link rel="stylesheet" href="book-figures.css">
+</head>
+<body class="fbr">
+<button class="theme-button" id="themeButton" type="button" aria-label="Switch colour theme">Theme</button>
+
+<header class="hero">
+  <div class="hero__inner wrap">
+    <div>
+      <p class="kicker">Nassim Nicholas Taleb · Incerto, volume one</p>
+      <h1>Fooled by Randomness</h1>
+      <p class="hero__subtitle">The hidden role of chance in life and in the markets — and why a good outcome does not prove a good decision.</p>
+      <p class="hero__thesis"><strong>The load-bearing idea:</strong> we observe the winner, not the cemetery of equally plausible losers. To judge skill, expose the result to the alternative histories that could have happened.</p>
+    </div>
+    <div class="book-orbit" aria-hidden="true">
+      <div class="book-glyph"><b>Chance<br>is not<br>skill</b><span>One history happened.<br>Many others were possible.</span></div>
+    </div>
+  </div>
+</header>
+
+<dl class="hero__stats">
+  <div><dt>First published</dt><dd>2001</dd></div>
+  <div><dt>Structure</dt><dd>3 parts · 14 chapters</dd></div>
+  <div><dt>Domain</dt><dd>Luck · risk · judgement</dd></div>
+</dl>
+
+<main>
+  <section class="orientation wrap" id="orientation">
+    <div class="orientation__grid">
+      <div>
+        <p class="eyebrow"><b>Orientation</b></p>
+        <h2>The argument in one pass</h2>
+        <p class="lede">Taleb begins in trading because markets create rapid, visible experiments in uncertainty. But the target is wider: careers, fortunes, reputations and theories all get selected from a field of unrealised alternatives.</p>
+        <p class="lede">The mistake is not believing that skill exists. It is inferring too much skill from one realised path, especially when payoffs are skewed, samples are small, and failure removes people from view.</p>
+      </div>
+      <nav class="quick-map" aria-label="Parts of the summary">
+        <a href="#part-one"><b>Part I</b><span>Alternative histories</span></a>
+        <a href="#part-two"><b>Part II</b><span>Survivors and stories</span></a>
+        <a href="#part-three"><b>Part III</b><span>Living with uncertainty</span></a>
+        <a href="#field-guide"><b>Field guide</b><span>How not to be fooled</span></a>
+      </nav>
+    </div>
+
+    <div class="plate">
+      <div class="plate__head"><span>Plate 01 · the diagnostic</span><b>Outcome is not the same thing as decision quality</b></div>
+      <div class="plate__body">
+        <div class="formula"><span class="accent">Observed result</span> = decision quality + exposure + randomness<small>The realised result is one draw from a distribution, not a transparent report card on the person who chose.</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="movement" id="part-one">
+    <div class="wrap">
+      <div class="movement__head"><p class="eyebrow"><b>Part One · Solon’s Warning</b></p><h2>The world is larger than the story we tell</h2></div>
+      <p class="movement__dek">Seven chapters build the toolkit: alternative histories, Monte Carlo thinking, time-scale, skewness, survivorship and the problem of induction.</p>
+    </div>
+  </section>
+
+  <article class="chapter" id="fbr-ch1">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 01<span></span></div>
+      <div class="chapter__content">
+        <h3>If You’re So Rich, Why Aren’t You So Smart?</h3>
+        <p class="chapter__claim">Visible wealth can be evidence of skill, luck, hidden risk — or some mixture no single result can identify.</p>
+        <div class="chapter__body">
+          <h4>Nero Tulip and the visible scoreboard</h4>
+          <p>Taleb contrasts Nero, a reserved proprietary trader who tries to avoid exposure he does not understand, with people who earn more in the current market and advertise their confidence. A neighbour’s larger house and a colleague’s bonus are vivid; the risks required to obtain them are not.</p>
+          <p>John, the high-yield trader, appears skilful while a benign market rewards the collection of small gains. His strategy resembles selling insurance too cheaply: the premium arrives regularly, but the rare claim can exceed all prior income. Until the claim arrives, caution looks like incompetence.</p>
+          <h4>Success alters the person observing it</h4>
+          <p>Winning is not psychologically neutral. Status, praise and the body’s own rewards amplify confidence. A person who benefited from a favourable sequence may take the sequence as proof of an enduring personal quality and increase the very exposure that made luck decisive.</p>
+          <p>Solon’s warning to Croesus supplies the chapter’s time horizon: no life or strategy can be evaluated from its most flattering midpoint. Some forms of apparent success contain delayed ruin, while slower and less visible paths survive across more possible futures.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Character</span><h4>Nero</h4><p>Less spectacular in one realised market, but attentive to how the same choices behave across many plausible markets.</p></div><div class="detail-card"><span class="detail-label">Character</span><h4>John</h4><p>Interprets a run of profitable risk-taking as skill because the rare loss remains outside the observed sample.</p></div></div>
+        <div class="critical-note"><b>Important nuance:</b> Taleb’s claim is that outcomes are more random than we think, not that skill and effort are unreal. The challenge is separating their contribution from luck using only one life history.</div>
+        <div class="key-terms"><span class="term">hidden risk</span><span class="term">path dependence</span><span class="term">rare event</span><span class="term">Solon</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Decision map</span><b>Outcome and process are separate axes</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 900 420" width="900" height="420" role="img" aria-labelledby="c1t c1d" style="min-width:693px;width:100%;height:auto">
+  <title id="c1t">Decision quality plotted against realised outcome</title>
+  <desc id="c1d">A scatter plot whose horizontal axis runs from reckless to sound process and whose vertical axis runs from loss to gain. A dashed diagonal marks the assumption that a good outcome implies a good process. John sits in the shaded upper-left quadrant with poor process and a large gain; Nero sits right of centre with a modest gain; faded dots in the lower half mark participants who are no longer interviewed.</desc>
+
+  <!-- quadrant tints -->
+  <rect x="96" y="52"  width="272" height="150" fill="var(--f1)"   opacity=".13"/>
+  <rect x="368" y="52" width="272" height="150" fill="var(--f4)"   opacity=".11"/>
+  <rect x="96" y="202" width="272" height="150" fill="var(--ink-3)" opacity=".07"/>
+  <rect x="368" y="202" width="272" height="150" fill="var(--f3)"  opacity=".08"/>
+  <rect x="96" y="52" width="544" height="300" class="svg-hair" stroke-width="1"/>
+
+  <!-- axes -->
+  <line x1="96" y1="202" x2="656" y2="202" class="svg-axis"/>
+  <line x1="368" y1="44" x2="368" y2="360" class="svg-axis"/>
+  <path d="M650 197 L660 202 L650 207 Z" fill="var(--rule-2)"/>
+  <path d="M363 50 L368 40 L373 50 Z" fill="var(--rule-2)"/>
+
+  <text x="96"  y="374" class="svg-sm">RECKLESS</text>
+  <text x="640" y="374" class="svg-sm" text-anchor="end">SOUND</text>
+  <text x="368" y="396" class="svg-sm" text-anchor="middle" fill="var(--ink-2)">PROCESS QUALITY — WHAT YOU CONTROL</text>
+  <text x="376" y="58"  class="svg-sm">GAIN</text>
+  <text x="376" y="350" class="svg-sm">LOSS</text>
+  <text transform="translate(74,202) rotate(-90)" text-anchor="middle" class="svg-sm">REALISED OUTCOME — WHAT YOU SEE</text>
+
+  <!-- the inference everybody actually makes -->
+  <line x1="112" y1="342" x2="628" y2="62" stroke="var(--ink-3)" stroke-width="1.6" stroke-dasharray="7 5"
+        class="draw" style="--len:588;--d:.15s"/>
+  <text transform="translate(300,300) rotate(-28.5)" class="svg-em" fill="var(--ink-3)">assumed: the result reports the process</text>
+
+  <!-- the cemetery: same process, different draw -->
+  <g fill="var(--f-ghost)" class="rise" style="--d:.7s">
+    <circle cx="150" cy="248" r="5"/><circle cx="196" cy="292" r="5"/><circle cx="238" cy="262" r="5"/>
+    <circle cx="176" cy="326" r="5"/><circle cx="272" cy="316" r="5"/><circle cx="126" cy="288" r="5"/>
+    <circle cx="318" cy="278" r="5"/><circle cx="228" cy="336" r="5"/>
+    <circle cx="430" cy="262" r="5"/><circle cx="486" cy="300" r="5"/><circle cx="536" cy="256" r="5"/>
+    <circle cx="398" cy="318" r="5"/><circle cx="588" cy="308" r="5"/>
+  </g>
+  <text x="126" y="240" class="svg-sm">NOBODY INTERVIEWS THESE</text>
+
+  <!-- other survivors -->
+  <g fill="var(--f-ghost)" class="rise" style="--d:.7s">
+    <circle cx="262" cy="140" r="5"/><circle cx="318" cy="112" r="5"/><circle cx="214" cy="172" r="5"/>
+    <circle cx="452" cy="120" r="5"/><circle cx="530" cy="146" r="5"/><circle cx="580" cy="96" r="5"/>
+  </g>
+
+  <!-- John -->
+  <g class="pop" style="--d:1s">
+    <circle cx="192" cy="96" r="16" fill="var(--f1)" opacity=".18"/>
+    <circle cx="192" cy="96" r="8" fill="var(--f1)"/>
+    <circle cx="192" cy="96" r="8" fill="none" stroke="var(--panel)" stroke-width="1.6"/>
+  </g>
+  <text x="208" y="92"  class="svg-b" fill="var(--f1)">John</text>
+  <text x="208" y="108" class="svg-lab">sells the rare claim cheaply</text>
+  <text x="208" y="124" class="svg-sm">BIGGEST HOUSE ON THE STREET</text>
+
+  <!-- Nero -->
+  <g class="pop" style="--d:1.2s">
+    <circle cx="474" cy="160" r="8" fill="var(--f3)"/>
+    <circle cx="474" cy="160" r="8" fill="none" stroke="var(--panel)" stroke-width="1.6"/>
+  </g>
+  <text x="490" y="156" class="svg-b" fill="var(--f3)">Nero</text>
+  <text x="490" y="172" class="svg-lab">declines what he cannot price</text>
+  <text x="490" y="188" class="svg-sm">LOOKS UNDERPAID — IN THIS MARKET</text>
+
+  <!-- quadrant keys -->
+  <text x="110" y="76" class="svg-sm" fill="var(--f1)" font-weight="700">THE DECEPTIVE QUADRANT</text>
+  <text x="626" y="76" class="svg-sm" text-anchor="end">SKILL PLAUSIBLE · STILL PROVISIONAL</text>
+  <text x="110" y="334" class="svg-sm">HARMLESS · VISIBLY BAD</text>
+  <text x="626" y="334" class="svg-sm" text-anchor="end">SOUND CHOICE · UNLUCKY DRAW</text>
+
+  <!-- reading note -->
+  <line x1="676" y1="52" x2="676" y2="352" class="svg-hair" stroke-width="1"/>
+  <text x="700" y="66" class="svg-t">Reading the plot</text>
+  <g class="svg-lab">
+    <text x="700" y="94">Only the vertical axis is</text>
+    <text x="700" y="111">observable. The horizontal</text>
+    <text x="700" y="128">one has to be reconstructed</text>
+    <text x="700" y="145">from the exposure that was</text>
+    <text x="700" y="162">taken to get there.</text>
+  </g>
+  <g class="svg-lab">
+    <text x="700" y="200">Because the dashed line is</text>
+    <text x="700" y="217">assumed, every point above</text>
+    <text x="700" y="234">it is read as merit — which</text>
+    <text x="700" y="251">is exactly how the upper-left</text>
+    <text x="700" y="268">quadrant recruits imitators.</text>
+  </g>
+  <text x="700" y="306" class="svg-sm" fill="var(--f1)">SOLON&#8217;S QUESTION</text>
+  <g class="svg-lab">
+    <text x="700" y="326">Not &#8220;how high is the point?&#8221;</text>
+    <text x="700" y="343">but &#8220;how wide is its range?&#8221;</text>
+  </g>
+</svg>
+</div>
+<div class="fig-legend">
+  <span><i class="dot" style="--c:var(--f1)"></i>Hidden tail risk</span>
+  <span><i class="dot" style="--c:var(--f3)"></i>Priced exposure</span>
+  <span><i class="dot" style="--c:var(--f-ghost)"></i>Same choice, other draw</span>
+  <span><i class="dash" style="--c:var(--ink-3)"></i>The assumed relationship</span>
+</div>
+</div><p class="chapter-visual__caption">The dangerous quadrant is success produced by a process that cannot survive repetition.</p></div>
+        <div class="takeaway"><b>Decision rule</b>Ask what risk had to remain hidden for this success to look effortless.</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch2">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 02<span></span></div>
+      <div class="chapter__content">
+        <h3>A Bizarre Accounting Method</h3>
+        <p class="chapter__claim">Count the paths that could have occurred, not only the one that happened to reach the ledger.</p>
+        <div class="chapter__body">
+          <h4>Accounting for what did not happen</h4>
+          <p>Ordinary accounting records the realised profit and loss. Taleb’s “bizarre” accounting charges a result for the dangers present in alternative histories: plausible worlds generated by the same decision but a different draw of events.</p>
+          <p>Russian roulette makes the distinction stark. The survivor may receive a fortune and display no injury, yet the method of earning is catastrophically bad. Repeating the game reveals what a single successful round concealed.</p>
+          <h4>Certainty as survival across worlds</h4>
+          <p>A dentist’s income may vary within a relatively narrow band if a career is replayed many times. A leveraged trader or start-up founder may produce outcomes ranging from immense wealth to ruin. The realised income does not tell us the width of that distribution.</p>
+          <p>Two profits of equal size can therefore have different quality. Prefer results produced in many plausible histories, or at least positions whose bad histories are survivable. The counterfactual ledger is an exposure map rather than a claim that unrealised losses literally occurred.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Thought experiment</span><h4>Replay the decision 1,000 times</h4><p>How often does it work, how wide are the outcomes, and does any ordinary branch produce irreversible ruin?</p></div><div class="detail-card"><span class="detail-label">Comparison</span><h4>Dentist versus roulette player</h4><p>Similar observed wealth can come from very different distributions of alternative histories.</p></div></div>
+        <div class="key-terms"><span class="term">alternative histories</span><span class="term">possible worlds</span><span class="term">counterfactual</span><span class="term">Russian roulette</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Counterfactual ledger</span><b>Evaluate the choice across neighbouring worlds</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 900 430" width="900" height="430" role="img" aria-labelledby="c2t c2d" style="min-width:693px;width:100%;height:auto">
+  <title id="c2t">One decision fanning out into the histories it could have produced</title>
+  <desc id="c2d">From a single decision point on the left, twelve curved paths fan out to the right. Ten end at various gains and losses; two strike a dashed horizontal ruin barrier near the bottom and terminate there with a cross. One path is drawn in the book&#8217;s accent colour and marked as the history that actually happened and entered the ledger. A panel on the right compares a dentist&#8217;s narrow band of replayed careers with a leveraged trader&#8217;s band running from fortune to ruin, both passing through the same observed income.</desc>
+
+  <!-- ruin barrier -->
+  <line x1="88" y1="366" x2="640" y2="366" stroke="var(--f1)" stroke-width="1.4" stroke-dasharray="6 4" opacity=".75"/>
+  <rect x="88" y="366" width="552" height="26" fill="var(--f1)" opacity=".07"/>
+  <text x="96" y="384" class="svg-sm" fill="var(--f1)" font-weight="700">RUIN — ABSORBING BARRIER · NO PATH CONTINUES</text>
+
+  <!-- the unrealised histories -->
+  <g fill="none" stroke="var(--f3)" stroke-width="1.5" opacity=".5">
+    <path d="M104 214 C 300 214, 360 52,  540 52"   class="draw" style="--len:520;--d:.1s"/>
+    <path d="M104 214 C 300 214, 360 92,  540 92"   class="draw" style="--len:500;--d:.16s"/>
+    <path d="M104 214 C 300 214, 360 170, 540 170"  class="draw" style="--len:470;--d:.28s"/>
+    <path d="M104 214 C 300 214, 360 206, 540 206"  class="draw" style="--len:460;--d:.34s"/>
+    <path d="M104 214 C 300 214, 360 242, 540 242"  class="draw" style="--len:460;--d:.4s"/>
+    <path d="M104 214 C 300 214, 360 280, 540 280"  class="draw" style="--len:470;--d:.46s"/>
+    <path d="M104 214 C 300 214, 360 318, 540 318"  class="draw" style="--len:490;--d:.52s"/>
+  </g>
+
+  <!-- two histories that hit the barrier and stop -->
+  <g fill="none" stroke="var(--f1)" stroke-width="1.6" opacity=".62">
+    <path d="M104 214 C 260 214, 300 366, 412 366" class="draw" style="--len:340;--d:.6s"/>
+    <path d="M104 214 C 300 214, 380 366, 494 366" class="draw" style="--len:420;--d:.66s"/>
+  </g>
+  <g stroke="var(--f1)" stroke-width="2" stroke-linecap="round" class="pop" style="--d:1.5s">
+    <path d="M406 360 L418 372 M418 360 L406 372"/>
+    <path d="M488 360 L500 372 M500 360 L488 372"/>
+  </g>
+
+  <!-- the history that happened -->
+  <path d="M104 214 C 300 214, 360 130, 540 130" fill="none" stroke="var(--f1)" stroke-width="3"
+        stroke-linecap="round" class="draw" style="--len:480;--d:.75s;--dur:1.7s"/>
+  <g class="pop" style="--d:2.1s">
+    <circle cx="540" cy="130" r="14" fill="var(--f1)" opacity=".16"/>
+    <circle cx="540" cy="130" r="6.5" fill="var(--f1)"/>
+  </g>
+
+  <!-- the decision -->
+  <circle cx="104" cy="214" r="7" fill="var(--ink)"/>
+  <circle cx="104" cy="214" r="15" fill="none" stroke="var(--ink)" stroke-width="1" opacity=".3"/>
+  <text x="88" y="188" class="svg-b">One decision</text>
+  <text x="88" y="172" class="svg-sm">FIXED ACTION · FIXED EXPOSURE</text>
+  <text x="88" y="248" class="svg-em">replay the draw, not the choice</text>
+
+  <!-- outcome labels -->
+  <g class="svg-num" fill="var(--ink-3)">
+    <text x="554" y="56">+180%</text>
+    <text x="554" y="96">+64%</text>
+    <text x="554" y="174">+11%</text>
+    <text x="554" y="210">−2%</text>
+    <text x="554" y="246">−15%</text>
+    <text x="554" y="284">−38%</text>
+    <text x="554" y="322">−61%</text>
+  </g>
+  <text x="554" y="126" class="svg-num" fill="var(--f1)" font-weight="700">+42%</text>
+  <text x="554" y="142" class="svg-sm" fill="var(--f1)">THE LEDGER ENTRY</text>
+
+  <text x="88" y="42" class="svg-t">Twelve plausible histories · one gets written down</text>
+
+  <!-- right panel -->
+  <line x1="672" y1="42" x2="672" y2="392" class="svg-hair" stroke-width="1"/>
+  <text x="696" y="56" class="svg-t">Same income, two spreads</text>
+
+  <text x="696" y="96" class="svg-sm">DENTIST · 1,000 REPLAYED CAREERS</text>
+  <line x1="744" y1="120" x2="858" y2="120" stroke="var(--f4)" stroke-width="8" stroke-linecap="round"
+        opacity=".45" class="growx" style="--d:1.2s"/>
+  <g class="svg-lab">
+    <text x="696" y="150">A narrow band. Nearly every</text>
+    <text x="696" y="167">replay is a working career.</text>
+  </g>
+
+  <text x="696" y="216" class="svg-sm">ROULETTE PLAYER · 1,000 REPLAYS</text>
+  <line x1="700" y1="240" x2="884" y2="240" stroke="var(--f1)" stroke-width="8" stroke-linecap="round"
+        opacity=".38" class="growx" style="--d:1.4s"/>
+  <g stroke="var(--f1)" stroke-width="2" stroke-linecap="round" class="pop" style="--d:2s">
+    <path d="M702 234 L712 244 M712 234 L702 244"/>
+  </g>
+  <g class="svg-lab">
+    <text x="696" y="270">The same visible point sits</text>
+    <text x="696" y="287">on a band that runs from</text>
+    <text x="696" y="304">fortune to the barrier.</text>
+  </g>
+
+  <!-- the one thing both men show the world -->
+  <line x1="812" y1="104" x2="812" y2="322" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="4 4" opacity=".55"/>
+  <circle cx="812" cy="120" r="5" fill="var(--f4)"/>
+  <circle cx="812" cy="240" r="5" fill="var(--f1)"/>
+  <text x="812" y="336" class="svg-sm" text-anchor="middle" fill="var(--ink-2)">THE OBSERVED INCOME</text>
+  <text x="812" y="352" class="svg-em" text-anchor="middle">identical · uninformative</text>
+</svg>
+</div>
+<div class="fig-legend">
+  <span><i style="--c:var(--f1)"></i>Realised history</span>
+  <span><i style="--c:var(--f3)"></i>Unrealised, equally plausible</span>
+  <span><i class="dash" style="--c:var(--f1)"></i>Ruin barrier</span>
+</div>
+</div></div>
+        <div class="plate">
+          <div class="plate__head"><span>Plate 02 · possible histories</span><b>One person, sixteen plausible paths</b></div>
+          <div class="plate__body"><div class="matrix" style="--cols:8"><span>−</span><span>+</span><span>−</span><span class="live">WIN</span><span>−</span><span>−</span><span>+</span><span>−</span><span>+</span><span>−</span><span>−</span><span>+</span><span>−</span><span>−</span><span>+</span><span>−</span></div></div>
+          <p class="plate__caption">Biography shows the highlighted square. Risk analysis asks why that square survived and what happened in the unobserved neighbours.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch3">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 03<span></span></div>
+      <div class="chapter__content">
+        <h3>A Mathematical Meditation on History</h3>
+        <p class="chapter__claim">At short intervals, noise dominates what you see; lengthen the interval and the underlying return has a chance to emerge.</p>
+        <div class="chapter__body">
+          <h4>History is one simulated path</h4>
+          <p>Monte Carlo methods generate many histories from one probabilistic process. The simulated lines contain rallies, crashes, heroes and apparent turning points even though none was given a narrative cause. This trains the eye to see realised history as one path among neighbours.</p>
+          <p>A process can have a favourable expected return and still spend long intervals below its starting point. The path matters because investors live through sequences, suffer withdrawals and may be forced out before the long-run average becomes relevant.</p>
+          <h4>More observations can mean less understanding</h4>
+          <p>Suppose a portfolio has a modest positive annual expectation but high daily variability. Viewed yearly, gains may be more common than losses; viewed minute by minute, negative observations multiply. The underlying investment has not changed—only the ratio of signal to noise presented to the mind.</p>
+          <p>Frequent monitoring therefore creates an emotional tax. Each meaningless fluctuation invites explanation and action. Taleb’s response is to choose a time scale appropriate to the process and to use simulation for exposure rather than news for comfort.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Tool</span><h4>Monte Carlo simulation</h4><p>Vary the random draw while holding assumptions constant to see the range of paths a process can generate.</p></div><div class="detail-card"><span class="detail-label">Behavioural consequence</span><h4>Monitoring frequency</h4><p>Shorter intervals reveal more variance, creating more chances for fear and narration to override the plan.</p></div></div>
+        <div class="critical-note"><b>Pressure point:</b> Looking less often reduces psychological noise; it does not make the underlying position safer. Exposure still has to be measured at the horizon on which losses can force action.</div>
+        <div class="key-terms"><span class="term">Monte Carlo</span><span class="term">sample path</span><span class="term">signal-to-noise</span><span class="term">time scale</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Observation scale</span><b>The same investment, three emotional experiences</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 900 430" width="900" height="430" role="img" aria-labelledby="c3t c3d" style="min-width:693px;width:100%;height:auto">
+  <title id="c3t">One simulated portfolio viewed at three observation scales</title>
+  <desc id="c3d">Three stacked panels show the same simulated price path. The top panel magnifies the first fifty ticks and looks violently directionless. The middle panel shows the first few hundred and rises unevenly. The bottom panel shows the whole series and rises steadily. Dashed cones link each panel to the sliver of the panel below it that it magnifies. A chart on the right plots the share of observations that show a gain at each sampling frequency, falling from ninety-three per cent for yearly observation towards fifty per cent — a coin flip — for observation by the second.</desc>
+
+  <!-- ============ LEFT: one series, three magnifications ============ -->
+  <text x="96" y="30" class="svg-t">One portfolio. One history. Three experiences of it.</text>
+
+  <!-- panel A · the minute view -->
+  <rect x="96" y="44" width="374" height="112" fill="var(--f1)" opacity=".05"/>
+  <rect x="96" y="44" width="374" height="112" class="svg-hair" stroke-width="1"/>
+  <text x="106" y="60" class="svg-sm" fill="var(--f1)" font-weight="700">THE MINUTE VIEW · 49 TICKS</text>
+  <polyline fill="none" stroke="var(--f1)" stroke-width="1.4" stroke-linejoin="round" class="draw" style="--len:1400;--d:.1s;--dur:2s"
+    points="96.0,122.8 103.8,137.7 111.6,132.2 119.4,118.8 127.2,124.6 135.0,140.8 142.8,141.0 150.5,134.2 158.3,119.5 166.1,134.3 173.9,150.0 181.7,140.3 189.5,133.6 197.3,113.5 205.1,100.3 212.9,100.9 220.7,103.7 228.5,70.3 236.2,73.3 244.0,82.6 251.8,96.3 259.6,94.4 267.4,91.9 275.2,95.5 283.0,95.6 290.8,91.5 298.6,82.0 306.4,67.4 314.2,64.0 322.0,86.0 329.8,76.4 337.5,93.7 345.3,95.2 353.1,113.2 360.9,112.5 368.7,121.7 376.5,118.3 384.3,75.7 392.1,75.6 399.9,64.2 407.7,80.3 415.5,83.3 423.2,74.2 431.0,74.6 438.8,69.2 446.6,67.2 454.4,79.3 462.2,71.5 470.0,81.1"/>
+  <text x="464" y="60" class="svg-sm" text-anchor="end">MOSTLY NOISE</text>
+
+  <!-- panel B · the month view -->
+  <rect x="96" y="159" width="374" height="112" fill="var(--f2)" opacity=".06"/>
+  <rect x="96" y="159" width="374" height="112" class="svg-hair" stroke-width="1"/>
+  <text x="106" y="175" class="svg-sm" fill="var(--f2)" font-weight="700">THE MONTH VIEW · 41 SAMPLES</text>
+  <polyline fill="none" stroke="var(--f2)" stroke-width="1.6" stroke-linejoin="round" class="draw" style="--len:900;--d:.5s;--dur:1.8s"
+    points="96.0,263.5 105.3,265.0 114.7,259.7 124.0,262.9 133.4,257.6 142.8,248.4 152.1,243.3 161.4,225.7 170.8,214.6 180.2,209.6 189.5,205.4 198.8,189.1 208.2,190.6 217.6,186.1 226.9,188.1 236.2,192.7 245.6,194.9 254.9,198.2 264.3,194.0 273.6,193.1 283.0,196.2 292.4,192.7 301.7,200.5 311.1,202.4 320.4,207.0 329.8,214.0 339.1,203.6 348.4,205.2 357.8,201.7 367.1,198.3 376.5,203.6 385.9,200.2 395.2,197.5 404.6,189.9 413.9,194.0 423.2,179.0 432.6,183.0 441.9,190.2 451.3,184.4 460.6,187.9 470.0,193.6"/>
+  <text x="464" y="175" class="svg-sm" text-anchor="end">MIXED</text>
+
+  <!-- panel C · the year view -->
+  <rect x="96" y="274" width="374" height="112" fill="var(--f4)" opacity=".07"/>
+  <rect x="96" y="274" width="374" height="112" class="svg-hair" stroke-width="1"/>
+  <text x="106" y="290" class="svg-sm" fill="var(--f4)" font-weight="700">THE YEAR VIEW · WHOLE SERIES</text>
+  <polyline fill="none" stroke="var(--f4)" stroke-width="1.8" stroke-linejoin="round" class="draw" style="--len:900;--d:.9s;--dur:1.6s"
+    points="96.0,380.0 103.8,377.8 111.6,365.4 119.4,360.1 127.2,360.6 135.0,361.6 142.8,366.9 150.5,363.1 158.3,359.9 166.1,360.3 173.9,362.9 181.7,361.2 189.5,358.3 197.3,359.9 205.1,356.2 212.9,359.4 220.7,352.3 228.5,349.9 236.2,349.8 244.0,343.4 251.8,342.8 259.6,347.5 267.4,343.1 275.2,341.2 283.0,337.6 290.8,334.5 298.6,329.6 306.4,327.9 314.2,324.4 322.0,322.4 329.8,324.7 337.5,324.1 345.3,325.1 353.1,326.4 360.9,325.5 368.7,322.3 376.5,321.1 384.3,314.6 392.1,312.4 399.9,310.7 407.7,312.7 415.5,311.2 423.2,309.9 431.0,306.0 438.8,305.9 446.6,301.0 454.4,295.3 462.2,294.0 470.0,294.1"/>
+  <text x="464" y="290" class="svg-sm" text-anchor="end">SIGNAL</text>
+
+  <!-- zoom cones: each panel is a sliver of the one below -->
+  <g stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 3" opacity=".55" fill="none">
+    <path d="M96 274 L96 271 M171 274 L470 271"/>
+    <path d="M96 159 L96 156 M133 159 L470 156"/>
+  </g>
+  <rect x="96" y="274" width="75" height="112" fill="var(--f2)" opacity=".16"/>
+  <rect x="96" y="159" width="37" height="112" fill="var(--f1)" opacity=".14"/>
+  <text x="186" y="308" class="svg-sm" fill="var(--ink-3)">↑ THE SLIVER MAGNIFIED ABOVE</text>
+
+  <text x="96" y="406" class="svg-em">Nothing about the portfolio changed between panels — only how often it was looked at.</text>
+
+  <!-- ============ RIGHT: pleasant observations by frequency ============ -->
+  <line x1="512" y1="30" x2="512" y2="392" class="svg-hair" stroke-width="1"/>
+  <text x="536" y="44" class="svg-t">How often the news is good</text>
+  <text x="536" y="62" class="svg-sm">SHARE OF OBSERVATIONS SHOWING A GAIN</text>
+
+  <!-- the coin-flip baseline -->
+  <line x1="640" y1="80" x2="640" y2="348" stroke="var(--ink)" stroke-width="1.2" opacity=".5"/>
+  <text x="640" y="366" class="svg-sm" text-anchor="middle">50% · A COIN FLIP</text>
+  <text x="872" y="366" class="svg-sm" text-anchor="end">100%</text>
+
+  <g stroke="var(--f3)" stroke-width="6" stroke-linecap="round" opacity=".65">
+    <line x1="640" y1="96"  x2="855" y2="96"  class="growx" style="--d:1.1s"/>
+    <line x1="640" y1="132" x2="775" y2="132" class="growx" style="--d:1.2s"/>
+    <line x1="640" y1="168" x2="725" y2="168" class="growx" style="--d:1.3s"/>
+    <line x1="640" y1="204" x2="660" y2="204" class="growx" style="--d:1.4s"/>
+    <line x1="640" y1="240" x2="646" y2="240" class="growx" style="--d:1.5s"/>
+    <line x1="640" y1="276" x2="641" y2="276" class="growx" style="--d:1.6s"/>
+    <line x1="640" y1="312" x2="641" y2="312" class="growx" style="--d:1.7s"/>
+  </g>
+
+  <g class="svg-lab" text-anchor="end" fill="var(--ink-2)">
+    <text x="628" y="100">every year</text>
+    <text x="628" y="136">every quarter</text>
+    <text x="628" y="172">every month</text>
+    <text x="628" y="208">every day</text>
+    <text x="628" y="244">every hour</text>
+    <text x="628" y="280">every minute</text>
+    <text x="628" y="316">every second</text>
+  </g>
+
+  <g class="svg-num">
+    <text x="866" y="100">93%</text>
+    <text x="786" y="136">77%</text>
+    <text x="736" y="172">67%</text>
+    <text x="671" y="208">54%</text>
+    <text x="657" y="244">51.3%</text>
+    <text x="652" y="280">50.17%</text>
+    <text x="652" y="316">50.02%</text>
+  </g>
+
+  <text x="536" y="390" class="svg-em">Illustrative, for a portfolio with a small</text>
+  <text x="536" y="406" class="svg-em">positive drift and substantial daily noise.</text>
+</svg>
+</div>
+</div><p class="chapter-visual__caption">Each panel is normalised to its own range, which is precisely why all three look equally eventful. The frequencies on the right are illustrative of the effect, not a universal rule.</p></div>
+        <div class="plate">
+          <div class="plate__head"><span>Plate 03 · signal to noise</span><b>What changes when you check less often</b></div>
+          <div class="plate__body"><div class="bar-chart"><div class="bar-row"><label>Every minute</label><div class="bar-track"><div class="bar-fill" style="--w:12%"></div></div><output>mostly noise</output></div><div class="bar-row"><label>Every day</label><div class="bar-track"><div class="bar-fill" style="--w:31%"></div></div><output>mixed</output></div><div class="bar-row"><label>Every year</label><div class="bar-track"><div class="bar-fill" style="--w:78%"></div></div><output>more signal</output></div></div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch4">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 04<span></span></div>
+      <div class="chapter__content">
+        <h3>Randomness, Nonsense, and the Scientific Intellectual</h3>
+        <p class="chapter__claim">A fluent explanation can be less scientific than an honest statement of uncertainty.</p>
+        <div class="chapter__body">
+          <h4>Rhetoric can imitate knowledge</h4>
+          <p>Taleb distinguishes scientific argument from discourse assembled out of impressive references, fashionable abstractions and stock phrases. A random generator can combine grand terms into fluent prose; surface sophistication is not evidence that the claims constrain reality.</p>
+          <p>Business commentary is especially vulnerable because ordinary market moves always arrive with something in the news. Commentators match the two after the fact, then reverse the explanation when the market reacts differently on the next day.</p>
+          <h4>Where randomness belongs</h4>
+          <p>In science and risk, an account should expose itself to rejection. It should state what evidence would count against it and distinguish prediction from retrospective description. If every outcome is compatible, the explanation is protected by rhetoric rather than tested by reality.</p>
+          <p>Taleb is not hostile to ambiguity everywhere. Poetry, myth and art can use association without pretending to deliver a causal forecast. The category error is demanding literal rationalism in aesthetic life while accepting unfalsifiable storytelling in domains where money and survival are at stake.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Scientific style</span><h4>Inference over decoration</h4><p>The claim’s validity depends on its logic, evidence and vulnerability to contradiction—not the prestige of its references.</p></div><div class="detail-card"><span class="detail-label">Narrative style</span><h4>Cause pasted onto noise</h4><p>A compelling reason appears after the move and quietly changes when the next observation disagrees.</p></div></div>
+        <div class="key-terms"><span class="term">falsifiability</span><span class="term">scientific intellectual</span><span class="term">rhetoric</span><span class="term">post-hoc explanation</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Narrative machine</span><b>How a random move becomes a confident story</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 900 430" width="900" height="430" role="img" aria-labelledby="c4t c4d" style="min-width:693px;width:100%;height:auto">
+  <title id="c4t">The explanation machine, run twice on opposite outcomes</title>
+  <desc id="c4d">Two identical production lines. In each, an ordinary daily price move enters on the left, passes through a hopper fed by the same four interchangeable headlines, and emerges on the right as a torn strip of printed commentary. The upper line explains a fall of four tenths of a per cent; the lower line explains a rise of the same size using the same headline. Both read as confident causal accounts.</desc>
+
+  <defs>
+    <marker id="c4arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--rule-2)"/>
+    </marker>
+  </defs>
+
+  <text x="96" y="28" class="svg-t">The same four reasons explain either direction</text>
+
+  <!-- ================= LINE A · the down day ================= -->
+  <g>
+    <!-- the move -->
+    <rect x="96" y="86" width="140" height="76" class="svg-hair" stroke-width="1" fill="var(--f1)" opacity=".05"/>
+    <rect x="96" y="86" width="140" height="76" class="svg-hair" stroke-width="1" fill="none"/>
+    <polyline fill="none" stroke="var(--f1)" stroke-width="1.6" stroke-linejoin="round" class="draw" style="--len:220;--d:.1s"
+      points="104,118 116,110 128,126 140,116 152,132 164,120 176,136 188,128 200,142 212,134 228,146"/>
+    <text x="104" y="102" class="svg-sm">TUESDAY</text>
+    <text x="228" y="102" class="svg-num" text-anchor="end" fill="var(--f1)">−0.4%</text>
+    <text x="104" y="178" class="svg-em">an ordinary fluctuation</text>
+
+    <line x1="248" y1="124" x2="292" y2="124" class="svg-rule" stroke-width="1.4" marker-end="url(#c4arrow)"/>
+
+    <!-- the hopper -->
+    <path d="M306 84 L462 84 L410 148 L358 148 Z" fill="var(--panel-2)" stroke="var(--rule-2)" stroke-width="1.2"/>
+    <text x="384" y="74" class="svg-sm" text-anchor="middle">TODAY&#8217;S AVAILABLE REASONS</text>
+    <g class="rise" style="--d:.6s">
+      <rect x="312" y="94" width="62" height="17" rx="2" fill="var(--panel)" stroke="var(--rule)"/>
+      <text x="343" y="106" class="svg-sm" text-anchor="middle">OIL</text>
+      <rect x="380" y="94" width="76" height="17" rx="2" fill="var(--f1)" opacity=".9"/>
+      <text x="418" y="106" class="svg-sm" text-anchor="middle" fill="#fff" font-weight="700">RATE FEARS</text>
+      <rect x="332" y="118" width="66" height="17" rx="2" fill="var(--panel)" stroke="var(--rule)"/>
+      <text x="365" y="130" class="svg-sm" text-anchor="middle">CHINA</text>
+      <rect x="404" y="118" width="30" height="17" rx="2" fill="var(--panel)" stroke="var(--rule)"/>
+      <text x="419" y="130" class="svg-sm" text-anchor="middle">FED</text>
+    </g>
+    <line x1="384" y1="148" x2="384" y2="160" class="svg-rule" stroke-width="1.4"/>
+
+    <line x1="474" y1="124" x2="518" y2="124" class="svg-rule" stroke-width="1.4" marker-end="url(#c4arrow)"/>
+
+    <!-- the printed strip, torn on the right -->
+    <path d="M532 92 L852 92 L846 100 L852 108 L846 116 L852 124 L846 132 L852 140 L846 148 L852 156 L532 156 Z"
+          fill="var(--panel)" stroke="var(--rule)" stroke-width="1" class="rise" style="--d:1s"/>
+    <text x="548" y="114" class="svg-sm" fill="var(--f1)">MARKET REPORT · 17:02</text>
+    <text x="548" y="138" class="svg-b" font-size="13">&#8220;Stocks slipped as rate fears weighed on sentiment.&#8221;</text>
+  </g>
+
+  <!-- ================= LINE B · the up day ================= -->
+  <g>
+    <rect x="96" y="256" width="140" height="76" class="svg-hair" stroke-width="1" fill="var(--f4)" opacity=".06"/>
+    <rect x="96" y="256" width="140" height="76" class="svg-hair" stroke-width="1" fill="none"/>
+    <polyline fill="none" stroke="var(--f4)" stroke-width="1.6" stroke-linejoin="round" class="draw" style="--len:220;--d:.3s"
+      points="104,314 116,306 128,320 140,300 152,314 164,296 176,308 188,290 200,300 212,284 228,278"/>
+    <text x="104" y="272" class="svg-sm">WEDNESDAY</text>
+    <text x="228" y="272" class="svg-num" text-anchor="end" fill="var(--f4)">+0.4%</text>
+    <text x="104" y="348" class="svg-em">an ordinary fluctuation</text>
+
+    <line x1="248" y1="294" x2="292" y2="294" class="svg-rule" stroke-width="1.4" marker-end="url(#c4arrow)"/>
+
+    <path d="M306 254 L462 254 L410 318 L358 318 Z" fill="var(--panel-2)" stroke="var(--rule-2)" stroke-width="1.2"/>
+    <text x="384" y="244" class="svg-sm" text-anchor="middle">THE VERY SAME HOPPER</text>
+    <g class="rise" style="--d:.8s">
+      <rect x="312" y="264" width="62" height="17" rx="2" fill="var(--panel)" stroke="var(--rule)"/>
+      <text x="343" y="276" class="svg-sm" text-anchor="middle">OIL</text>
+      <rect x="380" y="264" width="76" height="17" rx="2" fill="var(--f1)" opacity=".9"/>
+      <text x="418" y="276" class="svg-sm" text-anchor="middle" fill="#fff" font-weight="700">RATE FEARS</text>
+      <rect x="332" y="288" width="66" height="17" rx="2" fill="var(--panel)" stroke="var(--rule)"/>
+      <text x="365" y="300" class="svg-sm" text-anchor="middle">CHINA</text>
+      <rect x="404" y="288" width="30" height="17" rx="2" fill="var(--panel)" stroke="var(--rule)"/>
+      <text x="419" y="300" class="svg-sm" text-anchor="middle">FED</text>
+    </g>
+    <line x1="384" y1="318" x2="384" y2="330" class="svg-rule" stroke-width="1.4"/>
+
+    <line x1="474" y1="294" x2="518" y2="294" class="svg-rule" stroke-width="1.4" marker-end="url(#c4arrow)"/>
+
+    <path d="M532 262 L852 262 L846 270 L852 278 L846 286 L852 294 L846 302 L852 310 L846 318 L852 326 L532 326 Z"
+          fill="var(--panel)" stroke="var(--rule)" stroke-width="1" class="rise" style="--d:1.2s"/>
+    <text x="548" y="284" class="svg-sm" fill="var(--f4)">MARKET REPORT · 17:02</text>
+    <text x="548" y="308" class="svg-b" font-size="13">&#8220;Stocks advanced as rate fears eased today.&#8221;</text>
+  </g>
+
+  <!-- the verdict -->
+  <line x1="96" y1="374" x2="852" y2="374" class="svg-hair" stroke-width="1"/>
+  <text x="96" y="396" class="svg-b" fill="var(--f1)">Nothing was predicted.</text>
+  <text x="240" y="396" class="svg-lab">The move arrived first; the reason was selected afterwards from a hopper that is never empty.</text>
+  <text x="96" y="416" class="svg-sm">TEST — ASK WHICH OUTCOME THIS COMMENTATOR&#8217;S FRAMEWORK WOULD HAVE RULED OUT IN ADVANCE. IF NONE, IT IS NARRATION.</text>
+</svg>
+</div>
+</div></div>
+        <div class="takeaway"><b>Red flag</b>If the story changes smoothly after every result, it is narration, not prediction.</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch5">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 05<span></span></div>
+      <div class="chapter__content">
+        <h3>Survival of the Least Fit</h3>
+        <p class="chapter__claim">Selection rewards what fits the recent environment, which is not always what survives a changed one.</p>
+        <div class="chapter__body">
+          <h4>Fit to which environment?</h4>
+          <p>Survival is often treated as proof that a strategy is optimal. But selection operates on the environments actually sampled. A trait can spread because it exploits a temporary regime, even if it performs terribly when the regime changes.</p>
+          <p>Taleb’s trader Carlos repeatedly bought emerging-market bonds during panics and was rewarded when markets recovered. A successful rule hardened into conviction. In 1998, the Russian crisis turned the familiar setback into a different kind of event, and past gains did not protect the bank from a loss several times larger.</p>
+          <h4>Markets select for concealed fragility</h4>
+          <p>Strategies that collect small, steady gains often look more stable than strategies with visible fluctuations. They attract capital and imitation because the tail loss has not yet entered the record. The apparent fitness is partly a property of the observation window.</p>
+          <p>Competition can intensify the problem. Cautious participants underperform during the boom and lose influence, leaving the system concentrated in agents whose behaviour assumes the boom continues. What survives the recent past may be precisely what is least prepared for a new one.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Case</span><h4>Carlos and Russian bonds</h4><p>A rule that had profitably exploited several panics became ruinous when a superficially similar event came from a different distribution.</p></div><div class="detail-card"><span class="detail-label">Selection error</span><h4>Recent fitness ≠ robustness</h4><p>Dominance proves compatibility with sampled conditions, not survival across the conditions that have not yet appeared.</p></div></div>
+        <div class="critical-note"><b>Modern application:</b> Evaluate managers and business models across regimes—liquidity shocks, rate changes and demand collapses—not only across calendar years.</div>
+        <div class="key-terms"><span class="term">survivorship</span><span class="term">regime</span><span class="term">fragility</span><span class="term">emerging-market bonds</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Selection trap</span><b>The environment breeds its own vulnerability</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 440" width="1000" height="440" role="img" aria-labelledby="c5t c5d" style="min-width:770px;width:100%;height:auto">
+  <title id="c5t">A cumulative profit line that is destroyed in days by a regime change</title>
+  <desc id="c5d">A cumulative profit and loss curve climbs through several years of a quiet regime, dipping briefly at two emerging-market panics that the strategy buys and profits from. At the far right the curve falls almost vertically through zero to a loss several times larger than every prior gain. Beneath the chart, a row of bars shows capital running the same trade growing steadily until the collapse.</desc>
+
+  <!-- regimes -->
+  <rect x="120" y="54" width="520" height="286" fill="var(--f4)" opacity=".06"/>
+  <rect x="640" y="54" width="64" height="286" fill="var(--f1)" opacity=".10"/>
+  <text x="132" y="70" class="svg-sm" fill="var(--f4)" font-weight="700">THE QUIET REGIME — THE ONLY ONE EVER SAMPLED</text>
+  <text x="672" y="70" class="svg-sm" fill="var(--f1)" font-weight="700" text-anchor="middle">NEW</text>
+  <text x="672" y="82" class="svg-sm" fill="var(--f1)" font-weight="700" text-anchor="middle">REGIME</text>
+
+  <!-- axes -->
+  <line x1="120" y1="232" x2="712" y2="232" class="svg-axis"/>
+  <text x="112" y="236" class="svg-sm" text-anchor="end">0</text>
+  <line x1="120" y1="54" x2="120" y2="340" class="svg-axis"/>
+  <text transform="translate(96,190) rotate(-90)" text-anchor="middle" class="svg-sm">CUMULATIVE P&amp;L</text>
+
+  <!-- the good years -->
+  <polyline fill="none" stroke="var(--f3)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"
+            class="draw" style="--len:620;--d:.1s;--dur:2.2s"
+    points="120,232 160,222 200,210 240,214 270,238 300,206 340,192 380,182 410,190 440,216 480,176 520,158 560,140 600,126 640,116"/>
+
+  <!-- eleven days in August -->
+  <polyline fill="none" stroke="var(--f1)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"
+            class="draw" style="--len:250;--d:2.1s;--dur:.9s"
+    points="640,116 652,142 664,198 676,268 688,322 700,338"/>
+  <g class="pop" style="--d:3s">
+    <circle cx="700" cy="338" r="6" fill="var(--f1)"/>
+  </g>
+
+  <!-- the two panics the rule survived -->
+  <g class="rise" style="--d:1.2s">
+    <circle cx="270" cy="238" r="4.5" fill="none" stroke="var(--f3)" stroke-width="1.6"/>
+    <line x1="270" y1="252" x2="270" y2="276" class="svg-hair" stroke-width="1"/>
+    <text x="270" y="292" class="svg-sm" text-anchor="middle" fill="var(--ink-2)">1994 · MEXICO</text>
+    <text x="270" y="306" class="svg-em" text-anchor="middle">bought the panic — paid</text>
+
+    <circle cx="440" cy="216" r="4.5" fill="none" stroke="var(--f3)" stroke-width="1.6"/>
+    <line x1="440" y1="230" x2="440" y2="276" class="svg-hair" stroke-width="1"/>
+    <text x="440" y="292" class="svg-sm" text-anchor="middle" fill="var(--ink-2)">1997 · ASIA</text>
+    <text x="440" y="306" class="svg-em" text-anchor="middle">paid again — conviction hardens</text>
+  </g>
+
+  <!-- magnitude brackets -->
+  <line x1="640" y1="116" x2="740" y2="116" class="svg-hair" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="700" y1="338" x2="740" y2="338" class="svg-hair" stroke-width="1" stroke-dasharray="3 3"/>
+  <path d="M732 116 L732 226 M728 232 L736 232 M732 238 L732 338" stroke="var(--rule-2)" stroke-width="1" fill="none"/>
+  <text x="746" y="176" class="svg-sm" fill="var(--f3)">FOUR YEARS</text>
+  <text x="746" y="190" class="svg-sm" fill="var(--f3)">OF GAINS</text>
+  <text x="746" y="286" class="svg-sm" fill="var(--f1)" font-weight="700">ELEVEN DAYS</text>
+  <text x="746" y="300" class="svg-sm" fill="var(--f1)">OF LOSS</text>
+
+  <text x="640" y="106" class="svg-sm" text-anchor="middle" fill="var(--ink-2)">AUG 1998</text>
+
+  <!-- capital following the trade -->
+  <text x="120" y="368" class="svg-sm">CAPITAL RUNNING THE SAME TRADE</text>
+  <g fill="var(--f3)" opacity=".5">
+    <rect x="140" y="392" width="26" height="8"  class="grow" style="--d:.4s"/>
+    <rect x="200" y="388" width="26" height="12" class="grow" style="--d:.5s"/>
+    <rect x="260" y="382" width="26" height="18" class="grow" style="--d:.6s"/>
+    <rect x="320" y="376" width="26" height="24" class="grow" style="--d:.7s"/>
+    <rect x="380" y="370" width="26" height="30" class="grow" style="--d:.8s"/>
+    <rect x="440" y="364" width="26" height="36" class="grow" style="--d:.9s"/>
+    <rect x="500" y="358" width="26" height="42" class="grow" style="--d:1s"/>
+    <rect x="560" y="352" width="26" height="48" class="grow" style="--d:1.1s"/>
+  </g>
+  <rect x="620" y="346" width="26" height="54" fill="var(--f1)" opacity=".75" class="grow" style="--d:1.2s"/>
+  <text x="656" y="382" class="svg-sm" fill="var(--f1)">MAXIMUM CROWDING</text>
+  <text x="656" y="396" class="svg-sm" fill="var(--f1)">AT THE WORST MOMENT</text>
+  <line x1="120" y1="400" x2="712" y2="400" class="svg-axis"/>
+
+  <g class="svg-sm">
+    <text x="140" y="418">1992</text><text x="320" y="418">1995</text><text x="560" y="418">1997</text><text x="672" y="418" fill="var(--f1)">1998</text>
+  </g>
+
+  <!-- verdict -->
+  <line x1="784" y1="54" x2="784" y2="400" class="svg-hair" stroke-width="1"/>
+  <text x="804" y="70" class="svg-t">What was selected</text>
+  <g class="svg-lab">
+    <text x="804" y="98">The quiet years did not</text>
+    <text x="804" y="115">test the strategy. They</text>
+    <text x="804" y="132">recruited capital into it.</text>
+  </g>
+  <g class="svg-lab">
+    <text x="804" y="166">Cautious rivals looked</text>
+    <text x="804" y="183">wrong for four years and</text>
+    <text x="804" y="200">lost their influence, so</text>
+    <text x="804" y="217">the survivors were the</text>
+    <text x="804" y="234">most exposed ones.</text>
+  </g>
+  <text x="804" y="272" class="svg-sm" fill="var(--f1)">THE ERROR</text>
+  <g class="svg-lab">
+    <text x="804" y="292">Reading fitness off an</text>
+    <text x="804" y="309">environment that never</text>
+    <text x="804" y="326">contained the test.</text>
+  </g>
+</svg>
+</div>
+<div class="fig-legend">
+  <span><i style="--c:var(--f3)"></i>Rewarded by the sampled regime</span>
+  <span><i style="--c:var(--f1)"></i>The regime that was never sampled</span>
+</div>
+</div></div>
+        <div class="causal-chain plate__body" style="margin-top:28px;background:var(--panel);border:1px solid var(--rule)"><div class="node">Quiet regime</div><div class="arrow">→</div><div class="node">Fragile strategy wins</div><div class="arrow">→</div><div class="node">Capital crowds in</div><div class="arrow">→</div><div class="node accent">Regime change · ruin</div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch6">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 06<span></span></div>
+      <div class="chapter__content">
+        <h3>Skewness and Asymmetry</h3>
+        <p class="chapter__claim">Frequency tells you how often you win. Skewness tells you what the wins and losses are worth.</p>
+        <div class="chapter__body">
+          <h4>Probability and payoff are different questions</h4>
+          <p>A high win rate can coexist with a negative expected result. Collect one dollar on ninety-nine occasions and lose two hundred on the hundredth: the operator is “right” almost always and still loses money. Conversely, frequent small losses can purchase exposure to a rare, much larger gain.</p>
+          <p>Skewness describes this asymmetry in the distribution. A negatively skewed strategy has a long bad tail—many pleasant outcomes and a few devastating ones. A positively skewed strategy tolerates frequent disappointment in exchange for a long favourable tail.</p>
+          <h4>The average can hide the path to ruin</h4>
+          <p>Expected value is useful only if the participant can survive the sequence and if the model represents the tail. A leveraged position may have a positive calculated mean but reach bankruptcy before enough repetitions occur.</p>
+          <p>Taleb therefore separates forecast accuracy from decision quality. The practical target is favourable exposure: lose little when wrong, gain substantially when right, and eliminate branches where one error removes the ability to continue.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Negative skew</span><h4>Many pennies, rare steamroller</h4><p>Comforting frequency conceals a tail loss that can erase the entire record.</p></div><div class="detail-card"><span class="detail-label">Positive skew</span><h4>Many small costs, rare windfall</h4><p>The process feels unsuccessful most of the time, yet the upside can dominate total results.</p></div></div>
+        <div class="key-terms"><span class="term">skewness</span><span class="term">asymmetry</span><span class="term">expected value</span><span class="term">ruin</span><span class="term">payoff</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Payoff shapes</span><b>Frequency can point in the opposite direction from value</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 900 400" width="900" height="400" role="img" aria-labelledby="c6t c6d" style="min-width:693px;width:100%;height:auto">
+  <title id="c6t">Negatively and positively skewed payoff distributions</title>
+  <desc id="c6d">Two probability densities. On the left, a negatively skewed distribution: a tall peak of small pleasant outcomes on the right and a long thin tail stretching far to the left, shaded, marked as the rare loss. On the right, a positively skewed distribution: a tall peak of small losses and a long thin tail stretching to the right, shaded, marked as the rare gain. Beneath each, the arithmetic of a ninety-nine per cent win rate that still loses money.</desc>
+
+  <text x="96" y="28" class="svg-t">Where the probability sits is not where the money sits</text>
+
+  <!-- ================= NEGATIVE SKEW ================= -->
+  <text x="96" y="58" class="svg-sm" fill="var(--f1)" font-weight="700">NEGATIVE SKEW · WIN OFTEN, LOSE DECISIVELY</text>
+
+  <!-- the shaded rare tail -->
+  <path d="M96,285 L102,285 L109,285 L115,285 L122,285 L128,284 L135,284 L141,284 L148,284 L154,284 L160,284 L167,283 L173,283 L180,283 L186,283 L193,282 L199,282 L206,281 L212,281 L219,280 L225,280 L231,279 L238,278 L244,278 L251,277 L257,276 L264,275 L270,273 L277,272 L283,271 L289,269 L296,267 L302,265 L309,262 L315,260 L322,257 L328,254 L335,250 L341,246 L347,242 L354,237 L360,232 L367,226 L373,220 L380,214 L386,208 L393,202 L399,197 L406,192 L412,190 L418,190 L425,194 L431,203 L438,217 L444,236 L451,258 L457,276 L464,285 L470,286 L470,286 L96,286 Z"
+        fill="var(--f1)" opacity=".13"/>
+  <path d="M96,285 L102,285 L109,285 L115,285 L122,285 L128,284 L135,284 L141,284 L148,284 L154,284 L160,284 L167,283 L173,283 L180,283 L186,283 L193,282 L199,282 L206,281 L212,281 L219,280 L225,280 L231,279 L238,278 L244,278 L251,277 L257,276 L264,275 L270,273 L277,272 L283,271 L289,269 L296,267 L302,265 L309,262 L315,260 L322,257 L328,254 L335,250 L341,246 L347,242 L354,237 L360,232 L367,226 L373,220 L380,214 L386,208 L393,202 L399,197 L406,192 L412,190 L418,190 L425,194 L431,203 L438,217 L444,236 L451,258 L457,276 L464,285 L470,286"
+        fill="none" stroke="var(--f1)" stroke-width="2" class="draw" style="--len:520;--d:.1s;--dur:1.8s"/>
+  <line x1="96" y1="286" x2="470" y2="286" class="svg-axis"/>
+
+  <text x="428" y="164" class="svg-sm" text-anchor="middle" fill="var(--ink-2)">99 QUIET DAYS</text>
+  <text x="428" y="176" class="svg-sm" text-anchor="middle" fill="var(--ink-2)">LIVE HERE</text>
+  <text x="160" y="266" class="svg-sm" fill="var(--f1)" font-weight="700">THE STEAMROLLER</text>
+  <line x1="150" y1="272" x2="150" y2="284" stroke="var(--f1)" stroke-width="1.2"/>
+  <text x="96" y="304" class="svg-sm">CATASTROPHIC</text>
+  <text x="470" y="304" class="svg-sm" text-anchor="end">PLEASANT</text>
+
+  <!-- the arithmetic -->
+  <g class="svg-lab">
+    <text x="96" y="336">99 days × <tspan class="svg-num" fill="var(--f4)">+$1</tspan>  =  <tspan class="svg-num" fill="var(--f4)">+$99</tspan></text>
+    <text x="96" y="356">1 day × <tspan class="svg-num" fill="var(--f1)">−$200</tspan>  =  <tspan class="svg-num" fill="var(--f1)">−$200</tspan></text>
+  </g>
+  <line x1="96" y1="366" x2="300" y2="366" class="svg-hair" stroke-width="1"/>
+  <text x="96" y="386" class="svg-b">Right 99% of the time.</text>
+  <text x="234" y="386" class="svg-num" fill="var(--f1)">−$101</text>
+
+  <!-- divider -->
+  <line x1="485" y1="44" x2="485" y2="386" class="svg-hair" stroke-width="1"/>
+
+  <!-- ================= POSITIVE SKEW ================= -->
+  <text x="500" y="58" class="svg-sm" fill="var(--f4)" font-weight="700">POSITIVE SKEW · LOSE OFTEN, WIN DECISIVELY</text>
+
+  <path d="M500,286 L506,285 L513,276 L519,258 L526,236 L532,217 L539,203 L545,194 L552,190 L558,190 L564,192 L571,197 L577,202 L584,208 L590,214 L597,220 L603,226 L610,232 L616,237 L623,242 L629,246 L635,250 L642,254 L648,257 L655,260 L661,262 L668,265 L674,267 L681,269 L687,271 L693,272 L700,273 L706,275 L713,276 L719,277 L726,278 L732,278 L739,279 L745,280 L751,280 L758,281 L764,281 L771,282 L777,282 L784,283 L790,283 L797,283 L803,283 L810,284 L816,284 L822,284 L829,284 L835,284 L842,284 L848,285 L855,285 L861,285 L868,285 L874,285 L874,286 L500,286 Z"
+        fill="var(--f4)" opacity=".14"/>
+  <path d="M500,286 L506,285 L513,276 L519,258 L526,236 L532,217 L539,203 L545,194 L552,190 L558,190 L564,192 L571,197 L577,202 L584,208 L590,214 L597,220 L603,226 L610,232 L616,237 L623,242 L629,246 L635,250 L642,254 L648,257 L655,260 L661,262 L668,265 L674,267 L681,269 L687,271 L693,272 L700,273 L706,275 L713,276 L719,277 L726,278 L732,278 L739,279 L745,280 L751,280 L758,281 L764,281 L771,282 L777,282 L784,283 L790,283 L797,283 L803,283 L810,284 L816,284 L822,284 L829,284 L835,284 L842,284 L848,285 L855,285 L861,285 L868,285 L874,285"
+        fill="none" stroke="var(--f4)" stroke-width="2" class="draw" style="--len:520;--d:.4s;--dur:1.8s"/>
+  <line x1="500" y1="286" x2="874" y2="286" class="svg-axis"/>
+
+  <text x="546" y="164" class="svg-sm" text-anchor="middle" fill="var(--ink-2)">99 SMALL,</text>
+  <text x="546" y="176" class="svg-sm" text-anchor="middle" fill="var(--ink-2)">KNOWN COSTS</text>
+  <text x="740" y="266" class="svg-sm" fill="var(--f4)" font-weight="700">THE RARE WINDFALL</text>
+  <line x1="820" y1="272" x2="820" y2="284" stroke="var(--f4)" stroke-width="1.2"/>
+  <text x="500" y="304" class="svg-sm">MILDLY UNPLEASANT</text>
+  <text x="874" y="304" class="svg-sm" text-anchor="end">TRANSFORMATIVE</text>
+
+  <g class="svg-lab">
+    <text x="500" y="336">99 days × <tspan class="svg-num" fill="var(--f1)">−$1</tspan>  =  <tspan class="svg-num" fill="var(--f1)">−$99</tspan></text>
+    <text x="500" y="356">1 day × <tspan class="svg-num" fill="var(--f4)">+$400</tspan>  =  <tspan class="svg-num" fill="var(--f4)">+$400</tspan></text>
+  </g>
+  <line x1="500" y1="366" x2="704" y2="366" class="svg-hair" stroke-width="1"/>
+  <text x="500" y="386" class="svg-b">Wrong 99% of the time.</text>
+  <text x="646" y="386" class="svg-num" fill="var(--f4)">+$301</text>
+</svg>
+</div>
+<div class="fig-legend">
+  <span><i style="--c:var(--f1)"></i>Frequency comforts, the tail decides</span>
+  <span><i style="--c:var(--f4)"></i>Frequency disappoints, the tail decides</span>
+</div>
+</div></div>
+        <div class="plate">
+          <div class="plate__head"><span>Plate 04 · the tail</span><b>Many small observations can hide one decisive event</b></div>
+          <div class="plate__body"><div class="distribution"><i style="--h:16%;--o:.1"></i><i style="--h:24%;--o:.15"></i><i style="--h:41%;--o:.2"></i><i style="--h:62%;--o:.28"></i><i style="--h:88%;--o:.35"></i><i style="--h:100%;--o:.42"></i><i style="--h:82%;--o:.35"></i><i style="--h:56%;--o:.25"></i><i style="--h:35%;--o:.18"></i><i style="--h:19%;--o:.1"></i><i style="--h:10%;--o:.08"></i><i class="tail" style="--h:72%;--o:.5"></i></div></div>
+          <p class="plate__caption">A rare tail event can contribute more to the outcome than the dense cluster of ordinary days.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch7">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 07<span></span></div>
+      <div class="chapter__content">
+        <h3>The Problem of Induction</h3>
+        <p class="chapter__claim">Repeated confirmation cannot prove a universal claim; one genuine contradiction can destroy it.</p>
+        <div class="chapter__body">
+          <h4>Why the past cannot certify the future</h4>
+          <p>Hume’s problem is that no amount of observed regularity logically proves that the same regularity must continue. The claim that nature will resemble the past cannot itself be justified simply by noting that it has done so in the past without circularity.</p>
+          <p>Popper’s answer is asymmetrical. Thousands of white swans cannot prove that all swans are white, while one authentic black swan refutes the universal claim. Knowledge advances through conjectures that survive attempts at falsification, never through final confirmation.</p>
+          <h4>The practical black swan</h4>
+          <p>A long profitable record does not prove that a strategy is safe; it may only show that its disconfirming environment has not appeared. This is especially dangerous when observations are not independent or all belong to one market regime.</p>
+          <p>The disciplined question is not “How much evidence supports me?” but “What would show that I am wrong, and have I genuinely looked for it?” Taleb admires investors who search for hostile evidence after taking a position rather than turning ownership into identity.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Logical asymmetry</span><h4>Confirmations accumulate; refutations cut</h4><p>Evidence can strengthen a provisional theory, but a valid counterexample can destroy a universal claim at once.</p></div><div class="detail-card"><span class="detail-label">Portfolio version</span><h4>Name the breaking condition</h4><p>Specify the observation, regime or loss that would force a reassessment before the position becomes emotionally protected.</p></div></div>
+        <div class="key-terms"><span class="term">induction</span><span class="term">Hume</span><span class="term">Popper</span><span class="term">falsification</span><span class="term">black swan</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Logical asymmetry</span><b>Confirmation climbs slowly; contradiction cuts sharply</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="c7t c7d" style="min-width:770px;width:100%;height:auto">
+  <title id="c7t">Confidence in a universal claim rising asymptotically, then collapsing</title>
+  <desc id="c7d">A curve showing confidence in the claim that all swans are white. It climbs steeply with the first observations and then flattens, approaching but never touching a dashed ceiling marked logical certainty; a bracket marks the gap that no further confirmation can close. After a million confirming observations the curve falls vertically to zero, triggered by a single black swan. A row of small white swan glyphs runs along the bottom, ending in one black one.</desc>
+
+  <defs>
+    <g id="swan">
+      <ellipse cx="7" cy="11" rx="6.2" ry="4"/>
+      <path d="M9.4 7.8 C 12.4 5.6, 11.4 2.4, 8.9 1.9" fill="none" stroke-width="1.5"/>
+      <circle cx="8.4" cy="1.8" r="1.7"/>
+    </g>
+  </defs>
+
+  <text x="120" y="32" class="svg-t">Confirmation is an asymptote. Refutation is a cliff.</text>
+
+  <!-- ceiling -->
+  <line x1="120" y1="92" x2="700" y2="92" stroke="var(--ink)" stroke-width="1.3" stroke-dasharray="6 4" opacity=".6"/>
+  <text x="120" y="82" class="svg-sm" fill="var(--ink-2)" font-weight="700">LOGICAL CERTAINTY — NOT REACHABLE BY ADDING CASES</text>
+
+  <!-- axes -->
+  <line x1="120" y1="300" x2="712" y2="300" class="svg-axis"/>
+  <line x1="120" y1="70" x2="120" y2="300" class="svg-axis"/>
+  <text transform="translate(96,190) rotate(-90)" text-anchor="middle" class="svg-sm">CONFIDENCE IN THE UNIVERSAL CLAIM</text>
+
+  <!-- the climb -->
+  <path d="M120 296 C 160 250, 190 200, 240 180 C 300 158, 340 146, 420 134 C 500 124, 570 117, 640 112"
+        fill="none" stroke="var(--f3)" stroke-width="2.6" stroke-linecap="round"
+        class="draw" style="--len:560;--d:.15s;--dur:2s"/>
+
+  <!-- the gap that never closes -->
+  <path d="M664 92 L664 112 M660 92 L668 92 M660 112 L668 112" stroke="var(--f3)" stroke-width="1.2" fill="none"/>
+  <text x="700" y="66" class="svg-sm" text-anchor="end" fill="var(--f3)" font-weight="700">↕ THIS GAP NEVER CLOSES — HUME&#8217;S PROBLEM</text>
+  <line x1="664" y1="88" x2="664" y2="72" class="svg-hair" stroke-width="1"/>
+
+  <!-- the cliff -->
+  <line x1="648" y1="112" x2="648" y2="298" stroke="var(--f1)" stroke-width="3.4" stroke-linecap="round"
+        class="draw" style="--len:190;--d:2.2s;--dur:.5s"/>
+  <g class="pop" style="--d:2.7s">
+    <circle cx="648" cy="300" r="6" fill="var(--f1)"/>
+  </g>
+  <text x="632" y="196" class="svg-b" text-anchor="end" fill="var(--f1)">One black swan</text>
+  <text x="632" y="213" class="svg-lab" text-anchor="end">refutes the claim entirely</text>
+  <text x="632" y="229" class="svg-sm" text-anchor="end">POPPER · THE ASYMMETRY OF FALSIFICATION</text>
+
+  <!-- x scale -->
+  <g class="svg-sm" text-anchor="middle">
+    <text x="120" y="318">1</text>
+    <text x="207" y="318">10</text>
+    <text x="294" y="318">100</text>
+    <text x="381" y="318">1,000</text>
+    <text x="468" y="318">10,000</text>
+    <text x="555" y="318">100,000</text>
+    <text x="642" y="318">1,000,000</text>
+  </g>
+  <text x="416" y="336" class="svg-sm" text-anchor="middle">WHITE SWANS OBSERVED</text>
+
+  <!-- the swans themselves -->
+  <g fill="var(--panel)" stroke="var(--rule-2)" stroke-width="1.2" class="rise" style="--d:1.2s">
+    <use href="#swan" x="128" y="356"/><use href="#swan" x="168" y="356"/><use href="#swan" x="208" y="356"/>
+    <use href="#swan" x="248" y="356"/><use href="#swan" x="288" y="356"/><use href="#swan" x="328" y="356"/>
+    <use href="#swan" x="368" y="356"/><use href="#swan" x="408" y="356"/><use href="#swan" x="448" y="356"/>
+    <use href="#swan" x="488" y="356"/><use href="#swan" x="528" y="356"/><use href="#swan" x="568" y="356"/>
+    <use href="#swan" x="608" y="356"/>
+  </g>
+  <g fill="var(--ink)" stroke="var(--f1)" stroke-width="1.6" class="pop" style="--d:2.9s">
+    <use href="#swan" x="648" y="356"/>
+  </g>
+  <text x="128" y="396" class="svg-sm" fill="var(--f1)" font-weight="700">↑ THE LAST ONE COSTS MORE THAN ALL THE OTHERS EARNED</text>
+
+  <!-- right column -->
+  <line x1="756" y1="60" x2="756" y2="380" class="svg-hair" stroke-width="1"/>
+  <text x="776" y="76" class="svg-t">The portfolio version</text>
+  <g class="svg-lab">
+    <text x="776" y="106">A long profitable record</text>
+    <text x="776" y="123">is a row of white swans.</text>
+    <text x="776" y="140">It shows the refuting</text>
+    <text x="776" y="157">environment has not</text>
+    <text x="776" y="174">appeared yet — not that</text>
+    <text x="776" y="191">it cannot appear.</text>
+  </g>
+  <text x="776" y="226" class="svg-sm" fill="var(--f1)">WORSE STILL</text>
+  <g class="svg-lab">
+    <text x="776" y="246">If the observations all</text>
+    <text x="776" y="263">come from one regime,</text>
+    <text x="776" y="280">they are not even</text>
+    <text x="776" y="297">independent evidence.</text>
+  </g>
+  <text x="776" y="332" class="svg-sm" fill="var(--f3)">THE DISCIPLINED QUESTION</text>
+  <g class="svg-lab">
+    <text x="776" y="352">Not &#8220;how much supports me?&#8221;</text>
+    <text x="776" y="369">but &#8220;what would refute me,</text>
+    <text x="776" y="386">and have I gone looking?&#8221;</text>
+  </g>
+</svg>
+</div>
+</div></div>
+        <div class="compare" style="margin-top:28px"><div class="compare__side"><h4>Confirmation hunting</h4><ul><li>Collect matching examples</li><li>Explain away misses</li><li>Grow more certain with time</li></ul></div><div class="compare__side good"><h4>Falsification mindset</h4><ul><li>Name what would refute the claim</li><li>Search for hostile evidence</li><li>Keep confidence provisional</li></ul></div></div>
+      </div>
+    </div>
+  </article>
+
+  <section class="movement" id="part-two">
+    <div class="wrap">
+      <div class="movement__head"><p class="eyebrow"><b>Part Two · Monkeys on Typewriters</b></p><h2>Survivors write convincing biographies</h2></div>
+      <p class="movement__dek">The sample is already filtered before we inspect it. Winners remain visible, scalable outcomes compound, and the mind converts the residue into a story.</p>
+    </div>
+  </section>
+
+  <article class="chapter" id="fbr-ch8">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 08<span></span></div>
+      <div class="chapter__content">
+        <h3>Too Many Millionaires Next Door</h3>
+        <p class="chapter__claim">With enough participants, spectacular records arise by chance — and only the spectacular records get interviewed.</p>
+        <div class="chapter__body">
+          <h4>The population behind the success story</h4>
+          <p>A monkey randomly striking keys can produce a recognisable sentence if enough monkeys type long enough. The sentence is impressive only when detached from the mountain of nonsense that generated it. The missing denominator changes the inference from genius to selection.</p>
+          <p>Start with 1,024 managers making independent even-money bets. After ten rounds, chance alone is expected to leave one perfect winner. Interview only that survivor and every habit, school and breakfast choice becomes material for a plausible biography.</p>
+          <h4>Silent evidence</h4>
+          <p>Failed managers disappear, abandoned funds close and bankrupt entrepreneurs stop publishing shareholder letters. The database of visible success is censored by the process being studied. Adding more detail about survivors cannot repair missing losers.</p>
+          <p>Taleb’s “millionaire next door” point is statistical, not moral: in a large affluent population, extreme fortunes will occur even when individual differences are modest. The more opportunities there are for luck to operate, the less surprising a spectacular winner becomes.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Missing denominator</span><h4>How many attempts began?</h4><p>A ten-year winning streak means something different among ten participants than among ten million.</p></div><div class="detail-card"><span class="detail-label">Silent evidence</span><h4>Who vanished from view?</h4><p>Closed funds, failed firms and unreported careers are part of the evidence even when the archive omits them.</p></div></div>
+        <div class="critical-note"><b>Due diligence:</b> Ask for the full cohort, including defunct competitors and merged funds, and compare results with a plausible chance model.</div>
+        <div class="key-terms"><span class="term">survivorship bias</span><span class="term">silent evidence</span><span class="term">denominator</span><span class="term">multiple trials</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Survivor funnel</span><b>A perfect record can be manufactured by population size</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="c8t c8d" style="min-width:770px;width:100%;height:auto">
+  <title id="c8t">A cohort of 1,024 halving each round until one perfect record remains</title>
+  <desc id="c8d">Eleven columns on a doubling scale show survivors falling from 1,024 to 1 across ten rounds of an even-money bet. A dashed visibility line runs beneath them; below it a shaded mass, deepest almost immediately, represents the 1,023 records that are eliminated and never interviewed. To the right, a profile card presents the sole survivor as a genius, with true but non-causal biographical details.</desc>
+
+  <text x="120" y="32" class="svg-t">Ten rounds of an even-money bet, played by 1,024 people</text>
+
+  <!-- survivors -->
+  <g fill="var(--f3)" opacity=".62">
+    <rect x="128" y="63"  width="28" height="187" class="grow" style="--d:.1s"/>
+    <rect x="172" y="80"  width="28" height="170" class="grow" style="--d:.16s"/>
+    <rect x="216" y="97"  width="28" height="153" class="grow" style="--d:.22s"/>
+    <rect x="260" y="114" width="28" height="136" class="grow" style="--d:.28s"/>
+    <rect x="304" y="131" width="28" height="119" class="grow" style="--d:.34s"/>
+    <rect x="348" y="148" width="28" height="102" class="grow" style="--d:.4s"/>
+    <rect x="392" y="165" width="28" height="85"  class="grow" style="--d:.46s"/>
+    <rect x="436" y="182" width="28" height="68"  class="grow" style="--d:.52s"/>
+    <rect x="480" y="199" width="28" height="51"  class="grow" style="--d:.58s"/>
+    <rect x="524" y="216" width="28" height="34"  class="grow" style="--d:.64s"/>
+  </g>
+  <rect x="568" y="233" width="28" height="17" fill="var(--f1)" class="grow" style="--d:.7s"/>
+
+  <g class="svg-sm" text-anchor="middle" fill="var(--ink-2)">
+    <text x="142" y="57">1024</text><text x="186" y="74">512</text><text x="230" y="91">256</text>
+    <text x="274" y="108">128</text><text x="318" y="125">64</text><text x="362" y="142">32</text>
+    <text x="406" y="159">16</text><text x="450" y="176">8</text><text x="494" y="193">4</text>
+    <text x="538" y="210">2</text>
+  </g>
+  <text x="582" y="227" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">1</text>
+
+  <line x1="120" y1="250" x2="620" y2="250" class="svg-axis"/>
+  <g class="svg-sm" text-anchor="middle">
+    <text x="142" y="264">START</text><text x="186" y="264">1</text><text x="230" y="264">2</text>
+    <text x="274" y="264">3</text><text x="318" y="264">4</text><text x="362" y="264">5</text>
+    <text x="406" y="264">6</text><text x="450" y="264">7</text><text x="494" y="264">8</text>
+    <text x="538" y="264">9</text><text x="582" y="264">10</text>
+  </g>
+
+  <!-- the visibility line -->
+  <line x1="120" y1="282" x2="620" y2="282" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="5 4" opacity=".6"/>
+  <text x="120" y="277" class="svg-sm" fill="var(--ink-2)" font-weight="700">THE LINE OF VISIBILITY — EVERYTHING BELOW IS UNREPORTED</text>
+
+  <!-- the cemetery -->
+  <path d="M128,282 L172,282 L172,328 L216,328 L216,351 L260,351 L260,362 L304,362 L304,368 L348,368 L348,371 L392,371 L392,372 L436,372 L436,373 L480,373 L480,374 L524,374 L524,374 L568,374 L568,374 L612,374 L612,282 Z"
+        fill="var(--ink-3)" opacity=".13" class="rise" style="--d:.9s"/>
+  <g fill="var(--f-ghost)" class="rise" style="--d:1.2s">
+    <circle cx="196" cy="308" r="3"/><circle cx="238" cy="316" r="3"/><circle cx="286" cy="336" r="3"/>
+    <circle cx="330" cy="330" r="3"/><circle cx="374" cy="348" r="3"/><circle cx="418" cy="322" r="3"/>
+    <circle cx="462" cy="356" r="3"/><circle cx="506" cy="340" r="3"/><circle cx="550" cy="360" r="3"/>
+    <circle cx="222" cy="344" r="3"/><circle cx="270" cy="312" r="3"/><circle cx="352" cy="364" r="3"/>
+    <circle cx="440" cy="342" r="3"/><circle cx="590" cy="348" r="3"/><circle cx="308" cy="352" r="3"/>
+  </g>
+  <text x="140" y="398" class="svg-sm" fill="var(--ink-2)" font-weight="700">1,023 RECORDS · CLOSED FUNDS · NO SHAREHOLDER LETTERS · NO INTERVIEWS</text>
+  <text x="140" y="412" class="svg-em">The cemetery reaches nearly full depth after the very first round.</text>
+
+  <!-- the interview -->
+  <line x1="654" y1="44" x2="654" y2="400" class="svg-hair" stroke-width="1"/>
+  <rect x="678" y="56" width="300" height="200" rx="3" fill="var(--panel)" stroke="var(--f1)" stroke-width="1.2" opacity=".95"/>
+  <text x="696" y="80" class="svg-sm" fill="var(--f1)" font-weight="700">PROFILE · THE TEN-YEAR GENIUS</text>
+
+  <!-- portrait glyph -->
+  <g transform="translate(696,96)">
+    <circle cx="22" cy="22" r="21" fill="var(--f1)" opacity=".12"/>
+    <circle cx="22" cy="16" r="8" fill="var(--f1)" opacity=".55"/>
+    <path d="M8 38 C 10 26, 34 26, 36 38 Z" fill="var(--f1)" opacity=".55"/>
+  </g>
+  <g class="svg-lab">
+    <text x="752" y="112">Ten years. Ten wins.</text>
+    <text x="752" y="129">Never a losing year.</text>
+  </g>
+  <g class="svg-lab" fill="var(--ink-2)">
+    <text x="696" y="168">· rises at five, reads Seneca</text>
+    <text x="696" y="187">· contrarian by temperament</text>
+    <text x="696" y="206">· trusts the gut over the model</text>
+    <text x="696" y="225">· "process, not outcome"</text>
+  </g>
+  <text x="696" y="246" class="svg-sm" fill="var(--f1)">EVERY DETAIL TRUE · NONE OF IT CAUSAL</text>
+
+  <text x="678" y="288" class="svg-b">The missing question</text>
+  <g class="svg-lab">
+    <text x="678" y="312">How many started? A ten-year</text>
+    <text x="678" y="329">streak among ten people is</text>
+    <text x="678" y="346">remarkable. Among 1,024 it is</text>
+    <text x="678" y="363">the expected outcome — someone</text>
+    <text x="678" y="380">had to be the last one standing.</text>
+  </g>
+</svg>
+</div>
+<div class="fig-legend">
+  <span><i style="--c:var(--f3)"></i>Still visible</span>
+  <span><i style="--c:var(--f1)"></i>The interviewed survivor</span>
+  <span><i class="dot" style="--c:var(--f-ghost)"></i>Silent evidence</span>
+</div>
+</div><p class="chapter-visual__caption">Interviewing the final manager without the starting cohort converts selection into biography.</p></div>
+        <div class="plate">
+          <div class="plate__head"><span>Plate 05 · the survivor funnel</span><b>Ten coin flips can manufacture a “genius”</b></div>
+          <div class="plate__body"><div class="causal-chain"><div class="node">1,024 starters</div><div class="arrow">→</div><div class="node">256 after 2 wins</div><div class="arrow">→</div><div class="node">32 after 5 wins</div><div class="arrow">→</div><div class="node accent">1 perfect record</div></div></div>
+          <p class="plate__caption">If we meet only the final survivor, ten heads in a row looks like a special gift.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch9">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 09<span></span></div>
+      <div class="chapter__content">
+        <h3>It Is Easier to Buy and Sell Than to Fry an Egg</h3>
+        <p class="chapter__claim">Markets let people earn before they understand; many other crafts expose incompetence immediately.</p>
+        <div class="chapter__body">
+          <h4>Some crafts expose error immediately</h4>
+          <p>Frying an egg produces direct feedback: it is edible or it is not, and repeated failure is hard to disguise. Dentistry, surgery and many physical crafts also connect action to consequence within a relatively constrained causal system.</p>
+          <p>Buying and selling is mechanically easier while judging competence is harder. A novice can place a trade in seconds and be rewarded by an unrelated price move. The result supplies money, confidence and a story before the operator has acquired understanding.</p>
+          <h4>Noisy feedback manufactures expertise</h4>
+          <p>Because bad methods can win for long periods, markets give lucky operators time to develop polish, jargon and followers. Their social evidence then reinforces the financial evidence, even though both arise from the same favourable run.</p>
+          <p>Genuine skill is more plausible when a mechanism can be described, results persist across relevant regimes, exposure is transparent and the operator knows what would invalidate the method. A certificate or smooth explanation cannot substitute for that record.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Fast feedback</span><h4>Frying an egg</h4><p>The causal link between technique and result is visible, repeated and difficult to narrate away.</p></div><div class="detail-card"><span class="detail-label">Delayed feedback</span><h4>Trading a noisy market</h4><p>Reward can arrive before understanding and punishment may remain hidden until position size is fatal.</p></div></div>
+        <div class="key-terms"><span class="term">noisy feedback</span><span class="term">mechanism</span><span class="term">track record</span><span class="term">market guru</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Feedback comparison</span><b>Why markets can certify incompetence for years</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 430" width="1000" height="430" role="img" aria-labelledby="c9t c9d" style="min-width:770px;width:100%;height:auto">
+  <title id="c9t">A tight craft feedback loop beside a slack, noisy market loop</title>
+  <desc id="c9d">On the left, a small circular loop — technique, result, correction — closes in minutes. On the right, a much larger loop runs from placing a trade through price moves and printed profit and loss back towards the question of whether the method worked; its return path is dashed and interrupted by a block of noise and regime luck. Money, confidence and followers sit inside the large loop, arriving long before it closes. A scale bar at the bottom contrasts three minutes with three years or never.</desc>
+
+  <defs>
+    <marker id="c9a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--f4)"/>
+    </marker>
+    <marker id="c9b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--f1)"/>
+    </marker>
+  </defs>
+
+  <!-- ============ LEFT: the craft ============ -->
+  <text x="80" y="38" class="svg-t">Frying an egg</text>
+  <text x="80" y="58" class="svg-sm" fill="var(--f4)" font-weight="700">TIGHT · CAUSAL · UNARGUABLE</text>
+
+  <g fill="none" stroke="var(--f4)" stroke-width="2.2" marker-end="url(#c9a)">
+    <path d="M220,114 A76,76 0 0,1 285.8,228" class="draw" style="--len:170;--d:.1s"/>
+    <path d="M285.8,228 A76,76 0 0,1 154.2,228" class="draw" style="--len:170;--d:.4s"/>
+    <path d="M154.2,228 A76,76 0 0,1 220,114" class="draw" style="--len:170;--d:.7s"/>
+  </g>
+
+  <g class="pop" style="--d:1s">
+    <circle cx="220" cy="114" r="5" fill="var(--f4)"/>
+    <circle cx="285.8" cy="228" r="5" fill="var(--f4)"/>
+    <circle cx="154.2" cy="228" r="5" fill="var(--f4)"/>
+  </g>
+  <text x="220" y="102" class="svg-b" text-anchor="middle">technique</text>
+  <text x="300" y="246" class="svg-b">result</text>
+  <text x="300" y="262" class="svg-lab">edible or not</text>
+  <text x="140" y="246" class="svg-b" text-anchor="end">correction</text>
+  <text x="140" y="262" class="svg-lab" text-anchor="end">immediate</text>
+
+  <text x="220" y="186" class="svg-num" text-anchor="middle" fill="var(--f4)">3 min</text>
+  <text x="220" y="202" class="svg-sm" text-anchor="middle">PER TURN OF</text>
+  <text x="220" y="214" class="svg-sm" text-anchor="middle">THE LOOP</text>
+
+  <text x="80" y="306" class="svg-lab">Repeated failure cannot be narrated away.</text>
+  <text x="80" y="323" class="svg-lab">Nobody is a lucky cook for nine years.</text>
+
+  <line x1="400" y1="24" x2="400" y2="336" class="svg-hair" stroke-width="1"/>
+
+  <!-- ============ RIGHT: the market ============ -->
+  <text x="440" y="38" class="svg-t">Buying and selling</text>
+  <text x="440" y="58" class="svg-sm" fill="var(--f1)" font-weight="700">SLACK · STATISTICAL · MAY NEVER CLOSE</text>
+
+  <g fill="none" stroke="var(--f1)" stroke-width="2.2" marker-end="url(#c9b)">
+    <path d="M505,190 A185,100 0 0,1 690,90"  class="draw" style="--len:230;--d:.2s"/>
+    <path d="M690,90 A185,100 0 0,1 875,190"  class="draw" style="--len:230;--d:.5s"/>
+    <path d="M875,190 A185,100 0 0,1 690,290" class="draw" style="--len:230;--d:.8s"/>
+  </g>
+  <!-- the return path: dashed, because it may never arrive -->
+  <path d="M690,290 A185,100 0 0,1 505,190" fill="none" stroke="var(--f1)" stroke-width="2.2"
+        stroke-dasharray="7 6" opacity=".65" marker-end="url(#c9b)"/>
+
+  <g class="pop" style="--d:1.1s">
+    <circle cx="505" cy="190" r="5" fill="var(--f1)"/>
+    <circle cx="690" cy="90" r="5" fill="var(--f1)"/>
+    <circle cx="875" cy="190" r="5" fill="var(--f1)"/>
+    <circle cx="690" cy="290" r="5" fill="var(--f1)"/>
+  </g>
+
+  <text x="493" y="186" class="svg-b" text-anchor="end">trade</text>
+  <text x="493" y="202" class="svg-lab" text-anchor="end">placed in seconds</text>
+  <text x="690" y="78" class="svg-b" text-anchor="middle">price moves</text>
+  <text x="887" y="186" class="svg-b">P&amp;L prints</text>
+  <text x="887" y="202" class="svg-lab">same day</text>
+  <text x="690" y="316" class="svg-b" text-anchor="middle">was it the method?</text>
+
+  <!-- noise interrupts the return -->
+  <rect x="556" y="242" width="104" height="34" rx="2" fill="var(--panel)" stroke="var(--f1)" stroke-width="1.2"/>
+  <text x="608" y="256" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">NOISE ·</text>
+  <text x="608" y="269" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">REGIME LUCK</text>
+
+  <!-- what arrives immediately -->
+  <g class="rise" style="--d:1.3s">
+    <rect x="626" y="146" width="128" height="21" rx="2" fill="var(--f2)" opacity=".22"/>
+    <text x="690" y="161" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">MONEY</text>
+    <rect x="626" y="172" width="128" height="21" rx="2" fill="var(--f2)" opacity=".22"/>
+    <text x="690" y="187" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">CONFIDENCE</text>
+    <rect x="626" y="198" width="128" height="21" rx="2" fill="var(--f2)" opacity=".22"/>
+    <text x="690" y="213" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">FOLLOWERS · SIZE</text>
+  </g>
+  <text x="690" y="138" class="svg-sm" text-anchor="middle">ALL OF THIS ARRIVES FIRST</text>
+
+  <!-- ============ the scale bar ============ -->
+  <line x1="80" y1="356" x2="960" y2="356" class="svg-hair" stroke-width="1"/>
+  <text x="80" y="378" class="svg-sm">TIME FOR ONE HONEST VERDICT</text>
+  <line x1="80" y1="396" x2="88" y2="396" stroke="var(--f4)" stroke-width="7" stroke-linecap="round"/>
+  <text x="100" y="400" class="svg-num" fill="var(--f4)">3 minutes</text>
+  <line x1="200" y1="396" x2="700" y2="396" stroke="var(--f1)" stroke-width="7" stroke-linecap="round" opacity=".7"
+        class="growx" style="--d:1.5s"/>
+  <text x="712" y="400" class="svg-num" fill="var(--f1)">a full market cycle — if one ever arrives</text>
+</svg>
+</div>
+</div></div>
+        <div class="takeaway"><b>Due diligence</b>Ask what the operator does, why it should work, and which environment would break it.</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch10">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 10<span></span></div>
+      <div class="chapter__content">
+        <h3>Loser Takes All</h3>
+        <p class="chapter__claim">Nonlinear systems amplify tiny early differences into enormous final gaps.</p>
+        <div class="chapter__body">
+          <h4>Outcomes need not scale with talent</h4>
+          <p>Many systems are nonlinear: double the input does not merely double the output. In cultural and professional markets, a slightly larger audience can attract better distribution, which creates an even larger audience. Early randomness is amplified by feedback.</p>
+          <p>A performer does not need to be ten times more talented to earn ten times more. Once recorded music, broadcasting and global markets detach reach from the capacity of a room, a small initial advantage can produce a winner-take-most result.</p>
+          <h4>Reputation becomes a cause</h4>
+          <p>Success creates visibility; visibility creates opportunities; opportunities create further measured success. The eventual gap may be real and self-sustaining even if the initiating difference was tiny or accidental.</p>
+          <p>Observers then infer backwards from the large outcome to a proportionally large original merit. Taleb’s corrective is to separate the current ability of a winner from the historical process that selected and amplified that winner.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Nonlinearity</span><h4>Small cause, large outcome</h4><p>Feedback and scalability allow early variations to compound rather than cancel.</p></div><div class="detail-card"><span class="detail-label">Inference error</span><h4>Outcome gap becomes talent gap</h4><p>The magnitude of final success is mistaken for evidence of an equally large initial difference.</p></div></div>
+        <div class="critical-note"><b>Nuance:</b> Cumulative advantage does not mean winners lack skill. It means observed rank blends skill with path, timing, network effects and the market’s payoff structure.</div>
+        <div class="key-terms"><span class="term">nonlinearity</span><span class="term">cumulative advantage</span><span class="term">winner-take-most</span><span class="term">feedback loop</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Amplification loop</span><b>A tiny early edge becomes a structural lead</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 430" width="1000" height="430" role="img" aria-labelledby="c10t c10d" style="min-width:770px;width:100%;height:auto">
+  <title id="c10t">Two careers starting two per cent apart and diverging over eight rounds</title>
+  <desc id="c10d">A line chart of two performers over eight rounds. They begin almost touching — one hundred against one hundred and two — shown magnified in an inset. One line stays nearly flat while the other curves sharply upward to eighteen hundred. To the right, a three-node loop shows audience feeding distribution feeding attention. Beneath it, two bars drawn to the same scale compare the two per cent starting difference with the final gap, the first bar being a barely visible sliver.</desc>
+
+  <text x="120" y="34" class="svg-t">Same starting line, near enough. Eight rounds of feedback.</text>
+
+  <!-- axes -->
+  <line x1="120" y1="300" x2="580" y2="300" class="svg-axis"/>
+  <line x1="120" y1="52" x2="120" y2="300" class="svg-axis"/>
+  <text transform="translate(98,180) rotate(-90)" text-anchor="middle" class="svg-sm">CUMULATIVE AUDIENCE · EARNINGS · REACH</text>
+
+  <g class="svg-hair" stroke-width="1">
+    <line x1="120" y1="60"  x2="580" y2="60"/>
+    <line x1="120" y1="180" x2="580" y2="180"/>
+  </g>
+  <text x="586" y="184" class="svg-sm">900</text>
+  <text x="586" y="304" class="svg-sm">0</text>
+
+  <!-- performer A -->
+  <polyline fill="none" stroke="var(--f3)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"
+            class="draw" style="--len:460;--d:.2s;--dur:1.8s"
+            points="120,286.7 175,286.3 230,285.7 285,284.9 340,283.9 395,282.3 450,279.7 505,275.6 560,268"/>
+  <!-- performer B -->
+  <polyline fill="none" stroke="var(--f1)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"
+            class="draw" style="--len:520;--d:.2s;--dur:1.8s"
+            points="120,286.4 175,285.1 230,282.4 285,277.1 340,266.7 395,246.7 450,212 505,153.3 560,60"/>
+
+  <g class="pop" style="--d:1.9s">
+    <circle cx="560" cy="60" r="6" fill="var(--f1)"/>
+    <circle cx="560" cy="268" r="5" fill="var(--f3)"/>
+  </g>
+  <text x="572" y="52" class="svg-num" fill="var(--f1)">1,800</text>
+  <text x="572" y="278" class="svg-num" fill="var(--f3)">240</text>
+
+  <g class="svg-sm" text-anchor="middle">
+    <text x="120" y="318">0</text><text x="175" y="318">1</text><text x="230" y="318">2</text>
+    <text x="285" y="318">3</text><text x="340" y="318">4</text><text x="395" y="318">5</text>
+    <text x="450" y="318">6</text><text x="505" y="318">7</text><text x="560" y="318">8</text>
+  </g>
+  <text x="340" y="338" class="svg-sm" text-anchor="middle">ROUNDS OF THE FEEDBACK LOOP</text>
+
+  <!-- magnified start -->
+  <line x1="128" y1="284" x2="196" y2="182" class="svg-hair" stroke-width="1"/>
+  <circle cx="248" cy="140" r="50" fill="var(--panel)" stroke="var(--rule-2)" stroke-width="1.2"/>
+  <circle cx="234" cy="150" r="4.5" fill="var(--f3)"/>
+  <circle cx="262" cy="132" r="4.5" fill="var(--f1)"/>
+  <text x="222" y="168" class="svg-sm" text-anchor="middle" fill="var(--f3)">100</text>
+  <text x="276" y="122" class="svg-sm" text-anchor="middle" fill="var(--f1)">102</text>
+  <text x="248" y="206" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">MAGNIFIED · ROUND ZERO</text>
+  <text x="248" y="220" class="svg-em" text-anchor="middle">a coin-flip apart</text>
+
+  <text x="300" y="242" class="svg-b" fill="var(--f3)">the other performer</text>
+  <text x="300" y="258" class="svg-lab" fill="var(--ink-3)">no less able · never amplified</text>
+  <path d="M400 264 L448 279" class="svg-hair" stroke-width="1" fill="none"/>
+
+  <!-- ============ the engine ============ -->
+  <line x1="620" y1="24" x2="620" y2="404" class="svg-hair" stroke-width="1"/>
+  <text x="648" y="38" class="svg-t">The engine</text>
+
+  <defs>
+    <marker id="c10a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--f2)"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="var(--f2)" stroke-width="2" marker-end="url(#c10a)">
+    <path d="M800,84 A62,62 0 0,1 853.7,177" class="draw" style="--len:90;--d:.4s"/>
+    <path d="M853.7,177 A62,62 0 0,1 746.3,177" class="draw" style="--len:90;--d:.7s"/>
+    <path d="M746.3,177 A62,62 0 0,1 800,84" class="draw" style="--len:90;--d:1s"/>
+  </g>
+  <text x="800" y="64" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">A SLIGHTLY</text>
+  <text x="800" y="76" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">BIGGER AUDIENCE</text>
+  <text x="872" y="192" class="svg-sm" fill="var(--ink-2)" font-weight="700">BETTER</text>
+  <text x="872" y="204" class="svg-sm" fill="var(--ink-2)" font-weight="700">DISTRIBUTION</text>
+  <text x="728" y="192" class="svg-sm" text-anchor="end" fill="var(--ink-2)" font-weight="700">MORE</text>
+  <text x="728" y="204" class="svg-sm" text-anchor="end" fill="var(--ink-2)" font-weight="700">ATTENTION</text>
+  <text x="800" y="136" class="svg-em" text-anchor="middle">reach detaches</text>
+  <text x="800" y="152" class="svg-em" text-anchor="middle">from the room</text>
+
+  <!-- the inference error, to scale -->
+  <line x1="648" y1="252" x2="968" y2="252" class="svg-hair" stroke-width="1"/>
+  <text x="648" y="274" class="svg-sm" fill="var(--f1)" font-weight="700">THE INFERENCE ERROR</text>
+
+  <text x="648" y="304" class="svg-lab">difference in ability</text>
+  <rect x="648" y="312" width="3" height="10" fill="var(--f3)"/>
+  <text x="660" y="321" class="svg-num" fill="var(--f3)">2%</text>
+
+  <text x="648" y="348" class="svg-lab">difference in outcome</text>
+  <rect x="648" y="356" width="300" height="10" fill="var(--f1)" opacity=".75" class="growx" style="--d:1.4s"/>
+  <text x="648" y="382" class="svg-num" fill="var(--f1)">650%</text>
+
+  <text x="700" y="382" class="svg-em">both bars drawn to the same scale</text>
+  <text x="648" y="404" class="svg-lab">Observers read the second bar as evidence of the first.</text>
+</svg>
+</div>
+<div class="fig-legend">
+  <span><i style="--c:var(--f1)"></i>Caught the loop early</span>
+  <span><i style="--c:var(--f3)"></i>Did not</span>
+</div>
+</div><p class="chapter-visual__caption">The final gap is real; the mistake is assuming it measures the original talent gap.</p></div>
+        <div class="plate"><div class="plate__head"><span>Plate 06 · cumulative advantage</span><b>A small lead compounds</b></div><div class="plate__body"><div class="causal-chain"><div class="node">Tiny early edge</div><div class="arrow">→</div><div class="node">More attention</div><div class="arrow">→</div><div class="node">More opportunity</div><div class="arrow">→</div><div class="node accent">Large outcome gap</div></div></div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch11">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 11<span></span></div>
+      <div class="chapter__content">
+        <h3>Randomness and Our Mind</h3>
+        <p class="chapter__claim">Probability is cognitively expensive; stories, recency and emotion arrive automatically.</p>
+        <div class="chapter__body">
+          <h4>Probability rarely feels like arithmetic</h4>
+          <p>Real uncertainty arrives through a story: a frightening diagnosis, a charismatic manager or a vivid crash. People respond to the content and emotion of the description rather than to the underlying odds. A specific dramatic risk can feel more likely than a broader category that contains it.</p>
+          <p>The mind detects patterns in small samples, treats recent events as representative and searches for causal narratives. Once the outcome is known, hindsight reconstructs the prior world so that warning signs look obvious and uncertainty disappears.</p>
+          <h4>Emotion learns on a separate track</h4>
+          <p>Taleb discusses evidence that emotional learning can persist without explicit memory: a person may not recall the source of fear yet still avoid it. Intellectual knowledge of probability therefore does not guarantee that the body will react probabilistically.</p>
+          <p>This is why the chapter’s remedy is structural. Reduce exposure, size positions before excitement arrives, limit noisy information and create rules that do not depend on feeling calm at the decisive moment. Education helps, but architecture bears the load.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Cognitive error</span><h4>Attribute substitution</h4><p>A difficult probability question is silently replaced by an easier question about vividness, familiarity or emotion.</p></div><div class="detail-card"><span class="detail-label">Memory error</span><h4>Hindsight reconstruction</h4><p>After the fact, a contingent path is retold as the natural and nearly inevitable sequence.</p></div></div>
+        <div class="critical-note"><b>Practical implication:</b> A risk system should still work when you are envious, euphoric, frightened or tired. If it requires perfect emotional control, it is not a system.</div>
+        <div class="key-terms"><span class="term">probability blindness</span><span class="term">hindsight</span><span class="term">representativeness</span><span class="term">affect</span><span class="term">narrative bias</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Bias system</span><b>What crowds out probabilistic thought</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="c11t c11d" style="min-width:770px;width:100%;height:auto">
+  <title id="c11t">The fast emotional route beating the slow probabilistic one, and hindsight erasing the alternatives</title>
+  <desc id="c11d">On the left, two routes race towards a decision gate. The upper route — vividness, story, affect — is a broad channel that arrives well before the gate closes. The lower route — base rates and denominators — is narrow, blocked by three obstacles, and is still short of the gate when the decision is taken. On the right, a fan of five possible futures before the outcome is shown above the same fan after the outcome, where four branches have faded almost to nothing and one is bold and obvious.</desc>
+
+  <defs>
+    <marker id="c11a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--f1)"/>
+    </marker>
+    <marker id="c11b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--f3)"/>
+    </marker>
+  </defs>
+
+  <text x="80" y="34" class="svg-t">Two routes to the same judgement. Only one arrives in time.</text>
+
+  <!-- the stimulus -->
+  <circle cx="104" cy="188" r="7" fill="var(--ink)"/>
+  <text x="78" y="212" class="svg-sm">A RISK</text>
+  <text x="78" y="224" class="svg-sm">APPEARS</text>
+
+  <!-- fast route -->
+  <path d="M118 150 L410 150" stroke="var(--f1)" stroke-width="17" stroke-linecap="round" opacity=".22"/>
+  <path d="M118 150 L404 150" stroke="var(--f1)" stroke-width="2.6" marker-end="url(#c11a)" fill="none"
+        class="draw" style="--len:290;--d:.1s;--dur:.55s"/>
+  <text x="132" y="132" class="svg-b" fill="var(--f1)">the fast route</text>
+  <text x="132" y="176" class="svg-sm" fill="var(--ink-2)">VIVIDNESS · STORY · RECENCY · FEAR</text>
+  <text x="132" y="190" class="svg-em">arrives unbidden, costs nothing</text>
+
+  <!-- slow route -->
+  <path d="M118 262 L340 262" stroke="var(--f3)" stroke-width="6" stroke-linecap="round" opacity=".22"/>
+  <path d="M118 262 L334 262" stroke="var(--f3)" stroke-width="1.8" marker-end="url(#c11b)" fill="none"
+        class="draw" style="--len:220;--d:.3s;--dur:2.4s"/>
+  <path d="M348 262 L404 262" stroke="var(--f3)" stroke-width="1.6" stroke-dasharray="5 5" opacity=".5" fill="none"/>
+  <text x="132" y="244" class="svg-b" fill="var(--f3)">the slow route</text>
+
+  <!-- obstacles on the slow route -->
+  <g stroke="var(--ink-3)" stroke-width="2">
+    <line x1="176" y1="250" x2="176" y2="274"/>
+    <line x1="252" y1="250" x2="252" y2="274"/>
+    <line x1="322" y1="250" x2="322" y2="274"/>
+  </g>
+  <g class="svg-sm" text-anchor="middle" fill="var(--ink-3)">
+    <text x="176" y="292">BASE RATE</text>
+    <text x="252" y="292">DENOMINATOR</text>
+    <text x="322" y="292">THE STORY</text>
+  </g>
+  <text x="132" y="318" class="svg-em">each one has to be found, or resisted, deliberately</text>
+
+  <!-- the gate -->
+  <line x1="430" y1="104" x2="430" y2="300" stroke="var(--ink)" stroke-width="2.5"/>
+  <text transform="translate(452,202) rotate(90)" text-anchor="middle" class="svg-sm" fill="var(--ink)" font-weight="700">THE DECISION IS TAKEN HERE</text>
+  <text x="430" y="94" class="svg-sm" text-anchor="middle">GATE CLOSES</text>
+
+  <text x="80" y="366" class="svg-lab">Knowing the odds intellectually does not put them on the fast route. That is why the</text>
+  <text x="80" y="384" class="svg-lab">chapter&#8217;s remedy is structural: decide size and limits before the risk becomes vivid.</text>
+
+  <line x1="500" y1="24" x2="500" y2="396" class="svg-hair" stroke-width="1"/>
+
+  <!-- ============ hindsight ============ -->
+  <text x="528" y="34" class="svg-t">And afterwards, the fan closes</text>
+
+  <text x="528" y="70" class="svg-sm" fill="var(--ink-2)" font-weight="700">BEFORE — FIVE LIVE POSSIBILITIES</text>
+  <g fill="none" stroke="var(--f3)" stroke-width="1.8" opacity=".7">
+    <path d="M556,150 C 640,150 680,96  780,96"  class="draw" style="--len:240;--d:.4s"/>
+    <path d="M556,150 C 640,150 680,124 780,124" class="draw" style="--len:230;--d:.5s"/>
+    <path d="M556,150 C 640,150 680,150 780,150" class="draw" style="--len:224;--d:.6s"/>
+    <path d="M556,150 C 640,150 680,176 780,176" class="draw" style="--len:230;--d:.7s"/>
+    <path d="M556,150 C 640,150 680,204 780,204" class="draw" style="--len:240;--d:.8s"/>
+  </g>
+  <circle cx="556" cy="150" r="5" fill="var(--ink)"/>
+  <g fill="var(--f3)" class="pop" style="--d:1.2s">
+    <circle cx="780" cy="96" r="4"/><circle cx="780" cy="124" r="4"/><circle cx="780" cy="150" r="4"/>
+    <circle cx="780" cy="176" r="4"/><circle cx="780" cy="204" r="4"/>
+  </g>
+  <text x="796" y="154" class="svg-em">all equally sayable</text>
+  <text x="796" y="170" class="svg-em">on the morning</text>
+
+  <line x1="528" y1="238" x2="968" y2="238" class="svg-hair" stroke-width="1"/>
+
+  <text x="528" y="266" class="svg-sm" fill="var(--f1)" font-weight="700">AFTER — ONE OBVIOUS INEVITABILITY</text>
+  <g fill="none" stroke="var(--ink-3)" stroke-width="1.4" opacity=".13">
+    <path d="M556,346 C 640,346 680,292 780,292"/>
+    <path d="M556,346 C 640,346 680,320 780,320"/>
+    <path d="M556,346 C 640,346 680,372 780,372"/>
+    <path d="M556,346 C 640,346 680,400 780,400"/>
+  </g>
+  <path d="M556,346 C 640,346 680,346 780,346" fill="none" stroke="var(--f1)" stroke-width="3.4" stroke-linecap="round"
+        class="draw" style="--len:224;--d:1.4s"/>
+  <circle cx="556" cy="346" r="5" fill="var(--ink)"/>
+  <circle cx="780" cy="346" r="6" fill="var(--f1)" class="pop" style="--d:2s"/>
+  <text x="796" y="342" class="svg-b" fill="var(--f1)">&#8220;It was obvious.&#8221;</text>
+  <text x="796" y="358" class="svg-lab">The other four are not</text>
+  <text x="796" y="374" class="svg-lab">rejected — they are gone.</text>
+</svg>
+</div>
+</div></div>
+        <div class="concept-grid"><div class="concept-card"><span class="tag">Bias</span><b>Hindsight</b><p>Once known, the result feels predictable.</p></div><div class="concept-card"><span class="tag">Bias</span><b>Narrative</b><p>Loose events become a clean causal arc.</p></div><div class="concept-card"><span class="tag">Bias</span><b>Recency</b><p>The latest regime feels permanent.</p></div></div>
+      </div>
+    </div>
+  </article>
+
+  <section class="movement" id="part-three">
+    <div class="wrap">
+      <div class="movement__head"><p class="eyebrow"><b>Part Three · Wax in My Ears</b></p><h2>Build dignity around an unreliable mind</h2></div>
+      <p class="movement__dek">Taleb closes with psychology and ethics. We cannot become emotionless probability engines, but we can design habits and exposures that keep our weaknesses from becoming fatal.</p>
+    </div>
+  </section>
+
+  <article class="chapter" id="fbr-ch12">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 12<span></span></div>
+      <div class="chapter__content">
+        <h3>Gamblers’ Ticks and Pigeons in a Box</h3>
+        <p class="chapter__claim">Random reinforcement trains rituals because the reward occasionally follows whatever happened just before it.</p>
+        <div class="chapter__body">
+          <h4>Random rewards create false causes</h4>
+          <p>In B. F. Skinner’s experiments, pigeons receiving food at intervals repeated whatever movement had happened to precede a delivery—turning, bobbing or pecking as if the behaviour caused the reward. Random reinforcement manufactured ritual.</p>
+          <p>Traders and gamblers do the same with clothes, gestures, routes to work and fragments of analysis. A profitable day supplies emotionally powerful confirmation, while losing days are explained as exceptions rather than disproof.</p>
+          <h4>Intermittent reinforcement is sticky</h4>
+          <p>A reward that arrives every time makes the mechanism easier to test. An intermittent reward protects the belief: each failure can be treated as part of the pattern, and the next coincidence renews it.</p>
+          <p>Taleb’s wider point is that humans cannot simply decide to stop being superstitious. Habits form below explicit reasoning. Deliberately varying the ritual, recording predictions before outcomes and keeping exposure small make the false causal story easier to see.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Laboratory image</span><h4>Pigeon in a box</h4><p>An accidental movement precedes food, is repeated, occasionally coincides again and becomes a stable ritual.</p></div><div class="detail-card"><span class="detail-label">Market analogue</span><h4>Trader’s lucky routine</h4><p>A noisy payoff rewards arbitrary behaviour often enough to make introspection unreliable.</p></div></div>
+        <div class="key-terms"><span class="term">random reinforcement</span><span class="term">superstition</span><span class="term">Skinner</span><span class="term">intermittent reward</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Reinforcement loop</span><b>How coincidence hardens into ritual</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="c12t c12d" style="min-width:770px;width:100%;height:auto">
+  <title id="c12t">Random reward delivery, arbitrary behaviour, and the belief that ratchets up between them</title>
+  <desc id="c12d">Three stacked tracks share one time axis. The top track marks food deliveries falling on a fixed timer, independent of the bird. The middle track marks the bird&#8217;s head-bobs. Where a bob happens to precede a delivery, the coincidence is circled. The bottom track plots belief in the ritual: it jumps at each coincidence and decays only slowly in between, so it never returns to zero.</desc>
+
+  <text x="120" y="32" class="svg-t">Nothing connects these two rows. The third row does not know that.</text>
+
+  <!-- ============ track 1 · the timer ============ -->
+  <text x="120" y="66" class="svg-sm" fill="var(--ink-2)" font-weight="700">FOOD DELIVERED — ON A TIMER, INDEPENDENT OF THE BIRD</text>
+  <line x1="120" y1="92" x2="760" y2="92" class="svg-axis"/>
+  <g stroke="var(--f4)" stroke-width="3" stroke-linecap="round">
+    <line x1="176" y1="76" x2="176" y2="92"/>
+    <line x1="248" y1="76" x2="248" y2="92"/>
+    <line x1="322" y1="76" x2="322" y2="92"/>
+    <line x1="408" y1="76" x2="408" y2="92"/>
+    <line x1="486" y1="76" x2="486" y2="92"/>
+    <line x1="566" y1="76" x2="566" y2="92"/>
+    <line x1="648" y1="76" x2="648" y2="92"/>
+    <line x1="724" y1="76" x2="724" y2="92"/>
+  </g>
+
+  <!-- ============ track 2 · the bird ============ -->
+  <text x="120" y="140" class="svg-sm" fill="var(--ink-2)" font-weight="700">THE BIRD BOBS ITS HEAD — WHENEVER IT FEELS LIKE IT</text>
+  <line x1="120" y1="166" x2="760" y2="166" class="svg-axis"/>
+  <g stroke="var(--f2)" stroke-width="3" stroke-linecap="round">
+    <line x1="146" y1="166" x2="146" y2="150"/>
+    <line x1="170" y1="166" x2="170" y2="150"/>
+    <line x1="214" y1="166" x2="214" y2="150"/>
+    <line x1="243" y1="166" x2="243" y2="150"/>
+    <line x1="290" y1="166" x2="290" y2="150"/>
+    <line x1="317" y1="166" x2="317" y2="150"/>
+    <line x1="358" y1="166" x2="358" y2="150"/>
+    <line x1="402" y1="166" x2="402" y2="150"/>
+    <line x1="446" y1="166" x2="446" y2="150"/>
+    <line x1="481" y1="166" x2="481" y2="150"/>
+    <line x1="528" y1="166" x2="528" y2="150"/>
+    <line x1="562" y1="166" x2="562" y2="150"/>
+    <line x1="604" y1="166" x2="604" y2="150"/>
+    <line x1="643" y1="166" x2="643" y2="150"/>
+    <line x1="692" y1="166" x2="692" y2="150"/>
+    <line x1="719" y1="166" x2="719" y2="150"/>
+  </g>
+
+  <!-- the coincidences -->
+  <g fill="none" stroke="var(--f1)" stroke-width="1.4" class="pop" style="--d:1.2s">
+    <ellipse cx="173" cy="129" rx="17" ry="46"/>
+    <ellipse cx="245.5" cy="129" rx="16" ry="46"/>
+    <ellipse cx="319.5" cy="129" rx="16" ry="46"/>
+    <ellipse cx="405" cy="129" rx="16" ry="46"/>
+    <ellipse cx="483.5" cy="129" rx="16" ry="46"/>
+    <ellipse cx="564" cy="129" rx="16" ry="46"/>
+    <ellipse cx="645.5" cy="129" rx="16" ry="46"/>
+    <ellipse cx="721.5" cy="129" rx="16" ry="46"/>
+  </g>
+  <text x="120" y="196" class="svg-sm" fill="var(--f1)" font-weight="700">↑ EVERY CIRCLE IS A COINCIDENCE — THE BOB HAPPENED TO COME FIRST</text>
+
+  <!-- ============ track 3 · the belief ============ -->
+  <text x="120" y="240" class="svg-sm" fill="var(--f1)" font-weight="700">BELIEF THAT THE BOB CAUSES THE FOOD</text>
+  <line x1="120" y1="360" x2="760" y2="360" class="svg-axis"/>
+  <line x1="120" y1="252" x2="120" y2="360" class="svg-axis"/>
+
+  <polyline fill="none" stroke="var(--f1)" stroke-width="2.4" stroke-linejoin="round"
+            class="draw" style="--len:900;--d:.6s;--dur:2.4s"
+            points="120,360 173,360 173,330 245,338 245,308 319,316 319,292 405,300 405,278 483,286 483,268 564,276 564,262 645,270 645,258 721,264 721,254 760,258"/>
+  <text x="694" y="230" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">RITUAL ESTABLISHED</text>
+  <line x1="694" y1="236" x2="694" y2="252" class="svg-hair" stroke-width="1"/>
+  <text x="140" y="352" class="svg-em">decays a little between rewards — never back to zero</text>
+
+  <text x="120" y="386" class="svg-sm">TIME →</text>
+
+  <!-- ============ right column ============ -->
+  <line x1="800" y1="24" x2="800" y2="396" class="svg-hair" stroke-width="1"/>
+  <text x="824" y="38" class="svg-t">Why it sticks</text>
+  <g class="svg-lab">
+    <text x="824" y="66">A reward that came every</text>
+    <text x="824" y="83">single time would be easy</text>
+    <text x="824" y="100">to test — miss once and the</text>
+    <text x="824" y="117">theory dies.</text>
+  </g>
+  <g class="svg-lab">
+    <text x="824" y="150">An intermittent reward is</text>
+    <text x="824" y="167">protected: the misses are</text>
+    <text x="824" y="184">&#8220;part of the pattern&#8221;, and</text>
+    <text x="824" y="201">the next hit renews it.</text>
+  </g>
+
+  <text x="824" y="238" class="svg-sm" fill="var(--f2)">THE TRADING FLOOR VERSION</text>
+  <g class="svg-lab">
+    <text x="824" y="258">the blue tie · the same</text>
+    <text x="824" y="275">route to work · the lucky</text>
+    <text x="824" y="292">chair · one indicator that</text>
+    <text x="824" y="309">worked twice in March</text>
+  </g>
+
+  <text x="824" y="346" class="svg-sm" fill="var(--f3)">THE ESCAPE</text>
+  <g class="svg-lab">
+    <text x="824" y="366">Vary the ritual on purpose</text>
+    <text x="824" y="383">and see whether the effect</text>
+    <text x="824" y="400">survives without it.</text>
+  </g>
+</svg>
+</div>
+</div></div>
+        <div class="takeaway"><b>Practical test</b>If the behaviour has no plausible mechanism, vary it deliberately and see whether the supposed effect survives.</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch13">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 13<span></span></div>
+      <div class="chapter__content">
+        <h3>Carneades Comes to Rome</h3>
+        <p class="chapter__claim">Skepticism is not paralysis; it is acting without pretending that uncertainty has disappeared.</p>
+        <div class="chapter__body">
+          <h4>Skepticism that still permits action</h4>
+          <p>Carneades, head of Plato’s Academy, scandalised Rome by arguing persuasively for justice one day and against it the next. The demonstration exposed how readily eloquence can make opposing positions feel certain.</p>
+          <p>Academic skepticism does not require suspending every action until proof arrives. It ranks impressions by plausibility and acts on the best available view while withholding the claim of certainty. Probability is an ethic of limited knowledge before it is a calculation.</p>
+          <h4>Confidence and exposure should be separate dials</h4>
+          <p>A belief can be the most plausible option and still be too uncertain to support a ruinous wager. Conversely, one can take a small reversible action without pretending to possess a complete theory.</p>
+          <p>The probabilistic skeptic updates without treating revision as humiliation. This protects inquiry from identity and protects action from dogma: conviction must earn both its probability and the size of the consequence attached to it.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Epistemic stance</span><h4>Rank, do not canonise</h4><p>Prefer one explanation provisionally while preserving live alternatives and the conditions for revision.</p></div><div class="detail-card"><span class="detail-label">Decision stance</span><h4>Act below the ruin threshold</h4><p>Let uncertainty reduce wager size even when practical necessity requires a choice.</p></div></div>
+        <div class="key-terms"><span class="term">Carneades</span><span class="term">skepticism</span><span class="term">plausibility</span><span class="term">calibrated confidence</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Calibration map</span><b>Belief strength should not automatically set wager size</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="c13t c13d" style="min-width:770px;width:100%;height:auto">
+  <title id="c13t">Sanctioned wager size plotted against confidence, with a ruin ceiling</title>
+  <desc id="c13d">Confidence runs along the horizontal axis and the size of the consequence up the vertical one. A dashed line near the top marks ruin, described as an absorbing barrier. The skeptic&#8217;s policy is a curve that rises with confidence but flattens and never reaches the barrier. The dogmatist&#8217;s policy is a straight line in which size tracks confidence directly; it crosses the barrier at high confidence, where it is marked with a cross. Four ranked impressions sit along the skeptic curve. On the right, two separate gauges for confidence and exposure are shown with the linkage between them cut.</desc>
+
+  <text x="120" y="34" class="svg-t">Confidence earns you a ranking, not a position size</text>
+
+  <!-- ruin ceiling -->
+  <rect x="120" y="56" width="540" height="26" fill="var(--f1)" opacity=".1"/>
+  <line x1="120" y1="82" x2="660" y2="82" stroke="var(--f1)" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="128" y="73" class="svg-sm" fill="var(--f1)" font-weight="700">RUIN · ABSORBING BARRIER — NO DEGREE OF CONFIDENCE BUYS PASSAGE</text>
+
+  <!-- axes -->
+  <line x1="120" y1="320" x2="672" y2="320" class="svg-axis"/>
+  <line x1="120" y1="50" x2="120" y2="320" class="svg-axis"/>
+  <text x="120" y="342" class="svg-sm">NO VIEW</text>
+  <text x="660" y="342" class="svg-sm" text-anchor="end">NEAR CERTAIN</text>
+  <text x="390" y="362" class="svg-sm" text-anchor="middle">PLAUSIBILITY OF THE IMPRESSION</text>
+  <text transform="translate(98,190) rotate(-90)" text-anchor="middle" class="svg-sm">SIZE OF THE CONSEQUENCE</text>
+
+  <!-- the dogmatist -->
+  <line x1="120" y1="312" x2="660" y2="58" stroke="var(--ink-3)" stroke-width="1.8" stroke-dasharray="6 5"
+        class="draw" style="--len:600;--d:.2s"/>
+  <g stroke="var(--f1)" stroke-width="2.4" stroke-linecap="round" class="pop" style="--d:1.6s">
+    <path d="M576 74 L592 90 M592 74 L576 90"/>
+  </g>
+  <text x="470" y="150" class="svg-lab" fill="var(--ink-3)" transform="rotate(-25 470 150)">the dogmatist: size follows conviction</text>
+
+  <!-- the skeptic's frontier -->
+  <path d="M120 312 C 260 300, 340 240, 420 200 C 500 162, 570 146, 660 140"
+        fill="none" stroke="var(--f4)" stroke-width="2.8" stroke-linecap="round"
+        class="draw" style="--len:580;--d:.5s;--dur:2s"/>
+  <path d="M120 312 C 260 300, 340 240, 420 200 C 500 162, 570 146, 660 140 L660 320 L120 320 Z"
+        fill="var(--f4)" opacity=".1"/>
+  <text x="300" y="300" class="svg-sm" fill="var(--f4)" font-weight="700">ACT FREELY IN HERE</text>
+  <text x="672" y="144" class="svg-sm" fill="var(--f4)">CEILING</text>
+  <text x="672" y="156" class="svg-sm" fill="var(--f4)">HOLDS</text>
+
+  <!-- ranked impressions -->
+  <g class="pop" style="--d:1.2s">
+    <circle cx="200" cy="306" r="5" fill="var(--f4)"/>
+    <circle cx="330" cy="248" r="5" fill="var(--f4)"/>
+    <circle cx="460" cy="184" r="5" fill="var(--f4)"/>
+    <circle cx="600" cy="144" r="5" fill="var(--f4)"/>
+  </g>
+  <g class="svg-sm" text-anchor="middle" fill="var(--ink-2)">
+    <text x="200" y="296">30%</text>
+    <text x="330" y="238">55%</text>
+    <text x="460" y="174">75%</text>
+    <text x="600" y="134">92%</text>
+  </g>
+
+  <!-- the two dials -->
+  <line x1="700" y1="24" x2="700" y2="396" class="svg-hair" stroke-width="1"/>
+  <text x="724" y="38" class="svg-t">Two dials, not one</text>
+
+  <!-- confidence gauge -->
+  <path d="M754 150 A62 62 0 0 1 878 150" fill="none" stroke="var(--rule)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M754 150 A62 62 0 0 1 866 114" fill="none" stroke="var(--f3)" stroke-width="9" stroke-linecap="round"
+        class="draw" style="--len:130;--d:.8s"/>
+  <line x1="816" y1="150" x2="860" y2="118" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="816" cy="150" r="4" fill="var(--ink)"/>
+  <text x="816" y="172" class="svg-sm" text-anchor="middle" fill="var(--f3)" font-weight="700">CONFIDENCE · HIGH</text>
+  <text x="816" y="186" class="svg-em" text-anchor="middle">this one may run free</text>
+
+  <!-- the cut linkage -->
+  <g stroke="var(--ink-3)" stroke-width="1.6" fill="none">
+    <path d="M816 200 L816 214" stroke-dasharray="3 3"/>
+    <path d="M816 236 L816 250" stroke-dasharray="3 3"/>
+  </g>
+  <g stroke="var(--f1)" stroke-width="2.2" stroke-linecap="round">
+    <path d="M806 218 L826 232 M826 218 L806 232"/>
+  </g>
+  <text x="838" y="230" class="svg-sm" fill="var(--f1)">NOT GEARED TOGETHER</text>
+
+  <!-- exposure gauge -->
+  <path d="M754 330 A62 62 0 0 1 878 330" fill="none" stroke="var(--rule)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M754 330 A62 62 0 0 1 772 288" fill="none" stroke="var(--f4)" stroke-width="9" stroke-linecap="round"
+        class="draw" style="--len:60;--d:1s"/>
+  <line x1="816" y1="330" x2="778" y2="300" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="816" cy="330" r="4" fill="var(--ink)"/>
+  <text x="816" y="352" class="svg-sm" text-anchor="middle" fill="var(--f4)" font-weight="700">EXPOSURE · SMALL</text>
+  <text x="816" y="366" class="svg-em" text-anchor="middle">set by the consequence</text>
+
+  <text x="724" y="394" class="svg-lab">Skepticism that still permits action.</text>
+</svg>
+</div>
+</div></div>
+        <div class="compare" style="margin-top:28px"><div class="compare__side"><h4>Dogmatist</h4><ul><li>Needs a single explanation</li><li>Treats confidence as strength</li><li>Defends identity</li></ul></div><div class="compare__side good"><h4>Probabilistic skeptic</h4><ul><li>Ranks competing explanations</li><li>Sizes action to uncertainty</li><li>Updates without shame</li></ul></div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="fbr-ch14">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 14<span></span></div>
+      <div class="chapter__content">
+        <h3>Bacchus Abandons Antony</h3>
+        <p class="chapter__claim">You may not control the draw, but you can control the scale of the wager and the elegance of your response.</p>
+        <div class="chapter__body">
+          <h4>Analysis cannot abolish emotion</h4>
+          <p>The closing movement is literary rather than technical. Taleb accepts that loss, humiliation and bad luck hurt even when they are probabilistically unsurprising. Knowing the distribution does not turn a person into a machine.</p>
+          <p>Odysseus survives the Sirens by arranging constraints before temptation arrives. The parallel is precommitment: decide position limits, information diets and exit rules when calm, because the future self inside a streak will invent reasons to override them.</p>
+          <h4>Dignity under an indifferent draw</h4>
+          <p>The title recalls Antony’s abandonment by Bacchus before defeat. Fortune withdraws without moral accounting. Taleb’s remaining freedom lies in conduct: refuse denial, do not retrofit a grand theory to protect the ego, and avoid transferring private pain into public theatricality.</p>
+          <p>This is the book’s practical union of Stoic restraint and probabilistic risk control. Build material robustness so the draw cannot destroy you; cultivate personal elegance for the losses that architecture cannot prevent.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Before the draw</span><h4>Precommit</h4><p>Set limits, diversify exposures and decide what evidence changes the plan before emotion takes control.</p></div><div class="detail-card"><span class="detail-label">After the draw</span><h4>Respond without mythology</h4><p>Accept pain and contingency without converting either success or failure into proof of personal destiny.</p></div></div>
+        <div class="connection-note"><b>Whole-book connection:</b> Alternative histories improve judgement, asymmetry improves exposure, and precommitment protects both from a mind that will always prefer the realised story.</div>
+        <div class="key-terms"><span class="term">precommitment</span><span class="term">Odysseus</span><span class="term">Stoicism</span><span class="term">personal elegance</span><span class="term">robustness</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Robustness architecture</span><b>Move the important decisions before the emotional event</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="c14t c14d" style="min-width:770px;width:100%;height:auto">
+  <title id="c14t">Emotional intensity over a market episode, with the binding decisions placed before it</title>
+  <desc id="c14d">A curve of emotional intensity across an episode. It begins flat in a calm zone shaded green, where a mast-and-rope glyph marks the point at which limits, size and exit rules are set. It then climbs through euphoria into a shaded red zone marked as untrustworthy for decisions, spikes at the arrival of the loss, and falls away. After the spike the path forks into a faded branch labelled denial and theatre and a solid branch labelled dignity, the second reachable only because the constraints were fixed in advance.</desc>
+
+  <text x="120" y="34" class="svg-t">Move every real decision to the left of the spike</text>
+
+  <!-- zones -->
+  <rect x="120" y="60" width="200" height="252" fill="var(--f4)" opacity=".09"/>
+  <rect x="380" y="60" width="280" height="252" fill="var(--f1)" opacity=".09"/>
+  <text x="132" y="78" class="svg-sm" fill="var(--f4)" font-weight="700">CALM — DECIDE EVERYTHING HERE</text>
+  <text x="392" y="78" class="svg-sm" fill="var(--f1)" font-weight="700">DO NOT DECIDE IN HERE</text>
+
+  <!-- axis -->
+  <line x1="120" y1="312" x2="880" y2="312" class="svg-axis"/>
+  <text transform="translate(98,200) rotate(-90)" text-anchor="middle" class="svg-sm">EMOTIONAL INTENSITY</text>
+  <text x="880" y="334" class="svg-sm" text-anchor="end">TIME →</text>
+
+  <!-- the intensity curve -->
+  <path d="M120 300 C 200 298, 260 292, 320 276 C 380 258, 420 214, 470 186 C 510 164, 540 158, 560 154
+           L572 150 L582 96 L596 268 L610 290 C 660 300, 700 296, 760 292"
+        fill="none" stroke="var(--f1)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"
+        class="draw" style="--len:900;--d:.2s;--dur:2.6s"/>
+
+  <!-- the mast: bind yourself while it is quiet -->
+  <g class="rise" style="--d:1s">
+    <line x1="196" y1="150" x2="196" y2="286" stroke="var(--f4)" stroke-width="2.6"/>
+    <line x1="160" y1="168" x2="232" y2="168" stroke="var(--f4)" stroke-width="2"/>
+    <path d="M196 178 C 176 190, 176 210, 196 222 C 216 234, 216 254, 196 266"
+          fill="none" stroke="var(--f4)" stroke-width="1.6" stroke-dasharray="4 3"/>
+    <circle cx="196" cy="286" r="5" fill="var(--f4)"/>
+  </g>
+  <text x="196" y="140" class="svg-b" text-anchor="middle" fill="var(--f4)">bind yourself here</text>
+  <text x="132" y="306" class="svg-sm" fill="var(--ink-2)">POSITION LIMITS · EXITS · INFORMATION DIET</text>
+
+  <!-- euphoria -->
+  <text x="450" y="146" class="svg-lab" fill="var(--f1)">the streak talks</text>
+  <text x="450" y="162" class="svg-lab" fill="var(--f1)">you out of the rules</text>
+  <line x1="470" y1="170" x2="470" y2="182" class="svg-hair" stroke-width="1"/>
+
+  <!-- the draw -->
+  <path d="M582 88 L582 64 L596 64" class="svg-hair" stroke-width="1" fill="none"/>
+  <text x="604" y="60" class="svg-b" fill="var(--f1)">the draw arrives</text>
+  <text x="604" y="76" class="svg-em">indifferent · unscheduled · not about you</text>
+
+  <!-- the fork -->
+  <path d="M610 290 C 660 286, 700 258, 780 236" fill="none" stroke="var(--ink-3)" stroke-width="1.8"
+        stroke-dasharray="6 5" opacity=".45"/>
+  <text x="790" y="234" class="svg-lab" fill="var(--ink-3)">denial · theatre ·</text>
+  <text x="790" y="250" class="svg-lab" fill="var(--ink-3)">a grand theory, retrofitted</text>
+
+  <circle cx="760" cy="292" r="5" fill="var(--f4)" class="pop" style="--d:2.6s"/>
+  <text x="790" y="288" class="svg-b" fill="var(--f4)">dignity</text>
+  <text x="790" y="304" class="svg-lab">available only because the</text>
+  <text x="790" y="320" class="svg-lab">limits were fixed while calm</text>
+
+  <!-- the ledger of precommitments -->
+  <line x1="120" y1="356" x2="880" y2="356" class="svg-hair" stroke-width="1"/>
+  <text x="120" y="378" class="svg-sm" fill="var(--f4)" font-weight="700">DECIDED IN ADVANCE</text>
+  <text x="120" y="398" class="svg-lab">how much · when to stop · what to read · what would change the plan</text>
+  <text x="560" y="378" class="svg-sm" fill="var(--f1)" font-weight="700">LEFT TO THE MOMENT</text>
+  <text x="560" y="398" class="svg-lab">nothing that cannot be reversed</text>
+</svg>
+</div>
+</div></div>
+        <div class="plate"><div class="plate__head"><span>Plate 07 · bind yourself</span><b>Structure beats willpower</b></div><div class="plate__body"><div class="causal-chain"><div class="node">Know the bias</div><div class="arrow">→</div><div class="node">Limit the exposure</div><div class="arrow">→</div><div class="node">Reduce noisy feedback</div><div class="arrow">→</div><div class="node accent">Preserve agency</div></div></div></div>
+      </div>
+    </div>
+  </article>
+
+  <section class="closing" id="field-guide">
+    <div class="closing__grid wrap">
+      <div><p class="eyebrow"><b>Epilogue · Solon Told You So</b></p><h2>A field guide for not being fooled</h2><p class="hero__subtitle">The goal is not to predict every surprise. It is to stop one lucky path from masquerading as certainty — especially when the downside can remove you from the game.</p></div>
+      <div class="principles">
+        <div class="principle"><div><b>Judge process separately from outcome.</b><p>A good decision can lose; a reckless decision can win.</p></div></div>
+        <div class="principle"><div><b>Reconstruct alternative histories.</b><p>Ask what else could plausibly have happened under the same choice.</p></div></div>
+        <div class="principle"><div><b>Inspect payoff shape, not win rate.</b><p>One large loss can dominate years of small gains.</p></div></div>
+        <div class="principle"><div><b>Demand the missing denominator.</b><p>How many people started before this survivor became visible?</p></div></div>
+        <div class="principle"><div><b>Protect against ruin.</b><p>No average return compensates for a branch that permanently ends participation.</p></div></div>
+        <div class="principle"><div><b>Control information frequency.</b><p>More updates often mean more noise, not more knowledge.</p></div></div>
+        <div class="principle"><div><b>Design around emotion.</b><p>Use limits, distance and precommitment instead of relying on composure.</p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="sources">
+  <div class="wrap"><p>Independent summary and interpretation. Chapter structure checked against the 2005/2008 edition contents. Background: <a href="https://www.penguinrandomhouse.com/books/176225/fooled-by-randomness-by-nassim-nicholas-taleb/">Penguin Random House</a> and <a href="https://books.google.com/books/about/Fooled_by_Randomness.html?id=AehDDQAAQBAJ">Google Books edition record</a>. No text from the book is reproduced.</p></div>
+</footer>
+
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeButton'),k='fbr-summary-theme',s=null;try{s=localStorage.getItem(k)}catch(e){}if(s==='light'||s==='dark')r.dataset.theme=s;b.addEventListener('click',function(){var c=r.dataset.theme||((matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'),n=c==='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem(k,n)}catch(e){}})})();
+</script>
+<script src="book-toc.js"></script>
+<script src="book-figures.js"></script>
+</body>
+</html>

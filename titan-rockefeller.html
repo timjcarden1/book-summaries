@@ -1,0 +1,1861 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Titan · Ron Chernow · Illustrated Summary</title>
+<style>
+:root{
+  --paper:#E3E7DF;
+  --paper-2:#EFF2EB;
+  --paper-3:#F6F8F3;
+  --ink:#1B1E1A;
+  --ink-soft:#4E564C;
+  --ink-faint:#7A8377;
+  --rule:#B8433A;
+  --hair:rgba(27,30,26,.13);
+  --hair-strong:rgba(27,30,26,.26);
+  --binding:#3A1E1B;
+  --binding-2:#2A1412;
+  --brass:#9C7325;
+  --slate:#3F6079;
+  --moss:#5C7550;
+  --line:30px;
+  --display:Superclarendon,"Bookman Old Style",Rockwell,"Roboto Slab",Georgia,serif;
+  --body:"Avenir Next",Avenir,"Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:var(--line);
+  -webkit-font-smoothing:antialiased;
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 29px,rgba(27,30,26,.055) 29px,rgba(27,30,26,.055) 30px);
+  background-attachment:local;
+}
+h1,h2,h3,h4,h5{font-family:var(--display);font-weight:600;margin:0}
+a{color:inherit}
+img{max-width:100%}
+
+/* ---------- shell ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.col{max-width:720px}
+.col p{margin:0 0 var(--line)}
+.col p:last-child{margin-bottom:0}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(227,231,223,.93);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--hair-strong)}
+.topbar__inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:22px;height:52px}
+.topbar__mark{font-family:var(--display);font-size:15px;letter-spacing:.02em;white-space:nowrap}
+.topbar__mark b{font-weight:600}
+.topbar__mark span{color:var(--ink-faint);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-left:8px}
+.tabs{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-decoration:none;color:var(--ink-faint);padding:4px 9px;border-left:1px solid var(--hair);white-space:nowrap;transition:color .2s,background .2s}
+.tabs a:first-child{border-left:0}
+.tabs a:hover{color:var(--ink);background:rgba(27,30,26,.05)}
+.tabs a.on{color:var(--rule);background:rgba(184,67,58,.09)}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--rule);width:0}
+:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--binding);color:#EFE7DF;background-image:
+  radial-gradient(120% 90% at 15% 0%,rgba(156,115,37,.16),transparent 60%),
+  repeating-linear-gradient(115deg,rgba(255,255,255,.014) 0 2px,transparent 2px 7px);
+  border-bottom:3px solid var(--brass)}
+.hero__inner{max-width:1180px;margin:0 auto;padding:70px 28px 60px;display:grid;grid-template-columns:minmax(280px,1fr) minmax(320px,1.15fr);gap:56px;align-items:start}
+.hero__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(239,231,223,.5);margin:0 0 22px}
+.hero h1{font-size:clamp(52px,9vw,104px);line-height:.92;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;display:block;font-size:clamp(15px,2vw,20px);letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-top:20px;font-family:var(--mono)}
+.hero__sub{color:rgba(239,231,223,.72);font-size:16px;line-height:28px;margin:26px 0 0;max-width:38ch}
+.hero__meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-family:var(--mono);font-size:11px;letter-spacing:.06em;border:1px solid rgba(239,231,223,.24);color:rgba(239,231,223,.78);padding:4px 10px;border-radius:2px}
+
+/* hero ledger */
+.led{background:rgba(246,248,243,.955);color:var(--ink);border:1px solid rgba(0,0,0,.3);box-shadow:0 22px 50px -20px rgba(0,0,0,.65);padding:0 0 6px}
+.led__top{display:flex;justify-content:space-between;align-items:baseline;padding:12px 16px 10px;border-bottom:2px solid var(--rule)}
+.led__top b{font-family:var(--display);font-size:14px;letter-spacing:.01em}
+.led__top span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-faint);text-transform:uppercase}
+.led table{width:100%;border-collapse:collapse;font-size:13px}
+.led th{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);text-align:left;padding:8px 16px 6px;font-weight:400;border-bottom:1px solid var(--hair)}
+.led th.r,.led td.r{text-align:right}
+.led td{padding:7px 16px;border-bottom:1px solid rgba(27,30,26,.09);vertical-align:baseline}
+.led tr:last-child td{border-bottom:0}
+.led td.y{font-family:var(--mono);font-size:12px;color:var(--rule);width:1%;white-space:nowrap}
+.led td.e{line-height:19px;font-size:13.5px}
+.led td.e small{display:block;color:var(--ink-faint);font-size:11.5px;line-height:16px}
+.led td.v{font-family:var(--mono);font-size:13px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.led tbody tr{opacity:0;animation:ruleIn .5s ease forwards}
+.led tbody tr:nth-child(1){animation-delay:.25s}
+.led tbody tr:nth-child(2){animation-delay:.4s}
+.led tbody tr:nth-child(3){animation-delay:.55s}
+.led tbody tr:nth-child(4){animation-delay:.7s}
+.led tbody tr:nth-child(5){animation-delay:.85s}
+.led tbody tr:nth-child(6){animation-delay:1s}
+.led tbody tr:nth-child(7){animation-delay:1.15s}
+@keyframes ruleIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.led tbody tr{opacity:1;animation:none}}
+.led__foot{padding:10px 16px 4px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-faint);display:flex;justify-content:space-between;border-top:2px solid var(--rule);margin-top:2px}
+
+/* ---------- folios ---------- */
+.folio{padding-top:70px;margin-top:0;scroll-margin-top:60px}
+.folio__rule{height:0;border-top:1px solid var(--rule);opacity:.55;margin-bottom:14px}
+.folio__meta{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px}
+.folio__meta b{color:var(--rule);font-weight:400}
+.folio__title{font-size:clamp(32px,5.2vw,52px);line-height:1.04;letter-spacing:-.015em;max-width:16ch}
+.folio__dek{font-size:19px;line-height:32px;color:var(--ink-soft);max-width:60ch;margin:20px 0 0;font-family:var(--display);font-weight:400}
+.folio__body{margin-top:44px}
+section{padding-bottom:30px}
+
+h3.sub{font-size:24px;line-height:32px;letter-spacing:-.005em;margin:52px 0 18px;max-width:24ch}
+h3.sub:first-child{margin-top:0}
+h4.mini{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rule);margin:44px 0 12px;font-weight:400}
+.col ul{margin:0 0 30px;padding-left:20px}
+.col li{margin-bottom:9px}
+.col li::marker{color:var(--rule)}
+strong{font-weight:600}
+.lede{font-size:19px;line-height:31px}
+.small{font-size:14.5px;line-height:25px;color:var(--ink-soft)}
+
+/* ---------- devices ---------- */
+.pull{border-left:2px solid var(--rule);padding:2px 0 2px 22px;margin:38px 0;max-width:640px}
+.pull p{font-family:var(--display);font-size:22px;line-height:34px;margin:0}
+.pull cite{display:block;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-top:12px}
+
+.note{background:var(--paper-2);border:1px solid var(--hair-strong);padding:22px 24px;margin:38px 0;max-width:720px}
+.note h5{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 10px;font-weight:400}
+.note p{margin:0 0 16px;font-size:15.5px;line-height:27px}
+.note p:last-child{margin:0}
+
+/* ---------- plates ---------- */
+.plate{margin:60px 0;background:var(--paper-3);border:1px solid var(--hair-strong);box-shadow:0 2px 0 rgba(27,30,26,.05);padding:0}
+.plate__head{display:flex;align-items:baseline;gap:14px;padding:16px 24px 14px;border-bottom:1px solid var(--hair)}
+.plate__num{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);white-space:nowrap}
+.plate__title{font-size:18px;line-height:24px;letter-spacing:-.005em}
+.plate__body{padding:28px 24px}
+.plate__cap{padding:0 24px 20px;font-size:13.5px;line-height:22px;color:var(--ink-soft);max-width:78ch}
+.plate--wide{margin-left:calc(-1 * min(6vw,70px));margin-right:calc(-1 * min(6vw,70px))}
+@media(max-width:900px){.plate--wide{margin-left:0;margin-right:0}}
+
+/* ---------- generic bits ---------- */
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:820px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+.card{background:var(--paper-2);border:1px solid var(--hair);padding:16px 17px}
+.card h6{font-family:var(--display);font-size:15px;line-height:21px;margin:0 0 7px;font-weight:600}
+.card p{margin:0;font-size:13.5px;line-height:21px;color:var(--ink-soft)}
+.card .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:8px}
+
+.stat{border-top:2px solid var(--ink);padding-top:12px}
+.stat b{display:block;font-family:var(--display);font-size:34px;line-height:38px;letter-spacing:-.02em}
+.stat span{display:block;font-size:13px;line-height:19px;color:var(--ink-soft);margin-top:5px}
+
+table.data{width:100%;border-collapse:collapse;font-size:14px}
+table.data th{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);text-align:left;font-weight:400;padding:0 12px 8px 0;border-bottom:1px solid var(--hair-strong)}
+table.data td{padding:9px 12px 9px 0;border-bottom:1px solid var(--hair);vertical-align:top;line-height:22px}
+table.data td.n{font-family:var(--mono);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.data tr:last-child td{border-bottom:0}
+
+/* dark band */
+.band{background:var(--binding);color:#EEE6DE;margin:70px 0 0;padding:64px 0 60px;
+  background-image:radial-gradient(100% 80% at 80% 0%,rgba(156,115,37,.14),transparent 62%)}
+.band .folio__meta{color:rgba(238,230,222,.5)}
+.band .folio__meta b{color:var(--brass)}
+.band .folio__rule{border-color:var(--brass);opacity:.6}
+.band .folio__dek{color:rgba(238,230,222,.74)}
+.band .plate{background:rgba(246,248,243,.06);border-color:rgba(238,230,222,.2)}
+.band .plate__head{border-color:rgba(238,230,222,.16)}
+.band .plate__cap{color:rgba(238,230,222,.6)}
+.band .card{background:rgba(246,248,243,.05);border-color:rgba(238,230,222,.16)}
+.band .card p{color:rgba(238,230,222,.68)}
+.band .note{background:rgba(246,248,243,.05);border-color:rgba(238,230,222,.2)}
+.band table.data td{border-color:rgba(238,230,222,.14)}
+.band table.data th{border-color:rgba(238,230,222,.3);color:rgba(238,230,222,.5)}
+.band .pull{border-color:var(--brass)}
+.band .pull cite{color:rgba(238,230,222,.5)}
+.band .stat{border-color:var(--brass)}
+.band .stat span{color:rgba(238,230,222,.65)}
+
+/* charts */
+.chart{width:100%}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:16px;font-size:12.5px;color:var(--ink-soft)}
+.legend i{display:inline-block;width:11px;height:11px;margin-right:7px;vertical-align:-1px;border-radius:1px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+footer.end{background:var(--binding-2);color:rgba(238,230,222,.6);padding:44px 0 60px;font-size:13px;line-height:23px;margin-top:0}
+footer.end .wrap{max-width:820px}
+footer.end b{color:rgba(238,230,222,.9);font-family:var(--display);font-weight:600}
+@media print{.topbar{display:none}.rv{opacity:1;transform:none}}
+</style>
+<link rel="stylesheet" href="book-toc.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__mark"><b>TITAN</b><span>Chernow · 1998</span></div>
+    <nav class="tabs" id="tabs"></nav>
+  </div>
+  <div class="progress" id="prog"></div>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero__inner">
+    <div>
+      <p class="hero__eyebrow">Illustrated summary · Ron Chernow, 1998 · 774 pages</p>
+      <h1>Titan<em>John D. Rockefeller, Sr.</em></h1>
+      <p class="hero__sub">The life of the man who organised American oil, was broken up by the Supreme Court for it, and then gave away more money than anyone alive had ever given away.</p>
+      <div class="hero__meta">
+        <span class="pill">1839 – 1937</span>
+        <span class="pill">97 years</span>
+        <span class="pill">21 plates</span>
+        <span class="pill">15 folios</span>
+      </div>
+    </div>
+    <div class="led">
+      <div class="led__top"><b>Ledger A</b><span>A life in double entry</span></div>
+      <table>
+        <thead><tr><th>Year</th><th>Entry</th><th class="r">Figure</th></tr></thead>
+        <tbody>
+          <tr><td class="y">1855</td><td class="e">First job, Hewitt &amp; Tuttle<small>He celebrated 26 September as "Job Day" for the rest of his life</small></td><td class="v">$0.50 / day</td></tr>
+          <tr><td class="y">1865</td><td class="e">Buys out the Clark brothers at auction<small>Aged 25. "It was the day that determined my career"</small></td><td class="v">$72,500</td></tr>
+          <tr><td class="y">1870</td><td class="e">Standard Oil Company of Ohio incorporated<small>Roughly one tenth of American refining</small></td><td class="v">$1,000,000</td></tr>
+          <tr><td class="y">1879</td><td class="e">Share of United States refining<small>Achieved in nine years from a single Cleveland works</small></td><td class="v">~90%</td></tr>
+          <tr><td class="y">1882</td><td class="e">The Standard Oil Trust<small>Forty-one shareholders, nine trustees, one address</small></td><td class="v">$70,000,000</td></tr>
+          <tr><td class="y">1911</td><td class="e">Dissolved by the Supreme Court<small>Broken into successor companies. The shares then soared</small></td><td class="v">34 companies</td></tr>
+          <tr><td class="y">1937</td><td class="e">Lifetime charitable giving at death<small>Against a personal estate appraised near $26 million</small></td><td class="v">~$540,000,000</td></tr>
+        </tbody>
+      </table>
+      <div class="led__foot"><span>J. D. R.</span><span>Cleveland → 26 Broadway → Ormond Beach</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= CONTENTS ================= -->
+<section id="contents" data-tab="contents">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>Contents</b></span><span>15 folios · 21 plates</span></div>
+    <h2 class="folio__title">How this page is built</h2>
+    <p class="folio__dek">The narrative runs in fifteen folios, following the arc of the book. Twenty-one numbered plates carry the structural arguments: the diagrams are the point, the prose is there to make them legible.</p>
+  </div>
+
+  <div class="folio__body grid g2" style="gap:44px;align-items:start">
+    <div>
+      <h4 class="mini" style="margin-top:0">Folios</h4>
+      <table class="data">
+        <tbody>
+          <tr><td class="n">f. 00</td><td><a href="#f00" style="text-decoration:none">The book itself</a></td><td class="n" style="color:var(--ink-faint)">1998</td></tr>
+          <tr><td class="n">f. 01</td><td><a href="#f01" style="text-decoration:none">Devil Bill and the making of a Baptist</a></td><td class="n" style="color:var(--ink-faint)">1839–55</td></tr>
+          <tr><td class="n">f. 02</td><td><a href="#f02" style="text-decoration:none">Job Day and Ledger A</a></td><td class="n" style="color:var(--ink-faint)">1855–63</td></tr>
+          <tr><td class="n">f. 03</td><td><a href="#f03" style="text-decoration:none">The refiner</a></td><td class="n" style="color:var(--ink-faint)">1863–70</td></tr>
+          <tr><td class="n">f. 04</td><td><a href="#f04" style="text-decoration:none">Standard Oil and the Cleveland Massacre</a></td><td class="n" style="color:var(--ink-faint)">1870–72</td></tr>
+          <tr><td class="n">f. 05</td><td><a href="#f05" style="text-decoration:none">The conquest</a></td><td class="n" style="color:var(--ink-faint)">1872–79</td></tr>
+          <tr><td class="n">f. 06</td><td><a href="#f06" style="text-decoration:none">The Trust</a></td><td class="n" style="color:var(--ink-faint)">1879–99</td></tr>
+          <tr><td class="n">f. 07</td><td><a href="#f07" style="text-decoration:none">Enemies</a></td><td class="n" style="color:var(--ink-faint)">1881–1904</td></tr>
+          <tr><td class="n">f. 08</td><td><a href="#f08" style="text-decoration:none">The world closes in</a></td><td class="n" style="color:var(--ink-faint)">1885–1911</td></tr>
+          <tr><td class="n">f. 09</td><td><a href="#f09" style="text-decoration:none">The reckoning</a></td><td class="n" style="color:var(--ink-faint)">1906–11</td></tr>
+          <tr><td class="n">f. 10</td><td><a href="#f10" style="text-decoration:none">The private man</a></td><td class="n" style="color:var(--ink-faint)">1864–1915</td></tr>
+          <tr><td class="n">f. 11</td><td><a href="#f11" style="text-decoration:none">The giving</a></td><td class="n" style="color:var(--ink-faint)">1855–1937</td></tr>
+          <tr><td class="n">f. 12</td><td><a href="#f12" style="text-decoration:none">Ludlow and the public face</a></td><td class="n" style="color:var(--ink-faint)">1913–15</td></tr>
+          <tr><td class="n">f. 13</td><td><a href="#f13" style="text-decoration:none">The long ending</a></td><td class="n" style="color:var(--ink-faint)">1911–37</td></tr>
+          <tr><td class="n">f. 14</td><td><a href="#f14" style="text-decoration:none">Chernow's verdict</a></td><td class="n" style="color:var(--ink-faint)">·</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h4 class="mini" style="margin-top:0">Plates</h4>
+      <table class="data">
+        <tbody>
+          <tr><td class="n">I</td><td><a href="#p1" style="text-decoration:none">The Rockefeller line</a></td></tr>
+          <tr><td class="n">II</td><td><a href="#p2" style="text-decoration:none">Master chronology, 1839–1937</a></td></tr>
+          <tr><td class="n">III</td><td><a href="#p3" style="text-decoration:none">Cast of characters</a></td></tr>
+          <tr><td class="n">IV</td><td><a href="#p4" style="text-decoration:none">Why Cleveland</a></td></tr>
+          <tr><td class="n">V</td><td><a href="#p5" style="text-decoration:none">Crude price, 1859–1900</a></td></tr>
+          <tr><td class="n">VI</td><td><a href="#p6" style="text-decoration:none">What Standard owned</a></td></tr>
+          <tr><td class="n">VII</td><td><a href="#p7" style="text-decoration:none">From one barrel</a></td></tr>
+          <tr><td class="n">VIII</td><td><a href="#p8" style="text-decoration:none">Rebate, drawback, evener</a></td></tr>
+          <tr><td class="n">IX</td><td><a href="#p9" style="text-decoration:none">The Cleveland Massacre</a></td></tr>
+          <tr><td class="n">X</td><td><a href="#p10" style="text-decoration:none">Cash or stock</a></td></tr>
+          <tr><td class="n">XI</td><td><a href="#p11" style="text-decoration:none">Share of US refining</a></td></tr>
+          <tr><td class="n">XII</td><td><a href="#p12" style="text-decoration:none">Six corporate forms</a></td></tr>
+          <tr><td class="n">XIII</td><td><a href="#p13" style="text-decoration:none">26 Broadway</a></td></tr>
+          <tr><td class="n">XIV</td><td><a href="#p14" style="text-decoration:none">The campaigns</a></td></tr>
+          <tr><td class="n">XV</td><td><a href="#p15" style="text-decoration:none">The world against Standard</a></td></tr>
+          <tr><td class="n">XVI</td><td><a href="#p16" style="text-decoration:none">Kerosene to gasoline</a></td></tr>
+          <tr><td class="n">XVII</td><td><a href="#p17" style="text-decoration:none">The dissolution tree</a></td></tr>
+          <tr><td class="n">XVIII</td><td><a href="#p18" style="text-decoration:none">The paradox of 1911</a></td></tr>
+          <tr><td class="n">XIX</td><td><a href="#p19" style="text-decoration:none">The private ledger</a></td></tr>
+          <tr><td class="n">XX</td><td><a href="#p20" style="text-decoration:none">Where $540 million went</a></td></tr>
+          <tr><td class="n">XXI</td><td><a href="#p21" style="text-decoration:none">Two men in one</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= f.00 ================= -->
+<section id="f00" data-tab="f.00 book">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 00</b> · The book itself</span><span>Random House, 1998</span></div>
+    <h2 class="folio__title">The book itself</h2>
+    <p class="folio__dek">Chernow set out to answer a question nobody had answered properly in eighty years: what was actually going on inside the most private American of his era?</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">Rockefeller was the most written-about businessman in American history and the least known. He gave almost no interviews, testified evasively, destroyed or withheld records, and left behind a public image assembled equally by his enemies and by his own publicists. Two biographical traditions had hardened: the muckrakers' monster, fixed by Ida Tarbell in 1904, and the authorised saint of Allan Nevins's two sympathetic studies in 1940 and 1953.</p>
+
+    <p>Chernow's advantage was archival. He worked from the Rockefeller Archive Center at Pocantico, and above all from a long, unpublished set of reminiscences Rockefeller dictated to a friendly newspaperman, William O. Inglis, between 1917 and 1920. Inglis sat with him over hundreds of hours, often reading Tarbell's accusations aloud line by line and recording the old man's replies. It is the closest thing to a Rockefeller confession that exists, and it had been barely used.</p>
+
+    <p>What emerges is not a resolution of the two traditions but an argument that both were describing real things. The book's organising idea is that Rockefeller's contradictions were not hypocrisy. He was genuinely devout and genuinely predatory, and the same traits produced both: the patience, the secrecy, the refusal to be provoked, the conviction that he was an instrument of a larger order. He tithed from his first pay packet at sixteen and gave away over half a billion dollars, and he did it with the same temperament that let him strip twenty-two competitors out of Cleveland in six weeks without raising his voice.</p>
+
+    <h3 class="sub">How the book moves</h3>
+    <p>Chernow braids three strands rather than telling them in sequence. The business story runs from Cleveland in 1863 to the Supreme Court in 1911. The family story runs alongside it and is often the more disturbing of the two: a con-artist bigamist father, a rigidly pious mother, an obsessively controlled household, four children raised in deliberate ignorance of their own wealth, and an heir who spent his life trying to launder a name. The philanthropic story starts as a childhood habit and ends as the invention of the modern foundation.</p>
+
+    <p>The book is long, roughly 774 pages, and the density is in the middle third. If you are listening to it, the two stretches that repay the most attention are the 1872 to 1882 consolidation and the 1900 to 1914 collapse of the public reputation, because those two are where the mechanics are actually explained.</p>
+
+    <div class="note">
+      <h5>What the book is not</h5>
+      <p>It is not a business history of the oil industry. Technology, geology and the producers' side get sketched rather than analysed. It is not an economic assessment either: Chernow states the case that Standard cut prices and rationalised a chaotic industry, and the case that it did so by methods that were coercive and often secret, and he does not adjudicate between them with any economic apparatus. It is a biography, and its centre of gravity is character.</p>
+    </div>
+  </div>
+
+  <!-- PLATE III: cast -->
+  <figure class="plate plate--wide rv" id="p3">
+    <div class="plate__head"><span class="plate__num">Plate III</span><h4 class="plate__title">Cast of characters</h4></div>
+    <div class="plate__body">
+      <h4 class="mini" style="margin:0 0 14px">Inside the family</h4>
+      <div class="grid g4" style="margin-bottom:26px">
+        <div class="card"><span class="tag">Father</span><h6>William Avery Rockefeller</h6><p>"Devil Bill." Itinerant quack, seller of patent cancer cures, absent for months, a bigamist from 1855 under the name Dr. William Levingston. Taught his son to bargain hard and trust no one.</p></div>
+        <div class="card"><span class="tag">Mother</span><h6>Eliza Davison Rockefeller</h6><p>Abandoned in practice, devout, thrifty, severe. The source of the discipline, the Baptist faith and the tolerance for silence.</p></div>
+        <div class="card"><span class="tag">Wife</span><h6>Laura "Cettie" Spelman</h6><p>Married 1864. Abolitionist family, valedictorian, more pious than he was. His closest counsel for decades, then a semi-invalid recluse for the last fifteen years of her life.</p></div>
+        <div class="card"><span class="tag">Brother</span><h6>William Rockefeller</h6><p>Standard's New York man and export chief. Sociable where John was not, and drawn into the Amalgamated Copper stock scheme that his brother would never have touched.</p></div>
+        <div class="card"><span class="tag">Brother</span><h6>Frank Rockefeller</h6><p>Sold out to Standard in 1872, felt cheated, feuded for life, and finally moved his two dead children out of the family plot so they would not lie near his brother.</p></div>
+        <div class="card"><span class="tag">Son</span><h6>John D. Rockefeller, Jr.</h6><p>Sole male heir. Scrupulous to the point of illness, broke down in 1904, and spent his adult life converting the fortune into institutions and the name into respectability.</p></div>
+        <div class="card"><span class="tag">Daughter</span><h6>Edith Rockefeller McCormick</h6><p>Married into International Harvester, moved to Zurich, analysed by Jung and then practising as an analyst herself, and spent on a scale that appalled her father.</p></div>
+        <div class="card"><span class="tag">Daughters</span><h6>Bessie and Alta</h6><p>Bessie married the philosopher Charles Strong and lived abroad in poor health. Alta, partly deaf, stayed closest to the parents and to the church work.</p></div>
+      </div>
+
+      <h4 class="mini" style="margin:0 0 14px">Inside Standard Oil</h4>
+      <div class="grid g4" style="margin-bottom:26px">
+        <div class="card"><span class="tag">Partner</span><h6>Henry M. Flagler</h6><p>Joined 1867. The negotiator and the author of the railroad rebate strategy. "A friendship founded on business is better than a business founded on friendship." Later built the Florida East Coast Railway and Palm Beach.</p></div>
+        <div class="card"><span class="tag">Partner</span><h6>Samuel Andrews</h6><p>The English mechanic who actually knew how to refine. Indispensable early, obstructive later, bought out in 1878 for one million dollars and bitter about it afterwards.</p></div>
+        <div class="card"><span class="tag">Capital</span><h6>Stephen V. Harkness</h6><p>Silent money. His investment through Flagler in 1867 made the expansion possible; his family fortune later built Harkness towers and hospitals.</p></div>
+        <div class="card"><span class="tag">Rival to ally</span><h6>Oliver H. Payne</h6><p>Cleveland's largest competitor. Sold in the 1872 sweep, took stock rather than cash, became Standard's treasurer and one of America's richest men.</p></div>
+        <div class="card"><span class="tag">Rival to ally</span><h6>Charles Pratt</h6><p>Brooklyn's leading refiner, brought inside in 1874 along with his Astral Oil brand. His son-in-law's circle became the New York wing of Standard.</p></div>
+        <div class="card"><span class="tag">Enforcer</span><h6>Henry H. Rogers</h6><p>Known as Hell Hound. Brilliant, charming, ruthless, and the man who let a rival's lawyer trap him into admitting Standard's methods on the record.</p></div>
+        <div class="card"><span class="tag">Successor</span><h6>John D. Archbold</h6><p>A fiery young Titusville refiner who became Standard's operating head from the 1890s. His letters to senators, published by Hearst in 1908, were the political scandal that stuck.</p></div>
+        <div class="card"><span class="tag">Counsel</span><h6>Samuel C. T. Dodd</h6><p>The lawyer who invented the trust device in 1882 to hold together a company that no state charter allowed to exist. He refused to own Standard stock so his advice would stay honest.</p></div>
+      </div>
+
+      <h4 class="mini" style="margin:0 0 14px">Outside</h4>
+      <div class="grid g4">
+        <div class="card"><span class="tag">Chemist</span><h6>Herman Frasch</h6><p>Solved the sulphur problem in Lima crude in 1888 and turned three million dollars of Rockefeller's private gamble into the industry's next decade of supply.</p></div>
+        <div class="card"><span class="tag">Philanthropy</span><h6>Frederick T. Gates</h6><p>Baptist minister turned chief of staff. Told Rockefeller his fortune would crush his descendants unless he gave it away faster than it grew, then built the machinery to do it.</p></div>
+        <div class="card"><span class="tag">Antagonist</span><h6>Ida Tarbell</h6><p>Her father was ruined in the 1872 oil war. Her nineteen-part investigation for McClure's, 1902 to 1904, is the most effective piece of business journalism ever written.</p></div>
+        <div class="card"><span class="tag">Antagonist</span><h6>Henry Demarest Lloyd</h6><p>First to make the case in public, in the Atlantic in 1881 and at book length in Wealth Against Commonwealth in 1894.</p></div>
+        <div class="card"><span class="tag">Antagonist</span><h6>George Rice</h6><p>The small Ohio refiner who refused to sell, sued for twenty years, and produced the documentary evidence of Standard's freight discrimination.</p></div>
+        <div class="card"><span class="tag">State</span><h6>Theodore Roosevelt</h6><p>Created the Bureau of Corporations, whose 1906 report on Standard's transportation practices supplied the government's case.</p></div>
+        <div class="card"><span class="tag">State</span><h6>Judge K. M. Landis</h6><p>Fined Standard of Indiana $29.24 million in 1907, the largest fine in American history to that point. Reversed on appeal, but the headline never was.</p></div>
+        <div class="card"><span class="tag">Image</span><h6>Ivy Lee</h6><p>Hired after Ludlow in 1914. Invented the modern corporate press operation, and turned a hated old man into a benign figure handing out dimes.</p></div>
+      </div>
+    </div>
+    <figcaption class="plate__cap">Chernow keeps roughly two dozen figures in play. The ones above account for most of the book's action. Note the pattern in the middle row: nearly every senior Standard executive arrived as a competitor who was bought rather than beaten.</figcaption>
+  </figure>
+</section>
+
+<!-- ================= f.01 ================= -->
+<section id="f01" data-tab="f.01 origins">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 01</b> · Devil Bill and the making of a Baptist</span><span>1839 – 1855</span></div>
+    <h2 class="folio__title">Devil Bill and the making of a Baptist</h2>
+    <p class="folio__dek">The two halves of Rockefeller's character were installed before he was sixteen, one by each parent, and they never merged.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">John Davison Rockefeller was born on 8 July 1839 in Richford, New York, a hardscrabble settlement in the state's southern tier. His father, William Avery Rockefeller, was a large, genial, physically impressive man who sold patent medicines, traded horses, lent money at hard rates, and disappeared for months at a time. He advertised himself as a botanic physician and, later, as a specialist in cancer cures, charging as much as twenty-five dollars for treatments that did nothing.</p>
+
+    <p>Bill Rockefeller was also, from 1855, a bigamist. While still married to Eliza he married a much younger woman, Margaret Allen, in Ontario under the name Dr. William Levingston, and maintained that second household for the rest of his life. He died in 1906 in the Dakotas as Levingston. His famous son, then the richest man in the world, spent decades quietly containing the story while newspapers hunted for it.</p>
+
+    <p>Eliza Davison Rockefeller was the counterweight. Left with the children and often with no money, she ran the house on strict Baptist discipline, unbending thrift and the phrase her son repeated all his life: willful waste makes woeful want. She whipped him with a birch switch and once, when he told her mid-beating that he was innocent of the charge, she finished anyway on the grounds that it would do for next time. Chernow's reading is that Rockefeller learned from her the endurance and the moral scaffolding, and learned from his father the negotiating, the concealment and the ease with which a smiling man can take another man's money.</p>
+
+    <div class="pull">
+      <p>"I cheat my boys every chance I get. I want to make 'em sharp."</p>
+      <cite>William Avery Rockefeller, as quoted by a neighbour</cite>
+    </div>
+
+    <h3 class="sub">Moving, always moving</h3>
+    <p>The family moved constantly, staying a step ahead of gossip and creditors: Richford, then Moravia, then Owego, and in 1853 to Strongsville outside Cleveland. The boy went to Central High School in Cleveland, then spent about three months at Folsom's Commercial College learning bookkeeping, penmanship and commercial law. That short course, not the high school, was the education that mattered.</p>
+
+    <p>He was already recognisably himself: slow, deliberate, unusually quiet, indifferent to sport, precise about money, and religious in a way that his contemporaries found more like a habit of order than an enthusiasm. He joined the Erie Street Baptist Mission Church and stayed with it for decades, sweeping floors, serving as a trustee and eventually rescuing it from its mortgage. He tithed from his first wages and never stopped.</p>
+
+    <div class="note">
+      <h5>The pattern Chernow draws out</h5>
+      <p>The son organised his entire life as a refutation of the father: no drinking, no gambling, no showmanship, no debt he could not cover, no promises he did not keep, one wife, one address at a time, everything recorded. And yet the father's gifts came through intact. Rockefeller's talent for the poker face in negotiation, his taste for operating through concealed ownership, and his ability to feel morally comfortable while doing ruthless things are, in this reading, Bill's inheritance wearing Eliza's clothes.</p>
+    </div>
+  </div>
+
+  <!-- PLATE I: family -->
+  <figure class="plate plate--wide rv" id="p1">
+    <div class="plate__head"><span class="plate__num">Plate I</span><h4 class="plate__title">The Rockefeller line</h4></div>
+    <div class="plate__body">
+      <svg viewBox="0 0 920 452" role="img" aria-label="Rockefeller family tree" style="font-family:'Avenir Next',system-ui,sans-serif">
+        <style>
+          .bx{fill:#EFF2EB;stroke:#C3CABF;stroke-width:1}
+          .bxh{fill:#F7EDEB;stroke:#B8433A;stroke-width:1.6}
+          .bxd{fill:none;stroke:#C3CABF;stroke-width:1;stroke-dasharray:4 3}
+          .nm{font-size:12.5px;fill:#1B1E1A;font-weight:600}
+          .dt{font-size:10px;fill:#7A8377;font-family:ui-monospace,Menlo,monospace}
+          .ln{stroke:#9AA396;stroke-width:1.2;fill:none}
+          .lb{font-size:9.5px;fill:#9C7325;font-family:ui-monospace,Menlo,monospace;letter-spacing:.1em}
+          .rd{fill:#B8433A}
+        </style>
+
+        <!-- generation 1 -->
+        <rect class="bx" x="236" y="16" width="214" height="44" rx="1"/>
+        <text class="nm" x="248" y="35">William Avery Rockefeller</text>
+        <text class="dt" x="248" y="50">1810–1906 · "Devil Bill"</text>
+
+        <rect class="bx" x="470" y="16" width="196" height="44" rx="1"/>
+        <text class="nm" x="482" y="35">Eliza Davison</text>
+        <text class="dt" x="482" y="50">1813–1889 · m. 1837</text>
+
+        <line class="ln" x1="450" y1="38" x2="470" y2="38"/>
+        <line class="ln" x1="460" y1="60" x2="460" y2="86"/>
+        <line class="ln" x1="96" y1="86" x2="816" y2="86"/>
+
+        <!-- generation 2 -->
+        <g>
+          <line class="ln" x1="96" y1="86" x2="96" y2="104"/>
+          <rect class="bx" x="30" y="104" width="132" height="50"/>
+          <text class="nm" x="42" y="124">Lucy</text><text class="dt" x="42" y="139">b. 1838</text>
+
+          <line class="ln" x1="240" y1="86" x2="240" y2="104"/>
+          <rect class="bxh" x="174" y="104" width="132" height="50"/>
+          <text class="nm" x="186" y="124">John Davison</text><text class="dt" x="186" y="139">1839–1937</text>
+
+          <line class="ln" x1="384" y1="86" x2="384" y2="104"/>
+          <rect class="bx" x="318" y="104" width="132" height="50"/>
+          <text class="nm" x="330" y="124">William</text><text class="dt" x="330" y="139">1841–1922</text>
+
+          <line class="ln" x1="528" y1="86" x2="528" y2="104"/>
+          <rect class="bx" x="462" y="104" width="132" height="50"/>
+          <text class="nm" x="474" y="124">Mary Ann</text><text class="dt" x="474" y="139">b. 1843</text>
+
+          <line class="ln" x1="672" y1="86" x2="672" y2="104"/>
+          <rect class="bx" x="606" y="104" width="132" height="50"/>
+          <text class="nm" x="618" y="124">Franklin "Frank"</text><text class="dt" x="618" y="139">1845–1917</text>
+
+          <line class="ln" x1="816" y1="86" x2="816" y2="104"/>
+          <rect class="bx" x="750" y="104" width="132" height="50"/>
+          <text class="nm" x="762" y="124">Frances</text><text class="dt" x="762" y="139">1845–1847</text>
+        </g>
+
+        <!-- marriage -->
+        <line class="ln" x1="240" y1="154" x2="240" y2="186"/>
+        <rect class="bx" x="60" y="186" width="360" height="46"/>
+        <text class="nm" x="74" y="206">Laura Celestia "Cettie" Spelman</text>
+        <text class="dt" x="74" y="221">1839–1915 · married 8 September 1864</text>
+
+        <!-- generation 3 -->
+        <line class="ln" x1="240" y1="232" x2="240" y2="256"/>
+        <line class="ln" x1="86" y1="256" x2="526" y2="256"/>
+        <g>
+          <line class="ln" x1="86" y1="256" x2="86" y2="274"/>
+          <rect class="bx" x="36" y="274" width="100" height="52"/>
+          <text class="nm" x="46" y="294">Bessie</text><text class="dt" x="46" y="309">1866–1906</text>
+
+          <line class="ln" x1="196" y1="256" x2="196" y2="274"/>
+          <rect class="bxd" x="146" y="274" width="100" height="52"/>
+          <text class="nm" x="156" y="294" fill="#7A8377">Alice</text><text class="dt" x="156" y="309">1869–1870</text>
+
+          <line class="ln" x1="306" y1="256" x2="306" y2="274"/>
+          <rect class="bx" x="256" y="274" width="100" height="52"/>
+          <text class="nm" x="266" y="294">Alta</text><text class="dt" x="266" y="309">1871–1962</text>
+
+          <line class="ln" x1="416" y1="256" x2="416" y2="274"/>
+          <rect class="bx" x="366" y="274" width="100" height="52"/>
+          <text class="nm" x="376" y="294">Edith</text><text class="dt" x="376" y="309">1872–1932</text>
+
+          <line class="ln" x1="526" y1="256" x2="526" y2="274"/>
+          <rect class="bxh" x="476" y="274" width="100" height="52"/>
+          <text class="nm" x="486" y="294">John Jr.</text><text class="dt" x="486" y="309">1874–1960</text>
+        </g>
+
+        <!-- generation 4 -->
+        <line class="ln" x1="526" y1="326" x2="526" y2="352"/>
+        <rect class="bx" x="386" y="352" width="280" height="44"/>
+        <text class="nm" x="398" y="372">Abby Aldrich</text>
+        <text class="dt" x="398" y="387">m. 1901 · daughter of Senator Nelson Aldrich</text>
+        <text class="lb" x="386" y="418">SIX CHILDREN</text>
+        <text x="386" y="436" font-size="12" fill="#4E564C">Babs · John III · Nelson · Laurance · Winthrop · David</text>
+
+        <!-- other households -->
+        <rect class="bxd" x="694" y="186" width="208" height="132"/>
+        <text class="lb" x="708" y="208">THE OTHER HOUSEHOLDS</text>
+        <text class="nm" x="708" y="230">Nancy Brown</text>
+        <text class="dt" x="708" y="245">two daughters by Bill, c.1845</text>
+        <text class="nm" x="708" y="270">Margaret Allen</text>
+        <text class="dt" x="708" y="285">married 1855 while still</text>
+        <text class="dt" x="708" y="298">married to Eliza, under the</text>
+        <text class="dt" x="708" y="311">name Dr. William Levingston</text>
+      </svg>
+    </div>
+    <figcaption class="plate__cap">Two marriages that were never dissolved, a housekeeper's children, and a father who lived under an assumed name until 1906. Chernow argues the concealment habit was learned here, not at Standard Oil. Note also the narrowness of the third generation: one surviving son carried the name and the fortune.</figcaption>
+  </figure>
+
+  <!-- PLATE II: chronology -->
+  <figure class="plate plate--wide rv" id="p2">
+    <div class="plate__head"><span class="plate__num">Plate II</span><h4 class="plate__title">Master chronology, 1839 to 1937</h4></div>
+    <div class="plate__body">
+      <div class="tl">
+        <div class="tl__era"><b>1839 – 1862</b><span>Formation</span></div>
+        <div class="tl__row"><span class="tl__y">1839</span><div class="tl__e">Born 8 July at Richford, New York.</div></div>
+        <div class="tl__row"><span class="tl__y">1853</span><div class="tl__e">Family moves to Strongsville near Cleveland. Central High School, then Folsom's Commercial College.</div></div>
+        <div class="tl__row"><span class="tl__y">1855</span><div class="tl__e"><b>26 September:</b> hired as assistant bookkeeper at Hewitt &amp; Tuttle. He observed the anniversary as "Job Day" for the rest of his life. Bill Rockefeller marries Margaret Allen bigamously the same year.</div></div>
+        <div class="tl__row"><span class="tl__y">1859</span><div class="tl__e">Forms Clark &amp; Rockefeller, produce commission merchants. <b>27 August:</b> Drake strikes oil at Titusville, Pennsylvania.</div></div>
+        <div class="tl__row"><span class="tl__y">1861</span><div class="tl__e">Civil War begins. He pays for a substitute rather than serve, and the war makes his produce business.</div></div>
+
+        <div class="tl__era"><b>1863 – 1872</b><span>The refiner takes control</span></div>
+        <div class="tl__row"><span class="tl__y">1863</span><div class="tl__e">Enters oil refining with Samuel Andrews. The Excelsior Works on Kingsbury Run, Cleveland.</div></div>
+        <div class="tl__row"><span class="tl__y">1864</span><div class="tl__e">Marries Laura Spelman, 8 September.</div></div>
+        <div class="tl__row"><span class="tl__y">1865</span><div class="tl__e"><b>2 February:</b> buys out the Clark brothers at auction for $72,500. Aged 25, he now controls the largest refinery in Cleveland.</div></div>
+        <div class="tl__row"><span class="tl__y">1867</span><div class="tl__e">Henry Flagler joins, bringing Stephen Harkness's capital. The firm becomes Rockefeller, Andrews &amp; Flagler.</div></div>
+        <div class="tl__row"><span class="tl__y">1870</span><div class="tl__e"><b>10 January:</b> Standard Oil Company of Ohio incorporated, capital $1 million. Roughly 10% of US refining.</div></div>
+        <div class="tl__row"><span class="tl__y">1872</span><div class="tl__e"><b>The South Improvement Company</b> is exposed in February and dead by April. In the same weeks Standard absorbs 22 of Cleveland's 26 refiners. Share rises to about 25%.</div></div>
+
+        <div class="tl__era"><b>1873 – 1882</b><span>Conquest and consolidation</span></div>
+        <div class="tl__row"><span class="tl__y">1874–75</span><div class="tl__e">Secret alliances with Charles Lockhart (Pittsburgh), William Warden (Philadelphia) and Charles Pratt with Henry Rogers (New York).</div></div>
+        <div class="tl__row"><span class="tl__y">1877</span><div class="tl__e">War with the Pennsylvania Railroad and its Empire Transportation Company. Standard wins; the railroad sells Empire to Standard in October.</div></div>
+        <div class="tl__row"><span class="tl__y">1878–79</span><div class="tl__e">Pennsylvania indicts Rockefeller and associates for conspiracy. New York's Hepburn Committee exposes the rebate system. Tidewater completes the first long-distance oil pipeline. Standard's share of refining reaches roughly 90%.</div></div>
+        <div class="tl__row"><span class="tl__y">1882</span><div class="tl__e"><b>2 January:</b> the Standard Oil Trust agreement. Forty-one shareholders vest their stock in nine trustees. Headquarters moves toward 26 Broadway.</div></div>
+
+        <div class="tl__era"><b>1883 – 1899</b><span>Empire, and the first cracks</span></div>
+        <div class="tl__row"><span class="tl__y">1885</span><div class="tl__e">Lima, Ohio field opens with sulphurous crude nobody can refine. Rockefeller buys in against his own board's advice.</div></div>
+        <div class="tl__row"><span class="tl__y">1888–89</span><div class="tl__e">Herman Frasch cracks the desulphurisation problem. The Whiting, Indiana refinery opens. Standard moves into production for the first time.</div></div>
+        <div class="tl__row"><span class="tl__y">1889</span><div class="tl__e">First gift to found the University of Chicago.</div></div>
+        <div class="tl__row"><span class="tl__y">1890</span><div class="tl__e">Sherman Antitrust Act passed. Frederick Gates recruited the following year.</div></div>
+        <div class="tl__row"><span class="tl__y">1892</span><div class="tl__e">Ohio Supreme Court orders the Trust dissolved. Standard reorganises rather than disperses.</div></div>
+        <div class="tl__row"><span class="tl__y">1896–97</span><div class="tl__e">Rockefeller withdraws from active management while keeping the title of president. Archbold runs the company.</div></div>
+        <div class="tl__row"><span class="tl__y">1899</span><div class="tl__e">Standard Oil Company of New Jersey becomes the holding company for the whole system, capital raised to $110 million.</div></div>
+
+        <div class="tl__era"><b>1900 – 1911</b><span>Exposure and dissolution</span></div>
+        <div class="tl__row"><span class="tl__y">1901</span><div class="tl__e">Spindletop blows in at Beaumont, Texas, and Standard does not control it. Rockefeller loses all his hair to alopecia. The Rockefeller Institute for Medical Research is founded. The Mesabi iron ore properties are sold to J. P. Morgan's US Steel.</div></div>
+        <div class="tl__row"><span class="tl__y">1902–04</span><div class="tl__e">Ida Tarbell's nineteen-part <i>History of the Standard Oil Company</i> runs in McClure's and appears as a book.</div></div>
+        <div class="tl__row"><span class="tl__y">1906</span><div class="tl__e">Bureau of Corporations reports on Standard's transportation practices. <b>15 November:</b> the federal antitrust suit is filed.</div></div>
+        <div class="tl__row"><span class="tl__y">1907</span><div class="tl__e">Judge Landis fines Standard of Indiana $29.24 million. Reversed on appeal the following year.</div></div>
+        <div class="tl__row"><span class="tl__y">1911</span><div class="tl__e"><b>15 May:</b> the Supreme Court affirms dissolution. Standard is broken into 34 companies. The successor shares immediately begin to climb.</div></div>
+
+        <div class="tl__era"><b>1912 – 1937</b><span>Giving, and the long ending</span></div>
+        <div class="tl__row"><span class="tl__y">1913</span><div class="tl__e">The Rockefeller Foundation is chartered in New York after Congress refuses a federal charter. His fortune peaks near $900 million.</div></div>
+        <div class="tl__row"><span class="tl__y">1914</span><div class="tl__e"><b>20 April:</b> the Ludlow massacre in Colorado. Ivy Lee is hired. John Jr. begins the family's turn toward labour relations and public relations.</div></div>
+        <div class="tl__row"><span class="tl__y">1915</span><div class="tl__e">Cettie dies, 12 March.</div></div>
+        <div class="tl__row"><span class="tl__y">1917–20</span><div class="tl__e">Dictates his reminiscences to William Inglis, the source Chernow relies on most.</div></div>
+        <div class="tl__row"><span class="tl__y">1922–37</span><div class="tl__e">Winters at Ormond Beach, Florida. Golf, dimes, a fixed daily routine, and a widely publicised campaign to reach one hundred.</div></div>
+        <div class="tl__row"><span class="tl__y">1937</span><div class="tl__e"><b>23 May:</b> dies at Ormond Beach, aged 97. Buried at Lake View Cemetery, Cleveland.</div></div>
+      </div>
+    </div>
+    <figcaption class="plate__cap">The commercial life is compressed into a startlingly short span. Everything that made Standard Oil unassailable happened between 1865 and 1882, seventeen years, and he was 25 at the start of it and 42 at the end. He then spent fifty-five more years as its owner, defendant and donor.</figcaption>
+  </figure>
+</section>
+
+<!-- ================= f.02 ================= -->
+<section id="f02" data-tab="f.02 ledger">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 02</b> · Job Day and Ledger A</span><span>1855 – 1863</span></div>
+    <h2 class="folio__title">Job Day and Ledger A</h2>
+    <p class="folio__dek">He found work at sixteen after six weeks of walking the Cleveland waterfront, and treated the date as more important than his own birthday for the next eighty years.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">In the late summer of 1855 Rockefeller made a list of the substantial firms in Cleveland and called on each one, then called again, then a third time. He was turned away for six weeks. On 26 September the commission merchants Hewitt &amp; Tuttle put him to work as an assistant bookkeeper. No salary was discussed. Three months later they handed him fifty dollars.</p>
+
+    <p>He loved the work in a way that is hard to overstate. The ledgers of a commission house recorded every transaction of a small trading empire, and he treated them as both a moral and a technical instrument. He checked every freight bill line by line and found errors that others waved through. He learned, in his own words, to have great respect for figures and facts no matter whose they were. He would later say he was trained in the school of the ledger and never left it.</p>
+
+    <p>He also kept his own. <strong>Ledger A</strong>, a small account book recording every cent he earned and spent from 1855, became the family relic. He read from it aloud to his children and grandchildren, showed it to visitors, and in old age still spoke about it with visible emotion. From the first pay packet it recorded charitable giving, and by the time he was twenty he was giving away roughly six percent of his income, rising past ten.</p>
+
+    <div class="pull">
+      <p>"All my future seemed to hinge on that day, and I often tremble when I ask myself the question: what if I had not got the job?"</p>
+      <cite>On Job Day, 26 September 1855</cite>
+    </div>
+
+    <h3 class="sub">Clark &amp; Rockefeller</h3>
+    <p>In 1859, aged nineteen, he went into business with Maurice Clark as produce commission merchants. He had saved about eight hundred dollars. His father lent him the balance of his share at ten percent interest, characteristically charging his son a commercial rate and, equally characteristically, occasionally demanding the principal back at awkward moments to test him.</p>
+
+    <p>The Civil War was the making of the firm. Government demand for provisions, salt and grain ran through Cleveland, and Clark &amp; Rockefeller cleared it. Rockefeller did not serve. He paid for a substitute, as thousands of prosperous Northerners legally did, and justified it afterwards on the grounds that he was supporting his mother and siblings and that his business was itself war work. Chernow treats it as one of the episodes where the self-justification is a little too smooth.</p>
+
+    <p>Two miles of the same story were unfolding in western Pennsylvania. On 27 August 1859 Edwin Drake struck oil at sixty-nine and a half feet outside Titusville. Within three years the valley was a forest of derricks, the price of crude had collapsed from around sixteen dollars a barrel to pennies, and a chaotic new business had appeared that needed exactly what Rockefeller had: capital, transport connections and an accountant's temperament.</p>
+  </div>
+</section>
+
+<!-- ================= f.03 ================= -->
+<section id="f03" data-tab="f.03 refiner">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 03</b> · The refiner</span><span>1863 – 1870</span></div>
+    <h2 class="folio__title">The refiner</h2>
+    <p class="folio__dek">He never wanted to drill for oil. He wanted the one stage of the business where scale, chemistry and freight rates decided the outcome.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">In 1863 Rockefeller and Clark backed Samuel Andrews, an English mechanic who understood how to distil kerosene cleanly, and built the Excelsior Works on Kingsbury Run in Cleveland, sited deliberately beside a railway line. Within two years refining was earning more than the produce business, and Rockefeller wanted to plough everything back into it. The Clark brothers wanted to slow down.</p>
+
+    <p>On 2 February 1865 the partners agreed to auction the refinery between themselves. The bidding climbed past fifty thousand dollars, then seventy. Rockefeller bid $72,500 and Maurice Clark put down his hand. He was twenty-five years old, and he had, in a single afternoon, taken sole control of the largest refinery in Cleveland. He called it the day that determined his career.</p>
+
+    <h3 class="sub">Flagler, and the discovery of leverage</h3>
+    <p>The second decisive arrival was Henry Flagler in 1867, bringing with him the capital of Stephen Harkness. Flagler was a natural negotiator with no scruples about pressing an advantage, and he supplied what Rockefeller lacked in temperament. The two men worked at facing desks, walked to and from the office together, and drafted contracts jointly. Flagler's insight was that a refiner shipping enough volume was not a customer of the railroads but a counterparty, and that guaranteed, regular, full trainloads were worth paying for.</p>
+
+    <p>That insight only worked because of where Cleveland sat. Refiners in the Pennsylvania oil regions and in Pittsburgh were effectively captive to the Pennsylvania Railroad. Cleveland had two competing eastern trunk connections plus a water route down Lake Erie and along the Erie Canal in the shipping season. Rockefeller could, and did, play them against one another.</p>
+  </div>
+
+  <!-- PLATE IV -->
+  <figure class="plate plate--wide rv" id="p4">
+    <div class="plate__head"><span class="plate__num">Plate IV</span><h4 class="plate__title">Why Cleveland</h4></div>
+    <div class="plate__body">
+      <svg viewBox="0 0 920 320" role="img" aria-label="Cleveland versus Pittsburgh freight routes" style="font-family:'Avenir Next',system-ui,sans-serif">
+        <style>
+          .nb{fill:#EFF2EB;stroke:#C3CABF;stroke-width:1}
+          .nbh{fill:#F7EDEB;stroke:#B8433A;stroke-width:1.6}
+          .rt{stroke:#5C7550;stroke-width:2;fill:none}
+          .rt1{stroke:#B8433A;stroke-width:2;fill:none}
+          .rl{font-size:11.5px;fill:#4E564C}
+          .rn{font-size:14px;fill:#1B1E1A;font-weight:600}
+          .rs{font-size:10px;fill:#7A8377;font-family:ui-monospace,Menlo,monospace}
+          .tg{font-size:9.5px;fill:#9C7325;font-family:ui-monospace,Menlo,monospace;letter-spacing:.12em}
+        </style>
+
+        <rect class="nbh" x="24" y="34" width="164" height="116"/>
+        <text class="rn" x="40" y="66">CLEVELAND</text>
+        <text class="rs" x="40" y="84">Rockefeller, 1865</text>
+        <text class="rs" x="40" y="112">Three independent</text>
+        <text class="rs" x="40" y="125">routes to the coast</text>
+
+        <line class="rt" x1="188" y1="52" x2="742" y2="86"/>
+        <line class="rt" x1="188" y1="80" x2="742" y2="112"/>
+        <line class="rt" x1="188" y1="120" x2="742" y2="140"/>
+        <text class="rl" x="215" y="46">Lake Shore &amp; Michigan Southern <tspan class="rs">→ New York Central</tspan></text>
+        <text class="rl" x="215" y="76">Atlantic &amp; Great Western <tspan class="rs">→ Erie Railroad</tspan></text>
+        <text class="rl" x="215" y="116">Lake Erie steamers to Buffalo <tspan class="rs">→ Erie Canal, in season</tspan></text>
+
+        <rect class="nb" x="24" y="210" width="164" height="76"/>
+        <text class="rn" x="40" y="242">PITTSBURGH</text>
+        <text class="rs" x="40" y="260">and the oil regions</text>
+        <text class="rs" x="40" y="275">One route out</text>
+
+        <line class="rt1" x1="188" y1="248" x2="742" y2="200"/>
+        <text class="rl" x="215" y="242">Pennsylvania Railroad <tspan class="rs">→ no alternative, no leverage</tspan></text>
+
+        <rect class="nb" x="742" y="60" width="150" height="150"/>
+        <text class="rn" x="758" y="110">EASTERN</text>
+        <text class="rn" x="758" y="130">SEABOARD</text>
+        <text class="rs" x="758" y="152">New York</text>
+        <text class="rs" x="758" y="166">Philadelphia</text>
+        <text class="rs" x="758" y="180">Baltimore</text>
+
+        <text class="tg" x="24" y="308">THE WHOLE REBATE STRATEGY RESTS ON THE GAP BETWEEN THESE TWO PICTURES</text>
+      </svg>
+    </div>
+    <figcaption class="plate__cap">Cleveland was a worse location than Pittsburgh on paper: further from the wells, with an extra hundred miles of freight on every barrel of crude. It was a better location in practice because its refiners could auction their business between three carriers. Rockefeller turned a geographic disadvantage into negotiating power, and the railroads bid against each other for his trainloads.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h3 class="sub">Why he refused to drill</h3>
+    <p>Producing crude was a lottery. A well came in or it did not, and when too many came in the price collapsed. Between 1859 and 1861 crude fell from around sixteen dollars a barrel to about ten cents. Rockefeller watched producers get rich and then ruined on the same acre, and concluded that the money was in the narrow, capital-intensive, chemically demanding middle of the chain. He stayed out of production for more than twenty years and entered only in 1885, when he could do it on his own terms.</p>
+  </div>
+
+  <!-- PLATE V -->
+  <figure class="plate plate--wide rv" id="p5">
+    <div class="plate__head"><span class="plate__num">Plate V</span><h4 class="plate__title">Crude price, 1859 to 1900</h4></div>
+    <div class="plate__body">
+      <div class="chart" data-chart="line" data-series='{
+        "height":340,"yMax":17,"yTicks":4,"yPrefix":"$","padRight":40,"padLeft":58,"every":5,
+        "x":["1859","1860","1861","1862","1863","1864","1865","1866","1867","1868","1869","1870","1871","1872","1873","1874","1875","1876","1877","1878","1879","1880","1881","1882","1883","1884","1885","1886","1887","1888","1889","1890","1891","1892","1893","1894","1895","1896","1897","1898","1899","1900"],
+        "marks":[{"at":"1865","label":"Buys the refinery","y":14},{"at":"1872","label":"Cleveland Massacre","y":34},{"at":"1885","label":"Lima gamble","y":54}],
+        "series":[{"name":"","color":"red","fill":true,"dots":false,"width":2,
+          "values":[16,9.6,0.49,1.05,3.15,8.06,6.59,3.74,2.41,3.62,5.64,3.86,4.34,3.64,1.83,1.17,1.35,2.56,2.42,1.19,0.86,0.95,0.86,0.78,1.00,0.84,0.88,0.71,0.67,0.65,0.77,0.77,0.67,0.56,0.64,0.84,1.36,1.18,0.79,0.91,1.29,1.19],
+          "callouts":[{"at":"1859","label":"$16.00","dy":-12,"anchor":"start"},{"at":"1861","label":"49 cents","dy":16,"dx":9,"anchor":"start"},{"at":"1864","label":"$8.06","dy":-12}]}]
+      }'></div>
+    </div>
+    <figcaption class="plate__cap">Approximate annual average price of a barrel of US crude. The violence of the first six years is the whole explanation for Rockefeller's strategy. Producers lived on this curve; refiners did not have to. After 1880 the price is flat and low, which is exactly the condition under which the advantage moves permanently to whoever has the lowest processing and freight cost.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h3 class="sub">Integration as cost war</h3>
+    <p>What Rockefeller did with the Cleveland works between 1865 and 1870 is the part of the story that reads most like an operating manual. He bought the timber tracts, built the kilns to dry the staves so the wood would ship lighter, and made his own barrels for under a dollar when competitors paid two and a half. He bought his own tank cars, his own warehouses, his own boats. He built a plant to recover the sulphuric acid used in treatment instead of dumping it. He hired his own plumbers and bought pipe by the wagonload.</p>
+
+    <p>He also refused to waste anything that came out of a barrel. The residues that competitors poured into the Cumberland and the Allegheny became paraffin wax, petroleum jelly, lubricating oils, naphtha, benzene, paint and glue. Every one of those was a small business, and collectively they meant Standard's real cost of a gallon of kerosene was lower than the number a rival could calculate from his own books.</p>
+
+    <p>The famous anecdote sits here. Inspecting a canning line, he asked how many drops of solder were used to seal each tin. Forty. He asked them to try thirty-eight. The cans leaked. Thirty-nine held, and the saving on that one change, at Standard's volumes, ran into thousands of dollars a year for decades. Chernow's point is not the thrift itself but the fact that the richest man in the world was still asking that question at that level of detail.</p>
+  </div>
+
+  <!-- PLATE VI -->
+  <figure class="plate plate--wide rv" id="p6">
+    <div class="plate__head"><span class="plate__num">Plate VI</span><h4 class="plate__title">What Standard owned</h4></div>
+    <div class="plate__body">
+      <div class="chain">
+        <div class="chain__item x"><span class="chain__k">Avoided</span><b>Oil wells</b><i>Left to the producers until 1885. Too random, too cyclical, too many people.</i></div>
+        <div class="chain__item o"><span class="chain__k">Owned</span><b>Gathering lines &amp; field tanks</b><i>Control of the first mile out of the wells.</i></div>
+        <div class="chain__item o"><span class="chain__k">Owned</span><b>Trunk pipelines</b><i>National Transit. Eventually the cheapest long-haul route in America.</i></div>
+        <div class="chain__item c"><span class="chain__k">Controlled</span><b>Railroads</b><i>Never owned. Bound by rebate contracts, evener agreements and the threat of diverted volume.</i></div>
+        <div class="chain__item o"><span class="chain__k">Owned</span><b>Tank cars</b><i>Standard supplied the rolling stock, so the railroads could not supply a rival.</i></div>
+        <div class="chain__item o"><span class="chain__k">Owned</span><b>Refineries</b><i>Concentrated into a few enormous works and the small ones shut.</i></div>
+        <div class="chain__item o"><span class="chain__k">Owned</span><b>Timber, kilns, cooperage</b><i>Barrels at under $1 against a market price near $2.50.</i></div>
+        <div class="chain__item o"><span class="chain__k">Owned</span><b>Acid recovery, cans, cases, glue, paint</b><i>Byproducts sold rather than dumped.</i></div>
+        <div class="chain__item o"><span class="chain__k">Owned</span><b>Terminals &amp; warehouses</b><i>Storage as a weapon during price wars.</i></div>
+        <div class="chain__item o"><span class="chain__k">Owned</span><b>Tank wagons &amp; horses</b><i>Direct delivery to the grocer, cutting out the jobber.</i></div>
+        <div class="chain__item o"><span class="chain__k">Owned</span><b>Export fleet &amp; foreign agencies</b><i>Kerosene reached China, India and Europe under Standard's own flag.</i></div>
+      </div>
+      <div class="legend" style="margin-top:20px">
+        <span><i style="background:#5C7550"></i>Owned outright</span>
+        <span><i style="background:#9C7325"></i>Controlled by contract</span>
+        <span><i style="background:#B8433A"></i>Deliberately avoided</span>
+      </div>
+    </div>
+    <figcaption class="plate__cap">Standard integrated in both directions from refining, with two deliberate exceptions. It stayed out of drilling because the economics were uncontrollable, and it never bought a railroad, because owning one would have made it a common carrier subject to regulation while contracting with three gave it more power than owning one ever could.</figcaption>
+  </figure>
+
+  <!-- PLATE VII -->
+  <figure class="plate plate--wide rv" id="p7">
+    <div class="plate__head"><span class="plate__num">Plate VII</span><h4 class="plate__title">From one barrel</h4></div>
+    <div class="plate__body">
+      <svg viewBox="0 0 920 360" role="img" aria-label="Products refined from a barrel of crude" style="font-family:'Avenir Next',system-ui,sans-serif">
+        <style>
+          .brl{fill:#3A1E1B;stroke:#2A1412}
+          .fl{stroke:#C3CABF;stroke-width:1.2;fill:none}
+          .flg{stroke:#5C7550;stroke-width:1.6;fill:none}
+          .pn{font-size:13px;fill:#1B1E1A;font-weight:600}
+          .pd{font-size:11px;fill:#7A8377}
+          .pk{font-size:9.5px;fill:#9C7325;font-family:ui-monospace,Menlo,monospace;letter-spacing:.12em}
+        </style>
+        <rect class="brl" x="40" y="140" width="86" height="86" rx="4"/>
+        <text x="83" y="176" text-anchor="middle" font-size="11" fill="#E3E7DF" font-family="ui-monospace,Menlo,monospace">ONE</text>
+        <text x="83" y="192" text-anchor="middle" font-size="11" fill="#E3E7DF" font-family="ui-monospace,Menlo,monospace">BARREL</text>
+        <text x="83" y="208" text-anchor="middle" font-size="11" fill="#9C7325" font-family="ui-monospace,Menlo,monospace">42 GAL</text>
+
+        <path class="flg" d="M126 168 C 200 168, 220 40, 300 40"/>
+        <path class="fl" d="M126 178 C 200 178, 220 86, 300 86"/>
+        <path class="fl" d="M126 188 C 200 188, 220 132, 300 132"/>
+        <path class="fl" d="M126 196 C 200 196, 220 178, 300 178"/>
+        <path class="fl" d="M126 204 C 200 204, 220 224, 300 224"/>
+        <path class="fl" d="M126 212 C 200 212, 220 270, 300 270"/>
+        <path class="fl" d="M126 220 C 200 220, 220 316, 300 316"/>
+
+        <text class="pk" x="300" y="26">THE PRODUCT THAT BUILT THE FORTUNE</text>
+        <text class="pn" x="300" y="46">Kerosene, "the new light"</text>
+        <text class="pd" x="300" y="62">Roughly half the barrel. Cheaper than whale oil, cleaner than candles, and by</text>
+        <text class="pd" x="300" y="76">the 1880s lighting most of the industrialised world.</text>
+
+        <text class="pn" x="300" y="92">Lubricating oils and greases</text>
+        <text class="pd" x="300" y="108">Sold to the same railroads Standard was negotiating with.</text>
+
+        <text class="pn" x="300" y="138">Paraffin wax</text>
+        <text class="pd" x="300" y="154">Candles, chewing gum, waterproofing, food packaging.</text>
+
+        <text class="pn" x="300" y="184">Petroleum jelly</text>
+        <text class="pd" x="300" y="200">Chesebrough's Vaseline. Standard eventually owned the company.</text>
+
+        <text class="pn" x="300" y="230">Naphtha, benzene, solvents</text>
+        <text class="pd" x="300" y="246">Cleaning fluids, paint thinners, industrial feedstock.</text>
+
+        <text class="pn" x="300" y="276">Gasoline</text>
+        <text class="pd" x="300" y="292">A dangerous waste product, dumped or burned off, until the motor car turned it into the main event after 1900.</text>
+
+        <text class="pn" x="300" y="322">Residuum, coke, acid sludge</text>
+        <text class="pd" x="300" y="338">Fuel oil, road tar, and sulphuric acid recovered and used again.</text>
+      </svg>
+    </div>
+    <figcaption class="plate__cap">Competitors sold the kerosene and threw the rest into the nearest river. Standard sold the rest, and the difference showed up as a structurally lower cost per gallon on the only product anyone was competing on. This is the least dramatic and most durable of Rockefeller's advantages.</figcaption>
+  </figure>
+</section>
+
+</main>
+
+<!-- ================= f.04 (band) ================= -->
+<div class="band">
+<div class="wrap">
+<section id="f04" data-tab="f.04 massacre">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 04</b> · Standard Oil and the Cleveland Massacre</span><span>1870 – 1872</span></div>
+    <h2 class="folio__title">Standard Oil and the Cleveland Massacre</h2>
+    <p class="folio__dek">In six weeks in early 1872 Standard Oil absorbed twenty-two of the twenty-six refineries in its own city. It is the single most consequential episode in the book, and the one that made Rockefeller permanently hated.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">On 10 January 1870 the partnership became the Standard Oil Company of Ohio, capitalised at one million dollars in ten thousand shares. Rockefeller took 2,667 of them, the largest single block; the rest went to William Rockefeller, Flagler, Andrews, Harkness and Oliver Jennings. The name was chosen to signal a standard, uniform, non-explosive quality of kerosene at a time when bad refining regularly burned families to death.</p>
+
+    <p>Standard was already the largest refiner in the world and still only about a tenth of American capacity. The industry had roughly three times the refining capacity it needed. Prices were collapsing, everyone was losing money, and Rockefeller drew the conclusion he would hold for the rest of his life: an industry with this much overcapacity cannot be fixed by competition, and someone has to consolidate it.</p>
+
+    <p>He never used the word monopoly. He called it cooperation, and he described what followed as an act of rescue.</p>
+
+    <h3 class="sub">The South Improvement Company</h3>
+    <p>The instrument was a dormant Pennsylvania charter with extraordinarily loose powers. In late 1871 Standard, a small group of allied refiners, and the three trunk railroads, the Pennsylvania, the Erie and the New York Central, signed an agreement that would have restructured the entire industry. Freight rates would roughly double for everyone. Members would receive rebates that put them back where they started or better. And, critically, members would receive <strong>drawbacks</strong>: a payment on every barrel shipped by a non-member.</p>
+
+    <p>It also required the railroads to hand over full waybill information on rivals' shipments, meaning Standard would know what every competitor shipped, where, and to whom.</p>
+  </div>
+
+  <!-- PLATE VIII -->
+  <figure class="plate plate--wide rv" id="p8">
+    <div class="plate__head"><span class="plate__num">Plate VIII</span><h4 class="plate__title">Rebate, drawback, evener</h4></div>
+    <div class="plate__body">
+      <svg viewBox="0 0 920 410" role="img" aria-label="How rebates and drawbacks worked" style="font-family:'Avenir Next',system-ui,sans-serif">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#9C7325"/>
+          </marker>
+          <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#D0705F"/>
+          </marker>
+        </defs>
+        <style>
+          .db{fill:rgba(246,248,243,.07);stroke:rgba(238,230,222,.34);stroke-width:1}
+          .dbh{fill:rgba(184,67,58,.16);stroke:#D0705F;stroke-width:1.4}
+          .dn{font-size:12.5px;fill:#EEE6DE;font-weight:600}
+          .ds{font-size:10px;fill:rgba(238,230,222,.55);font-family:ui-monospace,Menlo,monospace}
+          .dk{font-size:10px;fill:#C79B44;font-family:ui-monospace,Menlo,monospace;letter-spacing:.13em}
+          .dv{font-size:12px;fill:#C79B44;font-family:ui-monospace,Menlo,monospace}
+          .dvr{font-size:12px;fill:#D0705F;font-family:ui-monospace,Menlo,monospace}
+          .dnet{font-size:15px;fill:#EEE6DE;font-weight:600;font-family:ui-monospace,Menlo,monospace}
+          .arw{stroke:#9C7325;stroke-width:1.6;fill:none;marker-end:url(#ah)}
+          .arwr{stroke:#D0705F;stroke-width:1.6;fill:none;marker-end:url(#ahr)}
+        </style>
+
+        <!-- row A -->
+        <text class="dk" x="0" y="26">1 · THE PUBLISHED RATE</text>
+        <rect class="db" x="0" y="38" width="170" height="56"/>
+        <text class="dn" x="14" y="62">Any refiner</text><text class="ds" x="14" y="78">ships one barrel</text>
+        <line class="arw" x1="176" y1="66" x2="384" y2="66"/>
+        <text class="dv" x="200" y="56">pays $2.00</text>
+        <rect class="db" x="392" y="38" width="150" height="56"/>
+        <text class="dn" x="406" y="62">Railroad</text><text class="ds" x="406" y="78">tariff rate</text>
+        <text class="dnet" x="640" y="62">net $2.00</text>
+        <text class="ds" x="640" y="80">the price on the tariff sheet</text>
+
+        <line x1="0" y1="118" x2="920" y2="118" stroke="rgba(238,230,222,.14)"/>
+
+        <!-- row B -->
+        <text class="dk" x="0" y="152">2 · THE REBATE</text>
+        <rect class="dbh" x="0" y="164" width="170" height="56"/>
+        <text class="dn" x="14" y="188">Standard Oil</text><text class="ds" x="14" y="204">ships one barrel</text>
+        <line class="arw" x1="176" y1="192" x2="384" y2="192"/>
+        <text class="dv" x="200" y="182">pays $2.00</text>
+        <rect class="db" x="392" y="164" width="150" height="56"/>
+        <text class="dn" x="406" y="188">Railroad</text><text class="ds" x="406" y="204">secret contract</text>
+        <path class="arwr" d="M467 226 C 467 256, 85 256, 85 228"/>
+        <text class="dvr" x="200" y="278">returns $0.50 in secret</text>
+        <text class="dnet" x="640" y="188">net $1.50</text>
+        <text class="ds" x="640" y="206">a 25% freight advantage, invisible</text>
+
+        <line x1="0" y1="290" x2="920" y2="290" stroke="rgba(238,230,222,.14)"/>
+
+        <!-- row C -->
+        <text class="dk" x="0" y="322">3 · THE DRAWBACK</text>
+        <rect class="db" x="0" y="334" width="170" height="56"/>
+        <text class="dn" x="14" y="358">Independent</text><text class="ds" x="14" y="374">ships one barrel</text>
+        <line class="arw" x1="176" y1="362" x2="384" y2="362"/>
+        <text class="dv" x="200" y="352">pays $2.00</text>
+        <rect class="db" x="392" y="334" width="150" height="56"/>
+        <text class="dn" x="406" y="358">Railroad</text>
+        <line class="arwr" x1="548" y1="362" x2="624" y2="362"/>
+        <text class="dvr" x="556" y="352">$0.40</text>
+        <rect class="dbh" x="632" y="334" width="180" height="56"/>
+        <text class="dn" x="646" y="358">Standard Oil</text>
+        <text class="ds" x="646" y="374">paid on a rival's barrel</text>
+        <text class="ds" x="0" y="404">The independent's cost does not fall. Standard earns a margin on oil it never bought, refined or touched.</text>
+      </svg>
+      <div class="note" style="max-width:none;margin:28px 0 0">
+        <h5>The fourth device: the evener</h5>
+        <p>Later, and more quietly, Standard took on the role of allocating oil traffic among the competing railroads to keep them from cutting rates against each other, and was paid a commission for doing it. The company that shipped the oil was also the referee of the market for shipping oil. Chernow treats the evener arrangements as the point where Standard stopped being a party to the transport market and became its regulator.</p>
+      </div>
+    </div>
+    <figcaption class="plate__cap">Figures follow the South Improvement Company schedule and are illustrative of the mechanism rather than a single verified tariff. The rebate is defensible as a volume discount, and Rockefeller defended it that way to the end of his life. The drawback is not defensible on any theory, and it is the specific fact that turned public opinion. Standard also received its rivals' waybills, which meant it knew every independent's customers, volumes and destinations.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h3 class="sub">The scheme collapses, the plan succeeds</h3>
+    <p>The South Improvement Company leaked in February 1872 when a railway clerk published the new rate schedule. The oil regions erupted. Three thousand men packed a hall in Titusville, the producers formed a Petroleum Producers' Union and embargoed shipments to Standard, effigies were burned, Standard's cars were shunted and its property attacked. The railroads capitulated within weeks. Pennsylvania revoked the charter on 2 April 1872. The South Improvement Company never shipped a single barrel of oil.</p>
+
+    <p>It did not matter. In the same six or seven weeks, while the fight was still going on, Rockefeller went to every refiner in Cleveland in turn. He did not need the scheme to work; he only needed his competitors to believe it might. He showed them Standard's books, which were far better than theirs. He offered an appraisal, a choice of cash or Standard stock, and the observation that he could survive what was coming and they could not.</p>
+
+    <p>Twenty-two of twenty-six Cleveland refiners sold. Standard's capital went from one million to two and a half and then three and a half million dollars. Its share of American refining jumped from about a tenth to about a quarter. Rockefeller was thirty-two.</p>
+
+    <div class="pull">
+      <p>"The Standard Oil Company will take care of you. You will get your money in ten years and be much better off than you are now."</p>
+      <cite>Rockefeller to a Cleveland refiner, as recalled in the Massacre negotiations</cite>
+    </div>
+  </div>
+
+  <!-- PLATE IX -->
+  <figure class="plate plate--wide rv" id="p9">
+    <div class="plate__head"><span class="plate__num">Plate IX</span><h4 class="plate__title">The Cleveland Massacre, February to March 1872</h4></div>
+    <div class="plate__body">
+      <div class="sq-wrap">
+        <div class="sq-grid">
+          <div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div>
+          <div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div>
+          <div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div><div class="sq on"></div>
+          <div class="sq on"></div><div class="sq off"></div><div class="sq off"></div><div class="sq off"></div><div class="sq off"></div>
+        </div>
+        <div class="sq-key">
+          <div class="stat"><b>26</b><span>Refineries in Cleveland at the start of February 1872, including Standard itself</span></div>
+          <div class="stat" style="border-color:#D0705F"><b>22</b><span>Absorbed by Standard Oil in roughly six weeks, by purchase, exchange of stock, or closure</span></div>
+          <div class="stat"><b>4</b><span>Independents still standing at the end of March, and most did not last the decade</span></div>
+          <div class="stat"><b>10% → 25%</b><span>Standard's share of United States refining capacity, before and after</span></div>
+        </div>
+      </div>
+    </div>
+    <figcaption class="plate__cap">Chernow calls it the Cleveland Massacre because that is what the losers called it. Rockefeller's own account, given to Inglis half a century later, was that he had offered generous appraisals to men whose businesses were worthless and that most of them thanked him afterwards. Both descriptions are partly true, and which one you believe depends almost entirely on whether the seller took cash or stock.</figcaption>
+  </figure>
+
+  <!-- PLATE X -->
+  <figure class="plate plate--wide rv" id="p10">
+    <div class="plate__head"><span class="plate__num">Plate X</span><h4 class="plate__title">Cash or stock</h4></div>
+    <div class="plate__body">
+      <div class="grid g2" style="gap:22px">
+        <div class="card" style="border-color:#5C7550">
+          <span class="tag" style="color:#8FB07F">TOOK STANDARD STOCK</span>
+          <h6 style="font-size:19px">They became rich beyond anything the refinery could have earned</h6>
+          <p style="margin-top:10px"><b>Oliver H. Payne</b> ran Cleveland's largest rival, Clark, Payne &amp; Co. He took stock, became Standard's treasurer, and died one of the wealthiest men in America.</p>
+          <p style="margin-top:10px"><b>Charles Pratt and Henry Rogers</b> in New York, and the Pittsburgh and Philadelphia refiners brought in over the following three years, all took paper and all ended up on the inside.</p>
+          <p style="margin-top:10px">Standard paid dividends continuously and heavily for forty years. A holding taken in 1872 compounded through every price war, every investigation, and finally through the 1911 dissolution, which increased its value again.</p>
+        </div>
+        <div class="card" style="border-color:#D0705F">
+          <span class="tag" style="color:#D0705F">TOOK CASH</span>
+          <h6 style="font-size:19px">They were paid a fair price for a dying business and spent the rest of their lives furious</h6>
+          <p style="margin-top:10px"><b>Frank Rockefeller</b>, his own brother, sold and believed he had been cheated. The two men were estranged for decades. Frank eventually disinterred his two dead children from the family plot at Lake View so they would not lie beside John.</p>
+          <p style="margin-top:10px"><b>Isaac Hewitt</b>, the man who gave him his first job in 1855, came to him as a supplicant and sold out.</p>
+          <p style="margin-top:10px"><b>Samuel Andrews</b>, the partner who taught him to refine, later demanded a million dollars for his stake in a fit of temper. Rockefeller paid it without argument and Andrews learned soon after what the shares were really worth.</p>
+        </div>
+      </div>
+    </div>
+    <figcaption class="plate__cap">This single choice explains most of the surviving testimony about Rockefeller's character. The men who took paper wrote warmly about him for the rest of their lives. The men who took cash supplied the muckrakers with their material. Ida Tarbell's father was among those who resisted, and her family friend, a refiner who had borrowed to expand, killed himself.</figcaption>
+  </figure>
+</section>
+</div>
+</div>
+
+<main class="wrap">
+<!-- ================= f.05 ================= -->
+<section id="f05" data-tab="f.05 conquest">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 05</b> · The conquest</span><span>1872 – 1879</span></div>
+    <h2 class="folio__title">The conquest</h2>
+    <p class="folio__dek">Seven years to go from a quarter of American refining to nine tenths of it, mostly by absorbing the men who had beaten him in public.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">Cleveland was the template and the rest of the country was the rollout. Between 1874 and 1875 Rockefeller quietly brought in the leading refiners of the three cities that mattered: Charles Lockhart in Pittsburgh, William Warden in Philadelphia, and Charles Pratt with Henry Rogers in New York. These were not weak men being crushed. They were the strongest independents in the country, and the offer was partnership in a combination that would end the price war they were all losing.</p>
+
+    <p>The arrangement was kept secret for years. Acquired firms went on trading under their own names, with their old proprietors apparently in charge, while Standard held the stock through nominees. Customers who thought they were buying from a competitor were buying from Standard. Chernow treats this concealment, more than the rebates, as the thing that poisoned the company's reputation permanently: it turned a defensible commercial strategy into something that looked and functioned like a conspiracy.</p>
+
+    <h3 class="sub">Breaking the Pennsylvania Railroad, 1877</h3>
+    <p>The last serious challenger to Standard's transport position was Tom Scott's Pennsylvania Railroad, which in 1876 pushed its subsidiary, the Empire Transportation Company, into refining and pipelines. Standard's response was total. It cancelled shipments on the Pennsylvania, cut prices in the markets Empire served, shut its own Pittsburgh refineries to make the point, and shifted traffic to the Erie and the New York Central.</p>
+
+    <p>The railroad fought for months and then the great strike of July 1877 tore through its system, burning rolling stock at Pittsburgh. Weakened and bleeding cash, the Pennsylvania sold Empire's refineries, pipelines and boats to Standard in October for around three and a half million dollars. The largest corporation in America had lost a fight with an Ohio refiner who was thirty-eight years old.</p>
+
+    <h3 class="sub">The pipeline war</h3>
+    <p>The other threat was technological. In 1879 the Tidewater Pipe Company completed the first long-distance oil pipeline, a hundred and nine miles over the Allegheny mountains to a rail connection at Williamsport, proving that oil could be pumped across a mountain range and bypass the railroads entirely. It was a genuine engineering triumph and a mortal danger to Standard's freight-based advantage.</p>
+
+    <p>Standard's answer was not to fight the technology but to adopt it faster and at greater scale, building four trunk lines to the seaboard while simultaneously buying up Tidewater stock, litigating, and pressuring its bankers and customers. By 1883 Tidewater had accepted an agreement giving it a fixed minority share of the trade. Standard's pipeline network, later organised as the National Transit Company, became the cheapest long-haul transport in America and the foundation of the next thirty years.</p>
+
+    <p>By the end of the 1870s Standard controlled roughly ninety percent of American refining, most of the pipelines, and the terms on which oil moved. Rockefeller was forty.</p>
+  </div>
+
+  <!-- PLATE XI -->
+  <figure class="plate plate--wide rv" id="p11">
+    <div class="plate__head"><span class="plate__num">Plate XI</span><h4 class="plate__title">Share of United States refining, 1870 to 1911</h4></div>
+    <div class="plate__body">
+      <div class="chart" data-chart="line" data-series='{
+        "height":330,"yMax":100,"yTicks":4,"ySuffix":"%","padRight":56,"every":5,
+        "x":["1870","1871","1872","1873","1874","1875","1876","1877","1878","1879","1880","1881","1882","1883","1884","1885","1886","1887","1888","1889","1890","1891","1892","1893","1894","1895","1896","1897","1898","1899","1900","1901","1902","1903","1904","1905","1906","1907","1908","1909","1910","1911"],
+        "marks":[{"at":"1872","label":"Cleveland Massacre","y":16},{"at":"1882","label":"The Trust","y":16},{"at":"1901","label":"Spindletop","y":16},{"at":"1911","label":"Dissolution","y":36}],
+        "series":[{"name":"","color":"slate","fill":true,"dots":false,"width":2.4,
+          "values":[10,12,25,30,40,50,60,70,85,90,90,90,90,90,90,90,89,89,88,88,88,87,87,86,86,86,85,85,85,85,84,84,83,82,80,77,74,72,70,68,66,64],
+          "callouts":[{"at":"1870","label":"10%","dy":-14,"anchor":"start"},{"at":"1879","label":"~90%","dy":-14},{"at":"1911","label":"64%","dy":-14,"anchor":"end","dx":-4}]}]
+      }'></div>
+    </div>
+    <figcaption class="plate__cap">Approximate reconstruction. Standard never published these figures and contemporaries disputed them, so treat the curve as shape rather than measurement. Two things in it matter. The rise from a tenth to nine tenths took nine years. And the decline that began around 1900 was well under way before the government ever won its case: new fields in Texas, California and Oklahoma, plus foreign supply, were eroding the monopoly on their own.</figcaption>
+  </figure>
+</section>
+
+<!-- ================= f.06 ================= -->
+<section id="f06" data-tab="f.06 trust">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 06</b> · The Trust</span><span>1879 – 1899</span></div>
+    <h2 class="folio__title">The Trust</h2>
+    <p class="folio__dek">Standard Oil kept outgrowing the legal forms available to it, so its lawyer invented a new one, and gave the English language a word for the thing everyone would spend the next thirty years trying to destroy.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">By 1880 Standard Oil had a structural problem that had nothing to do with its critics. An Ohio corporation could not legally own stock in corporations chartered by other states. Standard had acquired dozens of companies across a dozen states, and the only way to hold them had been to park the shares in the personal names of trusted individuals, held on informal trust. It worked, but it depended on the honesty and continued life of specific men, and it left the company's real structure invisible even to its own shareholders.</p>
+
+    <p>Samuel C. T. Dodd, Standard's general counsel, produced the solution on 2 January 1882. Forty-one shareholders conveyed the stock of every constituent company to nine trustees, who held it for their benefit and issued them trust certificates in exchange: seven hundred thousand certificates at a par of one hundred dollars, seventy million dollars in all. Rockefeller held roughly a quarter of them. Dodd, notably, refused to own any Standard stock so that his advice would never be suspect, and he turned down a seat as a trustee.</p>
+
+    <p>The word trust had meant a legal relationship of confidence. Within a decade it meant a monopoly, and the laws written to break these arrangements were called antitrust laws. Standard's own device named its executioner.</p>
+  </div>
+
+  <!-- PLATE XII -->
+  <figure class="plate plate--wide rv" id="p12">
+    <div class="plate__head"><span class="plate__num">Plate XII</span><h4 class="plate__title">Six corporate forms, 1863 to 1911</h4></div>
+    <div class="plate__body">
+      <div class="forms">
+        <div class="form">
+          <span class="form__y">1863–70</span>
+          <h6>Partnership</h6>
+          <div class="form__dia"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <p><b>Rockefeller, Andrews &amp; Flagler.</b> Simple, fast, and capable of holding exactly one city's worth of assets.</p>
+          <p class="form__why">Broke because: partnerships cannot raise capital or survive a partner.</p>
+        </div>
+        <div class="form">
+          <span class="form__y">1870–82</span>
+          <h6>Ohio corporation</h6>
+          <div class="form__dia"><span class="box"></span></div>
+          <p><b>Standard Oil Company of Ohio.</b> One million dollars of stock, ten thousand shares, a proper charter.</p>
+          <p class="form__why">Broke because: an Ohio company could not hold stock in out-of-state firms, so the empire had to be held in individuals' names.</p>
+        </div>
+        <div class="form on">
+          <span class="form__y">1882–92</span>
+          <h6>The Trust</h6>
+          <div class="form__dia"><span class="box"></span><span class="fan"></span></div>
+          <p><b>Nine trustees hold everything</b> for forty-one beneficiaries who receive trust certificates. The first true national holding structure in America.</p>
+          <p class="form__why">Broke because: the Ohio Supreme Court ordered it dissolved in 1892 as a conspiracy against trade.</p>
+        </div>
+        <div class="form">
+          <span class="form__y">1892–99</span>
+          <h6>The interlock</h6>
+          <div class="form__dia"><span class="mesh"></span></div>
+          <p><b>Dissolved on paper only.</b> The certificates were exchanged for proportional shares in twenty companies, which the same men then controlled in the same proportions.</p>
+          <p class="form__why">Broke because: it was legally opaque, administratively awkward, and fooled nobody.</p>
+        </div>
+        <div class="form">
+          <span class="form__y">1899–1911</span>
+          <h6>New Jersey holding company</h6>
+          <div class="form__dia"><span class="box tall"></span><span class="fan"></span></div>
+          <p><b>Standard Oil Company of New Jersey</b> becomes the parent, capital raised to $110 million, after New Jersey rewrote its corporation law to allow it.</p>
+          <p class="form__why">Broke because: the Sherman Act reached holding companies too, and the Supreme Court said so in 1911.</p>
+        </div>
+        <div class="form end">
+          <span class="form__y">1911–</span>
+          <h6>Thirty-four companies</h6>
+          <div class="form__dia"><span class="scatter"></span></div>
+          <p><b>Dissolution.</b> Shareholders received proportional stakes in each successor. Rockefeller held about a quarter of every one of them.</p>
+          <p class="form__why">Consequence: the parts proved worth far more than the whole. See Plate XVIII.</p>
+        </div>
+      </div>
+    </div>
+    <figcaption class="plate__cap">Chernow's argument is that Standard's legal history is a record of an organism repeatedly outgrowing its container. Each form was a genuine innovation, each was adopted because the previous one had become impossible, and each provoked the legal response that killed it. New Jersey rewrote its corporation law in the 1890s specifically to attract this kind of business, and collected the franchise fees.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h3 class="sub">26 Broadway</h3>
+    <p>The Trust also produced something more interesting than a legal device: a working model of professional corporate management, more than a decade before anyone else had one. Standard moved into 26 Broadway, and the building became shorthand for the company in the way that a street name later stood for a whole industry.</p>
+
+    <p>Rockefeller ran it through committees. Each functional area, domestic trade, export, manufacturing, transportation, lubricants, cases and cans, had a standing committee drawing on managers from across the constituent companies. The committees had no formal power to command. They gathered comparable statistics from every plant, circulated the comparisons, and argued. Decisions were reached by discussion until consensus, and Rockefeller almost never overruled anyone. He asked questions, and he waited.</p>
+
+    <p>The system's real weapon was information. Standard could tell a refinery superintendent in Baltimore exactly what a barrel cost to produce in Cleveland, and did. It built a statistical department that knew the daily output of nearly every well and refinery in the country, its own and everyone else's. Chernow calls the group of executives it produced the most formidable management team in American business, and notes that half of them had arrived as defeated competitors.</p>
+  </div>
+
+  <!-- PLATE XIII -->
+  <figure class="plate plate--wide rv" id="p13">
+    <div class="plate__head"><span class="plate__num">Plate XIII</span><h4 class="plate__title">26 Broadway: management by committee</h4></div>
+    <div class="plate__body">
+      <div class="org">
+        <div class="org__top">
+          <b>The nine trustees</b>
+          <span>Rockefeller · William Rockefeller · Flagler · Payne · Pratt · Archbold · Warden · Bostwick · Brewster</span>
+        </div>
+        <div class="org__spine"></div>
+        <div class="org__row">
+          <div class="org__box"><b>Executive</b><i>Sets policy, allocates capital, meets daily over lunch</i></div>
+          <div class="org__box"><b>Domestic Trade</b><i>Prices, marketing territories, tank wagon distribution</i></div>
+          <div class="org__box"><b>Export Trade</b><i>Foreign agencies, shipping, the China and India markets</i></div>
+          <div class="org__box"><b>Manufacturing</b><i>Plant costs compared across every refinery, monthly</i></div>
+          <div class="org__box"><b>Transportation</b><i>Pipelines, tank cars, rail contracts, the evener system</i></div>
+          <div class="org__box"><b>Case &amp; Can</b><i>Tinplate, cases, the five-gallon can that carried kerosene to Asia</i></div>
+          <div class="org__box"><b>Lubricating</b><i>The high-margin specialty oils business</i></div>
+          <div class="org__box"><b>Cooperage &amp; Supply</b><i>Barrels, timber, purchasing at scale</i></div>
+        </div>
+        <div class="org__note">
+          <b>No votes.</b> Committees advised and persuaded; they did not command. Rockefeller's method was to ask questions until the room reached agreement, then let the man closest to the work carry it out. His most quoted management maxim was that he would rather earn one percent from the efforts of a hundred men than a hundred percent from his own.
+        </div>
+      </div>
+    </div>
+    <figcaption class="plate__cap">This is the part of Standard Oil that had no scandal attached to it and outlived everything else. Comparable cost accounting across sites, a permanent statistical department, functional committees over geographic ones, promotion from operations, and decisions by consensus rather than command were all effectively invented or perfected here, and taken by the 1911 successor companies into the rest of the American economy.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h3 class="sub">The Lima gamble</h3>
+    <p>In 1885 an enormous field opened at Lima in northwestern Ohio, and the crude was almost useless. It carried so much sulphur that the kerosene stank of rotten eggs and the residue corroded equipment. Nobody could refine it, the price fell to fifteen cents a barrel, and the entire Standard board wanted nothing to do with it.</p>
+
+    <p>Rockefeller wanted all of it. He argued that the chemistry problem would be solved and the field would not wait. When the executive committee refused to commit the company's money, he offered to put up three million dollars of his own and let them buy in later if it worked. They gave way. Standard bought oil and land, and stockpiled forty million barrels of crude nobody wanted.</p>
+
+    <p>The chemist Herman Frasch found the answer in 1888, using copper oxides to strip out the sulphur. Standard suddenly owned an enormous cheap field, and built the Whiting refinery outside Chicago to process it. It also, for the first time, became a major producer of crude in its own right, ending twenty years of deliberate abstinence. By 1891 Standard was producing a quarter of American crude.</p>
+
+    <p>Chernow uses Lima to complicate the caricature. The man remembered for grinding down competitors was also capable of betting his own money against his entire board's judgment on an unsolved chemistry problem, and waiting three years to be proved right.</p>
+
+    <h3 class="sub">Ohio dissolves the Trust, and nothing changes</h3>
+    <p>In 1890 Congress passed the Sherman Antitrust Act. In 1892, on a suit by the Ohio attorney general David Watson, the Ohio Supreme Court ordered the Standard Oil Trust dissolved. Standard complied in form. The trust certificates were exchanged for proportional interests in the twenty constituent companies, so that a man who had held one percent of the Trust now held one percent of each of the twenty. The same nine men still controlled all of them.</p>
+
+    <p>The result was less accountable rather than more. Then in 1899 New Jersey's permissive new corporation law allowed Standard to do openly what it had been doing covertly: Standard Oil of New Jersey became the holding company for the entire system, with its capital raised from ten to a hundred and ten million dollars. Rockefeller remained its president in name until 1911, though he had withdrawn from daily management around 1896 and John Archbold had been running the company for years.</p>
+  </div>
+</section>
+
+<!-- ================= f.07 ================= -->
+<section id="f07" data-tab="f.07 enemies">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 07</b> · Enemies</span><span>1881 – 1904</span></div>
+    <h2 class="folio__title">Enemies</h2>
+    <p class="folio__dek">He answered nothing for thirty years, on principle, and by the time he understood what that silence had cost him it was far too late to speak.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">Rockefeller's policy toward criticism was absolute and consistent: never respond, never explain, never sue, never grant an interview. He believed that answering an accusation dignified it, that the record would vindicate him eventually, and that a man who was right did not need to argue. It was, Chernow says, the single most catastrophic business decision of his life. Into a thirty-year vacuum his enemies poured a portrait that has never been dislodged.</p>
+
+    <p>The first serious attack came from Henry Demarest Lloyd, whose 1881 Atlantic Monthly article <i>The Story of a Great Monopoly</i> sold out seven printings, and whose 1894 book <i>Wealth Against Commonwealth</i> made Standard the emblem of everything wrong with industrial capitalism. Lloyd never named Rockefeller in the book's title or index but the target was unmistakable.</p>
+
+    <p>The most damaging was Ida Tarbell. Her father Franklin had been a Titusville tank builder and independent oil man broken in the aftermath of 1872; a family friend who had borrowed to compete killed himself. She spent five years on the research, working from court records, government investigations, and the testimony George Rice had spent two decades accumulating. Nineteen instalments ran in McClure's from November 1902 to October 1904. It is meticulous, largely accurate on the facts, and devastating.</p>
+
+    <p>Chernow's assessment is careful. He judges Tarbell's account of the business methods essentially sound and her portrait of the man unfair: she made him a cold hypocrite, dwelt on his physical appearance, and dismissed his philanthropy as conscience money. The most quoted line about Rockefeller's face, that it was the face of a man with no scruples and a certain moldy hunger, is hers. Rockefeller's only recorded response was to call her Miss Tarbarrel and refuse to discuss it. Privately, decades later with Inglis, he went through her charges line by line and was still furious.</p>
+
+    <div class="pull">
+      <p>"Not a word! Not a word about that misguided woman."</p>
+      <cite>Rockefeller, when asked about Ida Tarbell</cite>
+    </div>
+
+    <h3 class="sub">Politics, and the letters that surfaced</h3>
+    <p>Standard's involvement in politics was extensive and, for a long time, deniable. In 1884 Henry B. Payne, father of Standard's treasurer, won an Ohio Senate seat under circumstances so obviously purchased that the Senate investigated. Standard money moved through state legislatures wherever oil legislation was pending.</p>
+
+    <p>It became undeniable in 1908, when William Randolph Hearst read aloud at a rally a set of letters from John Archbold to senators and congressmen, obtained by bribing a Standard office boy, discussing payments and legislative favours in language nobody could explain away. Standard's cultivated air of injured innocence did not survive them.</p>
+  </div>
+
+  <!-- PLATE XIV -->
+  <figure class="plate plate--wide rv" id="p14">
+    <div class="plate__head"><span class="plate__num">Plate XIV</span><h4 class="plate__title">The campaigns</h4></div>
+    <div class="plate__body">
+      <table class="data">
+        <thead><tr><th style="width:12%">Years</th><th style="width:22%">Adversary</th><th style="width:34%">What happened</th><th style="width:32%">Outcome</th></tr></thead>
+        <tbody>
+          <tr><td class="n">1872</td><td><b>The oil regions</b><br><span class="small">Producers' Union, Titusville</span></td><td>The South Improvement Company schedule leaked. Mass meetings, an embargo on Standard, effigies burned, the charter revoked within eight weeks.</td><td><b>Standard lost the scheme and won the war.</b> Twenty-two Cleveland refiners sold during the fight itself.</td></tr>
+          <tr><td class="n">1876–77</td><td><b>Pennsylvania Railroad</b><br><span class="small">Tom Scott, Empire Transportation</span></td><td>The largest corporation in America entered refining and pipelines. Standard cancelled its shipments, cut prices in Empire's markets, and closed its own Pittsburgh plants to prove it could.</td><td><b>Standard won outright.</b> Weakened by the 1877 strike, the railroad sold Empire to Standard in October 1877.</td></tr>
+          <tr><td class="n">1879–83</td><td><b>Tidewater Pipe Company</b><br><span class="small">Byron Benson and partners</span></td><td>The first long-distance pipeline, 109 miles over the Alleghenies, proved oil could bypass the railroads. Standard built four competing trunk lines and simultaneously bought Tidewater stock and pressured its lenders.</td><td><b>Neutralised, not destroyed.</b> A 1883 agreement fixed Tidewater's share of the trade at a small minority. Standard absorbed the technology and dominated pipelines for a generation.</td></tr>
+          <tr><td class="n">1881–87</td><td><b>The Buffalo case</b><br><span class="small">Vacuum Oil and a rival works</span></td><td>Standard executives were criminally charged in connection with the sabotage of a competing Buffalo refinery, whose still was deliberately mishandled and blew up.</td><td><b>A courtroom acquittal and a public conviction.</b> Rogers and Archbold were cleared, a subordinate was fined, and the story of Standard hiring men to wreck a rival's plant entered the permanent record.</td></tr>
+          <tr><td class="n">1880s–90s</td><td><b>George Rice</b><br><span class="small">Marietta, Ohio</span></td><td>A small refiner who refused every offer and spent twenty years suing over freight discrimination, accumulating documents nobody else had.</td><td><b>He lost commercially and won historically.</b> His evidence became the spine of Tarbell's series and of the government's case.</td></tr>
+          <tr><td class="n">1902–08</td><td><b>The press</b><br><span class="small">Tarbell, Lloyd, Lawson, Hearst</span></td><td>Nineteen instalments in McClure's, a bestselling book, Thomas Lawson's <i>Frenzied Finance</i> exposing the Amalgamated Copper scheme involving William Rockefeller, and finally the stolen Archbold letters.</td><td><b>Total defeat.</b> Standard's silence policy left the field entirely to its critics and supplied the political conditions for the 1906 suit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figcaption class="plate__cap">A pattern runs through the first three: Standard never won by being better at the thing being fought over. It won by having deeper reserves, more information, and a willingness to lose money in one market indefinitely while the opponent could not. The last three show the limit of that method. Reserves and information are no help at all against a story.</figcaption>
+  </figure>
+</section>
+
+<!-- ================= f.08 ================= -->
+<section id="f08" data-tab="f.08 world">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 08</b> · The world closes in</span><span>1885 – 1911</span></div>
+    <h2 class="folio__title">The world closes in</h2>
+    <p class="folio__dek">While America argued about the monopoly, four things were dismantling it that had nothing to do with the law: Russian oil, Asian oil, Texan oil, and the electric light bulb.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">Standard's dominance was always national, never global, and its export trade was two thirds of its business. From the 1880s onward the export position came under sustained attack. The Nobel brothers and then the Rothschilds developed the Baku fields on the Caspian, closer to European and Asian markets than Pennsylvania was. Marcus Samuel, a London shell merchant, built bulk tankers that could pass through the Suez Canal and undercut Standard's five-gallon tins across Asia; his company took its name from the shells. Royal Dutch developed Sumatra. In 1907 Shell and Royal Dutch merged under Henri Deterding into the only rival with genuine global reach.</p>
+
+    <p>At home, the geography changed. Spindletop blew in at Beaumont, Texas, in January 1901, at a rate that dwarfed anything Pennsylvania had produced, and Standard was not there. Gulf Oil, the Texas Company and Sun grew up outside its control, protected by Texan hostility to the trust. California and then Oklahoma did the same. By 1911 Standard's share of refining had fallen to around two thirds without a court lifting a finger.</p>
+
+    <p>And the core product was dying. Edison's incandescent lamp, first demonstrated in 1879 and spreading through cities from the late 1880s, was aimed precisely at the market Standard existed to serve. Rockefeller's fortune had been built on lighting the world with kerosene, and electricity was going to take that away.</p>
+
+    <p>What saved it was the waste product. Gasoline had been a dangerous nuisance, dumped in creeks and burned off, until the internal combustion engine turned it into the most valuable thing in the barrel. American refinery output of gasoline passed kerosene at almost exactly the moment the Supreme Court broke the company up. Standard's successors inherited a demand curve that was about to go vertical.</p>
+  </div>
+
+  <!-- PLATE XV -->
+  <figure class="plate plate--wide rv" id="p15">
+    <div class="plate__head"><span class="plate__num">Plate XV</span><h4 class="plate__title">The world against Standard</h4></div>
+    <div class="plate__body">
+      <svg viewBox="0 0 920 430" role="img" aria-label="External threats to Standard Oil" style="font-family:'Avenir Next',system-ui,sans-serif">
+        <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B8433A"/></marker></defs>
+        <style>
+          .tb{fill:#EFF2EB;stroke:#C3CABF;stroke-width:1}
+          .tn{font-size:13px;fill:#1B1E1A;font-weight:600}
+          .tsd{font-size:10.5px;fill:#7A8377;font-family:ui-monospace,Menlo,monospace}
+          .tx{font-size:11.5px;fill:#4E564C}
+          .aw{stroke:#B8433A;stroke-width:1.8;fill:none;marker-end:url(#ah2);opacity:.8}
+        </style>
+        <circle cx="460" cy="212" r="76" fill="#3A1E1B"/>
+        <text x="460" y="205" text-anchor="middle" font-size="14" fill="#EEE6DE" font-weight="600">STANDARD</text>
+        <text x="460" y="224" text-anchor="middle" font-size="14" fill="#EEE6DE" font-weight="600">OIL</text>
+        <text x="460" y="246" text-anchor="middle" font-size="10" fill="#C79B44" font-family="ui-monospace,Menlo,monospace">1885 – 1911</text>
+
+        <rect class="tb" x="14" y="14" width="268" height="82"/>
+        <text class="tn" x="28" y="38">Russia · Baku</text>
+        <text class="tsd" x="28" y="54">Nobel brothers, then the Rothschilds</text>
+        <text class="tx" x="28" y="74">Closer to Europe and Asia than Pennsylvania.</text>
+        <text class="tx" x="28" y="88">Broke Standard's grip on the export trade.</text>
+        <line class="aw" x1="286" y1="90" x2="398" y2="164"/>
+
+        <rect class="tb" x="638" y="14" width="268" height="82"/>
+        <text class="tn" x="652" y="38">Dutch East Indies · Sumatra</text>
+        <text class="tsd" x="652" y="54">Royal Dutch, from 1890</text>
+        <text class="tx" x="652" y="74">Merged with Shell under Henri Deterding</text>
+        <text class="tx" x="652" y="88">in 1907. The only true global rival.</text>
+        <line class="aw" x1="634" y1="90" x2="522" y2="164"/>
+
+        <rect class="tb" x="14" y="182" width="250" height="82"/>
+        <text class="tn" x="28" y="206">Britain · Shell</text>
+        <text class="tsd" x="28" y="222">Marcus Samuel, from 1892</text>
+        <text class="tx" x="28" y="242">Bulk tankers through the Suez Canal</text>
+        <text class="tx" x="28" y="256">beat Standard's tinned kerosene in Asia.</text>
+        <line class="aw" x1="268" y1="222" x2="380" y2="216"/>
+
+        <rect class="tb" x="656" y="182" width="250" height="82"/>
+        <text class="tn" x="670" y="206">Texas &amp; California</text>
+        <text class="tsd" x="670" y="222">Spindletop, January 1901</text>
+        <text class="tx" x="670" y="242">Gulf, Texaco and Sun grew up outside</text>
+        <text class="tx" x="670" y="256">Standard, protected by Texan hostility.</text>
+        <line class="aw" x1="652" y1="222" x2="540" y2="216"/>
+
+        <rect class="tb" x="316" y="348" width="288" height="70"/>
+        <text class="tn" x="330" y="372">The electric light</text>
+        <text class="tsd" x="330" y="388">Edison's lamp spreading from the late 1880s</text>
+        <text class="tx" x="330" y="408">Aimed straight at the only product that mattered.</text>
+        <line class="aw" x1="460" y1="344" x2="460" y2="296"/>
+      </svg>
+    </div>
+    <figcaption class="plate__cap">None of these threats came from an American competitor in refining, which is the market the antitrust case was about. Chernow's implicit point is that by the time the state finally moved against Standard Oil, the economic conditions that had made the monopoly possible were already dissolving.</figcaption>
+  </figure>
+
+  <!-- PLATE XVI -->
+  <figure class="plate plate--wide rv" id="p16">
+    <div class="plate__head"><span class="plate__num">Plate XVI</span><h4 class="plate__title">Kerosene to gasoline</h4></div>
+    <div class="plate__body">
+      <div class="chart" data-chart="line" data-series='{
+        "height":330,"yMax":80,"yTicks":4,"ySuffix":"%","padRight":96,
+        "x":["1880","1885","1890","1895","1900","1905","1910","1915","1920","1925"],
+        "marks":[{"at":"1910","label":"Dissolution, 1911","y":16}],
+        "series":[
+          {"name":"Kerosene","color":"brass","width":2.6,"values":[75,70,66,62,58,52,43,32,22,15]},
+          {"name":"Gasoline","color":"slate","width":2.6,"values":[5,6,8,10,15,20,30,42,52,58]}
+        ]
+      }'></div>
+      <p class="small" style="margin:14px 0 0;max-width:70ch">Approximate share of United States refinery output by product. The crossover lands within a year or two of the Supreme Court's decision.</p>
+    </div>
+    <figcaption class="plate__cap">The single luckiest fact in Rockefeller's life. He spent fifty years perfecting the production and distribution of a lighting fuel that electricity was about to make obsolete, and was rescued by a dangerous waste stream his refineries had been throwing away since 1863. The successor companies he owned a quarter of each inherited the automobile age.</figcaption>
+  </figure>
+</section>
+
+</main>
+
+<!-- ================= f.09 (band) ================= -->
+<div class="band">
+<div class="wrap">
+<section id="f09" data-tab="f.09 reckoning">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 09</b> · The reckoning</span><span>1906 – 1911</span></div>
+    <h2 class="folio__title">The reckoning</h2>
+    <p class="folio__dek">The government won the biggest antitrust case in history and made Rockefeller considerably richer within eighteen months.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">Theodore Roosevelt created the Bureau of Corporations in 1903, and its 1906 report on Standard Oil's transportation practices supplied the documentary spine of the case. On 15 November 1906 the federal government filed suit in the Circuit Court for the Eastern District of Missouri, alleging that Standard Oil of New Jersey and sixty-five subsidiaries were an illegal combination in restraint of trade under the Sherman Act.</p>
+
+    <p>Meanwhile, in Chicago, Judge Kenesaw Mountain Landis fined Standard Oil of Indiana $29,240,000 in August 1907 for taking rebates on 1,462 carloads of oil, the largest fine in American history to that point and more than the company's capitalisation. Rockefeller received the news on a golf course, played on, and had a lawyer note that the judge would be dead a long time before Standard paid it. The fine was thrown out on appeal the following year. The headline was never thrown out.</p>
+
+    <p>Rockefeller himself testified in the government's case, and Chernow's account of it is one of the book's best set pieces. He was a superb witness: courteous, foggy, forgetful in exactly the right places, unable to recall the details of arrangements he had personally designed. He charmed the room and conceded nothing.</p>
+
+    <h3 class="sub">15 May 1911</h3>
+    <p>The Supreme Court, Chief Justice Edward Douglass White writing, affirmed the lower court and ordered Standard Oil of New Jersey to divest its subsidiaries within six months. The decision also introduced the <strong>rule of reason</strong>: not every restraint of trade violates the Sherman Act, only unreasonable ones. That doctrine, which sounded like a loss for the trustbusters, has governed American antitrust ever since.</p>
+
+    <p>Standard was divided into thirty-four companies. Because every shareholder received a proportional interest in each successor, Rockefeller now owned roughly a quarter of thirty-four separate oil companies instead of a quarter of one. The market immediately noticed something the government had not: as independent entities, no longer obliged to hide their earnings inside a single opaque parent, the pieces were worth far more than the whole. Within a year the successor shares had roughly doubled.</p>
+
+    <div class="pull">
+      <p>"Father Lennon, have you any money? Buy Standard Oil."</p>
+      <cite>Rockefeller, on the golf course at Pocantico, on being told of the Court's decision</cite>
+    </div>
+  </div>
+
+  <!-- PLATE XVII -->
+  <figure class="plate plate--wide rv" id="p17">
+    <div class="plate__head"><span class="plate__num">Plate XVII</span><h4 class="plate__title">The dissolution tree</h4></div>
+    <div class="plate__body">
+      <div class="tree">
+        <div class="tree__root">
+          <b>Standard Oil Company of New Jersey</b>
+          <span>Dissolved by order of the Supreme Court, 15 May 1911, into 34 companies</span>
+        </div>
+        <div class="tree__grid">
+          <div class="tcard"><span class="tcard__k">1911</span><b>Standard Oil of New Jersey</b><i>→ Esso → Exxon, 1972</i><em>ExxonMobil</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>Standard Oil of New York</b><i>→ Socony-Vacuum → Mobil, 1966</i><em>ExxonMobil</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>Standard Oil of California</b><i>→ Chevron, 1984, absorbing Gulf then Texaco</i><em>Chevron</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>Standard Oil of Kentucky</b><i>→ bought by Socal, 1961</i><em>Chevron</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>Standard Oil of Indiana</b><i>→ Amoco, 1985 → merged 1998</i><em>BP</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>Standard Oil of Ohio</b><i>→ Sohio → acquired 1978–87</i><em>BP</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>Atlantic Refining</b><i>→ ARCO → acquired 2000; the Atlantic brand to Sunoco</i><em>BP</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>Continental Oil</b><i>→ Conoco → ConocoPhillips, 2002</i><em>ConocoPhillips</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>The Ohio Oil Company</b><i>→ renamed 1962</i><em>Marathon</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>South Penn Oil</b><i>→ Pennzoil → acquired 2002</i><em>Shell</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>Chesebrough Manufacturing</b><i>→ Vaseline → Chesebrough-Pond's</i><em>Unilever</em></div>
+          <div class="tcard"><span class="tcard__k">1911</span><b>Union Tank Line</b><i>→ the tank car fleet, still running</i><em>Union Tank Car</em></div>
+        </div>
+        <p class="tree__rest">The remaining twenty-two were pipeline and specialty companies: National Transit, Buckeye, Northern, Eureka, Indiana, Cumberland, Southwest Pennsylvania, Crescent and New York Transit pipelines, Prairie Oil &amp; Gas, Solar Refining, Galena-Signal, Waters-Pierce, Borne Scrymser, Swan &amp; Finch, Colonial Oil, Washington Oil, and the Standard companies of Kansas, Nebraska, Louisiana and Iowa. Several are still trading under their own names.</p>
+      </div>
+    </div>
+    <figcaption class="plate__cap">Three of the six largest Western oil companies of the twentieth century, and a good part of a fourth, are direct descendants of the 1911 order. The dissolution was reversed in slow motion by merger: Exxon and Mobil reunited in 1999, Chevron took Texaco in 2001, BP assembled Amoco, Sohio and ARCO between 1978 and 2000.</figcaption>
+  </figure>
+
+  <!-- PLATE XVIII -->
+  <figure class="plate plate--wide rv" id="p18">
+    <div class="plate__head"><span class="plate__num">Plate XVIII</span><h4 class="plate__title">The paradox of 1911</h4></div>
+    <div class="plate__body">
+      <div class="chart" data-chart="bars" data-series='{
+        "rowHeight":52,"labelWidth":250,"valueWidth":330,"max":900,
+        "rows":[
+          {"label":"1901","v":200,"color":"#C79B44","note":"~$200m · the archetype of American wealth"},
+          {"label":"1906, suit filed","v":300,"color":"#C79B44","note":"~$300m"},
+          {"label":"1911, at dissolution","v":300,"color":"#C79B44","note":"~$300m · the Court rules against him"},
+          {"label":"1913, peak","v":900,"color":"#D0705F","note":"~$900m · about 2% of US GDP"},
+          {"label":"1922, after transfers","v":500,"color":"#C79B44","note":"~$500m · giving and transfers bite"},
+          {"label":"1937, estate at death","v":26,"color":"#8FB07F","note":"$26m · almost all already given away"}
+        ]
+      }'></div>
+    </div>
+    <figcaption class="plate__cap">Approximate. The government spent five years and enormous political capital breaking up Standard Oil, and the immediate financial effect on its principal owner was to roughly triple his fortune, because thirty-four transparent companies were worth more to the market than one opaque one. The last bar is the other half of the story: by the time he died the money was gone, deliberately, into foundations and into his son's hands.</figcaption>
+  </figure>
+</section>
+</div>
+</div>
+
+<main class="wrap">
+<!-- ================= f.10 ================= -->
+<section id="f10" data-tab="f.10 private">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 10</b> · The private man</span><span>1864 – 1915</span></div>
+    <h2 class="folio__title">The private man</h2>
+    <p class="folio__dek">A household of extraordinary warmth and extraordinary control, run on the assumption that the money was a danger to everyone in it.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">Rockefeller married Laura Celestia Spelman on 8 September 1864. She came from a Cleveland abolitionist family whose house had been a stop on the Underground Railroad, had been valedictorian of her class, and was if anything stricter in her piety than he was. For thirty years she was his closest adviser; he showed her contracts and discussed strategy with her, and by his own account never made a major decision without her.</p>
+
+    <p>They had five children. Bessie, born 1866; Alice, born 1869, who died before her first birthday; Alta in 1871; Edith in 1872; and John Davison Jr. in 1874. Laura's unmarried sister Lucy, called Aunt Lute, lived with them and shared the raising of the children.</p>
+
+    <h3 class="sub">Raising children against money</h3>
+    <p>The regime was deliberate and, by any modern standard, strange. The children were not told they were rich. They wore hand-me-downs, John Jr. wearing his sisters' dresses as a small boy. There was one bicycle among four children. They kept individual account books and were required to record every penny, exactly as their father had at sixteen, and to show them.</p>
+
+    <p>They earned money on a published schedule: cents for killing flies, sharpening pencils, practising music, weeding, abstaining from sweets. Alcohol, tobacco, dancing and the theatre were forbidden. The house was full of games, singing and affection, and it was also a closed system designed to inoculate its inhabitants against the world their father had built.</p>
+
+    <p>The results were mixed. John Jr. emerged conscientious to the point of paralysis, suffered a breakdown in 1904, and spent his life on the moral rehabilitation of the family name. Edith went the other way entirely: married into International Harvester, moved to Zurich, was analysed by Carl Jung and then practised as an analyst herself, and spent on a scale that shocked her father. Bessie married a philosopher and lived in poor health abroad, dying in 1906. Alta, partly deaf, stayed closest to home.</p>
+
+    <p>Cettie declined into invalidism after 1900, spending her last fifteen years largely confined, and died on 12 March 1915. Rockefeller could not attend her funeral in Cleveland immediately because of an outstanding Ohio tax matter that risked his arrest, a detail Chernow uses to sum up the cost of the life he had chosen.</p>
+
+    <h3 class="sub">The body</h3>
+    <p>In the early 1890s, at the peak of his power, Rockefeller collapsed. Digestive trouble, exhaustion and depression forced him out of the office for long stretches; he lived for a period on milk and crackers and relied on the homeopath Hamilton Biggar, who prescribed golf and rest as much as medicine. Then in 1901, at sixty-one, generalised alopecia took every hair on his body, eyebrows and eyelashes included. He wore skullcaps at first, then a rotating set of wigs of graduated lengths so that his hair appeared to grow between them. The photographs from these years, of a bald, skeletal, unreadable old man, are the ones that fixed his image as a ghoul at precisely the moment Tarbell was writing.</p>
+
+    <p>He then lived another thirty-six years, better than he had for the previous ten.</p>
+  </div>
+
+  <!-- PLATE XIX -->
+  <figure class="plate plate--wide rv" id="p19">
+    <div class="plate__head"><span class="plate__num">Plate XIX</span><h4 class="plate__title">The private ledger</h4></div>
+    <div class="plate__body">
+      <div class="grid g2" style="gap:22px">
+        <div>
+          <h4 class="mini" style="margin:0 0 14px">The four houses</h4>
+          <table class="data">
+            <tbody>
+              <tr><td class="n">1868–</td><td><b>Forest Hill</b><br><span class="small">Cleveland. A failed hotel he converted into the family's summer home and improved obsessively for forty years. Burned in 1917.</span></td></tr>
+              <tr><td class="n">1884–</td><td><b>4 West 54th Street</b><br><span class="small">New York. Deliberately unshowy for the street it stood on. The site is now part of the Museum of Modern Art's garden.</span></td></tr>
+              <tr><td class="n">1893–</td><td><b>Pocantico Hills</b><br><span class="small">Westchester. Thousands of acres, dozens of miles of carriage roads he laid out himself, and the house Kykuit, finished 1913. The family seat.</span></td></tr>
+              <tr><td class="n">1918–</td><td><b>The Casements, Ormond Beach</b><br><span class="small">Florida. Where he wintered, golfed and died.</span></td></tr>
+            </tbody>
+          </table>
+          <h4 class="mini">Money habits</h4>
+          <ul style="margin:0;padding-left:20px" class="small">
+            <li>Every personal expenditure recorded, at every level of wealth, for eighty years.</li>
+            <li>Children on account books and a published earnings schedule; one bicycle among four.</li>
+            <li>Dimes handed to adults and nickels to children, at first spontaneously and later as a fully managed ritual with pre-counted rolls.</li>
+            <li>He examined household bills at Pocantico personally into his eighties.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="mini" style="margin:0 0 14px">The day, in old age</h4>
+          <div class="day">
+            <div class="day__r"><span>6:30</span><b>Rises. Newspapers.</b></div>
+            <div class="day__r"><span>7:00</span><b>Numerica, a numbers game, before breakfast</b></div>
+            <div class="day__r"><span>8:00</span><b>Breakfast. Correspondence read aloud to him.</b></div>
+            <div class="day__r"><span>10:00</span><b>Golf. Nine or eighteen holes, timed, in almost any weather.</b></div>
+            <div class="day__r"><span>13:00</span><b>Lunch, then a nap on a couch with a specific cushion.</b></div>
+            <div class="day__r"><span>15:00</span><b>A drive, or more golf, or the gardens.</b></div>
+            <div class="day__r"><span>18:00</span><b>Dinner. Guests, if any, carefully vetted.</b></div>
+            <div class="day__r"><span>20:00</span><b>Music. He kept an organist. Cards or Numerica.</b></div>
+            <div class="day__r"><span>22:30</span><b>Bed.</b></div>
+          </div>
+          <h4 class="mini">The body, dated</h4>
+          <table class="data">
+            <tbody>
+              <tr><td class="n">1891–93</td><td class="small">Nervous exhaustion and severe digestive illness. Withdraws from daily management.</td></tr>
+              <tr><td class="n">1897</td><td class="small">Effectively retires, keeping the title of president until 1911.</td></tr>
+              <tr><td class="n">1901</td><td class="small">Generalised alopecia. All hair lost. Skullcaps, then graduated wigs.</td></tr>
+              <tr><td class="n">1900s–30s</td><td class="small">Rigid diet, daily golf, long naps, and a widely publicised intention to reach one hundred.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <figcaption class="plate__cap">The routine is the point. Chernow's Rockefeller managed his own body, his diet, his sleep and his day with the same instinct for control and predictability he applied to freight rates, and the regime worked: he outlived Tarbell, Roosevelt, Archbold, his wife, three of his four surviving children's spouses, and nearly everyone who had ever attacked him.</figcaption>
+  </figure>
+</section>
+
+<!-- ================= f.11 ================= -->
+<section id="f11" data-tab="f.11 giving">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 11</b> · The giving</span><span>1855 – 1937</span></div>
+    <h2 class="folio__title">The giving</h2>
+    <p class="folio__dek">He invented the modern foundation for the same reason he invented the trust: the existing structures could not hold what he had built.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">The giving was not a late conversion. Ledger A records charitable donations from his first wages in 1855, when he was sixteen and earning fifty cents a day. By his twenties he was tithing above ten percent, mostly to Baptist causes, black churches and schools in the South, and individual hardship cases. He paid off the mortgage on his own struggling mission church. He funded Spelman Seminary, later Spelman College, named for his wife's family.</p>
+
+    <p>By the 1880s the system was breaking down. Requests arrived by the thousand every week, personally addressed, and he tried to read them. He was, in the phrase Chernow quotes, being hunted like a wild animal by supplicants. The money was compounding faster than any human being could give it away one letter at a time.</p>
+
+    <h3 class="sub">Gates</h3>
+    <p>The answer arrived in 1891 in the form of Frederick Taylor Gates, a Baptist minister who had impressed him during the founding of the University of Chicago. Gates became the chief of staff of the fortune, running both the philanthropy and, increasingly, the investments. He it was who bought the distressed Mesabi iron ore ranges in Minnesota, assembled a fleet of ore ships, and then sold the whole thing to J. P. Morgan's US Steel in 1901 at an enormous profit, a transaction that has almost nothing to do with oil and made Rockefeller a great deal of money.</p>
+
+    <p>Gates's central argument, delivered with force, was that the fortune had become a physical danger to the family.</p>
+
+    <div class="pull">
+      <p>"Your fortune is rolling up, rolling up like an avalanche! You must distribute it faster than it grows! If you do not, it will crush you and your children and your children's children."</p>
+      <cite>Frederick T. Gates to Rockefeller</cite>
+    </div>
+
+    <p>Together they articulated what Gates called scientific philanthropy, and its central rule was wholesale, not retail. Do not relieve the symptom; fund the institution that eliminates the cause. Do not give to a hospital; build the research institute that makes the disease treatable. Do not endow a college out of sentiment; find the man who can build a university and give him the means. And do not run it yourself: hire the best available expert, give them the money and independence, and then leave them alone.</p>
+
+    <p>That last principle was genuinely novel, and it is the direct ancestor of every large foundation since.</p>
+
+    <h3 class="sub">What it built</h3>
+    <div class="grid g2" style="margin:26px 0 30px">
+      <div class="card"><span class="tag">1889 · $35m and more</span><h6>The University of Chicago</h6><p>Built from nothing under William Rainey Harper into a first-rank research university in about fifteen years. Rockefeller called it the best investment he ever made, and deliberately kept his name off it and his hands out of its academic affairs.</p></div>
+      <div class="card"><span class="tag">1901</span><h6>Rockefeller Institute for Medical Research</h6><p>America's first institution dedicated purely to medical research, under Simon Flexner. Produced a meningitis serum within a decade, and later the work of Landsteiner, Carrel, Rous, and Avery's identification of DNA as the carrier of heredity. Now Rockefeller University. Prompted partly by the death of a grandchild from scarlet fever.</p></div>
+      <div class="card"><span class="tag">1903</span><h6>General Education Board</h6><p>Aimed at American schooling, particularly in the impoverished South, funding high schools, teacher training and black colleges. Its record is genuinely mixed: it accommodated segregation and steered black education toward vocational training, a compromise it was criticised for at the time and since.</p></div>
+      <div class="card"><span class="tag">1909</span><h6>Sanitary Commission for the Eradication of Hookworm</h6><p>Under Wickliffe Rose. Identified and treated hookworm across eleven Southern states, transforming the health and productivity of a region that had been written off as constitutionally lazy. The model for the Foundation's later global public health work, including yellow fever.</p></div>
+      <div class="card"><span class="tag">1913</span><h6>The Rockefeller Foundation</h6><p>Chartered in New York after Congress spent three years refusing a federal charter on the grounds that it was an attempt to launder the reputation of a convicted monopolist. Endowed with over $180 million and instructed simply to promote the well-being of mankind throughout the world.</p></div>
+      <div class="card"><span class="tag">1918</span><h6>Laura Spelman Rockefeller Memorial</h6><p>Created in his wife's memory, $74 million, and the most important early funder of the social sciences in America before it was folded into the Foundation.</p></div>
+    </div>
+  </div>
+
+  <!-- PLATE XX -->
+  <figure class="plate plate--wide rv" id="p20">
+    <div class="plate__head"><span class="plate__num">Plate XX</span><h4 class="plate__title">Where roughly $540 million went</h4></div>
+    <div class="plate__body">
+      <div class="chart" data-chart="bars" data-series='{
+        "rowHeight":50,"labelWidth":300,"valueWidth":300,"max":190,
+        "rows":[
+          {"label":"Rockefeller Foundation","v":182,"color":"#3F6079","note":"~$182m · global public health"},
+          {"label":"General Education Board","v":129,"color":"#3F6079","note":"~$129m · American schooling"},
+          {"label":"Laura Spelman Rockefeller Memorial","v":74,"color":"#5C7550","note":"~$74m · the social sciences"},
+          {"label":"Rockefeller Institute for Medical Research","v":61,"color":"#5C7550","note":"~$61m · now Rockefeller University"},
+          {"label":"University of Chicago","v":35,"color":"#9C7325","note":"~$35m · a university from nothing"},
+          {"label":"Baptist causes, Spelman, hookworm, other","v":59,"color":"#9C7325","note":"~$59m · sixty years of personal giving"}
+        ]
+      }'></div>
+      <p class="small" style="margin:16px 0 0;max-width:74ch">Approximate lifetime giving by John D. Rockefeller Sr., as commonly tabulated. His son gave away a comparable amount again over the following decades, and the institutions themselves have distributed many multiples of the original endowments since.</p>
+    </div>
+    <figcaption class="plate__cap">Chernow's judgement is that the philanthropy was neither the laundering operation its critics claimed nor the simple piety Rockefeller claimed. It began as a religious obligation decades before there was anything to launder, it was systematised by a professional because the scale demanded it, and it turned out to be, in cold terms, the most productive deployment of capital in his life. Hookworm eradication and the yellow fever work alone changed more lives than Standard Oil ever did.</figcaption>
+  </figure>
+</section>
+
+<!-- ================= f.12 ================= -->
+<section id="f12" data-tab="f.12 ludlow">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 12</b> · Ludlow and the public face</span><span>1913 – 1915</span></div>
+    <h2 class="folio__title">Ludlow and the public face</h2>
+    <p class="folio__dek">The worst moment in the family's history happened at a coal company in Colorado that Rockefeller had barely thought about, and it fell on his son.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">The Rockefellers held a controlling interest in the Colorado Fuel and Iron Company, a coal and steel operation fourteen hundred miles from New York, run by managers they never questioned. In September 1913 the miners struck for union recognition, an eight-hour day, and the right to shop somewhere other than the company store. They were evicted from company housing and spent the winter in tent colonies on the plains.</p>
+
+    <p>On 20 April 1914 the Colorado National Guard and company guards attacked the largest camp at Ludlow. In the fighting and the fire that followed, roughly twenty people died, including two women and eleven children who suffocated in a pit dug beneath a tent. A ten-day guerrilla war followed across the coalfields before federal troops arrived.</p>
+
+    <p>John D. Jr. had assured a congressional committee, on the basis of what his managers told him, that the men were not on strike and that outside agitators were responsible. He was, in Chernow's account, sincere and completely wrong, and his testimony after Ludlow was a public humiliation. The name Rockefeller became attached to dead children.</p>
+
+    <h3 class="sub">The consequences</h3>
+    <div class="tl" style="margin:24px 0 0">
+      <div class="tl__row"><span class="tl__y">Sep 1913</span><div class="tl__e">Strike begins. Families evicted into tent colonies for the winter.</div></div>
+      <div class="tl__row"><span class="tl__y">20 Apr 1914</span><div class="tl__e">The Ludlow camp is attacked and burned. About twenty dead, including eleven children and two women.</div></div>
+      <div class="tl__row"><span class="tl__y">Apr–May 1914</span><div class="tl__e">Ten days of armed conflict across the coalfields. Federal troops sent in. Demonstrators picket 26 Broadway and the Pocantico estate; a bomb intended for Rockefeller kills four in a Manhattan tenement.</div></div>
+      <div class="tl__row"><span class="tl__y">1914</span><div class="tl__e"><b>Ivy Lee is hired.</b> The first modern corporate public relations operation: proactive press releases, controlled access, cultivated human interest, and the deliberate construction of a gentler public Rockefeller.</div></div>
+      <div class="tl__row"><span class="tl__y">Jan 1915</span><div class="tl__e">John Jr. testifies before the Walsh Commission and, under questioning, abandons his managers' account.</div></div>
+      <div class="tl__row"><span class="tl__y">Sep 1915</span><div class="tl__e">He goes to Colorado himself with the labour expert William Lyon Mackenzie King, the future Canadian prime minister. He goes down the mines, eats in the camps, and dances with the miners' wives.</div></div>
+      <div class="tl__row"><span class="tl__y">Oct 1915</span><div class="tl__e">The Colorado Industrial Plan is adopted: grievance machinery and worker representation, though through a company union rather than an independent one. Widely copied, and widely criticised as a substitute for real bargaining.</div></div>
+    </div>
+
+    <p style="margin-top:30px">Chernow treats Ludlow as the hinge of the second half of the story. It broke John Jr. out of his father's shadow and set the direction of his life: labour relations, public accountability, and philanthropy as the family's business. It also produced, in Ivy Lee, the machinery that within a decade had converted the most hated man in America into a benign old gentleman handing out dimes on a golf course.</p>
+  </div>
+</section>
+
+<!-- ================= f.13 ================= -->
+<section id="f13" data-tab="f.13 ending">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 13</b> · The long ending</span><span>1911 – 1937</span></div>
+    <h2 class="folio__title">The long ending</h2>
+    <p class="folio__dek">He outlived the trust, the muckrakers, the war, the boom and most of the crash, and turned the last quarter century into a public performance of harmless old age.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">Rockefeller was seventy-one when the Supreme Court broke up his company and he lived another twenty-six years. He spent them at Pocantico, Lakewood in New Jersey, and increasingly at Ormond Beach in Florida, on an unvarying schedule of golf, drives, music and naps. He transferred hundreds of millions to John Jr. and to the foundations, so that the enormous fortune drained steadily away by design.</p>
+
+    <p>The dimes became the defining image. What began as an unforced habit was industrialised under Ivy Lee: pre-counted rolls carried by an aide, dimes for adults, nickels for children, distributed to caddies, reporters, passers-by and visiting dignitaries, always with a small homily about thrift. It worked. Newspapers that had called him the greatest criminal of the age ran affectionate features about his golf handicap.</p>
+
+    <p>Between 1917 and 1920 he dictated his recollections to William Inglis, who read Tarbell's accusations to him one at a time. It is the fullest defence he ever offered, and he never allowed it to be published. It sat in the archive until Chernow used it.</p>
+
+    <p>He made no adjustment for the 1929 crash beyond a single public statement that he and his son were buying common stocks, which briefly lifted the market and was widely mocked. He watched his contemporaries die, kept his diet, and pursued an openly stated goal of living to one hundred.</p>
+
+    <p>He died at Ormond Beach on 23 May 1937, seven weeks short of his ninety-eighth birthday. He was buried at Lake View Cemetery in Cleveland, beside Cettie and his mother, a few hundred yards from the graves of some of the men he had bought out in 1872.</p>
+
+    <div class="grid g4" style="margin:36px 0 0">
+      <div class="stat"><b>97</b><span>Years lived, of a hundred intended</span></div>
+      <div class="stat"><b>26</b><span>Years between the dissolution and his death</span></div>
+      <div class="stat"><b>$26m</b><span>Personal estate at death, the rest already given or transferred</span></div>
+      <div class="stat"><b>1 son</b><span>Who spent sixty years converting the fortune into institutions</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= f.14 (band) ================= -->
+<div class="band" style="margin-top:70px">
+<div class="wrap">
+<section id="f14" data-tab="f.14 verdict">
+  <div class="folio">
+    <div class="folio__rule"></div>
+    <div class="folio__meta"><span><b>f. 14</b> · Chernow's verdict</span><span>The argument of the book</span></div>
+    <h2 class="folio__title">Chernow's verdict</h2>
+    <p class="folio__dek">The book's thesis is that the contradiction is not a puzzle to be solved. It is the man.</p>
+  </div>
+
+  <div class="folio__body col">
+    <p class="lede">Two biographical traditions had competed for eighty years. Ida Tarbell's Rockefeller is a cold, pious hypocrite whose charity is a laundering operation. Allan Nevins's authorised Rockefeller, written with family cooperation in 1940 and revised in 1953, is a misunderstood organiser who rescued a chaotic industry and was libelled for it. Chernow's position is that both accounts describe real behaviour and both fail because they assume a person has to be one thing.</p>
+
+    <p>His Rockefeller is genuinely religious and genuinely predatory, and the same underlying traits produce both. The patience that let him wait three years for Frasch to solve the sulphur problem is the patience that let him wait out a competitor's bankruptcy. The secrecy that concealed Standard's ownership of a dozen apparently independent firms is the secrecy with which he gave anonymously for decades. The refusal to answer Tarbell is the same refusal to justify himself to anyone, which in a devout man reads as humility and in a monopolist reads as contempt.</p>
+  </div>
+
+  <!-- PLATE XXI -->
+  <figure class="plate plate--wide rv" id="p21">
+    <div class="plate__head"><span class="plate__num">Plate XXI</span><h4 class="plate__title">Two men in one</h4></div>
+    <div class="plate__body">
+      <div class="contra">
+        <div class="contra__head"><b>The Baptist</b><span>vs</span><b>The buccaneer</b></div>
+        <div class="contra__r"><p>Tithed from his first wage at sixteen, when he earned fifty cents a day.</p><i>·</i><p>Took drawbacks on barrels shipped by rivals, earning a margin on oil he never touched.</p></div>
+        <div class="contra__r"><p>Never drank, smoked, gambled, speculated or carried reckless debt in ninety-seven years.</p><i>·</i><p>Held acquired competitors through secret nominees so their customers would not know who they were buying from.</p></div>
+        <div class="contra__r"><p>Was famous among those who dealt with him for keeping his word exactly.</p><i>·</i><p>Was a superb evasive witness who could not recall arrangements he had personally designed.</p></div>
+        <div class="contra__r"><p>Funded the first American medical research institute and left it entirely alone.</p><i>·</i><p>Cut prices below cost in the specific towns where an independent was trying to sell.</p></div>
+        <div class="contra__r"><p>Gave anonymously for decades and refused to attach his name to what he built.</p><i>·</i><p>Ran an industry on information about rivals that his rivals did not know he had.</p></div>
+        <div class="contra__r"><p>Warm, playful, teasing and deeply loved inside his own household.</p><i>·</i><p>Estranged from his brother for life, over a business transaction, until the graves were moved.</p></div>
+        <div class="contra__r"><p>Believed sincerely that God had given him money in order that he should give it away.</p><i>·</i><p>Believed just as sincerely that competition was waste and that he had a duty to end it.</p></div>
+      </div>
+    </div>
+    <figcaption class="plate__cap">Chernow's formulation is that Rockefeller was not a hypocrite, because a hypocrite knows. He had a compartmentalised mind of extraordinary strength, and he could hold the two halves apart indefinitely without strain. That capacity is what made him unbeatable in business and what makes him permanently unsettling as a subject.</figcaption>
+  </figure>
+
+  <div class="col">
+    <h3 class="sub">The five arguments the book makes</h3>
+    <ol style="padding-left:22px;margin:0 0 30px">
+      <li style="margin-bottom:14px"><b>He was an organiser before he was a monopolist.</b> The industry in 1870 had three times the refining capacity it needed and was destroying itself. Consolidation of some kind was coming. The question the book leaves open is how much of what he did was necessary to achieve it.</li>
+      <li style="margin-bottom:14px"><b>The methods matter more than the outcome.</b> Kerosene did get cheaper and better, and Standard did carry it to the whole world. But rebates, drawbacks, secret ownership, waybill intelligence and predatory local pricing were not incidental to that achievement, they were the mechanism, and Chernow does not let the result excuse them.</li>
+      <li style="margin-bottom:14px"><b>The silence was the fatal error.</b> Thirty years of refusing to answer left the entire public record to his enemies, and no amount of later philanthropy or public relations recovered it.</li>
+      <li style="margin-bottom:14px"><b>He invented two things that outlived the company.</b> Modern professional corporate management, built at 26 Broadway on comparable statistics and functional committees, and the modern foundation, built with Gates on the principle of funding institutions rather than relieving symptoms.</li>
+      <li><b>The state arrived late and was largely irrelevant to the outcome.</b> By 1911 Texas, California, Russia, Sumatra and the internal combustion engine had already changed the industry beyond Standard's control. The Court's decision made its owner richer and its successors dominant for another eighty years.</li>
+    </ol>
+
+    <h3 class="sub">The last line</h3>
+    <p>What Chernow will not do is total the ledger. The hookworm campaign, the yellow fever work, the meningitis serum, a university built from nothing, and the model that most large philanthropy still follows are set against the wrecked refiners, the bought legislators, the sabotaged Buffalo plant and the tent colony at Ludlow. The book presents both columns in full and declines to strike a balance, on the grounds that the man himself never felt the need to.</p>
+
+    <div class="pull" style="margin-bottom:0">
+      <p>"I believe the power to make money is a gift from God, to be developed and used to the best of our ability for the good of mankind. Having been endowed with the gift I possess, I believe it is my duty to make money and still more money, and to use the money I make for the good of my fellow man according to the dictates of my conscience."</p>
+      <cite>John D. Rockefeller</cite>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+
+<style>
+/* ---------- components ---------- */
+.plate__body{overflow-x:auto}
+.band .folio{padding-top:0}
+.band .col li::marker{color:#C79B44}
+.band .col ol li b{color:#EEE6DE}
+
+/* timeline */
+.tl{border-top:1px solid var(--hair)}
+.tl__era{display:flex;align-items:baseline;gap:14px;padding:26px 0 9px;border-bottom:1px solid var(--rule);margin-bottom:2px}
+.tl__era:first-child{padding-top:6px}
+.tl__era b{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--rule)}
+.tl__era span{font-family:var(--display);font-size:15px;color:var(--ink-soft)}
+.tl__row{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.tl__y{font-family:var(--mono);font-size:12px;color:var(--ink-faint)}
+.tl__e{font-size:15px;line-height:24px}
+@media(max-width:560px){.tl__row{grid-template-columns:1fr;gap:2px}}
+
+/* value chain */
+.chain{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:12px}
+.chain__item{border:1px solid var(--hair);border-left:3px solid var(--moss);background:var(--paper-2);padding:12px 13px}
+.chain__item.c{border-left-color:var(--brass)}
+.chain__item.x{border-left-color:var(--rule)}
+.chain__k{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:6px}
+.chain__item b{display:block;font-family:var(--display);font-size:14px;line-height:19px;margin-bottom:5px}
+.chain__item i{font-style:normal;font-size:12px;line-height:18px;color:var(--ink-soft);display:block}
+
+/* massacre grid */
+.sq-wrap{display:grid;grid-template-columns:minmax(260px,1fr) minmax(240px,.8fr);gap:40px;align-items:start}
+.sq-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:9px}
+.sq{aspect-ratio:1/1;border:1px solid rgba(238,230,222,.32)}
+.sq.on{background:#C25845;border-color:#C25845}
+.sq-key{display:grid;gap:22px}
+@media(max-width:720px){.sq-wrap{grid-template-columns:1fr;gap:28px}}
+
+/* corporate forms */
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:16px}
+.form{border-top:2px solid var(--hair-strong);padding-top:12px}
+.form.on{border-top-color:var(--rule)}
+.form.end{border-top-color:var(--moss)}
+.form__y{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-faint);display:block;margin-bottom:6px}
+.form h6{font-family:var(--display);font-size:16px;line-height:21px;margin:0 0 12px;font-weight:600}
+.form__dia{height:40px;display:flex;align-items:center;gap:5px;margin-bottom:12px}
+.form p{font-size:12.5px;line-height:19px;margin:0 0 8px;color:var(--ink-soft)}
+.form__why{color:var(--rule);font-size:11.5px;line-height:17px}
+.form .dot{width:11px;height:11px;border-radius:50%;background:var(--ink)}
+.form .box{width:26px;height:26px;background:var(--ink)}
+.form .box.tall{width:20px;height:34px}
+.form .fan{flex:1;height:26px;background:repeating-linear-gradient(90deg,var(--ink-faint) 0 2px,transparent 2px 9px)}
+.form .mesh{flex:1;height:30px;background:repeating-linear-gradient(45deg,var(--ink-faint) 0 1px,transparent 1px 9px),repeating-linear-gradient(-45deg,var(--ink-faint) 0 1px,transparent 1px 9px)}
+.form .scatter{flex:1;height:30px;background:radial-gradient(circle,var(--ink) 1.5px,transparent 1.7px);background-size:11px 11px}
+
+/* org chart */
+.org__top{background:var(--ink);color:var(--paper-3);padding:15px 18px;text-align:center}
+.org__top b{font-family:var(--display);font-size:16px;display:block;margin-bottom:5px}
+.org__top span{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;opacity:.62;line-height:17px}
+.org__spine{height:22px;width:1px;background:var(--hair-strong);margin:0 auto}
+.org__row{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:10px}
+.org__box{border:1px solid var(--hair-strong);background:var(--paper-2);padding:12px 13px}
+.org__box b{font-family:var(--display);font-size:14px;display:block;margin-bottom:5px}
+.org__box i{font-style:normal;font-size:12px;line-height:18px;color:var(--ink-soft)}
+.org__note{margin-top:18px;border-left:2px solid var(--rule);padding-left:16px;font-size:13.5px;line-height:22px;color:var(--ink-soft)}
+
+/* dissolution tree */
+.tree__root{border:1.5px solid #C79B44;background:rgba(199,155,68,.12);padding:16px 20px;text-align:center;margin-bottom:24px}
+.tree__root b{font-family:var(--display);font-size:18px;display:block;margin-bottom:5px}
+.tree__root span{font-family:var(--mono);font-size:11px;letter-spacing:.05em;opacity:.65}
+.tree__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(206px,1fr));gap:12px}
+.tcard{border:1px solid rgba(238,230,222,.2);background:rgba(246,248,243,.05);padding:12px 13px}
+.tcard__k{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:#C79B44;display:block;margin-bottom:6px}
+.tcard b{font-family:var(--display);font-size:13.5px;line-height:18px;display:block;margin-bottom:5px}
+.tcard i{font-style:normal;display:block;font-size:11.5px;line-height:17px;color:rgba(238,230,222,.6);margin-bottom:9px}
+.tcard em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:#93B283;display:block;border-top:1px solid rgba(238,230,222,.15);padding-top:7px}
+.tree__rest{margin:22px 0 0;font-size:12.5px;line-height:20px;color:rgba(238,230,222,.55)}
+
+/* daily routine */
+.day{border-top:1px solid var(--hair)}
+.day__r{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:8px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.day__r span{font-family:var(--mono);font-size:11.5px;color:var(--rule)}
+.day__r b{font-weight:400;font-size:13.5px;line-height:20px}
+
+/* contrast */
+.contra__head{display:grid;grid-template-columns:1fr 46px 1fr;align-items:center;border-bottom:1px solid #C79B44;padding-bottom:11px;margin-bottom:4px}
+.contra__head b{font-family:var(--display);font-size:20px}
+.contra__head b:last-child{text-align:right}
+.contra__head span{text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#C79B44}
+.contra__r{display:grid;grid-template-columns:1fr 46px 1fr;align-items:center;border-bottom:1px solid rgba(238,230,222,.14);padding:15px 0}
+.contra__r p{margin:0;font-size:13.5px;line-height:21px}
+.contra__r p:last-child{text-align:right;color:rgba(238,230,222,.82)}
+.contra__r i{font-style:normal;text-align:center;font-family:var(--mono);font-size:11px;color:rgba(238,230,222,.35)}
+@media(max-width:700px){
+  .contra__head{grid-template-columns:1fr 1fr;gap:12px}
+  .contra__head span{display:none}
+  .contra__head b:last-child{text-align:left}
+  .contra__r{grid-template-columns:1fr;gap:8px;padding:14px 0}
+  .contra__r i{display:none}
+  .contra__r p:last-child{text-align:left;padding-left:14px;border-left:2px solid rgba(199,155,68,.5)}
+}
+
+/* hero responsive */
+@media(max-width:900px){
+  .hero__inner{grid-template-columns:1fr;gap:38px;padding:48px 24px 44px}
+  .topbar__mark span{display:none}
+}
+@media(max-width:600px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .plate__body{padding:20px 16px}
+  .plate__head{padding:14px 16px 12px}
+  .plate__cap{padding:0 16px 18px}
+  .led td,.led th{padding-left:12px;padding-right:12px}
+}
+</style>
+
+<footer class="end">
+  <div class="wrap">
+    <p><b>About this page.</b> A reading companion to <i>Titan: The Life of John D. Rockefeller, Sr.</i> by Ron Chernow (Random House, 1998). It follows the book's own arc and characters. It is a summary, not a substitute: Chernow's texture, his handling of evidence, and his psychological reading of the family are the reasons to read the full thing.</p>
+    <p><b>On the figures.</b> Dollar amounts, market shares and dates are those commonly reported in Chernow and the standard sources on Standard Oil. Nineteenth century accounting was inconsistent and Standard Oil deliberately concealed its own, so several of the numbers here (market share by year, output mix, lifetime giving by recipient) are best-estimate reconstructions rather than audited figures. Where a number is contested it is marked approximate. Charts are drawn to illustrate shape and scale.</p>
+    <p><b>Built as a single self-contained file.</b> No external fonts, scripts or images.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- tabs + progress ---------- */
+  var secs = [].slice.call(document.querySelectorAll('section[id]'));
+  var tabs = document.getElementById('tabs');
+  secs.forEach(function(s){
+    var a = document.createElement('a');
+    a.href = '#' + s.id;
+    a.textContent = s.dataset.tab || s.id;
+    a.dataset.for = s.id;
+    tabs.appendChild(a);
+  });
+  var links = [].slice.call(tabs.children);
+  var prog = document.getElementById('prog');
+
+  function onScroll(){
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    prog.style.width = Math.max(0, Math.min(1, p)) * 100 + '%';
+    var cur = null;
+    for (var i=0;i<secs.length;i++){
+      if (secs[i].getBoundingClientRect().top <= 140) cur = secs[i].id;
+    }
+    links.forEach(function(a){
+      var on = a.dataset.for === cur;
+      a.classList.toggle('on', on);
+      if (on && a.scrollIntoView) {
+        var r = a.getBoundingClientRect(), pr = tabs.getBoundingClientRect();
+        if (r.left < pr.left || r.right > pr.right) tabs.scrollLeft += (r.left - pr.left) - 40;
+      }
+    });
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- reveal ---------- */
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.06});
+    [].slice.call(document.querySelectorAll('.rv')).forEach(function(el){io.observe(el)});
+  } else {
+    [].slice.call(document.querySelectorAll('.rv')).forEach(function(el){el.classList.add('in')});
+  }
+
+  /* ---------- charts ---------- */
+  var C = {ink:'#1B1E1A', red:'#B8433A', brass:'#9C7325', slate:'#3F6079', moss:'#5C7550', faint:'#7A8377'};
+  var NS = 'http://www.w3.org/2000/svg';
+  function n(tag, attrs){
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+  function txt(x,y,s,attrs){
+    var t = n('text', attrs||{}); t.setAttribute('x',x); t.setAttribute('y',y); t.textContent = s; return t;
+  }
+
+  function lineChart(el, cfg){
+    var W=920, H=cfg.height||360, P={t:18,r:cfg.padRight||86,b:38,l:cfg.padLeft||46};
+    var svg = n('svg',{viewBox:'0 0 '+W+' '+H, role:'img'});
+    var iw = W-P.l-P.r, ih = H-P.t-P.b;
+    var xs = cfg.x, ymax = cfg.yMax, ymin = cfg.yMin||0;
+    var X = function(i){ return P.l + (xs.length===1?0:(i/(xs.length-1))*iw); };
+    var Y = function(v){ return P.t + ih - ((v-ymin)/(ymax-ymin))*ih; };
+    var ticks = cfg.yTicks || 5;
+    for (var t=0;t<=ticks;t++){
+      var v = ymin + (ymax-ymin)*t/ticks, y = Y(v);
+      svg.appendChild(n('line',{x1:P.l,y1:y,x2:P.l+iw,y2:y,stroke:C.ink,'stroke-opacity':t===0?.35:.11,'stroke-width':1}));
+      svg.appendChild(txt(P.l-9, y+4, (cfg.yPrefix||'')+ (Math.round(v*100)/100) + (cfg.ySuffix||''), {'text-anchor':'end','font-size':11,fill:C.faint,'font-family':'ui-monospace,Menlo,monospace'}));
+    }
+    (cfg.marks||[]).forEach(function(m){
+      var x = X(xs.indexOf(m.at));
+      svg.appendChild(n('line',{x1:x,y1:P.t-6,x2:x,y2:P.t+ih,stroke:C.brass,'stroke-opacity':.55,'stroke-width':1,'stroke-dasharray':'3 3'}));
+      var late = xs.indexOf(m.at) > xs.length * 0.72;
+      svg.appendChild(txt(x + (late?-6:6), P.t+(m.y||10), m.label,
+        {'font-size':11, fill:C.brass, 'text-anchor': late?'end':'start', 'font-family':'ui-monospace,Menlo,monospace'}));
+    });
+    var lastI = xs.length - 1;
+    var showLast = !cfg.every || (lastI % cfg.every) >= 2;
+    xs.forEach(function(lb,i){
+      if (cfg.every && i % cfg.every !== 0 && !(i === lastI && showLast)) return;
+      svg.appendChild(txt(X(i), P.t+ih+22, lb, {'text-anchor':'middle','font-size':11,fill:C.faint,'font-family':'ui-monospace,Menlo,monospace'}));
+    });
+    cfg.series.forEach(function(s){
+      var d = '', col = C[s.color]||s.color;
+      s.values.forEach(function(v,i){ if(v===null) return; d += (d?'L':'M') + X(i).toFixed(1) + ' ' + Y(v).toFixed(1) + ' '; });
+      if (s.fill){
+        var a = d + 'L'+X(s.values.length-1).toFixed(1)+' '+Y(ymin)+' L'+X(0).toFixed(1)+' '+Y(ymin)+' Z';
+        svg.appendChild(n('path',{d:a, fill:col, 'fill-opacity':.13, stroke:'none'}));
+      }
+      svg.appendChild(n('path',{d:d, fill:'none', stroke:col, 'stroke-width':s.width||2.2,'stroke-linejoin':'round','stroke-linecap':'round','stroke-dasharray':s.dash||'none'}));
+      (s.dots===false?[]:s.values).forEach(function(v,i){ if(v===null) return;
+        svg.appendChild(n('circle',{cx:X(i),cy:Y(v),r:2.6,fill:col}));
+      });
+      if (s.name){
+        var li = s.values.length-1; while(li>0 && s.values[li]===null) li--;
+        svg.appendChild(txt(X(li)+9, Y(s.values[li])+4, s.name, {'font-size':12,fill:col,'font-family':'"Avenir Next",system-ui,sans-serif','font-weight':600}));
+      }
+      (s.callouts||[]).forEach(function(c){
+        var i = xs.indexOf(c.at);
+        svg.appendChild(txt(X(i)+(c.dx||0), Y(s.values[i])+(c.dy||-12), c.label, {'text-anchor':c.anchor||'middle','font-size':11.5,fill:C.ink,'font-family':'ui-monospace,Menlo,monospace'}));
+      });
+    });
+    el.appendChild(svg);
+  }
+
+  function barChart(el, cfg){
+    var rows = cfg.rows, rh = cfg.rowHeight||42, W=920, H=rows.length*rh+26;
+    var labW = cfg.labelWidth||230, valW = cfg.valueWidth||108;
+    var svg = n('svg',{viewBox:'0 0 '+W+' '+H, role:'img'});
+    var max = cfg.max || Math.max.apply(null, rows.map(function(r){return r.v}));
+    var bw = W-labW-valW-16;
+    rows.forEach(function(r,i){
+      var y = i*rh+8, col = C[r.color]||r.color||C.ink;
+      svg.appendChild(txt(labW-12, y+rh/2+1, r.label, {'text-anchor':'end','font-size':13.5,fill:C.ink,'font-family':'"Avenir Next",system-ui,sans-serif'}));
+      svg.appendChild(n('rect',{x:labW,y:y+6,width:Math.max(2,(r.v/max)*bw),height:rh-20,fill:col,'fill-opacity':r.faded?.3:.85}));
+      svg.appendChild(txt(labW+Math.max(2,(r.v/max)*bw)+10, y+rh/2+1, r.note||((cfg.prefix||'')+r.v+(cfg.suffix||'')), {'font-size':12.5,fill:C.faint,'font-family':'ui-monospace,Menlo,monospace'}));
+      svg.appendChild(n('line',{x1:labW,y1:y+rh-6,x2:W-8,y2:y+rh-6,stroke:C.ink,'stroke-opacity':.08}));
+    });
+    el.appendChild(svg);
+  }
+
+  [].slice.call(document.querySelectorAll('[data-chart]')).forEach(function(el){
+    var cfg = JSON.parse(el.getAttribute('data-series'));
+    if (el.dataset.chart === 'line') lineChart(el, cfg);
+    else if (el.dataset.chart === 'bars') barChart(el, cfg);
+  });
+})();
+</script>
+<script src="book-toc.js"></script>
+</body>
+</html>

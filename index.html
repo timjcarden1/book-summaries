@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Summaries — Tim Carden</title>
+<meta name="description" content="Illustrated, chapter-by-chapter summaries of the books I've read.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f1e9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151719" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%232f6f69'/%3E%3Ctext x='90' y='124' font-family='Georgia,serif' font-size='104' fill='%23f4f1e9' text-anchor='middle'%3E%C2%B6%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232f6f69'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23f4f1e9' text-anchor='middle'%3E%C2%B6%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  color-scheme: light;
+  --paper: #f4f1e9;
+  --panel: #fbfaf6;
+  --panel-2: #e9e4d8;
+  --ink: #191b1d;
+  --ink-2: #444a4e;
+  --ink-3: #747a7d;
+  --rule: #cbc4b6;
+  --rule-2: #aaa291;
+  --accent: #2f6f69;
+  --accent-2: #b05b38;
+  --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --body: "Avenir Next", Avenir, "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --shadow: 0 18px 48px rgba(25, 27, 29, .09);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #151719; --panel: #1c1f22; --panel-2: #262a2e;
+    --ink: #ece9df; --ink-2: #b8b5ad; --ink-3: #85847f;
+    --rule: #373b3e; --rule-2: #505559;
+    --accent: #5fa89f; --accent-2: #d3835d;
+    --shadow: 0 18px 48px rgba(0, 0, 0, .28);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #151719; --panel: #1c1f22; --panel-2: #262a2e;
+  --ink: #ece9df; --ink-2: #b8b5ad; --ink-3: #85847f;
+  --rule: #373b3e; --rule-2: #505559;
+  --accent: #5fa89f; --accent-2: #d3835d;
+  --shadow: 0 18px 48px rgba(0, 0, 0, .28);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 17px/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { width: min(100% - 2.4rem, 1080px); margin-inline: auto; }
+
+/* ---------- theme button ---------- */
+.theme-button {
+  position: fixed; top: .9rem; right: .9rem; z-index: 50;
+  padding: .42rem .8rem;
+  font: 600 .66rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-2); background: var(--panel); border: 1px solid var(--rule);
+  border-radius: 999px; cursor: pointer;
+}
+.theme-button:hover { color: var(--ink); border-color: var(--rule-2); }
+
+/* ---------- hero ---------- */
+.hero { border-bottom: 1px solid var(--rule); padding: clamp(3.2rem, 11vw, 6rem) 0 clamp(2rem, 6vw, 3.2rem); }
+.hero .kicker {
+  margin: 0 0 1.1rem; font: 600 .68rem/1 var(--mono);
+  letter-spacing: .17em; text-transform: uppercase; color: var(--accent);
+}
+.hero h1 {
+  margin: 0; font-family: var(--display); font-weight: 600;
+  font-size: clamp(2.5rem, 8.5vw, 4.4rem); line-height: 1.02; letter-spacing: -.015em;
+}
+.hero p.sub {
+  margin: 1.1rem 0 0; max-width: 46ch;
+  font-size: clamp(1.02rem, 2.4vw, 1.2rem); color: var(--ink-2);
+}
+.hero__meta {
+  display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; margin: 1.8rem 0 0;
+  padding: 0; list-style: none;
+  font: 500 .7rem/1.5 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+}
+
+/* ---------- sections ---------- */
+main { padding-bottom: 4rem; }
+.shelf { padding-top: clamp(2.4rem, 6vw, 3.4rem); }
+.shelf__head {
+  display: flex; align-items: baseline; gap: 1rem;
+  padding-bottom: .9rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--rule);
+}
+.shelf__head h2 {
+  margin: 0; font: 600 .74rem/1 var(--mono);
+  letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
+}
+.shelf__head span { font: 500 .68rem/1 var(--mono); color: var(--ink-3); margin-left: auto; }
+
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+/* ---------- card ---------- */
+.card {
+  position: relative; display: flex; flex-direction: column;
+  padding: 1.4rem 1.4rem 1.2rem;
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 5px;
+  text-decoration: none; color: inherit;
+  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.card::before {
+  content: ""; position: absolute; inset: 0 auto 0 0; width: 3px;
+  background: var(--accent); opacity: 0; transition: opacity .18s ease;
+  border-radius: 5px 0 0 5px;
+}
+.card:hover { border-color: var(--rule-2); transform: translateY(-2px); box-shadow: var(--shadow); }
+.card:hover::before { opacity: 1; }
+.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.card__author {
+  margin: 0 0 .45rem; font: 600 .64rem/1.4 var(--mono);
+  letter-spacing: .13em; text-transform: uppercase; color: var(--accent);
+}
+.card__title {
+  margin: 0 0 .6rem; font-family: var(--display); font-weight: 600;
+  font-size: 1.42rem; line-height: 1.18; letter-spacing: -.01em;
+}
+.card__note { margin: 0; font-size: .92rem; line-height: 1.55; color: var(--ink-2); }
+.card__foot {
+  display: flex; align-items: center; gap: .55rem; flex-wrap: wrap;
+  margin-top: 1.1rem; padding-top: .85rem; border-top: 1px solid var(--rule);
+  font: 500 .64rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+}
+.tag { padding: .3rem .55rem; background: var(--panel-2); border-radius: 3px; color: var(--ink-3); }
+.card__foot .arrow { margin-left: auto; color: var(--accent); font-size: .95rem; letter-spacing: 0; }
+
+/* PDF link sits outside the card link so it stays independently tappable */
+.pdf {
+  display: inline-block; padding: .3rem .55rem; border-radius: 3px;
+  border: 1px solid var(--rule); color: var(--ink-2); text-decoration: none;
+  font: 500 .64rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+}
+.pdf:hover { color: var(--accent); border-color: var(--accent); }
+
+footer {
+  border-top: 1px solid var(--rule); padding: 2rem 0 3rem; margin-top: 3rem;
+  font: 500 .7rem/1.7 var(--mono); letter-spacing: .06em; color: var(--ink-3);
+}
+footer a { color: var(--ink-2); }
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 1.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card { transition: none; }
+  .card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+<button class="theme-button" id="themeButton" type="button" aria-label="Switch colour theme">Theme</button>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Personal library · illustrated summaries</p>
+    <h1>Book Summaries</h1>
+    <p class="sub">Chapter-by-chapter summaries of the books worth keeping close — built to be read on a phone, argued with, and returned to.</p>
+    <ul class="hero__meta">
+      <li>10 books</li>
+      <li>4 print editions</li>
+      <li>Updated August 2026</li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="shelf" aria-labelledby="shelf-history">
+    <div class="shelf__head">
+      <h2 id="shelf-history">History &amp; civilisation</h2>
+      <span>4</span>
+    </div>
+    <div class="grid">
+
+      <article class="card-wrap">
+        <a class="card" href="durant-story-of-civilization-i-iv.html">
+          <p class="card__author">Will Durant</p>
+          <h3 class="card__title">The Story of Civilization I–IV</h3>
+          <p class="card__note">Our Oriental Heritage, The Life of Greece, Caesar and Christ, and The Age of Faith — four volumes in one illustrated pass.</p>
+          <p class="card__foot">
+            <span class="tag">4 volumes</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+      <article class="card-wrap">
+        <a class="card" href="livy-history-of-rome.html">
+          <p class="card__author">Livy</p>
+          <h3 class="card__title">The History of Rome</h3>
+          <p class="card__note">Ab Urbe Condita — the early history, Rome and Italy, the war with Hannibal, and Rome in the Mediterranean.</p>
+          <p class="card__foot">
+            <span class="tag">Ab Urbe Condita</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+      <article class="card-wrap">
+        <a class="card" href="lessons-of-history.html">
+          <p class="card__author">Will &amp; Ariel Durant · 1968</p>
+          <h3 class="card__title">The Lessons of History</h3>
+          <p class="card__note">Thirteen short chapters distilling five decades of writing history into what actually recurs. A survey in fifteen plates.</p>
+          <p class="card__foot">
+            <span class="tag">13 chapters</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+      <article class="card-wrap">
+        <a class="card" href="guns-germs-and-steel.html">
+          <p class="card__author">Jared Diamond</p>
+          <h3 class="card__title">Guns, Germs, and Steel</h3>
+          <p class="card__note">Yali's question, and the twenty-five year answer: why geography and not biology set the shape of the modern world.</p>
+          <p class="card__foot">
+            <span class="tag">Geography</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="shelf-knowledge">
+    <div class="shelf__head">
+      <h2 id="shelf-knowledge">Knowledge &amp; mind</h2>
+      <span>3</span>
+    </div>
+    <div class="grid">
+
+      <article class="card-wrap">
+        <a class="card" href="the-beginning-of-infinity.html">
+          <p class="card__author">David Deutsch</p>
+          <h3 class="card__title">The Beginning of Infinity</h3>
+          <p class="card__note">Progress comes from creating good explanations and exposing them to criticism. There is no final theory — only better ones.</p>
+          <p class="card__foot">
+            <span class="tag">18 chapters</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+      <article class="card-wrap">
+        <a class="card" href="popper-objective-knowledge.html">
+          <p class="card__author">Karl Popper · 1972</p>
+          <h3 class="card__title">Objective Knowledge</h3>
+          <p class="card__note">An evolutionary approach: the solution to induction, the three worlds, and the source of Deutsch's epistemology.</p>
+          <p class="card__foot">
+            <span class="tag">Epistemology</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+      <article class="card-wrap">
+        <a class="card" href="marcus-aurelius-meditations.html">
+          <p class="card__author">Marcus Aurelius</p>
+          <h3 class="card__title">Meditations</h3>
+          <p class="card__note">The twelve books, the Stoic disciplines behind them, and what the emperor kept telling himself.</p>
+          <p class="card__foot">
+            <span class="tag">12 books</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="shelf-markets">
+    <div class="shelf__head">
+      <h2 id="shelf-markets">Markets, risk &amp; enterprise</h2>
+      <span>3</span>
+    </div>
+    <div class="grid">
+
+      <article class="card-wrap">
+        <a class="card" href="fooled-by-randomness.html">
+          <p class="card__author">Nassim Nicholas Taleb</p>
+          <h3 class="card__title">Fooled by Randomness</h3>
+          <p class="card__note">The hidden role of chance in life and in markets — and why a good outcome does not prove a good decision.</p>
+          <p class="card__foot">
+            <span class="tag">Incerto I</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+      <article class="card-wrap">
+        <a class="card" href="titan-rockefeller.html">
+          <p class="card__author">Ron Chernow · 1998</p>
+          <h3 class="card__title">Titan</h3>
+          <p class="card__note">The man who organised American oil, was broken up for it by the Supreme Court, then gave away more than anyone alive ever had.</p>
+          <p class="card__foot">
+            <span class="tag">21 plates</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+      <article class="card-wrap">
+        <a class="card" href="the-mobile-wave.html">
+          <p class="card__author">Michael J. Saylor · 2012</p>
+          <h3 class="card__title">The Mobile Wave</h3>
+          <p class="card__note">A forecast from 2012, most striking where it has since become invisible infrastructure — and most useful in its blind spots.</p>
+          <p class="card__foot">
+            <span class="tag">Forecast</span>
+            <span class="arrow">→</span>
+          </p>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="shelf-print">
+    <div class="shelf__head">
+      <h2 id="shelf-print">Print editions</h2>
+      <span>PDF</span>
+    </div>
+    <div class="grid">
+      <article class="card-wrap">
+        <a class="card" href="Durant%20%E2%80%94%20The%20Story%20of%20Civilization%20I%E2%80%93IV.pdf">
+          <p class="card__author">Will Durant</p>
+          <h3 class="card__title">The Story of Civilization I–IV</h3>
+          <p class="card__note">A4 print edition of the illustrated summary.</p>
+          <p class="card__foot"><span class="tag">677 KB</span><span class="arrow">↓</span></p>
+        </a>
+      </article>
+      <article class="card-wrap">
+        <a class="card" href="Livy%20%E2%80%94%20The%20History%20of%20Rome.pdf">
+          <p class="card__author">Livy</p>
+          <h3 class="card__title">The History of Rome</h3>
+          <p class="card__note">A4 print edition of the illustrated summary.</p>
+          <p class="card__foot"><span class="tag">418 KB</span><span class="arrow">↓</span></p>
+        </a>
+      </article>
+      <article class="card-wrap">
+        <a class="card" href="Marcus%20Aurelius%20%E2%80%94%20Meditations.pdf">
+          <p class="card__author">Marcus Aurelius</p>
+          <h3 class="card__title">Meditations</h3>
+          <p class="card__note">A4 print edition of the illustrated summary.</p>
+          <p class="card__foot"><span class="tag">444 KB</span><span class="arrow">↓</span></p>
+        </a>
+      </article>
+      <article class="card-wrap">
+        <a class="card" href="Popper%20%E2%80%94%20Objective%20Knowledge.pdf">
+          <p class="card__author">Karl Popper</p>
+          <h3 class="card__title">Objective Knowledge</h3>
+          <p class="card__note">A4 print edition of the illustrated summary.</p>
+          <p class="card__foot"><span class="tag">484 KB</span><span class="arrow">↓</span></p>
+        </a>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Summaries written and illustrated for personal reading. Each page carries its own theme toggle and table of contents.</p>
+</footer>
+
+<script>
+(function(){
+  var r = document.documentElement,
+      b = document.getElementById('themeButton'),
+      k = 'book-summaries-theme', s = null;
+  try { s = localStorage.getItem(k); } catch (e) {}
+  if (s === 'light' || s === 'dark') r.dataset.theme = s;
+  b.addEventListener('click', function () {
+    var c = r.dataset.theme || ((matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'),
+        n = c === 'dark' ? 'light' : 'dark';
+    r.dataset.theme = n;
+    try { localStorage.setItem(k, n); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>

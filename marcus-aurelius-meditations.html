@@ -1,0 +1,1428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meditations — Marcus Aurelius</title>
+<meta name="description" content="An illustrated summary of the Meditations of Marcus Aurelius: the twelve books, the Stoic disciplines behind them, and what the emperor kept telling himself.">
+<style>
+/* ------------------------------------------------------------
+   PALETTE — campaign paper, lamp-black, worn imperial purple
+   ------------------------------------------------------------ */
+:root {
+  --plate:    #E8E6E1;
+  --plate-2:  #F2F1ED;
+  --plate-3:  #D9D7D1;
+  --ink:      #1B1A1C;
+  --graphite: #64625F;
+  --hair:     #C4C2BB;
+  --accent:   #6D4A6E;
+  --book-toc-accent: #6D4A6E;   /* worn purple */
+  --accent-w: #E8DEE8;
+  --oxide:    #9C5A30;   /* terracotta  */
+  --ochre:    #8A7526;   /* old gold    */
+  --cool:     #47695C;   /* olive       */
+
+  --display: "Hoefler Text", "Palatino", "Palatino Linotype", Georgia, serif;
+  --body:    "Iowan Old Style", "Charter", "Bitstream Charter", Georgia, "Times New Roman", serif;
+  --label:   "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --plate: #151416; --plate-2: #1D1C1F; --plate-3: #0F0E10;
+    --ink: #E5E2DD; --graphite: #94918B; --hair: #34323A;
+    --accent: #B98CBA;
+  --book-toc-accent: #B98CBA; --accent-w: #2C1E2D;
+    --oxide: #D8895A; --ochre: #C3AC4E; --cool: #7FA893;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --plate: #151416; --plate-2: #1D1C1F; --plate-3: #0F0E10;
+  --ink: #E5E2DD; --graphite: #94918B; --hair: #34323A;
+  --accent: #B98CBA;
+  --book-toc-accent: #B98CBA; --accent-w: #2C1E2D;
+  --oxide: #D8895A; --ochre: #C3AC4E; --cool: #7FA893;
+  color-scheme: dark;
+}
+@media print {
+  :root {
+    --plate: #E8E6E1; --plate-2: #F2F1ED; --plate-3: #D9D7D1;
+    --ink: #1B1A1C; --graphite: #64625F; --hair: #C4C2BB;
+    --accent: #6D4A6E;
+  --book-toc-accent: #6D4A6E; --accent-w: #E8DEE8;
+    --oxide: #9C5A30; --ochre: #8A7526; --cool: #47695C;
+  }
+}
+</style>
+<link rel="stylesheet" href="civ-plate.css">
+<link rel="stylesheet" href="book-toc.css">
+</head>
+<body>
+
+<button class="toggle" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+
+<nav class="rail" aria-label="Sections">
+  <a href="#book"     data-rail="book"><span class="bar"></span><span class="num">The notebook</span></a>
+  <a href="#system"   data-rail="system"><span class="bar"></span><span class="num">The system</span></a>
+  <a href="#practice" data-rail="practice"><span class="bar"></span><span class="num">The practice</span></a>
+  <a href="#themes"   data-rail="themes"><span class="bar"></span><span class="num">What recurs</span></a>
+  <a href="#tension"  data-rail="tension"><span class="bar"></span><span class="num">Tensions</span></a>
+  <a href="#reading"  data-rail="reading"><span class="bar"></span><span class="num">Reading it</span></a>
+</nav>
+
+<!-- ==========================================================
+     HERO
+     ========================================================== -->
+<header class="hero">
+  <svg class="hero__field" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="0.9">
+      <path d="M80 70 H 460"/><path d="M80 100 H 520"/><path d="M80 130 H 380"/>
+      <path d="M80 176 H 500"/><path d="M80 206 H 430"/><path d="M80 236 H 540"/><path d="M80 266 H 300"/>
+      <path d="M80 312 H 480"/><path d="M80 342 H 400"/>
+      <path d="M700 70 H 1080"/><path d="M700 100 H 1010"/><path d="M700 130 H 1120"/>
+      <path d="M700 176 H 960"/><path d="M700 206 H 1100"/><path d="M700 236 H 880"/>
+      <path d="M700 282 H 1060"/><path d="M700 312 H 990"/><path d="M700 342 H 1130"/>
+    </g>
+    <g stroke="currentColor" stroke-width="1.6">
+      <path d="M60 40 V 380"/><path d="M680 40 V 380"/>
+    </g>
+  </svg>
+
+  <div class="hero__inner">
+    <div class="hero__meta">
+      <p class="eyebrow">Marcus Aurelius · 121–180 CE</p>
+      <p class="eyebrow">Written c. 170–180, in Greek</p>
+      <p class="eyebrow eyebrow--accent">Never intended to be read</p>
+    </div>
+
+    <h1>Meditations
+      <span class="sub">Twelve books of notes a Roman emperor wrote to himself, mostly on campaign, arguing with his own worst impulses.</span>
+    </h1>
+
+    <div class="hero__rule" role="presentation"></div>
+
+    <p class="hero__thesis">
+      There is no other book like this, and the reason is structural rather than literary: it is the
+      private working notebook of the most powerful man on earth, and he is not explaining anything to
+      anyone. <span class="accent">He is telling himself, over and over, the same handful of things —
+      because he keeps failing to remember them.</span> The consolation most readers take from it is not
+      that Marcus had answers, but that a man with absolute power, the best education available, and
+      thirty years of practice was still struggling with irritation, procrastination, self-importance and
+      the fear of death.
+    </p>
+
+    <dl class="facts">
+      <div><dt>Books</dt><dd>12<span>fragments, not chapters</span></dd></div>
+      <div><dt>Length</dt><dd>≈35,000 words<span>a short evening</span></dd></div>
+      <div><dt>Written</dt><dd>on campaign<span>the Danube frontier</span></dd></div>
+      <div><dt>Original title</dt><dd><em>Tà eis heautón</em><span>"to himself"</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="flow">
+  <!-- ======================= THE LIFE ======================= -->
+  <section class="movement" id="life" aria-labelledby="lf-h">
+    <div class="movement__head">
+      <span class="roman">The man</span>
+      <h2 id="lf-h">The Life Behind the Notebook</h2>
+      <span class="gloss">Almost none of which appears in the book itself.</span>
+    </div>
+
+    <p class="lede">
+      Marcus Annius Verus was born in Rome in 121 into a wealthy senatorial family of Spanish origin. His
+      father died when he was small and he was raised by his grandfather and mother. The emperor Hadrian
+      noticed him young and nicknamed him <em>Verissimus</em> — "most truthful," a pun on the family name —
+      and in 138, needing to secure the succession two generations deep, arranged for Antoninus Pius to
+      adopt both Marcus and Lucius Verus. <strong>Marcus was seventeen and had just been handed the
+      empire, on a twenty-three-year delay.</strong>
+    </p>
+
+    <p>
+      Those twenty-three years as heir apparent are the least discussed and probably most formative part
+      of his life. He served as consul, sat in the Senate, watched Antoninus govern, and — as Book 1
+      records at length — studied him. He also studied philosophy intensely enough that his rhetoric
+      tutor Fronto wrote to him complaining about it. A substantial correspondence with Fronto survives
+      and is worth knowing about, because it shows a completely different Marcus: chatty, affectionate,
+      anxious about his health, gossiping about grape harvests. Whoever wrote the <em>Meditations</em>
+      also wrote letters about a sore throat.
+    </p>
+    <p>
+      He became emperor in 161 and immediately did something no Roman had done: he insisted the Senate
+      confirm Lucius Verus as his equal co-emperor, on the grounds that Hadrian had intended both. It was
+      the first joint principate in Roman history and it worked, more or less, until Verus died in 169.
+      What followed was nineteen years in which almost everything went wrong at once — a war in the east,
+      a pandemic brought home by the returning army, a permanent crisis on the Danube, the revolt of his
+      most trusted general, and the deaths of his wife and most of his children.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 01</b><span>Fifty-nine years, and what filled them</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 300" role="img" aria-label="A timeline of the life of Marcus Aurelius from 121 to 180 CE showing his adoption, accession, the wars, the plague, family deaths and the composition of the Meditations.">
+          <!-- scale: x=50 at 118 CE, 10.9 px per year to 182 -->
+          <path d="M50 152 H 738" class="s-graph" stroke-width="1.2"/>
+          <g class="s-hair" stroke-width="0.7" stroke-dasharray="2 5">
+            <path d="M83 60 V 184"/><path d="M301 60 V 184"/><path d="M519 60 V 184"/><path d="M737 60 V 184"/>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="83" y="200">121</text><text x="301" y="200">141</text><text x="519" y="200">161</text><text x="737" y="200">181 CE</text>
+          </g>
+
+          <rect x="83" y="144" width="163" height="16" class="f-hair"/>
+          <text x="164" y="156" class="t t--mid t--xs">boyhood</text>
+          <rect x="246" y="144" width="273" height="16" class="f-plate3"/>
+          <text x="382" y="156" class="t t--mid t--xs">heir apparent · 23 years</text>
+          <rect x="519" y="144" width="207" height="16" class="f-acc"/>
+          <text x="622" y="156" class="t t--mid t--rev t--xs">emperor · 161–180</text>
+
+          <!-- above -->
+          <g class="s-ink" stroke-width="1">
+            <path d="M279 144 V 118"/><path d="M355 144 V 100"/><path d="M519 144 V 118"/><path d="M574 144 V 82"/><path d="M584 144 V 100"/>
+          </g>
+          <g class="t t--xs">
+            <text x="196" y="112">138 · adopted by Antoninus Pius, aged 17</text>
+            <text x="286" y="94">145 · marries Faustina; 13 or 14 children follow</text>
+            <text x="452" y="112">161 · accession, with Lucius Verus as co-emperor</text>
+            <text x="396" y="76">165 · the Antonine plague reaches Rome — perhaps a tenth of the empire dies</text>
+            <text x="530" y="94">166 · the Marcomannic wars open on the Danube</text>
+          </g>
+
+          <!-- below -->
+          <g class="s-ox" stroke-width="1">
+            <path d="M606 160 V 216"/><path d="M661 160 V 234"/><path d="M661 160 V 234"/><path d="M694 160 V 252"/><path d="M726 160 V 216"/>
+          </g>
+          <g class="t t--xs t--ox">
+            <text x="540" y="228">169 · Lucius Verus dies</text>
+            <text x="740" y="246" class="t--end">175 · Avidius Cassius revolts, and is killed by his own officers</text>
+            <text x="740" y="264" class="t--end">175 · Faustina dies · 177 · Commodus made co-emperor at fifteen</text>
+            <text x="640" y="228">180 · dies on campaign</text>
+          </g>
+
+          <rect x="519" y="106" width="207" height="8" class="f-acc" opacity="0.4"/>
+          <text x="50" y="46" class="t t--acc t--sm">Of thirteen or fourteen children, perhaps five outlived him — and the survivor who mattered was the wrong one</text>
+          <text x="50" y="62" class="t t--xs">He never mentions any of this. There is no entry on the plague, none on Faustina's death, none on Commodus.</text>
+          <text x="50" y="288" class="t t--xs t--graph">Dates for the composition of the Meditations are inferred from the two headings that name a location; the rest is undatable.</text>
+        </svg>
+      </div>
+      <figcaption>Set the black line against the red one. Almost every event a biographer would call decisive falls in the last fifteen years, and the notebook that overlaps them exactly is silent about all of it. Whatever Marcus was using the writing for, it was not processing events.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= BOOK ONE ======================= -->
+  <section class="movement" id="book1" aria-labelledby="b1-h">
+    <div class="movement__head">
+      <span class="roman">Book 1</span>
+      <h2 id="b1-h">Debts and Lessons</h2>
+      <span class="gloss">Seventeen people, and exactly what he owes each of them.</span>
+    </div>
+
+    <p class="lede">
+      The first book is unlike the other eleven and is, for my money, the most quietly extraordinary thing
+      in the whole text. It is a list. Marcus goes through the people who formed him — grandfather,
+      parents, tutors, philosophers, his adoptive father, and finally the gods — and for each one names
+      the specific quality he took from them. <strong>No self-praise, no narrative, no complaints: just
+      an audit of where his character came from, itemised.</strong>
+    </p>
+
+    <p>
+      The entries get more precise as they go, and they are frequently unglamorous. From his tutor: not to
+      take sides at the races, and to do his own work. From Alexander the grammarian: not to correct
+      people's grammar in public, but to work the right expression into your reply. From Alexander the
+      Platonist: not to say "I'm too busy" more often than necessary, or use it to dodge obligations. From
+      Fronto, of all people, he says he learned what envy and duplicity look like in a ruler. From Diognetus
+      he got scepticism about miracle-workers and charmers, and the habit of sleeping on a plain board.
+    </p>
+    <p>
+      The philosophical debts are the ones with consequences. Rusticus told him his character needed work,
+      steered him away from writing poetry and showy rhetoric, taught him to read carefully rather than be
+      satisfied with a general sense — and lent him his own copy of the <em>Discourses</em> of Epictetus.
+      Almost everything in the remaining eleven books descends from that loan. Apollonius gave him
+      independence and steadiness under pain and loss. Sextus gave him the model of a household run
+      without anger.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 02</b><span>The seventeen debts, and what each one supplied</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 310" role="img" aria-label="A list of the seventeen people credited in Book 1 of the Meditations with the quality Marcus says he learned from each.">
+          <path d="M20 44 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px"><text x="20" y="38">1.1 – 1.17</text><text x="230" y="38">WHAT HE SAYS HE TOOK FROM THEM</text></g>
+          <g class="s-hair" stroke-width="0.6">
+            <path d="M20 62 H740"/><path d="M20 78 H740"/><path d="M20 94 H740"/><path d="M20 110 H740"/><path d="M20 126 H740"/>
+            <path d="M20 142 H740"/><path d="M20 158 H740"/><path d="M20 174 H740"/><path d="M20 190 H740"/><path d="M20 206 H740"/>
+            <path d="M20 222 H740"/><path d="M20 238 H740"/><path d="M20 254 H740"/><path d="M20 270 H740"/>
+          </g>
+          <g class="t t--xs t--ink">
+            <text x="20" y="58">Verus, grandfather</text><text x="20" y="74">his father, by repute</text><text x="20" y="90">Domitia Lucilla, mother</text>
+            <text x="20" y="106">great-grandfather</text><text x="20" y="122">his tutor</text><text x="20" y="138">Diognetus</text>
+            <text x="20" y="154">Rusticus</text><text x="20" y="170">Apollonius</text><text x="20" y="186">Sextus</text>
+            <text x="20" y="202">Alexander the grammarian</text><text x="20" y="218">Fronto</text><text x="20" y="234">Alexander the Platonist</text>
+            <text x="20" y="250">Catulus</text><text x="20" y="266">Severus</text><text x="20" y="282">Maximus</text>
+          </g>
+          <g class="t t--xs">
+            <text x="230" y="58">Character, and control of his temper</text>
+            <text x="230" y="74">Modesty; a masculine reticence</text>
+            <text x="230" y="90">Piety, generosity, plain living — "far removed from the way of the rich"</text>
+            <text x="230" y="106">Private tutors at home, and to spend money on that without hesitating</text>
+            <text x="230" y="122">Not to back the Greens or the Blues; endurance; to do his own work</text>
+            <text x="230" y="138">Not to be taken in by conjurers and charlatans; to write dialogues young</text>
+            <text x="230" y="154" class="t--acc">That his character needed work; to read closely; and Epictetus's Discourses</text>
+            <text x="230" y="170">Independence; reliance on reason alone; steadiness in pain and loss</text>
+            <text x="230" y="186">A household governed without anger; living in accord with nature</text>
+            <text x="230" y="202">Not to correct people's grammar, but to supply the right word in reply</text>
+            <text x="230" y="218">What envy, duplicity and hypocrisy look like in a man with power</text>
+            <text x="230" y="234">Not to say "I am too busy" unless it is true and unavoidable</text>
+            <text x="230" y="250">Not to shrug off a friend's complaint; to be steady toward teachers</text>
+            <text x="230" y="266">A state with one law for all, of equal rights and free speech</text>
+            <text x="230" y="282">Self-mastery; cheerfulness; dignity in illness; never in a hurry</text>
+          </g>
+          <rect x="20" y="144" width="720" height="16" class="f-acc" opacity="0.10"/>
+          <text x="20" y="298" class="t t--xs t--acc">Two entries are missing here because they need more room than a line: 1.16 on Antoninus Pius, and 1.17 on the gods.</text>
+        </svg>
+      </div>
+      <figcaption>Notice how much of it is about restraint rather than achievement: not correcting people, not making excuses, not taking sides, not being impressed. Marcus is cataloguing an education in how to be less annoying and more reliable, which is not what one expects a Roman emperor to have valued.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">The two long entries</h5>
+    <p>
+      Antoninus Pius, his adoptive father, gets the longest section in the book by a wide margin, and it
+      reads as a portrait of the kind of ruler Marcus intends to be. What he singles out is almost
+      entirely temperamental rather than political: that Antoninus worked steadily and finished what he
+      started; that he was unmoved by flattery; that he would listen to anyone who had something useful
+      to contribute, even in opposition; that he looked after his body without fuss, "not as one in love
+      with life, nor for appearance"; that he had few needs and could go without; that he never rushed and
+      never dithered; that he was the same in private as in public. Marcus ends by telling himself to
+      behave, in every situation, as Antoninus would have behaved.
+    </p>
+    <p>
+      The last entry, 1.17, is addressed to the gods and is a list of the things he did not have to suffer.
+      That he had good grandparents, parents, sister, teachers and friends. That he never wronged any of
+      them, though he had the temperament to. That he did not grow up too fast, and remained under his
+      mother's roof. That when he wanted to help someone he was never told he lacked the means. That his
+      children were neither stupid nor deformed. That he did not get further in rhetoric and poetry, which
+      might have absorbed him. And — a line that has generated centuries of speculation given what Roman
+      gossip said about her — that his wife was "so obedient, so affectionate, so unaffected."
+    </p>
+
+    <p class="pull">
+      A man in his fifties, on a frontier, in a plague, listing what has gone right. Book 1 is the only
+      part of the <em>Meditations</em> that is not an argument with himself.<cite>On the structure of the opening book</cite>
+    </p>
+  </section>
+
+
+  <!-- ======================= THE NOTEBOOK ======================= -->
+  <section class="movement" id="book" aria-labelledby="bk-h">
+    <div class="movement__head">
+      <span class="roman">Orientation</span>
+      <h2 id="bk-h">A Private Notebook That Should Not Exist</h2>
+      <span class="gloss">Who wrote it, when, and how improbable its survival was.</span>
+    </div>
+
+    <p class="lede">
+      Marcus Aurelius ruled from 161 to 180, through a plague that may have killed a tenth of the empire,
+      a decade of war on the Danube, and a revolt by his most trusted general. He wrote these notes in
+      Greek — the language of philosophy, not of government — in camp, at night, for no reader.
+      <strong>The title we use is not his; the book has no argument, no structure, and no audience.</strong>
+      That is precisely what makes it useful.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 03</b><span>The reign, and where the writing happened</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 262" role="img" aria-label="A timeline of the reign of Marcus Aurelius from 161 to 180 CE showing the plague, the Danube wars, the revolt of Avidius Cassius, and the period in which the Meditations were written.">
+          <path d="M60 132 H 730" class="s-graph" stroke-width="1.2"/>
+          <!-- scale: x=60 at 160 CE, 33.5 px per year to 180 -->
+          <g class="s-hair" stroke-width="0.7" stroke-dasharray="2 5">
+            <path d="M60 48 V 160"/><path d="M228 48 V 160"/><path d="M395 48 V 160"/><path d="M563 48 V 160"/><path d="M730 48 V 160"/>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="60" y="176">160</text><text x="228" y="176">165</text><text x="395" y="176">170</text>
+            <text x="563" y="176">175</text><text x="730" y="176">180 CE</text>
+          </g>
+
+          <rect x="94" y="122" width="636" height="20" class="f-plate3"/>
+          <text x="412" y="136" class="t t--mid t--xs">the reign · 161–180</text>
+
+          <g class="s-ox" stroke-width="1"><path d="M262 122 V 100"/><path d="M295 122 V 82"/><path d="M496 122 V 116"/></g>
+          <g class="t t--xs t--ox">
+            <text x="196" y="94">165 · the Antonine plague arrives with the army from the east</text>
+            <text x="246" y="76">166 · Germanic war begins on the Danube; it never really ends</text>
+            <text x="470" y="110">175 · Avidius Cassius, his own general, revolts</text>
+          </g>
+
+          <rect x="395" y="196" width="335" height="16" class="f-acc"/>
+          <text x="562" y="208" class="t t--mid t--rev t--xs">the Meditations, as far as can be dated</text>
+          <path d="M395 142 V 196" class="s-acc" stroke-width="1" stroke-dasharray="3 3"/>
+          <path d="M730 142 V 196" class="s-acc" stroke-width="1" stroke-dasharray="3 3"/>
+
+          <g class="t t--xs">
+            <text x="60" y="230">Book 2 is headed "among the Quadi, on the river Gran"; Book 3, "at Carnuntum" — a legionary fortress on the</text>
+            <text x="60" y="244">Danube. He is writing in a tent, in his fifties, in the middle of the longest war of his life.</text>
+          </g>
+          <text x="60" y="40" class="t t--acc t--sm">Everything in this book was written by a man who was tired</text>
+          <text x="60" y="258" class="t t--xs t--graph">He died at Vindobona or Sirmium in 180, still on campaign. His son Commodus made peace and went home.</text>
+        </svg>
+      </div>
+      <figcaption>The circumstances matter for reading. These are not the reflections of a man in a garden with leisure to philosophise; they are notes written by someone managing a plague, a frontier war and a treasury, who used the practice as a way of getting through the next day.</figcaption>
+    </figure>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 04</b><span>How a private notebook survived eighteen centuries</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 242" role="img" aria-label="A chain showing the transmission of the Meditations from Marcus's own notes through scattered ancient mentions to a single manuscript tradition and the first printed edition of 1559.">
+          <defs><marker id="m1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-graph"/></marker></defs>
+          <g class="s-graph" stroke-width="1.3" fill="none" marker-end="url(#m1)">
+            <path d="M154 92 H 196"/><path d="M330 92 H 372"/><path d="M506 92 H 548"/>
+          </g>
+          <g class="f-plate3">
+            <rect x="20" y="56" width="132" height="72"/><rect x="202" y="56" width="126" height="72"/>
+            <rect x="378" y="56" width="126" height="72"/><rect x="554" y="56" width="186" height="72"/>
+          </g>
+          <g class="f-acc"><rect x="20" y="56" width="132" height="3"/><rect x="202" y="56" width="126" height="3"/><rect x="378" y="56" width="126" height="3"/><rect x="554" y="56" width="186" height="3"/></g>
+
+          <g class="t t--acc t--sm"><text x="32" y="78">c. 180</text><text x="214" y="78">c. 350–900</text><text x="390" y="78">c. 900–1550</text><text x="566" y="78">1559</text></g>
+          <g class="t t--xs">
+            <text x="32" y="98">Notes in the imperial</text><text x="32" y="110">household. No evidence</text><text x="32" y="122">of publication.</text>
+            <text x="214" y="98">Occasional mentions;</text><text x="214" y="110">quoted rarely. It comes</text><text x="214" y="122">very close to vanishing.</text>
+            <text x="390" y="98">One Byzantine copy line.</text><text x="390" y="110">A tenth-century scholar,</text><text x="390" y="122">Arethas, has a text.</text>
+            <text x="566" y="98">First printed, at Zurich, from a</text><text x="566" y="110">manuscript now lost. Every modern</text><text x="566" y="122">edition descends from that printing</text><text x="566" y="134">and one surviving Vatican codex.</text>
+          </g>
+
+          <path d="M20 166 H 740" class="s-hair" stroke-width="1"/>
+          <text x="20" y="188" class="t t--ox t--sm">The uncomfortable fact</text>
+          <text x="20" y="206" class="t t--xs">The most widely read work of ancient philosophy reached us through a single thin thread, from a text its author</text>
+          <text x="20" y="220" class="t t--xs">never meant anyone to see. Had that one line of copying failed, we would know Marcus only as a competent emperor</text>
+          <text x="20" y="234" class="t t--xs">with a disastrous son — and would have no idea what he was like inside.</text>
+        </svg>
+      </div>
+      <figcaption>Compare Livy, who wrote 142 books explicitly for publication and lost three-quarters of them. Transmission is close to random with respect to intent: what an author wanted preserved and what actually survived are two different lists.</figcaption>
+    </figure>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 05</b><span>What is in the twelve books</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 288" role="img" aria-label="A guide to the twelve books of the Meditations, showing that Book 1 is a distinct catalogue of debts and the remaining eleven are undifferentiated collections of notes.">
+          <rect x="20" y="44" width="720" height="62" class="f-accw"/>
+          <rect x="20" y="44" width="3" height="62" class="f-acc"/>
+          <text x="36" y="64" class="t t--acc" style="font-size:13px">BOOK 1 · "Debts and Lessons" — unlike anything else in the work</text>
+          <text x="36" y="82" class="t t--xs">A list of seventeen people and what he learned from each. His grandfather: character and self-control. Rusticus: the</text>
+          <text x="36" y="96" class="t t--xs">Discourses of Epictetus, and to stop writing poetry. Antoninus, his adoptive father, gets the longest entry by far.</text>
+
+          <text x="20" y="132" class="t t--ink t--sm">BOOKS 2–12 · undifferentiated notes, no order, no development</text>
+          <g class="f-plate3">
+            <rect x="20" y="144" width="62" height="52"/><rect x="88" y="144" width="62" height="52"/><rect x="156" y="144" width="62" height="52"/>
+            <rect x="224" y="144" width="62" height="52"/><rect x="292" y="144" width="62" height="52"/><rect x="360" y="144" width="62" height="52"/>
+            <rect x="428" y="144" width="62" height="52"/><rect x="496" y="144" width="62" height="52"/><rect x="564" y="144" width="62" height="52"/>
+            <rect x="632" y="144" width="52" height="52"/><rect x="690" y="144" width="50" height="52"/>
+          </g>
+          <g class="t t--mid t--ink t--xs">
+            <text x="51" y="164">2</text><text x="119" y="164">3</text><text x="187" y="164">4</text><text x="255" y="164">5</text><text x="323" y="164">6</text>
+            <text x="391" y="164">7</text><text x="459" y="164">8</text><text x="527" y="164">9</text><text x="595" y="164">10</text><text x="658" y="164">11</text><text x="715" y="164">12</text>
+          </g>
+          <g class="t t--mid t--xs">
+            <text x="51" y="182">Quadi</text><text x="119" y="182">Carnuntum</text><text x="187" y="182">—</text><text x="255" y="182">—</text><text x="323" y="182">—</text>
+            <text x="391" y="182">—</text><text x="459" y="182">—</text><text x="527" y="182">—</text><text x="595" y="182">—</text><text x="658" y="182">—</text><text x="715" y="182">—</text>
+          </g>
+          <text x="20" y="214" class="t t--xs">Only Books 2 and 3 carry a location. The rest are simply collections of entries — some a single line, some a page.</text>
+          <text x="20" y="228" class="t t--xs">There is no progression: an idea in Book 12 is often one already stated in Book 4, in almost the same words.</text>
+
+          <rect x="20" y="244" width="720" height="38" class="f-plate3"/>
+          <rect x="20" y="244" width="3" height="38" class="f-ox"/>
+          <text x="36" y="262" class="t t--ox t--xs">The practical consequence for a reader</text>
+          <text x="36" y="276" class="t t--xs">You cannot read this book for its argument, because it does not have one. Open it anywhere; read a few entries; stop.</text>
+        </svg>
+      </div>
+      <figcaption>Book 1 is stylistically so different that many scholars think it was composed last, or separately. It is also the least quoted and, for some readers, the best thing in the book — a man in his fifties itemising exactly what he owes to each person who formed him.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= THE SYSTEM ======================= -->
+  <section class="movement" id="system" aria-labelledby="sy-h">
+    <div class="movement__head">
+      <span class="roman">Behind the notes</span>
+      <h2 id="sy-h">The System He Is Drawing On</h2>
+      <span class="gloss">Marcus never explains Stoicism. He assumes it, and uses one corner of it.</span>
+    </div>
+
+    <p class="lede">
+      The <em>Meditations</em> are the notes of a practitioner, not an introduction. Stoicism was already
+      four centuries old and had a full physics, logic and ethics; Marcus uses almost none of the first
+      two. <strong>What he has taken, mostly through Epictetus, is a small set of practical operations
+      he can run on himself when he is angry, frightened, or reluctant to get out of bed.</strong>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 06</b><span>The Stoic system, and the part Marcus actually uses</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 262" role="img" aria-label="The three parts of Stoic philosophy — logic, physics and ethics — with ethics highlighted as the portion Marcus draws on, and the line of transmission from Zeno to Marcus.">
+          <g class="f-plate3">
+            <rect x="20" y="52" width="220" height="94"/><rect x="256" y="52" width="220" height="94"/>
+          </g>
+          <rect x="492" y="52" width="248" height="94" class="f-accw"/>
+          <g class="f-graph"><rect x="20" y="52" width="220" height="3"/><rect x="256" y="52" width="220" height="3"/></g>
+          <rect x="492" y="52" width="248" height="3" class="f-acc"/>
+
+          <text x="34" y="76" class="t t--ink" style="font-size:12px">LOGIC</text>
+          <text x="34" y="96" class="t t--xs">Argument, language, the</text>
+          <text x="34" y="110" class="t t--xs">theory of assent and</text>
+          <text x="34" y="124" class="t t--xs">of what counts as knowledge.</text>
+          <text x="34" y="140" class="t t--xs t--ox">Marcus: essentially absent</text>
+
+          <text x="270" y="76" class="t t--ink" style="font-size:12px">PHYSICS</text>
+          <text x="270" y="96" class="t t--xs">The cosmos as a single</text>
+          <text x="270" y="110" class="t t--xs">rational living thing;</text>
+          <text x="270" y="124" class="t t--xs">fate, providence, the logos.</text>
+          <text x="270" y="140" class="t t--xs t--ox">Marcus: assumed, not argued</text>
+
+          <text x="506" y="76" class="t t--acc" style="font-size:12px">ETHICS</text>
+          <text x="506" y="96" class="t t--xs">What is up to me; what to</text>
+          <text x="506" y="110" class="t t--xs">desire; how to act; how to</text>
+          <text x="506" y="124" class="t t--xs">deal with other people and death.</text>
+          <text x="506" y="140" class="t t--acc t--xs">Marcus: almost the whole book</text>
+
+          <path d="M20 180 H 740" class="s-hair" stroke-width="1"/>
+          <text x="20" y="200" class="t t--ink t--sm">The line he stands at the end of</text>
+          <g class="f-graph"><circle cx="60" cy="224" r="4"/><circle cx="200" cy="224" r="4"/><circle cx="340" cy="224" r="4"/><circle cx="480" cy="224" r="4"/></g>
+          <circle cx="640" cy="224" r="5" class="f-acc"/>
+          <path d="M60 224 H 640" class="s-hair" stroke-width="1.2"/>
+          <g class="t t--xs t--mid">
+            <text x="60" y="244">Zeno</text><text x="200" y="244">Chrysippus</text><text x="340" y="244">Seneca</text><text x="480" y="244">Epictetus</text>
+            <text x="640" y="244" class="t--acc">Marcus</text>
+          </g>
+          <g class="t t--xs t--mid t--graph">
+            <text x="60" y="258">c. 300 BCE</text><text x="200" y="258">c. 230 BCE</text><text x="340" y="258">d. 65 CE</text><text x="480" y="258">d. 135 CE</text><text x="640" y="258">d. 180 CE</text>
+          </g>
+          <path d="M480 214 C 520 194, 600 194, 636 212" class="f-none s-acc" stroke-width="1.4"/>
+          <text x="558" y="192" class="t t--mid t--acc t--xs">Rusticus gives him the Discourses — Book 1.7</text>
+        </svg>
+      </div>
+      <figcaption>The line at the bottom is worth noticing: a Cypriot merchant, a Greek logician, a Roman senator and playwright, a freed slave, and an emperor. Stoicism is the one ancient school with no social entry requirement, and Marcus takes it from a man who had been someone's property.</figcaption>
+    </figure>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 07</b><span>The one distinction everything hangs on</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 292" role="img" aria-label="A diagram dividing what is up to us — judgement, impulse, desire, aversion — from what is not — body, reputation, office, other people, and outcomes.">
+          <rect x="20" y="46" width="330" height="180" class="f-accw"/>
+          <rect x="20" y="46" width="330" height="4" class="f-acc"/>
+          <text x="185" y="72" class="t t--mid t--acc" style="font-size:13px">UP TO ME</text>
+          <text x="185" y="88" class="t t--mid t--xs">and nothing else is</text>
+          <g class="t t--xs t--mid">
+            <text x="185" y="120">My judgement about what happened</text>
+            <text x="185" y="142">What I choose to pursue</text>
+            <text x="185" y="164">What I choose to avoid</text>
+            <text x="185" y="186">Whether I act well right now</text>
+            <text x="185" y="208">Whether I keep my word</text>
+          </g>
+
+          <rect x="410" y="46" width="330" height="180" class="f-plate3"/>
+          <rect x="410" y="46" width="330" height="4" class="f-graph"/>
+          <text x="575" y="72" class="t t--mid t--ink" style="font-size:13px">NOT UP TO ME</text>
+          <text x="575" y="88" class="t t--mid t--xs">however much power I hold</text>
+          <g class="t t--xs t--mid">
+            <text x="575" y="120">My body, my health, my death</text>
+            <text x="575" y="142">My reputation, now or later</text>
+            <text x="575" y="164">What other people do and think</text>
+            <text x="575" y="186">Whether the plan works</text>
+            <text x="575" y="208">The plague, the Danube, the Senate</text>
+          </g>
+
+          <path d="M380 46 V 226" class="s-ink" stroke-width="2"/>
+
+          <rect x="20" y="240" width="720" height="46" class="f-plate3"/>
+          <rect x="20" y="240" width="3" height="46" class="f-ox"/>
+          <text x="36" y="258" class="t t--ox t--xs">The move that makes it more than a slogan</text>
+          <text x="36" y="268" class="t t--xs">Distress does not come from the event but from the judgement laid on top of it — and the judgement sits</text>
+          <text x="36" y="280" class="t t--xs">in the left column. Marcus, quoting the school: "Take away the opinion, and the complaint is taken away."</text>
+        </svg>
+      </div>
+      <figcaption>Note which side "whether the plan works" falls on. This is not a doctrine of passivity: you are obliged to act, and act well, and the obligation is unaffected by whether you will succeed. What you are released from is the requirement that the world cooperate.</figcaption>
+    </figure>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 08</b><span>The gap between impression and action</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 258" role="img" aria-label="A sequence from external event through impression, assent, emotion and impulse to action, with the point of intervention marked at assent.">
+          <defs><marker id="g-a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-graph"/></marker>
+                <marker id="g-p" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-acc"/></marker></defs>
+
+          <g class="f-plate3">
+            <rect x="20" y="70" width="112" height="48"/><rect x="164" y="70" width="112" height="48"/>
+            <rect x="452" y="70" width="112" height="48"/><rect x="596" y="70" width="144" height="48"/>
+          </g>
+          <rect x="308" y="62" width="112" height="64" class="f-accw"/>
+          <rect x="308" y="62" width="112" height="4" class="f-acc"/>
+
+          <g class="s-graph" stroke-width="1.3" fill="none" marker-end="url(#g-a)">
+            <path d="M136 94 H 158"/><path d="M280 94 H 302"/><path d="M424 94 H 446"/><path d="M568 94 H 590"/>
+          </g>
+
+          <g class="t t--mid t--xs t--ink">
+            <text x="76" y="92">EVENT</text><text x="220" y="92">IMPRESSION</text>
+            <text x="364" y="88" class="t--acc">ASSENT</text><text x="508" y="92">EMOTION</text><text x="668" y="92">ACTION</text>
+          </g>
+          <g class="t t--mid t--xs">
+            <text x="76" y="108">someone is rude</text><text x="220" y="108">"I have been wronged"</text>
+            <text x="364" y="104" class="t--acc">do I accept that?</text><text x="364" y="118" class="t--acc">← the only opening</text>
+            <text x="508" y="108">anger arrives</text><text x="668" y="108">something you regret</text>
+          </g>
+
+          <path d="M364 132 V 158" class="s-acc" stroke-width="1.6" marker-end="url(#g-p)"/>
+          <rect x="196" y="162" width="336" height="52" class="f-accw"/>
+          <rect x="196" y="162" width="3" height="52" class="f-acc"/>
+          <text x="212" y="180" class="t t--acc t--xs">Withhold assent and the chain stops here</text>
+          <text x="212" y="196" class="t t--xs">The impression is not yet a judgement. "This is a cucumber; it</text>
+          <text x="212" y="210" class="t t--xs">is bitter. Put it down." Nothing has been done to you yet.</text>
+
+          <text x="20" y="238" class="t t--xs">Marcus is not claiming the impression can be prevented — it arrives on its own. He is claiming there is a moment,</text>
+          <text x="20" y="250" class="t t--xs">before it hardens into a judgement, in which it can be examined and refused. Almost every entry is an attempt to widen that moment.</text>
+        </svg>
+      </div>
+      <figcaption>This is the operational core, and it is what modern cognitive therapy rediscovered independently in the 1950s — Albert Ellis credited the Stoics explicitly. The lineage is real, though the modern versions drop the cosmology that, for Marcus, made the whole thing make sense.</figcaption>
+    </figure>
+  </section>
+
+  
+  <!-- ======================= COSMOS ======================= -->
+  <section class="movement" id="cosmos" aria-labelledby="co-h">
+    <div class="movement__head">
+      <span class="roman">The background picture</span>
+      <h2 id="co-h">Providence or Atoms</h2>
+      <span class="gloss">The question he raises a dozen times and deliberately never settles.</span>
+    </div>
+
+    <p class="lede">
+      Orthodox Stoicism had a complete physics. The cosmos is a single living, rational being; everything
+      that happens follows from its nature; the divine reason — the <em>logos</em> — pervades matter, and
+      a human mind is a fragment of it. Fate is not a constraint imposed from outside but the unfolding of
+      one thing you are part of. Accepting what happens is therefore not resignation but recognition.
+    </p>
+
+    <p>
+      Marcus holds this, mostly. What is remarkable, and what separates him from a textbook Stoic, is that
+      he keeps raising the alternative and refusing to close it off. Again and again he sets out a
+      disjunction: <em>either providence or atoms.</em> Either the universe is an ordered whole governed by
+      reason, or it is Epicurean — a chance concourse of particles, with no plan, no providence and no
+      meaning beyond what a mind makes. He states this at 4.3, at 6.24, at 7.32, at 8.17, at 9.28, at
+      9.39, at 10.6, at 11.18 and at 12.14, among others. He never decides.
+    </p>
+    <p>
+      What he does instead is more interesting than deciding would have been. He argues that his practical
+      conclusions survive either answer. If there is providence, then what happens to you is part of an
+      order that includes you, and complaint is incoherent. If there are only atoms, then nothing is owed
+      to you by anything, no one is coming, and the only thing you have is your own mind — which is
+      therefore all the more worth governing well. Either way: attend to your own conduct, accept what you
+      cannot control, treat other people decently, and stop expecting the universe to explain itself.
+      <strong>The ethics are load-bearing; the metaphysics is scaffolding, and he knows it.</strong>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 09</b><span>The disjunction he leaves open</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 280" role="img" aria-label="A diagram showing the two cosmological alternatives Marcus repeatedly poses — providence or atoms — and the identical practical conclusions he draws from each.">
+          <defs><marker id="c-a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-graph"/></marker></defs>
+
+          <rect x="270" y="26" width="220" height="38" class="f-plate3"/>
+          <rect x="270" y="26" width="3" height="38" class="f-ink"/>
+          <text x="380" y="50" class="t t--mid t--ink" style="font-size:12px">"Providence — or atoms"</text>
+
+          <g class="s-graph" stroke-width="1.3" fill="none" marker-end="url(#c-a)">
+            <path d="M330 68 L 200 100"/><path d="M430 68 L 560 100"/>
+          </g>
+
+          <rect x="30" y="106" width="290" height="84" class="f-accw"/>
+          <rect x="30" y="106" width="3" height="84" class="f-acc"/>
+          <text x="46" y="128" class="t t--acc" style="font-size:12px">PROVIDENCE · the Stoic cosmos</text>
+          <text x="46" y="148" class="t t--xs">One living, rational whole. The logos runs</text>
+          <text x="46" y="162" class="t t--xs">through everything. What happens to you</text>
+          <text x="46" y="176" class="t t--xs">follows from the nature of a thing you are</text>
+          <text x="46" y="188" class="t t--xs">a part of.</text>
+
+          <rect x="440" y="106" width="290" height="84" class="f-plate3"/>
+          <rect x="440" y="106" width="3" height="84" class="f-och"/>
+          <text x="456" y="128" class="t t--och" style="font-size:12px">ATOMS · the Epicurean cosmos</text>
+          <text x="456" y="148" class="t t--xs">Particles and void, colliding without plan.</text>
+          <text x="456" y="162" class="t t--xs">No providence, no design, no meaning</text>
+          <text x="456" y="176" class="t t--xs">beyond what a mind supplies for itself.</text>
+
+          <g class="s-graph" stroke-width="1.3" fill="none" marker-end="url(#c-a)">
+            <path d="M175 194 L 300 224"/><path d="M585 194 L 460 224"/>
+          </g>
+
+          <rect x="130" y="230" width="500" height="42" class="f-accw"/>
+          <rect x="130" y="230" width="3" height="42" class="f-acc"/>
+          <text x="380" y="248" class="t t--mid t--acc t--sm">THE SAME INSTRUCTIONS, EITHER WAY</text>
+          <text x="380" y="264" class="t t--mid t--xs">Govern your own mind · accept what is not yours · do your work · treat people as kin</text>
+
+          <text x="20" y="212" class="t t--xs t--graph">4.3 · 6.24 · 7.32 · 8.17 · 9.28 · 9.39 · 10.6 · 11.18 · 12.14 — he poses it at least nine times and resolves it none.</text>
+        </svg>
+      </div>
+      <figcaption>This is the feature that makes the book usable by readers who share none of Marcus's cosmology. He has already done the work of showing that the practice does not depend on it — not as a concession to modern secularism, obviously, but because he could not settle the question himself and wanted an ethics that would hold regardless.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Flux</h5>
+    <p>
+      The other half of the physics that Marcus actually uses is the doctrine of universal change,
+      inherited from Heraclitus and worked hard. Everything is in the process of turning into something
+      else. Your body is matter borrowed and shortly to be returned; the empire is a phase; the people you
+      envy are already dissolving. He puts it in a dozen forms — that time is a river of passing events,
+      that the present moment is a point between two eternities, that Vespasian's court and Trajan's court
+      are gone and were exactly like this one, full of people marrying and quarrelling and suspecting each
+      other and wishing others dead.
+    </p>
+    <p>
+      Two uses follow. The first is consolation: if everything is temporary then so is whatever is
+      currently unbearable. The second is deflation, and it is the one he leans on harder: if everything
+      is temporary then so is whatever you are chasing, and the reputation you are protecting will not
+      outlast the people who hold it. There is a real bleakness in this and it would be dishonest to
+      soften it — long stretches of the middle books are a man telling himself, repeatedly, that nothing
+      matters very much. What keeps it from nihilism is the one thing he exempts: how you behave, right
+      now, is not diminished by any of it.
+    </p>
+
+    <p class="pull">
+      "Soon you will have forgotten the world, and soon the world will have forgotten you."<cite>Book 7.21</cite>
+    </p>
+  </section>
+
+  <!-- ======================= ANGER ======================= -->
+  <section class="movement" id="anger" aria-labelledby="an-h">
+    <div class="movement__head">
+      <span class="roman">Book 11.18</span>
+      <h2 id="an-h">Ten Things to Remember When Angry</h2>
+      <span class="gloss">The single most practical passage in the book, set out as he wrote it.</span>
+    </div>
+
+    <p class="lede">
+      Most of the <em>Meditations</em> are scattered notes, but at 11.18 Marcus does something he almost
+      never does: he writes out a numbered list. It is a protocol for dealing with anger at other people,
+      and it is worth having in full, because it is the closest thing in the book to a set of instructions
+      you could actually follow on a bad afternoon.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 10</b><span>The ten remedies</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 300" role="img" aria-label="The ten numbered thoughts Marcus lists at Meditations 11.18 as remedies against anger at other people.">
+          <g class="s-hair" stroke-width="0.6">
+            <path d="M20 56 H740"/><path d="M20 82 H740"/><path d="M20 108 H740"/><path d="M20 134 H740"/><path d="M20 160 H740"/>
+            <path d="M20 186 H740"/><path d="M20 212 H740"/><path d="M20 238 H740"/><path d="M20 264 H740"/>
+          </g>
+          <g class="t t--acc t--sm">
+            <text x="20" y="48">1</text><text x="20" y="74">2</text><text x="20" y="100">3</text><text x="20" y="126">4</text><text x="20" y="152">5</text>
+            <text x="20" y="178">6</text><text x="20" y="204">7</text><text x="20" y="230">8</text><text x="20" y="256">9</text><text x="20" y="282">10</text>
+          </g>
+          <g class="t t--xs t--ink">
+            <text x="52" y="48">We were made for each other</text>
+            <text x="52" y="74">Consider what they are actually like</text>
+            <text x="52" y="100">If they are right, don't be angry</text>
+            <text x="52" y="126">You do plenty of it yourself</text>
+            <text x="52" y="152">You cannot be sure they did wrong</text>
+            <text x="52" y="178">Remember you are both about to die</text>
+            <text x="52" y="204">It is your opinion that stings, not the act</text>
+            <text x="52" y="230">The anger costs more than the injury</text>
+            <text x="52" y="256">Kindness is unanswerable</text>
+            <text x="52" y="282">Expecting otherwise is madness</text>
+          </g>
+          <g class="t t--xs">
+            <text x="360" y="48">— to work together, like feet, hands and eyelids</text>
+            <text x="360" y="74">— at table, in bed, and above all what their opinions compel them to do</text>
+            <text x="360" y="100">— and if wrong, they act in ignorance and against their will</text>
+            <text x="360" y="126">— and if you abstain from a fault, it is from fear or reputation, not virtue</text>
+            <text x="360" y="152">— much is done from policy; you need to know a great deal before judging</text>
+            <text x="360" y="178">— and shortly no one will remember either of you</text>
+            <text x="360" y="204">— remove the judgement and the injury goes with it</text>
+            <text x="360" y="230">— vexation and grief damage you more than the thing that caused them</text>
+            <text x="360" y="256">— if it is sincere, and not sarcasm or a display</text>
+            <text x="360" y="282">— to permit it in general but forbid it toward you is tyrannical</text>
+          </g>
+          <rect x="20" y="188" width="720" height="26" class="f-acc" opacity="0.09"/>
+        </svg>
+      </div>
+      <figcaption>Item 7 is the general principle and everything else is an application of it. Item 4 is the one that does the most work in practice and the one most easily skipped: before deciding that someone has behaved badly, note how recently you did the same. Marcus adds a coda that the gift of the gods is that we should live with one another, and that anyone who withdraws from that is cutting himself off from his own nature.</figcaption>
+    </figure>
+
+    <p>
+      Two features of the list are worth pausing on. The first is that only one of the ten — item 9 — is
+      about what to do; the other nine are about how to see. This is consistent with the whole method:
+      the intervention point is the judgement, not the behaviour, and if you get the judgement right the
+      behaviour looks after itself. The second is that several of the items are arguments Marcus does not
+      quite believe and knows he does not quite believe. Item 3, that wrongdoers act involuntarily, is a
+      Socratic doctrine that most people find implausible on first hearing and that Marcus asserts rather
+      than defends. He is not proving anything here. He is assembling a set of thoughts that, held
+      together at the right moment, will make anger harder to sustain.
+    </p>
+  </section>
+<!-- ======================= THE PRACTICE ======================= -->
+  <section class="movement" id="practice" aria-labelledby="pr-h">
+    <div class="movement__head">
+      <span class="roman">The exercises</span>
+      <h2 id="pr-h">What He Actually Does</h2>
+      <span class="gloss">A small number of moves, run again and again.</span>
+    </div>
+
+    <p class="lede">
+      Pierre Hadot's reading — that these are <em>spiritual exercises</em> rather than doctrines — has
+      become the standard one, and it makes the repetition legible. Marcus is not developing a position.
+      He is rehearsing a handful of manoeuvres so that they will be available when he needs them, in the
+      way a soldier drills.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 11</b><span>The three disciplines</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 270" role="img" aria-label="The three Stoic disciplines — assent, desire and action — with the question, the target and the failure mode of each.">
+          <path d="M20 60 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px">
+            <text x="20" y="54">DISCIPLINE</text><text x="180" y="54">THE QUESTION</text><text x="400" y="54">GOVERNS</text><text x="560" y="54">FAILS AS</text>
+          </g>
+          <g class="s-hair" stroke-width="0.7"><path d="M20 116 H740"/><path d="M20 172 H740"/></g>
+
+          <g class="t t--xs t--acc" style="font-size:12px">
+            <text x="20" y="84">ASSENT</text><text x="20" y="140">DESIRE</text><text x="20" y="196">ACTION</text>
+          </g>
+          <g class="t t--xs">
+            <text x="20" y="100">perception</text><text x="20" y="156">acceptance</text><text x="20" y="212">justice</text>
+
+            <text x="180" y="84">Is this true, or is it a</text><text x="180" y="98">story I am adding?</text>
+            <text x="180" y="140">Is this up to me, or is</text><text x="180" y="154">it up to nature?</text>
+            <text x="180" y="196">What does the common</text><text x="180" y="210">good require of me now?</text>
+
+            <text x="400" y="84">Judgements about</text><text x="400" y="98">what happened</text>
+            <text x="400" y="140">What I want and</text><text x="400" y="154">what I dread</text>
+            <text x="400" y="196">How I treat other</text><text x="400" y="210">people</text>
+
+            <text x="560" y="84" class="t--ox">Self-deception; taking</text><text x="560" y="98" class="t--ox">offence; rumination</text>
+            <text x="560" y="140" class="t--ox">Craving, fear of death,</text><text x="560" y="154" class="t--ox">resentment at fate</text>
+            <text x="560" y="196" class="t--ox">Laziness, cruelty,</text><text x="560" y="210" class="t--ox">using people as means</text>
+          </g>
+
+          <rect x="20" y="230" width="720" height="34" class="f-accw"/>
+          <rect x="20" y="230" width="3" height="34" class="f-acc"/>
+          <text x="36" y="248" class="t t--acc t--xs">Why three and not one</text>
+          <text x="36" y="261" class="t t--xs">They map onto logic, physics and ethics — the whole system compressed into three questions a busy man can ask himself in a moment.</text>
+        </svg>
+      </div>
+      <figcaption>Almost every entry in Books 2–12 belongs to one of these three rows. Reading with the grid in hand converts the book from a pile of aphorisms into something with a visible structure, even though Marcus never names the structure himself.</figcaption>
+    </figure>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 12</b><span>Two moves he uses constantly</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 280" role="img" aria-label="Two Stoic exercises: objective description, which strips the story from an object, and the view from above, which reduces human affairs to their real scale.">
+          <text x="20" y="26" class="t t--acc" style="font-size:12px">1 · OBJECTIVE DESCRIPTION</text>
+          <text x="20" y="42" class="t t--xs">Strip the story off the thing and state what it is</text>
+
+          <g class="t t--xs t--end"><text x="176" y="76">a purple robe</text><text x="176" y="112">vintage wine</text><text x="176" y="148">roast meat</text><text x="176" y="184">fame</text></g>
+          <g class="s-acc" stroke-width="1.2" fill="none" marker-end="url(#o-a)">
+            <path d="M186 72 H 214"/><path d="M186 108 H 214"/><path d="M186 144 H 214"/><path d="M186 180 H 214"/>
+          </g>
+          <defs><marker id="o-a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-acc"/></marker></defs>
+          <g class="t t--xs">
+            <text x="222" y="76">sheep's wool, dyed with shellfish blood</text>
+            <text x="222" y="112">fermented grape juice</text>
+            <text x="222" y="148">a dead animal</text>
+            <text x="222" y="184">noise made by people who will also die</text>
+          </g>
+          <text x="20" y="216" class="t t--xs">The purpose is not contempt. It is to see the thing without the value</text>
+          <text x="20" y="230" class="t t--xs">society has painted onto it, so the choice about it can be made freely.</text>
+          <text x="20" y="252" class="t t--xs t--ox">Overused, this becomes joyless — a criticism worth taking seriously,</text>
+          <text x="20" y="266" class="t t--xs t--ox">and one Marcus half-anticipates when he writes about gratitude.</text>
+
+          <path d="M470 16 V 268" class="s-hair" stroke-width="1"/>
+
+          <text x="496" y="26" class="t t--acc" style="font-size:12px">2 · THE VIEW FROM ABOVE</text>
+          <text x="496" y="42" class="t t--xs">Climb until the scale is honest</text>
+          <g class="f-none s-hair" stroke-width="1">
+            <circle cx="614" cy="150" r="86"/><circle cx="614" cy="150" r="62"/><circle cx="614" cy="150" r="38"/><circle cx="614" cy="150" r="16"/>
+          </g>
+          <circle cx="614" cy="150" r="4" class="f-acc"/>
+          <g class="t t--xs t--mid">
+            <text x="614" y="140">me</text>
+            <text x="614" y="122">the court</text>
+            <text x="614" y="98">the empire</text>
+            <text x="614" y="74">the earth</text>
+            <text x="614" y="52">all of time</text>
+          </g>
+          <text x="496" y="252" class="t t--xs">"Alexander the Great and his mule-driver both died,</text>
+          <text x="496" y="266" class="t t--xs">and the same thing happened to both of them."</text>
+        </svg>
+      </div>
+      <figcaption>Both exercises do the same work from opposite directions: one shrinks the object, the other enlarges the frame. Marcus applies them ruthlessly to his own position — the whole apparatus of imperial ceremony is, on this view, sheep's wool and noise.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= BOOK BY BOOK ======================= -->
+  <section class="movement" id="guide" aria-labelledby="gu-h">
+    <div class="movement__head">
+      <span class="roman">Reference</span>
+      <h2 id="gu-h">A Guide to the Twelve Books</h2>
+      <span class="gloss">Where the famous passages actually are.</span>
+    </div>
+
+    <p class="lede">
+      Because the books have no titles, no themes and no order, the standard experience of the
+      <em>Meditations</em> is remembering a line and being unable to find it. What follows is a map:
+      what each book contains, and the reference for the entries most people are looking for. Citations
+      are given as book.section, which works in any edition and any translation.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 13</b><span>The twelve books, and their landmarks</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 300" role="img" aria-label="A book-by-book guide to the Meditations listing the character of each of the twelve books and its best-known passages with references.">
+          <path d="M20 42 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px"><text x="20" y="36">BK</text><text x="60" y="36">CHARACTER</text><text x="300" y="36">LANDMARK ENTRIES</text></g>
+          <g class="s-hair" stroke-width="0.6">
+            <path d="M20 62 H740"/><path d="M20 82 H740"/><path d="M20 102 H740"/><path d="M20 122 H740"/><path d="M20 142 H740"/><path d="M20 162 H740"/>
+            <path d="M20 182 H740"/><path d="M20 202 H740"/><path d="M20 222 H740"/><path d="M20 242 H740"/><path d="M20 262 H740"/>
+          </g>
+          <g class="t t--xs t--acc"><text x="20" y="58">1</text><text x="20" y="78">2</text><text x="20" y="98">3</text><text x="20" y="118">4</text><text x="20" y="138">5</text><text x="20" y="158">6</text><text x="20" y="178">7</text><text x="20" y="198">8</text><text x="20" y="218">9</text><text x="20" y="238">10</text><text x="20" y="258">11</text><text x="20" y="278">12</text></g>
+          <g class="t t--xs t--ink">
+            <text x="60" y="58">Debts and Lessons</text>
+            <text x="60" y="78">Written among the Quadi</text>
+            <text x="60" y="98">Written at Carnuntum</text>
+            <text x="60" y="118">The densest book</text>
+            <text x="60" y="138">Duty and reluctance</text>
+            <text x="60" y="158">The most quotable</text>
+            <text x="60" y="178">Pain, and other minds</text>
+            <text x="60" y="198">Doing the work in front of you</text>
+            <text x="60" y="218">Wrongdoing as impiety</text>
+            <text x="60" y="238">Impatience with himself</text>
+            <text x="60" y="258">Anger, and the Christians</text>
+            <text x="60" y="278">Valedictory</text>
+          </g>
+          <g class="t t--xs">
+            <text x="300" y="58">Seventeen people; 1.16 on Antoninus; 1.17 to the gods</text>
+            <text x="300" y="78">2.1 the morning reminder · 2.14 you can only lose the present</text>
+            <text x="300" y="98">3.4 don't waste what's left of your life on other people's thoughts</text>
+            <text x="300" y="118">4.3 the retreat into yourself; providence or atoms · 4.7 remove the judgement</text>
+            <text x="300" y="138">5.1 getting out of bed · 5.20 the impediment becomes the way</text>
+            <text x="300" y="158">6.6 the best revenge · 6.13 the purple robe · 6.44 my city is the world · 6.54 the hive</text>
+            <text x="300" y="178">7.21 soon forgotten · 7.59 look within — the fountain of good is there</text>
+            <text x="300" y="198">8.47 if you are distressed by anything external, revoke the estimate</text>
+            <text x="300" y="218">9.28 the universe turning over · 9.42 on expecting people to be otherwise</text>
+            <text x="300" y="238">10.16 waste no more time arguing what a good man is — be one</text>
+            <text x="300" y="258">11.18 the ten remedies for anger · 11.3 the disputed line on Christians</text>
+            <text x="300" y="278">12.36 you have lived as a citizen in a great city; leave it graciously</text>
+          </g>
+          <rect x="20" y="44" width="720" height="18" class="f-acc" opacity="0.09"/>
+          <rect x="20" y="244" width="720" height="18" class="f-ox" opacity="0.07"/>
+          <text x="20" y="296" class="t t--xs t--graph">Section numbering is stable across editions; the wording is not. Any two translations of 5.20 will differ considerably.</text>
+        </svg>
+      </div>
+      <figcaption>If you want a single book to try before committing, take Book 6. It has the highest density of the entries everyone quotes and it is representative of the middle stretch. Book 4 is the one philosophers rate highest and the one that repays rereading.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Marcus among the Stoics</h5>
+    <p>
+      The three Roman Stoics whose work survives are startlingly different as writers, and knowing which
+      is which saves a lot of confusion. <strong>Seneca</strong> is a courtier and a stylist: his letters
+      are polished, epigrammatic, written for publication, and shadowed by the awkward fact that he was
+      Nero's tutor and one of the richest men in Rome while writing about the unimportance of wealth.
+      <strong>Epictetus</strong> is a teacher and was born a slave: the <em>Discourses</em> are lecture
+      notes taken by a student, and the tone is direct, sometimes abrasive, addressed to a room. Marcus is
+      neither — he is writing to one person, himself, with no audience to persuade and no reputation at
+      stake, and that is why the book reads as it does.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 14</b><span>Three Roman Stoics, and one Greek school apiece</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 250" role="img" aria-label="A comparison of Seneca, Epictetus and Marcus Aurelius by station in life, form of writing, intended audience and characteristic tone.">
+          <rect x="20" y="20" width="230" height="30" class="f-plate3"/>
+          <rect x="264" y="20" width="230" height="30" class="f-plate3"/>
+          <rect x="508" y="20" width="232" height="30" class="f-acc" opacity="0.14"/>
+          <text x="135" y="40" class="t t--mid t--ink" style="font-size:12px">SENECA</text>
+          <text x="379" y="40" class="t t--mid t--ink" style="font-size:12px">EPICTETUS</text>
+          <text x="624" y="40" class="t t--mid t--acc" style="font-size:12px">MARCUS</text>
+          <g class="t t--xs t--mid t--graph">
+            <text x="135" y="62">c. 4 BCE – 65 CE</text><text x="379" y="62">c. 55 – 135 CE</text><text x="624" y="62">121 – 180 CE</text>
+          </g>
+
+          <path d="M20 74 H 740" class="s-ink" stroke-width="1.2"/>
+          <g class="s-hair" stroke-width="0.7"><path d="M20 116 H740"/><path d="M20 154 H740"/><path d="M20 192 H740"/></g>
+          <g class="t t--sm t--ink" style="font-size:9px">
+            <text x="20" y="92">STATION</text><text x="20" y="130">FORM</text><text x="20" y="168">WRITING FOR</text><text x="20" y="206">TONE</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="135" y="98">Senator, playwright,</text><text x="135" y="110">Nero's tutor; very rich</text>
+            <text x="379" y="98">Born a slave; freed;</text><text x="379" y="110">ran a school in Greece</text>
+            <text x="624" y="98">Emperor of Rome</text><text x="624" y="110">from 161</text>
+
+            <text x="135" y="136">Polished letters and</text><text x="135" y="148">essays</text>
+            <text x="379" y="136">Lecture notes taken</text><text x="379" y="148">down by a student</text>
+            <text x="624" y="136">Private notes, in</text><text x="624" y="148">Greek, unedited</text>
+
+            <text x="135" y="174">Posterity, and a friend</text>
+            <text x="379" y="174">A room full of students</text>
+            <text x="624" y="174" class="t--acc">Himself, and no one else</text>
+
+            <text x="135" y="212">Elegant, quotable,</text><text x="135" y="224">occasionally self-serving</text>
+            <text x="379" y="212">Blunt, hectoring,</text><text x="379" y="224">immediately practical</text>
+            <text x="624" y="212">Weary, repetitive,</text><text x="624" y="224">unguarded</text>
+          </g>
+          <rect x="508" y="156" width="232" height="36" class="f-acc" opacity="0.08"/>
+          <text x="20" y="244" class="t t--xs">Start with Epictetus's Handbook if you want the doctrine stated plainly; start with Marcus if you want to watch someone trying to live it.</text>
+        </svg>
+      </div>
+      <figcaption>The absence of an audience is the whole difference. Seneca is always aware of being read and Epictetus is always aware of being heard; Marcus has nobody to impress, which is why he is willing to record that he could not get out of bed.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">And among the schools</h5>
+    <p>
+      It is also worth knowing what Stoicism was competing against, because Marcus's positions are often
+      responses to live alternatives rather than statements of the obvious. The Hellenistic schools were
+      all answering one question — how should a person live, given that the world is not arranged for your
+      benefit? — and they gave genuinely different answers.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 15</b><span>Four answers to the same question</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 256" role="img" aria-label="A comparison of Stoicism, Epicureanism, Cynicism and Scepticism on the highest good, the attitude to public life, and the route to tranquillity.">
+          <path d="M20 60 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px">
+            <text x="20" y="54">SCHOOL</text><text x="160" y="54">THE GOOD IS</text><text x="360" y="54">PUBLIC LIFE</text><text x="530" y="54">THE ROUTE TO CALM</text>
+          </g>
+          <g class="s-hair" stroke-width="0.7"><path d="M20 104 H740"/><path d="M20 144 H740"/><path d="M20 184 H740"/></g>
+
+          <g class="t t--xs t--acc" style="font-size:11px"><text x="20" y="82">STOIC</text></g>
+          <g class="t t--xs t--ink"><text x="20" y="122">EPICUREAN</text><text x="20" y="162">CYNIC</text><text x="20" y="202">SCEPTIC</text></g>
+          <g class="t t--xs t--graph"><text x="20" y="94">Zeno, Marcus</text><text x="20" y="134">Epicurus, Lucretius</text><text x="20" y="174">Diogenes</text><text x="20" y="214">Pyrrho, Sextus</text></g>
+
+          <g class="t t--xs">
+            <text x="160" y="82">Virtue, and nothing else</text><text x="360" y="82">A duty — engage</text><text x="530" y="82">Accept what is not yours to control</text>
+            <text x="160" y="122">Pleasure, meaning absence of pain</text><text x="360" y="122">Avoid it — "live unnoticed"</text><text x="530" y="122">Simple wants; friends; no fear of gods</text>
+            <text x="160" y="162">Virtue through shamelessness</text><text x="360" y="162">Mock it from outside</text><text x="530" y="162">Own nothing; need nothing</text>
+            <text x="160" y="202">Nothing can be known securely</text><text x="360" y="202">Conform without believing</text><text x="530" y="202">Suspend judgement on everything</text>
+          </g>
+          <rect x="20" y="62" width="720" height="40" class="f-acc" opacity="0.08"/>
+
+          <text x="20" y="230" class="t t--xs">Marcus knows all of these and borrows from all of them. His "providence or atoms" concedes the Epicurean physics as a live option;</text>
+          <text x="20" y="244" class="t t--xs">the objective-description exercise is Cynic in spirit; and his caution about certainty is closer to the Sceptics than orthodoxy allowed.</text>
+        </svg>
+      </div>
+      <figcaption>The row that matters for reading Marcus is the third column. Stoicism is the school that requires you to participate — to hold office, raise children, fight the war, sit in the Senate. This is why it was the philosophy of the Roman governing class, and why its modern reduction to a private calm technique loses so much.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= WHAT RECURS ======================= -->
+  <section class="movement" id="themes" aria-labelledby="th-h">
+    <div class="movement__head">
+      <span class="roman">The substance</span>
+      <h2 id="th-h">What He Keeps Telling Himself</h2>
+      <span class="gloss">Six or seven ideas, returned to for a decade.</span>
+    </div>
+
+    <p class="lede">
+      The <em>Meditations</em> have no plot and no development, but they do have obsessions, and the
+      obsessions are countable. A handful of themes account for most of the book, and Marcus circles them
+      with a persistence that is either monotonous or moving depending on how you read it. My own view is
+      that the repetition is the most informative thing about the text: <strong>a man does not write the
+      same reminder to himself for ten years unless he keeps needing it.</strong>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 16</b><span>The recurring subjects, by weight</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 250" role="img" aria-label="A bar chart showing the approximate relative frequency of the main recurring themes in the Meditations, with death and transience the most common.">
+          <g class="f-acc">
+            <rect x="200" y="36" width="330" height="16"/>
+            <rect x="200" y="62" width="290" height="16"/>
+            <rect x="200" y="88" width="248" height="16"/>
+            <rect x="200" y="114" width="214" height="16"/>
+            <rect x="200" y="140" width="180" height="16"/>
+            <rect x="200" y="166" width="140" height="16"/>
+            <rect x="200" y="192" width="104" height="16"/>
+          </g>
+          <g class="t t--xs t--end t--ink">
+            <text x="190" y="48">Death and transience</text>
+            <text x="190" y="74">Other people, and tolerating them</text>
+            <text x="190" y="100">Only the present is yours</text>
+            <text x="190" y="126">Judgement, not the event, is the injury</text>
+            <text x="190" y="152">Duty to the common good</text>
+            <text x="190" y="178">The worthlessness of fame</text>
+            <text x="190" y="204">Accepting what nature sends</text>
+          </g>
+          <g class="t t--xs">
+            <text x="540" y="48">"Alexander and his mule-driver"</text>
+            <text x="500" y="74">the morning reminder, 2.1</text>
+            <text x="458" y="100">2.14 — you can lose nothing else</text>
+            <text x="424" y="126">8.47 — "you have the power to revoke it"</text>
+            <text x="390" y="152">6.54 — "what injures the hive"</text>
+            <text x="350" y="178">posthumous fame is noise</text>
+            <text x="314" y="204">amor fati, without the phrase</text>
+          </g>
+          <text x="200" y="228" class="t t--xs t--graph">Bar length is impressionistic, not a word count — the entries resist clean classification and many belong to two rows at once.</text>
+          <text x="200" y="26" class="t t--acc t--sm">Roughly how the book distributes its attention</text>
+        </svg>
+      </div>
+      <figcaption>The top two rows are the giveaway. Marcus is not primarily writing about metaphysics or virtue in the abstract; he is writing about dying, and about how hard he finds other people. Those are the problems of a specific man in a specific job, not the syllabus of a school.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Death, constantly</h5>
+    <p>
+      No other theme comes close. Marcus reminds himself that he will die, that everyone he knows will
+      die, that everyone who might remember him will die, and that the people who might remember
+      <em>those</em> people will die too. He lists emperors and their courts — Augustus, his wife, his
+      daughter, his descendants, his advisers, "all dead, all buried" — and notes that they had seemed
+      permanent at the time. He observes that Alexander the Great and his mule-driver came to the same
+      end. He tells himself not to behave "as though you were going to live ten thousand years."
+    </p>
+    <p>
+      The purpose of this is not morbidity, and reading it as gloom misses the mechanism. Marcus is using
+      mortality as a scaling device. Almost everything that provokes anxiety — a slight from a courtier,
+      a delayed dispatch, a question of precedence — becomes negligible when set against a span in which
+      the whole Roman world is a brief episode. He is trying to be permanently unimpressed by his own
+      circumstances, and death is the most reliable instrument he has for that. There is also a second,
+      quieter use: if this is the only life, then the present hour is the whole of the available stock,
+      and wasting it on resentment is expensive in a way that can actually be felt.
+    </p>
+
+    <h5 class="sub-h">Other people</h5>
+    <p>
+      The second theme is the one modern readers find most immediately usable, because it is so
+      unmistakably the complaint of someone who spends his days in meetings. The famous entry that opens
+      Book 2 tells him what to expect on waking: the people he deals with today will be meddling,
+      ungrateful, arrogant, dishonest and surly. What follows, though, is the part usually left out of
+      the quotation. They are like this, he says, because they cannot tell good from bad — and since he
+      has understood that goodness is beautiful and badness ugly, and since they are his kin, not by
+      blood but by sharing in the same reason, he cannot be injured by them and he cannot hate them.
+    </p>
+    <p>
+      This is a much stranger and more demanding thought than the tolerance it is usually reduced to. It
+      is not "people are difficult, so be patient." It is a claim that wrongdoing is a species of
+      ignorance — the old Socratic position — and that therefore anger at a wrongdoer is as misplaced as
+      anger at someone who has made an arithmetical error. Whether that is true is genuinely arguable;
+      Marcus does not argue it, he assumes it. What he does instead is rehearse the consequence over and
+      over, in dozens of variations, because the doctrine is easy to hold in the abstract and nearly
+      impossible to hold at the moment somebody is being intolerable to you.
+    </p>
+
+    <p class="pull">
+      "It can ruin your life only if it ruins your character. Otherwise it cannot harm you — inside or
+      out."<cite>Book 4.8</cite>
+    </p>
+
+    <h5 class="sub-h">The present, and the obstacle</h5>
+    <p>
+      Two shorter but heavily worked seams. On the present: Marcus observes that whatever length of life
+      a person has, they can only ever lose the present moment, since the past is already gone and the
+      future is not theirs to lose. From this he draws the odd but consoling conclusion that the longest
+      and shortest lives come to the same thing at the point of loss. On obstacles: the line at 5.20 —
+      the impediment to action advances action, what stands in the way becomes the way — has been
+      flattened by modern quotation into a slogan about grit, which is not quite what it says. His point
+      is narrower and better: an obstruction to one purpose is raw material for another, because the
+      virtue you are actually practising is not "getting this done" but "responding well to what is in
+      front of me," and an obstacle supplies as much occasion for that as a clear road does.
+    </p>
+
+    <h5 class="sub-h">And the reluctance to get up in the morning</h5>
+    <p>
+      The single most humanising entry in the book is at 5.1, and it deserves quoting at something like
+      length because it is where the distance between an emperor and a reader collapses entirely. At
+      dawn, when he does not want to get out of bed, he is to tell himself: I am rising to do the work of
+      a human being. Why should I complain, if I am going out to do what I was born for and what I was
+      brought into the world to do? Or was I made for this — to lie under the blankets and keep myself
+      warm? And then, a few lines later, the note of exasperation with himself: <em>but this is more
+      pleasant.</em> Do you exist, then, for pleasure — and not at all for action and exertion?
+    </p>
+    <p>
+      He is the ruler of the Roman empire, at war, in his fifties, and he is arguing with himself about
+      the snooze button. The entry is undated but it is not a one-off: variations on it appear in at
+      least four books. Whatever else the <em>Meditations</em> are, they are evidence that the internal
+      experience of being a person has changed remarkably little in eighteen hundred years, and that
+      neither power nor philosophy makes the morning easier.
+    </p>
+  </section>
+
+  <!-- ======================= TENSIONS ======================= -->
+  <section class="movement" id="tension" aria-labelledby="tn-h">
+    <div class="movement__head">
+      <span class="roman">Against</span>
+      <h2 id="tn-h">The Uncomfortable Parts</h2>
+      <span class="gloss">What the book does not say, and what its author did.</span>
+    </div>
+
+    <p class="lede">
+      The <em>Meditations</em> are usually read as a self-contained moral document, and read that way
+      they are close to unimpeachable. Set beside the life of the man who wrote them, they raise
+      questions the text itself never touches — and a reader who takes the book seriously should know
+      where those questions are rather than discover them later and feel misled.
+    </p>
+
+    <p>
+      The largest is the one that hangs over all ancient ethics. Marcus writes movingly that his city, so
+      far as he is a man, is the world; that all rational beings share one citizenship; that what does
+      not harm the community does not harm its members. He ruled a society in which perhaps a fifth of
+      the population were legally property, and there is nothing in the twelve books suggesting he
+      considered this a problem. Epictetus, his own principal source, had been a slave. The Stoic
+      doctrine of universal brotherhood was, for Marcus, entirely compatible with the institution — as it
+      was for almost everyone in antiquity. This is not a reason to dismiss the book, but it is a real
+      limit on how far its universalism actually reached, and it should temper the common claim that
+      Stoicism was ahead of its time on human equality.
+    </p>
+    <p>
+      Second: Christians were executed during his reign, most notoriously at Lyons in 177, and the single
+      reference to them in the <em>Meditations</em> (11.3) is dismissive — he praises the soul that is
+      ready to leave the body through its own judgement rather than "in sheer opposition, like the
+      Christians." Whether Marcus ordered or approved those executions is genuinely disputed by
+      historians; the machinery of provincial governors did not need imperial instruction. Some scholars
+      also think the phrase is a later interpolation. Either way, the man writing about tolerance and
+      kinship was presiding over a state that killed people for a religious refusal.
+    </p>
+    <p>
+      Third, and most damaging to the romantic reading: he chose his son Commodus as successor. It was
+      the first biological succession in eighty-four years, breaking a run of adoptions that had produced
+      four capable emperors, and Commodus was a catastrophe — vain, murderous, and eventually strangled
+      in his bath. The <em>Meditations</em>, written across exactly the years in which that decision was
+      being made and confirmed, contain no reflection on it at all. There is likewise nothing about the
+      plague that devastated his empire, nothing about the deaths of most of his children, and nothing
+      about the revolt of Avidius Cassius. The notebook is not a record of his life. It is a record of
+      one activity within it, and it is silent about almost everything a biographer would want.
+    </p>
+
+    <div class="claim claim--ox">
+      <b>The honest summary</b>
+      This is an excellent book about how to manage your own mind, written by a man who was probably a
+      better-than-average ruler and certainly not a moral revolutionary. It tells you nothing about
+      whether he was right to hold power, and it was never trying to. Treating it as a testimonial for
+      its author — rather than as a set of exercises that can be assessed on their own merits — is the
+      commonest mistake made about it.
+    </div>
+  </section>
+
+
+  <!-- ======================= AFTERLIFE ======================= -->
+  <section class="movement" id="afterlife" aria-labelledby="af-h">
+    <div class="movement__head">
+      <span class="roman">Afterlife</span>
+      <h2 id="af-h">From Nothing to Everywhere</h2>
+      <span class="gloss">Eighteen centuries in which the book was mostly ignored, and two decades in which it was not.</span>
+    </div>
+
+    <p class="lede">
+      One of the odder facts about the <em>Meditations</em> is how recent its fame is. For most of its
+      existence it was a curiosity known to a few scholars. It has been a mass-market book for roughly
+      twenty years. <strong>The version of Marcus that circulates today — quotable, motivational,
+      compatible with a morning routine — is a very late arrival, and it is worth knowing which parts of
+      it come from the text and which from the packaging.</strong>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 17</b><span>The reception, 180 to the present</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 278" role="img" aria-label="A timeline of the reception of the Meditations from near-obscurity in antiquity through the first printed edition in 1559 to the modern mass-market revival.">
+          <!-- non-linear axis, marked as such -->
+          <path d="M50 132 H 736" class="s-graph" stroke-width="1.2"/>
+          <g class="s-hair" stroke-width="0.7" stroke-dasharray="2 5">
+            <path d="M50 52 V 156"/><path d="M230 52 V 156"/><path d="M400 52 V 156"/><path d="M540 52 V 156"/><path d="M650 52 V 156"/><path d="M736 52 V 156"/>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="50" y="172">180</text><text x="230" y="172">900</text><text x="400" y="172">1559</text>
+            <text x="540" y="172">1750</text><text x="650" y="172">1900</text><text x="736" y="172">now</text>
+          </g>
+
+          <rect x="50" y="124" width="180" height="16" class="f-hair"/>
+          <text x="140" y="136" class="t t--mid t--xs">near silence</text>
+          <rect x="230" y="124" width="170" height="16" class="f-plate3"/>
+          <text x="315" y="136" class="t t--mid t--xs">manuscript, barely copied</text>
+          <rect x="400" y="124" width="250" height="16" class="f-och"/>
+          <text x="525" y="136" class="t t--rev t--mid t--xs">a gentleman's book</text>
+          <rect x="650" y="124" width="86" height="16" class="f-acc"/>
+          <text x="693" y="136" class="t t--rev t--mid t--xs">everywhere</text>
+
+          <g class="s-ink" stroke-width="1"><path d="M230 124 V 96"/><path d="M400 124 V 78"/><path d="M470 124 V 96"/><path d="M560 124 V 60"/><path d="M660 124 V 44"/></g>
+          <g class="t t--xs">
+            <text x="100" y="90">c. 900 · Arethas of Caesarea reports owning a worn copy</text>
+            <text x="400" y="90">1634 · first English translation, Meric Casaubon</text>
+            <text x="250" y="72">1559 · first printed at Zurich, from a manuscript that then vanishes</text>
+            <text x="470" y="54">c. 1750 · Frederick the Great carries it on campaign</text>
+            <text x="740" y="38" class="t--end">1863 · Matthew Arnold's essay makes it Victorian canon</text>
+          </g>
+          <g class="s-acc" stroke-width="1"><path d="M700 140 V 196"/><path d="M722 140 V 214"/></g>
+          <g class="t t--xs t--acc">
+            <text x="520" y="208">2002 · the Gregory Hays translation</text>
+            <text x="470" y="226">2016 onward · the mass-market Stoicism industry</text>
+          </g>
+
+          <text x="50" y="44" class="t t--acc t--sm">The axis is compressed, not linear — the last century occupies more space than the first fifteen</text>
+          <text x="50" y="252" class="t t--xs">John Stuart Mill discusses Marcus in On Liberty as the hardest case for his argument: a man of exceptional decency who</text>
+          <text x="50" y="266" class="t t--xs">nevertheless presided over persecution, and who was, Mill says, "a better Christian than almost any of the ostensibly Christian sovereigns."</text>
+        </svg>
+      </div>
+      <figcaption>The Arnold essay is the hinge for the English-speaking world; the Hays translation is the hinge for the present moment. Both did the same thing — made an awkward text sound like something a contemporary reader would want to read — and both are therefore worth being slightly suspicious of.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">The line into modern psychotherapy</h5>
+    <p>
+      The most substantive afterlife of Stoicism is not literary but clinical. When Albert Ellis developed
+      Rational Emotive Behavior Therapy in the 1950s, he credited Epictetus directly and quoted him
+      constantly: <em>men are disturbed not by things, but by the views which they take of them.</em> Aaron
+      Beck's cognitive therapy, developed independently in the 1960s, arrived at a structurally identical
+      move. The core technique of both — identify the automatic thought, examine the belief that produced
+      it, test whether it survives inspection — is the discipline of assent, rediscovered.
+    </p>
+    <p>
+      What carried across is the cognitive machinery. What did not is everything that gave the machinery a
+      point. Marcus does not examine his judgements in order to feel better; he examines them because he
+      thinks some of them are <em>false</em>, and because a person whose judgements are false is not
+      living well regardless of how he feels. The Stoic claim is that virtue is the only good, which is a
+      claim about value, not about mood. Strip that out and you are left with a technique for managing
+      distress — genuinely useful, demonstrably effective, and not what the book is about.
+    </p>
+
+    <figure class="fig reveal">
+      <div class="fig__label"><b>Plate 18</b><span>What crossed over, and what was left behind</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 236" role="img" aria-label="A diagram showing which elements of Stoicism were carried into modern cognitive therapy and which were not.">
+          <defs><marker id="x-a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-cool"/></marker></defs>
+
+          <rect x="20" y="40" width="200" height="176" class="f-plate3"/>
+          <rect x="20" y="40" width="200" height="3" class="f-acc"/>
+          <text x="120" y="62" class="t t--mid t--acc" style="font-size:12px">STOICISM</text>
+          <g class="t t--xs t--mid">
+            <text x="120" y="88">Examine the judgement</text>
+            <text x="120" y="108">Distinguish what is yours</text>
+            <text x="120" y="128">Rehearse in advance</text>
+            <text x="120" y="150">Virtue is the only good</text>
+            <text x="120" y="170">A rational cosmos</text>
+            <text x="120" y="190">Duty to the common good</text>
+            <text x="120" y="210">Death as a daily discipline</text>
+          </g>
+
+          <g class="s-cool" stroke-width="1.4" fill="none" marker-end="url(#x-a)">
+            <path d="M226 84 H 470"/><path d="M226 104 H 470"/><path d="M226 124 H 470"/>
+          </g>
+          <g class="s-ox" stroke-width="1.2" fill="none" stroke-dasharray="4 3">
+            <path d="M226 146 H 300"/><path d="M226 166 H 300"/><path d="M226 186 H 300"/><path d="M226 206 H 300"/>
+          </g>
+          <g class="t t--ox" style="font-size:12px"><text x="312" y="150">✕</text><text x="312" y="170">✕</text><text x="312" y="190">✕</text><text x="312" y="210">✕</text></g>
+          <text x="330" y="178" class="t t--xs t--ox">not carried across</text>
+
+          <rect x="476" y="60" width="264" height="92" class="f-accw"/>
+          <rect x="476" y="60" width="264" height="3" class="f-cool"/>
+          <text x="608" y="82" class="t t--mid t--cool" style="font-size:12px">CBT · REBT</text>
+          <g class="t t--xs t--mid">
+            <text x="608" y="106">Cognitive restructuring</text>
+            <text x="608" y="124">Locus of control</text>
+            <text x="608" y="142">Exposure and rehearsal</text>
+          </g>
+          <text x="476" y="182" class="t t--xs">Ellis, 1955, quoting Epictetus directly.</text>
+          <text x="476" y="196" class="t t--xs">Beck, 1960s, arriving independently.</text>
+          <text x="476" y="218" class="t t--xs t--ox">The ethics and the cosmology stay behind —</text>
+          <text x="476" y="232" class="t t--xs t--ox">which is proper for a clinic, and a real loss elsewhere.</text>
+        </svg>
+      </div>
+      <figcaption>A therapy has no business prescribing what its patients should value, so the omission is entirely correct in context. The problem arises when the clinical version travels back out into general culture as though it were the whole of Stoicism — at which point "what is up to me" becomes a productivity concept rather than a moral one.</figcaption>
+    </figure>
+  </section>
+  <!-- ======================= READING IT ======================= -->
+  <section class="movement" id="reading" aria-labelledby="rd-h">
+    <div class="movement__head">
+      <span class="roman">Practical</span>
+      <h2 id="rd-h">How to Read It</h2>
+      <span class="gloss">Translation, method, and the modern misreadings.</span>
+    </div>
+
+    <p class="lede">
+      More than with almost any other classic, the translation decides whether this book works for you.
+      Marcus's Greek is compressed, unliterary and often ungrammatical — he was writing notes, not prose —
+      and translators have to decide whether to smooth it or preserve it. The difference between versions
+      is not stylistic garnish; it changes what the book seems to be.
+    </p>
+
+    <p>
+      <strong>Gregory Hays</strong> (Modern Library, 2002) is the version most people should start with.
+      It is punchy, contemporary and unafraid of short sentences, and it makes Marcus sound like someone
+      thinking rather than someone declaiming. Purists object that it takes liberties; it does, and it is
+      still the one that gets read to the end. <strong>Robin Hard</strong> (Oxford World's Classics) and
+      <strong>Martin Hammond</strong> (Penguin) are both more literal, both excellent, and both come with
+      substantially better notes — Hard's introduction by Christopher Gill is the best short account of
+      the philosophy attached to any popular edition. Avoid the free <strong>George Long</strong>
+      translation of 1862 that circulates everywhere online: it is out of copyright, which is why it is
+      everywhere, and its Victorian diction makes an unfussy book sound pompous.
+    </p>
+    <p>
+      As for method: do not read it straight through. The book has no argument to follow and reading it
+      cover to cover in two sittings produces fatigue and a false sense of monotony. It was written in
+      fragments over years and it works best consumed the same way — a few entries at a time, ideally
+      when you actually need them. Many readers keep it as a bedside or morning book for years and
+      report that different entries surface as relevant at different points of life, which is what you
+      would expect of a text organised around problems rather than around topics.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 19</b><span>Four things Stoicism is routinely taken to mean, and does not</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 250" role="img" aria-label="A table contrasting four popular misreadings of Stoicism with what the Meditations actually say.">
+          <path d="M20 52 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px"><text x="20" y="46">THE POPULAR VERSION</text><text x="390" y="46">WHAT THE TEXT SAYS</text></g>
+          <g class="s-hair" stroke-width="0.7"><path d="M20 100 H740"/><path d="M20 148 H740"/><path d="M20 196 H740"/></g>
+
+          <g class="t t--xs t--ox">
+            <text x="20" y="76">Suppress your emotions; feel nothing</text>
+            <text x="20" y="124">Accept everything; do not resist</text>
+            <text x="20" y="172">A private optimisation for the individual</text>
+            <text x="20" y="220">A technique for getting more done</text>
+          </g>
+          <g class="t t--xs">
+            <text x="390" y="72">Examine the judgement that produces the emotion.</text>
+            <text x="390" y="86">Marcus grieves, is irritated, and says so repeatedly.</text>
+            <text x="390" y="120">Act with everything you have; then accept the outcome,</text>
+            <text x="390" y="134">which was never yours. He fought a ten-year war.</text>
+            <text x="390" y="168">Half the doctrine is justice and the common good.</text>
+            <text x="390" y="182">"What injures the hive injures the bee."</text>
+            <text x="390" y="216">The aim is to be good, not effective. Productivity is</text>
+            <text x="390" y="230">not a Stoic category and does not appear in the book.</text>
+          </g>
+          <rect x="20" y="198" width="720" height="44" class="f-ox" opacity="0.07"/>
+        </svg>
+      </div>
+      <figcaption>The fourth row is the one worth guarding against, because it is the form the book most often takes in modern circulation. Marcus is not offering a method for achieving your goals; he is offering a method for holding your goals loosely enough that failing at them does not deform you.</figcaption>
+    </figure>
+
+    <ol class="takeaways wide">
+      <li><b>The injury is in the judgement, not the event.</b><span>Between what happens and how you feel about it there is a step — the assent — and that step is the only place in the whole chain where you have any purchase. Almost every exercise in the book is aimed at widening it.</span></li>
+      <li><b>Separate what is yours from what is not, ruthlessly and often.</b><span>Your judgement, your intention, your conduct. Not your body, your reputation, other people, or whether the plan works. The discipline is in applying it to the specific thing bothering you today, not in agreeing with it in general.</span></li>
+      <li><b>Obligation survives the loss of control.</b><span>That outcomes are not up to you does not release you from acting well. This is the hinge that separates Stoicism from fatalism, and the one modern summaries most often drop.</span></li>
+      <li><b>Other people are difficult because they are mistaken, not because they are enemies.</b><span>Marcus asks himself to treat wrongdoing as a failure of understanding. Whether or not that is true, holding it makes anger structurally harder to sustain.</span></li>
+      <li><b>Scale is a tool.</b><span>Death, deep time, the view from above, the plain physical description of a prized object — four ways of getting the size of a thing right when your position or your fear has distorted it.</span></li>
+      <li><b>Only the present can be lost.</b><span>The past is spent and the future is not yet yours, so nothing else is actually at stake. This is the entry that does the most work at three in the morning.</span></li>
+      <li><b>He never finished, and that is the point.</b><span>Book 12 is telling him what Book 2 told him. There is no arrival, no graduation, no state of being fixed. The practice is the thing, and the evidence that a man could run it for a decade and still need it is the most reassuring fact in the book.</span></li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="colophon__in">
+    <p class="eyebrow eyebrow--accent">Colophon</p>
+    <h2 style="font-size:var(--step-2);margin:0.6rem 0 0.8rem">Meditations · Marcus Aurelius</h2>
+    <p class="note">
+      A reader's summary of the twelve books of <em>Tà eis heautón</em>, written c. 170–180 CE and first
+      printed in 1559. Quotations are given by book and section so they can be found in any edition;
+      wording follows no single translation, since the point is usually the thought rather than the
+      phrasing. Every plate was drawn for this document.
+    </p>
+    <dl>
+      <dt>The book in one line</dt>
+      <dd>The private notebook of a man trying,<br>daily, to be reasonable.</dd>
+      <dt>Plates</dt>
+      <dd>10 hand-drawn figures<br>Prose-led; diagrams where they earn their place</dd>
+      <dt>Best first translation</dt>
+      <dd>Gregory Hays · Modern Library, 2002<br>then Hard (Oxford) or Hammond (Penguin)</dd>
+      <dt>Read alongside</dt>
+      <dd>Epictetus · Discourses and Handbook<br>Pierre Hadot · The Inner Citadel</dd>
+    </dl>
+  </div>
+</footer>
+
+<script src="civ-plate.js" defer></script>
+<script src="book-toc.js" defer></script>
+</body>
+</html>

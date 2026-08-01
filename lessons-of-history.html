@@ -1,0 +1,2614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lessons of History — Will &amp; Ariel Durant, 1968</title>
+<style>
+/* ============================================================
+   SURVEY PLATE — a visual reading of Durant, "The Lessons of History"
+   Palette: mineral chart stock, iron-gall ink, verdigris, iron oxide, ochre
+   ============================================================ */
+
+:root {
+  --plate:      #E8EAE4;
+  --plate-2:    #F2F3EE;
+  --plate-3:    #DDE0D8;
+  --ink:        #171D21;
+  --graphite:   #5D6660;
+  --hair:       #C3C8BF;
+  --verdigris:  #2C6E67;
+  --verdigris-w:#D7E3DF;
+  --oxide:      #A24A2A;
+  --ochre:      #96712A;
+
+  --display: "Superclarendon", "Rockwell", "Roboto Slab", "Bookman Old Style", Georgia, serif;
+  --body:    "Charter", "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --label:   "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+
+  --step--1: 0.8125rem;
+  --step-0:  1.0625rem;
+  --step-1:  1.3125rem;
+  --step-2:  1.6875rem;
+  --step-3:  2.25rem;
+  --step-4:  clamp(2.6rem, 7vw, 4.4rem);
+
+  --rule: 1px solid var(--hair);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --plate:      #10151A;
+    --plate-2:    #171E24;
+    --plate-3:    #0B0F13;
+    --ink:        #DCE2DD;
+    --graphite:   #8A948E;
+    --hair:       #2C353B;
+    --verdigris:  #5CB6A8;
+    --verdigris-w:#1B2E30;
+    --oxide:      #D9814F;
+    --ochre:      #C9A24C;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --plate:      #10151A;
+  --plate-2:    #171E24;
+  --plate-3:    #0B0F13;
+  --ink:        #DCE2DD;
+  --graphite:   #8A948E;
+  --hair:       #2C353B;
+  --verdigris:  #5CB6A8;
+  --verdigris-w:#1B2E30;
+  --oxide:      #D9814F;
+  --ochre:      #C9A24C;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --plate:      #E8EAE4;
+  --plate-2:    #F2F3EE;
+  --plate-3:    #DDE0D8;
+  --ink:        #171D21;
+  --graphite:   #5D6660;
+  --hair:       #C3C8BF;
+  --verdigris:  #2C6E67;
+  --verdigris-w:#D7E3DF;
+  --oxide:      #A24A2A;
+  --ochre:      #96712A;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--plate);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: var(--step-0);
+  line-height: 1.62;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--verdigris);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* ---------- content grid ---------- */
+.flow {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(1.25rem, 1fr)
+    [wide-start] minmax(0, 9rem)
+    [text-start] min(100% - 2.5rem, 36rem) [text-end]
+    minmax(0, 9rem) [wide-end]
+    minmax(1.25rem, 1fr) [full-end];
+  row-gap: 1.35rem;
+}
+.flow > * { grid-column: text; }
+.flow > .wide { grid-column: wide; }
+.flow > .full { grid-column: full; }
+
+/* ---------- type ---------- */
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; text-wrap: balance; line-height: 1.12; margin: 0; }
+
+.eyebrow {
+  font-family: var(--label);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--graphite);
+  margin: 0;
+}
+.eyebrow--accent { color: var(--verdigris); }
+
+p { margin: 0; }
+p + p { margin-top: 0.9em; }
+
+strong { font-weight: 600; color: var(--ink); }
+em { font-style: italic; }
+
+a { color: var(--verdigris); text-underline-offset: 2px; }
+
+.lede { font-size: var(--step-1); line-height: 1.5; color: var(--ink); }
+.note { font-size: var(--step--1); line-height: 1.55; color: var(--graphite); font-family: var(--label); letter-spacing: 0.005em; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  border-bottom: var(--rule);
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, transparent 0%, transparent 62%, var(--plate) 100%),
+    var(--plate);
+}
+.hero__strata {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  color: var(--graphite);
+  opacity: 0.22;
+  pointer-events: none;
+}
+.hero__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(1.25rem,1fr) min(100% - 2.5rem, 54rem) minmax(1.25rem,1fr);
+  padding-block: clamp(3.5rem, 11vh, 7rem) clamp(2.5rem, 7vh, 4rem);
+}
+.hero__inner > * { grid-column: 2; }
+
+.hero__meta {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: baseline;
+  padding-bottom: 1.5rem;
+}
+.hero__meta .eyebrow:not(:first-child)::before {
+  content: "";
+  display: inline-block; width: 1.5rem; height: 1px;
+  background: var(--hair); vertical-align: 0.28em; margin-right: 1.25rem;
+}
+
+.hero h1 {
+  font-size: var(--step-4);
+  letter-spacing: -0.022em;
+  font-weight: 700;
+  margin-bottom: 0.35em;
+}
+.hero h1 .sub {
+  display: block;
+  font-size: 0.36em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--graphite);
+  margin-top: 0.7em;
+  font-family: var(--body);
+  font-style: italic;
+}
+
+.hero__rule {
+  height: 3px;
+  background: var(--verdigris);
+  width: 100%;
+  transform-origin: left;
+  margin-bottom: 1.75rem;
+}
+
+.hero__thesis {
+  font-size: var(--step-1);
+  line-height: 1.5;
+  max-width: 34rem;
+  color: var(--ink);
+}
+.hero__thesis .accent { color: var(--verdigris); font-weight: 600; }
+
+/* facts strip */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  border-top: var(--rule);
+  margin-top: 2.5rem;
+  gap: 0;
+}
+.facts div {
+  padding: 1rem 1.1rem 1rem 0;
+  border-right: var(--rule);
+}
+.facts div:last-child { border-right: 0; }
+.facts dt {
+  font-family: var(--label);
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em;
+  color: var(--graphite); margin-bottom: 0.35rem;
+}
+.facts dd {
+  margin: 0;
+  font-family: var(--display);
+  font-size: var(--step-1);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+.facts dd span { font-family: var(--label); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--graphite); text-transform: uppercase; display: block; margin-top: 0.2rem; }
+
+/* ============================================================
+   RAIL — stratigraphic depth marker
+   ============================================================ */
+.rail {
+  position: fixed;
+  left: 1.5rem; top: 50%; transform: translateY(-50%);
+  z-index: 20;
+  display: none;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding: 0.7rem 0.55rem;
+  background: color-mix(in srgb, var(--plate) 86%, transparent);
+  backdrop-filter: blur(6px);
+  border: var(--rule);
+}
+@media (min-width: 1180px) { .rail { display: flex; } }
+
+.rail a {
+  display: flex; align-items: center; gap: 0.5rem;
+  text-decoration: none;
+  font-family: var(--label);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  transition: color 140ms ease;
+}
+.rail a .bar {
+  display: block; height: 2px; width: 0.85rem; background: var(--hair);
+  transition: width 180ms ease, background-color 180ms ease;
+}
+.rail a .num { width: 2.4rem; font-variant-numeric: tabular-nums; }
+.rail a:hover { color: var(--ink); }
+.rail a:hover .bar { width: 1.5rem; background: var(--graphite); }
+.rail a[aria-current="true"] { color: var(--verdigris); }
+.rail a[aria-current="true"] .bar { width: 1.9rem; background: var(--verdigris); }
+
+/* theme toggle */
+.toggle {
+  position: fixed; top: 1rem; right: 1rem; z-index: 30;
+  font-family: var(--label); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em;
+  padding: 0.5rem 0.8rem;
+  background: color-mix(in srgb, var(--plate) 88%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--graphite);
+  border: var(--rule);
+  cursor: pointer;
+}
+.toggle:hover { color: var(--ink); border-color: var(--graphite); }
+
+/* ============================================================
+   MOVEMENTS & CHAPTERS
+   ============================================================ */
+.movement {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: subgrid;
+  padding-block: clamp(3rem, 8vh, 5rem) 0;
+}
+.movement > * { grid-column: text; }
+.movement > .wide { grid-column: wide; }
+
+.movement__head {
+  grid-column: wide;
+  display: flex; align-items: baseline; gap: 1rem;
+  border-top: 3px solid var(--ink);
+  padding-top: 0.7rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+.movement__head h2 {
+  font-size: var(--step-2);
+  letter-spacing: -0.01em;
+}
+.movement__head .roman {
+  font-family: var(--label);
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--verdigris);
+}
+.movement__head .gloss {
+  font-family: var(--body); font-style: italic; color: var(--graphite);
+  font-size: var(--step-0); flex: 1 1 14rem;
+}
+
+.chapter { grid-column: text; padding-top: 2.25rem; }
+.chapter__head {
+  display: flex; align-items: baseline; gap: 0.85rem;
+  border-bottom: var(--rule); padding-bottom: 0.55rem; margin-bottom: 1rem;
+}
+.chapter__num {
+  font-family: var(--label);
+  font-size: 0.72rem; letter-spacing: 0.14em;
+  color: var(--plate); background: var(--ink);
+  padding: 0.22rem 0.45rem 0.18rem;
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+.chapter__head h3 { font-size: var(--step-1); letter-spacing: -0.005em; }
+
+/* pull quote */
+.pull {
+  border-left: 3px solid var(--verdigris);
+  padding: 0.15rem 0 0.15rem 1.1rem;
+  font-family: var(--display);
+  font-size: var(--step-1);
+  line-height: 1.38;
+  color: var(--ink);
+}
+.pull cite {
+  display: block;
+  font-family: var(--label); font-style: normal;
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--graphite); margin-top: 0.6rem;
+}
+
+/* key-claim callout */
+.claim {
+  background: var(--plate-2);
+  border: var(--rule);
+  border-left: 3px solid var(--ochre);
+  padding: 1rem 1.15rem;
+  font-size: var(--step--1);
+  line-height: 1.6;
+  font-family: var(--label);
+}
+.claim b {
+  display: block;
+  text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.68rem;
+  color: var(--ochre); margin-bottom: 0.4rem; font-weight: 700;
+}
+
+/* apparatus note — supporting detail, set quieter than body text */
+.detail {
+  border-top: var(--rule);
+  border-bottom: var(--rule);
+  padding: 0.9rem 0;
+}
+.detail > b {
+  display: block;
+  font-family: var(--label);
+  text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.68rem;
+  color: var(--graphite); margin-bottom: 0.45rem; font-weight: 700;
+}
+.detail p {
+  font-size: var(--step--1); line-height: 1.58;
+  font-family: var(--label); color: var(--graphite);
+}
+.detail p + p { margin-top: 0.65em; }
+.detail strong { color: var(--ink); font-weight: 600; }
+.detail em { font-style: italic; }
+
+/* term list — a definition table at chapter scale */
+.terms {
+  display: grid;
+  grid-template-columns: minmax(7rem, 11.5rem) 1fr;
+  gap: 0 1.15rem;
+  margin: 0;
+  border-top: var(--rule);
+}
+.terms dt {
+  font-family: var(--display); font-weight: 600;
+  font-size: var(--step--1); line-height: 1.4;
+  padding: 0.62rem 0; border-bottom: var(--rule);
+}
+.terms dd {
+  margin: 0;
+  font-family: var(--label); font-size: var(--step--1);
+  color: var(--graphite); line-height: 1.55;
+  padding: 0.62rem 0; border-bottom: var(--rule);
+}
+.terms dd b { color: var(--ink); font-weight: 600; }
+@media (max-width: 32rem) {
+  .terms { grid-template-columns: 1fr; }
+  .terms dt { border-bottom: 0; padding-bottom: 0.1rem; }
+}
+
+/* two-voice ledger — an argument set against its answer */
+.ledger {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 1px; background: var(--hair); border: var(--rule);
+}
+.ledger > div { background: var(--plate-2); padding: 1.05rem 1.1rem; }
+.ledger .who {
+  display: block;
+  font-family: var(--label); font-size: 0.68rem;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  margin-bottom: 0.55rem;
+}
+.ledger .who--ox { color: var(--oxide); }
+.ledger .who--verd { color: var(--verdigris); }
+.ledger p { font-size: var(--step--1); font-family: var(--label); line-height: 1.58; color: var(--graphite); }
+.ledger p + p { margin-top: 0.6em; }
+.ledger strong { color: var(--ink); font-weight: 600; }
+
+/* named cases — a run of worked historical examples */
+.cases { display: grid; gap: 0; border-top: 3px solid var(--graphite); margin: 0; padding: 0; }
+.cases > div {
+  display: grid; grid-template-columns: minmax(5.5rem, 7.5rem) 1fr;
+  gap: 0.3rem 1.15rem; align-items: baseline;
+  padding: 0.7rem 0; border-bottom: var(--rule);
+}
+.cases .when {
+  font-family: var(--label); font-size: 0.7rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--verdigris);
+  font-variant-numeric: tabular-nums;
+}
+.cases .what { font-size: var(--step--1); font-family: var(--label); color: var(--graphite); line-height: 1.55; }
+.cases .what b { font-family: var(--display); color: var(--ink); font-weight: 600; display: block; margin-bottom: 0.12rem; font-size: var(--step-0); }
+@media (max-width: 30rem) {
+  .cases > div { grid-template-columns: 1fr; }
+  .cases .what { grid-column: 1; }
+}
+
+/* ============================================================
+   FIGURES
+   ============================================================ */
+figure.fig {
+  margin: 0;
+  background: var(--plate-2);
+  border: var(--rule);
+  padding: 1.4rem 1.4rem 1.1rem;
+  display: flex; flex-direction: column; gap: 0.9rem;
+}
+figure.fig .fig__label {
+  font-family: var(--label);
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--graphite);
+  display: flex; align-items: baseline; gap: 0.7rem;
+}
+figure.fig .fig__label b { color: var(--verdigris); font-weight: 700; }
+figure.fig .fig__frame { overflow-x: auto; overflow-y: hidden; }
+figure.fig svg { display: block; width: 100%; height: auto; }
+figure.fig figcaption {
+  font-family: var(--label);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--graphite);
+  border-top: var(--rule);
+  padding-top: 0.75rem;
+}
+
+/* svg shared classes */
+.s-hair   { stroke: var(--hair); }
+.s-ink    { stroke: var(--ink); }
+.s-graph  { stroke: var(--graphite); }
+.s-verd   { stroke: var(--verdigris); }
+.s-ox     { stroke: var(--oxide); }
+.s-och    { stroke: var(--ochre); }
+.f-ink    { fill: var(--ink); }
+.f-graph  { fill: var(--graphite); }
+.f-verd   { fill: var(--verdigris); }
+.f-ox     { fill: var(--oxide); }
+.f-och    { fill: var(--ochre); }
+.f-plate  { fill: var(--plate-2); }
+.f-none   { fill: none; }
+
+.t {
+  font-family: var(--label);
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  fill: var(--graphite);
+}
+.t--ink { fill: var(--ink); }
+/* reversed-out label: a class is required — a `fill` presentation attribute
+   loses to the `.t` rule above, which renders the text invisible on solid fills */
+.t--rev { fill: var(--plate-2); }
+.t--verd { fill: var(--verdigris); }
+.t--ox { fill: var(--oxide); }
+.t--och { fill: var(--ochre); }
+.t--lg { font-size: 13.5px; letter-spacing: 0.06em; fill: var(--ink); }
+.t--num { font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
+.t--serif { font-family: var(--body); text-transform: none; letter-spacing: 0; font-size: 13px; font-style: italic; }
+
+/* ============================================================
+   INDEX TABLE
+   ============================================================ */
+.index { border-top: 3px solid var(--ink); }
+.index__row {
+  display: grid;
+  grid-template-columns: 3.1rem minmax(7rem, 12rem) 1fr;
+  gap: 0.35rem 1rem;
+  align-items: baseline;
+  padding: 0.72rem 0.4rem 0.72rem 0;
+  border-bottom: var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 140ms ease, padding-left 140ms ease;
+}
+.index__row:hover { background: var(--plate-2); padding-left: 0.4rem; }
+.index__row .n {
+  font-family: var(--label); font-size: 0.72rem; letter-spacing: 0.14em;
+  color: var(--verdigris);
+}
+.index__row .ttl { font-family: var(--display); font-size: var(--step-0); font-weight: 600; }
+.index__row .gist { font-size: var(--step--1); color: var(--graphite); font-family: var(--label); line-height: 1.5; }
+@media (max-width: 34rem) {
+  .index__row { grid-template-columns: 3.1rem 1fr; }
+  .index__row .gist { grid-column: 2; }
+}
+
+/* ============================================================
+   TRIPTYCH CARDS
+   ============================================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1px;
+  background: var(--hair);
+  border: var(--rule);
+}
+.cards > div { background: var(--plate-2); padding: 1.2rem 1.15rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.cards h4 { font-size: var(--step-0); }
+.cards .k {
+  font-family: var(--label); font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.16em; color: var(--verdigris);
+}
+.cards p { font-size: var(--step--1); line-height: 1.55; color: var(--graphite); font-family: var(--label); }
+.cards svg { width: 100%; height: auto; max-width: 5.5rem; }
+
+/* ============================================================
+   CAVEATS
+   ============================================================ */
+.caveats { display: flex; flex-direction: column; gap: 0; border-top: 3px solid var(--oxide); }
+.caveats > div {
+  display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.9rem;
+  padding: 0.95rem 0; border-bottom: var(--rule);
+}
+.caveats .mk { color: var(--oxide); font-family: var(--label); font-size: 0.75rem; letter-spacing: 0.1em; padding-top: 0.15rem; }
+.caveats h4 { font-size: var(--step-0); margin-bottom: 0.3rem; }
+.caveats p { font-size: var(--step--1); color: var(--graphite); font-family: var(--label); line-height: 1.55; }
+
+/* ============================================================
+   TAKEAWAYS
+   ============================================================ */
+.takeaways { counter-reset: tk; display: grid; gap: 0; border-top: 3px solid var(--verdigris); padding: 0; margin: 0; }
+.takeaways li {
+  list-style: none;
+  counter-increment: tk;
+  display: grid; grid-template-columns: 2.4rem 1fr; gap: 0.9rem;
+  padding: 1rem 0; border-bottom: var(--rule);
+}
+.takeaways li::before {
+  content: counter(tk, decimal-leading-zero);
+  font-family: var(--label); font-size: 0.78rem; letter-spacing: 0.1em;
+  color: var(--verdigris); font-variant-numeric: tabular-nums; padding-top: 0.22rem;
+}
+.takeaways li b { display: block; font-family: var(--display); font-size: var(--step-0); margin-bottom: 0.2rem; }
+.takeaways li span { font-size: var(--step--1); color: var(--graphite); font-family: var(--label); line-height: 1.55; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.colophon {
+  grid-column: full;
+  border-top: 3px solid var(--ink);
+  margin-top: clamp(3rem, 8vh, 5rem);
+  background: var(--plate-3);
+}
+.colophon__in {
+  display: grid;
+  grid-template-columns: minmax(1.25rem,1fr) min(100% - 2.5rem, 54rem) minmax(1.25rem,1fr);
+  padding-block: 2.5rem 3rem;
+}
+.colophon__in > * { grid-column: 2; }
+.colophon dl {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem,1fr));
+  gap: 1.25rem; margin: 1.25rem 0 0;
+}
+.colophon dt { font-family: var(--label); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--graphite); margin-bottom: 0.3rem; }
+.colophon dd { margin: 0; font-size: var(--step--1); font-family: var(--label); line-height: 1.5; }
+
+/* ============================================================
+   MOTION
+   ============================================================ */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 620ms cubic-bezier(.2,.7,.3,1), transform 620ms cubic-bezier(.2,.7,.3,1); }
+.reveal.in { opacity: 1; transform: none; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes sweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+.hero__meta { animation: rise 700ms 80ms both cubic-bezier(.2,.7,.3,1); }
+.hero h1    { animation: rise 800ms 180ms both cubic-bezier(.2,.7,.3,1); }
+.hero__rule { animation: sweep 900ms 420ms both cubic-bezier(.16,.8,.3,1); }
+.hero__thesis { animation: rise 800ms 560ms both cubic-bezier(.2,.7,.3,1); }
+.hero .facts  { animation: rise 800ms 700ms both cubic-bezier(.2,.7,.3,1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero__meta, .hero h1, .hero__rule, .hero__thesis, .hero .facts { animation: none; }
+  * { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}
+</style>
+<link rel="stylesheet" href="book-toc.css">
+</head>
+<body>
+
+<button class="toggle" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+
+<nav class="rail" aria-label="Chapters">
+  <a href="#ch1"  data-rail="ch1"><span class="bar"></span><span class="num">I</span></a>
+  <a href="#ch2"  data-rail="ch2"><span class="bar"></span><span class="num">II</span></a>
+  <a href="#ch3"  data-rail="ch3"><span class="bar"></span><span class="num">III</span></a>
+  <a href="#ch4"  data-rail="ch4"><span class="bar"></span><span class="num">IV</span></a>
+  <a href="#ch5"  data-rail="ch5"><span class="bar"></span><span class="num">V</span></a>
+  <a href="#ch6"  data-rail="ch6"><span class="bar"></span><span class="num">VI</span></a>
+  <a href="#ch7"  data-rail="ch7"><span class="bar"></span><span class="num">VII</span></a>
+  <a href="#ch8"  data-rail="ch8"><span class="bar"></span><span class="num">VIII</span></a>
+  <a href="#ch9"  data-rail="ch9"><span class="bar"></span><span class="num">IX</span></a>
+  <a href="#ch10" data-rail="ch10"><span class="bar"></span><span class="num">X</span></a>
+  <a href="#ch11" data-rail="ch11"><span class="bar"></span><span class="num">XI</span></a>
+  <a href="#ch12" data-rail="ch12"><span class="bar"></span><span class="num">XII</span></a>
+  <a href="#ch13" data-rail="ch13"><span class="bar"></span><span class="num">XIII</span></a>
+</nav>
+
+<!-- ==========================================================
+     HERO
+     ========================================================== -->
+<header class="hero">
+  <svg class="hero__strata" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M0 60 C 180 44, 340 76, 520 62 S 880 40, 1200 66"/>
+      <path d="M0 104 C 200 92, 330 122, 540 106 S 900 88, 1200 112"/>
+      <path d="M0 150 C 160 138, 380 172, 560 152 S 920 132, 1200 158"/>
+      <path d="M0 198 C 220 186, 400 214, 600 198 S 960 178, 1200 204"/>
+      <path d="M0 250 C 180 240, 360 268, 580 250 S 940 232, 1200 256"/>
+      <path d="M0 304 C 200 294, 420 322, 620 304 S 980 286, 1200 310"/>
+      <path d="M0 358 C 160 348, 380 376, 600 358 S 960 340, 1200 364"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="2 7" opacity="0.75">
+      <path d="M0 82 H1200"/><path d="M0 127 H1200"/><path d="M0 174 H1200"/>
+      <path d="M0 224 H1200"/><path d="M0 277 H1200"/><path d="M0 331 H1200"/>
+    </g>
+  </svg>
+
+  <div class="hero__inner">
+    <div class="hero__meta">
+      <p class="eyebrow">Will &amp; Ariel Durant</p>
+      <p class="eyebrow">Simon &amp; Schuster · 1968</p>
+      <p class="eyebrow eyebrow--accent">A survey in fifteen plates</p>
+    </div>
+
+    <h1>The Lessons<br>of History
+      <span class="sub">Fifty years of reading the past, compressed into a hundred pages of conclusions.</span>
+    </h1>
+
+    <div class="hero__rule" role="presentation"></div>
+
+    <p class="hero__thesis">
+      After eleven volumes and four decades writing <em>The Story of Civilization</em>, the Durants
+      stopped narrating and started summarising. The result is a short, unsentimental book with a
+      single organising claim: <span class="accent">history is not a separate subject from nature — it
+      is biology, geology and psychology observed over long spans.</span> What follows are the regularities
+      they found, and the one place they were willing to call it progress.
+    </p>
+
+    <dl class="facts">
+      <div><dt>Published</dt><dd>1968<span>Same year as the Pulitzer</span></dd></div>
+      <div><dt>Distilled from</dt><dd>11 vols.<span>~4 million words</span></dd></div>
+      <div><dt>Written over</dt><dd>40 yrs<span>1935 – 1975</span></dd></div>
+      <div><dt>Chapters</dt><dd>13<span>~100 pages</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="flow">
+
+  <!-- ======================= ARGUMENT IN BRIEF ======================= -->
+  <section class="movement" id="brief" aria-labelledby="brief-h">
+    <div class="movement__head">
+      <span class="roman">Orientation</span>
+      <h2 id="brief-h">The Argument, Compressed</h2>
+      <span class="gloss">Where the whole book is going, before the detail.</span>
+    </div>
+
+    <p class="lede">
+      Human nature has not changed within recorded history. What changes is the technology, the
+      economy and the scale of organisation acting on that unchanged nature. So the same patterns
+      recur — competition, selection, the concentration of wealth, the swing between freedom and
+      order, the reliable return of war — and no moral improvement accumulates.
+    </p>
+    <p>
+      One thing does accumulate: the <strong>heritage</strong>. Knowledge, technique, institutions and
+      art are recorded and transmitted, and each generation begins from a larger inheritance than the
+      last. That transmission — not any improvement in the human animal — is the Durants' definition
+      of progress, and education is the mechanism that carries it.
+    </p>
+    <p>
+      The book is therefore structured as a descent through causes. It begins with what can be known
+      at all, moves to the planet, then to the biology, then to the character that biology produced,
+      then to the belief systems that character generates, then to the economics and politics that
+      belief systems dress, and finally to war, decay and the one thing that survives all of them.
+      Almost every chapter is an application of Chapter III to a different institution.
+    </p>
+
+    <div class="detail">
+      <b>How to read the book, and this page</b>
+      <p>
+        <em>The Lessons of History</em> is not a history. It contains almost no narrative and cites
+        almost no sources, because its evidence is the eleven volumes behind it. It is best read as a
+        set of <strong>load-bearing generalisations with their supporting cases removed</strong> — which
+        makes it fast, quotable, and much easier to disagree with than the work it summarises.
+      </p>
+      <p>
+        This page follows the book's thirteen chapters in order, grouped into five movements. Prose is
+        the summariser's; quotations are the Durants'. All fourteen plates are schematic renderings of
+        arguments — <strong>none of them is measured data</strong>, and the one that looks most like data
+        (Plate 11) is the least reliable number in the book.
+      </p>
+    </div>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 01</b><span>The scale of the argument</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 260" role="img" aria-label="Nested frames narrowing from astronomy through geology, biology and psychology to history, showing that history is a small part of larger natural processes.">
+          <g class="f-none" stroke-width="1.2">
+            <rect x="12" y="14" width="736" height="232" class="s-hair"/>
+            <rect x="112" y="40" width="536" height="180" class="s-hair"/>
+            <rect x="212" y="66" width="336" height="128" class="s-graph"/>
+            <rect x="292" y="92" width="176" height="76" class="s-verd" stroke-width="1.6"/>
+          </g>
+          <rect x="330" y="116" width="100" height="34" class="f-verd"/>
+          <text x="380" y="138" text-anchor="middle" class="t t--rev" style="font-size:13px;letter-spacing:.14em">History</text>
+
+          <g class="t">
+            <text x="24" y="34">Astronomy</text>
+            <text x="124" y="60">Geology</text>
+            <text x="224" y="86" class="t--ink">Biology</text>
+            <text x="302" y="108" class="t--verd">Psychology</text>
+          </g>
+
+          <g class="s-graph" stroke-width="1" stroke-dasharray="3 4">
+            <path d="M60 42 V 226"/><path d="M700 42 V 226"/>
+          </g>
+          <text x="60" y="242" text-anchor="middle" class="t t--num" style="font-size:10.5px">10¹⁰ yrs</text>
+          <text x="700" y="242" text-anchor="middle" class="t t--num" style="font-size:10.5px">10³ yrs</text>
+
+          <path d="M 468 130 H 560" class="s-verd" stroke-width="1.2" marker-end="url(#ar-verd)"/>
+          <text x="568" y="127" class="t t--verd" style="font-size:11px">A fragment</text>
+          <text x="568" y="141" class="t t--verd" style="font-size:11px">of biology</text>
+
+          <defs>
+            <marker id="ar-verd" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+              <path d="M0 0 L7 3.5 L0 7 z" class="f-verd"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <figcaption>The Durants place history inside a stack of slower sciences. Anything true of competition, selection and reproduction in biology should show up, magnified and slowed, in the record of states. This nesting is the move that licenses every later chapter.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= INDEX ======================= -->
+  <section class="movement" id="index" aria-labelledby="index-h">
+    <div class="movement__head">
+      <span class="roman">Contents</span>
+      <h2 id="index-h">Thirteen Chapters at a Glance</h2>
+      <span class="gloss">Each chapter reduced to its operative claim.</span>
+    </div>
+
+    <div class="index wide">
+      <a class="index__row" href="#ch1"><span class="n">I</span><span class="ttl">Hesitations</span><span class="gist">The record is a sliver of what happened. Generalise with fear.</span></a>
+      <a class="index__row" href="#ch2"><span class="n">II</span><span class="ttl">History &amp; the Earth</span><span class="gist">Geography sets the conditions; technology keeps loosening its grip.</span></a>
+      <a class="index__row" href="#ch3"><span class="n">III</span><span class="ttl">Biology &amp; History</span><span class="gist">Three lessons: life competes, life selects, life must breed.</span></a>
+      <a class="index__row" href="#ch4"><span class="n">IV</span><span class="ttl">Race &amp; History</span><span class="gist">Racial theories fail the historical test. Circumstance explains more.</span></a>
+      <a class="index__row" href="#ch5"><span class="n">V</span><span class="ttl">Character &amp; History</span><span class="gist">Human nature is stable. Social evolution replaced biological evolution.</span></a>
+      <a class="index__row" href="#ch6"><span class="n">VI</span><span class="ttl">Morals &amp; History</span><span class="gist">Moral codes are adaptations to the reigning economy, and they lag it.</span></a>
+      <a class="index__row" href="#ch7"><span class="n">VII</span><span class="ttl">Religion &amp; History</span><span class="gist">Repeatedly declared dead; repeatedly returns. Its function is social.</span></a>
+      <a class="index__row" href="#ch8"><span class="n">VIII</span><span class="ttl">Economics &amp; History</span><span class="gist">Wealth concentrates, then is redistributed by law or by revolt. Repeat.</span></a>
+      <a class="index__row" href="#ch9"><span class="n">IX</span><span class="ttl">Socialism &amp; History</span><span class="gist">State-run economies are ancient and cyclical. The two systems converge.</span></a>
+      <a class="index__row" href="#ch10"><span class="n">X</span><span class="ttl">Government &amp; History</span><span class="gist">Democracy is the hardest form and rests entirely on education.</span></a>
+      <a class="index__row" href="#ch11"><span class="n">XI</span><span class="ttl">History &amp; War</span><span class="gist">War is a constant, because states face no authority above themselves.</span></a>
+      <a class="index__row" href="#ch12"><span class="n">XII</span><span class="ttl">Growth &amp; Decay</span><span class="gist">Civilisations rise by meeting challenges and fall when leadership fails.</span></a>
+      <a class="index__row" href="#ch13"><span class="n">XIII</span><span class="ttl">Is Progress Real?</span><span class="gist">Yes — but only as inherited and transmitted capability.</span></a>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       MOVEMENT 1 — GROUND
+       ========================================================== -->
+  <section class="movement" aria-labelledby="m1-h">
+    <div class="movement__head">
+      <span class="roman">Movement One · Chs. I–II</span>
+      <h2 id="m1-h">Ground</h2>
+      <span class="gloss">What we can know, and what the planet decided before we arrived.</span>
+    </div>
+
+    <article class="chapter" id="ch1">
+      <div class="chapter__head"><span class="chapter__num">I</span><h3>Hesitations</h3></div>
+      <p>
+        The book opens by undercutting itself. Most of what happened was never observed; most of what
+        was observed was never written; most of what was written is lost; and what survives was written
+        by the literate, the victorious and the interested. History is therefore a <strong>selection
+        from a selection from a selection</strong>.
+      </p>
+      <p>
+        Worse, the historian chooses. Any generalisation about the past is a fragment lifted out and
+        polished. The Durants keep this on the table rather than apologising for it once and moving on:
+        their "lessons" are offered as probable regularities in a thin record, not laws.
+      </p>
+
+      <p class="pull">History is so indifferently rich that a case for almost any conclusion from it can
+        be made by a selection of instances.
+        <cite>Durant, Ch. I</cite></p>
+
+      <p>
+        That sentence is the most important defence in the book and also the most damaging admission,
+        because it applies to the twelve chapters that follow it. If the record is rich enough to
+        support any thesis, then the Durants' theses are supported by it too — and no more securely
+        than their opponents'. They do not resolve this. They simply ask to be read as offering
+        probabilities, and hand the reader the tool for disarming them.
+      </p>
+      <p>
+        Three further limits are named and then, in practice, mostly ignored. The historian is
+        <strong>inside</strong> the process being described, and cannot step outside a civilisation to
+        judge it. The historian's own moment supplies the questions, so every generation rewrites the
+        past to answer its own anxieties. And the surviving record is <strong>systematically biased
+        toward the state</strong> — toward taxation, war and dynasty, because those are what
+        bureaucracies write down — which quietly over-samples catastrophe and under-samples the
+        ordinary life that Chapter VI and the closing pages insist was the real content.
+      </p>
+
+      <div class="detail">
+        <b>What counts as a "lesson" here</b>
+        <p>
+          Not a law, and not a prediction. The Durants' claim is closer to a <strong>base rate</strong>:
+          across long spans and many societies, some patterns recur often enough that a person betting
+          against them should expect to lose money. The correct posture toward such a claim is neither
+          acceptance nor dismissal but <em>calibration</em> — how often, under what conditions, with
+          what exceptions.
+        </p>
+        <p>
+          They are also explicit that a lesson can be true and useless. Knowing that wealth concentrates
+          tells you nothing about what to do next. The practical content of the book, where it has any,
+          lives in the second-order claims: which relief valve, which form of government, which
+          transmission mechanism.
+        </p>
+      </div>
+
+      <figure class="fig wide reveal">
+        <div class="fig__label"><b>Plate 02</b><span>What survives</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 210" role="img" aria-label="A dense field of marks representing everything that happened, with a small highlighted block representing the fraction that was recorded and still survives.">
+            <g id="dotfield"></g>
+            <rect x="448" y="49" width="52" height="38" class="f-none s-verd" stroke-width="1.4"/>
+            <path d="M504 68 H 548" class="s-verd" stroke-width="1.2"/>
+            <!-- annotation panel, opaque so it masks the field beneath it -->
+            <rect x="548" y="40" width="204" height="60" class="f-plate"/>
+            <rect x="548" y="40" width="2.5" height="60" class="f-verd"/>
+            <text x="562" y="60" class="t t--verd" style="font-size:11px">Recorded, and still surviving</text>
+            <text x="562" y="75" class="t" style="font-size:11px">About one mark in fifty here,</text>
+            <text x="562" y="89" class="t" style="font-size:11px">and that is generous</text>
+
+            <g>
+              <rect x="8" y="164" width="10" height="10" class="f-graph" opacity="0.3"/>
+              <text x="26" y="173" class="t" style="font-size:11px">Happened · unwritten, or written and lost</text>
+              <rect x="300" y="164" width="10" height="10" class="f-verd"/>
+              <text x="318" y="173" class="t t--verd" style="font-size:11px">Reaches us</text>
+            </g>
+            <text x="8" y="196" class="t" style="font-size:10.5px">Each mark ≈ an event, a life, a decision · proportions illustrative</text>
+          </svg>
+        </div>
+        <figcaption>Schematic, not measured. The point of the chapter is epistemic humility: every later claim in the book is drawn from the highlighted patch, and the Durants say so before making any of them.</figcaption>
+      </figure>
+    </article>
+
+    <article class="chapter" id="ch2">
+      <div class="chapter__head"><span class="chapter__num">II</span><h3>History and the Earth</h3></div>
+      <p>
+        The chapter opens further out than geography, at geology. The earth is older than us by orders
+        of magnitude and indifferent to us: it heaves, erodes, freezes and dries on schedules no polity
+        can negotiate with. Every civilisation is a lease on a piece of crust, and the terms are set by
+        the landlord.
+      </p>
+      <p>
+        Within that, geography conditions but does not determine. Rivers made the first states because
+        they solved irrigation and transport at once — the Nile, the Tigris and Euphrates, the Indus,
+        the Yellow River, all four of the earliest literate civilisations sited on the same solution to
+        the same two problems. Coastlines made trading powers. Mountains preserved languages, dialects
+        and grudges that flat country dissolves. Climate sets the metabolic budget: too hot and the
+        surplus never forms, too cold and it goes into staying alive. The earth deals the hand.
+      </p>
+      <p>
+        But the constraint is loosening, and this is the chapter's real argument. Each technology
+        demotes the terrain that the previous one privileged. The Mediterranean was the world's centre
+        while the world's ships hugged coastlines; after 1492 the ocean-going hull made the Atlantic
+        seaboard the centre and reduced Venice and Genoa to beautiful provinces within a century.
+        Air power then made the Atlantic itself less decisive; electronics and logistics did it again.
+        <strong>Every advance in technology reduces the leverage of terrain</strong> — a claim that has
+        aged well, and one the Durants use to argue that geography is a starting position, not a
+        destiny.
+      </p>
+
+      <p class="pull">Man, not the earth, makes civilization.
+        <cite>Durant, Ch. II</cite></p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 03</b><span>Geography's diminishing grip</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 560 220" role="img" aria-label="A curve falling from high to low, showing the influence of geographic factors decreasing as technological capability increases, with markers for river valleys, sea power and air power.">
+            <g class="s-hair" stroke-width="1">
+              <path d="M56 176 H 528"/><path d="M56 24 V 176"/>
+            </g>
+            <g class="s-hair" stroke-width="0.6" stroke-dasharray="2 6">
+              <path d="M56 62 H528"/><path d="M56 100 H528"/><path d="M56 138 H528"/>
+            </g>
+            <path d="M56 40 C 170 46, 232 92, 300 118 S 440 158, 528 166" class="f-none s-verd" stroke-width="2.4"/>
+            <g class="f-verd">
+              <circle cx="90" cy="43" r="4"/><circle cx="248" cy="99" r="4"/><circle cx="392" cy="146" r="4"/><circle cx="510" cy="165" r="4"/>
+            </g>
+            <g class="t" style="font-size:11px">
+              <text x="90" y="32" text-anchor="middle">River valleys</text>
+              <text x="286" y="82" text-anchor="start">Sea power</text>
+              <text x="430" y="130" text-anchor="start">Air power</text>
+              <text x="512" y="150" text-anchor="end">Networks</text>
+            </g>
+            <text x="56" y="200" class="t">Technological capability &#8594;</text>
+            <text x="-100" y="16" transform="rotate(-90)" class="t" text-anchor="middle" style="font-size:11px">Influence of terrain</text>
+          </svg>
+        </div>
+        <figcaption>Schematic. The Durants' examples stop at air power; the curve's continuation through logistics and networked capital is the obvious extension, and it points the same way.</figcaption>
+      </figure>
+
+      <div class="cases">
+        <div><span class="when">c. 3000 BC</span><span class="what"><b>The river solution</b>Nile, Tigris–Euphrates, Indus, Yellow River. Irrigation makes surplus; surplus makes priests, scribes and armies. Four independent civilisations arrive at the same siting logic.</span></div>
+        <div><span class="when">c. 500 BC – AD 1500</span><span class="what"><b>The inland sea</b>A body of water small enough to cross in coast-hugging ships makes Greece, Rome, Byzantium, Venice and Genoa possible. Sea as highway, not barrier.</span></div>
+        <div><span class="when">1492 onward</span><span class="what"><b>The ocean demotes the sea</b>Hulls that survive open water move the centre of gravity to Lisbon, Seville, Amsterdam, London. The Mediterranean powers do not decline in ability; they decline in position.</span></div>
+        <div><span class="when">20th century</span><span class="what"><b>Air power, then networks</b>Terrain stops conferring immunity. Distance stops conferring safety. The advantage migrates to whoever holds the newer layer.</span></div>
+      </div>
+
+      <div class="claim">
+        <b>Where this cuts against the Durants themselves</b>
+        The argument is a solvent applied to determinism of all kinds — including their own. If
+        technology can dissolve geography, the reader is entitled to ask why it cannot equally dissolve
+        the biological constraints asserted in the next chapter. The Durants never answer this, and it
+        is the strongest internal objection available to a sceptical reader.
+      </div>
+    </article>
+  </section>
+
+  <!-- ==========================================================
+       MOVEMENT 2 — NATURE
+       ========================================================== -->
+  <section class="movement" aria-labelledby="m2-h">
+    <div class="movement__head">
+      <span class="roman">Movement Two · Chs. III–V</span>
+      <h2 id="m2-h">Nature</h2>
+      <span class="gloss">The raw material: competition, inequality, and a human character that will not budge.</span>
+    </div>
+
+    <article class="chapter" id="ch3">
+      <div class="chapter__head"><span class="chapter__num">III</span><h3>Biology and History</h3></div>
+      <p class="lede">This is the load-bearing chapter. Three biological lessons are asserted, and almost everything later in the book is a consequence of one of them.</p>
+
+      <div class="cards wide reveal">
+        <div>
+          <svg viewBox="0 0 90 60" aria-hidden="true">
+            <path d="M8 46 L34 14 L46 34 L58 20 L82 46" class="f-none s-verd" stroke-width="2"/>
+            <path d="M8 52 H82" class="s-hair" stroke-width="1"/>
+          </svg>
+          <span class="k">Lesson One</span>
+          <h4>Life is competition</h4>
+          <p>Competition is the ordinary condition, peaceful while resources are ample and violent when they are not. It scales: individuals compete, then families, then tribes, then states — and the group, not the person, becomes the unit that survives or fails.</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 90 60" aria-hidden="true">
+            <g class="f-verd"><rect x="10" y="40" width="10" height="12"/><rect x="26" y="32" width="10" height="20"/><rect x="42" y="22" width="10" height="30"/></g>
+            <g class="f-graph"><rect x="58" y="14" width="10" height="38"/><rect x="74" y="8" width="10" height="44"/></g>
+            <path d="M6 52 H88" class="s-hair" stroke-width="1"/>
+          </svg>
+          <span class="k">Lesson Two</span>
+          <h4>Life is selection</h4>
+          <p>People differ in ability, and complex societies reward those differences more sharply than simple ones. Inequality is therefore natural and grows with civilisation. Freedom and equality pull against each other: leave people free and they diverge; force them level and you must constrain them.</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 90 60" aria-hidden="true">
+            <g class="f-none s-verd" stroke-width="1.8">
+              <circle cx="24" cy="30" r="9"/><circle cx="52" cy="18" r="7"/><circle cx="54" cy="42" r="7"/>
+              <circle cx="76" cy="10" r="5"/><circle cx="76" cy="26" r="5"/><circle cx="78" cy="48" r="5"/>
+              <path d="M33 30 L45 20 M33 30 L47 40"/>
+            </g>
+          </svg>
+          <span class="k">Lesson Three</span>
+          <h4>Life must breed</h4>
+          <p>Nature is indifferent to a group that does not reproduce. Differential birth rates between classes, faiths and nations quietly redistribute power over generations — the slowest and least reversible force in the book.</p>
+        </div>
+      </div>
+
+      <p>
+        Each lesson does specific work later on. <strong>Competition</strong> is what makes war a
+        structural feature in Chapter XI rather than a moral failure. <strong>Selection</strong> is what
+        makes the concentration of wealth in Chapter VIII a default rather than a conspiracy, and what
+        sets up the freedom-versus-equality trade in Chapter X. <strong>Reproduction</strong> is what
+        makes morals in Chapter VI downstream of how a society feeds and replaces itself. Pull any of
+        the three and a third of the book comes away with it.
+      </p>
+      <p>
+        The move on competition worth noticing is that the unit changes. Cooperation is not the
+        opposite of competition but its instrument: individuals cooperate to form groups precisely
+        because groups compete more effectively than individuals. So the history of civilisation is
+        partly a history of the competing unit getting larger — family, clan, tribe, city, nation — and
+        the Durants' hope in Chapter XI rests entirely on whether that sequence has one more term
+        in it.
+      </p>
+
+      <p class="pull">Nature has not read very carefully the American Declaration of Independence.
+        <cite>Durant, Ch. III</cite></p>
+
+      <p>
+        On selection, the claim is sharper than "people differ". It is that <strong>civilisation
+        amplifies difference</strong>. A simple society has few roles, so a gifted person has few ways
+        to convert ability into advantage; a complex society has thousands, and compounding ones. So
+        inequality is not a residue that development will clear away — development is what produces it.
+        Freedom and equality are then not two goods to be maximised together but two ends of one
+        setting, and any programme promising both is concealing which one it means to sacrifice.
+      </p>
+      <p>
+        On reproduction, the Durants are at their bleakest. Nature has no interest in the survival of
+        a group that does not replace itself, and no shortage of instruments for correcting a
+        population that outruns its food.
+      </p>
+
+      <dl class="terms">
+        <dt>Famine</dt><dd>The direct correction. Population meets the ceiling of the food supply and is cut back to it.</dd>
+        <dt>Pestilence</dt><dd>The density correction. Crowding is what makes epidemics possible; the cities that concentrate a civilisation are also what expose it.</dd>
+        <dt>War</dt><dd>The organised correction — and the one the Durants treat as the human specialisation. Chapter XI is this row of the table expanded to chapter length.</dd>
+      </dl>
+
+      <p>
+        Naming those three together is the structural spine of the book: it makes war a
+        <em>demographic</em> phenomenon before it is a political one, which is why the Durants can
+        later argue that moral appeals against war have historically failed. You do not talk a
+        population out of a ceiling.
+      </p>
+
+      <p>
+        The third lesson is also where the chapter shows its age. The Durants write inside a
+        mid-century conversation about birth rates and "quality of stock" that carries eugenic
+        overtones, and they do not fully step outside it: differential fertility between classes,
+        faiths and nations is discussed with an evaluative undertone about which differentials are
+        worrying. The structural observation — that demographic differentials move power slowly and
+        almost irreversibly, and that no other force in the book operates on so long a fuse — survives
+        the framing. The framing itself should be read as a period artefact and not as part of the
+        argument.
+      </p>
+
+      <div class="claim">
+        <b>The hinge of the whole book</b>
+        If you accept that history is a branch of biology, then inequality, competition and war are
+        conditions to be managed rather than problems to be solved, and the reformer's job shrinks
+        from abolition to regulation. If you reject it, most of what follows loses its warrant. Almost
+        every disagreement a reader will have with the Durants can be traced back to this one move,
+        which is made in about two pages and never revisited.
+      </div>
+    </article>
+
+    <article class="chapter" id="ch4">
+      <div class="chapter__head"><span class="chapter__num">IV</span><h3>Race and History</h3></div>
+      <p>
+        Written against Gobineau and Houston Stewart Chamberlain, whose racial theories of civilisation
+        were still live intellectual currency. The Durants test the theory against the record and
+        reject it: civilisations arose independently among Sumerians, Egyptians, Chinese, Indians,
+        Mesoamericans and others, and the peoples later cast as "founders" of civilisation were
+        illiterate herdsmen while those cast as inferiors were building cities.
+      </p>
+      <p>
+        The chronological argument is the one that does the damage. The peoples nominated in the
+        nineteenth century as civilisation's authors were, at the moments that matter,
+        <strong>demonstrably behind</strong>: while Sumer was writing and Egypt was building in dressed
+        stone, northern Europe was pre-literate; while Athens built the Parthenon, Britain and Germany
+        had no cities worth the name. A theory that explains civilisation by inherited racial capacity
+        has to explain why the capacity kept arriving late and in the wrong places — and why it
+        arrived at all in Mesoamerica and the Andes, where the nominated stock was absent entirely.
+      </p>
+      <p>
+        Their replacement explanation is circumstantial — geography, soil, trade position, political
+        organisation, accumulated technique. And they invert the causal arrow entirely: a people does
+        not produce a civilisation out of its blood; the civilisation, once running, forms the people.
+        The Greeks were a mixture, the Romans a mixture, the English a mixture; what looks like a
+        national character is a set of habits installed by a few centuries of institutions and then
+        mistaken for inheritance.
+      </p>
+      <p>
+        There is a second, quieter claim about prejudice itself. The Durants argue that group
+        antipathies are only loosely attached to ancestry and travel mostly on <strong>acquired
+        culture</strong> — language, religion, manners, dress — which is why they reorganise so
+        readily around new lines, and why the same two populations can be mortal enemies in one
+        century and indistinguishable in the next.
+      </p>
+
+      <p class="pull">It is not the race that makes the civilization, it is the civilization that
+        makes the people.
+        <cite>Durant, Ch. IV</cite></p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 04</b><span>The causal arrow, reversed</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 560 190" role="img" aria-label="Top row shows race pointing to civilisation, struck through and marked rejected. Bottom row shows geography, economy and institutions pointing to civilisation, which points back to people.">
+            <g class="t" style="font-size:11.5px"><text x="8" y="20" class="t--ox">The theory the chapter destroys</text></g>
+            <g opacity="0.62">
+              <rect x="8" y="32" width="112" height="38" class="f-none s-graph" stroke-width="1.2"/>
+              <text x="64" y="56" text-anchor="middle" class="t t--ink">Race</text>
+              <path d="M124 51 H 186" class="s-graph" stroke-width="1.2" marker-end="url(#ar-g)"/>
+              <rect x="192" y="32" width="132" height="38" class="f-none s-graph" stroke-width="1.2"/>
+              <text x="258" y="56" text-anchor="middle" class="t t--ink">Civilisation</text>
+            </g>
+            <path d="M2 51 L336 51" class="s-ox" stroke-width="2"/>
+            <text x="348" y="55" class="t t--ox" style="font-size:11.5px">Fails the record</text>
+
+            <g class="t" style="font-size:11.5px"><text x="8" y="106" class="t--verd">What the evidence supports</text></g>
+            <g>
+              <rect x="8" y="118" width="150" height="52" class="f-none s-verd" stroke-width="1.4"/>
+              <text x="83" y="138" text-anchor="middle" class="t t--ink" style="font-size:11px">Geography</text>
+              <text x="83" y="153" text-anchor="middle" class="t" style="font-size:11px">Economy · Institutions</text>
+              <path d="M162 144 H 200" class="s-verd" stroke-width="1.4" marker-end="url(#ar-v)"/>
+              <rect x="206" y="118" width="132" height="52" class="f-verd"/>
+              <text x="272" y="149" text-anchor="middle" class="t t--rev" style="font-size:12px">Civilisation</text>
+              <path d="M344 144 H 382" class="s-verd" stroke-width="1.4" marker-end="url(#ar-v)"/>
+              <rect x="388" y="118" width="122" height="52" class="f-none s-verd" stroke-width="1.4"/>
+              <text x="449" y="149" text-anchor="middle" class="t t--ink">The people</text>
+            </g>
+            <defs>
+              <marker id="ar-g" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-graph"/></marker>
+              <marker id="ar-v" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-verd"/></marker>
+            </defs>
+          </svg>
+        </div>
+        <figcaption>The chapter's conclusion is anti-racist and was pointedly so in 1968. Its vocabulary and its willingness to argue on the racialists' own terrain nonetheless date badly — see the caveats at the end.</figcaption>
+      </figure>
+
+      <div class="detail">
+        <b>Why the chapter reads oddly now</b>
+        <p>
+          It is arguing with people who are no longer in the room. Gobineau's <em>Essay on the
+          Inequality of the Human Races</em> (1853) and Chamberlain's <em>Foundations of the Nineteenth
+          Century</em> (1899) were, for the Durants' generation, serious opponents with academic
+          standing and a body count attached. Refuting them at length was a live task, not a
+          historical curiosity.
+        </p>
+        <p>
+          The cost of that choice is that the chapter accepts its opponents' framing to defeat it. It
+          argues within a vocabulary of "stocks" and "peoples", treats the categories as at least
+          coherent enough to test, and wins on the evidence rather than dismissing the question. A
+          modern refutation would start by rejecting the categories. <strong>Take the conclusion;
+          discard the terrain it was won on.</strong>
+        </p>
+      </div>
+    </article>
+
+    <article class="chapter" id="ch5">
+      <div class="chapter__head"><span class="chapter__num">V</span><h3>Character and History</h3></div>
+      <p>
+        Human nature, defined as the fundamental drives, has not measurably changed in recorded
+        history. What changed is that <strong>social evolution took over from biological evolution</strong>:
+        we now adapt by altering customs, laws and tools rather than by altering the organism. This
+        is fast, but it means every gain must be re-taught rather than inherited.
+      </p>
+      <p>
+        The Durants ground this in an inventory of drives, each of which comes as a matched pair — an
+        impulse and its inhibition — so that the same equipment produces the virtue and the vice
+        depending on which half is engaged. The list is dated as psychology and still useful as a
+        design constraint: these are the materials any institution has to be built out of.
+      </p>
+
+      <dl class="terms">
+        <dt>Action · rest</dt><dd>Restlessness and the appetite for effort, against the equal appetite for sleep and ease.</dd>
+        <dt>Fight · flight</dt><dd>Pugnacity and anger, against fear and withdrawal. Both are survival equipment; neither is optional.</dd>
+        <dt>Acquisition · avoidance</dt><dd>Greed, hoarding and property sense, against disgust and repulsion. <b>The taproot of Chapter VIII.</b></dd>
+        <dt>Association · privacy</dt><dd>Sociability and the need to belong, against the need to be unobserved.</dd>
+        <dt>Mating · refusal</dt><dd>Sexual drive and display, against modesty and rejection. <b>The taproot of Chapter VI.</b></dd>
+        <dt>Parental care · dependence</dt><dd>The impulse to protect offspring, matched by the child's to be protected. The origin of every hierarchy modelled on a family.</dd>
+      </dl>
+
+      <p class="pull">Society is founded not on the ideals but on the nature of man.
+        <cite>Durant, Ch. V</cite></p>
+
+      <p>
+        From this comes the book's most useful practical idea — a defence of friction. Most new ideas
+        are worse than the inherited practice they propose to replace, because the inherited practice
+        has already been filtered by generations of failure. The conservative's resistance is therefore
+        a testing mechanism, not mere obstruction: it forces a proposal to demonstrate that it beats an
+        incumbent which has already survived conditions the proposer has not thought of. But
+        conditions do change, and without the radical forcing the issue the filter becomes a tomb.
+        Neither is right; the tension is the mechanism.
+      </p>
+      <p>
+        A third observation sits underneath both: change is made by minorities. The Durants describe
+        an innovating few and an imitating many, with history in the large a contest between rival
+        minorities that the majority ratifies afterwards by adopting whatever won. This is doing a lot
+        of unexamined work — it reappears as the explanation of decline in Chapter XII — and it is the
+        least evidenced claim in the book's first half.
+      </p>
+
+      <figure class="fig wide reveal">
+        <div class="fig__label"><b>Plate 05</b><span>The filter and the forcing</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 230" role="img" aria-label="One hundred new ideas pass through a sieve representing inherited practice; one survives and is adopted. A note explains that when conditions change the same filter becomes an obstacle.">
+            <defs>
+              <marker id="ar-f1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-graph"/></marker>
+              <marker id="ar-f2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-verd"/></marker>
+            </defs>
+
+            <text x="12" y="22" class="t" style="font-size:11px">One hundred new ideas</text>
+            <g id="ideafield"></g>
+
+            <path d="M106 78 H 144" class="s-graph" stroke-width="1.3" marker-end="url(#ar-f1)"/>
+
+            <rect x="154" y="24" width="46" height="108" class="f-plate s-ink" stroke-width="1.8"/>
+            <g class="s-hair" stroke-width="1.4">
+              <path d="M160 40 H194"/><path d="M160 56 H194"/><path d="M160 72 H194"/>
+              <path d="M160 88 H194"/><path d="M160 104 H194"/><path d="M160 120 H194"/>
+            </g>
+
+            <path d="M208 78 H 246" class="s-verd" stroke-width="1.6" marker-end="url(#ar-f2)"/>
+            <circle cx="260" cy="78" r="6" class="f-verd"/>
+            <text x="278" y="74" class="t t--verd" style="font-size:11.5px">One is genuinely better</text>
+            <text x="278" y="90" class="t" style="font-size:11px">and enters the tradition</text>
+
+            <text x="12" y="164" class="t t--verd" style="font-size:11.5px">The filter</text>
+            <text x="12" y="180" class="t" style="font-size:11px">Inherited practice has already run</text>
+            <text x="12" y="194" class="t" style="font-size:11px">the experiments, over generations,</text>
+            <text x="12" y="208" class="t" style="font-size:11px">and kept what did not fail.</text>
+
+            <path d="M300 128 V 214" class="s-ox" stroke-width="2"/>
+            <text x="316" y="140" class="t t--ox" style="font-size:11.5px">And the failure mode</text>
+            <text x="316" y="158" class="t" style="font-size:11px">Conditions move. The same filter that protected</text>
+            <text x="316" y="174" class="t" style="font-size:11px">the society begins to block the response it now</text>
+            <text x="316" y="190" class="t" style="font-size:11px">needs — which is when the radical, who forces</text>
+            <text x="316" y="206" class="t" style="font-size:11px">the question, stops being a nuisance.</text>
+          </svg>
+        </div>
+        <figcaption>The Durants' figure is rhetorical, not measured: roughly ninety-nine of a hundred new ideas are worse than the tradition they would replace. The claim is about base rates, and it argues for cheap testing rather than for standing still.</figcaption>
+      </figure>
+
+      <div class="claim">
+        <b>The operational reading</b>
+        If the base rate of good new ideas is low but not zero, the correct policy is neither
+        resistance nor enthusiasm — it is <em>cheap, reversible, local testing</em>, so that the
+        ninety-nine failures cost little and the one success can be adopted quickly. The Durants do not
+        put it in these terms, but it is the only conclusion their own numbers support, and it is why
+        this chapter has aged better than any other in the book.
+      </div>
+
+      <div class="detail">
+        <b>The consequence they draw for social change</b>
+        <p>
+          Because adaptation is now cultural rather than biological, nothing is locked in and nothing is
+          safe. A society can change its arrangements within a single generation — which no organism can
+          do — but it can also <strong>lose in one generation what took twenty to acquire</strong>,
+          because none of it is carried in the body.
+        </p>
+        <p>
+          That asymmetry is the quiet link between this chapter and the last one. Speed of adaptation and
+          fragility of inheritance are the same property seen from two sides.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ==========================================================
+       MOVEMENT 3 — BELIEF
+       ========================================================== -->
+  <section class="movement" aria-labelledby="m3-h">
+    <div class="movement__head">
+      <span class="roman">Movement Three · Chs. VI–VII</span>
+      <h2 id="m3-h">Belief</h2>
+      <span class="gloss">Morals and religion as social technologies — installed by economics, and slow to update.</span>
+    </div>
+
+    <article class="chapter" id="ch6">
+      <div class="chapter__head"><span class="chapter__num">VI</span><h3>Morals and History</h3></div>
+      <p>
+        Moral codes are not revelations dropped into societies; they are adaptations to how a society
+        gets fed. Change the mode of production and the virtue list changes with it — but slowly, so
+        every transition period feels like moral collapse to the people living through it.
+      </p>
+      <p>
+        The demonstration runs through three economies. Under <strong>hunting</strong>, the traits a
+        later age calls vices were the qualifications: aggression, appetite, the readiness to take and
+        to fight, and early and frequent reproduction against a brutal mortality rate. Under
+        <strong>agriculture</strong>, the same traits become ruinous and the virtue list inverts —
+        industry, thrift, patience, chastity and monogamy, because land rewards deferral and children
+        are working capital who arrive with hands. Under <strong>industry</strong>, the farm stops being
+        the unit of production, children move from the asset column to the cost column, mobility beats
+        rootedness, and the agrarian code that took four thousand years to install begins coming apart
+        in about four generations.
+      </p>
+      <p>
+        None of this is offered as decline. It is offered as re-fitting — the same functional argument
+        made in Chapter III, applied to conscience. The complaint each generation lodges against the
+        next is real, and is almost always a complaint about a code that no longer matches the economy
+        it was written for.
+      </p>
+
+      <figure class="fig wide reveal">
+        <div class="fig__label"><b>Plate 06</b><span>Three economies, three virtue lists — and the lag</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 300" role="img" aria-label="Three economic stages — hunting, agriculture and industry — each with its characteristic virtues, and a second track showing moral codes arriving late relative to the economy that produced them.">
+            <g class="s-hair" stroke-width="1"><path d="M20 40 H740"/></g>
+            <g class="t" style="font-size:10.5px"><text x="20" y="30">Economic base</text></g>
+
+            <rect x="20" y="52" width="228" height="86" class="f-none s-graph" stroke-width="1.2"/>
+            <rect x="264" y="52" width="228" height="86" class="f-none s-graph" stroke-width="1.2"/>
+            <rect x="508" y="52" width="232" height="86" class="f-none s-verd" stroke-width="1.4"/>
+
+            <g class="t t--ink" style="font-size:13px;letter-spacing:.05em">
+              <text x="34" y="74">Hunting</text><text x="278" y="74">Agriculture</text><text x="522" y="74">Industry</text>
+            </g>
+            <g class="t" style="font-size:11px">
+              <text x="34" y="94">Pugnacity is survival</text>
+              <text x="34" y="110">Take what is there</text>
+              <text x="34" y="126">Breed early, breed often</text>
+
+              <text x="278" y="94">Industriousness, thrift</text>
+              <text x="278" y="110">Chastity, monogamy</text>
+              <text x="278" y="126">Children are labour</text>
+
+              <text x="522" y="94">Mobility, individualism</text>
+              <text x="522" y="110">Later marriage, fewer children</text>
+              <text x="522" y="126">Children are cost</text>
+            </g>
+
+            <g class="s-hair" stroke-width="1"><path d="M20 176 H740"/></g>
+            <g class="t" style="font-size:10.5px"><text x="20" y="166">Moral code in force</text></g>
+
+            <rect x="88" y="190" width="228" height="34" class="f-och" opacity="0.22"/>
+            <rect x="332" y="190" width="228" height="34" class="f-och" opacity="0.35"/>
+            <rect x="576" y="190" width="164" height="34" class="f-och" opacity="0.5"/>
+            <g class="t t--och" style="font-size:11px">
+              <text x="102" y="212">Hunting morals persist</text>
+              <text x="346" y="212">Agrarian morals persist</text>
+              <text x="590" y="212">Industrial morals forming</text>
+            </g>
+
+            <g class="s-ox" stroke-width="1.4" stroke-dasharray="4 4">
+              <path d="M264 138 V 190"/><path d="M508 138 V 190"/>
+            </g>
+            <path d="M264 246 H 332" class="s-ox" stroke-width="1.4" marker-end="url(#ar-o)"/>
+            <path d="M508 268 H 576" class="s-ox" stroke-width="1.4" marker-end="url(#ar-o)"/>
+            <text x="340" y="250" class="t t--ox" style="font-size:10.5px">Lag — reads as decadence</text>
+            <text x="584" y="272" class="t t--ox" style="font-size:10.5px">Lag — reads as decadence</text>
+            <defs><marker id="ar-o" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-ox"/></marker></defs>
+          </svg>
+        </div>
+        <figcaption>The offset between the two tracks is the chapter's real content. Every generation that lives in the gap reports a collapse of morals; what it is actually observing is an old code failing to fit a new economy.</figcaption>
+      </figure>
+
+      <div class="claim">
+        <b>The practical consequence</b>
+        Moral panic is a permanent feature, not evidence of decline. The Durants comb their own eleven
+        volumes for a period when elders were content with the young and report finding none —
+        which makes contemporary complaint useless as evidence about contemporary conduct.
+      </div>
+
+      <p class="pull">History as usually written is quite different from history as usually lived: the
+        historian records the exceptional because it is interesting — because it is exceptional.
+        <cite>Durant, Ch. VI</cite></p>
+
+      <p>
+        This is the most important sentence in the middle of the book, and it is easy to read past.
+        It is a claim about <strong>measurement error in the entire discipline</strong>. Behind the
+        recorded facade of war, crime, scandal and collapse were, in every period, millions of
+        households running normally — marriages that held, children raised, crops sown, crafts taught,
+        arguments had and settled. None of it enters the record, because nothing about it is
+        newsworthy. The archive is a catalogue of exceptions, and the exceptions are what everyone
+        subsequently calls "the past".
+      </p>
+      <p>
+        Two consequences follow. Any comparison between a golden past and a fallen present is comparing
+        a filtered record with unfiltered experience, and will always find decline. And the historian's
+        characteristic pessimism is <em>an artefact of the sampling</em>, not a finding about
+        humanity — a point the Durants make here and return to at the very end of the book.
+      </p>
+    </article>
+
+    <article class="chapter" id="ch7">
+      <div class="chapter__head"><span class="chapter__num">VII</span><h3>Religion and History</h3></div>
+      <p>
+        The Durants, personally unbelieving, argue functionally. Religion consoles the poor, sanctions
+        the moral code cheaply, and stabilises an unequal order that would otherwise need far more
+        policing. Where it recedes, the state generally moves in to perform the same jobs — and the
+        Durants regard nationalism and secular ideology as its usual successors, not as its absence.
+      </p>
+      <p>
+        Their empirical point is the recurrence. Religion has been pronounced finished repeatedly —
+        by Greek rationalists, by the philosophes, by nineteenth-century science — and has returned
+        each time, usually in a new form and often after the crisis that discredited its predecessor.
+        They will not commit to a modern exception.
+      </p>
+
+      <p class="pull">As long as there is poverty there will be gods.
+        <cite>Durant, Ch. VII</cite></p>
+
+      <p>
+        The functional case is worth stating precisely, because it is an argument about
+        <strong>enforcement cost</strong> rather than about truth. A moral code has to be obeyed when
+        no one is watching, and the only alternatives to internalised sanction are surveillance and
+        punishment, both of which are expensive and neither of which reaches the private case.
+        Religion supplies an observer who is always present. The Durants' strongest claim is
+        accordingly negative and, they concede, hard to falsify: they know of no society before their
+        own that sustained a working moral order across long spans without religious sanction. Whether
+        the modern secular state is the counterexample they leave explicitly open — and it is, half a
+        century on, still the open question the chapter was pointing at.
+      </p>
+      <p>
+        They add a second pattern, an oscillation within religion rather than against it:
+        <strong>puritan and pagan phases alternate</strong>, each generated by exhaustion with the
+        other. Periods of discipline produce a reaction toward the senses; periods of licence produce a
+        reaction toward restraint; and neither settles, because each is a correction of the last
+        rather than a discovery.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 07</b><span>Decline and return</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 560 200" role="img" aria-label="An oscillating wave showing repeated declines and revivals of religion, with markers for Greek rationalism, the philosophes, and nineteenth-century science.">
+            <path d="M20 170 H540" class="s-hair" stroke-width="1"/>
+            <path d="M20 60 C 70 60, 84 152, 130 152 S 190 60, 236 60 S 296 152, 342 152 S 402 60, 448 60 S 508 148, 540 150"
+                  class="f-none s-verd" stroke-width="2.4"/>
+            <g class="f-ox">
+              <circle cx="130" cy="152" r="4.5"/><circle cx="342" cy="152" r="4.5"/><circle cx="524" cy="149" r="4.5"/>
+            </g>
+            <g class="f-verd">
+              <circle cx="236" cy="60" r="4.5"/><circle cx="448" cy="60" r="4.5"/>
+            </g>
+            <g class="t" style="font-size:10.5px">
+              <text x="130" y="172" text-anchor="middle" class="t--ox">Greek rationalism</text>
+              <text x="342" y="172" text-anchor="middle" class="t--ox">The philosophes</text>
+              <text x="516" y="172" text-anchor="end" class="t--ox">19c science</text>
+              <text x="236" y="48" text-anchor="middle" class="t--verd">Revival</text>
+              <text x="448" y="48" text-anchor="middle" class="t--verd">Revival</text>
+            </g>
+            <text x="20" y="192" class="t" style="font-size:10.5px">Schematic sequence, not to scale in time</text>
+          </svg>
+        </div>
+        <figcaption>Their strongest claim is negative and deliberately hard to falsify: they know of no society that sustained a working moral order over long spans without religious sanction. Whether the modern secular state is the counterexample is left open.</figcaption>
+      </figure>
+
+      <div class="cases">
+        <div><span class="when">5th c. BC</span><span class="what"><b>The sophists and the Greek Enlightenment</b>Rational criticism dissolves the Olympian gods among the educated. The cults outlive the criticism, and the mystery religions arrive to replace what was dissolved.</span></div>
+        <div><span class="when">1793–1801</span><span class="what"><b>Dechristianisation, then the Concordat</b>The French Revolution abolishes the Church, renames the months, installs a Cult of Reason — and within eight years Napoleon restores the Church, because he needs what it does. The fastest round trip in the record.</span></div>
+        <div><span class="when">19th c.</span><span class="what"><b>Science declares the matter closed</b>Geology and evolution remove the literal readings; the response is not the end of religion but its reorganisation — and, on the Durants' reading, the arrival of nationalism and secular ideology as successors performing the same offices.</span></div>
+      </div>
+
+      <div class="detail">
+        <b>What the Durants are and are not claiming</b>
+        <p>
+          Both were unbelievers, and the chapter contains no argument that any religion is true. The
+          claim is entirely about <strong>function</strong>: that religion has reliably done certain
+          jobs — consolation, moral enforcement, legitimation of an unequal order, the marking of
+          birth, marriage and death — and that where it recedes, those jobs do not disappear. Something
+          takes them, and the usual candidate is the state.
+        </p>
+        <p>
+          The obvious objection is that a functional account cuts both ways: if religion is doing the
+          work, a secular institution that does the same work should serve equally well, and the
+          Durants offer no reason why not. Their reply is empirical rather than theoretical — it has
+          not yet happened at scale, for long. That is a weaker claim than the chapter's tone suggests.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ==========================================================
+       MOVEMENT 4 — POWER
+       ========================================================== -->
+  <section class="movement" aria-labelledby="m4-h">
+    <div class="movement__head">
+      <span class="roman">Movement Four · Chs. VIII–X</span>
+      <h2 id="m4-h">Power</h2>
+      <span class="gloss">The engine of the book: money concentrates, gets broken up, and concentrates again.</span>
+    </div>
+
+    <article class="chapter" id="ch8">
+      <div class="chapter__head"><span class="chapter__num">VIII</span><h3>Economics and History</h3></div>
+      <p>
+        The Durants take economic determinism seriously and then bound it. Yes, much of politics is
+        the surface of an economic contest — but ideas, religions and individual leaders repeatedly
+        redirect economies, so the causation runs both ways. Their own summary of who ends up on top
+        is characteristically dry: those who can manage people outrank those who can only manage
+        things, and those who can manage money outrank both.
+      </p>
+      <p>
+        The bounding of Marx is done with cases rather than theory. If economics decided everything,
+        the Durants argue, then Muhammad would be explained by Arabian trade routes rather than the
+        other way round; the Crusades, the Reformation and the French Revolution would be legible as
+        balance sheets; and the Bolsheviks would not have needed a theory to make a revolution with.
+        Ideas and individuals move economies as often as economies produce them.
+        <strong>The causation runs both ways, and the interesting question is always which direction
+        is dominant in a given case</strong> — a position that is harder to argue and much harder to
+        refute than either pure determinism.
+      </p>
+      <p>
+        On who ends up on top, they trace a recurring succession: the soldier is displaced by the
+        landowner, the landowner by the merchant, the merchant by the banker. Finance rises last and
+        highest because it is the layer that all the others must pass through — the Medici in Florence,
+        the Fuggers behind the Habsburg imperial election, the Rothschilds across nineteenth-century
+        Europe, the Morgans in an America that had no central bank until 1913. The pattern is asserted
+        rather than demonstrated, but it is asserted with a lot of eleven-volume weight behind it.
+      </p>
+
+      <p class="lede">
+        Then comes the single most quoted mechanism in the book — and the one worth understanding
+        properly, because it is a cycle, not a trend.
+      </p>
+
+      <figure class="fig wide reveal">
+        <div class="fig__label"><b>Plate 08</b><span>The concentration cycle</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 530" role="img" aria-label="A four-stage cycle: unequal ability leads to concentration of wealth, which builds social tension, which is relieved by redistribution through either legislation or revolution, returning to a new starting inequality.">
+            <!-- ellipse: centre 380,230 · rx 230 · ry 140 -->
+            <g class="f-none" stroke-width="1.6">
+              <path d="M380 90 A 230 140 0 0 1 610 230" class="s-graph"/>
+              <path d="M610 230 A 230 140 0 0 1 380 370" class="s-graph"/>
+              <path d="M150 230 A 230 140 0 0 1 380 90" class="s-graph"/>
+            </g>
+            <!-- the fork: two routes out of tension -->
+            <path d="M380 370 Q 186 416 150 230" class="f-none s-ox"   stroke-width="2"/>
+            <path d="M380 370 Q 262 300 150 230" class="f-none s-verd" stroke-width="2"/>
+
+            <!-- direction markers, placed at arc midpoints so boxes never cover them -->
+            <g class="f-graph">
+              <path d="M-7 -5 L7 0 L-7 5 Z" transform="translate(542.6,131) rotate(31.3)"/>
+              <path d="M-7 -5 L7 0 L-7 5 Z" transform="translate(542.6,329) rotate(148.7)"/>
+              <path d="M-7 -5 L7 0 L-7 5 Z" transform="translate(217.4,131) rotate(-31.3)"/>
+            </g>
+            <path d="M-7 -5 L7 0 L-7 5 Z" class="f-ox"   transform="translate(225.5,358) rotate(211.3)"/>
+            <path d="M-7 -5 L7 0 L-7 5 Z" class="f-verd" transform="translate(263.5,300) rotate(211.3)"/>
+
+            <!-- nodes -->
+            <g>
+              <rect x="270" y="62" width="220" height="56" class="f-plate s-ink" stroke-width="1.6"/>
+              <text x="380" y="88" text-anchor="middle" class="t t--lg">Unequal ability</text>
+              <text x="380" y="106" text-anchor="middle" class="t" style="font-size:10.5px">Free conditions widen the spread</text>
+            </g>
+            <g>
+              <rect x="500" y="202" width="215" height="56" class="f-plate s-ink" stroke-width="1.6"/>
+              <text x="607" y="228" text-anchor="middle" class="t t--lg">Wealth concentrates</text>
+              <text x="607" y="246" text-anchor="middle" class="t" style="font-size:10.5px">Capital compounds faster than labour</text>
+            </g>
+            <g>
+              <rect x="268" y="342" width="224" height="56" class="f-plate s-ox" stroke-width="1.8"/>
+              <text x="380" y="368" text-anchor="middle" class="t t--lg">Social tension</text>
+              <text x="380" y="386" text-anchor="middle" class="t" style="font-size:10.5px">The order stops being tolerable</text>
+            </g>
+            <g>
+              <rect x="48" y="202" width="204" height="56" class="f-plate s-verd" stroke-width="1.8"/>
+              <text x="150" y="228" text-anchor="middle" class="t t--lg">Redistribution</text>
+              <text x="150" y="246" text-anchor="middle" class="t" style="font-size:10.5px">And the clock resets</text>
+            </g>
+
+            <!-- centre note -->
+            <text x="376" y="224" text-anchor="middle" class="t t--serif" style="font-size:14px">The cycle does not resolve.</text>
+            <text x="376" y="244" text-anchor="middle" class="t t--serif" style="font-size:14px">It only changes tempo.</text>
+
+            <!-- failed case -->
+            <path d="M492 370 H 546" class="s-ox" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <text x="554" y="358" class="t t--ox" style="font-size:10.5px">Gracchi, 133 BC</text>
+            <text x="554" y="373" class="t" style="font-size:10.5px">Reform attempted,</text>
+            <text x="554" y="387" class="t" style="font-size:10.5px">reformers killed</text>
+
+            <!-- key to the two exits -->
+            <path d="M48 442 H 712" class="s-hair" stroke-width="1"/>
+            <text x="48" y="434" class="t" style="font-size:10.5px">The two ways out of tension</text>
+            <g>
+              <rect x="48" y="462" width="26" height="4" class="f-verd"/>
+              <text x="86" y="469" class="t t--verd" style="font-size:11.5px">By legislation</text>
+              <text x="196" y="469" class="t" style="font-size:11px">Solon's debt cancellation, 594 BC · the New Deal, 1933</text>
+            </g>
+            <g>
+              <rect x="48" y="496" width="26" height="4" class="f-ox"/>
+              <text x="86" y="503" class="t t--ox" style="font-size:11.5px">By revolution</text>
+              <text x="196" y="503" class="t" style="font-size:11px">France, 1789 · Russia, 1917</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Both exits from tension are real historical routes, and the Durants judge the legislated one strictly better: Solon's debt cancellation and constitutional reform bought Athens a century; Rome's blocked reform bought a century of civil war. The failure mode is a ruling group that refuses the cheap exit and gets the expensive one.</figcaption>
+      </figure>
+
+      <p class="pull">All economic history is the slow heartbeat of the social organism, a vast systole
+        and diastole of concentrating wealth and compulsive recirculation.
+        <cite>Durant, Ch. VIII</cite></p>
+
+      <p>
+        The metaphor is doing precise work and is worth taking literally. A heartbeat is not a
+        pathology, has no end state, and cannot be stopped without killing the organism. On this
+        reading, concentration is not evidence that something has gone wrong, and redistribution is not
+        a victory that settles the matter — both are phases, and a society is always somewhere in the
+        cycle. What varies is the <strong>period</strong> and the <strong>violence</strong> of the
+        recirculation, and those are the only variables policy can actually touch.
+      </p>
+
+      <div class="cases">
+        <div><span class="when">594 BC</span><span class="what"><b>Solon, and the cheap exit</b>Athens is close to civil war between creditors and debtors. Solon cancels the debts, frees those enslaved for them, devalues the currency and rewrites the constitution — and is denounced by both sides, which is the usual signature of a successful settlement. Athens gets its next century.</span></div>
+        <div><span class="when">133–121 BC</span><span class="what"><b>The Gracchi, and the expensive one</b>Tiberius and then Gaius Gracchus attempt land reform against a senatorial class that will not concede it. Both are killed. The reform does not happen, and Rome instead gets a hundred years of civil war ending in the loss of the Republic. The Durants' clearest demonstration that refusing the legislated exit does not preserve the status quo — it selects the other exit.</span></div>
+        <div><span class="when">1789 · 1917</span><span class="what"><b>Revolution as recirculation</b>France and Russia clear the concentration violently, destroy a great deal of the wealth in the process, and then watch new concentrations form around the new elite. The holders change; the mechanism does not.</span></div>
+        <div><span class="when">1933</span><span class="what"><b>The New Deal</b>The modern instance of the Solon route: redistribution by legislation under the credible threat of the alternative. The Durants treat it as the same manoeuvre, performed on time.</span></div>
+      </div>
+
+      <div class="claim">
+        <b>Read this correctly</b>
+        The mechanism is not "inequality rises forever" and not "revolution fixes it." It is that
+        concentration is the default state of a free economy, that it becomes unstable past some
+        threshold, and that societies then choose between two ways of relieving it. The choice —
+        not the concentration — is where politics actually happens.
+      </div>
+
+      <div class="detail">
+        <b>What the model does not give you</b>
+        <p>
+          No threshold. The cycle says tension builds past some level of concentration, but the book
+          never specifies the level, and the historical cases are compatible with almost any number.
+          This is what makes the claim quotable and nearly useless as a forecasting tool: it will
+          always be possible to say that the pressure is building, and never possible to be wrong.
+        </p>
+        <p>
+          No account of growth, either. A model in which the rich get richer by taking is missing the
+          case where the pie enlarges — which is most of what happened in the two centuries the
+          Durants were writing about. The cycle describes <strong>distribution</strong> well and
+          <strong>production</strong> barely at all.
+        </p>
+      </div>
+    </article>
+
+    <article class="chapter" id="ch9">
+      <div class="chapter__head"><span class="chapter__num">IX</span><h3>Socialism and History</h3></div>
+      <p>
+        A deliberate deflation: state-directed economies are not a modern invention. The Durants walk
+        through Sumerian temple economies, Egypt under the Pharaohs and again under the Ptolemies,
+        Diocletian's price controls, Wang Mang and later Wang An-shih in China, and the Inca state —
+        each an extensive experiment in central direction, each eventually undone by bureaucracy,
+        corruption, evasion, or conquest.
+      </p>
+      <p>
+        The cases are not decoration; the point of the chapter is that the experiment has been run
+        many times, at scale, and that the failure modes are consistent enough to be listed.
+      </p>
+
+      <dl class="terms">
+        <dt>Sumer</dt><dd>The temple owns the land, stores the grain, allocates the seed and takes the surplus. The priest is the first economic planner, and the first bureaucracy is invented to keep the accounts.</dd>
+        <dt>Egypt</dt><dd>Pharaonic and then, under the <b>Ptolemies</b>, one of the most thoroughly state-directed economies on record — state monopoly of oil, salt and textiles, state-set prices, state grain. It funded Alexandria; it also produced strikes, flight from the land, and evasion at every level.</dd>
+        <dt>Diocletian, AD 301</dt><dd>The Edict on Maximum Prices attempts to legislate against inflation across the whole Empire, with the death penalty attached. Goods leave the legal market. The edict is unenforceable and quietly abandoned.</dd>
+        <dt>Wang Mang, AD 9–23</dt><dd>Nationalises land, abolishes slavery, sets up state loans and price stabilisation. Ruined by flood, famine, bureaucratic corruption and the landowners he expropriated; killed in the revolt.</dd>
+        <dt>Wang An-shih, 1068–85</dt><dd>The most sophisticated attempt: state credit for farmers, commuted labour service, state buying and selling to level prices. Defeated by the scale of the administration it required and by the class it taxed.</dd>
+        <dt>The Inca</dt><dd>A planned economy without money or writing, running on labour tribute, state storehouses and enforced allocation. It worked — and was destroyed from outside in a single campaign, which is a different failure mode and the one the Durants find most interesting.</dd>
+      </dl>
+
+      <p>
+        The recurring cause of death is administrative rather than ideological: the plan requires an
+        apparatus, the apparatus requires a class to staff it, and that class acquires interests of its
+        own. <strong>Central direction fails less often from its economics than from its
+        bureaucracy</strong> — which is a considerably more uncomfortable finding for its advocates than
+        the usual objections.
+      </p>
+      <p>
+        Their conclusion for their own century is convergence, and it is stated as a mutual discipline:
+        fear of one system pushed each toward the other. Capitalism absorbed social insurance,
+        progressive taxation and regulation; state socialism was forced to readmit incentives and
+        price signals. Neither pure form survived contact with the other's threat.
+      </p>
+
+      <p class="pull">The fear of capitalism has compelled socialism to widen freedom, and the fear of
+        socialism has compelled capitalism to increase equality.
+        <cite>Durant, Ch. IX</cite></p>
+
+      <figure class="fig wide reveal">
+        <div class="fig__label"><b>Plate 09</b><span>An old experiment, and a convergence</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 300" role="img" aria-label="A timeline of historical state-run economies from Sumer to the twentieth century, above two lines representing capitalism and socialism converging toward a mixed centre.">
+            <path d="M28 62 H732" class="s-hair" stroke-width="1"/>
+            <g class="f-verd">
+              <circle cx="60" cy="62" r="4"/><circle cx="150" cy="62" r="4"/><circle cx="252" cy="62" r="4"/>
+              <circle cx="356" cy="62" r="4"/><circle cx="460" cy="62" r="4"/><circle cx="560" cy="62" r="4"/><circle cx="668" cy="62" r="4"/>
+            </g>
+            <g class="s-hair" stroke-width="1">
+              <path d="M60 62 V 42"/><path d="M150 62 V 30"/><path d="M252 62 V 42"/><path d="M356 62 V 30"/>
+              <path d="M460 62 V 42"/><path d="M560 62 V 30"/><path d="M668 62 V 42"/>
+            </g>
+            <g class="t t--ink" style="font-size:10.5px">
+              <text x="60" y="34" text-anchor="middle">Sumer</text>
+              <text x="150" y="22" text-anchor="middle">Egypt</text>
+              <text x="252" y="34" text-anchor="middle">Ptolemies</text>
+              <text x="356" y="22" text-anchor="middle">Diocletian</text>
+              <text x="460" y="34" text-anchor="middle">Wang Mang</text>
+              <text x="560" y="22" text-anchor="middle">Wang An-shih</text>
+              <text x="668" y="34" text-anchor="middle">Inca</text>
+            </g>
+            <text x="28" y="82" class="t" style="font-size:10.5px">Each collapsed, was evaded, or was conquered — none held indefinitely</text>
+
+            <path d="M28 132 H732" class="s-hair" stroke-width="0.6" stroke-dasharray="2 6"/>
+            <path d="M28 130 C 240 132, 400 176, 700 196" class="f-none s-ox" stroke-width="2.4"/>
+            <path d="M28 268 C 240 266, 400 224, 700 206" class="f-none s-verd" stroke-width="2.4"/>
+            <text x="34" y="122" class="t t--ox" style="font-size:11.5px">Capitalism</text>
+            <text x="34" y="284" class="t t--verd" style="font-size:11.5px">Socialism</text>
+            <text x="690" y="166" text-anchor="end" class="t t--ox" style="font-size:10.5px">absorbs insurance, tax, regulation</text>
+            <text x="690" y="244" text-anchor="end" class="t t--verd" style="font-size:10.5px">readmits incentives and prices</text>
+            <circle cx="712" cy="201" r="6" class="f-none s-ink" stroke-width="1.6"/>
+            <text x="726" y="205" class="t t--ink" style="font-size:11px">Mixed</text>
+          </svg>
+        </div>
+        <figcaption>Written in 1968, two decades before the Soviet collapse. The convergence thesis was a common mid-century reading; it under-predicted how asymmetric the outcome would be, but the underlying observation — that each system was disciplined by the existence of the other — held up better than the symmetry did.</figcaption>
+      </figure>
+
+      <div class="detail">
+        <b>Scoring the prediction, sixty years on</b>
+        <p>
+          <strong>Wrong on symmetry.</strong> The two systems did not meet in the middle. One of them
+          stopped existing in 1991, and the movement was overwhelmingly in one direction.
+        </p>
+        <p>
+          <strong>Right on the mechanism.</strong> The claim underneath the prediction — that each
+          system was held to account by the existence of the other — is better evidenced now than it
+          was in 1968, and reads as a partial explanation of what happened <em>after</em> the
+          competitor disappeared: the welfare settlements built under external pressure came under
+          sustained revision once the pressure was removed.
+        </p>
+        <p>
+          <strong>Unfinished.</strong> China is the case the chapter has no vocabulary for — a
+          state-directed economy that readmitted prices and incentives without readmitting political
+          liberty, which is neither of the Durants' two poles and not their midpoint either.
+        </p>
+      </div>
+    </article>
+
+    <article class="chapter" id="ch10">
+      <div class="chapter__head"><span class="chapter__num">X</span><h3>Government and History</h3></div>
+      <p>
+        Monarchy is the most common form in the record and, the Durants concede, has produced a
+        disproportionate share of competent government — with the fatal flaw that hereditary
+        succession randomises quality. Aristocracy concentrates culture and then ossifies. Democracy
+        is rare, late, fragile and the most demanding, because it requires a population capable of
+        judging complex questions.
+      </p>
+      <p>
+        The tally is not flattering to democrats. Counting across the whole record, monarchy is the
+        overwhelming default — most states, most of the time — and the Durants decline the easy
+        conclusion that this was simply error. Hereditary rule solves the succession problem cheaply,
+        supplies continuity, and concentrates responsibility where it can be found. Its defect is
+        exactly the mechanism that supplies the benefit: <strong>inheritance randomises
+        competence</strong>, and a system with no way of removing an incompetent has bought its
+        stability at the price of an occasional catastrophe.
+      </p>
+      <p>
+        Democracy, by contrast, is rare, late, usually short-lived, and — the chapter's operative
+        word — <em>difficult</em>. It asks the widest possible spread of the population to render
+        judgment on questions of increasing technical complexity, and it does so under conditions where
+        the wealthy can buy amplification and the demagogue can supply certainty for free. Athens
+        managed roughly two centuries with a franchise that excluded most of the people in Athens. The
+        Durants' verdict is nonetheless positive, and carefully worded: with all deductions made,
+        democracy has done less harm and more good than any other form of government.
+      </p>
+      <p>
+        Revolution, on their reading, rarely changes the substance. It reshuffles who holds wealth
+        and then watches ability re-concentrate it — which is the concentration cycle of Chapter VIII
+        reasserting itself through a political door. Worse, violent revolution tends to
+        <strong>destroy</strong> wealth rather than transfer it, so the redistribution is partly of
+        ashes. The only change they regard as durable is a change in what people know.
+      </p>
+
+      <p class="pull">If our economy of freedom fails to distribute wealth as ably as it has created
+        it, the road to dictatorship will be open to any man who can persuasively promise security
+        to all.
+        <cite>Durant, Ch. X</cite></p>
+
+      <p>
+        That sentence is the point at which the book's separate machinery locks together. The
+        concentration cycle of Chapter VIII supplies the pressure; the stability of human character in
+        Chapter V says the pressure will be felt as grievance rather than absorbed; the difficulty of
+        democracy in this chapter says the political form under pressure is the fragile one; and the
+        conclusion is that <strong>a democracy that stops distributing does not become an oligarchy —
+        it becomes available</strong>. It is the nearest thing to a warning the Durants permit
+        themselves.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 10</b><span>Freedom against equality</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 560 210" role="img" aria-label="A horizontal axis with maximum liberty at one end and enforced equality at the other, with government forms positioned along it and a viable band in the middle.">
+            <rect x="60" y="70" width="440" height="30" class="f-plate s-hair" stroke-width="1"/>
+            <rect x="196" y="70" width="168" height="30" class="f-verd" opacity="0.18"/>
+            <path d="M196 62 V 108" class="s-verd" stroke-width="1.2" stroke-dasharray="3 3"/>
+            <path d="M364 62 V 108" class="s-verd" stroke-width="1.2" stroke-dasharray="3 3"/>
+            <text x="280" y="90" text-anchor="middle" class="t t--verd" style="font-size:11px">Workable band</text>
+
+            <path d="M60 130 H 500" class="s-ink" stroke-width="1.4"/>
+            <path d="M60 130 l 10 -5 v 10 z" class="f-ink"/><path d="M500 130 l -10 -5 v 10 z" class="f-ink"/>
+
+            <text x="60" y="152" class="t t--ox" style="font-size:11.5px">Maximum liberty</text>
+            <text x="60" y="167" class="t" style="font-size:10.5px">Ability diverges</text>
+            <text x="60" y="181" class="t" style="font-size:10.5px">Wealth concentrates</text>
+
+            <text x="500" y="152" text-anchor="end" class="t t--ox" style="font-size:11.5px">Enforced equality</text>
+            <text x="500" y="167" text-anchor="end" class="t" style="font-size:10.5px">Levelling requires force</text>
+            <text x="500" y="181" text-anchor="end" class="t" style="font-size:10.5px">Liberty contracts</text>
+
+            <g class="f-ink"><circle cx="120" cy="52" r="4"/><circle cx="238" cy="52" r="4"/><circle cx="336" cy="52" r="4"/><circle cx="452" cy="52" r="4"/></g>
+            <g class="s-hair" stroke-width="1"><path d="M120 56 V 70"/><path d="M238 56 V 70"/><path d="M336 56 V 70"/><path d="M452 56 V 70"/></g>
+            <g class="t t--ink" style="font-size:10.5px">
+              <text x="120" y="40" text-anchor="middle">Oligarchy</text>
+              <text x="238" y="40" text-anchor="middle">Democracy</text>
+              <text x="336" y="40" text-anchor="middle">Social democracy</text>
+              <text x="452" y="40" text-anchor="middle">Command state</text>
+            </g>
+            <text x="60" y="204" class="t" style="font-size:10.5px">Positions are the Durants' argument rendered schematically, not a measured index</text>
+          </svg>
+        </div>
+        <figcaption>The chapter's constructive claim: democracy is justified and made real by genuine equality of educational opportunity. It is the same move as Chapter XIII — the fix for almost everything, in this book, is transmission.</figcaption>
+      </figure>
+
+      <div class="ledger">
+        <div>
+          <span class="who who--ox">The case against democracy</span>
+          <p>It asks the many to judge what few understand, and the questions get harder every decade.</p>
+          <p>It is <strong>purchasable</strong> — wealth buys attention, and attention is the currency of consent.</p>
+          <p>It rewards the promise over the record, because the promise is available before the evidence.</p>
+          <p>Its record for longevity is poor. Most democracies in the record are short.</p>
+        </div>
+        <div>
+          <span class="who who--verd">The case the Durants accept</span>
+          <p>Every alternative concentrates the same defects in fewer hands, with <strong>no mechanism for removal</strong> when they appear.</p>
+          <p>It is the only form that has learned to change rulers without killing them — which by itself accounts for a great deal of the good.</p>
+          <p>It widens the pool from which ability is drawn, and a society that recruits from everyone finds more of it.</p>
+          <p>Its weaknesses are addressable by one intervention — education — where the weaknesses of monarchy and oligarchy are structural.</p>
+        </div>
+      </div>
+
+      <div class="claim">
+        <b>Why the answer is always education</b>
+        Notice that the Durants' remedy is the same in Chapter X, Chapter XII and Chapter XIII, and
+        that this is either the book's deepest insight or its most convenient evasion. If every
+        problem resolves to transmission, then transmission is carrying more weight than a single
+        institution plausibly can — and the Durants never specify what an adequate education would
+        contain, how it would resist capture, or why a well-taught population would behave differently
+        from the unchanged human character described in Chapter V.
+      </div>
+    </article>
+  </section>
+
+  <!-- ==========================================================
+       MOVEMENT 5 — FATE
+       ========================================================== -->
+  <section class="movement" aria-labelledby="m5-h">
+    <div class="movement__head">
+      <span class="roman">Movement Five · Chs. XI–XIII</span>
+      <h2 id="m5-h">Fate</h2>
+      <span class="gloss">War as a constant, decline as a failure of leadership, and the one genuine accumulation.</span>
+    </div>
+
+    <article class="chapter" id="ch11">
+      <div class="chapter__head"><span class="chapter__num">XI</span><h3>History and War</h3></div>
+      <p>
+        The bleakest chapter, and the one that opens with the book's most repeated number. War, the
+        Durants say flatly, is one of the constants of history, and it has not diminished with
+        civilisation or with democracy — the two things most often expected to end it. Neither literacy,
+        nor commerce, nor representative government, nor the growth of international law has produced a
+        detectable reduction across the long record.
+      </p>
+      <p>
+        The explanation is the one already built in Chapter III. States compete for food, materials,
+        markets, routes and prestige exactly as individuals do; the difference is that individuals were
+        disarmed by law and states never were. <strong>A state exists in the condition individuals left
+        when they accepted a sovereign</strong> — no authority above it, no enforcement it has not
+        consented to, and therefore no alternative to self-help. Remove law from individuals and you
+        get precisely the same behaviour, at the same rate, for the same reasons.
+      </p>
+      <p>
+        The causes are correspondingly unromantic and are simply the Chapter III drives operating at
+        national scale: acquisitiveness — for land, fuel, minerals, markets; pugnacity — the fight
+        response, organised and supplied; and pride — the demand for standing, which the Durants take
+        as seriously as the material motives, because states have repeatedly gone to war over position
+        when the ledger argued against it.
+      </p>
+
+      <figure class="fig wide reveal">
+        <div class="fig__label"><b>Plate 11</b><span>268 of 3,421</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 716 560" id="warplate" role="img" aria-label="A grid of 3,421 cells, one per year of recorded history, in which 268 highlighted cells represent years with no recorded war.">
+            <g id="wargrid"></g>
+            <g class="t" style="font-size:11px">
+              <text x="0" y="524">Each cell = one year of recorded history</text>
+            </g>
+            <g>
+              <rect x="0" y="536" width="11" height="11" class="f-graph" opacity="0.34"/>
+              <text x="18" y="546" class="t" style="font-size:11px">War somewhere · 3,153</text>
+              <rect x="200" y="536" width="11" height="11" class="f-verd"/>
+              <text x="218" y="546" class="t t--verd" style="font-size:11px">No recorded war · 268</text>
+              <text x="400" y="546" class="t" style="font-size:11px">≈ 7.8 per cent</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>The Durants' own tally, offered without a source and dependent on a loose definition of war — read it as an order-of-magnitude claim rather than a datum. Peace years are scattered here for legibility, not placed chronologically.</figcaption>
+      </figure>
+
+      <div class="detail">
+        <b>How much to trust the number</b>
+        <p>
+          Not much, as arithmetic. It has no citation, and it turns entirely on two undefined choices:
+          what counts as a war, and where you look. "War somewhere on earth" is close to unfalsifiable
+          — with a low enough threshold and a wide enough map, almost every year qualifies, and the
+          268 peaceful years are then mostly years <em>with poor records</em> rather than years
+          without fighting. The further back the tally runs, the more it measures the thinness of the
+          archive, which is the exact bias Chapter I warned about.
+        </p>
+        <p>
+          It survives anyway, because the weak form of the claim needs no precision:
+          <strong>war is not an interruption of the normal state of affairs</strong>. Any tally on any
+          definition returns a number closer to 8 per cent than to 80. The rhetoric is stronger than
+          the datum, and the underlying point does not depend on the datum.
+        </p>
+      </div>
+
+      <p class="lede">
+        The chapter's centrepiece is a set piece: the Durants stage the argument for war as a speech by
+        a hypothetical general, addressed to a young pacifist, and then decline to refute most of it.
+      </p>
+
+      <div class="ledger">
+        <div>
+          <span class="who who--ox">The general speaks</span>
+          <p>You mistake war for a crime. It is a <strong>condition</strong>. A state has no policeman
+            above it; it can be attacked at any hour, and no one will come.</p>
+          <p>Therefore the commandments fall silent where survival is at stake. A state that observes
+            in its foreign dealings the morals it teaches at home will be governed by one that does not.</p>
+          <p>War is competition at its most honest — the same selection that made us, running at the
+            scale of nations. Heraclitus was right that it is the father of all things.</p>
+          <p>And it <strong>builds</strong>. Almost every large unity in the record was made by force:
+            Egypt, China, Rome, France, Germany, the United States. Your peaceful nation is the residue
+            of somebody's successful war.</p>
+          <p>It disciplines, it invents, it unites. Nothing else has ever made a population set aside
+            its factions so completely.</p>
+        </div>
+        <div>
+          <span class="who who--verd">What the Durants concede, and withhold</span>
+          <p><strong>Conceded: the diagnosis.</strong> Under anarchy, self-help is rational, and moral
+            exhortation to states has a two-thousand-year record of failure. They do not pretend
+            otherwise.</p>
+          <p><strong>Conceded: the history.</strong> Force has in fact been the usual instrument of
+            unification, and the unification was usually an improvement over what preceded it.</p>
+          <p><strong>Withheld: the conclusion.</strong> That war is therefore permanent. The general has
+            described the consequence of a missing authority, not a law of nature — and the missing
+            authority is a variable.</p>
+          <p><strong>Withheld: the arithmetic.</strong> The general's case was assembled before the
+            weapons could destroy the thing being competed for. A selection mechanism that removes the
+            species is not selection.</p>
+        </div>
+      </div>
+
+      <p>
+        That last point is what the chapter is quietly organised around. The Durants are writing in
+        1968 — six years after the Cuban missile crisis, in the middle of Vietnam, into a Cold War
+        whose logic was mutual destruction. Every historical argument for war's utility depends on the
+        winner surviving to collect. <strong>Nuclear weapons break the mechanism rather than the
+        morality</strong>: they make the general's own biological case inapplicable, which is a far
+        stronger objection than the moralist's, and the only one in the chapter the Durants clearly
+        endorse.
+      </p>
+
+      <p>
+        Their proposed remedy follows from the diagnosis and is unsentimental and pessimistic in equal
+        measure. If war is the consequence of anarchy between units, then the historical cure is the
+        one that has already worked repeatedly at smaller scales: <strong>enlarge the unit</strong>.
+        Feuding families were pacified by clans, clans by tribes, tribes by cities, cities by nations —
+        each time not by persuading anyone that violence was wrong, but by installing an authority
+        with the power to punish it. Every one of those enlargements ended war <em>inside</em> the new
+        boundary and relocated it to the new frontier.
+      </p>
+
+      <figure class="fig wide reveal">
+        <div class="fig__label"><b>Plate 12</b><span>The widening unit, and the missing term</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 268" role="img" aria-label="A sequence of widening units of political authority — family, clan, tribe, city, nation — each ending war within its own boundary, followed by a dashed empty box representing the supranational authority that history has not supplied.">
+            <text x="8" y="20" class="t" style="font-size:11px">Each enlargement abolished war inside the boundary — and moved it to the new edge</text>
+
+            <g class="f-none s-graph" stroke-width="1.3">
+              <rect x="8"   y="40" width="96"  height="52"/>
+              <rect x="118" y="40" width="104" height="52"/>
+              <rect x="236" y="40" width="104" height="52"/>
+              <rect x="354" y="40" width="104" height="52"/>
+            </g>
+            <rect x="472" y="40" width="120" height="52" class="f-none s-verd" stroke-width="1.8"/>
+
+            <g class="t t--ink" style="font-size:11.5px">
+              <text x="56"  y="64" text-anchor="middle">Family</text>
+              <text x="170" y="64" text-anchor="middle">Clan</text>
+              <text x="288" y="64" text-anchor="middle">Tribe</text>
+              <text x="406" y="64" text-anchor="middle">City</text>
+            </g>
+            <text x="532" y="64" text-anchor="middle" class="t t--verd" style="font-size:11.5px">Nation</text>
+            <g class="t" style="font-size:10px">
+              <text x="56"  y="80" text-anchor="middle">feuding ends</text>
+              <text x="170" y="80" text-anchor="middle">raiding ends</text>
+              <text x="288" y="80" text-anchor="middle">tribal war ends</text>
+              <text x="406" y="80" text-anchor="middle">civic war ends</text>
+              <text x="532" y="80" text-anchor="middle" class="t--verd">private war ends</text>
+            </g>
+
+            <g class="s-graph" stroke-width="1.2">
+              <path d="M104 66 H 112" marker-end="url(#ar-w)"/>
+              <path d="M222 66 H 230" marker-end="url(#ar-w)"/>
+              <path d="M340 66 H 348" marker-end="url(#ar-w)"/>
+              <path d="M458 66 H 466" marker-end="url(#ar-w)"/>
+            </g>
+            <path d="M592 66 H 620" class="s-och" stroke-width="1.6" marker-end="url(#ar-c)"/>
+
+            <rect x="628" y="40" width="124" height="52" class="f-none s-och" stroke-width="1.8" stroke-dasharray="6 5"/>
+            <text x="690" y="64" text-anchor="middle" class="t t--och" style="font-size:11.5px">?</text>
+            <text x="690" y="80" text-anchor="middle" class="t t--och" style="font-size:10px">never supplied</text>
+
+            <path d="M8 118 H 752" class="s-hair" stroke-width="1"/>
+
+            <text x="8" y="142" class="t t--verd" style="font-size:11.5px">What made each step work</text>
+            <text x="8" y="160" class="t" style="font-size:11px">Not persuasion. An authority with power to punish —</text>
+            <text x="8" y="176" class="t" style="font-size:11px">and, almost always, a shared enemy outside the new</text>
+            <text x="8" y="192" class="t" style="font-size:11px">boundary that made the old sovereignty look cheap.</text>
+
+            <path d="M372 130 V 212" class="s-och" stroke-width="2"/>
+            <text x="392" y="142" class="t t--och" style="font-size:11.5px">Why the last step has not come</text>
+            <text x="392" y="160" class="t" style="font-size:11px">No external enemy to unify against, and no state</text>
+            <text x="392" y="176" class="t" style="font-size:11px">has accepted a power over it that it cannot veto.</text>
+            <text x="392" y="192" class="t" style="font-size:11px">The League and the UN were given the office and</text>
+            <text x="392" y="208" class="t" style="font-size:11px">denied the coercion every earlier step required.</text>
+
+            <path d="M8 228 H 752" class="s-hair" stroke-width="1"/>
+            <text x="8" y="252" class="t t--serif" style="font-size:13.5px">The Durants expect it to arrive, if at all, from fear — not from virtue.</text>
+
+            <defs>
+              <marker id="ar-w" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-graph"/></marker>
+              <marker id="ar-c" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-och"/></marker>
+            </defs>
+          </svg>
+        </div>
+        <figcaption>The argument is structural, not moral, which is what makes it hard to answer. Every historical reduction in the scope of war came from installing an enforcing authority over the warring units, and no such authority has ever been installed without either conquest or a common threat. The Durants offer this as the only route they can find in the record, while doubting it will be taken.</figcaption>
+      </figure>
+
+      <div class="claim">
+        <b>The uncomfortable shape of the argument</b>
+        The chapter is a trap for the confident reader in both directions. The pacifist has to answer
+        a general who is arguing from the historical record rather than against it. The realist has to
+        answer that every previous stage of the sequence was also once called permanent human nature —
+        the blood feud, the private army, the duel — and each was ended not by moral progress but by
+        someone acquiring the power to stop it. <strong>Both positions are undermined by the same
+        evidence.</strong>
+      </div>
+
+      <div class="detail">
+        <b>What has happened since 1968</b>
+        <p>
+          The Durants' pessimism has been partially embarrassed by events, and it is worth being precise
+          about how. Great-power war — the category that produced the two catastrophes of their own
+          lifetimes — has not recurred in eighty years, which is the longest such gap in the modern
+          record. Interstate war of any kind has become substantially rarer than civil war.
+        </p>
+        <p>
+          The explanations on offer are, awkwardly, mostly theirs: nuclear weapons removing the
+          arithmetic of victory; commercial interdependence raising the cost; and something closer to
+          the missing term than the Durants expected — alliance systems and supranational bodies with
+          <em>partial</em> coercive power, of which the European Union is the most complete example, and
+          the one built exactly as they predicted, out of two wars' worth of fear.
+        </p>
+        <p>
+          What the chapter got right is the framing: none of this represents moral improvement, and
+          none of it is irreversible. <strong>The mechanism was changed; the animal was not.</strong>
+        </p>
+      </div>
+    </article>
+
+    <article class="chapter" id="ch12">
+      <div class="chapter__head"><span class="chapter__num">XII</span><h3>Growth and Decay</h3></div>
+      <p>
+        The chapter starts with a definition, and it is a working one rather than a flourish: a
+        civilisation is <strong>social order promoting cultural creation</strong>. Four things have to
+        be running at once for it to exist, and the failure of any one of them is enough.
+      </p>
+
+      <dl class="terms">
+        <dt>Economic provision</dt><dd>A reliable surplus. Nothing else on the list is possible while the whole population is producing food.</dd>
+        <dt>Political organisation</dt><dd>Order sufficient that the surplus can be accumulated rather than seized, and that contracts outlive the parties.</dd>
+        <dt>Moral tradition</dt><dd>The internalised rules that make cooperation cheap. Chapters VI and VII are the account of where these come from.</dd>
+        <dt>Pursuit of knowledge and the arts</dt><dd>The output the other three exist to make possible — and, in the Durants' scheme, the part that is actually transmitted forward.</dd>
+      </dl>
+
+      <p>
+        Against the cyclical fatalists — Spengler's civilisations as organisms with fixed lifespans,
+        passing through youth, maturity and senescence on a schedule — the Durants argue for
+        contingency. A civilisation rises by generating adequate responses to the challenges it faces,
+        and declines when its leadership fails to generate responses to new ones. Soil exhaustion,
+        disease, climate shift and re-routed trade all matter, but they are challenges, not verdicts;
+        what determines the outcome is whether the response arrives.
+      </p>
+      <p>
+        The disagreement with Spengler is not decorative. If a civilisation is an organism, its death
+        is scheduled and nothing anyone does matters; if it is a sequence of answered or unanswered
+        problems, decline is a <em>failure</em>, with agents and dates attached. The Durants take the
+        second view, and they take it partly because the first is unfalsifiable and partly because they
+        prefer a history in which choices count. It is the single most consequential position in the
+        book, and it is what permits the final chapter to end in something other than resignation.
+      </p>
+      <p>
+        Their catalogue of what actually goes wrong is a summary of the preceding twelve chapters:
+        wealth concentrated past the point of tolerance and not relieved (VIII); a moral code no longer
+        matched to the economy that produced it (VI); the loss of the sanction that made the code
+        self-enforcing (VII); a birth rate that stops replacing the population (III); soil and resources
+        exhausted (II); and, underneath all of them, an elite that has stopped producing answers and
+        started defending positions. The last is the one they weight most heavily — and, as the caveats
+        note, the one they evidence least.
+      </p>
+      <p>
+        And decline is not death. Greece was absorbed by Rome, Rome by the Church and by Europe;
+        each transmitted its accumulated technique and thought forward. <strong>Civilisations do not
+        end so much as they empty their contents into successors</strong> — which is the bridge to the
+        final chapter.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 13</b><span>Challenge and response</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 560 220" role="img" aria-label="A curve rising through successfully met challenges then falling after an unmet one, with a dotted line showing inherited capability passing to a successor civilisation.">
+            <path d="M28 186 H540" class="s-hair" stroke-width="1"/>
+            <path d="M28 178 C 90 176, 110 130, 168 126 S 250 92, 296 74 S 372 58, 404 82 S 460 150, 520 178"
+                  class="f-none s-ink" stroke-width="2.4"/>
+            <g class="f-verd"><circle cx="112" cy="150" r="4.5"/><circle cx="232" cy="102" r="4.5"/><circle cx="330" cy="64" r="4.5"/></g>
+            <circle cx="410" cy="86" r="5.5" class="f-ox"/>
+            <g class="s-hair" stroke-width="1" stroke-dasharray="2 4">
+              <path d="M112 150 V 186"/><path d="M232 102 V 186"/><path d="M330 64 V 186"/><path d="M410 86 V 186"/>
+            </g>
+            <g class="t" style="font-size:10.5px">
+              <text x="112" y="200" text-anchor="middle" class="t--verd">Met</text>
+              <text x="232" y="200" text-anchor="middle" class="t--verd">Met</text>
+              <text x="330" y="200" text-anchor="middle" class="t--verd">Met</text>
+              <text x="410" y="200" text-anchor="middle" class="t--ox">Unmet</text>
+            </g>
+            <text x="330" y="46" text-anchor="middle" class="t" style="font-size:10.5px">Peak capability</text>
+            <text x="418" y="70" class="t t--ox" style="font-size:10.5px">Leadership fails to answer</text>
+
+            <path d="M470 168 C 496 140, 506 120, 522 104" class="f-none s-verd" stroke-width="1.6" stroke-dasharray="5 4"/>
+            <text x="550" y="112" text-anchor="end" class="t t--verd" style="font-size:10.5px">Heritage</text>
+            <text x="550" y="126" text-anchor="end" class="t t--verd" style="font-size:10.5px">passes on</text>
+          </svg>
+        </div>
+        <figcaption>Decline in this account is a failure to answer, not an appointment with destiny. That distinction is the whole disagreement with Spengler, and it is why the book ends optimistically despite everything before it.</figcaption>
+      </figure>
+
+      <p class="pull">A great civilization is not conquered from without until it has destroyed itself
+        within.
+        <cite>Durant</cite></p>
+
+      <div class="detail">
+        <b>The claim about death that the chapter actually makes</b>
+        <p>
+          Rome is the test case, and the Durants use it against the standard reading. The Empire in the
+          West was not extinguished in 476; its law was absorbed into every European legal system, its
+          language became five others, its administrative structure was inherited by the Church, and
+          its literature was copied forward by monks who were not Romans and did not much like Romans.
+          The state stopped. <strong>The contents were forwarded.</strong>
+        </p>
+        <p>
+          Generalised: a civilisation's mortality is a question about its <em>institutions</em>, and its
+          immortality is a question about its <em>transmission</em>. Greece did not survive as a polity
+          and survives almost everywhere else. That distinction is the bridge into the final chapter,
+          and it is what stops the book's ending from contradicting its middle.
+        </p>
+      </div>
+    </article>
+
+    <article class="chapter" id="ch13">
+      <div class="chapter__head"><span class="chapter__num">XIII</span><h3>Is Progress Real?</h3></div>
+      <p>
+        The verdict, carefully fenced. Not moral progress — the Durants find no evidence that people
+        are kinder than they were. Not biological progress — the infant born today is not a better
+        organism. Not happiness — they decline to measure it. And not continuously or universally
+        either: progress is not owed to anyone, arrives unevenly, and has been reversed before.
+      </p>
+      <p>
+        What makes the chapter work is that they first fix a definition narrow enough to be tested:
+        progress is <strong>the increasing control of the environment by life</strong>. That is
+        deliberately unflattering — it says nothing about virtue, wisdom or contentment — and it is the
+        only sense in which they are willing to defend the word. On that definition the answer is not
+        close.
+      </p>
+      <p>
+        Their method is to force the comparison to be concrete rather than nostalgic. Set a person down
+        in the thirteenth century, or the first, and ask about the specifics: the survival of their
+        children past infancy; what is available when they need surgery, or a tooth pulled; whether they
+        can read; whether anyone in their family ever has; whether they may be legally owned; what
+        happens to them in a bad harvest; what is done to them if they are accused. The Durants'
+        argument is that <strong>every honest itemisation goes the same way</strong>, and that the
+        contrary impression comes from comparing our unfiltered present against a past known only
+        through its surviving masterpieces and its worst days.
+      </p>
+      <p class="lede">
+        What is real is the <strong>heritage</strong>: the accumulated and recorded stock of knowledge,
+        technique, institutions, language and art that each generation inherits and adds to. Measured
+        as increasing control over conditions, progress is plainly real. Measured any other way, it
+        is not.
+      </p>
+
+      <figure class="fig wide reveal">
+        <div class="fig__label"><b>Plate 14</b><span>What accumulates, and what does not</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 280" role="img" aria-label="Two lines over time: innate human capacity remains flat while transmitted heritage rises steeply, with a note that transmission can fail.">
+            <g class="s-hair" stroke-width="1"><path d="M56 232 H724"/><path d="M56 24 V 232"/></g>
+            <g class="s-hair" stroke-width="0.6" stroke-dasharray="2 6">
+              <path d="M56 76 H724"/><path d="M56 128 H724"/><path d="M56 180 H724"/>
+            </g>
+
+            <path d="M56 202 C 220 200, 420 204, 724 200" class="f-none s-ox" stroke-width="2.4"/>
+            <text x="66" y="192" class="t t--ox" style="font-size:11.5px">Innate human capacity</text>
+            <text x="66" y="222" class="t" style="font-size:10.5px">Unchanged within recorded history</text>
+
+            <path d="M56 214 C 300 210, 470 168, 580 106 S 700 44, 724 34" class="f-none s-verd" stroke-width="2.8"/>
+            <text x="700" y="60" text-anchor="end" class="t t--verd" style="font-size:11.5px">Transmitted heritage</text>
+            <text x="700" y="76" text-anchor="end" class="t" style="font-size:10.5px">Knowledge · technique</text>
+            <text x="700" y="90" text-anchor="end" class="t" style="font-size:10.5px">Institutions · art</text>
+
+            <g class="s-och" stroke-width="1.4" stroke-dasharray="4 4">
+              <path d="M470 158 L 520 232"/>
+            </g>
+            <circle cx="470" cy="158" r="4.5" class="f-och"/>
+            <text x="528" y="228" class="t t--och" style="font-size:10.5px">If transmission fails, the line falls here</text>
+
+            <text x="56" y="258" class="t" style="font-size:10.5px">Time &#8594;</text>
+            <text x="724" y="258" text-anchor="end" class="t" style="font-size:10.5px">Schematic</text>
+          </svg>
+        </div>
+        <figcaption>The gap between the two lines is the entire case for civilisation — and the dashed line is the warning attached to it. Nothing in the heritage is carried genetically; it exists only for as long as it is taught.</figcaption>
+      </figure>
+
+      <p class="pull">If progress is real … it is not because we are born any healthier, better, or
+        wiser than infants were in the past, but because we are born to a richer heritage, born on a
+        higher level of that pedestal which the accumulation of knowledge and art raises as the ground
+        and support of our being.
+        <cite>Durant, Ch. XIII</cite></p>
+
+      <p>
+        The image of the pedestal is exact and worth holding onto. It says that the individual has not
+        risen at all — the standing figure is the same height it always was — and that everything
+        gained is in <em>what is under it</em>. Which means the gain is entirely external, entirely
+        cumulative, and entirely removable. A civilisation is a structure people stand on, and it is
+        rebuilt from nothing, in every child, every generation.
+      </p>
+
+      <p class="pull">Civilization is not inherited; it has to be learned and earned by each generation anew.
+        <cite>Durant, Ch. XIII</cite></p>
+
+      <p>
+        Which makes education the load-bearing institution of the whole system — not as schooling, and
+        not as job training, but as the <strong>transmission of civilisation</strong>: the deliberate
+        re-installation, in people who did not ask for it, of everything the species has worked out.
+        On the Durants' account this is what history <em>is for</em>. The record's function is to be the
+        medium in which the heritage is held; the historian's function is custodial; and the reason the
+        book can end in something like hope, after twelve chapters of competition, concentration and
+        war, is that this one channel has never yet been cut.
+      </p>
+      <p>
+        They close with the image the Durants are best remembered for. History is usually written as
+        the record of a river in flood — the violence, the wars, the ruptures. Along the banks,
+        unrecorded, people were farming, raising children, building, teaching, arguing, singing. The
+        historian watches the water; almost everything that mattered happened on the shore. It is the
+        same measurement-error argument made back in Chapter VI, returning as the last thing the book
+        says — and it is, in effect, an instruction for reading everything that came before it,
+        including this book.
+      </p>
+
+      <figure class="fig wide reveal">
+        <div class="fig__label"><b>Plate 15</b><span>The stream and the banks</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 286" role="img" aria-label="A river of violent events flowing between two banks where ordinary life, craft and art continue unrecorded.">
+            <rect x="0" y="0" width="760" height="96" class="f-verd" opacity="0.1"/>
+            <rect x="0" y="204" width="760" height="82" class="f-verd" opacity="0.1"/>
+            <path d="M0 98 C 160 90, 300 110, 420 100 S 640 90, 760 98" class="f-none s-hair" stroke-width="1.4"/>
+            <path d="M0 202 C 160 210, 300 190, 420 200 S 640 210, 760 202" class="f-none s-hair" stroke-width="1.4"/>
+
+            <g class="f-none s-ox" stroke-width="1.4" opacity="0.85">
+              <path d="M0 150 C 140 142, 240 170, 380 158 S 620 146, 760 154"/>
+              <path d="M0 164 C 140 172, 240 146, 380 166 S 620 176, 760 162"/>
+              <path d="M0 178 C 140 170, 240 190, 380 176 S 620 166, 760 176"/>
+            </g>
+
+            <text x="24" y="38" class="t t--verd" style="font-size:12px;letter-spacing:.16em">The banks</text>
+            <text x="736" y="38" text-anchor="end" class="t t--verd" style="font-size:10.5px">what almost nobody records</text>
+            <text x="24" y="62" class="t" style="font-size:11px">Homes built · children raised · crops sown · songs made · quarrels had</text>
+            <text x="24" y="80" class="t" style="font-size:11px">Craft taught · books copied · instruments improved · the heritage handed on</text>
+
+            <text x="24" y="126" class="t t--ox" style="font-size:12px;letter-spacing:.16em">The stream</text>
+            <text x="140" y="126" class="t" style="font-size:11px">War · conquest · rupture · the fall of states</text>
+            <text x="736" y="126" text-anchor="end" class="t t--ox" style="font-size:10.5px">what gets written down</text>
+
+            <text x="24" y="240" class="t" style="font-size:11px">Nurses, farmers, teachers, masons, copyists — the people who kept it going</text>
+            <text x="24" y="264" class="t t--serif" style="font-size:14px">The historian stands on the bank, and writes about the water.</text>
+          </svg>
+        </div>
+        <figcaption>A working instruction for reading history: the record over-samples catastrophe. What sustained civilisation was mostly not recorded, which is precisely why the recorded past looks so much worse than the lived one. The stream-and-banks phrasing is Will Durant's own, from his later interviews; the argument itself is made twice in the book — in Chapter VI, and again at the end.</figcaption>
+      </figure>
+
+      <div class="detail">
+        <b>The last paragraph, and what it asks of the reader</b>
+        <p>
+          The book ends on an instruction rather than a conclusion. A person who is fortunate will,
+          before dying, gather up as much of the civilised inheritance as they can hold and hand it on
+          to whoever comes next — and will be grateful for it, the Durants say, as a nourishing mother
+          and a lasting life.
+        </p>
+        <p>
+          It is worth noticing how much work that ending is doing. Nothing in the previous twelve
+          chapters guarantees the transmission continues; the whole apparatus of competition, decay and
+          war remains exactly where it was. What the ending supplies is not an argument but an
+          <strong>assignment</strong> — the one thing an individual reader can actually do about any of
+          it. After a hundred pages of forces no person controls, the book closes on the single lever
+          that is held in private hands.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ======================= TAKEAWAYS ======================= -->
+  <section class="movement" id="takeaways" aria-labelledby="tk-h">
+    <div class="movement__head">
+      <span class="roman">Distillation</span>
+      <h2 id="tk-h">Twelve Things Worth Keeping</h2>
+      <span class="gloss">The claims that still do work outside the book.</span>
+    </div>
+
+    <ol class="takeaways wide">
+      <li><b>History is biology at long time-scales.</b><span>Competition, selection and reproduction operate on groups as they do on organisms. If a social explanation contradicts them, be suspicious of the explanation.</span></li>
+      <li><b>Concentration of wealth is the default, not the anomaly.</b><span>Free conditions plus unequal ability produce it reliably. The interesting variable is which relief valve a society uses before pressure forces the violent one.</span></li>
+      <li><b>Freedom and equality trade against each other.</b><span>Not a slogan — a constraint. Any programme promising to maximise both simultaneously is concealing which one it will actually sacrifice.</span></li>
+      <li><b>Most new ideas are worse than what they'd replace.</b><span>Tradition is a filter that has already run the experiments. This argues for cheap, reversible testing rather than for either reflexive change or reflexive resistance.</span></li>
+      <li><b>Moral codes are downstream of economics, and they lag.</b><span>The lag is what every generation misreads as decline. Complaint about the young is a constant of the record and therefore evidence of nothing.</span></li>
+      <li><b>War persists because states answer to no one.</b><span>It is not a failure of individual morality but a structural feature of a system with no enforcing authority above its units.</span></li>
+      <li><b>Decline is a leadership failure, not a life-cycle.</b><span>Civilisations fall when the responses stop arriving. That makes decline contingent — which means it is, in principle, avoidable.</span></li>
+      <li><b>Only the heritage accumulates, and only if taught.</b><span>Nothing civilised is transmitted biologically. Every capability the species has must be re-installed in each generation, or it is simply lost.</span></li>
+      <li><b>The record over-samples catastrophe.</b><span>Historians write down the exceptional because it is exceptional. Any comparison between a documented past and a lived present will therefore find decline — which is a fact about the archive, not about the world.</span></li>
+      <li><b>The unit of competition keeps getting larger.</b><span>Family, clan, tribe, city, nation. Each enlargement ended war inside its boundary — not by moral persuasion but by installing an authority able to punish. Whether the sequence has one more term in it is the open question of the modern era.</span></li>
+      <li><b>Every enduring generalisation has a selection problem.</b><span>The Durants' own warning, turned on them: a record rich enough to prove any thesis will happily prove theirs. Treat their lessons as base rates to be calibrated, not laws to be accepted.</span></li>
+      <li><b>Adaptation moved from the body to the culture — which is faster and far more fragile.</b><span>A society can now change its arrangements in a generation. It can also lose in a generation what took twenty to build, because none of it is carried in the organism.</span></li>
+    </ol>
+  </section>
+
+  <!-- ======================= CAVEATS ======================= -->
+  <section class="movement" id="caveats" aria-labelledby="cv-h">
+    <div class="movement__head">
+      <span class="roman">Read With</span>
+      <h2 id="cv-h">What Has Dated</h2>
+      <span class="gloss">A 1968 book by two people born in the 1890s. Some of it shows.</span>
+    </div>
+
+    <div class="caveats wide">
+      <div>
+        <span class="mk">01</span>
+        <div>
+          <h4>The race chapter argues on hostile terrain</h4>
+          <p>Its conclusion rejects racial determinism and was progressive for its moment. But it engages Gobineau and Chamberlain on their own categories, and the vocabulary of "stocks" and "peoples" reads badly now. Take the conclusion; discard the framework it was reached through.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">02</span>
+        <div>
+          <h4>The breeding argument carries eugenic residue</h4>
+          <p>"Life must breed" is presented partly through mid-century anxieties about differential birth rates between classes and nations. The structural point about demography stands; the evaluative overtones do not, and the Durants do not adequately separate them.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">03</span>
+        <div>
+          <h4>The convergence thesis was a Cold War read</h4>
+          <p>Written before 1989. The prediction that the two systems would meet in the middle described the mixed economies of the West reasonably well and the Soviet trajectory poorly.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">04</span>
+        <div>
+          <h4>The famous war statistic is unsourced</h4>
+          <p>268 peaceful years out of 3,421 depends entirely on what counts as a war and on records that thin out badly the further back you go. Treat it as rhetoric with a number attached.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">05</span>
+        <div>
+          <h4>The evidence base is heavily European</h4>
+          <p>Eleven volumes deep, but weighted to the Mediterranean and Western Europe, with Asia and the Islamic world under-represented and pre-colonial Africa and the Americas nearly absent. "Universal" lessons drawn from that sample deserve the caution the first chapter recommends.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">06</span>
+        <div>
+          <h4>Great men do a lot of unexamined work</h4>
+          <p>Leadership is the explanatory variable whenever structural accounts run out, which makes several arguments — decline especially — hard to falsify. Later social and economic history has better tools for the same questions.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">07</span>
+        <div>
+          <h4>There are almost no sources</h4>
+          <p>The book cites nearly nothing, on the reasonable ground that its evidence is the eleven volumes behind it. The effect is that a reader cannot check a claim without reading four million words, and the compressed form gives assertions the texture of established fact. Fifty years of subsequent scholarship has revised a great deal of the underlying material — the demography, the economics, the archaeology of early states — and none of it is visible here.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">08</span>
+        <div>
+          <h4>Progress is defined narrowly, then defended broadly</h4>
+          <p>"Increasing control of the environment" is a definition chosen because it can be won. It excludes precisely the things people usually mean by progress — justice, meaning, contentment — and it has no account of control exercised destructively. The book was written before the environmental cost of that control was widely legible, and it shows.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail">
+      <b>None of which is a reason to skip it</b>
+      <p>
+        The dated material is concentrated in three chapters and one number, and it is easy to isolate.
+        What survives is a rare thing: a set of clearly stated, mutually connected generalisations,
+        offered by two people with an unusually large sample in their heads and no institutional
+        interest in defending a school. <strong>The book is at its best as a source of hypotheses and
+        at its worst as a source of facts</strong> — and it announces exactly this about itself, in
+        Chapter I, before making a single claim.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="colophon__in">
+    <p class="eyebrow eyebrow--accent">Colophon</p>
+    <dl>
+      <dt>Source</dt>
+      <dd>Will &amp; Ariel Durant, <em>The Lessons of History</em>, Simon &amp; Schuster, 1968. Distilled from <em>The Story of Civilization</em>, 11 vols., 1935–1975.</dd>
+      <dt>Method</dt>
+      <dd>Chapter-by-chapter synthesis in the summariser's own words. Quotations are brief and attributed; diagrams are schematic renderings of the arguments, not measured data. Where a phrase is Durant's but not from this book, the caption says so.</dd>
+      <dt>Read alongside</dt>
+      <dd>Toynbee, <em>A Study of History</em> — the challenge-and-response scheme Chapter XII adapts. Spengler, <em>The Decline of the West</em> — the fatalism Chapter XII is written against. Gibbon, <em>Decline and Fall</em> — the model for the Durants' whole enterprise, and better on the evidence.</dd>
+      <dt>Design</dt>
+      <dd>Set in Superclarendon, Charter and Avenir Next Condensed. Mineral chart stock, iron-gall ink, verdigris and iron oxide. Fifteen plates.</dd>
+    </dl>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- theme toggle ---------- */
+  var root = document.documentElement;
+  var btn = document.getElementById("themeToggle");
+  function currentIsDark() {
+    var set = root.getAttribute("data-theme");
+    if (set) return set === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+  btn.addEventListener("click", function () {
+    root.setAttribute("data-theme", currentIsDark() ? "light" : "dark");
+  });
+
+  /* ---------- Plate 02: the surviving fraction ---------- */
+  (function dotfield() {
+    var g = document.getElementById("dotfield");
+    if (!g) return;
+    var ns = "http://www.w3.org/2000/svg";
+    // 100 x 18 = 1800 marks; the highlighted block is 7 x 5 = 35 of them (~1 in 51)
+    var COLS = 100, ROWS = 18, STEP = 7.4, X0 = 8, Y0 = 16, SIZE = 3.4;
+    var C0 = 60, C1 = 66, R0 = 5, R1 = 9;
+    var frag = document.createDocumentFragment();
+    for (var c = 0; c < COLS; c++) {
+      for (var r = 0; r < ROWS; r++) {
+        var d = document.createElementNS(ns, "rect");
+        d.setAttribute("x", (X0 + c * STEP).toFixed(1));
+        d.setAttribute("y", (Y0 + r * STEP).toFixed(1));
+        d.setAttribute("width", SIZE);
+        d.setAttribute("height", SIZE);
+        if (c >= C0 && c <= C1 && r >= R0 && r <= R1) {
+          d.setAttribute("class", "f-verd");
+        } else {
+          d.setAttribute("class", "f-graph");
+          d.setAttribute("opacity", "0.3");
+        }
+        frag.appendChild(d);
+      }
+    }
+    g.appendChild(frag);
+  })();
+
+  /* ---------- Plate 05: the hundred proposals ---------- */
+  (function ideaField() {
+    var g = document.getElementById("ideafield");
+    if (!g) return;
+    var ns = "http://www.w3.org/2000/svg";
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < 100; i++) {
+      var c = i % 10, r = Math.floor(i / 10);
+      var d = document.createElementNS(ns, "circle");
+      d.setAttribute("cx", (16 + c * 9.4).toFixed(1));
+      d.setAttribute("cy", (34 + r * 9.4).toFixed(1));
+      d.setAttribute("r", "2.6");
+      d.setAttribute("class", "f-graph");
+      d.setAttribute("opacity", "0.45");
+      frag.appendChild(d);
+    }
+    g.appendChild(frag);
+  })();
+
+  /* ---------- Plate 11: 268 of 3,421 ---------- */
+  (function warGrid() {
+    var g = document.getElementById("wargrid");
+    if (!g) return;
+    var ns = "http://www.w3.org/2000/svg";
+    var TOTAL = 3421, PEACE = 268, COLS = 71;
+    var CELL = 8, GAP = 2, STEP = CELL + GAP;
+
+    // deterministic scatter: fixed-seed LCG so the plate is stable across loads
+    var seed = 1968;
+    function rnd() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+    var peaceSet = Object.create(null), placed = 0;
+    while (placed < PEACE) {
+      var i = Math.floor(rnd() * TOTAL);
+      if (!peaceSet[i]) { peaceSet[i] = true; placed++; }
+    }
+
+    var frag = document.createDocumentFragment();
+    for (var n = 0; n < TOTAL; n++) {
+      var col = n % COLS, row = Math.floor(n / COLS);
+      var rect = document.createElementNS(ns, "rect");
+      rect.setAttribute("x", col * STEP);
+      rect.setAttribute("y", row * STEP);
+      rect.setAttribute("width", CELL);
+      rect.setAttribute("height", CELL);
+      if (peaceSet[n]) {
+        rect.setAttribute("class", "f-verd");
+      } else {
+        rect.setAttribute("class", "f-graph");
+        rect.setAttribute("opacity", "0.34");
+      }
+      frag.appendChild(rect);
+    }
+    g.appendChild(frag);
+  })();
+
+  /* ---------- scroll reveal ---------- */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealables = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    revealables.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.06 });
+    revealables.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- rail: active chapter ---------- */
+  var links = {};
+  document.querySelectorAll(".rail a").forEach(function (a) { links[a.dataset.rail] = a; });
+  var chapters = document.querySelectorAll("article.chapter");
+  if ("IntersectionObserver" in window && chapters.length) {
+    var railIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var a = links[e.target.id];
+        if (!a) return;
+        if (e.isIntersecting) {
+          Object.keys(links).forEach(function (k) { links[k].removeAttribute("aria-current"); });
+          a.setAttribute("aria-current", "true");
+        }
+      });
+    }, { rootMargin: "-40% 0px -50% 0px", threshold: 0 });
+    chapters.forEach(function (c) { railIO.observe(c); });
+  }
+})();
+</script>
+
+<script src="book-toc.js"></script>
+</body>
+</html>

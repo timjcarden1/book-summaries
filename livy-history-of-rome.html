@@ -1,0 +1,1333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The History of Rome — Livy, the four surviving collections</title>
+<meta name="description" content="An illustrated summary of Livy's Ab Urbe Condita: The Early History of Rome, Rome and Italy, The War with Hannibal, and Rome and the Mediterranean.">
+<style>
+/* ------------------------------------------------------------
+   PALETTE — travertine, lamp-black, minium red, bronze, legion blue
+   ------------------------------------------------------------ */
+:root {
+  --plate:    #E9E5DC;
+  --plate-2:  #F3F0E8;
+  --plate-3:  #DBD6C9;
+  --ink:      #191A1C;
+  --graphite: #61635E;
+  --hair:     #C6C2B6;
+  --accent:   #9C3025;
+  --book-toc-accent: #9C3025;   /* minium — the red of inscriptions */
+  --accent-w: #F1DDD8;
+  --oxide:    #2A5B68;   /* legion blue */
+  --ochre:    #8A6D1F;   /* bronze      */
+  --cool:     #4E6B4A;   /* olive       */
+
+  --display: "Optima", "Palatino", "Palatino Linotype", "Hoefler Text", Georgia, serif;
+  --body:    "Charter", "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --label:   "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --plate: #131414; --plate-2: #1B1D1D; --plate-3: #0D0E0E;
+    --ink: #E4E2DA; --graphite: #91948D; --hair: #32352F;
+    --accent: #DC6A55;
+  --book-toc-accent: #DC6A55; --accent-w: #38201C;
+    --oxide: #6FAEBE; --ochre: #C6A24C; --cool: #8FB183;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --plate: #131414; --plate-2: #1B1D1D; --plate-3: #0D0E0E;
+  --ink: #E4E2DA; --graphite: #91948D; --hair: #32352F;
+  --accent: #DC6A55;
+  --book-toc-accent: #DC6A55; --accent-w: #38201C;
+  --oxide: #6FAEBE; --ochre: #C6A24C; --cool: #8FB183;
+  color-scheme: dark;
+}
+@media print {
+  :root {
+    --plate: #E9E5DC; --plate-2: #F3F0E8; --plate-3: #DBD6C9;
+    --ink: #191A1C; --graphite: #61635E; --hair: #C6C2B6;
+    --accent: #9C3025;
+  --book-toc-accent: #9C3025; --accent-w: #F1DDD8;
+    --oxide: #2A5B68; --ochre: #8A6D1F; --cool: #4E6B4A;
+  }
+}
+</style>
+<link rel="stylesheet" href="civ-plate.css">
+<link rel="stylesheet" href="book-toc.css">
+</head>
+<body>
+
+<button class="toggle" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+
+<nav class="rail" aria-label="Sections">
+  <a href="#livy"    data-rail="livy"><span class="bar"></span><span class="num">The book</span></a>
+  <a href="#bk1"     data-rail="bk1"><span class="bar"></span><span class="num">Bks 1–5</span></a>
+  <a href="#bk6"     data-rail="bk6"><span class="bar"></span><span class="num">Bks 6–10</span></a>
+  <a href="#bk21"    data-rail="bk21"><span class="bar"></span><span class="num">Bks 21–30</span></a>
+  <a href="#bk31"    data-rail="bk31"><span class="bar"></span><span class="num">Bks 31–45</span></a>
+  <a href="#reading" data-rail="reading"><span class="bar"></span><span class="num">Reading Livy</span></a>
+</nav>
+
+<!-- ==========================================================
+     HERO
+     ========================================================== -->
+<header class="hero">
+  <svg class="hero__field" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
+    <g stroke="currentColor" stroke-width="1.4">
+      <path d="M20 420 V 300"/><path d="M44 420 V 330"/><path d="M68 420 V 312"/><path d="M92 420 V 348"/>
+      <path d="M116 420 V 288"/><path d="M140 420 V 336"/><path d="M164 420 V 318"/><path d="M188 420 V 354"/>
+      <path d="M212 420 V 264"/><path d="M236 420 V 342"/><path d="M260 420 V 306"/><path d="M284 420 V 330"/>
+      <path d="M308 420 V 294"/><path d="M332 420 V 348"/><path d="M356 420 V 240"/><path d="M380 420 V 336"/>
+      <path d="M404 420 V 312"/><path d="M428 420 V 354"/><path d="M452 420 V 282"/><path d="M476 420 V 330"/>
+      <path d="M500 420 V 318"/><path d="M524 420 V 210"/><path d="M548 420 V 342"/><path d="M572 420 V 300"/>
+      <path d="M596 420 V 348"/><path d="M620 420 V 288"/><path d="M644 420 V 324"/><path d="M668 420 V 354"/>
+      <path d="M692 420 V 252"/><path d="M716 420 V 336"/><path d="M740 420 V 306"/><path d="M764 420 V 342"/>
+      <path d="M788 420 V 294"/><path d="M812 420 V 180"/><path d="M836 420 V 330"/><path d="M860 420 V 318"/>
+      <path d="M884 420 V 354"/><path d="M908 420 V 276"/><path d="M932 420 V 336"/><path d="M956 420 V 312"/>
+      <path d="M980 420 V 348"/><path d="M1004 420 V 234"/><path d="M1028 420 V 330"/><path d="M1052 420 V 300"/>
+      <path d="M1076 420 V 342"/><path d="M1100 420 V 288"/><path d="M1124 420 V 324"/><path d="M1148 420 V 354"/>
+      <path d="M1172 420 V 270"/><path d="M1196 420 V 336"/>
+    </g>
+  </svg>
+
+  <div class="hero__inner">
+    <div class="hero__meta">
+      <p class="eyebrow">Titus Livius · 59 BCE – 17 CE</p>
+      <p class="eyebrow">Ab Urbe Condita · begun c. 29 BCE</p>
+      <p class="eyebrow eyebrow--accent">The four surviving collections</p>
+    </div>
+
+    <h1>The History<br>of Rome
+      <span class="sub">From the founding of the city to the conquest of the Mediterranean — 142 books written, 35 surviving, and the whole Roman self-image built out of them.</span>
+    </h1>
+
+    <div class="hero__rule" role="presentation"></div>
+
+    <p class="hero__thesis">
+      Livy spent forty years writing a history of Rome from its first day, and never held office,
+      commanded a soldier or, so far as we know, left Italy. What he produced is not research in the
+      modern sense: it is <span class="accent">a national epic in prose, organised year by year, whose
+      declared purpose is to show a reader what to imitate and what to avoid.</span> It is also, for the
+      first five centuries of Rome, very nearly the only continuous account we have — which is the
+      permanent difficulty and the permanent fascination of reading it.
+    </p>
+
+    <dl class="facts">
+      <div><dt>Written</dt><dd>142 books<span>over ~40 years</span></dd></div>
+      <div><dt>Survives</dt><dd>35 books<span>about a quarter</span></dd></div>
+      <div><dt>Covered here</dt><dd>753 – 167 BCE<span>with one long gap</span></dd></div>
+      <div><dt>In Penguin</dt><dd>4 volumes<span>≈1,900 pp.</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="flow">
+
+  <!-- ======================= THE BOOK ======================= -->
+  <section class="movement" id="livy" aria-labelledby="livy-h">
+    <div class="movement__head">
+      <span class="roman">Orientation</span>
+      <h2 id="livy-h">The Book, and What Is Left of It</h2>
+      <span class="gloss">What Livy set out to do, and how much of it reached us.</span>
+    </div>
+
+    <p class="lede">
+      <em>Ab Urbe Condita Libri</em> — "Books from the Founding of the City" — ran to 142 books and was
+      published in instalments across Livy's working life, from about 29 BCE into the reign of Tiberius.
+      It began with Aeneas and ended in 9 BCE. Roughly three-quarters of it is gone.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 01</b><span>142 books written · 35 surviving</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 268" role="img" aria-label="A grid of 142 cells representing the books of Livy's history, with books 1 to 10 and 21 to 45 marked as surviving and the rest lost.">
+          <text x="20" y="26" class="t t--acc t--sm">Each cell is one book · reading left to right, top to bottom</text>
+
+          <g class="f-hair">
+            <rect x="60" y="42" width="31" height="16"/><rect x="93" y="42" width="31" height="16"/><rect x="126" y="42" width="31" height="16"/><rect x="159" y="42" width="31" height="16"/><rect x="192" y="42" width="31" height="16"/><rect x="225" y="42" width="31" height="16"/><rect x="258" y="42" width="31" height="16"/><rect x="291" y="42" width="31" height="16"/><rect x="324" y="42" width="31" height="16"/><rect x="357" y="42" width="31" height="16"/><rect x="390" y="42" width="31" height="16"/><rect x="423" y="42" width="31" height="16"/><rect x="456" y="42" width="31" height="16"/><rect x="489" y="42" width="31" height="16"/><rect x="522" y="42" width="31" height="16"/><rect x="555" y="42" width="31" height="16"/><rect x="588" y="42" width="31" height="16"/><rect x="621" y="42" width="31" height="16"/><rect x="654" y="42" width="31" height="16"/><rect x="687" y="42" width="31" height="16"/>
+            <rect x="60" y="64" width="31" height="16"/><rect x="93" y="64" width="31" height="16"/><rect x="126" y="64" width="31" height="16"/><rect x="159" y="64" width="31" height="16"/><rect x="192" y="64" width="31" height="16"/><rect x="225" y="64" width="31" height="16"/><rect x="258" y="64" width="31" height="16"/><rect x="291" y="64" width="31" height="16"/><rect x="324" y="64" width="31" height="16"/><rect x="357" y="64" width="31" height="16"/><rect x="390" y="64" width="31" height="16"/><rect x="423" y="64" width="31" height="16"/><rect x="456" y="64" width="31" height="16"/><rect x="489" y="64" width="31" height="16"/><rect x="522" y="64" width="31" height="16"/><rect x="555" y="64" width="31" height="16"/><rect x="588" y="64" width="31" height="16"/><rect x="621" y="64" width="31" height="16"/><rect x="654" y="64" width="31" height="16"/><rect x="687" y="64" width="31" height="16"/>
+            <rect x="60" y="86" width="31" height="16"/><rect x="93" y="86" width="31" height="16"/><rect x="126" y="86" width="31" height="16"/><rect x="159" y="86" width="31" height="16"/><rect x="192" y="86" width="31" height="16"/><rect x="225" y="86" width="31" height="16"/><rect x="258" y="86" width="31" height="16"/><rect x="291" y="86" width="31" height="16"/><rect x="324" y="86" width="31" height="16"/><rect x="357" y="86" width="31" height="16"/><rect x="390" y="86" width="31" height="16"/><rect x="423" y="86" width="31" height="16"/><rect x="456" y="86" width="31" height="16"/><rect x="489" y="86" width="31" height="16"/><rect x="522" y="86" width="31" height="16"/><rect x="555" y="86" width="31" height="16"/><rect x="588" y="86" width="31" height="16"/><rect x="621" y="86" width="31" height="16"/><rect x="654" y="86" width="31" height="16"/><rect x="687" y="86" width="31" height="16"/>
+            <rect x="60" y="108" width="31" height="16"/><rect x="93" y="108" width="31" height="16"/><rect x="126" y="108" width="31" height="16"/><rect x="159" y="108" width="31" height="16"/><rect x="192" y="108" width="31" height="16"/><rect x="225" y="108" width="31" height="16"/><rect x="258" y="108" width="31" height="16"/><rect x="291" y="108" width="31" height="16"/><rect x="324" y="108" width="31" height="16"/><rect x="357" y="108" width="31" height="16"/><rect x="390" y="108" width="31" height="16"/><rect x="423" y="108" width="31" height="16"/><rect x="456" y="108" width="31" height="16"/><rect x="489" y="108" width="31" height="16"/><rect x="522" y="108" width="31" height="16"/><rect x="555" y="108" width="31" height="16"/><rect x="588" y="108" width="31" height="16"/><rect x="621" y="108" width="31" height="16"/><rect x="654" y="108" width="31" height="16"/><rect x="687" y="108" width="31" height="16"/>
+            <rect x="60" y="130" width="31" height="16"/><rect x="93" y="130" width="31" height="16"/><rect x="126" y="130" width="31" height="16"/><rect x="159" y="130" width="31" height="16"/><rect x="192" y="130" width="31" height="16"/><rect x="225" y="130" width="31" height="16"/><rect x="258" y="130" width="31" height="16"/><rect x="291" y="130" width="31" height="16"/><rect x="324" y="130" width="31" height="16"/><rect x="357" y="130" width="31" height="16"/><rect x="390" y="130" width="31" height="16"/><rect x="423" y="130" width="31" height="16"/><rect x="456" y="130" width="31" height="16"/><rect x="489" y="130" width="31" height="16"/><rect x="522" y="130" width="31" height="16"/><rect x="555" y="130" width="31" height="16"/><rect x="588" y="130" width="31" height="16"/><rect x="621" y="130" width="31" height="16"/><rect x="654" y="130" width="31" height="16"/><rect x="687" y="130" width="31" height="16"/>
+            <rect x="60" y="152" width="31" height="16"/><rect x="93" y="152" width="31" height="16"/><rect x="126" y="152" width="31" height="16"/><rect x="159" y="152" width="31" height="16"/><rect x="192" y="152" width="31" height="16"/><rect x="225" y="152" width="31" height="16"/><rect x="258" y="152" width="31" height="16"/><rect x="291" y="152" width="31" height="16"/><rect x="324" y="152" width="31" height="16"/><rect x="357" y="152" width="31" height="16"/><rect x="390" y="152" width="31" height="16"/><rect x="423" y="152" width="31" height="16"/><rect x="456" y="152" width="31" height="16"/><rect x="489" y="152" width="31" height="16"/><rect x="522" y="152" width="31" height="16"/><rect x="555" y="152" width="31" height="16"/><rect x="588" y="152" width="31" height="16"/><rect x="621" y="152" width="31" height="16"/><rect x="654" y="152" width="31" height="16"/><rect x="687" y="152" width="31" height="16"/>
+            <rect x="60" y="174" width="31" height="16"/><rect x="93" y="174" width="31" height="16"/><rect x="126" y="174" width="31" height="16"/><rect x="159" y="174" width="31" height="16"/><rect x="192" y="174" width="31" height="16"/><rect x="225" y="174" width="31" height="16"/><rect x="258" y="174" width="31" height="16"/><rect x="291" y="174" width="31" height="16"/><rect x="324" y="174" width="31" height="16"/><rect x="357" y="174" width="31" height="16"/><rect x="390" y="174" width="31" height="16"/><rect x="423" y="174" width="31" height="16"/><rect x="456" y="174" width="31" height="16"/><rect x="489" y="174" width="31" height="16"/><rect x="522" y="174" width="31" height="16"/><rect x="555" y="174" width="31" height="16"/><rect x="588" y="174" width="31" height="16"/><rect x="621" y="174" width="31" height="16"/><rect x="654" y="174" width="31" height="16"/><rect x="687" y="174" width="31" height="16"/>
+            <rect x="60" y="196" width="31" height="16"/><rect x="93" y="196" width="31" height="16"/>
+          </g>
+
+          <!-- surviving: 1–10 -->
+          <g class="f-acc">
+            <rect x="60" y="42" width="31" height="16"/><rect x="93" y="42" width="31" height="16"/><rect x="126" y="42" width="31" height="16"/><rect x="159" y="42" width="31" height="16"/><rect x="192" y="42" width="31" height="16"/><rect x="225" y="42" width="31" height="16"/><rect x="258" y="42" width="31" height="16"/><rect x="291" y="42" width="31" height="16"/><rect x="324" y="42" width="31" height="16"/><rect x="357" y="42" width="31" height="16"/>
+            <rect x="60" y="64" width="31" height="16"/><rect x="93" y="64" width="31" height="16"/><rect x="126" y="64" width="31" height="16"/><rect x="159" y="64" width="31" height="16"/><rect x="192" y="64" width="31" height="16"/><rect x="225" y="64" width="31" height="16"/><rect x="258" y="64" width="31" height="16"/><rect x="291" y="64" width="31" height="16"/><rect x="324" y="64" width="31" height="16"/><rect x="357" y="64" width="31" height="16"/><rect x="390" y="64" width="31" height="16"/><rect x="423" y="64" width="31" height="16"/><rect x="456" y="64" width="31" height="16"/><rect x="489" y="64" width="31" height="16"/><rect x="522" y="64" width="31" height="16"/><rect x="555" y="64" width="31" height="16"/><rect x="588" y="64" width="31" height="16"/><rect x="621" y="64" width="31" height="16"/><rect x="654" y="64" width="31" height="16"/><rect x="687" y="64" width="31" height="16"/>
+            <rect x="60" y="86" width="31" height="16"/><rect x="93" y="86" width="31" height="16"/><rect x="126" y="86" width="31" height="16"/><rect x="159" y="86" width="31" height="16"/><rect x="192" y="86" width="31" height="16"/>
+          </g>
+
+          <g class="t t--xs t--end"><text x="52" y="54">1</text><text x="52" y="76">21</text><text x="52" y="98">41</text><text x="52" y="120">61</text><text x="52" y="142">81</text><text x="52" y="164">101</text><text x="52" y="186">121</text><text x="52" y="208">141</text></g>
+
+          <path d="M375 34 V 42" class="s-ink" stroke-width="1"/>
+          <text x="375" y="30" class="t t--mid t--xs t--ink">books 11–20 lost: 292–219 BCE</text>
+          <path d="M208 102 V 110" class="s-ink" stroke-width="1"/>
+          <text x="214" y="118" class="t t--xs t--ink">everything after 167 BCE is gone — including the fall of the Republic</text>
+
+          <g><rect x="20" y="228" width="12" height="12" class="f-acc"/><text x="40" y="238" class="t t--xs">Survives · books 1–10 and 21–45 · about 25%</text>
+             <rect x="300" y="228" width="12" height="12" class="f-hair"/><text x="320" y="238" class="t t--xs">Lost · known only from the ancient one-paragraph summaries</text></g>
+          <text x="20" y="258" class="t t--xs">Books 41 and 43–45 reach us damaged, with passages missing. The summaries (Periochae) survive for all but two books, so we know the shape of what is gone.</text>
+        </svg>
+      </div>
+      <figcaption>The losses are not random in their effect. We have Rome's legendary origins and its conquest of Italy and the Mediterranean, and we have lost Livy's account of the Gracchi, Marius, Sulla, Caesar and Augustus — the part he lived closest to and the part historians would most like to read.</figcaption>
+    </figure>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 02</b><span>The four volumes, and the years they cover</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 250" role="img" aria-label="A chart mapping the four Penguin volumes onto Livy's book numbers and the years of Roman history they cover, with the gap between them marked.">
+          <!-- scale: x=210 at 760 BCE, 0.895 px per year, to 167 BCE -->
+          <g class="s-hair" stroke-width="0.8" stroke-dasharray="2 5">
+            <path d="M255 38 V 168"/><path d="M345 38 V 168"/><path d="M434 38 V 168"/>
+            <path d="M524 38 V 168"/><path d="M613 38 V 168"/><path d="M703 38 V 168"/>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="255" y="30">700</text><text x="345" y="30">600</text><text x="434" y="30">500</text>
+            <text x="524" y="30">400</text><text x="613" y="30">300</text><text x="703" y="30">200 BCE</text>
+          </g>
+          <path d="M210 168 H 740" class="s-graph" stroke-width="1"/>
+
+          <g class="t t--xs t--end t--ink">
+            <text x="200" y="56">Books 1–5</text><text x="200" y="86">Books 6–10</text>
+            <text x="200" y="116">Books 21–30</text><text x="200" y="146">Books 31–45</text>
+          </g>
+          <g class="t t--xs t--end">
+            <text x="200" y="68">The Early History of Rome</text><text x="200" y="98">Rome and Italy</text>
+            <text x="200" y="128">The War with Hannibal</text><text x="200" y="158">Rome and the Mediterranean</text>
+          </g>
+
+          <rect x="217" y="48" width="309" height="14" class="f-acc"/>
+          <rect x="524" y="78" width="87"  height="14" class="f-ox"/>
+          <rect x="659" y="108" width="16" height="14" class="f-och"/>
+          <rect x="675" y="138" width="31" height="14" class="f-cool"/>
+
+          <g class="t t--xs">
+            <text x="534" y="59">753–390 · kings, republic, the Gauls</text>
+            <text x="616" y="89">390–293 · conquest of Italy</text>
+            <text x="650" y="119" class="t--end">218–201 · Hannibal</text>
+            <text x="666" y="149" class="t--end">201–167 · the east</text>
+          </g>
+
+          <rect x="611" y="98" width="48" height="54" class="f-hair" opacity="0.6"/>
+          <text x="635" y="180" class="t t--mid t--xs t--ink">the gap</text>
+          <path d="M635 168 V 152" class="s-ink" stroke-width="1"/>
+          <text x="20" y="204" class="t t--xs">Books 11–20 covered 292–219 BCE and are lost: the war with Pyrrhus, the whole First Punic War, and the</text>
+          <text x="20" y="218" class="t t--xs">conquest of Cisalpine Gaul. The reader of Livy therefore jumps from the Samnite wars straight to Hannibal.</text>
+          <text x="20" y="240" class="t t--xs t--acc">Bar length is years covered. Note how uneven Livy's pace is: five books for 363 years, then ten books for seventeen.</text>
+        </svg>
+      </div>
+      <figcaption>That last line is the key to reading him. Livy's scale expands as his sources thicken — the first five books average seventy years each, the Hannibal books average under two. He is not compressing for effect; he simply has almost nothing to work with at the start.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">What Livy thought he was doing</h5>
+    <p>
+      The preface is short and unusually candid. Livy admits the early material is closer to poetry than
+      to evidence, declines to argue about it, and states a purpose that is frankly moral: the reader
+      should look at the record as at a monument, and take from it models to copy and warnings to avoid.
+      The frame is one of decline — a hard, poor, disciplined Rome that conquered the world and was then
+      corrupted by what it won.
+    </p>
+
+    <p class="pull">
+      "What chiefly makes the study of history wholesome and profitable is this, that you behold the
+      lessons of every kind of experience set forth as on a conspicuous monument."<cite>Livy · Preface</cite>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 03</b><span>How much to trust, book by book</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 246" role="img" aria-label="A gradient chart showing the increasing historical reliability of Livy's narrative from the legendary early books to the well-sourced later books.">
+          <path d="M60 176 H 730" class="s-graph" stroke-width="1.1"/>
+          <path d="M60 176 V 46" class="s-graph" stroke-width="1.1"/>
+          <text x="52" y="52" class="t t--end t--xs">good</text>
+          <text x="52" y="174" class="t t--end t--xs">legend</text>
+
+          <path d="M60 168 L 200 160 L 220 120 L 360 112 L 380 76 L 520 68 L 540 56 L 730 52"
+                class="f-none s-acc" stroke-width="2.4"/>
+
+          <g class="s-hair" stroke-width="0.8" stroke-dasharray="2 5">
+            <path d="M210 46 V 176"/><path d="M370 46 V 176"/><path d="M530 46 V 176"/>
+          </g>
+          <g class="t t--xs t--mid t--ink">
+            <text x="135" y="196">BOOKS 1–5</text><text x="290" y="196">BOOKS 6–10</text>
+            <text x="450" y="196">BOOKS 21–30</text><text x="630" y="196">BOOKS 31–45</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="135" y="210">753–390</text><text x="290" y="210">390–293</text>
+            <text x="450" y="210">218–201</text><text x="630" y="210">201–167</text>
+          </g>
+
+          <g class="t t--xs">
+            <text x="66" y="152">Foundation legend and</text><text x="66" y="164">family myth. Livy says so.</text>
+            <text x="226" y="104">Consular lists are real;</text><text x="226" y="116">the battles are inflated.</text>
+            <text x="386" y="60">Within living memory of</text><text x="386" y="72">Livy's own sources.</text>
+            <text x="546" y="40">Following Polybius, who</text><text x="546" y="52">interviewed participants.</text>
+          </g>
+
+          <path d="M60 226 H 730" class="s-hair" stroke-width="1"/>
+          <text x="60" y="240" class="t t--xs t--acc">Livy's own explanation: the Gauls burned the city in 390 and the records with it, so nothing before that is secure.</text>
+        </svg>
+      </div>
+      <figcaption>A useful rule for the reader: treat Books 1–5 as what Rome believed about itself, Books 6–10 as a real skeleton with invented flesh, and Books 21–45 as history in a recognisable sense — checkable, in the last two collections, against Polybius, who was writing a generation after the events and had talked to the men involved.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">The four collections at a glance</h5>
+    <div class="index wide">
+      <a class="index__row" href="#bk1"><span class="n">1–5</span><span class="ttl">The Early History of Rome</span><span class="gist">Seven kings, the expulsion of the last, and a young republic that survives by inventing the tribunate, the Twelve Tables and Cincinnatus. Ends with the Gauls burning the city.</span></a>
+      <a class="index__row" href="#bk6"><span class="n">6–10</span><span class="ttl">Rome and Italy</span><span class="gist">A century of grinding war against the Samnites and the Latins — and, quietly, the invention that decides everything: a graded citizenship that turns defeated enemies into manpower.</span></a>
+      <a class="index__row" href="#bk21"><span class="n">21–30</span><span class="ttl">The War with Hannibal</span><span class="gist">Livy's masterpiece. Three catastrophic defeats in three years, a refusal to negotiate, and a sixteen-year recovery ending at Zama.</span></a>
+      <a class="index__row" href="#bk31"><span class="n">31–45</span><span class="ttl">Rome and the Mediterranean</span><span class="gist">Macedon and the Seleucids broken in thirty years by a state that claims not to want an empire — and the money coming home starts to worry people at home.</span></a>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       BOOKS 1–5
+       ========================================================== -->
+  <section class="movement" id="bk1" aria-labelledby="bk1-h">
+    <div class="vol">
+      <div class="vol__top">
+        <span class="vol__n">Books 1–5</span>
+        <span class="eyebrow">Penguin: The Early History of Rome · tr. de Sélincourt</span>
+      </div>
+      <h3 id="bk1-h">The Early History of Rome</h3>
+      <p class="vol__sub">From Aeneas and the founding to the Gallic sack — the whole of Rome's legendary and half-legendary past.</p>
+      <dl class="vol__strip">
+        <div><dt>Years</dt><dd>753 – 390 BCE</dd></div>
+        <div><dt>Status</dt><dd>Largely legend</dd></div>
+        <div><dt>Theme</dt><dd>Where the virtues came from</dd></div>
+        <div><dt>Ends</dt><dd>The city in ashes</dd></div>
+      </dl>
+    </div>
+
+    <p class="lede">
+      These are the most famous and least reliable pages Livy wrote, and he knows it. The material is
+      family tradition, priestly record, Greek speculation and patriotic invention, and out of it he
+      assembles the founding stories every educated Roman afterwards had by heart: Romulus and Remus,
+      the Sabine women, Horatius at the bridge, Mucius Scaevola's hand in the fire, Cincinnatus at the
+      plough, the geese of the Capitol. <strong>Read as evidence they are nearly worthless; read as a
+      portrait of what Rome wanted to be, they are the most valuable thing in the book.</strong>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 04</b><span>The seven kings, and what each is credited with</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 250" role="img" aria-label="The seven kings of Rome in sequence with their traditional dates and the institution each is credited with founding.">
+          <path d="M40 96 H 730" class="s-graph" stroke-width="1.2"/>
+          <g class="f-acc">
+            <circle cx="70" cy="96" r="6"/><circle cx="164" cy="96" r="6"/><circle cx="258" cy="96" r="6"/>
+            <circle cx="352" cy="96" r="6"/><circle cx="446" cy="96" r="6"/><circle cx="540" cy="96" r="6"/>
+          </g>
+          <circle cx="634" cy="96" r="6" class="f-ox"/>
+
+          <g class="t t--xs t--mid t--ink">
+            <text x="70" y="76">Romulus</text><text x="164" y="76">Numa</text><text x="258" y="76">Tullus</text>
+            <text x="352" y="76">Ancus</text><text x="446" y="76">Tarquin I</text><text x="540" y="76">Servius</text>
+            <text x="634" y="76">Tarquin II</text>
+          </g>
+          <g class="t t--xs t--mid t--num">
+            <text x="70" y="62">753–716</text><text x="164" y="62">715–673</text><text x="258" y="62">673–642</text>
+            <text x="352" y="62">642–617</text><text x="446" y="62">616–579</text><text x="540" y="62">578–535</text>
+            <text x="634" y="62">534–509</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="70" y="120">The city, the</text><text x="70" y="132">Senate, the</text><text x="70" y="144">first war</text>
+            <text x="164" y="120">Religion, the</text><text x="164" y="132">calendar, the</text><text x="164" y="144">priesthoods</text>
+            <text x="258" y="120">War as a</text><text x="258" y="132">habit; Alba</text><text x="258" y="144">destroyed</text>
+            <text x="352" y="120">Ostia, the</text><text x="352" y="132">first bridge,</text><text x="352" y="144">the plebs grow</text>
+            <text x="446" y="120">Etruscan works:</text><text x="446" y="132">the drains, the</text><text x="446" y="144">Circus, the wall</text>
+            <text x="540" y="120">The census and</text><text x="540" y="132">the centuriate</text><text x="540" y="144">assembly</text>
+            <text x="634" y="120">Tyranny — and</text><text x="634" y="132">the rape of</text><text x="634" y="144">Lucretia</text>
+          </g>
+
+          <path d="M634 96 L 700 96" class="s-ox" stroke-width="2.4"/>
+          <path d="M700 96 V 172" class="s-ox" stroke-width="1.4"/>
+          <text x="700" y="188" class="t t--mid t--xs t--ox">509 · the monarchy expelled</text>
+
+          <rect x="40" y="204" width="690" height="2" class="f-hair"/>
+          <text x="40" y="224" class="t t--xs">Seven kings for 244 years is an average reign of 35 years, which no dynasty has ever managed. The list is a later</text>
+          <text x="40" y="238" class="t t--xs">reconstruction: real names, probably, attached to a made-up chronology and a tidy division of institutional credit.</text>
+        </svg>
+      </div>
+      <figcaption>Note the shape of the scheme: a founder, a lawgiver-priest, a warrior, a builder, two Etruscans who supply the engineering, and a tyrant whose crime justifies the Republic. It is a constitutional argument told as biography — every Roman institution gets a father, and the monarchy gets a reason to end.</figcaption>
+    </figure>
+
+    <article class="chapter wide" id="l-b2">
+      <div class="chapter__head"><span class="chapter__num">Bks 2–4</span><h4>The Republic Learns to Argue</h4><span class="yr">509 – 406 BCE</span></div>
+      <p>
+        With the kings gone, Livy's subject becomes a two-hundred-year quarrel between patricians and
+        plebeians that never quite becomes a revolution. The plebs' weapon is not violence but
+        <em>secession</em>: they walk out of the city and refuse to serve in the army, and since Rome is
+        always at war, they are always needed back. Each walkout ends in a concession, and the
+        concessions accumulate into a constitution.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 05</b><span>The Struggle of the Orders as a ratchet</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 258" role="img" aria-label="A staircase diagram showing successive plebeian gains from the first secession in 494 BCE to the lex Hortensia in 287 BCE.">
+            <path d="M40 220 L 130 220 L 130 196 L 230 196 L 230 172 L 330 172 L 330 148 L 430 148 L 430 124 L 530 124 L 530 100 L 630 100 L 630 76 L 730 76"
+                  class="f-none s-acc" stroke-width="2.4"/>
+            <g class="f-acc">
+              <circle cx="130" cy="220" r="4.5"/><circle cx="230" cy="196" r="4.5"/><circle cx="330" cy="172" r="4.5"/>
+              <circle cx="430" cy="148" r="4.5"/><circle cx="530" cy="124" r="4.5"/><circle cx="630" cy="100" r="4.5"/>
+            </g>
+            <g class="s-hair" stroke-width="0.7" stroke-dasharray="2 5">
+              <path d="M130 76 V 220"/><path d="M230 76 V 196"/><path d="M330 76 V 172"/>
+              <path d="M430 76 V 148"/><path d="M530 76 V 124"/><path d="M630 76 V 100"/>
+            </g>
+
+            <g class="t t--xs t--acc t--num">
+              <text x="88" y="238">494</text><text x="192" y="238">451</text><text x="292" y="238">445</text>
+              <text x="392" y="238">367</text><text x="492" y="238">326</text><text x="592" y="238">287</text>
+            </g>
+            <g class="t t--xs">
+              <text x="46" y="212">First secession —</text><text x="46" y="200">tribunes created,</text><text x="46" y="188">and made inviolable</text>
+              <text x="146" y="188">The Twelve Tables:</text><text x="146" y="176">the law written down</text><text x="146" y="164">so it can be known</text>
+              <text x="246" y="164">Lex Canuleia —</text><text x="246" y="152">patrician and plebeian</text><text x="246" y="140">may intermarry</text>
+              <text x="346" y="140">Licinian-Sextian laws:</text><text x="346" y="128">one consul must be</text><text x="346" y="116">plebeian; land capped</text>
+              <text x="446" y="116">Debt-bondage for</text><text x="446" y="104">citizens abolished</text><text x="446" y="92">— nexum ends</text>
+              <text x="546" y="92">Lex Hortensia —</text><text x="546" y="80">plebeian assembly's</text><text x="546" y="68">votes bind everyone</text>
+            </g>
+            <text x="40" y="44" class="t t--acc t--sm">Two centuries of concessions, none of them reversed</text>
+            <text x="40" y="60" class="t t--xs">Livy's own explanation is Menenius Agrippa's fable of the belly and the limbs: the orders need each other.</text>
+          </svg>
+        </div>
+        <figcaption>The last three steps happen in Books 6–10 and the first three here, but the mechanism is one thing and it is worth seeing whole. Livy's patrician sympathies are visible throughout — he dislikes demagogues and admires senatorial restraint — yet the story he tells is one of steady plebeian victory.</figcaption>
+      </figure>
+
+      <div class="claim claim--acc">
+        <b>The moral set-pieces, and what they are for</b>
+        Horatius holding the bridge alone; Mucius Scaevola burning off his own right hand to show Porsenna
+        what Romans are; Cincinnatus taking the dictatorship, winning in sixteen days and returning to his
+        four acres; Verginius killing his own daughter rather than let a magistrate take her. Each is
+        almost certainly invented. Each dramatises one virtue — <em>constantia</em>, <em>fortitudo</em>,
+        <em>modestia</em>, <em>pudicitia</em> — and each was told to Roman schoolboys for the next five
+        hundred years. Livy is manufacturing a civic character, and he says in the preface that this is
+        the point of history.
+      </div>
+    </article>
+
+    <article class="chapter wide" id="l-b5">
+      <div class="chapter__head"><span class="chapter__num">Bk 5</span><h4>Veii, and Then the Gauls</h4><span class="yr">406 – 390 BCE</span></div>
+      <p>
+        Book 5 is the best-constructed of the five and turns on a single reversal. Rome takes Veii after a
+        ten-year siege — a deliberate echo of Troy, complete with a tunnel instead of a horse — and doubles
+        its territory. Camillus, the victor, is then exiled on a charge of mishandling the spoils. Within
+        five years a Gallic army destroys the Roman force at the Allia and burns the city; only the
+        Capitol holds, saved by the sacred geese. Camillus is recalled, drives the Gauls out, and talks
+        the Romans out of abandoning the ruins for Veii.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 06</b><span>The arc of Books 1–5</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 250" role="img" aria-label="A curve tracing Rome's fortunes across books one to five, from the founding through the expulsion of the kings and the capture of Veii to the Gallic sack and recovery.">
+            <path d="M50 190 H 730" class="s-graph" stroke-width="1.1"/>
+            <path d="M50 190 V 42" class="s-graph" stroke-width="1.1"/>
+            <path d="M50 178 C 130 170, 180 150, 230 152 C 290 154, 330 124, 390 120 C 450 116, 490 96, 540 70 C 566 58, 580 56, 592 58 C 604 62, 610 150, 626 172 C 640 188, 660 150, 690 112 C 706 92, 718 82, 730 78"
+                  class="f-none s-acc" stroke-width="2.4"/>
+            <g class="f-ox"><circle cx="592" cy="58" r="4.5"/><circle cx="626" cy="172" r="4.5"/></g>
+            <g class="f-acc"><circle cx="230" cy="152" r="4.5"/><circle cx="390" cy="120" r="4.5"/></g>
+
+            <g class="t t--xs">
+              <text x="56" y="170">753 · the founding</text>
+              <text x="176" y="144">509 · the kings expelled</text>
+              <text x="300" y="112">494–451 · tribunes, then the Twelve Tables</text>
+              <text x="450" y="50">396 · Veii taken; territory doubled</text>
+              <text x="600" y="196" class="t--ox">390 · the Allia; the city burned</text>
+            </g>
+            <path d="M626 178 V 188" class="s-ox" stroke-width="1"/>
+            <text x="50" y="34" class="t t--acc t--sm">Livy's design: the highest point and the lowest are five years apart</text>
+            <text x="50" y="228" class="t t--xs t--ox">Camillus is recalled, drives the Gauls out, and talks the Romans out of abandoning the ruins for Veii.</text>
+            <text x="50" y="242" class="t t--xs">The lesson Livy draws is religious as much as political: Rome falls when it neglects the auspices.</text>
+          </svg>
+        </div>
+        <figcaption>The sack of 390 is Livy's explanation for why nothing before it can be verified: the records burned. It is also his hinge. Everything after is a recovery narrative, and the Rome that rebuilds is the one that will take Italy in the next collection.</figcaption>
+      </figure>
+
+      <p class="pull">
+        Brennus threw his sword onto the scale with the gold and said the word Livy makes famous:
+        <em>vae victis</em> — woe to the conquered. Rome spent the next three centuries making sure the
+        phrase was said by Romans.<cite>Book 5 · the Gallic ransom</cite>
+      </p>
+    </article>
+  </section>
+
+  <!-- ==========================================================
+       BOOKS 6–10
+       ========================================================== -->
+  <section class="movement" id="bk6" aria-labelledby="bk6-h">
+    <div class="vol">
+      <div class="vol__top">
+        <span class="vol__n">Books 6–10</span>
+        <span class="eyebrow">Penguin: Rome and Italy · tr. Betty Radice</span>
+      </div>
+      <h3 id="bk6-h">Rome and Italy</h3>
+      <p class="vol__sub">From the rebuilding after the Gauls to the end of the Third Samnite War — the century in which a city becomes the master of a peninsula.</p>
+      <dl class="vol__strip">
+        <div><dt>Years</dt><dd>390 – 293 BCE</dd></div>
+        <div><dt>Status</dt><dd>A real skeleton</dd></div>
+        <div><dt>Theme</dt><dd>Manpower, not genius</dd></div>
+        <div><dt>Least read</dt><dd>and the most instructive</dd></div>
+      </dl>
+    </div>
+
+    <p class="lede">
+      This is the collection people skip, and it contains the answer to the question the other three
+      raise: how did Rome absorb defeats that would have finished any other state? The answer is worked
+      out here, in a hundred years of unglamorous fighting against the Samnites — a confederation of
+      hill peoples who beat Rome repeatedly and still lost, because Rome had found a way to turn
+      conquered enemies into soldiers.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 07</b><span>The instrument: citizenship in grades</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 268" role="img" aria-label="A diagram of the graded statuses Rome offered defeated communities, from full citizenship through citizenship without the vote and Latin rights to allied status, with the obligations attached to each.">
+          <path d="M20 52 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px">
+            <text x="20" y="46">STATUS</text><text x="250" y="46">WHAT YOU GET</text><text x="500" y="46">WHAT YOU OWE</text><text x="670" y="46">TYPICALLY</text>
+          </g>
+          <g class="s-hair" stroke-width="0.7"><path d="M20 84 H740"/><path d="M20 118 H740"/><path d="M20 152 H740"/><path d="M20 186 H740"/></g>
+
+          <g class="t t--xs t--ink">
+            <text x="20" y="72">Full citizen</text><text x="20" y="106">Citizen sine suffragio</text>
+            <text x="20" y="140">Latin right</text><text x="20" y="174">Allied community</text>
+          </g>
+          <g class="t t--xs">
+            <text x="250" y="72">Vote, office, full protection of law</text><text x="500" y="72">Legionary service; tax</text><text x="670" y="72">Old Roman land</text>
+            <text x="250" y="106">Law and trade, but no vote</text><text x="500" y="106">Legionary service; tax</text><text x="670" y="106">Nearby towns</text>
+            <text x="250" y="140">Trade, intermarriage, migration —</text><text x="250" y="152">and full citizenship if you move to Rome</text>
+            <text x="500" y="140">Troops on demand</text><text x="670" y="140">Latin colonies</text>
+            <text x="250" y="174">Local self-government; no tribute</text><text x="500" y="174">Troops on demand</text><text x="670" y="174">Everyone else</text>
+          </g>
+          <rect x="20" y="54" width="720" height="30" class="f-acc" opacity="0.10"/>
+          <rect x="20" y="122" width="720" height="30" class="f-acc" opacity="0.06"/>
+
+          <rect x="20" y="200" width="720" height="56" class="f-plate3"/>
+          <rect x="20" y="200" width="4" height="56" class="f-acc"/>
+          <text x="36" y="220" class="t t--acc t--sm">Why it decides everything</text>
+          <text x="36" y="236" class="t t--xs">A defeated city is not enslaved or garrisoned; it is enrolled. It keeps its own government, pays no tribute, and</text>
+          <text x="36" y="250" class="t t--xs">supplies soldiers. Rome's army therefore grows with every war it wins — and can survive losing several.</text>
+        </svg>
+      </div>
+      <figcaption>Livy never presents this as a policy; it accumulates settlement by settlement, most decisively after the Latin War of 340–338. But it is the reason Hannibal could destroy three Roman armies and still not win: he was fighting a manpower pool of perhaps 700,000, and he could not detach enough of it.</figcaption>
+    </figure>
+
+    <article class="chapter wide" id="l-b9">
+      <div class="chapter__head"><span class="chapter__num">Bks 7–10</span><h4>The Samnite Wars</h4><span class="yr">343 – 290 BCE</span></div>
+      <p>
+        Three wars over fifty years, fought in mountains that suited the enemy, and Livy does not hide
+        that Rome lost a great many of the engagements. The central episode is the disaster at the
+        <strong>Caudine Forks</strong> in 321, where an entire consular army marched into a blind valley,
+        was trapped without a battle, and was released only after passing under the yoke — a ritual
+        humiliation Livy describes at length and with real pain.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 08</b><span>The Caudine Forks, 321 BCE</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 220" role="img" aria-label="A schematic of the Caudine Forks trap: a Roman army marching into a valley with both narrow exits blocked by the Samnites.">
+            <defs><marker id="c-ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-acc"/></marker></defs>
+            <path d="M60 60 H 700" class="s-graph" stroke-width="9" opacity="0.3"/>
+            <path d="M60 160 H 700" class="s-graph" stroke-width="9" opacity="0.3"/>
+            <text x="70" y="50" class="t t--xs">wooded ridge</text>
+            <text x="70" y="180" class="t t--xs">wooded ridge</text>
+
+            <rect x="150" y="100" width="16" height="24" class="f-ox"/>
+            <rect x="600" y="100" width="16" height="24" class="f-ox"/>
+            <text x="158" y="94" class="t t--mid t--xs t--ox">defile blocked</text>
+            <text x="608" y="94" class="t t--mid t--xs t--ox">defile blocked</text>
+
+            <rect x="300" y="104" width="180" height="18" class="f-acc"/>
+            <text x="390" y="117" class="t t--rev t--mid t--xs">two consular legions</text>
+
+            <path d="M200 138 H 290" class="s-acc" stroke-width="1.4" marker-end="url(#c-ar)"/>
+            <text x="200" y="152" class="t t--xs">they march in eastward…</text>
+            <path d="M560 138 H 500" class="s-acc" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#c-ar)"/>
+            <text x="500" y="152" class="t t--xs">…and find the far exit already held</text>
+
+            <text x="60" y="200" class="t t--xs">No battle is fought. Cut off from water and supply, the army surrenders and passes under the yoke — a spear</text>
+            <text x="60" y="214" class="t t--xs">laid across two uprights, low enough that a man must stoop. Livy calls it worse than any defeat in the field.</text>
+          </svg>
+        </div>
+        <figcaption>Rome's response is the pattern of the whole collection: repudiate the treaty on a technicality, hand the officers who swore it back to the Samnites, and resume the war. Livy is uncomfortable with the legal manoeuvre and reports it anyway — one of the places his honesty gets the better of his patriotism.</figcaption>
+      </figure>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 09</b><span>Phalanx to maniple — the reform these wars force</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 250" role="img" aria-label="A comparison of the rigid hoplite phalanx with the Roman manipular legion made of small independent blocks in a checkerboard of three lines.">
+            <text x="20" y="24" class="t t--graph" style="font-size:12px">THE PHALANX — one block</text>
+            <g class="f-graph" opacity="0.55">
+              <rect x="20" y="44" width="300" height="14"/><rect x="20" y="62" width="300" height="14"/>
+              <rect x="20" y="80" width="300" height="14"/><rect x="20" y="98" width="300" height="14"/>
+            </g>
+            <text x="20" y="132" class="t t--xs">Irresistible on flat ground, straight ahead.</text>
+            <text x="20" y="146" class="t t--xs">On broken ground the line opens gaps,</text>
+            <text x="20" y="160" class="t t--xs">and a gap in a phalanx is fatal.</text>
+            <path d="M20 178 L 320 178" class="s-ox" stroke-width="1" stroke-dasharray="4 3"/>
+            <path d="M120 172 L 140 186 L 170 170 L 200 188 L 240 174" class="f-none s-ox" stroke-width="1.6"/>
+            <text x="20" y="204" class="t t--xs t--ox">Samnite country is all broken ground.</text>
+
+            <path d="M360 16 V 236" class="s-hair" stroke-width="1"/>
+
+            <text x="392" y="24" class="t t--acc" style="font-size:12px">THE MANIPULAR LEGION — thirty blocks</text>
+            <g class="f-acc">
+              <rect x="392" y="44" width="46" height="14"/><rect x="466" y="44" width="46" height="14"/><rect x="540" y="44" width="46" height="14"/><rect x="614" y="44" width="46" height="14"/><rect x="688" y="44" width="46" height="14"/>
+              <rect x="429" y="70" width="46" height="14"/><rect x="503" y="70" width="46" height="14"/><rect x="577" y="70" width="46" height="14"/><rect x="651" y="70" width="46" height="14"/>
+              <rect x="392" y="96" width="46" height="14"/><rect x="466" y="96" width="46" height="14"/><rect x="540" y="96" width="46" height="14"/><rect x="614" y="96" width="46" height="14"/><rect x="688" y="96" width="46" height="14"/>
+            </g>
+            <g class="t t--xs t--end">
+              <text x="386" y="55">hastati</text><text x="386" y="81">principes</text><text x="386" y="107">triarii</text>
+            </g>
+            <text x="392" y="132" class="t t--xs">Each block manoeuvres on its own and fits</text>
+            <text x="392" y="146" class="t t--xs">the ground. The gaps are deliberate: a tired</text>
+            <text x="392" y="160" class="t t--xs">front line falls back through them and a</text>
+            <text x="392" y="174" class="t t--xs">fresh line steps forward.</text>
+            <text x="392" y="198" class="t t--xs t--acc">Three chances to win the same battle —</text>
+            <text x="392" y="212" class="t t--xs t--acc">and an army that can lose its front and hold.</text>
+            <text x="20" y="240" class="t t--xs">Livy credits the change to the Samnite wars themselves. It is the single most consequential thing in Books 6–10, and he gives it a paragraph.</text>
+          </svg>
+        </div>
+        <figcaption>The reform is also social: the three lines are age and wealth classes, so the legion encodes the census. When Rome later meets the Macedonian phalanx in Books 31–45, this is the argument that gets settled — and Livy, writing much later, knows the answer in advance.</figcaption>
+      </figure>
+
+      <p>
+        The collection closes at Sentinum in 295, where Rome faced a coalition of Samnites, Etruscans,
+        Umbrians and Gauls and won the largest battle fought in Italy to that date. Livy gives it the
+        full set-piece treatment, including the second <em>devotio</em> of a Decius Mus — a consul
+        formally dedicating himself and the enemy to the gods of the underworld and riding into their
+        line to die. Three years later the Samnites make peace, and Italy south of the Po is Rome's.
+      </p>
+    </article>
+  </section>
+
+  <!-- ==========================================================
+       BOOKS 21–30
+       ========================================================== -->
+  <section class="movement" id="bk21" aria-labelledby="bk21-h">
+    <div class="vol">
+      <div class="vol__top">
+        <span class="vol__n">Books 21–30</span>
+        <span class="eyebrow">Penguin: The War with Hannibal · tr. de Sélincourt</span>
+      </div>
+      <h3 id="bk21-h">The War with Hannibal</h3>
+      <p class="vol__sub">The Second Punic War, from the siege of Saguntum to the peace after Zama — ten books on seventeen years.</p>
+      <dl class="vol__strip">
+        <div><dt>Years</dt><dd>218 – 201 BCE</dd></div>
+        <div><dt>Status</dt><dd>Checkable against Polybius</dd></div>
+        <div><dt>Theme</dt><dd>Refusing to lose</dd></div>
+        <div><dt>Reputation</dt><dd>Livy's masterpiece</dd></div>
+      </dl>
+    </div>
+
+    <p class="lede">
+      This is the collection that made Livy's name and still justifies it. The narrative pace slows to
+      roughly two years a book, the sources are good, and the material is the best story in ancient
+      history: a Carthaginian general crosses the Alps with an army and elephants, destroys three Roman
+      armies in three years — the third in the worst single day any European army has suffered — and then
+      cannot finish the job, because <strong>Rome's answer to catastrophe is to raise another army and
+      decline to discuss terms.</strong>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 10</b><span>Hannibal's march, and the idea behind it</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 286" role="img" aria-label="A schematic of Hannibal's route from New Carthage in Spain across the Pyrenees, southern Gaul and the Alps into Italy, with troop numbers at each stage.">
+          <defs><marker id="h-ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-acc"/></marker></defs>
+          <path d="M60 168 C 130 150, 200 140, 268 132 C 330 124, 386 112, 440 92 C 486 76, 520 66, 556 74 C 596 84, 622 118, 650 154"
+                class="f-none s-acc" stroke-width="2.4" marker-end="url(#h-ar)"/>
+          <g class="f-acc">
+            <circle cx="60" cy="168" r="5"/><circle cx="268" cy="132" r="5"/><circle cx="440" cy="92" r="5"/><circle cx="556" cy="74" r="5"/>
+          </g>
+          <g class="t t--xs t--mid t--ink">
+            <text x="60" y="188">New Carthage</text><text x="268" y="154">the Pyrenees</text>
+            <text x="440" y="114">the Rhône</text><text x="560" y="56">the Alps</text>
+          </g>
+          <g class="t t--xs t--mid t--num t--acc">
+            <text x="60" y="200">102,000</text><text x="268" y="166">59,000</text><text x="440" y="126">46,000</text><text x="596" y="56">26,000</text>
+          </g>
+          <text x="656" y="176" class="t t--xs t--ink">Italy — and one</text>
+          <text x="656" y="188" class="t t--xs t--ink">surviving elephant</text>
+
+          <path d="M60 214 H 700" class="s-hair" stroke-width="1"/>
+          <text x="60" y="46" class="t t--acc t--sm">Why go the hard way at all</text>
+          <text x="60" y="62" class="t t--xs">Rome held the sea. An invasion by ship was impossible, so Hannibal took the only route left —</text>
+          <text x="60" y="76" class="t t--xs">and arrived with a quarter of the men he set out with, in the one place Rome was not defending.</text>
+
+          <text x="60" y="234" class="t t--acc t--sm">The strategy, and why it failed</text>
+          <text x="60" y="250" class="t t--xs">Hannibal could not besiege Rome and never tried seriously. His plan was political: win battles so</text>
+          <text x="60" y="264" class="t t--xs">visibly that Rome's Italian allies would defect, and the confederation would come apart. Some did.</text>
+          <text x="60" y="278" class="t t--xs t--ox">Most did not — and that, rather than any battle, is the reason he lost.</text>
+        </svg>
+      </div>
+      <figcaption>Livy's numbers here come from a monument Hannibal himself set up in southern Italy, reported by Polybius. They are among the most trustworthy figures in the ancient record, and they show the price of the route: he lost more men to mountains and desertion than the Romans took from him in any battle.</figcaption>
+    </figure>
+
+    <article class="chapter wide" id="l-c1">
+      <div class="chapter__head"><span class="chapter__num">Bks 21–22</span><h4>Three Defeats in Three Years</h4><span class="yr">218 – 216 BCE</span></div>
+      <p>
+        Hannibal's first three victories are three different tricks, and Livy narrates each as a lesson in
+        how a Roman commander gets himself killed. At the <strong>Trebia</strong> he provokes a crossing
+        of an icy river at dawn by hungry men, then springs a force hidden in a watercourse. At
+        <strong>Trasimene</strong> he sets the largest ambush in recorded history along a lake shore in
+        morning fog. At <strong>Cannae</strong> he does something harder: he wins a straight fight, in the
+        open, outnumbered nearly two to one.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 11</b><span>Trebia and Trasimene · the two ambushes</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 256" role="img" aria-label="Two battle schematics: at the Trebia a hidden force strikes the Roman rear after a river crossing; at Lake Trasimene the Roman column is trapped between hills and the lake.">
+            <defs>
+              <marker id="t-ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-och"/></marker>
+              <marker id="tr-a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-acc"/></marker>
+            </defs>
+
+            <text x="20" y="24" class="t t--acc" style="font-size:12px">TREBIA · December 218</text>
+            <text x="20" y="38" class="t t--xs">Bait, a cold river, and a force in the streambed</text>
+            <path d="M150 52 V 200" class="s-ox" stroke-width="7" opacity="0.4"/>
+            <text x="150" y="214" class="t t--mid t--xs">the Trebia</text>
+            <rect x="60" y="96" width="70" height="20" class="f-acc"/>
+            <text x="95" y="90" class="t t--mid t--xs">Roman camp</text>
+            <path d="M134 106 H 186" class="s-acc" stroke-width="1.6" marker-end="url(#tr-a)"/>
+            <rect x="196" y="90" width="80" height="32" class="f-och"/>
+            <text x="236" y="84" class="t t--mid t--xs">Hannibal, drawn up and fed</text>
+            <rect x="196" y="152" width="60" height="16" class="f-ox"/>
+            <text x="226" y="182" class="t t--mid t--xs t--ox">Mago, 2,000 men hidden</text>
+            <text x="226" y="194" class="t t--mid t--xs t--ox">in a sunken watercourse</text>
+            <path d="M212 148 V 126" class="s-ox" stroke-width="1.6" marker-end="url(#t-ar)"/>
+            <text x="20" y="236" class="t t--xs">The Romans cross at dawn, wet and unfed, and are hit</text>
+            <text x="20" y="248" class="t t--xs">from behind. Perhaps 10,000 of 40,000 cut their way out.</text>
+
+            <path d="M380 16 V 240" class="s-hair" stroke-width="1"/>
+
+            <text x="404" y="24" class="t t--acc" style="font-size:12px">TRASIMENE · June 217</text>
+            <text x="404" y="38" class="t t--xs">A road between hills and water, in fog</text>
+            <path d="M404 176 H 730" class="s-ox" stroke-width="9" opacity="0.4"/>
+            <text x="566" y="196" class="t t--mid t--xs">Lake Trasimene</text>
+            <path d="M404 66 C 470 54, 540 60, 600 68 C 650 76, 690 84, 730 88" class="f-none s-graph" stroke-width="7" opacity="0.35"/>
+            <text x="470" y="52" class="t t--xs">wooded hills</text>
+            <rect x="440" y="140" width="230" height="16" class="f-acc"/>
+            <text x="555" y="134" class="t t--mid t--xs">the Roman column, strung out on the march</text>
+            <g class="f-och">
+              <rect x="430" y="86" width="46" height="14"/><rect x="500" y="88" width="46" height="14"/>
+              <rect x="570" y="92" width="46" height="14"/><rect x="640" y="96" width="46" height="14"/>
+            </g>
+            <g class="s-och" stroke-width="1.4" fill="none" marker-end="url(#t-ar)">
+              <path d="M453 104 V 132"/><path d="M523 106 V 132"/><path d="M593 110 V 132"/><path d="M663 114 V 132"/>
+            </g>
+            <path d="M690 140 H 712 V 96" class="s-och" stroke-width="1.4" fill="none"/>
+            <text x="404" y="224" class="t t--xs">The trap closes at both ends. There is no room to deploy and</text>
+            <text x="404" y="236" class="t t--xs">nowhere to run but the lake. About 15,000 die, including the</text>
+            <text x="404" y="248" class="t t--xs">consul Flaminius. Rome appoints a dictator the same month.</text>
+          </svg>
+        </div>
+        <figcaption>Both battles turn on the same Roman weakness — a consul with a one-year command, needing a victory before his term ends, facing a general with no such deadline. Livy makes the institutional point himself, through the mouths of the senators who argue for Fabius.</figcaption>
+      </figure>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 12</b><span>Cannae, 2 August 216 · the double envelopment</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 340" role="img" aria-label="A two-stage schematic of the battle of Cannae showing Hannibal's convex centre giving ground until it becomes concave, while his African veterans close on both flanks and his cavalry attacks the Roman rear.">
+            <defs>
+              <marker id="k-ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-och"/></marker>
+              <marker id="k-ar2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-acc"/></marker>
+            </defs>
+
+            <!-- ============ STAGE 1 ============ -->
+            <text x="20" y="26" class="t t--acc" style="font-size:12px">1 · CONTACT</text>
+            <text x="20" y="40" class="t t--xs">Hannibal bows his weakest troops forward</text>
+
+            <rect x="44" y="62" width="34" height="16" class="f-och"/>
+            <rect x="302" y="62" width="34" height="16" class="f-och"/>
+            <rect x="88" y="62" width="18" height="46" class="f-ox"/>
+            <rect x="274" y="62" width="18" height="46" class="f-ox"/>
+            <path d="M112 80 Q 190 122 268 80" class="f-none s-och" stroke-width="11"/>
+
+            <rect x="110" y="150" width="160" height="40" class="f-acc"/>
+            <rect x="52" y="156" width="30" height="16" class="f-acc"/>
+            <rect x="298" y="156" width="30" height="16" class="f-acc"/>
+            <g class="s-acc" stroke-width="1.4" fill="none" marker-end="url(#k-ar2)">
+              <path d="M190 146 V 122"/>
+            </g>
+
+            <g class="t t--xs">
+              <text x="61" y="58" class="t--mid">Spanish &amp; Gallic horse</text>
+              <text x="319" y="58" class="t--mid">Numidian horse</text>
+              <text x="97" y="126" class="t--mid t--ox">African</text><text x="97" y="138" class="t--mid t--ox">veterans</text>
+              <text x="283" y="126" class="t--mid t--ox">African</text><text x="283" y="138" class="t--mid t--ox">veterans</text>
+              <text x="190" y="118" class="t--mid">Gauls &amp; Spaniards</text>
+              <text x="190" y="176" class="t--mid t--rev">Roman infantry — massed deep</text>
+              <text x="190" y="206" class="t--mid">80,000 foot against 40,000</text>
+            </g>
+
+            <path d="M360 20 V 220" class="s-hair" stroke-width="1"/>
+
+            <!-- ============ STAGE 2 ============ -->
+            <text x="404" y="26" class="t t--acc" style="font-size:12px">2 · THE POCKET</text>
+            <text x="404" y="40" class="t t--xs">The centre gives ground; the wings do not</text>
+
+            <path d="M496 96 Q 574 52 652 96" class="f-none s-och" stroke-width="11"/>
+            <rect x="472" y="62" width="18" height="46" class="f-ox"/>
+            <rect x="658" y="62" width="18" height="46" class="f-ox"/>
+            <rect x="524" y="100" width="100" height="52" class="f-acc"/>
+            <text x="574" y="130" class="t t--mid t--rev t--xs">Romans, pressed inward</text>
+
+            <g class="s-ox" stroke-width="1.6" fill="none" marker-end="url(#k-ar)">
+              <path d="M492 118 H 518"/><path d="M656 118 H 630"/>
+            </g>
+            <text x="470" y="140" class="t t--xs t--end t--ox">wheel in</text>
+            <text x="682" y="140" class="t t--xs t--ox">wheel in</text>
+
+            <path d="M420 76 C 400 140, 440 186, 520 186" class="f-none s-och" stroke-width="1.8" marker-end="url(#k-ar)"/>
+            <path d="M718 76 C 740 140, 700 186, 628 186" class="f-none s-och" stroke-width="1.8" marker-end="url(#k-ar)"/>
+            <text x="574" y="200" class="t t--mid t--xs t--och">the cavalry beats the Roman horse, then returns to close the rear</text>
+
+            <text x="404" y="222" class="t t--xs">Encircled, the Roman mass cannot use its numbers: only the</text>
+            <text x="404" y="234" class="t t--xs">outer ranks can fight, and the pocket is killed from outside in.</text>
+
+            <!-- ============ FOOT ============ -->
+            <path d="M20 252 H 740" class="s-ink" stroke-width="1.2"/>
+            <g class="t t--sm t--ink" style="font-size:9px">
+              <text x="20" y="246">THE MECHANISM</text><text x="290" y="246">THE COST</text><text x="540" y="246">WHY IT IS STILL TAUGHT</text>
+            </g>
+            <g class="t t--xs">
+              <text x="20" y="270">A deliberately weak centre that</text>
+              <text x="20" y="284">retreats on purpose without breaking.</text>
+              <text x="20" y="298">Hannibal stood in it himself to make</text>
+              <text x="20" y="312">sure it bent and did not snap.</text>
+
+              <text x="290" y="270">Livy: 47,700 Roman dead.</text>
+              <text x="290" y="284">Polybius: about 70,000.</text>
+              <text x="290" y="298">One consul, 80 senators, and</text>
+              <text x="290" y="312">perhaps a fifth of Rome's</text>
+              <text x="290" y="326">available manpower, in one day.</text>
+
+              <text x="540" y="270">It is the model case of destroying</text>
+              <text x="540" y="284">a larger force by envelopment —</text>
+              <text x="540" y="298">studied by Napoleon, and consciously</text>
+              <text x="540" y="312">imitated by Scipio at Zama fourteen</text>
+              <text x="540" y="326">years later, against Hannibal.</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>The two casualty figures are worth pausing on. Livy and Polybius are our two sources, they used overlapping material, and they differ by nearly fifty per cent on the largest battle of the war. This is the normal condition of ancient numbers, and a useful calibration for every other figure in the book.</figcaption>
+      </figure>
+
+      <div class="claim claim--acc">
+        <b>What Rome did next</b>
+        Refused to ransom the survivors. Forbade the word "peace" to be spoken in public. Enrolled slaves,
+        debtors and boys under seventeen. Reduced the property qualification for service. And formally
+        thanked the defeated consul Varro, in Livy's most quoted sentence of the war, "because he had not
+        despaired of the republic." Hannibal won the battle in an afternoon and then discovered he had no
+        way to convert it into a victory.
+      </div>
+    </article>
+
+    <article class="chapter wide" id="l-c2">
+      <div class="chapter__head"><span class="chapter__num">Bks 23–30</span><h4>Sixteen Years of Not Losing</h4><span class="yr">216 – 201 BCE</span></div>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 13</b><span>Three Roman strategies, tried in order</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 240" role="img" aria-label="Three columns comparing the aggressive consular strategy, Fabius's delaying strategy, and Scipio's strategy of striking at Carthage's base.">
+            <rect x="20" y="20" width="230" height="30" class="f-ox" opacity="0.14"/>
+            <rect x="264" y="20" width="230" height="30" class="f-och" opacity="0.16"/>
+            <rect x="508" y="20" width="232" height="30" class="f-acc" opacity="0.14"/>
+            <text x="135" y="40" class="t t--mid t--ox" style="font-size:12px">SEEK BATTLE</text>
+            <text x="379" y="40" class="t t--mid t--och" style="font-size:12px">REFUSE BATTLE</text>
+            <text x="624" y="40" class="t t--mid t--acc" style="font-size:12px">CHANGE THE BOARD</text>
+
+            <g class="t t--xs t--mid">
+              <text x="135" y="66">Sempronius, Flaminius, Varro</text>
+              <text x="379" y="66">Fabius Maximus, dictator 217</text>
+              <text x="624" y="66">Scipio, from 210</text>
+            </g>
+            <g class="t t--xs">
+              <text x="30" y="94">Meet him in the field with</text><text x="30" y="108">superior numbers and win.</text>
+              <text x="30" y="130">It is what consuls are for,</text><text x="30" y="144">and their year is short.</text>
+              <text x="30" y="170" class="t--ox">Result: Trebia, Trasimene,</text><text x="30" y="184" class="t--ox">Cannae. Three armies gone</text><text x="30" y="198" class="t--ox">in under three years.</text>
+
+              <text x="274" y="94">Shadow him. Take the high</text><text x="274" y="108">ground. Burn the forage.</text>
+              <text x="274" y="130">Never accept a battle he</text><text x="274" y="144">has chosen the ground for.</text>
+              <text x="274" y="170" class="t--och">Result: it works, and it is</text><text x="274" y="184" class="t--och">hated. He is nicknamed</text><text x="274" y="198" class="t--och">Cunctator — the Delayer.</text>
+
+              <text x="518" y="94">Ignore Hannibal in Italy.</text><text x="518" y="108">Take Spain, his recruiting</text>
+              <text x="518" y="130">ground and silver supply.</text><text x="518" y="144">Then invade Africa and make</text>
+              <text x="518" y="158">Carthage recall him.</text>
+              <text x="518" y="184" class="t--acc">Result: New Carthage 209,</text><text x="518" y="198" class="t--acc">Ilipa 206, Africa 204,</text><text x="518" y="212" class="t--acc">and Zama 202.</text>
+            </g>
+            <path d="M256 20 V 224" class="s-hair" stroke-width="1"/>
+            <path d="M500 20 V 224" class="s-hair" stroke-width="1"/>
+            <text x="20" y="236" class="t t--xs">Livy is fair to all three and clearly prefers the second. The Fabian chapters are where his own political temper shows most plainly.</text>
+          </svg>
+        </div>
+        <figcaption>The sequence matters: Fabius buys the time in which Rome can afford to grow a Scipio. Livy's Senate learns slowly and expensively, but it does learn, and it keeps commanders in post for years once it has found good ones — quietly abandoning the annual command that had cost it three armies.</figcaption>
+      </figure>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 14</b><span>The war, year by year</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 244" role="img" aria-label="A timeline of the Second Punic War from 218 to 201 BCE marking Roman defeats, the defection of allies, and the Roman recovery.">
+            <!-- scale: x=60 at 219 BCE, 37 px per year, to 201 -->
+            <path d="M60 120 H 730" class="s-graph" stroke-width="1.2"/>
+            <g class="s-hair" stroke-width="0.7" stroke-dasharray="2 5">
+              <path d="M97 44 V 152"/><path d="M245 44 V 152"/><path d="M393 44 V 152"/><path d="M541 44 V 152"/><path d="M689 44 V 152"/>
+            </g>
+            <g class="t t--xs t--mid">
+              <text x="97" y="168">218</text><text x="245" y="168">214</text><text x="393" y="168">210</text>
+              <text x="541" y="168">206</text><text x="689" y="168">202</text>
+            </g>
+
+            <g class="f-ox">
+              <rect x="93" y="112" width="8" height="16"/><rect x="130" y="112" width="8" height="16"/><rect x="167" y="112" width="8" height="16"/><rect x="204" y="112" width="8" height="16"/>
+            </g>
+            <g class="f-acc">
+              <rect x="356" y="112" width="8" height="16"/><rect x="430" y="112" width="8" height="16"/><rect x="504" y="112" width="8" height="16"/><rect x="615" y="112" width="8" height="16"/><rect x="689" y="112" width="8" height="16"/>
+            </g>
+
+            <g class="s-ox" stroke-width="1"><path d="M97 112 V 94"/><path d="M134 112 V 78"/><path d="M171 112 V 62"/><path d="M208 112 V 94"/></g>
+            <g class="t t--xs t--ox">
+              <text x="66" y="88">218 · Trebia</text>
+              <text x="104" y="72">217 · Trasimene</text>
+              <text x="141" y="56">216 · CANNAE — then Capua and much of the south defect</text>
+              <text x="178" y="88">215–212 · Syracuse and Tarentum go over</text>
+            </g>
+
+            <g class="s-acc" stroke-width="1"><path d="M360 128 V 146"/><path d="M434 128 V 146"/><path d="M508 128 V 146"/><path d="M619 128 V 146"/><path d="M693 128 V 146"/></g>
+            <g class="t t--xs t--acc">
+              <text x="286" y="196">211 · Capua retaken</text>
+              <text x="400" y="196">209 · New Carthage</text>
+              <text x="470" y="212">207 · the Metaurus — Hasdrubal's relief army destroyed</text>
+              <text x="560" y="196">204 · Africa</text>
+              <text x="660" y="196">202 · Zama</text>
+            </g>
+
+            <path d="M60 116 H 730" class="s-hair" stroke-width="0.8"/>
+            <text x="60" y="36" class="t t--acc t--sm">Hannibal remains undefeated in Italy for fifteen years — and steadily loses the war</text>
+            <text x="60" y="234" class="t t--xs">The Metaurus in 207 is the turn Livy marks hardest: Hannibal learns of his brother's defeat when the head is thrown into his camp.</text>
+          </svg>
+        </div>
+        <figcaption>The visual point is the asymmetry. Every Carthaginian success is a battle; every Roman success is a place taken and held. Hannibal wins the encounters and loses the map, because Rome can replace an army and he cannot.</figcaption>
+      </figure>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 15</b><span>Zama, 202 BCE · Cannae run backwards</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 262" role="img" aria-label="A schematic of the battle of Zama showing Scipio's maniples aligned in lanes to let the elephants pass through, and the Numidian cavalry returning to attack the Carthaginian rear.">
+            <defs><marker id="z-ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-acc"/></marker>
+                  <marker id="z-ar2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-och"/></marker></defs>
+
+            <text x="20" y="26" class="t t--acc" style="font-size:12px">THE ELEPHANT PROBLEM, SOLVED</text>
+
+            <!-- carthaginian side -->
+            <rect x="120" y="54" width="300" height="14" class="f-och"/>
+            <text x="270" y="48" class="t t--mid t--xs">Carthaginian lines · Hannibal</text>
+            <g class="f-ox"><circle cx="150" cy="86" r="7"/><circle cx="210" cy="86" r="7"/><circle cx="270" cy="86" r="7"/><circle cx="330" cy="86" r="7"/><circle cx="390" cy="86" r="7"/></g>
+            <text x="270" y="106" class="t t--mid t--xs t--ox">80 war elephants, driven forward</text>
+
+            <!-- roman maniples in lanes -->
+            <g class="f-acc">
+              <rect x="120" y="130" width="34" height="16"/><rect x="180" y="130" width="34" height="16"/><rect x="240" y="130" width="34" height="16"/><rect x="300" y="130" width="34" height="16"/><rect x="360" y="130" width="34" height="16"/>
+              <rect x="120" y="156" width="34" height="16"/><rect x="180" y="156" width="34" height="16"/><rect x="240" y="156" width="34" height="16"/><rect x="300" y="156" width="34" height="16"/><rect x="360" y="156" width="34" height="16"/>
+            </g>
+            <g class="s-ox" stroke-width="1.4" fill="none" marker-end="url(#z-ar2)" stroke-dasharray="4 3">
+              <path d="M162 96 V 186"/><path d="M222 96 V 186"/><path d="M282 96 V 186"/><path d="M342 96 V 186"/>
+            </g>
+            <text x="270" y="204" class="t t--mid t--xs t--ox">the elephants run down the empty lanes and out the back</text>
+
+            <text x="20" y="226" class="t t--xs">Scipio lines his maniples up in columns rather than staggering them,</text>
+            <text x="20" y="240" class="t t--xs">leaving straight corridors. Trumpets and javelins do the rest.</text>
+            <text x="20" y="254" class="t t--xs t--acc">A charge designed to break a solid line meets a line with holes in it.</text>
+
+            <path d="M440 20 V 250" class="s-hair" stroke-width="1"/>
+
+            <text x="470" y="24" class="t t--acc" style="font-size:12px">AND THEN THE CANNAE MANOEUVRE</text>
+            <text x="590" y="44" class="t t--mid t--xs t--acc">Masinissa's Numidian cavalry — now on Rome's side</text>
+            <g class="s-acc" stroke-width="1.8" fill="none">
+              <path d="M470 124 C 428 108, 434 68, 480 60 L 524 60" marker-end="url(#z-ar)"/>
+              <path d="M710 124 C 752 108, 746 68, 700 60 L 656 60" marker-end="url(#z-ar)"/>
+            </g>
+
+            <rect x="480" y="80" width="220" height="18" class="f-och"/>
+            <text x="590" y="93" class="t t--mid t--rev t--xs">Hannibal's veterans</text>
+            <rect x="480" y="134" width="220" height="18" class="f-acc"/>
+            <text x="590" y="147" class="t t--mid t--rev t--xs">Scipio's legions</text>
+
+            <text x="470" y="180" class="t t--xs">The cavalry drives off the Carthaginian horse, then returns and</text>
+            <text x="470" y="194" class="t t--xs">hits the rear of Hannibal's infantry. It is exactly what was done</text>
+            <text x="470" y="208" class="t t--xs">to the Romans at Cannae, performed against its inventor.</text>
+            <text x="470" y="232" class="t t--xs t--acc">The decisive change was diplomatic, not tactical: Rome had</text>
+            <text x="470" y="246" class="t t--xs t--acc">taken Numidia's cavalry away from Carthage.</text>
+          </svg>
+        </div>
+        <figcaption>Livy gives Hannibal a dignified exit — an interview with Scipio before the battle, and afterwards the advice to Carthage to accept the terms. The peace strips Carthage of its fleet, its Spanish empire and its freedom to make war. It is not destroyed; that waits fifty years, in books we no longer have.</figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <!-- ==========================================================
+       BOOKS 31–45
+       ========================================================== -->
+  <section class="movement" id="bk31" aria-labelledby="bk31-h">
+    <div class="vol">
+      <div class="vol__top">
+        <span class="vol__n">Books 31–45</span>
+        <span class="eyebrow">Penguin: Rome and the Mediterranean · tr. Henry Bettenson</span>
+      </div>
+      <h3 id="bk31-h">Rome and the Mediterranean</h3>
+      <p class="vol__sub">From the peace with Carthage to the destruction of the Macedonian kingdom — the thirty-four years in which Rome becomes the only power that matters.</p>
+      <dl class="vol__strip">
+        <div><dt>Years</dt><dd>201 – 167 BCE</dd></div>
+        <div><dt>Status</dt><dd>Following Polybius closely</dd></div>
+        <div><dt>Theme</dt><dd>Empire acquired reluctantly</dd></div>
+        <div><dt>Ends</dt><dd>Pydna, and the money coming home</dd></div>
+      </dl>
+    </div>
+
+    <p class="lede">
+      Rome finishes the Hannibalic war exhausted and immediately declares another, on Philip V of Macedon.
+      Within thirty-four years it has broken Macedon twice, humbled the Seleucid empire, dismantled both,
+      and annexed almost none of it. Livy's account — largely Polybius, translated and reshaped — is the
+      best surviving narrative of how the Mediterranean acquired a single master, and of how uneasy that
+      master was about saying so.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 16</b><span>The board in 200 BCE</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 262" role="img" aria-label="A comparison of the five powers of the Mediterranean in 200 BCE — Rome, Macedon, the Seleucid empire, Ptolemaic Egypt and the Greek leagues — and what became of each.">
+          <path d="M20 56 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px">
+            <text x="20" y="50">POWER</text><text x="180" y="50">STRENGTH</text><text x="400" y="50">WEAKNESS</text><text x="592" y="50">BY 167 BCE</text>
+          </g>
+          <g class="s-hair" stroke-width="0.7"><path d="M20 88 H740"/><path d="M20 122 H740"/><path d="M20 156 H740"/><path d="M20 190 H740"/></g>
+
+          <g class="t t--xs t--ink">
+            <text x="20" y="76">Rome</text><text x="20" y="110">Macedon</text><text x="20" y="144">Seleucids</text>
+            <text x="20" y="178">Ptolemaic Egypt</text><text x="20" y="212">Greek leagues</text>
+          </g>
+          <g class="t t--xs">
+            <text x="180" y="76">Manpower; allied levies</text><text x="400" y="76">Exhausted; deep in debt</text>
+            <text x="180" y="110">The phalanx; a war chest</text><text x="400" y="110">Small population; hated in Greece</text>
+            <text x="180" y="144">Vast territory; Antiochus III</text><text x="400" y="144">Cannot hold what it claims</text>
+            <text x="180" y="178">Grain, gold, Alexandria</text><text x="400" y="178">A child king and a regency</text>
+            <text x="180" y="212">Wealth; naval bases</text><text x="400" y="212">Never united for long</text>
+          </g>
+          <g class="t t--xs t--acc">
+            <text x="592" y="76">The only power left</text>
+            <text x="592" y="110">Abolished; split into four</text>
+            <text x="592" y="144">Beaten at Magnesia; confined</text>
+            <text x="592" y="178">A Roman client</text>
+            <text x="592" y="212">"Free" — and supervised</text>
+          </g>
+          <rect x="20" y="58" width="720" height="30" class="f-acc" opacity="0.10"/>
+          <text x="20" y="240" class="t t--xs">Livy's own framing, taken from Polybius: the astonishing thing is not that Rome won but that it did so in fifty-three years, and</text>
+          <text x="20" y="254" class="t t--xs">that a state with no navy worth the name in 264 had, by 167, no rival on any coast of the sea.</text>
+        </svg>
+      </div>
+      <figcaption>Polybius wrote his history to explain exactly this, for a Greek readership that needed to understand what had happened to them. Livy inherits the analysis and adds a Roman conscience to it — which is why these books keep circling back to whether the conquest was good for Rome.</figcaption>
+    </figure>
+
+    <article class="chapter wide" id="l-d1">
+      <div class="chapter__head"><span class="chapter__num">Bks 31–38</span><h4>Macedon, Then Antioch</h4><span class="yr">200 – 188 BCE</span></div>
+      <p>
+        The Second Macedonian War is decided at <strong>Cynoscephalae</strong> in 197, on a ridge in fog,
+        when the two armies collide before either has deployed. Half the Macedonian phalanx forms up and
+        is unstoppable; the other half is caught still marching. A Roman tribune takes twenty maniples out
+        of the winning line, turns them round, and hits the successful phalanx from behind. It is the
+        moment the ancient world's decisive weapon stops being decisive, and Livy — following Polybius —
+        explains why at length.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 17</b><span>Why the legion beats the phalanx</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 274" role="img" aria-label="A comparison of the Macedonian phalanx and the Roman legion across frontage, flexibility, ground, and what happens when the line is disordered.">
+            <rect x="20" y="20" width="352" height="30" class="f-och" opacity="0.16"/>
+            <rect x="388" y="20" width="352" height="30" class="f-acc" opacity="0.14"/>
+            <text x="196" y="40" class="t t--mid t--och" style="font-size:12px">THE PHALANX</text>
+            <text x="564" y="40" class="t t--mid t--acc" style="font-size:12px">THE LEGION</text>
+
+            <g class="t t--sm t--mid t--ink" style="font-size:9px">
+              <text x="380" y="76">WEAPON</text><text x="380" y="110">FRONT</text><text x="380" y="144">UNIT</text>
+              <text x="380" y="178">GROUND</text><text x="380" y="212">IF DISORDERED</text><text x="380" y="246">RESERVE</text>
+            </g>
+            <path d="M380 58 V 256" class="s-hair" stroke-width="1"/>
+            <g class="s-hair" stroke-width="0.7">
+              <path d="M20 86 H740"/><path d="M20 120 H740"/><path d="M20 154 H740"/><path d="M20 188 H740"/><path d="M20 222 H740"/>
+            </g>
+
+            <g class="t t--xs t--end">
+              <text x="352" y="76">The sarissa — a pike 5 to 7 metres long</text>
+              <text x="352" y="110">Five pike-points project ahead of each man</text>
+              <text x="352" y="144">The whole line is one body</text>
+              <text x="352" y="178">Needs a flat, unbroken plain</text>
+              <text x="352" y="212">A gap cannot be closed; the flank is naked</text>
+              <text x="352" y="246">None — everything is in the line</text>
+            </g>
+            <g class="t t--xs">
+              <text x="408" y="76">Two javelins, then a short stabbing sword</text>
+              <text x="408" y="110">Nothing projects; the fight is at arm's length</text>
+              <text x="408" y="144">Thirty maniples, each acting alone</text>
+              <text x="408" y="178">Fights on anything; prefers broken ground</text>
+              <text x="408" y="212">Gaps are the design — men step through them</text>
+              <text x="408" y="246">Two full lines behind the first</text>
+            </g>
+            <rect x="388" y="192" width="352" height="30" class="f-acc" opacity="0.09"/>
+
+            <text x="20" y="266" class="t t--xs">Livy's verdict, after Cynoscephalae and again after Pydna: head-on the phalanx wins, and it is almost never allowed to fight head-on.</text>
+          </svg>
+        </div>
+        <figcaption>This is the argument Livy already rehearsed in Book 9, in a famous digression asking what would have happened had Alexander turned west. The answer he gives there is patriotic and the answer he gives here is evidentiary — and by 168 they agree.</figcaption>
+      </figure>
+
+      <p>
+        In 196, at the Isthmian Games at Corinth, Flamininus has a herald proclaim the Greek cities free —
+        no garrisons, no tribute, no governor. Livy records the crowd's disbelief and the birds falling
+        out of the air at the noise. Two years later Rome is at war with <strong>Antiochus III</strong>,
+        who has come into Greece at the invitation of the Aetolians on the grounds that Rome's freedom is
+        a fraud. He is thrown out of Thermopylae in 191 and broken at <strong>Magnesia</strong> in 190,
+        and the peace of Apamea in 188 confines the Seleucid empire behind the Taurus and imposes an
+        indemnity so large it takes a generation to pay.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 18</b><span>The method: win, withdraw, return</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 230" role="img" aria-label="A four-stage cycle showing Rome's eastern policy: intervene at a client's request, win, declare freedom and withdraw, and return when the settlement fails.">
+            <defs><marker id="m-ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-acc"/></marker></defs>
+            <g class="s-acc" stroke-width="1.5" fill="none" marker-end="url(#m-ar)">
+              <path d="M186 74 H 232"/><path d="M400 74 H 446"/><path d="M614 88 V 130 H 380"/>
+            </g>
+            <path d="M370 130 H 146 V 92" class="f-none s-acc" stroke-width="1.5" marker-end="url(#m-ar)"/>
+
+            <rect x="20" y="46" width="166" height="56" class="f-plate3"/>
+            <rect x="20" y="46" width="4" height="56" class="f-acc"/>
+            <text x="34" y="66" class="t t--acc t--sm">1 · INVITED IN</text>
+            <text x="34" y="82" class="t t--xs">A smaller state asks for help</text>
+            <text x="34" y="94" class="t t--xs">against a larger neighbour</text>
+
+            <rect x="236" y="46" width="166" height="56" class="f-plate3"/>
+            <rect x="236" y="46" width="4" height="56" class="f-acc"/>
+            <text x="250" y="66" class="t t--acc t--sm">2 · WINS QUICKLY</text>
+            <text x="250" y="82" class="t t--xs">One or two campaigns, then</text>
+            <text x="250" y="94" class="t t--xs">a decisive battle</text>
+
+            <rect x="450" y="46" width="166" height="56" class="f-plate3"/>
+            <rect x="450" y="46" width="4" height="56" class="f-acc"/>
+            <text x="464" y="66" class="t t--acc t--sm">3 · GOES HOME</text>
+            <text x="464" y="82" class="t t--xs">Declares the Greeks free,</text>
+            <text x="464" y="94" class="t t--xs">annexes nothing, withdraws</text>
+
+            <rect x="236" y="146" width="290" height="56" class="f-plate3"/>
+            <rect x="236" y="146" width="4" height="56" class="f-ox"/>
+            <text x="250" y="166" class="t t--ox t--sm">4 · THE SETTLEMENT FAILS, AND ROME RETURNS</text>
+            <text x="250" y="182" class="t t--xs">Freedom without a garrison means the quarrels resume. Each</text>
+            <text x="250" y="194" class="t t--xs">return is harsher: 197 a treaty, 190 an indemnity, 168 abolition.</text>
+
+            <text x="20" y="126" class="t t--xs t--ox">Three turns of this cycle in thirty years</text>
+            <text x="20" y="210" class="t t--xs">Whether the reluctance was sincere or a cheaper form of control is the oldest argument in Roman</text>
+            <text x="20" y="224" class="t t--xs">historiography. Livy presents it as sincere, and then reports the facts that complicate it.</text>
+          </svg>
+        </div>
+        <figcaption>By 167 the pretence is thin. Macedon is not defeated and released; it is abolished, divided into four powerless republics forbidden to trade or intermarry with each other, and its royal library is shipped to Rome.</figcaption>
+      </figure>
+    </article>
+
+    <article class="chapter wide" id="l-d2">
+      <div class="chapter__head"><span class="chapter__num">Bks 39–45</span><h4>Pydna, and the Anxiety at Home</h4><span class="yr">188 – 167 BCE</span></div>
+      <p>
+        The last books run two stories in parallel. Abroad, the Third Macedonian War ends at
+        <strong>Pydna</strong> in 168, where Perseus's phalanx advances irresistibly across a plain until
+        the ground breaks up beneath it, gaps open, and Aemilius Paullus feeds maniples into them. Livy
+        says Paullus later admitted he had never seen anything so terrifying as that phalanx coming on.
+        The battle lasts about an hour.
+      </p>
+      <p>
+        At home, the mood is anything but triumphant. Livy's Roman reader in the age of Augustus is meant
+        to notice that this is precisely when the wealth starts arriving, and precisely when the
+        complaints about luxury, foreign religion and the decay of the old discipline begin.
+      </p>
+
+      <figure class="fig reveal">
+        <div class="fig__label"><b>Plate 19</b><span>What came home, and the reaction to it</span></div>
+        <div class="fig__frame">
+          <svg viewBox="0 0 760 262" role="img" aria-label="A timeline showing the influx of eastern wealth into Rome between 194 and 167 BCE alongside the sumptuary laws, the Bacchanalian suppression and Cato's censorship.">
+            <path d="M60 128 H 730" class="s-graph" stroke-width="1.2"/>
+            <!-- scale: x=60 at 200 BCE, 20.3 px per year to 167 -->
+            <g class="s-hair" stroke-width="0.7" stroke-dasharray="2 5">
+              <path d="M162 46 V 158"/><path d="M264 46 V 158"/><path d="M365 46 V 158"/><path d="M467 46 V 158"/><path d="M669 46 V 158"/>
+            </g>
+            <g class="t t--xs t--mid">
+              <text x="60" y="174">200</text><text x="162" y="174">195</text><text x="264" y="174">190</text>
+              <text x="365" y="174">185</text><text x="467" y="174">180</text><text x="669" y="174">170 BCE</text>
+            </g>
+
+            <g class="s-och" stroke-width="1"><path d="M264 120 V 100"/><path d="M304 120 V 84"/><path d="M406 120 V 116"/></g>
+            <g class="t t--xs t--och">
+              <text x="204" y="94">190 · Magnesia — the Seleucid indemnity begins</text>
+              <text x="250" y="78">188 · Manlius Vulso's army returns from Galatia with the plunder of Asia</text>
+              <text x="400" y="110">Triumph after triumph; the treasury overflows</text>
+            </g>
+
+            <g class="s-acc" stroke-width="1"><path d="M162 136 V 156"/><path d="M386 136 V 156"/><path d="M447 136 V 156"/><path d="M690 136 V 156"/></g>
+            <g class="t t--xs t--acc">
+              <text x="80" y="200">195 · the Oppian Law on women's</text><text x="80" y="212">display is repealed, over Cato's protest</text>
+              <text x="300" y="200">186 · the Senate suppresses the</text><text x="300" y="212">Bacchanalia; thousands executed</text>
+              <text x="470" y="200">184 · Cato as censor taxes</text><text x="470" y="212">luxury and expels senators</text>
+              <text x="740" y="236" class="t--end">167 · after Pydna, Roman citizens stop paying direct tax altogether</text>
+            </g>
+
+            <text x="60" y="36" class="t t--acc t--sm">The conquest pays for itself — and the Romans start worrying about what it is doing to them</text>
+            <text x="60" y="256" class="t t--xs">Livy's preface promised a story of decline from ancient virtue. These are the books where he begins to date it, and the date is a moment of total success.</text>
+          </svg>
+        </div>
+        <figcaption>The Bacchanalian affair of 186 is the strangest episode in the collection and the most revealing: a secretive cult is suppressed by senatorial decree across all Italy, with thousands put to death. Livy tells it as a story about moral contagion from the east. It reads today as a state discovering it can police belief.</figcaption>
+      </figure>
+
+      <p class="pull">
+        Book 45 ends in 167, with Aemilius Paullus's triumph, the Macedonian royal treasure carried
+        through the streets, and Perseus walking behind the chariot. Everything Livy wrote about the next
+        century and a half is lost.<cite>Where the surviving text stops</cite>
+      </p>
+    </article>
+  </section>
+
+  <!-- ==========================================================
+       READING LIVY
+       ========================================================== -->
+  <section class="movement" id="reading" aria-labelledby="reading-h">
+    <div class="movement__head">
+      <span class="roman">Method</span>
+      <h2 id="reading-h">How to Read Him</h2>
+      <span class="gloss">What Livy does that a modern historian would not, and why he does it.</span>
+    </div>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 20</b><span>The annalistic year — Livy's repeating unit</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 232" role="img" aria-label="A diagram of the recurring structure of a year in Livy's narrative: consuls take office, prodigies are reported and expiated, provinces are allotted, levies raised, campaigns fought, and elections held.">
+          <defs><marker id="y-ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-graph"/></marker></defs>
+          <path d="M40 92 H 700" class="s-graph" stroke-width="1.2" marker-end="url(#y-ar)"/>
+          <g class="f-acc"><circle cx="70" cy="92" r="5"/><circle cx="176" cy="92" r="5"/><circle cx="282" cy="92" r="5"/><circle cx="388" cy="92" r="5"/><circle cx="494" cy="92" r="5"/><circle cx="600" cy="92" r="5"/></g>
+          <g class="t t--xs t--mid t--ink">
+            <text x="70" y="76">Consuls enter office</text><text x="176" y="76">Prodigies reported</text><text x="282" y="76">Provinces allotted</text>
+            <text x="388" y="76">The levy</text><text x="494" y="76">Campaigns</text><text x="600" y="76">Elections</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="70" y="116">Names given; the</text><text x="70" y="128">year is dated by them</text>
+            <text x="176" y="116">Stone showers, talking</text><text x="176" y="128">oxen — and the expiation</text>
+            <text x="282" y="116">By lot, in the</text><text x="282" y="128">Senate</text>
+            <text x="388" y="116">How many legions,</text><text x="388" y="128">and who serves</text>
+            <text x="494" y="116">The narrative, and</text><text x="494" y="128">the invented speeches</text>
+            <text x="600" y="116">Triumphs, then</text><text x="600" y="128">next year's consuls</text>
+          </g>
+          <path d="M600 100 C 640 160, 200 176, 70 108" class="f-none s-hair" stroke-width="1.4" marker-end="url(#y-ar)"/>
+          <text x="360" y="180" class="t t--mid t--xs">and again, for 142 books</text>
+
+          <text x="40" y="40" class="t t--acc t--sm">The form is a magistrate's calendar, not a story</text>
+          <text x="40" y="56" class="t t--xs">It is inherited from the priestly year-tablets, and it explains Livy's oddest habit: a campaign in Spain is cut off in September</text>
+          <text x="40" y="68" class="t t--xs">and resumed a book later, because the year ended.</text>
+          <text x="40" y="212" class="t t--xs t--ox">Where he abandons the form — Books 21–22, and the Hannibal narrative generally — he writes his best prose.</text>
+          <text x="40" y="226" class="t t--xs">Some editions and translations quietly re-order the material to help. The Penguin volumes largely do not.</text>
+        </svg>
+      </div>
+      <figcaption>Understanding the annalistic frame removes most of the frustration of reading Livy straight through. The prodigy lists in particular are not superstition intruding on history; they are a formal part of the year's public record, like the census, and he includes them because the record did.</figcaption>
+    </figure>
+
+    <div class="caveats wide">
+      <div>
+        <span class="mk">01</span>
+        <div>
+          <h4>The speeches are composed, not reported</h4>
+          <p>Nobody transcribed Camillus. The speeches follow the Greek historiographical convention: the author writes what the situation demanded, to reveal character and lay out the arguments on both sides. They are the most artful thing in Livy and the least evidentiary. Read them as an essayist's dramatisation of a decision.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">02</span>
+        <div>
+          <h4>The numbers inflate, especially early</h4>
+          <p>Livy inherited annalists — Valerius Antias above all — who multiplied enemy dead freely, and he sometimes says so, reporting two figures and declining to choose. Where Polybius survives alongside him, the two differ by up to fifty per cent. Treat every casualty and army figure as an order of magnitude.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">03</span>
+        <div>
+          <h4>He is not a researcher</h4>
+          <p>He worked from earlier literary histories rather than from archives, does not appear to have consulted the linen rolls or the priestly records directly, and never visited a battlefield he describes. His originality is in shaping and in prose, not in discovery. Tacitus, a working senator, is a different kind of writer entirely.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">04</span>
+        <div>
+          <h4>The moral frame does real work</h4>
+          <p>The thesis — that Rome rose through discipline and poverty and is being destroyed by the wealth of its conquests — shapes what gets emphasis. Foreign luxury is always suspect; popular leaders are usually demagogues; the Senate is usually right. Knowing the bias makes the narrative more useful, not less.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">05</span>
+        <div>
+          <h4>And yet he reports against himself</h4>
+          <p>He records the Caudine Forks repudiation, the massacre at New Carthage, the cynicism of the Greek settlement and the brutality in Epirus. Where his sources disagree he often says so. He is a partisan witness who does not suppress inconvenient testimony — which is precisely why he remains usable.</p>
+        </div>
+      </div>
+    </div>
+
+    <h5 class="sub-h">A practical reading order</h5>
+    <ul class="bul">
+      <li><strong>Start with <em>The War with Hannibal</em></strong> (Books 21–30). It is the best written, the most reliable, and it needs no prior context.</li>
+      <li><strong>Then <em>The Early History of Rome</em></strong> (Books 1–5) for the legends, read as national myth rather than as record. Book 5 is the finest single book Livy wrote.</li>
+      <li><strong><em>Rome and the Mediterranean</em></strong> (Books 31–45) next, if the Hellenistic world interests you — it is Polybius with a Roman conscience attached.</li>
+      <li><strong><em>Rome and Italy</em></strong> (Books 6–10) last. It is the hardest going and contains the structural answer to why any of the rest happened.</li>
+      <li><strong>Read alongside:</strong> Polybius, Books 1–6, for the same events from the Greek side and for the constitutional analysis Livy never attempts.</li>
+    </ul>
+
+    <ol class="takeaways wide">
+      <li><b>Rome's advantage was institutional, not military.</b><span>It lost battles constantly. What no rival could match was a citizenship that turned defeated enemies into future soldiers, and a Senate that could raise another army after losing 50,000 men in a day.</span></li>
+      <li><b>The annual magistracy was a weapon and a wound.</b><span>It prevented tyranny for four centuries and handed Hannibal three victories. The war against him is where Rome quietly learns to keep good commanders in post — and where the road to the Caesars begins.</span></li>
+      <li><b>Livy's early books are evidence about Livy's Rome, not early Rome.</b><span>They tell you what the Augustan age believed about its ancestors, which is a real historical fact about a real period — just not the period being described.</span></li>
+      <li><b>The moral decline thesis has a date in the text.</b><span>Livy locates the turn in the 180s, at the moment of maximum success, when eastern money arrives. Whether or not the analysis holds, it is the same argument Sallust, Cato and later Gibbon all make.</span></li>
+      <li><b>Empire arrived before anyone admitted wanting it.</b><span>Rome declared Greece free in 196 and abolished Macedon in 167. Livy shows the whole sequence without ever quite resolving whether the reluctance was genuine.</span></li>
+      <li><b>What survives shaped what Europe knew.</b><span>Machiavelli's <em>Discourses</em> is a commentary on the first ten books. For fifteen hundred years, "Roman virtue" meant the specific stories in this specific text — which is a great deal of influence for a writer who never checked an archive.</span></li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="colophon__in">
+    <p class="eyebrow eyebrow--accent">Colophon</p>
+    <h2 style="font-size:var(--step-2);margin:0.6rem 0 0.8rem">Livy · The History of Rome</h2>
+    <p class="note">
+      A reader's summary of the thirty-five surviving books of <em>Ab Urbe Condita</em>, as published in
+      four Penguin Classics volumes. Every plate was drawn for this document. Battle schematics are
+      diagrams of the tactical idea, not maps: positions are indicative and not to scale. Where ancient
+      sources disagree on numbers, both figures are given.
+    </p>
+    <dl>
+      <dt>Collections summarised</dt>
+      <dd>Books 1–5 · The Early History of Rome<br>Books 6–10 · Rome and Italy<br>Books 21–30 · The War with Hannibal<br>Books 31–45 · Rome and the Mediterranean</dd>
+      <dt>Plates</dt>
+      <dd>20 hand-drawn figures<br>All vector; all legible at print size</dd>
+      <dt>Companion</dt>
+      <dd>Durant · The Story of Civilization I–IV<br>in a second document</dd>
+      <dt>Read alongside</dt>
+      <dd>Polybius · The Histories<br>Machiavelli · Discourses on Livy</dd>
+    </dl>
+  </div>
+</footer>
+
+<script src="civ-plate.js" defer></script>
+<script src="book-toc.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mobile Wave — Michael J. Saylor · Illustrated Summary</title>
+<meta name="description" content="An illustrated, chapter-by-chapter summary of The Mobile Wave by Michael J. Saylor.">
+<link rel="stylesheet" href="reading-summary.css">
+<style>
+:root { --accent:#176bd6; --s1:#176bd6; --accent-2:#13a9a2; }
+:root[data-theme="dark"] { --accent:#63a4ff; --s1:#63a4ff; --accent-2:#3fd4cb; }
+.mobile-wave .hero { background:
+  radial-gradient(circle at 78% 28%,color-mix(in srgb,var(--accent) 25%,transparent),transparent 32%),
+  repeating-radial-gradient(circle at 84% 44%,transparent 0 55px,color-mix(in srgb,var(--accent) 16%,transparent) 56px 57px),
+  var(--panel); }
+.mobile-wave .hero::after { border-radius:22%;transform:rotate(18deg); }
+.mobile-wave .book-glyph { background:linear-gradient(145deg,#0f1b2e,var(--accent));border-color:#07111f;box-shadow:9px 12px 0 var(--accent-2),0 24px 60px rgba(0,0,0,.22);transform:rotate(-2deg); }
+.phone { width:112px;height:210px;margin:auto;padding:11px 8px;border:3px solid var(--ink);border-radius:22px;background:var(--panel);box-shadow:0 18px 45px rgba(0,0,0,.15); }
+.phone__screen { height:100%;border-radius:14px;background:linear-gradient(160deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font:800 11px/1.4 var(--mono);letter-spacing:.12em;text-align:center;text-transform:uppercase; }
+.wave-rings { position:relative;display:grid;place-items:center;min-height:270px; }
+.wave-rings span { position:absolute;width:var(--d);height:var(--d);border:1px solid color-mix(in srgb,var(--accent) 60%,transparent);border-radius:50%; }
+.wave-rings .phone { position:relative;z-index:2; }
+
+/* figure palette — blue mobile, teal network, amber legacy, green gain */
+:root { --f3:#c0801f; --f4:#548b52; }
+:root[data-theme="dark"] { --f3:#e0ab52; --f4:#8fc08c; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --f3:#e0ab52; --f4:#8fc08c; } }
+</style>
+<link rel="stylesheet" href="book-toc.css">
+<link rel="stylesheet" href="book-figures.css">
+</head>
+<body class="mobile-wave">
+<button class="theme-button" id="themeButton" type="button" aria-label="Switch colour theme">Theme</button>
+
+<header class="hero">
+  <div class="hero__inner wrap">
+    <div>
+      <p class="kicker">Michael J. Saylor · a forecast from 2012</p>
+      <h1>The Mobile Wave</h1>
+      <p class="hero__subtitle">How mobile intelligence will change everything — paper, entertainment, money, social life, medicine, education and the developing world.</p>
+      <p class="hero__thesis"><strong>The load-bearing idea:</strong> a smartphone is not a smaller desktop. It is a personal, always-present computer that can absorb whole categories of physical objects and reorganise the institutions around them.</p>
+    </div>
+    <div class="book-orbit" aria-hidden="true"><div class="book-glyph"><b>Software<br>moves<br>into life</b><span>Always on · always carried<br>aware of identity and place</span></div></div>
+  </div>
+</header>
+
+<dl class="hero__stats">
+  <div><dt>Published</dt><dd>2012</dd></div>
+  <div><dt>Structure</dt><dd>10 chapters</dd></div>
+  <div><dt>Forecast horizon</dt><dd>The mobile-first world</dd></div>
+</dl>
+
+<main>
+  <section class="orientation wrap" id="orientation">
+    <div class="orientation__grid">
+      <div>
+        <p class="eyebrow"><b>Orientation</b></p>
+        <h2>The argument in one pass</h2>
+        <p class="lede">The first computing waves put machines in organisations, then offices, then homes. The mobile wave puts a networked computer on the person. That shift changes both scale and intimacy.</p>
+        <p class="lede">Once the device is persistent, personal and sensor-rich, it can replace paper, screens, wallets and service counters. Each replacement removes friction, creates data and turns a static product into a continuously improving service.</p>
+      </div>
+      <nav class="quick-map" aria-label="Parts of the summary">
+        <a href="#platform"><b>Foundation</b><span>The fifth computing wave</span></a>
+        <a href="#dematerialise"><b>Dematerialise</b><span>Paper, screens and wallet</span></a>
+        <a href="#institutions"><b>Institutions</b><span>Social, health and education</span></a>
+        <a href="#scorecard"><b>Retrospective</b><span>What landed and what did not</span></a>
+      </nav>
+    </div>
+
+    <div class="plate">
+      <div class="plate__head"><span>Plate 01 · the device</span><b>Why mobile is a category change</b></div>
+      <div class="plate__body">
+        <div class="concept-grid">
+          <div class="concept-card"><span class="tag">Presence</span><b>Always carried</b><p>The computer travels with the individual, not the workplace.</p></div>
+          <div class="concept-card"><span class="tag">Identity</span><b>Personal by default</b><p>Accounts, preferences and history remain attached to one user.</p></div>
+          <div class="concept-card"><span class="tag">Context</span><b>Location aware</b><p>Services can respond to place, movement and nearby objects.</p></div>
+          <div class="concept-card"><span class="tag">Senses</span><b>Sensor rich</b><p>Camera, microphone and motion turn the device into an observer.</p></div>
+          <div class="concept-card"><span class="tag">Network</span><b>Continuously connected</b><p>Information and coordination become real-time.</p></div>
+          <div class="concept-card"><span class="tag">Interface</span><b>Direct manipulation</b><p>Touch makes computing accessible beyond trained desk workers.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="movement" id="platform">
+    <div class="wrap"><div class="movement__head"><p class="eyebrow"><b>Foundation</b></p><h2>A computer becomes part of the person</h2></div><p class="movement__dek">The opening chapters define the wave and place it in the history of computing. The important change is not processor size; it is the collapse of distance between software and daily behaviour.</p></div>
+  </section>
+
+  <article class="chapter" id="mobile-ch1">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 01<span></span></div>
+      <div class="chapter__content">
+        <h3>The Wave: The Shape of the Wave</h3>
+        <p class="chapter__claim">Mobile computing is the delivery mechanism for a wider information revolution.</p>
+        <div class="chapter__body">
+          <h4>From information technology to information energy</h4>
+          <p>Saylor places mobile computing inside a long sequence of civilisation-scale changes. Agriculture reorganised food and settlement; industry reorganised mechanical energy and production; the information revolution reorganises decisions, coordination and the use of human attention.</p>
+          <p>His key unit is not the gadget but <strong>information energy</strong>: useful information arriving where and when it can change an action. A price in a farmer’s hand, a diagnosis at a bedside or a map during a journey has more economic force than the same data stored in a distant office.</p>
+          <h4>Why mobile changes the slope</h4>
+          <p>The desktop web reached people mainly while they were seated at a connected computer. The smartphone stays with its owner, knows something about context and can deliver software throughout the waking week. This multiplies both the population reached and the number of moments in which computing can intervene.</p>
+          <p>A shared operating system, app model and wireless network also compress distribution. One software improvement can reach millions without constructing a new branch, printing a new edition or installing a specialised machine at every site. That leverage is why Saylor expects the wave to remake institutions rather than merely add convenience.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Scale</span><h4>Billions of users</h4><p>The relevant market expands from trained office workers to children, older adults and people in countries with little fixed computing infrastructure.</p></div><div class="detail-card"><span class="detail-label">Intensity</span><h4>All-day availability</h4><p>A carried computer participates in transactions and decisions that a desktop never encounters.</p></div></div>
+        <div class="critical-note"><b>Retrospective lens:</b> The category prediction was strong, but “information energy” can power manipulation as well as productivity. Reach magnifies the incentives of whoever controls the software and feed.</div>
+        <div class="key-terms"><span class="term">information energy</span><span class="term">mobile wave</span><span class="term">near-zero replication</span><span class="term">institutional change</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Category change</span><b>Six properties reinforce one another</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="m1t m1d" style="min-width:770px;width:100%;height:auto">
+  <title id="m1t">Adoption curves for three computing waves, and the six properties that reinforce each other</title>
+  <desc id="m1d">On the left, three adoption curves rise from 1980 to the present: personal computers levelling off in the hundreds of millions, the internet in the low billions, and mobile devices climbing steeply past five billion. On the right, six properties of mobile computing — pocketable, always on, connected, aware of location, personal, and cheap — are arranged in a ring with arrows running between every pair, indicating that each one increases the value of the others rather than merely adding to them.</desc>
+
+  <text x="96" y="30" class="svg-t">Not a faster curve. A different one.</text>
+
+  <!-- ============ adoption curves ============ -->
+  <line x1="130" y1="300" x2="520" y2="300" class="svg-axis"/>
+  <line x1="130" y1="60" x2="130" y2="300" class="svg-axis"/>
+  <text transform="translate(92,180) rotate(-90)" text-anchor="middle" class="svg-sm">PEOPLE REACHED</text>
+
+  <g class="svg-sm" fill="var(--ink-3)">
+    <text x="120" y="304" text-anchor="end">0</text>
+    <text x="120" y="228" text-anchor="end">1bn</text>
+    <text x="120" y="152" text-anchor="end">3bn</text>
+    <text x="120" y="76"  text-anchor="end">6bn</text>
+  </g>
+  <g class="svg-hair" stroke-width="1">
+    <line x1="130" y1="228" x2="520" y2="228"/>
+    <line x1="130" y1="152" x2="520" y2="152"/>
+    <line x1="130" y1="76"  x2="520" y2="76"/>
+  </g>
+
+  <path d="M130 300 C 190 298, 230 288, 270 274 C 320 258, 380 250, 460 247 L520 246"
+        fill="none" stroke="var(--f3)" stroke-width="2.4" class="draw" style="--len:400;--d:.2s"/>
+  <text x="470" y="238" class="svg-sm" fill="var(--f3)" font-weight="700">PERSONAL COMPUTERS</text>
+
+  <path d="M214 300 C 260 298, 300 280, 340 246 C 380 214, 430 196, 520 188"
+        fill="none" stroke="var(--f2)" stroke-width="2.4" class="draw" style="--len:330;--d:.5s"/>
+  <text x="470" y="180" class="svg-sm" fill="var(--f2)" font-weight="700">THE INTERNET</text>
+
+  <path d="M286 300 C 330 296, 366 272, 400 220 C 432 172, 470 110, 520 70"
+        fill="none" stroke="var(--f1)" stroke-width="3" class="draw" style="--len:300;--d:.8s"/>
+  <text x="470" y="62" class="svg-sm" fill="var(--f1)" font-weight="700">MOBILE</text>
+
+  <g class="svg-sm" text-anchor="middle">
+    <text x="130" y="320">1980</text><text x="286" y="320">2000</text><text x="440" y="320">2010</text>
+  </g>
+
+  <text x="130" y="352" class="svg-lab">Each wave started later and passed the one before it. The</text>
+  <text x="130" y="369" class="svg-lab">difference is not speed of improvement but who is reachable:</text>
+  <text x="130" y="386" class="svg-lab">a device cheap enough and simple enough for everyone.</text>
+
+  <line x1="560" y1="20" x2="560" y2="400" class="svg-hair" stroke-width="1"/>
+
+  <!-- ============ the reinforcing ring ============ -->
+  <text x="592" y="34" class="svg-t">Six properties, multiplying</text>
+
+  <!-- edges first -->
+  <g stroke="var(--f1)" stroke-width="1" opacity=".3">
+    <line x1="780" y1="94" x2="890" y2="158"/><line x1="780" y1="94" x2="890" y2="286"/>
+    <line x1="780" y1="94" x2="780" y2="350"/><line x1="780" y1="94" x2="670" y2="286"/>
+    <line x1="780" y1="94" x2="670" y2="158"/>
+    <line x1="890" y1="158" x2="890" y2="286"/><line x1="890" y1="158" x2="780" y2="350"/>
+    <line x1="890" y1="158" x2="670" y2="286"/><line x1="890" y1="158" x2="670" y2="158"/>
+    <line x1="890" y1="286" x2="780" y2="350"/><line x1="890" y1="286" x2="670" y2="286"/>
+    <line x1="890" y1="286" x2="670" y2="158"/>
+    <line x1="780" y1="350" x2="670" y2="286"/><line x1="780" y1="350" x2="670" y2="158"/>
+    <line x1="670" y1="286" x2="670" y2="158"/>
+  </g>
+
+  <g class="pop" style="--d:.6s">
+    <circle cx="780" cy="94"  r="34" fill="var(--f1)" opacity=".16"/>
+    <circle cx="890" cy="158" r="34" fill="var(--f1)" opacity=".16"/>
+    <circle cx="890" cy="286" r="34" fill="var(--f1)" opacity=".16"/>
+    <circle cx="780" cy="350" r="34" fill="var(--f1)" opacity=".16"/>
+    <circle cx="670" cy="286" r="34" fill="var(--f1)" opacity=".16"/>
+    <circle cx="670" cy="158" r="34" fill="var(--f1)" opacity=".16"/>
+  </g>
+  <g class="svg-sm" text-anchor="middle" fill="var(--ink)" font-weight="700">
+    <text x="780" y="98">POCKETABLE</text>
+    <text x="890" y="154">ALWAYS</text><text x="890" y="166">ON</text>
+    <text x="890" y="282">CONNECTED</text>
+    <text x="780" y="348">KNOWS</text><text x="780" y="360">WHERE</text>
+    <text x="670" y="282">PERSONAL</text>
+    <text x="670" y="154">CHEAP</text>
+  </g>
+
+  <text x="592" y="392" class="svg-lab">Any one of these is a feature. Together they change what</text>
+  <text x="592" y="409" class="svg-lab">a computer <tspan class="svg-b">is for</tspan> — which is why the effect is not additive.</text>
+</svg>
+</div>
+</div><p class="chapter-visual__caption">No single feature makes the wave. The combination moves software into ordinary moments of action.</p></div>
+        <div class="plate">
+          <div class="plate__head"><span>Plate 02 · leverage</span><b>One software change, millions of changed behaviours</b></div>
+          <div class="plate__body"><div class="causal-chain"><div class="node">Connected device</div><div class="arrow">→</div><div class="node">Shared software platform</div><div class="arrow">→</div><div class="node">Near-zero replication</div><div class="arrow">→</div><div class="node accent">Institutional change</div></div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="mobile-ch2">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 02<span></span></div>
+      <div class="chapter__content">
+        <h3>Computers: The Evolution to Mobile Computing</h3>
+        <p class="chapter__claim">Each wave moves computation closer to the individual and expands the population that can use it.</p>
+        <div class="chapter__body">
+          <h4>Five successive expansions of access</h4>
+          <p>Mainframes were room-sized capital equipment shared by large institutions and operated by specialists. Minicomputers lowered cost enough for departments and smaller organisations. The personal-computer wave put processing on an individual desk and let packaged software address millions of workers.</p>
+          <p>The Internet connected those machines, turning the PC into a window onto remote information and services. But it remained anchored to offices, desks, keyboards and deliberate sessions. The mobile wave detaches the networked computer from place.</p>
+          <h4>A new interface and a new design subject</h4>
+          <p>Touch removes layers of keyboard and mouse convention. Cameras, microphones, GPS and motion sensors make the device aware of the surrounding world. Batteries and wireless networks allow it to remain useful while the owner moves.</p>
+          <p>The design subject consequently changes from “the worker at a terminal” to “the person in context.” Software can respond to identity, location, history and nearby objects. The device is simultaneously a computer, sensor bundle, communication channel and authentication token.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Economic pattern</span><h4>Lower cost, larger audience</h4><p>Each wave reduces the infrastructure and expertise required per user while expanding the range of viable applications.</p></div><div class="detail-card"><span class="detail-label">Fifth-wave novelty</span><h4>Persistent context</h4><p>The computer is no longer waiting at a destination; it accompanies the person and observes the situation in which a decision occurs.</p></div></div>
+        <div class="critical-note"><b>What the five-wave story simplifies:</b> Earlier forms do not vanish. Mainframes survive as cloud data centres, PCs remain superior for many creative tasks, and mobile depends on the fixed infrastructure it appears to transcend.</div>
+        <div class="key-terms"><span class="term">mainframe</span><span class="term">minicomputer</span><span class="term">personal computer</span><span class="term">Internet PC</span><span class="term">mobile Internet</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Five waves</span><b>Computing moves steadily toward the individual</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="m2t m2d" style="min-width:770px;width:100%;height:auto">
+  <title id="m2t">Five waves of computing, measured by how many people share one machine</title>
+  <desc id="m2d">Five regimes are plotted along a timeline: mainframe, minicomputer, personal computer, internet and mobile. A descending line tracks the number of people who share a single machine, falling from thousands to one and then below one as people carry several devices. A rising bar series tracks the number of people who can use a computer at all, climbing from thousands to billions. The two lines cross, marking the point at which computing stopped being a shared facility and became a personal instrument.</desc>
+
+  <text x="96" y="30" class="svg-t">The machine kept getting closer to one particular person</text>
+
+  <!-- axis -->
+  <line x1="140" y1="300" x2="880" y2="300" class="svg-axis"/>
+
+  <!-- regime bands -->
+  <g opacity=".07">
+    <rect x="140" y="60" width="140" height="240" fill="var(--f3)"/>
+    <rect x="288" y="60" width="140" height="240" fill="var(--f3)"/>
+    <rect x="436" y="60" width="140" height="240" fill="var(--f1)"/>
+    <rect x="584" y="60" width="140" height="240" fill="var(--f2)"/>
+    <rect x="732" y="60" width="148" height="240" fill="var(--f1)"/>
+  </g>
+
+  <g class="svg-sm" text-anchor="middle" fill="var(--ink)" font-weight="700">
+    <text x="210" y="80">MAINFRAME</text>
+    <text x="358" y="80">MINICOMPUTER</text>
+    <text x="506" y="80">PERSONAL</text>
+    <text x="654" y="80">NETWORKED</text>
+    <text x="806" y="80">MOBILE</text>
+  </g>
+  <g class="svg-sm" text-anchor="middle">
+    <text x="210" y="318">1960s</text><text x="358" y="318">1970s</text><text x="506" y="318">1980s</text>
+    <text x="654" y="318">1990s</text><text x="806" y="318">2010s</text>
+  </g>
+
+  <!-- people per machine (falling) -->
+  <polyline fill="none" stroke="var(--f3)" stroke-width="2.6" stroke-linejoin="round"
+            class="draw" style="--len:760;--d:.2s;--dur:2s"
+            points="210,110 358,168 506,232 654,244 806,268"/>
+  <g fill="var(--f3)" class="pop" style="--d:1.4s">
+    <circle cx="210" cy="110" r="5"/><circle cx="358" cy="168" r="5"/><circle cx="506" cy="232" r="5"/>
+    <circle cx="654" cy="244" r="5"/><circle cx="806" cy="268" r="5"/>
+  </g>
+  <g class="svg-num" text-anchor="middle" fill="var(--f3)">
+    <text x="210" y="102">1,000 : 1</text>
+    <text x="358" y="160">30 : 1</text>
+    <text x="506" y="224">1 : 1</text>
+    <text x="654" y="236">1 : 1</text>
+    <text x="806" y="260">1 : 3</text>
+  </g>
+  <text x="430" y="122" class="svg-sm" fill="var(--f3)" font-weight="700">PEOPLE PER MACHINE</text>
+
+  <!-- reachable population (rising bars) -->
+  <g fill="var(--f1)" opacity=".5">
+    <rect x="192" y="292" width="36" height="8"   class="grow" style="--d:.4s"/>
+    <rect x="340" y="278" width="36" height="22"  class="grow" style="--d:.5s"/>
+    <rect x="488" y="248" width="36" height="52"  class="grow" style="--d:.6s"/>
+    <rect x="636" y="204" width="36" height="96"  class="grow" style="--d:.7s"/>
+    <rect x="788" y="140" width="36" height="160" class="grow" style="--d:.8s"/>
+  </g>
+  <g class="svg-num" text-anchor="middle" fill="var(--f1)">
+    <text x="210" y="286">thousands</text>
+    <text x="358" y="272">millions</text>
+    <text x="506" y="242">100m</text>
+    <text x="654" y="198">1bn</text>
+    <text x="806" y="134">5bn+</text>
+  </g>
+
+  <!-- the crossing -->
+  <line x1="580" y1="60" x2="580" y2="300" stroke="var(--f1)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="580" y="340" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">FROM SHARED FACILITY</text>
+  <text x="580" y="353" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">TO PERSONAL INSTRUMENT</text>
+
+  <text x="140" y="352" class="svg-lab">Each wave lowered the price and simplified the</text>
+  <text x="140" y="369" class="svg-lab">interface, and each time the audience grew by</text>
+  <text x="140" y="386" class="svg-lab">roughly an order of magnitude.</text>
+
+  <text x="700" y="378" class="svg-lab">The newest shift is subtler: the</text>
+  <text x="700" y="395" class="svg-lab">device stopped being a place you</text>
+  <text x="700" y="412" class="svg-lab">go and became a thing you carry.</text>
+</svg>
+</div>
+</div></div>
+        <div class="plate">
+          <div class="plate__head"><span>Plate 03 · five waves</span><b>Computing moves from institution to person</b></div>
+          <div class="plate__body"><div class="timeline" style="--steps:5"><div class="timeline__item"><b>Mainframe</b><span>One machine · many specialists</span></div><div class="timeline__item"><b>Mini</b><span>Departments compute</span></div><div class="timeline__item"><b>PC</b><span>A machine per desk</span></div><div class="timeline__item"><b>Internet</b><span>Desks connect</span></div><div class="timeline__item"><b>Mobile</b><span>A network per person</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="movement" id="dematerialise">
+    <div class="wrap"><div class="movement__head"><p class="eyebrow"><b>Dematerialisation</b></p><h2>Objects collapse into applications</h2></div><p class="movement__dek">Paper, entertainment screens and wallets look like separate industries. The mobile wave treats them as collections of information, identity and transaction functions that software can recombine.</p></div>
+  </section>
+
+  <article class="chapter" id="mobile-ch3">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 03<span></span></div>
+      <div class="chapter__content">
+        <h3>Paper: The Demise of Paper</h3>
+        <p class="chapter__claim">Paper persists because it is cheap and universal; mobile wins when software makes the document active.</p>
+        <div class="chapter__body">
+          <h4>Each medium lowers a different constraint</h4>
+          <p>The historical arc begins with durable but heavy clay tablets, moves through papyrus and parchment, and reaches paper as a cheap, portable surface. Gutenberg’s movable-type system dramatically lowered the cost of reproducing consistent pages, helping books and literacy spread beyond a narrow elite.</p>
+          <p>Desktop publishing lowered composition costs but still produced physical objects that had to be printed, warehoused and transported. A mobile document eliminates much of that chain and can be delivered globally the moment it changes.</p>
+          <h4>The page becomes active</h4>
+          <p>Maps are the clearest example. A paper map represents a place at one printing date; a mobile map locates the user, searches destinations, calculates routes, reports traffic and updates its database. It replaces not just the sheet but the work formerly performed around the sheet.</p>
+          <p>Books, manuals, tickets, receipts, newspapers and forms follow the same transition when search, links, translation, personalisation and live updates matter. The strongest digital product is therefore not a scan of paper. It is a service whose output happens to include readable pages.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Historical example</span><h4>Papyrus, parchment and paper</h4><p>Media change when scarcity, climate, cost or control makes a substitute more useful than the incumbent.</p></div><div class="detail-card"><span class="detail-label">Mobile example</span><h4>The living map</h4><p>Location and computation turn a static representation into a continuously updated navigation service.</p></div></div>
+        <div class="critical-note"><b>Retrospective lens:</b> Paper declined most where information is time-sensitive or transactional. It remains valuable for durability, ownership, deep reading, legal convention and situations where power or connectivity cannot be assumed.</div>
+        <div class="key-terms"><span class="term">dematerialisation</span><span class="term">movable type</span><span class="term">digital publishing</span><span class="term">active document</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Media evolution</span><b>Each step removes a different constraint</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 436" width="1000" height="436" role="img" aria-labelledby="m3t m3d" style="min-width:770px;width:100%;height:auto">
+  <title id="m3t">A matrix of which constraints each recording medium removed</title>
+  <desc id="m3d">A grid with five media as columns — clay tablet, papyrus, printed paper, screen, and the connected mobile page — and six constraints as rows: cost to produce, weight, cost to copy, distance to send, searchability, and the ability to update or respond. Filled cells show the constraint solved. Each medium removes a different constraint, and only the final column solves the last two, which is where the page stops being a record and starts being a running process.</desc>
+
+  <text x="96" y="30" class="svg-t">Paper never lost on cost. It lost on being alive.</text>
+
+  <!-- column headers -->
+  <g class="svg-sm" text-anchor="middle" fill="var(--ink)" font-weight="700">
+    <text x="404" y="72">CLAY</text>
+    <text x="500" y="72">PAPYRUS</text>
+    <text x="596" y="72">PRINT</text>
+    <text x="692" y="72">SCREEN</text>
+    <text x="800" y="66">CONNECTED</text>
+    <text x="800" y="78">MOBILE PAGE</text>
+  </g>
+
+  <!-- row labels -->
+  <g class="svg-lab" text-anchor="end" fill="var(--ink-2)">
+    <text x="356" y="112">cheap to produce</text>
+    <text x="356" y="156">light to carry</text>
+    <text x="356" y="200">cheap to copy</text>
+    <text x="356" y="244">travels any distance</text>
+    <text x="356" y="288">searchable</text>
+    <text x="356" y="332">updates and answers back</text>
+  </g>
+
+  <!-- grid -->
+  <g class="svg-hair" stroke-width="1">
+    <line x1="368" y1="90" x2="856" y2="90"/>
+    <line x1="368" y1="126" x2="856" y2="126"/><line x1="368" y1="170" x2="856" y2="170"/>
+    <line x1="368" y1="214" x2="856" y2="214"/><line x1="368" y1="258" x2="856" y2="258"/>
+    <line x1="368" y1="302" x2="856" y2="302"/><line x1="368" y1="346" x2="856" y2="346"/>
+    <line x1="452" y1="86" x2="452" y2="346"/><line x1="548" y1="86" x2="548" y2="346"/>
+    <line x1="644" y1="86" x2="644" y2="346"/><line x1="744" y1="86" x2="744" y2="346"/>
+  </g>
+
+  <!-- solved cells -->
+  <g class="rise" style="--d:.3s">
+    <!-- clay: nothing much -->
+    <rect x="370" y="88" width="80" height="36" fill="var(--f3)" opacity=".45"/>
+    <!-- papyrus: light -->
+    <rect x="456" y="132" width="88" height="32" fill="var(--f3)" opacity=".45"/>
+    <rect x="456" y="88" width="88" height="36" fill="var(--f3)" opacity=".45"/>
+    <!-- print: copy -->
+    <rect x="552" y="88" width="88" height="36" fill="var(--f3)" opacity=".45"/>
+    <rect x="552" y="132" width="88" height="32" fill="var(--f3)" opacity=".45"/>
+    <rect x="552" y="176" width="88" height="32" fill="var(--f3)" opacity=".45"/>
+    <!-- screen: distance -->
+    <rect x="648" y="88" width="92" height="36" fill="var(--f2)" opacity=".4"/>
+    <rect x="648" y="176" width="92" height="32" fill="var(--f2)" opacity=".4"/>
+    <rect x="648" y="220" width="92" height="32" fill="var(--f2)" opacity=".4"/>
+    <rect x="648" y="264" width="92" height="32" fill="var(--f2)" opacity=".4"/>
+    <!-- mobile: everything -->
+    <rect x="748" y="88" width="104" height="36" fill="var(--f1)" opacity=".45"/>
+    <rect x="748" y="132" width="104" height="32" fill="var(--f1)" opacity=".45"/>
+    <rect x="748" y="176" width="104" height="32" fill="var(--f1)" opacity=".45"/>
+    <rect x="748" y="220" width="104" height="32" fill="var(--f1)" opacity=".45"/>
+    <rect x="748" y="264" width="104" height="32" fill="var(--f1)" opacity=".45"/>
+    <rect x="748" y="308" width="104" height="32" fill="var(--f1)" opacity=".45"/>
+  </g>
+
+  <!-- clay is heavy: a negative marker -->
+  <text x="404" y="156" class="svg-sm" text-anchor="middle" fill="var(--ink-3)">30 kg</text>
+
+  <text x="800" y="368" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">↑ ONLY THIS COLUMN</text>
+  <text x="800" y="380" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">SOLVES THE LAST TWO</text>
+
+  <!-- the active page -->
+  <line x1="96" y1="392" x2="904" y2="392" class="svg-hair" stroke-width="1"/>
+  <text x="96" y="406" class="svg-lab">A printed map records where things were. The same map on a phone knows where <tspan class="svg-b">you</tspan> are,</text>
+  <text x="96" y="422" class="svg-lab">when the next bus leaves, and that the road ahead is closed.</text>
+
+  <!-- side note -->
+  <text x="96" y="112" class="svg-sm" fill="var(--f3)" font-weight="700">PAPER STILL</text>
+  <text x="96" y="126" class="svg-sm" fill="var(--f3)" font-weight="700">WINS HERE</text>
+  <text x="96" y="152" class="svg-em">cheap, universal,</text>
+  <text x="96" y="168" class="svg-em">needs no battery</text>
+  <text x="96" y="200" class="svg-lab">— which is why</text>
+  <text x="96" y="217" class="svg-lab">it took so long,</text>
+  <text x="96" y="234" class="svg-lab">and why it goes</text>
+  <text x="96" y="251" class="svg-lab">only where the</text>
+  <text x="96" y="268" class="svg-lab">document needs</text>
+  <text x="96" y="285" class="svg-lab">to <tspan class="svg-b">do</tspan> something.</text>
+</svg>
+</div>
+</div></div>
+        <div class="compare" style="margin-top:28px"><div class="compare__side"><h4>Paper object</h4><ul><li>Static after printing</li><li>Copied and transported physically</li><li>Hard to search or personalise</li></ul></div><div class="compare__side good"><h4>Mobile service</h4><ul><li>Updates continuously</li><li>Replicates globally</li><li>Searches, links and responds</li></ul></div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="mobile-ch4">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 04<span></span></div>
+      <div class="chapter__content">
+        <h3>Entertainment: The New Universal Screen</h3>
+        <p class="chapter__claim">One personal screen absorbs television, cinema, music, games and the advertising systems around them.</p>
+        <div class="chapter__body">
+          <h4>Camera, console and cinema converge</h4>
+          <p>Digitisation already separated photographs, music and video from physical media. Mobile completes the loop by combining capture, editing, playback and distribution in one carried device. An event can be recorded and reach a global audience before a traditional broadcaster arrives.</p>
+          <p>Casual games such as <em>Angry Birds</em> and social games such as <em>FarmVille</em> illustrated a broader audience than the dedicated console market. App stores lowered distribution barriers, while free-to-play and in-app purchases changed how games were financed.</p>
+          <h4>On demand displaces the schedule</h4>
+          <p>Streaming services replace the trip to a video store and weaken the fixed broadcast timetable. Saylor uses failed scheduled mobile-TV services as evidence that people did not merely want television on a smaller screen; they wanted control over time and selection.</p>
+          <p>The universal screen is also a measurement surface. Every view, pause, share and purchase can feed recommendation and advertising systems. Entertainment becomes more responsive and participatory, but discovery shifts from channel owners toward platform algorithms.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Convergence</span><h4>One device, many media roles</h4><p>The same screen records, edits, distributes, displays, recommends and monetises content.</p></div><div class="detail-card"><span class="detail-label">Business-model shift</span><h4>From audience estimate to event stream</h4><p>Platforms observe individual behaviour in real time and sell targeting, subscriptions and in-app transactions.</p></div></div>
+        <div class="critical-note"><b>What persisted:</b> Mobile became a universal control and viewing surface, but cinemas, televisions, consoles and professional cameras survived where immersion, ergonomics or specialised quality matter.</div>
+        <div class="key-terms"><span class="term">universal screen</span><span class="term">streaming</span><span class="term">app store</span><span class="term">on demand</span><span class="term">targeted advertising</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Media convergence</span><b>One screen absorbs devices and creates a new feed</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="m4t m4d" style="min-width:770px;width:100%;height:auto">
+  <title id="m4t">Eight single-purpose devices collapsing into one screen, and the measurement change that follows</title>
+  <desc id="m4d">On the left, eight devices — television, camera, games console, radio, music player, camcorder, newspaper and cinema ticket — are drawn as small outlines with arrows converging on a single phone. On the right, two ways of measuring an audience are compared: a sampled panel of a few thousand households producing one estimated rating, against a per-device event stream in which every start, pause and abandonment is recorded for every viewer.</desc>
+
+  <text x="96" y="30" class="svg-t">Eight devices in, one device out — and a new output nobody ordered</text>
+
+  <!-- the absorbed devices -->
+  <g stroke="var(--f3)" stroke-width="1.5" fill="none" opacity=".85">
+    <rect x="100" y="72" width="44" height="30" rx="2"/>
+    <rect x="100" y="132" width="44" height="30" rx="3"/><circle cx="122" cy="147" r="8"/>
+    <rect x="100" y="192" width="44" height="26" rx="8"/>
+    <rect x="100" y="248" width="44" height="30" rx="2"/><circle cx="122" cy="263" r="6"/>
+    <rect x="228" y="72" width="44" height="30" rx="2"/><circle cx="250" cy="87" r="9"/>
+    <rect x="228" y="132" width="44" height="30" rx="2"/>
+    <rect x="228" y="192" width="44" height="30" rx="2"/>
+    <rect x="228" y="248" width="44" height="30" rx="2"/>
+  </g>
+  <g class="svg-sm" text-anchor="middle" fill="var(--ink-3)">
+    <text x="122" y="114">TELEVISION</text>
+    <text x="122" y="174">CAMERA</text>
+    <text x="122" y="230">RADIO</text>
+    <text x="122" y="290">CAMCORDER</text>
+    <text x="250" y="114">MUSIC</text>
+    <text x="250" y="174">CONSOLE</text>
+    <text x="250" y="230">NEWSPAPER</text>
+    <text x="250" y="290">CINEMA</text>
+  </g>
+
+  <defs>
+    <marker id="m4a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--f1)"/>
+    </marker>
+  </defs>
+  <g stroke="var(--f1)" stroke-width="1.3" fill="none" opacity=".6" marker-end="url(#m4a)">
+    <path d="M282 87 C 330 100, 340 140, 356 168" class="draw" style="--len:110;--d:.2s"/>
+    <path d="M282 147 C 320 155, 336 160, 352 172" class="draw" style="--len:80;--d:.3s"/>
+    <path d="M282 207 C 320 205, 336 196, 352 186" class="draw" style="--len:80;--d:.4s"/>
+    <path d="M282 263 C 330 250, 340 215, 356 192" class="draw" style="--len:110;--d:.5s"/>
+  </g>
+
+  <!-- the one screen -->
+  <rect x="366" y="96" width="76" height="150" rx="10" fill="var(--f1)" opacity=".14"/>
+  <rect x="366" y="96" width="76" height="150" rx="10" fill="none" stroke="var(--f1)" stroke-width="1.8"/>
+  <rect x="374" y="112" width="60" height="112" rx="2" fill="var(--f1)" opacity=".22"/>
+  <circle cx="404" cy="236" r="4" fill="var(--f1)"/>
+  <text x="404" y="266" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">ONE SCREEN</text>
+  <text x="404" y="284" class="svg-em" text-anchor="middle">personal, and always present</text>
+
+  <text x="96" y="322" class="svg-lab">Convergence is not the interesting half. Each of these devices had a</text>
+  <text x="96" y="339" class="svg-lab">business model attached — a schedule, a channel, a shelf — and the</text>
+  <text x="96" y="356" class="svg-lab">screen inherits the content while dissolving the scheduling.</text>
+  <text x="96" y="382" class="svg-sm" fill="var(--f1)" font-weight="700">ON DEMAND REPLACES THE BROADCAST GRID</text>
+
+  <line x1="490" y1="20" x2="490" y2="400" class="svg-hair" stroke-width="1"/>
+
+  <!-- ============ measurement ============ -->
+  <text x="522" y="34" class="svg-t">And the audience becomes legible</text>
+
+  <text x="522" y="72" class="svg-sm" fill="var(--f3)" font-weight="700">BEFORE · A SAMPLED PANEL</text>
+  <g fill="var(--f3)" opacity=".45" class="rise" style="--d:.5s">
+    <circle cx="534" cy="100" r="4"/><circle cx="552" cy="100" r="4"/><circle cx="570" cy="100" r="4"/>
+    <circle cx="588" cy="100" r="4"/><circle cx="606" cy="100" r="4"/><circle cx="624" cy="100" r="4"/>
+    <circle cx="534" cy="118" r="4"/><circle cx="552" cy="118" r="4"/><circle cx="570" cy="118" r="4"/>
+  </g>
+  <text x="648" y="112" class="svg-lab">a few thousand households</text>
+  <line x1="522" y1="140" x2="700" y2="140" class="svg-rule" stroke-width="1.2"/>
+  <text x="522" y="164" class="svg-num" fill="var(--f3)">&#8220;14.2 rating&#8221;</text>
+  <text x="640" y="164" class="svg-em">one number, once a day</text>
+
+  <text x="522" y="212" class="svg-sm" fill="var(--f1)" font-weight="700">AFTER · AN EVENT STREAM</text>
+  <g class="svg-num" fill="var(--ink-2)">
+    <text x="522" y="240">21:04:12   start</text>
+    <text x="522" y="258">21:07:48   pause</text>
+    <text x="522" y="276">21:09:02   resume</text>
+    <text x="522" y="294">21:14:31   skip ad</text>
+    <text x="522" y="312">21:22:07   abandon</text>
+  </g>
+  <text x="700" y="258" class="svg-lab">every viewer,</text>
+  <text x="700" y="275" class="svg-lab">every second,</text>
+  <text x="700" y="292" class="svg-lab">individually</text>
+
+  <line x1="522" y1="336" x2="948" y2="336" class="svg-hair" stroke-width="1"/>
+  <text x="522" y="358" class="svg-lab">The screen that plays the film also reports on the</text>
+  <text x="522" y="375" class="svg-lab">watching. Estimation gives way to a record — which is</text>
+  <text x="522" y="392" class="svg-lab">what actually reorganised the industry around it.</text>
+</svg>
+</div>
+</div></div>
+        <div class="plate"><div class="plate__head"><span>Plate 04 · convergence</span><b>Many media devices become one interface</b></div><div class="plate__body"><div class="causal-chain"><div class="node">TV · radio · console · camera</div><div class="arrow">→</div><div class="node">Universal screen</div><div class="arrow">→</div><div class="node">App distribution</div><div class="arrow">→</div><div class="node accent">Personalised feed</div></div></div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="mobile-ch5">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 05<span></span></div>
+      <div class="chapter__content">
+        <h3>Wallet: A Smarter Wallet and Intelligent Money</h3>
+        <p class="chapter__claim">The wallet is a bundle of identity, payment, access and memory — all functions a trusted device can perform.</p>
+        <div class="chapter__body">
+          <h4>The wallet was always a software bundle in leather</h4>
+          <p>Saylor opens with the ancient <em>kibisis</em> carried by Perseus and follows the container as coins, paper money, identity cards, credit and access credentials accumulate. The modern wallet is less one object than a collection of social permissions.</p>
+          <p>A trusted mobile device can unbundle and recombine those functions. Payment cards, tickets, coupons, keys, licences and transaction history become software objects selected at the moment they are needed.</p>
+          <h4>Authentication makes money programmable</h4>
+          <p>Near-field communication allows a short-range exchange with a terminal; biometrics can connect the device to a person; cloud services can check risk and settle the transaction. A payment can automatically attach loyalty, receipts, spending limits or purpose restrictions.</p>
+          <p>Saylor imagines technology firms competing with banks because the most valuable customer relationship may belong to the interface that authenticates identity and organises daily transactions. The convenience is powerful, but it also makes operating-system access, payment rules and account suspension matters of civic importance.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Wallet functions</span><h4>Identity + value + access</h4><p>A physical container holds proofs and permissions that software can authenticate, update and invoke contextually.</p></div><div class="detail-card"><span class="detail-label">Intelligent money</span><h4>Rules travel with payment</h4><p>Time, location, merchant category, allowance, discount and receipt can become part of one transaction.</p></div></div>
+        <div class="critical-note"><b>Retrospective lens:</b> Mobile payments and digital tickets landed; the complete wallet arrived more slowly because governments, banks and merchants must agree on standards, liability and identity. Centralisation also creates new forms of exclusion and surveillance.</div>
+        <div class="key-terms"><span class="term">NFC</span><span class="term">biometrics</span><span class="term">digital identity</span><span class="term">mobile key</span><span class="term">programmable money</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Wallet architecture</span><b>The phone combines proof, value and permission</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="m5t m5d" style="min-width:770px;width:100%;height:auto">
+  <title id="m5t">A wallet&#8217;s contents mapped to the software functions that replace them, and a payment carrying its own rules</title>
+  <desc id="m5d">On the left, the contents of a leather wallet are listed — cash, cards, driving licence, keys, tickets, receipts, loyalty cards and photographs — each joined by a line to the function it actually performs: proof of value, proof of identity, proof of permission, or memory. On the right, a payment is drawn as a packet with conditions attached to it: valid only at one merchant, only for one category, only before a date, and only with a second approval, illustrating money that carries its own rules.</desc>
+
+  <text x="96" y="30" class="svg-t">A wallet was always software. It just ran on leather.</text>
+
+  <!-- contents -->
+  <text x="96" y="66" class="svg-sm" fill="var(--f3)" font-weight="700">WHAT IS IN IT</text>
+  <g class="svg-lab" fill="var(--ink-2)">
+    <text x="96" y="100">banknotes</text>
+    <text x="96" y="128">debit card</text>
+    <text x="96" y="156">driving licence</text>
+    <text x="96" y="184">office key card</text>
+    <text x="96" y="212">concert ticket</text>
+    <text x="96" y="240">receipts</text>
+    <text x="96" y="268">loyalty stamps</text>
+    <text x="96" y="296">a photograph</text>
+  </g>
+
+  <!-- functions -->
+  <text x="330" y="66" class="svg-sm" fill="var(--f1)" font-weight="700">WHAT IT IS DOING</text>
+  <g class="rise" style="--d:.4s">
+    <rect x="330" y="86" width="150" height="34" rx="2" fill="var(--f1)" opacity=".16"/>
+    <text x="405" y="108" class="svg-sm" text-anchor="middle" fill="var(--ink)">PROOF OF VALUE</text>
+    <rect x="330" y="146" width="150" height="34" rx="2" fill="var(--f1)" opacity=".16"/>
+    <text x="405" y="168" class="svg-sm" text-anchor="middle" fill="var(--ink)">PROOF OF IDENTITY</text>
+    <rect x="330" y="206" width="150" height="34" rx="2" fill="var(--f1)" opacity=".16"/>
+    <text x="405" y="228" class="svg-sm" text-anchor="middle" fill="var(--ink)">PROOF OF PERMISSION</text>
+    <rect x="330" y="266" width="150" height="34" rx="2" fill="var(--f1)" opacity=".16"/>
+    <text x="405" y="288" class="svg-sm" text-anchor="middle" fill="var(--ink)">MEMORY</text>
+  </g>
+
+  <g stroke="var(--rule-2)" stroke-width="1.1" fill="none" opacity=".8">
+    <path d="M196 96 L326 100"/>
+    <path d="M196 124 L326 106"/>
+    <path d="M196 152 L326 160"/>
+    <path d="M196 180 L326 218"/>
+    <path d="M196 208 L326 224"/>
+    <path d="M196 236 L326 278"/>
+    <path d="M196 264 L326 284"/>
+    <path d="M196 292 L326 290"/>
+  </g>
+
+  <text x="96" y="336" class="svg-lab">Every one of these is a claim someone else has to be able</text>
+  <text x="96" y="353" class="svg-lab">to check. Leather could carry the claim but never verify it —</text>
+  <text x="96" y="370" class="svg-lab">which is why a lost wallet was a catastrophe and a lost</text>
+  <text x="96" y="387" class="svg-lab">phone, with authentication, is an inconvenience.</text>
+
+  <line x1="540" y1="20" x2="540" y2="400" class="svg-hair" stroke-width="1"/>
+
+  <!-- ============ programmable money ============ -->
+  <text x="572" y="34" class="svg-t">Once it is software, value carries rules</text>
+
+  <rect x="572" y="66" width="180" height="70" rx="3" fill="var(--f4)" opacity=".2"/>
+  <rect x="572" y="66" width="180" height="70" rx="3" fill="none" stroke="var(--f4)" stroke-width="1.5"/>
+  <text x="662" y="96" class="svg-num" text-anchor="middle" fill="var(--ink)" font-size="17">£40.00</text>
+  <text x="662" y="118" class="svg-sm" text-anchor="middle">A PAYMENT</text>
+
+  <g stroke="var(--f1)" stroke-width="1.3" fill="none">
+    <path d="M752 90 L800 90" class="draw" style="--len:48;--d:.5s"/>
+    <path d="M752 106 L800 148" class="draw" style="--len:64;--d:.6s"/>
+    <path d="M752 118 L800 206" class="draw" style="--len:100;--d:.7s"/>
+    <path d="M752 128 L800 264" class="draw" style="--len:145;--d:.8s"/>
+  </g>
+
+  <g class="rise" style="--d:1s">
+    <rect x="804" y="76" width="150" height="30" rx="2" fill="var(--f1)" opacity=".14"/>
+    <text x="879" y="95" class="svg-sm" text-anchor="middle" fill="var(--ink)">ONLY AT THIS SHOP</text>
+    <rect x="804" y="134" width="150" height="30" rx="2" fill="var(--f1)" opacity=".14"/>
+    <text x="879" y="153" class="svg-sm" text-anchor="middle" fill="var(--ink)">ONLY ON GROCERIES</text>
+    <rect x="804" y="192" width="150" height="30" rx="2" fill="var(--f1)" opacity=".14"/>
+    <text x="879" y="211" class="svg-sm" text-anchor="middle" fill="var(--ink)">ONLY BEFORE FRIDAY</text>
+    <rect x="804" y="250" width="150" height="30" rx="2" fill="var(--f1)" opacity=".14"/>
+    <text x="879" y="269" class="svg-sm" text-anchor="middle" fill="var(--ink)">NEEDS A SECOND YES</text>
+  </g>
+
+  <text x="572" y="176" class="svg-sm" fill="var(--f1)" font-weight="700">CONDITIONS TRAVEL</text>
+  <text x="572" y="190" class="svg-sm" fill="var(--f1)" font-weight="700">WITH THE MONEY</text>
+
+  <text x="572" y="230" class="svg-lab">A banknote cannot know</text>
+  <text x="572" y="247" class="svg-lab">what it is being spent on.</text>
+  <text x="572" y="264" class="svg-lab">An authenticated transfer</text>
+  <text x="572" y="281" class="svg-lab">can carry the whole</text>
+  <text x="572" y="298" class="svg-lab">agreement with it.</text>
+
+  <line x1="572" y1="330" x2="948" y2="330" class="svg-hair" stroke-width="1"/>
+  <text x="572" y="352" class="svg-lab">This is what &#8220;intelligent money&#8221; means here: not a new</text>
+  <text x="572" y="369" class="svg-lab">currency, but ordinary value that arrives already knowing</text>
+  <text x="572" y="386" class="svg-lab">the terms it was sent under.</text>
+</svg>
+</div>
+</div><p class="chapter-visual__caption">The device becomes valuable when authentication lets previously separate wallet functions cooperate.</p></div>
+        <div class="plate">
+          <div class="plate__head"><span>Plate 05 · wallet stack</span><b>What the rectangle in your pocket actually contains</b></div>
+          <div class="plate__body"><div class="stack"><div class="stack__layer" style="--w:62%">Identity · licences · credentials</div><div class="stack__layer" style="--w:72%">Payment · credit · stored value</div><div class="stack__layer" style="--w:82%">Tickets · keys · access rights</div><div class="stack__layer" style="--w:92%">Receipts · loyalty · transaction memory</div><div class="stack__layer">One authenticated mobile interface</div></div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="movement" id="institutions">
+    <div class="wrap"><div class="movement__head"><p class="eyebrow"><b>Institutions</b></p><h2>Services reorganise around continuous connection</h2></div><p class="movement__dek">The second half applies the mobile model to social coordination, healthcare, education and countries where fixed infrastructure is thin.</p></div>
+  </section>
+
+  <article class="chapter" id="mobile-ch6">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 06<span></span></div>
+      <div class="chapter__content">
+        <h3>Social Networks: A Mobile Social World</h3>
+        <p class="chapter__claim">A social network carried everywhere becomes an operating layer for identity, coordination and public events.</p>
+        <div class="chapter__body">
+          <h4>From destination to ambient layer</h4>
+          <p>Desktop social networks asked the user to visit a site. Mobile notifications, cameras and location make the network accompany the user. Messages, photographs and reactions are produced from inside the event and received while the recipient is moving through another.</p>
+          <p>Saylor traces a path from cities and mass media toward platforms such as Facebook, Twitter and LinkedIn. The key change is many-to-many coordination: ordinary participants become publishers, organisers and live witnesses rather than only an audience.</p>
+          <h4>Coordination at political speed</h4>
+          <p>The Arab Spring provides the chapter’s emblematic case. Images and calls to action circulated rapidly across personal networks, lowering the cost of finding allies and coordinating gatherings. The same structure lets groups form around commerce, emergencies, hobbies and professional identity.</p>
+          <p>Mobile and social reinforce one another: a more useful network motivates more device use, and a carried device supplies more timely content to the network. That positive feedback can create extraordinary utility—and platform concentration once everyone’s relationships depend on the same graph.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">New capability</span><h4>Broadcast from the scene</h4><p>The witness no longer needs a studio or newsroom to distribute text, images and video globally.</p></div><div class="detail-card"><span class="detail-label">New institution</span><h4>Social coordination system</h4><p>Identity, messaging, group formation, reputation and event organisation become one software layer.</p></div></div>
+        <div class="critical-note"><b>Retrospective lens:</b> The book emphasises collective empowerment. The same architecture also optimises outrage, accelerates falsehood, enables surveillance and grants feed operators immense power over public attention.</div>
+        <div class="key-terms"><span class="term">social graph</span><span class="term">ambient network</span><span class="term">many-to-many</span><span class="term">Arab Spring</span><span class="term">network effects</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Network flywheel</span><b>Mobile and social software magnify each other</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="m6t m6d" style="min-width:770px;width:100%;height:auto">
+  <title id="m6t">The mobile-social flywheel, and the collapse in coordination time</title>
+  <desc id="m6d">On the left, a four-stage flywheel: carrying the network everywhere means more moments get captured, which means more to come back for, which means checking more often, which returns to carrying it everywhere. Each turn is drawn with a widening arc to indicate acceleration. On the right, the time to assemble a crowd is compared across three eras — printed handbills taking weeks, telephone trees taking days, and a post from the scene taking minutes — drawn as bars on a shared logarithmic scale.</desc>
+
+  <text x="96" y="30" class="svg-t">The network stopped being a place you visit</text>
+
+  <!-- flywheel -->
+  <defs>
+    <marker id="m6a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--f2)"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="var(--f2)" stroke-width="2.4" marker-end="url(#m6a)">
+    <path d="M300,110 A94,94 0 0,1 380,204" class="draw" style="--len:150;--d:.2s"/>
+    <path d="M380,204 A94,94 0 0,1 268,286" class="draw" style="--len:150;--d:.5s"/>
+    <path d="M268,286 A94,94 0 0,1 194,182" class="draw" style="--len:150;--d:.8s"/>
+    <path d="M194,182 A94,94 0 0,1 292,110" class="draw" style="--len:150;--d:1.1s"/>
+  </g>
+
+  <g class="svg-sm" fill="var(--ink)" font-weight="700">
+    <text x="286" y="94" text-anchor="middle">CARRIED EVERYWHERE</text>
+    <text x="400" y="212" >MORE MOMENTS</text>
+    <text x="400" y="226" >CAPTURED</text>
+    <text x="262" y="308" text-anchor="middle">MORE TO COME BACK FOR</text>
+    <text x="176" y="176" text-anchor="end">CHECKED</text>
+    <text x="176" y="190" text-anchor="end">MORE OFTEN</text>
+  </g>
+  <text x="288" y="196" class="svg-sm" text-anchor="middle" fill="var(--f2)" font-weight="700">EACH TURN</text>
+  <text x="288" y="210" class="svg-sm" text-anchor="middle" fill="var(--f2)" font-weight="700">SPINS FASTER</text>
+
+  <text x="96" y="352" class="svg-lab">Neither half explains the result. Social software on a desktop</text>
+  <text x="96" y="369" class="svg-lab">was a destination you went to in the evening; a phone without</text>
+  <text x="96" y="386" class="svg-lab">a network was a camera. Together they became an ambient layer.</text>
+
+  <line x1="500" y1="20" x2="500" y2="400" class="svg-hair" stroke-width="1"/>
+
+  <!-- coordination speed -->
+  <text x="532" y="34" class="svg-t">Coordination at a new speed</text>
+  <text x="532" y="56" class="svg-sm">TIME TO ASSEMBLE A CROWD</text>
+
+  <g class="svg-lab" fill="var(--ink-2)">
+    <text x="532" y="106">printed handbills</text>
+    <text x="532" y="176">telephone trees</text>
+    <text x="532" y="246">a post from the scene</text>
+  </g>
+
+  <line x1="532" y1="116" x2="920" y2="116" stroke="var(--f3)" stroke-width="9" stroke-linecap="round" opacity=".55"
+        class="growx" style="--d:.4s"/>
+  <text x="532" y="138" class="svg-num" fill="var(--f3)">weeks</text>
+
+  <line x1="532" y1="186" x2="748" y2="186" stroke="var(--f3)" stroke-width="9" stroke-linecap="round" opacity=".55"
+        class="growx" style="--d:.6s"/>
+  <text x="532" y="208" class="svg-num" fill="var(--f3)">days</text>
+
+  <line x1="532" y1="256" x2="576" y2="256" stroke="var(--f1)" stroke-width="9" stroke-linecap="round"
+        class="growx" style="--d:.8s"/>
+  <text x="588" y="260" class="svg-num" fill="var(--f1)">minutes</text>
+
+  <text x="532" y="292" class="svg-sm">LOGARITHMIC — EACH STEP IS ROUGHLY A HUNDREDFOLD</text>
+
+  <line x1="532" y1="316" x2="948" y2="316" class="svg-hair" stroke-width="1"/>
+  <text x="532" y="338" class="svg-lab">When assembly is faster than the response to assembly,</text>
+  <text x="532" y="355" class="svg-lab">the balance of a very old contest shifts. The same</text>
+  <text x="532" y="372" class="svg-lab">property serves organisers and rumours equally well —</text>
+  <text x="532" y="389" class="svg-lab">speed is not a filter for truth.</text>
+</svg>
+</div>
+</div></div>
+        <div class="takeaway"><b>Structural change</b>The network no longer waits for you to sit at a computer; it accompanies and mediates the event.</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="mobile-ch7">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 07<span></span></div>
+      <div class="chapter__content">
+        <h3>Medicine: The New Landscape of Global Healthcare</h3>
+        <p class="chapter__claim">Healthcare shifts from episodic visits toward continuous measurement, remote expertise and patient-held information.</p>
+        <div class="chapter__body">
+          <h4>Healthcare has an information bottleneck</h4>
+          <p>Many clinical interactions consist of collecting symptoms, consulting records, interpreting measurements, giving instructions and checking what happened next. Mobile can move parts of that information loop outside the clinic without pretending that the physical work of medicine disappears.</p>
+          <p>Telemedicine extends scarce expertise across distance. Reminders and decision support can improve adherence. A patient-held record can reduce fragmentation when the person moves among clinics, pharmacies and hospitals.</p>
+          <h4>From episodic snapshots to streams</h4>
+          <p>Traditional care often measures a person during a brief appointment. Connected sensors can follow heart rate, activity, glucose, sleep or symptoms between visits, making trends visible before the next scheduled encounter.</p>
+          <p>The operating model becomes triage: software handles routine monitoring and routes anomalies toward nurses or physicians. The economic promise is scale, but safe scale requires validation, escalation rules, secure records and clarity about who is responsible when an algorithm is wrong.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Access layer</span><h4>Remote expertise</h4><p>Communication moves advice and specialist review to patients who cannot easily reach the facility.</p></div><div class="detail-card"><span class="detail-label">Measurement layer</span><h4>Continuous monitoring</h4><p>Sensors reveal patterns and exceptions that an occasional office measurement can miss.</p></div></div>
+        <div class="critical-note"><b>Retrospective lens:</b> Telehealth and wearables expanded, but healthcare does not dematerialise like music. Diagnosis, trust, procedures, regulation and unequal ability to act on advice keep the physical system central.</div>
+        <div class="key-terms"><span class="term">telemedicine</span><span class="term">remote monitoring</span><span class="term">triage</span><span class="term">patient-held record</span><span class="term">clinical validation</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Care escalation</span><b>Reserve scarce expertise for the cases that need it</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="m7t m7d" style="min-width:770px;width:100%;height:auto">
+  <title id="m7t">Episodic versus continuous measurement, and the escalation funnel it makes possible</title>
+  <desc id="m7d">A physiological signal is plotted across a year, including a clear excursion in the spring. Three clinic visits are marked as isolated dots, all of which fall on ordinary days and miss the excursion entirely; a continuous trace beneath captures it and marks the moment it would have raised a flag. On the right, an escalation funnel shows how many cases reach each level of care: everyone is sensed, a minority is flagged by software, fewer reach a remote clinician, and a small fraction reach an in-person specialist.</desc>
+
+  <text x="96" y="30" class="svg-t">Three data points a year, and the year happens in between them</text>
+
+  <!-- signal -->
+  <text x="96" y="64" class="svg-sm" fill="var(--f3)" font-weight="700">WHAT THE CLINIC SEES · THREE VISITS</text>
+
+  <line x1="120" y1="180" x2="600" y2="180" class="svg-axis"/>
+  <g fill="var(--f3)" class="pop" style="--d:.4s">
+    <circle cx="180" cy="146" r="6"/><circle cx="352" cy="152" r="6"/><circle cx="536" cy="144" r="6"/>
+  </g>
+  <g stroke="var(--f3)" stroke-width="1" stroke-dasharray="3 3" opacity=".6">
+    <line x1="180" y1="152" x2="180" y2="180"/>
+    <line x1="352" y1="158" x2="352" y2="180"/>
+    <line x1="536" y1="150" x2="536" y2="180"/>
+  </g>
+  <text x="180" y="136" class="svg-sm" text-anchor="middle">JAN</text>
+  <text x="352" y="142" class="svg-sm" text-anchor="middle">MAY</text>
+  <text x="536" y="134" class="svg-sm" text-anchor="middle">OCT</text>
+  <text x="596" y="122" class="svg-lab" text-anchor="end" fill="var(--f3)">all three normal</text>
+
+  <!-- continuous -->
+  <text x="96" y="222" class="svg-sm" fill="var(--f1)" font-weight="700">WHAT WAS ACTUALLY HAPPENING</text>
+
+  <polyline fill="none" stroke="var(--f1)" stroke-width="1.8" stroke-linejoin="round"
+            class="draw" style="--len:640;--d:.5s;--dur:2.2s"
+            points="120,300 140,296 160,302 180,294 200,300 220,292 240,298 254,288 268,262 280,244 292,256 306,272
+                    320,286 336,296 352,292 368,298 384,290 400,300 416,294 432,300 448,292 464,298 480,294 496,300
+                    512,292 528,296 544,300 560,294 580,298 600,296"/>
+  <line x1="120" y1="316" x2="600" y2="316" class="svg-axis"/>
+
+  <!-- the missed event -->
+  <rect x="248" y="230" width="64" height="86" fill="var(--f1)" opacity=".12"/>
+  <circle cx="280" cy="244" r="7" fill="none" stroke="var(--f1)" stroke-width="2" class="pop" style="--d:1.8s"/>
+  <line x1="280" y1="234" x2="280" y2="206" class="svg-hair" stroke-width="1"/>
+  <text x="280" y="198" class="svg-b" text-anchor="middle" fill="var(--f1)">flagged in March</text>
+  <text x="248" y="340" class="svg-lab">a fortnight of drift — twice seen, never recorded</text>
+
+  <text x="120" y="340" class="svg-sm">ONE YEAR</text>
+  <text x="96" y="372" class="svg-lab">The bottleneck was never medical knowledge. It was that the</text>
+  <text x="96" y="389" class="svg-lab">information arrived in three snapshots instead of a stream.</text>
+
+  <line x1="660" y1="20" x2="660" y2="400" class="svg-hair" stroke-width="1"/>
+
+  <!-- escalation funnel -->
+  <text x="688" y="34" class="svg-t">Who has to be a person</text>
+
+  <g class="rise" style="--d:.6s">
+    <rect x="688" y="62" width="266" height="44" fill="var(--f2)" opacity=".18"/>
+    <text x="700" y="82" class="svg-sm" fill="var(--ink)" font-weight="700">SENSED CONTINUOUSLY</text>
+    <text x="700" y="98" class="svg-em">device · everyone, all the time</text>
+    <text x="944" y="82" class="svg-num" text-anchor="end" fill="var(--f2)">100%</text>
+
+    <rect x="688" y="118" width="200" height="44" fill="var(--f2)" opacity=".3"/>
+    <text x="700" y="138" class="svg-sm" fill="var(--ink)" font-weight="700">FLAGGED BY SOFTWARE</text>
+    <text x="700" y="154" class="svg-em">normal versus unusual</text>
+    <text x="878" y="138" class="svg-num" text-anchor="end" fill="var(--f2)">12%</text>
+
+    <rect x="688" y="174" width="130" height="44" fill="var(--f1)" opacity=".3"/>
+    <text x="700" y="194" class="svg-sm" fill="var(--ink)" font-weight="700">REMOTE CLINICIAN</text>
+    <text x="700" y="210" class="svg-em">reviews the exceptions</text>
+    <text x="828" y="194" class="svg-num" fill="var(--f1)">3%</text>
+
+    <rect x="688" y="230" width="76" height="44" fill="var(--f1)" opacity=".75"/>
+    <text x="700" y="250" class="svg-sm" fill="#fff" font-weight="700">IN PERSON</text>
+    <text x="700" y="266" class="svg-sm" fill="#fff">SPECIALIST</text>
+    <text x="776" y="250" class="svg-num" fill="var(--f1)">0.7%</text>
+  </g>
+
+  <text x="688" y="306" class="svg-sm" fill="var(--f1)" font-weight="700">THE SCARCE RESOURCE IS AT THE BOTTOM</text>
+  <text x="688" y="330" class="svg-lab">Triage software does not replace the specialist. It</text>
+  <text x="688" y="347" class="svg-lab">changes which patients are standing in front of one.</text>
+  <text x="688" y="376" class="svg-em">The safe version augments clinicians; it never treats</text>
+  <text x="688" y="393" class="svg-em">an automated flag as a diagnosis.</text>
+</svg>
+</div>
+</div><p class="chapter-visual__caption">The safe version augments clinicians; it does not confuse automated triage with definitive care.</p></div>
+        <div class="plate"><div class="plate__head"><span>Plate 06 · care loop</span><b>From occasional snapshot to continuous feedback</b></div><div class="plate__body"><div class="loop"><div class="loop__step"><b>Sense</b><p>Symptoms, wearables and observations.</p></div><div class="loop__step"><b>Interpret</b><p>Software triage and clinician review.</p></div><div class="loop__step"><b>Act</b><p>Advice, treatment or escalation.</p></div><div class="loop__step"><b>Learn</b><p>Outcome returns to the record.</p></div></div></div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="mobile-ch8">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 08<span></span></div>
+      <div class="chapter__content">
+        <h3>Education: Remaking Education for Everyone</h3>
+        <p class="chapter__claim">When instruction travels with the learner, education can separate from the timetable and the classroom.</p>
+        <div class="chapter__body">
+          <h4>Separate learning from one room and one pace</h4>
+          <p>A tablet can carry textbooks, lectures, simulations, dictionaries and practice systems at a fraction of the distribution cost of a physical library. Content can be translated and updated without waiting for a new print cycle.</p>
+          <p>Recorded instruction makes repetition cheap. A learner can pause, replay and study outside school hours, while a global course can reach people excluded by geography or tuition. Saylor’s strongest claim is that high-quality instruction can become a software service with very low marginal delivery cost.</p>
+          <h4>The real product is feedback</h4>
+          <p>A video library reproduces broadcast education. A mobile learning system can test understanding, detect which prerequisite is missing, adjust the next exercise and connect the learner to a teacher or peer at the difficult moment.</p>
+          <p>This changes the teacher’s potential role from repeating one lecture toward diagnosing, motivating and mentoring. But access to content is not the same as completion or mastery. Good pedagogy, social support, language, time and a credible pathway to opportunity remain decisive.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Cost change</span><h4>Global replication</h4><p>Once produced, a lesson can reach another learner without printing another book or building another lecture hall.</p></div><div class="detail-card"><span class="detail-label">Pedagogical change</span><h4>Adaptive practice</h4><p>The system can respond to the learner’s errors instead of moving an entire class through one timetable.</p></div></div>
+        <div class="critical-note"><b>Retrospective lens:</b> Mobile transformed access more than institutions. Completion, credential value, motivation and unequal home conditions explain why abundant lessons did not automatically produce abundant education.</div>
+        <div class="key-terms"><span class="term">mobile learning</span><span class="term">marginal cost</span><span class="term">adaptive practice</span><span class="term">feedback loop</span><span class="term">digital textbook</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Learning loop</span><b>Content becomes education only when feedback closes the cycle</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="m8t m8d" style="min-width:770px;width:100%;height:auto">
+  <title id="m8t">An open delivery loop against a closed feedback loop, and the mastery inversion</title>
+  <desc id="m8d">On the left, two arrangements: broadcast content runs in a straight line from explanation to the learner and stops, with the gap never detected; the closed version returns from the learner through diagnosis to an adapted next lesson. On the right, the same cohort of eight learners is shown twice. Under fixed time, everyone stops on the same day and mastery varies widely. Under fixed mastery, everyone reaches the same standard and the time taken varies instead.</desc>
+
+  <text x="96" y="30" class="svg-t">Content is the cheap half. Feedback was always the product.</text>
+
+  <defs>
+    <marker id="m8a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--f3)"/>
+    </marker>
+    <marker id="m8b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="var(--f1)"/>
+    </marker>
+  </defs>
+
+  <!-- open loop -->
+  <text x="96" y="66" class="svg-sm" fill="var(--f3)" font-weight="700">BROADCASTING · THE LINE JUST ENDS</text>
+  <g class="rise" style="--d:.2s">
+    <rect x="96" y="84" width="92" height="34" rx="2" fill="var(--panel-2)" stroke="var(--rule)"/>
+    <text x="142" y="105" class="svg-sm" text-anchor="middle">EXPLAIN</text>
+    <rect x="228" y="84" width="92" height="34" rx="2" fill="var(--panel-2)" stroke="var(--rule)"/>
+    <text x="274" y="105" class="svg-sm" text-anchor="middle">LEARNER</text>
+  </g>
+  <line x1="192" y1="101" x2="222" y2="101" stroke="var(--f3)" stroke-width="1.8" marker-end="url(#m8a)"/>
+  <line x1="324" y1="101" x2="366" y2="101" stroke="var(--f3)" stroke-width="1.8" stroke-dasharray="4 4" opacity=".6"/>
+  <text x="372" y="98" class="svg-em" fill="var(--ink-3)">nothing comes back —</text>
+  <text x="372" y="114" class="svg-em" fill="var(--ink-3)">the gap is never detected</text>
+
+  <!-- closed loop -->
+  <text x="96" y="164" class="svg-sm" fill="var(--f1)" font-weight="700">TEACHING · THE LOOP CLOSES</text>
+  <g class="rise" style="--d:.4s">
+    <rect x="96" y="182" width="92" height="34" rx="2" fill="var(--f1)" opacity=".14"/>
+    <text x="142" y="203" class="svg-sm" text-anchor="middle" fill="var(--ink)">EXPLAIN</text>
+    <rect x="228" y="182" width="92" height="34" rx="2" fill="var(--f1)" opacity=".14"/>
+    <text x="274" y="203" class="svg-sm" text-anchor="middle" fill="var(--ink)">PRACTISE</text>
+    <rect x="360" y="182" width="92" height="34" rx="2" fill="var(--f1)" opacity=".14"/>
+    <text x="406" y="203" class="svg-sm" text-anchor="middle" fill="var(--ink)">DIAGNOSE</text>
+  </g>
+  <g stroke="var(--f1)" stroke-width="1.8" marker-end="url(#m8b)" fill="none">
+    <line x1="192" y1="199" x2="222" y2="199"/>
+    <line x1="324" y1="199" x2="354" y2="199"/>
+    <path d="M406 220 C 406 258, 142 258, 142 224" class="draw" style="--len:330;--d:.8s"/>
+  </g>
+  <text x="274" y="274" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">THE NEXT LESSON IS DIFFERENT BECAUSE OF WHAT JUST HAPPENED</text>
+
+  <text x="96" y="316" class="svg-lab">Recording a lecture and shipping it worldwide is a distribution</text>
+  <text x="96" y="333" class="svg-lab">achievement. It is not yet teaching, because a lecture cannot</text>
+  <text x="96" y="350" class="svg-lab">notice that you have misunderstood it.</text>
+  <text x="96" y="378" class="svg-sm" fill="var(--f1)" font-weight="700">WHAT SCALES IS THE DIAGNOSIS, NOT THE VIDEO</text>
+
+  <line x1="520" y1="20" x2="520" y2="400" class="svg-hair" stroke-width="1"/>
+
+  <!-- ============ the inversion ============ -->
+  <text x="552" y="34" class="svg-t">Which variable is allowed to move</text>
+
+  <text x="552" y="72" class="svg-sm" fill="var(--f3)" font-weight="700">FIXED TIME · MASTERY VARIES</text>
+  <line x1="552" y1="176" x2="940" y2="176" class="svg-axis"/>
+  <g fill="var(--f3)" opacity=".6">
+    <rect x="560" y="104" width="30" height="72" class="grow" style="--d:.3s"/>
+    <rect x="608" y="122" width="30" height="54" class="grow" style="--d:.35s"/>
+    <rect x="656" y="96"  width="30" height="80" class="grow" style="--d:.4s"/>
+    <rect x="704" y="140" width="30" height="36" class="grow" style="--d:.45s"/>
+    <rect x="752" y="114" width="30" height="62" class="grow" style="--d:.5s"/>
+    <rect x="800" y="152" width="30" height="24" class="grow" style="--d:.55s"/>
+    <rect x="848" y="130" width="30" height="46" class="grow" style="--d:.6s"/>
+    <rect x="896" y="158" width="30" height="18" class="grow" style="--d:.65s"/>
+  </g>
+  <line x1="552" y1="92" x2="940" y2="92" stroke="var(--f4)" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="552" y="86" class="svg-sm" fill="var(--f4)">THE STANDARD</text>
+  <text x="552" y="194" class="svg-em">everyone stops on the same day; some never got there</text>
+
+  <text x="552" y="240" class="svg-sm" fill="var(--f1)" font-weight="700">FIXED MASTERY · TIME VARIES</text>
+  <line x1="552" y1="344" x2="940" y2="344" class="svg-axis"/>
+  <g fill="var(--f1)" opacity=".6">
+    <rect x="560" y="272" width="30" height="72" class="grow" style="--d:.7s"/>
+    <rect x="608" y="272" width="30" height="72" class="grow" style="--d:.75s"/>
+    <rect x="656" y="272" width="30" height="72" class="grow" style="--d:.8s"/>
+    <rect x="704" y="272" width="30" height="72" class="grow" style="--d:.85s"/>
+    <rect x="752" y="272" width="30" height="72" class="grow" style="--d:.9s"/>
+    <rect x="800" y="272" width="30" height="72" class="grow" style="--d:.95s"/>
+    <rect x="848" y="272" width="30" height="72" class="grow" style="--d:1s"/>
+    <rect x="896" y="272" width="30" height="72" class="grow" style="--d:1.05s"/>
+  </g>
+  <line x1="552" y1="272" x2="940" y2="272" stroke="var(--f4)" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <g class="svg-sm" text-anchor="middle" fill="var(--ink-3)">
+    <text x="575" y="360">4w</text><text x="623" y="360">6w</text><text x="671" y="360">3w</text>
+    <text x="719" y="360">9w</text><text x="767" y="360">5w</text><text x="815" y="360">11w</text>
+    <text x="863" y="360">7w</text><text x="911" y="360">12w</text>
+  </g>
+  <text x="552" y="382" class="svg-em">the same standard reached — the calendar absorbs the difference</text>
+</svg>
+</div>
+</div></div>
+        <div class="compare" style="margin-top:28px"><div class="compare__side"><h4>Broadcast model</h4><ul><li>One pace for the room</li><li>Feedback arrives late</li><li>Access tied to place</li></ul></div><div class="compare__side good"><h4>Mobile learning loop</h4><ul><li>Practice adapts to the learner</li><li>Feedback is immediate</li><li>Content travels globally</li></ul></div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="mobile-ch9">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 09<span></span></div>
+      <div class="chapter__content">
+        <h3>Developing World: Bootstrapping the Developing World</h3>
+        <p class="chapter__claim">Countries can leap over missing fixed infrastructure when services arrive through inexpensive wireless devices.</p>
+        <div class="chapter__body">
+          <h4>Deliver the function without copying the building</h4>
+          <p>A country with few landlines need not wire every home before enabling communication; it can build cellular coverage. The same logic applies to banking branches, information desks and parts of education or healthcare. Wireless service can leap over a missing layer of fixed infrastructure.</p>
+          <p>Mobile money is the clearest mechanism. An account linked to a basic handset lets people store value, transfer funds and pay merchants without a nearby bank. Transaction histories can support credit and reduce the cost of serving small or remote customers.</p>
+          <h4>Information changes bargaining power</h4>
+          <p>A farmer or trader with current market prices can choose where to sell instead of accepting the only local offer. Digital identity and records can make a person legible to institutions that previously could not verify them.</p>
+          <p>Leapfrogging is strongest where incumbents and legacy systems are weak. Yet the phone complements rather than replaces electricity, radio spectrum, roads, literacy, legal trust and competition. A monopoly network or exclusionary identity system can reproduce the old bottleneck in software.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Leapfrog</span><h4>Cell tower before landline</h4><p>Shared wireless infrastructure can deliver population-scale communication without duplicating the rich world’s historical build sequence.</p></div><div class="detail-card"><span class="detail-label">Economic example</span><h4>Mobile money and market prices</h4><p>Payment and information reduce the distance between rural participants and wider markets.</p></div></div>
+        <div class="critical-note"><b>Pressure point:</b> “Developing world” is too broad for one trajectory. Institutions, language, gender, affordability and state control shape who benefits and whether dependency shifts from local gatekeepers to global platforms.</div>
+        <div class="key-terms"><span class="term">leapfrogging</span><span class="term">mobile money</span><span class="term">financial inclusion</span><span class="term">market information</span><span class="term">digital identity</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Two development paths</span><b>Copy the infrastructure—or deliver the function</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="m9t m9d" style="min-width:770px;width:100%;height:auto">
+  <title id="m9t">The infrastructure sequence against the leapfrog sequence, and the collapse of price dispersion</title>
+  <desc id="m9d">Two development routes are drawn as chains of steps. The legacy route runs through exchanges, copper, branches and physical records over roughly forty years at very high capital cost. The leapfrog route runs from a shared tower to handsets to software services in a few years at low cost. Beneath, a chart shows prices for the same goods across several markets: widely scattered before phones arrive, then converging sharply afterwards, with the wasted surplus shaded.</desc>
+
+  <text x="96" y="30" class="svg-t">Deliver the function without building the building</text>
+
+  <!-- legacy -->
+  <text x="96" y="66" class="svg-sm" fill="var(--f3)" font-weight="700">COPY THE INFRASTRUCTURE</text>
+  <g class="rise" style="--d:.2s">
+    <rect x="96" y="82" width="104" height="30" rx="2" fill="var(--f3)" opacity=".22"/>
+    <text x="148" y="101" class="svg-sm" text-anchor="middle">EXCHANGES</text>
+    <rect x="212" y="82" width="104" height="30" rx="2" fill="var(--f3)" opacity=".22"/>
+    <text x="264" y="101" class="svg-sm" text-anchor="middle">COPPER LINES</text>
+    <rect x="328" y="82" width="104" height="30" rx="2" fill="var(--f3)" opacity=".22"/>
+    <text x="380" y="101" class="svg-sm" text-anchor="middle">BANK BRANCHES</text>
+    <rect x="444" y="82" width="104" height="30" rx="2" fill="var(--f3)" opacity=".22"/>
+    <text x="496" y="101" class="svg-sm" text-anchor="middle">PAPER RECORDS</text>
+  </g>
+  <g stroke="var(--f3)" stroke-width="1.4">
+    <line x1="200" y1="97" x2="212" y2="97"/><line x1="316" y1="97" x2="328" y2="97"/>
+    <line x1="432" y1="97" x2="444" y2="97"/>
+  </g>
+  <line x1="96" y1="126" x2="548" y2="126" stroke="var(--f3)" stroke-width="6" stroke-linecap="round" opacity=".5"
+        class="growx" style="--d:.5s"/>
+  <text x="96" y="146" class="svg-num" fill="var(--f3)">~40 years · enormous fixed capital · one country at a time</text>
+
+  <!-- leapfrog -->
+  <text x="96" y="192" class="svg-sm" fill="var(--f1)" font-weight="700">DELIVER THE FUNCTION</text>
+  <g class="rise" style="--d:.4s">
+    <rect x="96" y="208" width="104" height="30" rx="2" fill="var(--f1)" opacity=".2"/>
+    <text x="148" y="227" class="svg-sm" text-anchor="middle">ONE SHARED TOWER</text>
+    <rect x="212" y="208" width="104" height="30" rx="2" fill="var(--f1)" opacity=".2"/>
+    <text x="264" y="227" class="svg-sm" text-anchor="middle">CHEAP HANDSETS</text>
+    <rect x="328" y="208" width="104" height="30" rx="2" fill="var(--f1)" opacity=".2"/>
+    <text x="380" y="227" class="svg-sm" text-anchor="middle">SOFTWARE SERVICES</text>
+  </g>
+  <g stroke="var(--f1)" stroke-width="1.4">
+    <line x1="200" y1="223" x2="212" y2="223"/><line x1="316" y1="223" x2="328" y2="223"/>
+  </g>
+  <line x1="96" y1="252" x2="248" y2="252" stroke="var(--f1)" stroke-width="6" stroke-linecap="round"
+        class="growx" style="--d:.7s"/>
+  <text x="96" y="272" class="svg-num" fill="var(--f1)">~3 years · shared capital · banking without a single branch</text>
+
+  <text x="96" y="308" class="svg-lab">The bank branch was never the point — safekeeping and transfer were. Once</text>
+  <text x="96" y="325" class="svg-lab">those can be authenticated on a handset, the building is optional, and the</text>
+  <text x="96" y="342" class="svg-lab">countries with the least to unbuild move first.</text>
+
+  <line x1="96" y1="364" x2="560" y2="364" class="svg-hair" stroke-width="1"/>
+  <text x="96" y="386" class="svg-sm" fill="var(--f1)" font-weight="700">INFORMATION IS ALSO BARGAINING POWER</text>
+  <text x="96" y="408" class="svg-lab">A grower who knows today&#8217;s prices in four markets is negotiating, not accepting.</text>
+
+  <line x1="600" y1="20" x2="600" y2="400" class="svg-hair" stroke-width="1"/>
+
+  <!-- price dispersion -->
+  <text x="628" y="34" class="svg-t">The same fish, five markets</text>
+  <text x="628" y="54" class="svg-sm">DAILY PRICE AT EACH LANDING SITE</text>
+
+  <line x1="640" y1="300" x2="948" y2="300" class="svg-axis"/>
+  <line x1="640" y1="70" x2="640" y2="300" class="svg-axis"/>
+
+  <!-- before: scattered -->
+  <rect x="640" y="76" width="140" height="212" fill="var(--f3)" opacity=".08"/>
+  <g fill="var(--f3)" opacity=".8" class="rise" style="--d:.6s">
+    <circle cx="660" cy="112" r="4"/><circle cx="660" cy="238" r="4"/><circle cx="660" cy="176" r="4"/>
+    <circle cx="660" cy="266" r="4"/><circle cx="660" cy="140" r="4"/>
+    <circle cx="700" cy="96" r="4"/><circle cx="700" cy="252" r="4"/><circle cx="700" cy="188" r="4"/>
+    <circle cx="700" cy="150" r="4"/><circle cx="700" cy="220" r="4"/>
+    <circle cx="742" cy="124" r="4"/><circle cx="742" cy="272" r="4"/><circle cx="742" cy="164" r="4"/>
+    <circle cx="742" cy="206" r="4"/><circle cx="742" cy="240" r="4"/>
+  </g>
+  <text x="648" y="90" class="svg-sm" fill="var(--f3)" font-weight="700">BEFORE</text>
+
+  <!-- the arrival -->
+  <line x1="790" y1="70" x2="790" y2="300" stroke="var(--f1)" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="796" y="82" class="svg-sm" fill="var(--f1)" font-weight="700">PHONES ARRIVE</text>
+
+  <!-- after: converged -->
+  <g fill="var(--f1)" opacity=".85" class="rise" style="--d:.9s">
+    <circle cx="822" cy="180" r="4"/><circle cx="822" cy="196" r="4"/><circle cx="822" cy="168" r="4"/>
+    <circle cx="822" cy="204" r="4"/><circle cx="822" cy="188" r="4"/>
+    <circle cx="866" cy="184" r="4"/><circle cx="866" cy="176" r="4"/><circle cx="866" cy="192" r="4"/>
+    <circle cx="866" cy="198" r="4"/><circle cx="866" cy="180" r="4"/>
+    <circle cx="910" cy="186" r="4"/><circle cx="910" cy="178" r="4"/><circle cx="910" cy="190" r="4"/>
+    <circle cx="910" cy="182" r="4"/><circle cx="910" cy="194" r="4"/>
+  </g>
+
+  <text x="628" y="326" class="svg-sm">TIME →</text>
+  <text x="628" y="352" class="svg-lab">The spread was not a mystery of local</text>
+  <text x="628" y="369" class="svg-lab">taste. It was the cost of not knowing —</text>
+  <text x="628" y="386" class="svg-lab">and unsold catch at one beach while</text>
+  <text x="628" y="403" class="svg-lab">another ran short.</text>
+</svg>
+</div>
+</div></div>
+        <div class="plate"><div class="plate__head"><span>Plate 07 · leapfrog</span><b>Skip the building, deliver the function</b></div><div class="plate__body"><div class="causal-chain"><div class="node">Few fixed branches</div><div class="arrow">→</div><div class="node">Wireless network</div><div class="arrow">→</div><div class="node">Identity + payment + information</div><div class="arrow">→</div><div class="node accent">Services at population scale</div></div></div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="mobile-ch10">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Chapter 10<span></span></div>
+      <div class="chapter__content">
+        <h3>New World: Human Energy Unleashed</h3>
+        <p class="chapter__claim">When information, coordination and transactions become immediate, human effort can move from friction toward problem-solving.</p>
+        <div class="chapter__body">
+          <h4>Technology as acid</h4>
+          <p>Saylor’s closing metaphor is that technology burns away accumulated inefficiency. Paper handoffs, scheduled broadcasts, retail inventory, cash reconciliation and information monopolies become visible costs once a mobile alternative coordinates the same function instantly.</p>
+          <p>Incumbents often mistake the device for a new channel and place an app beside the existing organisation. Native competitors redesign the workflow around identity, real-time data and software distribution, removing the branch, schedule or intermediary from the core process.</p>
+          <h4>Human energy moves—and so does power</h4>
+          <p>Automation destroys some jobs and tasks while lowering the cost of forming new services. Saylor compares this with earlier productivity shifts: fewer people are required for routine coordination, releasing effort for work that was previously uneconomic or impossible.</p>
+          <p>The optimistic endpoint is billions of people able to learn, transact and organise at very low marginal cost. A retrospective reading adds that the released value is not automatically shared. App stores, cloud platforms, data owners and identity providers can become the new toll collectors.</p>
+        </div>
+        <div class="detail-grid"><div class="detail-card"><span class="detail-label">Incumbent response</span><h4>Digitise the old workflow</h4><p>Adds a mobile interface while preserving the organisation’s branch structure, handoffs and economics.</p></div><div class="detail-card"><span class="detail-label">Native response</span><h4>Rebuild around software</h4><p>Starts with persistent identity, real-time coordination and global distribution, then adds physical operations only where necessary.</p></div></div>
+        <div class="connection-note"><b>Whole-book connection:</b> Mobile matters when it combines a carried computer, shared software platform, sensor context and network effects to replace an institution’s coordination mechanism—not merely one of its objects.</div>
+        <div class="key-terms"><span class="term">software-native</span><span class="term">creative destruction</span><span class="term">coordination cost</span><span class="term">platform power</span><span class="term">human energy</span></div>
+        <div class="chapter-visual"><div class="chapter-visual__head"><span>Transformation matrix</span><b>Where the mobile wave removes—and recreates—friction</b></div><div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="m10t m10d" style="min-width:770px;width:100%;height:auto">
+  <title id="m10t">Where a working day goes before and after, and a matrix of removed against recreated friction</title>
+  <desc id="m10d">Two stacked bars divide a working day into finding information, waiting, re-keying, travelling, and actual problem-solving. In the before bar, friction dominates and problem-solving is a thin band. In the after bar, the original frictions shrink sharply and problem-solving expands — but a new band appears for notifications and context-switching. To the right, a two-by-two matrix crosses digitising the existing workflow against rebuilding around software, with examples placed in each cell.</desc>
+
+  <text x="96" y="30" class="svg-t">Where the hours actually went</text>
+
+  <!-- before -->
+  <text x="96" y="66" class="svg-sm" fill="var(--f3)" font-weight="700">BEFORE</text>
+  <g class="rise" style="--d:.2s">
+    <rect x="96" y="80" width="94"  height="42" fill="var(--f3)" opacity=".55"/>
+    <rect x="190" y="80" width="78" height="42" fill="var(--f3)" opacity=".42"/>
+    <rect x="268" y="80" width="62" height="42" fill="var(--f3)" opacity=".3"/>
+    <rect x="330" y="80" width="70" height="42" fill="var(--f3)" opacity=".2"/>
+    <rect x="400" y="80" width="70" height="42" fill="var(--f4)" opacity=".7"/>
+  </g>
+  <g class="svg-sm" text-anchor="middle" fill="var(--ink-2)">
+    <text x="143" y="106">FINDING</text>
+    <text x="229" y="106">WAITING</text>
+    <text x="299" y="106">RE-KEYING</text>
+    <text x="365" y="106">TRAVEL</text>
+  </g>
+  <text x="435" y="106" class="svg-sm" text-anchor="middle" fill="#fff" font-weight="700">SOLVING</text>
+
+  <!-- after -->
+  <text x="96" y="164" class="svg-sm" fill="var(--f1)" font-weight="700">AFTER</text>
+  <g class="rise" style="--d:.5s">
+    <rect x="96" y="178" width="30" height="42" fill="var(--f3)" opacity=".55"/>
+    <rect x="126" y="178" width="26" height="42" fill="var(--f3)" opacity=".42"/>
+    <rect x="152" y="178" width="14" height="42" fill="var(--f3)" opacity=".3"/>
+    <rect x="166" y="178" width="24" height="42" fill="var(--f3)" opacity=".2"/>
+    <rect x="190" y="178" width="212" height="42" fill="var(--f4)" opacity=".7"/>
+    <rect x="402" y="178" width="68" height="42" fill="var(--f1)" opacity=".5"/>
+  </g>
+  <text x="296" y="204" class="svg-sm" text-anchor="middle" fill="#fff" font-weight="700">SOLVING</text>
+  <line x1="436" y1="172" x2="436" y2="152" class="svg-hair" stroke-width="1"/>
+  <text x="436" y="146" class="svg-sm" text-anchor="middle" fill="var(--f1)" font-weight="700">NEW FRICTION</text>
+  <text x="436" y="240" class="svg-em" text-anchor="middle">notifications ·</text>
+  <text x="436" y="256" class="svg-em" text-anchor="middle">context-switching</text>
+
+  <line x1="96" y1="284" x2="500" y2="284" class="svg-hair" stroke-width="1"/>
+  <text x="96" y="306" class="svg-lab">Book&#8217;s claim: information technology is an acid that</text>
+  <text x="96" y="323" class="svg-lab">dissolves the intermediary steps, and the effort freed</text>
+  <text x="96" y="340" class="svg-lab">up moves to work only people can do.</text>
+  <text x="96" y="368" class="svg-em">Worth holding lightly: the freed hours are not automatically</text>
+  <text x="96" y="384" class="svg-em">reinvested, and the new band on the right is real.</text>
+
+  <line x1="540" y1="20" x2="540" y2="400" class="svg-hair" stroke-width="1"/>
+
+  <!-- matrix -->
+  <text x="572" y="34" class="svg-t">Two ways to apply it</text>
+
+  <rect x="620" y="70" width="164" height="118" fill="var(--f3)" opacity=".12"/>
+  <rect x="784" y="70" width="164" height="118" fill="var(--f1)" opacity=".14"/>
+  <rect x="620" y="188" width="164" height="118" fill="var(--ink-3)" opacity=".08"/>
+  <rect x="784" y="188" width="164" height="118" fill="var(--f4)" opacity=".14"/>
+  <g class="svg-hair" stroke-width="1">
+    <rect x="620" y="70" width="328" height="236" fill="none"/>
+    <line x1="784" y1="70" x2="784" y2="306"/>
+    <line x1="620" y1="188" x2="948" y2="188"/>
+  </g>
+
+  <text x="702" y="62" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">DIGITISE THE</text>
+  <text x="702" y="50" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">OLD WORKFLOW</text>
+  <text x="866" y="62" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">REBUILD AROUND</text>
+  <text x="866" y="50" class="svg-sm" text-anchor="middle" fill="var(--ink-2)" font-weight="700">THE SOFTWARE</text>
+
+  <text transform="translate(604,129) rotate(-90)" text-anchor="middle" class="svg-sm" fill="var(--ink-2)">SMALL GAIN</text>
+  <text transform="translate(604,247) rotate(-90)" text-anchor="middle" class="svg-sm" fill="var(--ink-2)">LARGE GAIN</text>
+
+  <text x="634" y="96" class="svg-lab">a PDF of the</text>
+  <text x="634" y="113" class="svg-lab">same form, still</text>
+  <text x="634" y="130" class="svg-lab">printed, signed</text>
+  <text x="634" y="147" class="svg-lab">and posted</text>
+
+  <text x="798" y="96" class="svg-lab">an app that</text>
+  <text x="798" y="113" class="svg-lab">replaces the</text>
+  <text x="798" y="130" class="svg-lab">form but keeps</text>
+  <text x="798" y="147" class="svg-lab">the queue</text>
+
+  <text x="634" y="214" class="svg-lab">rare — you</text>
+  <text x="634" y="231" class="svg-lab">cannot get far</text>
+  <text x="634" y="248" class="svg-lab">by paving the</text>
+  <text x="634" y="265" class="svg-lab">old path</text>
+
+  <text x="798" y="214" class="svg-lab">the errand</text>
+  <text x="798" y="231" class="svg-lab">disappears: no</text>
+  <text x="798" y="248" class="svg-lab">form, no queue,</text>
+  <text x="798" y="265" class="svg-lab">no branch</text>
+
+  <text x="572" y="336" class="svg-sm" fill="var(--f4)" font-weight="700">THE GAIN IS IN THE BOTTOM-RIGHT CELL</text>
+  <text x="572" y="360" class="svg-lab">Most organisations stop at the top row, because it is the</text>
+  <text x="572" y="377" class="svg-lab">only one that leaves the existing structure intact.</text>
+</svg>
+</div>
+</div></div>
+        <div class="formula" style="margin-top:28px"><span class="accent">Mobile intelligence</span> = people + software + sensors + network<small>The device is useful because it connects human intent to continuously improving systems.</small></div>
+      </div>
+    </div>
+  </article>
+
+  <section class="closing" id="scorecard">
+    <div class="wrap">
+      <div class="closing__grid">
+        <div><p class="eyebrow"><b>A retrospective reading</b></p><h2>What the forecast got right</h2><p class="hero__subtitle">Read now, the book is most striking where yesterday’s forecast has become invisible infrastructure. Its blind spots are equally useful: the mobile wave created new gatekeepers and new forms of fragility.</p></div>
+        <div class="principles">
+          <div class="principle"><div><b>Mobile became the primary personal computer.</b><p>The central category call landed.</p></div></div>
+          <div class="principle"><div><b>Objects became apps and services.</b><p>Tickets, maps, cameras, media and payments converged.</p></div></div>
+          <div class="principle"><div><b>Wireless enabled institutional leapfrogging.</b><p>Especially in payments and access to information.</p></div></div>
+          <div class="principle"><div><b>The platform layer became more powerful than expected.</b><p>App stores, operating systems and feeds mediate who reaches whom.</p></div></div>
+          <div class="principle"><div><b>Privacy and attention costs were underweighted.</b><p>Continuous connection also enables continuous surveillance and persuasion.</p></div></div>
+        </div>
+      </div>
+
+      <div class="plate" style="margin-top:56px">
+        <div class="plate__head"><span>Plate 08 · 2012 forecast scorecard</span><b>Qualitative, viewed from the mobile-first era</b></div>
+        <div class="plate__body">
+          <div class="scorecard">
+            <div class="score-row"><b>Paper becomes software</b><span class="grade">Mostly landed</span><span>Many high-frequency documents dematerialised; paper remains where law, habit or physical readability matter.</span></div>
+            <div class="score-row"><b>One universal screen</b><span class="grade">Landed</span><span>Mobile became a dominant screen and control surface, though large screens did not disappear.</span></div>
+            <div class="score-row"><b>The phone becomes the wallet</b><span class="grade">Landed unevenly</span><span>Payments, tickets and credentials moved in; adoption varies by country and institution.</span></div>
+            <div class="score-row"><b>Medicine becomes continuous</b><span class="grade">In progress</span><span>Telemedicine and sensors grew, while regulation and clinical workflows move more slowly.</span></div>
+            <div class="score-row"><b>Education is remade</b><span class="grade">Partial</span><span>Access exploded; outcomes still depend on motivation, pedagogy and institutions.</span></div>
+            <div class="score-row"><b>Human energy is unleashed</b><span class="grade">True, with costs</span><span>Coordination improved while distraction, platform control and information disorder expanded too.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="sources">
+  <div class="wrap"><p>Independent summary and retrospective interpretation. Chapter structure checked against the published outline of <em>The Mobile Wave: How Mobile Intelligence Will Change Everything</em>. Background: <a href="https://en.wikipedia.org/wiki/The_Mobile_Wave">chapter synopsis and bibliographic record</a>, plus Michael Saylor’s <a href="https://www.brookings.edu/wp-content/uploads/2012/09/20121005_mobile_wave.pdf">2012 Brookings discussion</a>. No text from the book is reproduced.</p></div>
+</footer>
+
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeButton'),k='mobile-wave-summary-theme',s=null;try{s=localStorage.getItem(k)}catch(e){}if(s==='light'||s==='dark')r.dataset.theme=s;b.addEventListener('click',function(){var c=r.dataset.theme||((matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'),n=c==='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem(k,n)}catch(e){}})})();
+</script>
+<script src="book-toc.js"></script>
+<script src="book-figures.js"></script>
+</body>
+</html>
