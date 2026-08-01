@@ -142,7 +142,8 @@ body {
 /* ---------- sections ---------- */
 main { padding-bottom: 4rem; }
 .shelf { padding-top: clamp(2.2rem, 5vw, 3rem); }
-.shelf[hidden], .row[hidden] { display: none; }
+/* class rules below set display, so [hidden] has to be restated to win */
+.shelf[hidden], .row[hidden], .list[hidden], [hidden] { display: none !important; }
 .shelf__head {
   display: flex; align-items: baseline; gap: 1rem;
   padding-bottom: .7rem; margin-bottom: .1rem; border-bottom: 1px solid var(--rule);
