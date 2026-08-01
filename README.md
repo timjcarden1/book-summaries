@@ -2,7 +2,9 @@
 
 Illustrated, chapter-by-chapter summaries of books, written as self-contained HTML pages.
 
-**Read them here → https://timjcarden1.github.io/book-summaries/**
+**Read them here → https://book-summaries-umber.vercel.app**
+
+Also mirrored on GitHub Pages → https://timjcarden1.github.io/book-summaries/
 
 The site is plain static HTML/CSS/JS with no build step. Open `index.html` locally in a browser and it works exactly as it does when published.
 
@@ -40,4 +42,7 @@ Every page has its own light/dark theme toggle, persisted in `localStorage`.
 
 ## Publishing
 
-GitHub Pages serves `main` from the repository root. A `.nojekyll` file is present so Jekyll does not process or skip any files.
+The site is hosted twice, both from `main` at the repository root, and both redeploy automatically on push:
+
+- **Vercel** — `vercel.json` declares no build step and the repo root as the output directory. The project is connected to this GitHub repo.
+- **GitHub Pages** — a `.nojekyll` file is present so Jekyll does not process or skip any files.
