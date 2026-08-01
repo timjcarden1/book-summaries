@@ -1,0 +1,1932 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Almanack of Naval Ravikant — Eric Jorgenson</title>
+<meta name="description" content="An illustrated summary of The Almanack of Naval Ravikant: specific knowledge, accountability and leverage; judgment and mental models; happiness as a learnable skill; and the tensions between the book's two halves.">
+<style>
+/* ------------------------------------------------------------
+   PALETTE — cold paper, signal blue, oxide, the black-and-white
+   of a Visualize Value plate with one wire carrying current
+   ------------------------------------------------------------ */
+:root {
+  --plate:    #EFEEEA;
+  --plate-2:  #F7F6F3;
+  --plate-3:  #E1DFD9;
+  --ink:      #17181B;
+  --graphite: #5F6166;
+  --hair:     #C6C4BE;
+  --accent:   #24518C;
+  /* book-toc.css re-declares --book-toc-accent after this block, so feed its
+     first fallback (--s1) as well or the top bar reverts to the default green */
+  --book-toc-accent: #24518C;   /* signal blue */
+  --s1:       #24518C;
+  --accent-w: #DCE4F1;
+  --oxide:    #A0522D;   /* rust        */
+  --ochre:    #86732A;   /* old gold    */
+  --cool:     #3B7A63;   /* green       */
+
+  --display: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino, Georgia, serif;
+  --body:    "Iowan Old Style", "Charter", "Bitstream Charter", Georgia, "Times New Roman", serif;
+  --label:   "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --plate: #141518; --plate-2: #1C1D21; --plate-3: #0E0F11;
+    --ink: #E6E4DE; --graphite: #91908B; --hair: #33343A;
+    --accent: #7FA3D8;
+    --book-toc-accent: #7FA3D8; --s1: #7FA3D8; --accent-w: #1E2634;
+    --oxide: #D4885C; --ochre: #C0A94D; --cool: #74A891;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --plate: #141518; --plate-2: #1C1D21; --plate-3: #0E0F11;
+  --ink: #E6E4DE; --graphite: #91908B; --hair: #33343A;
+  --accent: #7FA3D8;
+  --book-toc-accent: #7FA3D8; --accent-w: #1E2634;
+  --oxide: #D4885C; --ochre: #C0A94D; --cool: #74A891;
+  color-scheme: dark;
+}
+@media print {
+  :root {
+    --plate: #EFEEEA; --plate-2: #F7F6F3; --plate-3: #E1DFD9;
+    --ink: #17181B; --graphite: #5F6166; --hair: #C6C4BE;
+    --accent: #24518C;
+    --book-toc-accent: #24518C; --s1: #24518C; --accent-w: #DCE4F1;
+    --oxide: #A0522D; --ochre: #86732A; --cool: #3B7A63;
+  }
+}
+/* one local addition: the aphorism slab, because this book is made of them */
+.slab {
+  border-top: 3px solid var(--ink); border-bottom: 1px solid var(--hair);
+  padding: 1.1rem 0 1rem;
+  font-family: var(--display); font-size: var(--step-2); line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.slab span {
+  display: block; margin-top: 0.55rem;
+  font-family: var(--label); font-size: 0.66rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--graphite);
+}
+</style>
+<link rel="stylesheet" href="civ-plate.css">
+<link rel="stylesheet" href="book-toc.css">
+</head>
+<body>
+
+<button class="toggle" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+
+<nav class="rail" aria-label="Sections">
+  <a href="#book"       data-rail="book"><span class="bar"></span><span class="num">The book</span></a>
+  <a href="#wealth"     data-rail="wealth"><span class="bar"></span><span class="num">Wealth</span></a>
+  <a href="#leverage"   data-rail="leverage"><span class="bar"></span><span class="num">Leverage</span></a>
+  <a href="#judgment"   data-rail="judgment"><span class="bar"></span><span class="num">Judgment</span></a>
+  <a href="#happiness"  data-rail="happiness"><span class="bar"></span><span class="num">Happiness</span></a>
+  <a href="#self"       data-rail="self"><span class="bar"></span><span class="num">Saving yourself</span></a>
+  <a href="#philosophy" data-rail="philosophy"><span class="bar"></span><span class="num">Philosophy</span></a>
+  <a href="#tension"    data-rail="tension"><span class="bar"></span><span class="num">Tensions</span></a>
+  <a href="#reading"    data-rail="reading"><span class="bar"></span><span class="num">Reading it</span></a>
+</nav>
+
+<!-- ==========================================================
+     HERO
+     ========================================================== -->
+<header class="hero">
+  <svg class="hero__field" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="0.7">
+      <path d="M60 380 C 260 378, 420 366, 540 330 S 760 190, 1140 40"/>
+      <path d="M60 380 C 280 379, 460 372, 590 344 S 820 216, 1140 96"/>
+      <path d="M60 380 C 300 380, 500 376, 640 356 S 880 250, 1140 152"/>
+      <path d="M60 380 C 320 380, 540 378, 690 366 S 930 288, 1140 208"/>
+      <path d="M60 380 C 340 380, 580 379, 730 372 S 970 320, 1140 264"/>
+    </g>
+    <g stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 7">
+      <path d="M60 40 V 380"/><path d="M330 40 V 380"/><path d="M600 40 V 380"/>
+      <path d="M870 40 V 380"/><path d="M1140 40 V 380"/>
+      <path d="M60 380 H 1140"/><path d="M60 295 H 1140"/><path d="M60 210 H 1140"/>
+      <path d="M60 125 H 1140"/><path d="M60 40 H 1140"/>
+    </g>
+  </svg>
+
+  <div class="hero__inner">
+    <div class="hero__meta">
+      <p class="eyebrow">Eric Jorgenson · 2020</p>
+      <p class="eyebrow">Assembled, not written</p>
+      <p class="eyebrow eyebrow--accent">Free, on purpose</p>
+    </div>
+
+    <h1>The Almanack of Naval Ravikant
+      <span class="sub">A decade of tweets, podcasts and live AMAs, cut apart and rebuilt into a guide to wealth and happiness — by a stranger, with the subject's blessing and none of his royalties.</span>
+    </h1>
+
+    <div class="hero__rule" role="presentation"></div>
+
+    <p class="hero__thesis">
+      Two books share this cover, and they do not entirely get along. The first is the most compressed
+      account of modern wealth creation anyone has written: specific knowledge, accountability and
+      leverage, applied over a long enough horizon that compounding does the work.
+      <span class="accent">The second says the thing you just spent ninety pages learning to want will
+      not deliver what you wanted from it</span> — that happiness is the absence of desire, and desire is
+      the engine the first half just handed you. Naval knows this. He puts the money first anyway, and
+      says so: "Let's get them all rich. Let's get them all fit and healthy. Then, let's get them all happy."
+    </p>
+
+    <dl class="facts">
+      <div><dt>Assembled by</dt><dd>Eric Jorgenson<span>≈1,000 hours of edits</span></dd></div>
+      <div><dt>Sources</dt><dd>80<span>numbered, cited as [n]</span></dd></div>
+      <div><dt>Length</dt><dd>242 pages<span>none of it narrative</span></dd></div>
+      <div><dt>Naval's royalty</dt><dd>$0<span>free ebook by design</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="flow">
+
+  <!-- ======================= THE BOOK ======================= -->
+  <section class="movement" id="book" aria-labelledby="bk-h">
+    <div class="movement__head">
+      <span class="roman">The object</span>
+      <h2 id="bk-h">The Book Naval Did Not Write</h2>
+      <span class="gloss">A compilation assembled by a reader, from material already free.</span>
+    </div>
+
+    <p class="lede">
+      The most important fact about the <em>Almanack</em> is structural, and it is stated in a disclaimer
+      most readers skip. Naval Ravikant did not write this book. Eric Jorgenson — a product strategist in
+      Kansas City with no prior relationship to him — built it out of transcripts, tweets and talks that
+      were already public, then asked permission afterwards. <strong>Every substantive idea in it had
+      already been given away for free, and the book itself is free too.</strong>
+    </p>
+
+    <p>
+      That matters for how you read it. A memoir is shaped by the author's sense of his own arc; this is
+      shaped by an editor's sense of what was worth keeping. Jorgenson is explicit that the transcripts
+      were "transcribed, edited, rearranged, and re-edited for readability," that not all sources are
+      primary, that he cannot certify every one, and that <em>by definition everything in this book is
+      taken out of context</em>. He asks you to interpret generously. This is an unusually honest
+      disclosure and it is also a real limitation: what you are reading is Naval compressed by someone
+      who admires him, with the hedges, the retractions and the boring parts removed.
+    </p>
+    <p>
+      The result reads less like a book than like a well-organised commonplace book — the almanack form
+      the title claims, following <em>Poor Richard's</em> and <em>Poor Charlie's</em>. Jorgenson says so
+      directly: the models were Peter Kaufman's Munger compilation, Blake Masters' notes on Peter Thiel,
+      Peter Bevelin, Max Olson's Buffett letters. It is designed for consultation, not for reading
+      through. Naval's own instruction, printed in the front matter, is <em>"jump to anything that
+      interests you and skip anything that doesn't."</em>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 01</b><span>Where the book came from</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 344" role="img" aria-label="A diagram showing eight categories of source material — Twitter, essays, Periscope AMAs, podcasts and interviews — converging on Eric Jorgenson and out into the published Almanack.">
+          <g class="t t--sm t--ink" style="font-size:9px"><text x="18" y="26">RAW MATERIAL, 2005–2019</text><text x="520" y="26">THE ARTEFACT</text></g>
+
+          <rect x="18" y="34" width="212" height="24" class="f-plate3"/>
+          <rect x="18" y="66" width="212" height="24" class="f-plate3"/>
+          <rect x="18" y="98" width="212" height="24" class="f-plate3"/>
+          <rect x="18" y="130" width="212" height="24" class="f-plate3"/>
+          <rect x="18" y="162" width="212" height="24" class="f-plate3"/>
+          <rect x="18" y="194" width="212" height="24" class="f-plate3"/>
+          <rect x="18" y="226" width="212" height="24" class="f-plate3"/>
+          <rect x="18" y="258" width="212" height="24" class="f-plate3"/>
+
+          <g class="t t--xs t--ink">
+            <text x="28" y="50">Twitter · @naval, 2010 onward</text>
+            <text x="28" y="82">nav.al essays · "How to Get Rich"</text>
+            <text x="28" y="114">Periscope live AMAs · 2018–19</text>
+            <text x="28" y="146">The Tim Ferriss Show · #97, Tools of Titans</text>
+            <text x="28" y="178">Farnam Street · Shane Parrish interview</text>
+            <text x="28" y="210">Joe Rogan Experience #1309 · 2019</text>
+            <text x="28" y="242">Venture Hacks &amp; startupboy.com · 2005–14</text>
+            <text x="28" y="274">Killing Buddha, Spartan Up, Product Hunt…</text>
+          </g>
+
+          <g class="s-hair" stroke-width="0.8" fill="none">
+            <path d="M230 46 C 285 46, 290 158, 330 158"/>
+            <path d="M230 78 C 285 78, 292 158, 330 158"/>
+            <path d="M230 110 C 288 110, 296 158, 330 158"/>
+            <path d="M230 142 C 295 142, 305 158, 330 158"/>
+            <path d="M230 174 C 295 174, 305 158, 330 158"/>
+            <path d="M230 206 C 288 206, 296 158, 330 158"/>
+            <path d="M230 238 C 285 238, 292 158, 330 158"/>
+            <path d="M230 270 C 285 270, 290 158, 330 158"/>
+          </g>
+
+          <rect x="330" y="120" width="122" height="76" class="f-plate" stroke-width="1.2" style="stroke:var(--ink)"/>
+          <g class="t t--xs t--mid t--ink">
+            <text x="391" y="142">ERIC JORGENSON</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="391" y="158">transcribe · cut</text>
+            <text x="391" y="172">rearrange · re-edit</text>
+            <text x="391" y="188">≈1,000 hours</text>
+          </g>
+
+          <path d="M452 158 H 508" class="s-acc" stroke-width="1.4"/>
+          <path d="M500 153 L 512 158 L 500 163 Z" class="f-acc"/>
+
+          <rect x="516" y="110" width="226" height="96" class="f-acc"/>
+          <g class="t t--rev t--mid">
+            <text x="629" y="140" class="t--lg" style="fill:var(--plate-2)">THE ALMANACK</text>
+            <text x="629" y="160" class="t--xs" style="fill:var(--plate-2)">OF NAVAL RAVIKANT · 2020</text>
+            <text x="629" y="180" class="t--xs" style="fill:var(--plate-2)">242 PAGES · 80 NUMBERED SOURCES</text>
+            <text x="629" y="196" class="t--xs" style="fill:var(--plate-2)">FREE PDF · NAVALMANACK.COM</text>
+          </g>
+
+          <path d="M18 300 H 742" class="s-hair" stroke-width="0.7"/>
+          <g class="t t--xs">
+            <text x="18" y="318" class="t--acc">Only two entries in the source list are original to the book: [79] Naval, and [80] Jorgenson.</text>
+            <text x="18" y="334">Everything else was already free. What the book sells is arrangement — and it does not sell that either.</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>The economics are the argument. A book assembled entirely from permissionless media, given away as permissionless media, by a man whose central claim is that permissionless media is the leverage that makes the newly rich. The <em>Almanack</em> is a demonstration of its own thesis, which is either elegant or circular depending on your mood.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">How it is laid out</h5>
+    <p>
+      The book divides in two, and the division is not equal. Part I, <em>Wealth</em>, runs to roughly
+      ninety-five pages across two sections — Building Wealth and Building Judgment. Part II,
+      <em>Happiness</em>, runs to roughly seventy-seven across three — Learning Happiness, Saving
+      Yourself, and Philosophy. A long bonus section catalogues what Naval reads. There is no argument
+      developing across chapters; each is a cluster of excerpts around a heading, and the headings are
+      imperatives.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 02</b><span>242 pages, and how they are spent</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 250" role="img" aria-label="A stacked bar showing the page allocation of the Almanack across front matter, Building Wealth, Building Judgment, Learning Happiness, Saving Yourself, Philosophy and the bonus reading section.">
+          <g class="s-ink" stroke-width="1">
+            <path d="M75 62 H 383"/><path d="M383 62 H 627"/>
+          </g>
+          <g class="s-ink" stroke-width="1"><path d="M75 62 V 74"/><path d="M383 62 V 74"/><path d="M627 62 V 74"/></g>
+          <g class="t t--sm t--mid t--ink">
+            <text x="229" y="54">PART I · WEALTH</text>
+            <text x="505" y="54">PART II · HAPPINESS</text>
+          </g>
+
+          <rect x="20"  y="90" width="55"  height="40" class="f-hair"/>
+          <rect x="75"  y="90" width="204" height="40" class="f-acc"/>
+          <rect x="279" y="90" width="104" height="40" class="f-acc" opacity="0.62"/>
+          <rect x="383" y="90" width="94"  height="40" class="f-ox"/>
+          <rect x="477" y="90" width="114" height="40" class="f-ox" opacity="0.72"/>
+          <rect x="591" y="90" width="36"  height="40" class="f-ox" opacity="0.45"/>
+          <rect x="627" y="90" width="113" height="40" class="f-plate3"/>
+
+          <g class="s-hair" stroke-width="0.7">
+            <path d="M47 130 V 146"/><path d="M177 130 V 166"/><path d="M331 130 V 146"/>
+            <path d="M430 130 V 166"/><path d="M534 130 V 146"/><path d="M609 130 V 166"/><path d="M683 130 V 146"/>
+          </g>
+
+          <g class="t t--xs t--mid t--ink">
+            <text x="47" y="158">Front matter</text>
+            <text x="177" y="178">Building Wealth</text>
+            <text x="331" y="158">Building Judgment</text>
+            <text x="430" y="178">Learning Happiness</text>
+            <text x="534" y="158">Saving Yourself</text>
+            <text x="609" y="178">Philosophy</text>
+            <text x="683" y="158">Bonus · reading</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="47" y="170">pp. 9–26</text>
+            <text x="177" y="190">pp. 29–91 · 63pp</text>
+            <text x="331" y="170">pp. 93–124 · 32pp</text>
+            <text x="430" y="190">pp. 127–155 · 29pp</text>
+            <text x="534" y="170">pp. 157–191 · 35pp</text>
+            <text x="609" y="190">193–203</text>
+            <text x="683" y="170">pp. 207–241</text>
+          </g>
+
+          <path d="M20 212 H 740" class="s-hair" stroke-width="0.7"/>
+          <g class="t t--xs">
+            <text x="20" y="230" class="t--acc">Ninety-five pages on getting rich. Seventy-seven on discovering that it was not the point.</text>
+            <text x="20" y="244">The order is deliberate: Naval argues you cannot skip to the second half, because Buddha started out a prince.</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Note how small <em>Philosophy</em> is — eleven pages carrying the load that the previous hundred and sixty set up. And note the bonus section: thirty-five pages of what to read next is not padding in a book whose author's single most repeated instruction is to read.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">The life underneath</h5>
+    <p>
+      Almost no biography appears in the book itself, which is a loss, because the shape of the life makes
+      the advice legible. Naval was born in Delhi in 1974 and moved to Queens at nine, into a
+      single-parent household that he describes as poor: his father, a pharmacist in India, could not
+      have the degree recognised and worked in a hardware store; the family split. The library was
+      after-school care. He got into Stuyvesant on an exam — "one of those intelligence lottery
+      situations where you can break in with instant validation" — and that admission, he says
+      flatly, saved his life.
+    </p>
+    <p>
+      What follows is not a smooth ascent. He was, in his telling, embarrassed into starting his first
+      company in 1996 after telling everyone he was about to. Epinions did well; he did not, and sued
+      his backers — a New York Times story in 2005 — and was known in the Valley for a period as
+      "radioactive mud." The first fortune he lost in the stock market; the second he was, he says,
+      cheated out of. AngelList came in 2010, the year he also put money into Uber. The philosophical
+      public persona is late: he dates it to 2014–15, and says people in the industry messaged him
+      through back channels to tell him he was ending his career.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 03</b><span>Forty-six years, and the point at which he changed subject</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 292" role="img" aria-label="A timeline of Naval Ravikant's life from 1974 to 2020, showing his childhood, education, companies, the reputational trough after Epinions, AngelList, and the shift to public philosophy around 2014.">
+          <path d="M60 176 H 744" class="s-graph" stroke-width="1.2"/>
+          <g class="s-hair" stroke-width="0.6" stroke-dasharray="2 5">
+            <path d="M60 88 V 168"/><path d="M208 88 V 168"/><path d="M356 88 V 168"/><path d="M504 88 V 168"/><path d="M651 88 V 168"/>
+          </g>
+
+          <rect x="60"  y="168" width="163" height="16" class="f-hair"/>
+          <text x="141" y="180" class="t t--mid t--xs">Delhi, then Queens</text>
+          <rect x="223" y="168" width="162" height="16" class="f-plate3"/>
+          <text x="304" y="180" class="t t--mid t--xs">Stuyvesant · Dartmouth</text>
+          <rect x="385" y="168" width="163" height="16" class="f-acc" opacity="0.55"/>
+          <text x="466" y="180" class="t t--mid t--xs">founder</text>
+          <rect x="548" y="168" width="196" height="16" class="f-acc"/>
+          <text x="646" y="180" class="t t--mid t--rev t--xs">investor · platform · writer</text>
+
+          <g class="t t--xs t--mid">
+            <text x="60" y="200">1974</text><text x="208" y="200">1984</text><text x="356" y="200">1994</text>
+            <text x="504" y="200">2004</text><text x="651" y="200">2014</text><text x="744" y="200" class="t--end">2020</text>
+          </g>
+
+          <g class="s-ink" stroke-width="0.9">
+            <path d="M222 168 V 164"/><path d="M282 168 V 148"/><path d="M430 168 V 132"/><path d="M592 168 V 116"/><path d="M651 168 V 100"/>
+          </g>
+          <!-- label backings so the stems pass behind the text rather than through it -->
+          <g class="f-plate">
+            <rect x="224" y="150" width="284" height="13"/>
+            <rect x="284" y="134" width="284" height="13"/>
+            <rect x="432" y="118" width="166" height="13"/>
+            <rect x="391" y="102" width="199" height="13"/>
+            <rect x="320" y="86"  width="329" height="13"/>
+          </g>
+          <g class="t t--xs">
+            <text x="228" y="160">1985 · age 9, Queens; the library is the after-school centre</text>
+            <text x="288" y="144">1989 · passes the exam for Stuyvesant — "that saved my life"</text>
+            <text x="436" y="128">1999 · founder and CEO of Epinions</text>
+            <text x="586" y="112" class="t--end">2010 · launches AngelList; invests in Uber</text>
+            <text x="645" y="96" class="t--end">2014–15 · begins talking publicly about philosophy, under his own name</text>
+          </g>
+
+          <g class="s-ox" stroke-width="0.9">
+            <path d="M459 184 V 220"/><path d="M518 184 V 236"/><path d="M622 184 V 252"/><path d="M710 184 V 268"/>
+          </g>
+          <g class="t t--xs t--ox">
+            <text x="451" y="224" class="t--end">2001 · dot-com crash; venture partner at August Capital</text>
+            <text x="510" y="240" class="t--end">2005 · sues his backers; called "radioactive mud" in the Valley</text>
+            <text x="614" y="256" class="t--end">2012 · lobbies Congress on the JOBS Act</text>
+            <text x="702" y="272" class="t--end">2018 · "Angel Investor of the Year" · 2019 · the How to Get Rich tweetstorm</text>
+          </g>
+
+          <text x="60" y="44" class="t t--acc t--sm">The advice about accountability, reputation and long-term games is not abstract</text>
+          <text x="60" y="60" class="t t--xs">It is written by a man who spent several years with a bad reputation in a small industry, and had to rebuild it in public.</text>
+        </svg>
+      </div>
+      <figcaption>Set the black stems against the red ones. The résumé line is unbroken; the second line is the one that produced the doctrine. "Your real résumé is just a catalog of all your suffering" is a sentence written by someone with a specific decade in mind.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= WEALTH ======================= -->
+  <section class="movement" id="wealth" aria-labelledby="wl-h">
+    <div class="movement__head">
+      <span class="roman">Part I</span>
+      <h2 id="wl-h">Wealth: Assets That Earn While You Sleep</h2>
+      <span class="gloss">A vocabulary problem first, then an engineering one.</span>
+    </div>
+
+    <p class="lede">
+      The engine of the whole first half is a distinction most people never make. <strong>Wealth is assets
+      that earn while you sleep. Money is how we transfer time and wealth. Status is your place in the
+      social hierarchy.</strong> Naval's claim is that most people say "money" when they mean one of the
+      other two, and that conflating them is why they never get any of them.
+    </p>
+
+    <p>
+      Wealth is a factory, a robot, a computer program running at night serving customers you never meet,
+      a business earning while you are on holiday. Money is the IOU society hands you for value already
+      delivered — "social credits," the ability to have credits and debits on other people's time. Status
+      is a ranking, and a ranking is zero-sum: for number three to become number two, number two has to
+      move. Naval's sharpest sociological observation follows from this. When someone attacks wealth
+      creation, they are usually not making an economic argument; they are making a status move, and
+      status moves are cheaper than building anything.
+    </p>
+
+    <div class="pull">
+      "Wealth creation is an evolutionarily recent positive-sum game. Status is an old zero-sum game.
+      Those attacking wealth creation are often just seeking status."
+      <cite>Tweet, quoted p. 73</cite>
+    </div>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 04</b><span>Three things people call "money"</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 264" role="img" aria-label="A table comparing wealth, money and status across what each one is, the game type, how you win, and who attacks it.">
+          <path d="M20 54 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm" style="font-size:9px">
+            <text x="20" y="46" class="t--ink">·</text>
+            <text x="176" y="46" class="t--acc">WEALTH</text>
+            <text x="366" y="46" class="t--ink">MONEY</text>
+            <text x="556" y="46" class="t--ox">STATUS</text>
+          </g>
+          <g class="s-hair" stroke-width="0.7">
+            <path d="M20 96 H740"/><path d="M20 138 H740"/><path d="M20 180 H740"/><path d="M20 222 H740"/>
+          </g>
+          <g class="s-hair" stroke-width="0.7"><path d="M170 54 V 222"/><path d="M360 54 V 222"/><path d="M550 54 V 222"/></g>
+
+          <g class="t t--xs t--ink">
+            <text x="20" y="80">What it is</text>
+            <text x="20" y="122">Game type</text>
+            <text x="20" y="164">How you win</text>
+            <text x="20" y="206">Who attacks it</text>
+          </g>
+
+          <g class="t t--xs">
+            <text x="176" y="74">Businesses and assets that</text>
+            <text x="176" y="88">earn without your presence</text>
+            <text x="176" y="116">Positive-sum, recent,</text>
+            <text x="176" y="130">and compounding</text>
+            <text x="176" y="158">Give society what it wants</text>
+            <text x="176" y="172">but can't yet get. At scale.</text>
+            <text x="176" y="200">People losing the status game</text>
+            <text x="176" y="214">who reframe it as ethics</text>
+
+            <text x="366" y="74">A transfer mechanism —</text>
+            <text x="366" y="88">"social credits" on time</text>
+            <text x="366" y="116">Neutral; a medium,</text>
+            <text x="366" y="130">not a game at all</text>
+            <text x="366" y="158">You don't. You earn it as</text>
+            <text x="366" y="172">a receipt for value shipped</text>
+            <text x="366" y="200">Nobody, seriously —</text>
+            <text x="366" y="214">it is only the scoreboard</text>
+
+            <text x="556" y="74">Your rank in whichever</text>
+            <text x="556" y="88">hierarchy you're standing in</text>
+            <text x="556" y="116">Zero-sum, ancient,</text>
+            <text x="556" y="130">"since monkey tribes"</text>
+            <text x="556" y="158">By pushing somebody else</text>
+            <text x="556" y="172">down. There is no other way.</text>
+            <text x="556" y="200">Everyone below you,</text>
+            <text x="556" y="214">continuously</text>
+          </g>
+          <rect x="550" y="182" width="190" height="40" class="f-ox" opacity="0.08"/>
+          <text x="20" y="248" class="t t--xs t--acc">"Play stupid games, win stupid prizes." The point of the taxonomy is to notice which game you are already in.</text>
+        </svg>
+      </div>
+      <figcaption>The practical payload is in the last row. If you are being attacked for trying to build something, the attack is usually information about the attacker's game, not about your project. That is a genuinely useful reframe, and also a very convenient one — it lets you dismiss criticism wholesale. Both things are true.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Productize yourself</h5>
+    <p>
+      Naval compresses the entire method into two words, and the compression is the point: it is designed
+      to be recallable under pressure. "Productize" carries leverage and specific knowledge. "Yourself"
+      carries uniqueness, accountability, and specific knowledge again. Everything else in Part I is an
+      expansion of one of those four terms.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 05</b><span>Two words, four components</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 288" role="img" aria-label="A diagram splitting the phrase Productize Yourself into its four components: uniqueness and accountability from Yourself, leverage and specific knowledge from Productize.">
+          <rect x="30" y="52" width="330" height="150" class="f-plate" stroke-width="1.4" style="stroke:var(--ink)"/>
+          <rect x="400" y="52" width="330" height="150" class="f-plate" stroke-width="1.4" style="stroke:var(--ink)"/>
+
+          <text x="195" y="88" class="t t--mid t--xl">YOURSELF</text>
+          <text x="565" y="88" class="t t--mid t--xl">PRODUCTIZE</text>
+          <path d="M60 100 H 330" class="s-acc" stroke-width="2"/>
+          <path d="M430 100 H 700" class="s-acc" stroke-width="2"/>
+
+          <g class="t t--xs t--mid t--ink">
+            <text x="120" y="126">UNIQUENESS</text>
+            <text x="270" y="126">ACCOUNTABILITY</text>
+            <text x="490" y="126">LEVERAGE</text>
+            <text x="640" y="126">SPECIFIC KNOWLEDGE</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="120" y="146">Nobody competes</text>
+            <text x="120" y="158">with you at being you</text>
+            <text x="270" y="146">Under your own name,</text>
+            <text x="270" y="158">with the downside</text>
+            <text x="490" y="146">Capital, labour, code,</text>
+            <text x="490" y="158">media — a multiplier</text>
+            <text x="640" y="146">The thing you can't</text>
+            <text x="640" y="158">be trained to do</text>
+          </g>
+          <g class="t t--xs t--mid t--acc">
+            <text x="195" y="186">"Is this authentic to me?"</text>
+            <text x="565" y="186">"Am I scaling it — and with what?"</text>
+          </g>
+
+          <path d="M20 226 H 740" class="s-hair" stroke-width="0.7"/>
+          <g class="t t--xs">
+            <text x="20" y="246" class="t--ink">Naval's own timing estimate:</text>
+            <text x="168" y="246">"the better part of a decade may be figuring out what you can uniquely provide."</text>
+            <text x="20" y="266">Execution is not the bottleneck in this model. Identification is. The mnemonic is short; the search it names is not.</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Notice that "specific knowledge" appears on both sides, which is not sloppiness — it is the hinge. It is the thing that makes you unaccountable-to-nobody <em>and</em> the thing worth scaling. Remove it and "productize yourself" collapses into personal branding, which is what most people who repeat the phrase actually mean by it.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Specific knowledge</h5>
+    <p>
+      This is the book's best original coinage, and the definition is negative: <strong>specific knowledge
+      is knowledge you cannot be trained for. If society can train you, it can train someone else and
+      replace you.</strong> It is not credentialled, not taught in schools, and when it is transmitted at
+      all it goes by apprenticeship. It is often highly technical or highly creative. It cannot be
+      outsourced and cannot be automated — and the corollary Naval states bluntly is that if they can
+      train you to do it, eventually they will train a computer to do it.
+    </p>
+    <p>
+      The tests he offers for finding your own are unusually concrete. What were you doing as a kid or a
+      teenager almost effortlessly — something you did not consider a skill but people around you
+      noticed? His examples are deliberately unimpressive: a knack for sales; picking up any instrument;
+      an obsessive personality that dives in and remembers; reading science fiction and absorbing
+      information fast; playing so many games that game theory is intuitive; gossiping and digging into
+      a friend network, which he says makes a good journalist. The first person to name his own was his
+      mother, from the kitchen, when he was fifteen and announcing he would be an astrophysicist:
+      "No, you're going to go into business."
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 06</b><span>Six tests for a thing you cannot be trained to do</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 300" role="img" aria-label="Six diagnostic tests for identifying specific knowledge, each with the negative case that fails the test.">
+          <path d="M20 44 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm" style="font-size:9px"><text x="20" y="38" class="t--acc">IF THIS IS TRUE OF IT…</text><text x="420" y="38" class="t--ox">…AND THIS IS NOT</text></g>
+          <g class="s-hair" stroke-width="0.7">
+            <path d="M20 82 H740"/><path d="M20 120 H740"/><path d="M20 158 H740"/><path d="M20 196 H740"/><path d="M20 234 H740"/>
+          </g>
+          <path d="M410 44 V 268" class="s-hair" stroke-width="0.7"/>
+
+          <g class="t t--xs t--ink">
+            <text x="20" y="68">It feels like play to you and looks like work to others</text>
+            <text x="20" y="106">You were already doing it at fourteen, effortlessly</text>
+            <text x="20" y="144">It came from genuine curiosity, not from what pays now</text>
+            <text x="20" y="182">It is taught, if at all, by apprenticeship</text>
+            <text x="20" y="220">It sits near the edge of what is known</text>
+            <text x="20" y="258">Someone who loves you could name it for you</text>
+          </g>
+          <g class="t t--xs t--ox">
+            <text x="420" y="68">You need discipline to keep at it for sixteen hours</text>
+            <text x="420" y="106">You took it up because a market report said to</text>
+            <text x="420" y="144">You chose the field, then tried to like it</text>
+            <text x="420" y="182">There is a certificate, a syllabus, a course</text>
+            <text x="420" y="220">It is well-documented and stable</text>
+            <text x="420" y="258">You have to explain to them why it matters</text>
+          </g>
+          <rect x="20" y="46" width="720" height="36" class="f-acc" opacity="0.07"/>
+          <text x="20" y="290" class="t t--xs t--acc">"Escape competition through authenticity." When you are competing, it is usually because you are copying.</text>
+        </svg>
+      </div>
+      <figcaption>The sharpest of these is the first, and it does real work: it converts an unanswerable question ("what am I uniquely good at?") into an observable one ("what do I do for sixteen hours without it costing me anything?"). The weakness is that it selects hard for people whose obsessions happen to be commercially adjacent. Naval's were.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Accountability, equity, and the risk of ruin</h5>
+    <p>
+      Leverage is mostly given rather than taken — capital has to be handed to you, labour has to choose
+      to follow you — and what makes people hand it over is credibility carried under your own name.
+      Hence the instruction to take business risks under your own name and to accept the humiliation
+      case. "In the old days, the captain was expected to go down with the ship." The modern downside,
+      he argues, is smaller than it feels: no debtors' prison, bankruptcy discharges, and ecosystems that
+      forgive honest failure. The social wiring against public failure is stronger than the actual
+      penalty, which is precisely why the people willing to fail publicly gain power.
+    </p>
+    <p>
+      From this follows the equity argument, stated with unusual flatness: <strong>if you do not own a
+      piece of a business, you have no path to financial freedom.</strong> Without ownership your inputs
+      are tied to your outputs — you sleep, you stop earning. Even doctors who get properly rich do it by
+      opening a practice, building a brand, or owning a procedure. Salary is defined as the minimum that
+      gets you to do the job, and it can be a high minimum and still not be wealth. Equity is the upside;
+      debt is the downside; own the upside.
+    </p>
+    <div class="claim claim--ox">
+      <b>The one non-negotiable</b>
+      Avoid the risk of ruin. Stay out of jail — "it's never worth it to wear an orange jumpsuit." Stay
+      out of total catastrophic financial loss; don't gamble everything on one go. Watch your health.
+      Everything else in Part I is an argument for taking more risk; this is the boundary condition that
+      makes the rest survivable, and it is easy to skim past.
+    </div>
+  </section>
+
+  <!-- ======================= LEVERAGE ======================= -->
+  <section class="movement" id="leverage" aria-labelledby="lv-h">
+    <div class="movement__head">
+      <span class="roman">The multiplier</span>
+      <h2 id="lv-h">Leverage, and the Two Kinds of Permission</h2>
+      <span class="gloss">"Forget rich versus poor, white-collar versus blue. It's now leveraged versus un-leveraged."</span>
+    </div>
+
+    <p class="lede">
+      Fortunes require leverage, and there are three sources of it: labour, capital, and products with no
+      marginal cost of replication — code and media. The distinction that carries the argument is not
+      between them by size but by <strong>permission</strong>. Labour and capital are permissioned:
+      somebody has to follow you, somebody has to fund you. Code and media are permissionless. You need
+      a computer and nobody's consent.
+    </p>
+
+    <p>
+      Naval's verdict on labour is harsher than most business writing allows: the oldest form, and the
+      worst. "Managing other people is incredibly messy. It requires tremendous leadership skills. You're
+      one short hop from a mutiny." Labour leverage will impress your parents; don't waste your life
+      chasing it. Capital he rates higher and calls trickier — the dominant form of the last century,
+      which is why the richest people outside technology are bankers and financiers, and why the CEO job
+      at large old companies is really a financial job. It scales beautifully: managing more capital is
+      far easier than managing more people.
+    </p>
+    <p>
+      The third form is the one he thinks is new. It began with the printing press, accelerated through
+      broadcast, and detonated with the internet. Every great software developer now has an army of
+      robots working overnight; the army is "freely available — it's just packed in data centres for heat
+      and space efficiency." The instruction for people who cannot code is the same instruction in a
+      different medium: write books and blogs, record videos and podcasts. The new fortunes — Bezos,
+      Zuckerberg, Page, Brin, Gates, Jobs, and, at a different scale, Joe Rogan and PewDiePie — are all
+      code-and-media fortunes.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 07</b><span>Three levers, and who has to say yes</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 296" role="img" aria-label="A table comparing labour, capital, and code and media as forms of leverage across age, permission required, marginal cost, what it scales with, failure mode, and Naval's verdict.">
+          <path d="M20 54 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm" style="font-size:9px">
+            <text x="176" y="46" class="t--ox">LABOUR</text>
+            <text x="366" y="46" class="t--och">CAPITAL</text>
+            <text x="556" y="46" class="t--acc">CODE &amp; MEDIA</text>
+          </g>
+          <g class="s-hair" stroke-width="0.7">
+            <path d="M20 88 H740"/><path d="M20 122 H740"/><path d="M20 156 H740"/><path d="M20 190 H740"/><path d="M20 224 H740"/>
+          </g>
+          <g class="s-hair" stroke-width="0.7"><path d="M170 54 V 258"/><path d="M360 54 V 258"/><path d="M550 54 V 258"/></g>
+
+          <g class="t t--xs t--ink">
+            <text x="20" y="76">Age</text>
+            <text x="20" y="110">Permission</text>
+            <text x="20" y="144">Marginal cost</text>
+            <text x="20" y="178">Scales with</text>
+            <text x="20" y="212">Fails by</text>
+            <text x="20" y="246">Verdict</text>
+          </g>
+          <g class="t t--xs">
+            <text x="176" y="76">Oldest; most fought over</text>
+            <text x="176" y="110">People must follow you</text>
+            <text x="176" y="144">One salary per unit</text>
+            <text x="176" y="178">Headcount and leadership</text>
+            <text x="176" y="212">Mutiny; management drag</text>
+
+            <text x="366" y="76">Modern; dominant since 1900</text>
+            <text x="366" y="110">Someone must fund you</text>
+            <text x="366" y="144">Near zero to redeploy</text>
+            <text x="366" y="178">Judgment and track record</text>
+            <text x="366" y="212">One bad call, amplified</text>
+
+            <text x="556" y="76">New; printing press onward</text>
+            <text x="556" y="110">None. Nobody's</text>
+            <text x="556" y="144">Zero</text>
+            <text x="556" y="178">Attention and quality</text>
+            <text x="556" y="212">Nobody notices at all</text>
+          </g>
+          <g class="t t--xs">
+            <text x="176" y="246" class="t--ox">"The worst form you could use"</text>
+            <text x="366" y="246" class="t--och">"Trickier — but it scales"</text>
+            <text x="556" y="246" class="t--acc">"Where all the new fortunes are"</text>
+          </g>
+          <rect x="550" y="56" width="190" height="202" class="f-acc" opacity="0.06"/>
+          <text x="20" y="282" class="t t--xs">The book you are reading is column three: "Long ago, I would have had to sit in a lecture hall and lecture each of you personally."</text>
+        </svg>
+      </div>
+      <figcaption>The "fails by" row is mine, not the book's, and it is where I would push. Permissionless leverage removes the gatekeeper but not the filter — it relocates it to attention, where the failure mode is silence rather than rejection. A rejected pitch tells you something; an unread post tells you nothing.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">The ladder, worked through in one industry</h5>
+    <p>
+      The most useful passage in the book is a five-rung worked example in real estate, because it makes
+      the three ingredients — accountability, leverage, specific knowledge — move together rather than
+      sit as slogans. Each rung takes on more of all three, and the compensation is not linear.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 08</b><span>The same industry, five positions in it</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 336" role="img" aria-label="A step chart showing five rungs in real estate — labourer, general contractor, developer, fund manager, and technology platform — with rising accountability, leverage and specific knowledge.">
+          <path d="M24 268 H 744" class="s-graph" stroke-width="1"/>
+          <rect x="30"  y="238" width="130" height="30"  class="f-hair"/>
+          <rect x="170" y="208" width="130" height="60"  class="f-plate3"/>
+          <rect x="310" y="164" width="130" height="104" class="f-och" opacity="0.55"/>
+          <rect x="450" y="114" width="130" height="154" class="f-acc" opacity="0.5"/>
+          <rect x="590" y="60"  width="130" height="208" class="f-acc"/>
+
+          <g class="t t--xs t--mid t--ink">
+            <text x="95" y="230">Labourer</text>
+            <text x="235" y="200">General contractor</text>
+            <text x="375" y="156">Developer</text>
+            <text x="515" y="106">Real-estate fund</text>
+            <text x="655" y="52">Zillow · Redfin · Trulia</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="95" y="256">$15/hr</text>
+            <text x="235" y="228">≈$50k per project</text>
+            <text x="375" y="184">$0.5–1M per deal</text>
+            <text x="515" y="134">capital leverage,</text>
+            <text x="515" y="146">many developers</text>
+          </g>
+          <g class="t t--xs t--mid t--rev">
+            <text x="655" y="80">code + capital + labour</text>
+            <text x="655" y="94">+ two domains of</text>
+            <text x="655" y="108">specific knowledge</text>
+            <text x="655" y="128">hundreds of millions</text>
+            <text x="655" y="142">to billions</text>
+          </g>
+
+          <g class="s-hair" stroke-width="0.7"><path d="M24 288 H 744"/></g>
+          <g class="t t--xs">
+            <text x="24" y="306" class="t--ink">Accountability →</text>
+            <text x="140" y="306">to a boss · to a client · to investors · to LPs · to a public market and a brand</text>
+            <text x="24" y="322" class="t--ink">Ownership of upside →</text>
+            <text x="170" y="322">none · a margin · the sale price · a carry · the whole equity</text>
+          </g>
+          <path d="M24 60 V 268" class="s-hair" stroke-width="0.7"/>
+          <text x="16" y="264" class="t t--xs t--acc" transform="rotate(-90 16 264)">LEVERAGE + SPECIFIC KNOWLEDGE →</text>
+        </svg>
+      </div>
+      <figcaption>What the ladder shows that the slogans don't: nobody skips rungs. The developer needs the contractor's knowledge plus fundraising plus regulation plus a read on the market. The top rung requires two entire domains at once — which is why Naval concedes it is normally a team, not a person, and quietly abandons "productize <em>yourself</em>" at the moment the numbers get large.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Inputs, outputs, and where they come apart</h5>
+    <p>
+      The underlying variable in the ladder is the coupling between hours in and value out. Where they are
+      tightly coupled — a repair labourer, customer service — no amount of effort produces wealth; you are
+      selling time at a rate that is set elsewhere. Where they come apart — a leveraged worker can
+      out-produce a non-leveraged one by a factor of a thousand or ten thousand — judgment matters far
+      more than hours, and the whole apparatus of visible busyness stops paying.
+    </p>
+    <div class="pull">
+      "Forty hour work weeks are a relic of the Industrial Age. Knowledge workers function like
+      athletes — train and sprint, then rest and reassess."
+      <cite>Tweet, quoted p. 62</cite>
+    </div>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 09</b><span>Where the hours stop mattering</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 320" role="img" aria-label="A scatter plot with coupling of inputs to outputs on the horizontal axis and wealth ceiling on the vertical, placing jobs from customer service to founder and investor.">
+          <path d="M70 268 H 730" class="s-graph" stroke-width="1"/>
+          <path d="M70 40 V 268" class="s-graph" stroke-width="1"/>
+          <g class="t t--xs">
+            <text x="70" y="290">hours in ≈ value out</text>
+            <text x="730" y="290" class="t--end">inputs fully decoupled from outputs</text>
+          </g>
+          <text x="58" y="256" class="t t--xs t--acc" transform="rotate(-90 58 256)">WEALTH CEILING →</text>
+
+          <g class="s-hair" stroke-width="0.6" stroke-dasharray="2 5">
+            <path d="M235 40 V 268"/><path d="M400 40 V 268"/><path d="M565 40 V 268"/>
+            <path d="M70 210 H 730"/><path d="M70 152 H 730"/><path d="M70 94 H 730"/>
+          </g>
+
+          <g class="f-ox">
+            <circle cx="110" cy="252" r="4"/><circle cx="170" cy="228" r="4"/><circle cx="230" cy="204" r="4"/>
+          </g>
+          <g class="f-och"><circle cx="320" cy="176" r="4"/><circle cx="390" cy="152" r="4"/></g>
+          <g class="f-acc">
+            <circle cx="470" cy="128" r="4.5"/><circle cx="540" cy="104" r="4.5"/>
+            <circle cx="620" cy="82" r="5"/><circle cx="688" cy="60" r="5"/>
+          </g>
+
+          <g class="t t--xs t--ox">
+            <text x="118" y="246">customer service</text>
+            <text x="178" y="222">house repair labourer</text>
+            <text x="238" y="198">general contractor</text>
+          </g>
+          <g class="t t--xs t--och">
+            <text x="328" y="170">salaried lawyer, doctor</text>
+            <text x="398" y="146">private practice with a brand</text>
+          </g>
+          <g class="t t--xs t--acc">
+            <text x="478" y="122">top-tier agent selling $5M houses</text>
+            <text x="548" y="98">software engineer with equity</text>
+            <text x="628" y="76">writer, podcaster, creator</text>
+            <text x="678" y="52" class="t--end">founder · investor</text>
+          </g>
+
+          <text x="70" y="312" class="t t--xs">"If you're looking at professions where your inputs and your outputs are highly connected, it's going to be very hard to create wealth."</text>
+        </svg>
+      </div>
+      <figcaption>The two axes are not independent, which is the honest complication: decoupling raises the ceiling and lowers the floor at the same time. The book is written from the ceiling. It has almost nothing to say to someone in the bottom-left corner about the transition, beyond "learn to sell, learn to build" — which is true, and is not a plan.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= JUDGMENT ======================= -->
+  <section class="movement" id="judgment" aria-labelledby="jd-h">
+    <div class="movement__head">
+      <span class="roman">Part I, cont.</span>
+      <h2 id="jd-h">Judgment: The Thing Leverage Multiplies</h2>
+      <span class="gloss">"There's no shortcut to smart."</span>
+    </div>
+
+    <p class="lede">
+      Leverage is a force multiplier, and what it multiplies is judgment — which means that once you are
+      leveraged, being slightly more right becomes worth an absurd amount. Naval's definition is tight:
+      <strong>wisdom is knowing the long-term consequences of your actions; judgment is wisdom applied to
+      external problems.</strong> Hard work is overrated in the modern economy. Direction dominates speed,
+      and it dominates more the more leverage you carry.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 10</b><span>Why a ten-point improvement is worth nine figures</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 264" role="img" aria-label="A bar chart showing value created on a billion dollars deployed at decision accuracies of 70, 75, 80 and 85 percent.">
+          <path d="M96 200 H 730" class="s-graph" stroke-width="1"/>
+          <path d="M96 44 V 200" class="s-graph" stroke-width="1"/>
+
+          <rect x="130" y="188" width="90" height="12" class="f-hair"/>
+          <rect x="290" y="152" width="90" height="48" class="f-och" opacity="0.6"/>
+          <rect x="450" y="116" width="90" height="84" class="f-acc" opacity="0.6"/>
+          <rect x="610" y="66"  width="90" height="134" class="f-acc"/>
+
+          <g class="t t--xs t--mid t--ink">
+            <text x="175" y="218">right 70%</text>
+            <text x="335" y="218">right 75%</text>
+            <text x="495" y="218">right 80%</text>
+            <text x="655" y="218">right 85%</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="175" y="182">baseline</text>
+            <text x="335" y="146">+$50M</text>
+            <text x="495" y="110">+$100M</text>
+          </g>
+          <text x="655" y="60" class="t t--xs t--mid t--acc">+$150M</text>
+
+          <text x="88" y="44" class="t t--xs t--end">value created</text>
+          <text x="88" y="58" class="t t--xs t--end">on $1bn deployed</text>
+
+          <path d="M96 234 H 730" class="s-hair" stroke-width="0.7"/>
+          <text x="96" y="248" class="t t--xs">"Someone who makes decisions right 80 percent of the time instead of 70 percent will be</text>
+          <text x="96" y="262" class="t t--xs">valued and compensated hundreds of times more." Hence CEO pay, and hence Buffett.</text>
+        </svg>
+      </div>
+      <figcaption>This is the cleanest defence of extreme compensation in the book, and it is a real argument rather than a moral one: at scale, small differences in accuracy are worth more than large differences in effort. It also explains the pay of people whose judgment is <em>not</em> better than average, since the mechanism rewards perceived accuracy, and credibility is what is actually being priced.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Clear thinking, and the ego tax</h5>
+    <p>
+      "Clear thinker" is a better compliment than "smart." The test Naval offers is Feynman's: real
+      knowledge is intrinsic and built from the ground up, and if you cannot re-derive a concept from
+      basics when you need it, you are memorising, not knowing. Big words and advanced concepts are
+      usually signalling; the advanced parts of any field are also its least proven parts. Better to be
+      9/10 on foundations than to be deep in something you cannot rebuild.
+    </p>
+    <p>
+      The obstacle to clear thinking, in his account, is not intelligence but desire. "The number one
+      thing clouding us from being able to see reality is we have preconceived notions of the way it
+      should be." He defines a moment of suffering as the moment you see things exactly as they are — and
+      then makes the useful inversion: that is also the only moment from which progress is possible,
+      because progress starts with the truth. The everyday version is the friend paradox. You can solve
+      your friend's breakup in a minute and cannot solve your own, because you have no desire in theirs.
+    </p>
+    <div class="claim claim--acc">
+      <b>His own countermeasure</b>
+      When something in the business is going badly, acknowledge it publicly, and specifically in front of
+      co-founders and colleagues. "If I'm not hiding it from anybody, I'm not going to delude myself."
+      This is the one place where the book converts a psychological insight into an enforceable rule, and
+      it is worth more than several pages of the surrounding material.
+    </div>
+    <p>
+      The identity material follows the same logic. Egos get built in the first two decades by environment
+      and parents; we spend the rest of life trying to make them happy, and interpreting new information
+      through them. Naval says he stopped self-identifying at almost any level — he used to call himself a
+      libertarian and found himself defending positions he had not thought through, because they came in
+      the package. <em>"If all your beliefs line up into neat little bundles, you should be highly
+      suspicious."</em> To be honest, speak without identity.
+    </p>
+
+    <h5 class="sub-h">The deck of models</h5>
+    <p>
+      Naval treats aphorisms as pointers rather than content: compact addresses for knowledge you have
+      already paid for in experience. "If you don't have the underlying experience, then it just reads
+      like a collection of quotes." That caveat is the most important sentence in the judgment section,
+      and it is a warning about how the <em>Almanack</em> itself will be misused.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 11</b><span>The models he says he actually loads</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 404" role="img" aria-label="A table of eleven mental models Naval names, each with a one-line summary of what it is for.">
+          <path d="M20 44 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px"><text x="20" y="38">MODEL</text><text x="240" y="38">WHAT HE USES IT FOR</text></g>
+          <g class="s-hair" stroke-width="0.6">
+            <path d="M20 62 H740"/><path d="M20 92 H740"/><path d="M20 122 H740"/><path d="M20 152 H740"/><path d="M20 182 H740"/>
+            <path d="M20 212 H740"/><path d="M20 242 H740"/><path d="M20 272 H740"/><path d="M20 302 H740"/><path d="M20 332 H740"/>
+          </g>
+          <g class="t t--xs t--ink">
+            <text x="20" y="58">Evolution</text>
+            <text x="20" y="88">Inversion</text>
+            <text x="20" y="118">Complexity theory</text>
+            <text x="20" y="148">Microeconomics</text>
+            <text x="20" y="178">Principal–agent</text>
+            <text x="20" y="208">Compound interest</text>
+            <text x="20" y="238">Arithmetic &amp; probability</text>
+            <text x="20" y="268">Black swans</text>
+            <text x="20" y="298">Calculus, in principle</text>
+            <text x="20" y="328">Falsifiability</text>
+            <text x="20" y="358">Game theory</text>
+          </g>
+          <g class="t t--xs">
+            <text x="240" y="58">Explains most of modern society; sexual selection as an allocation problem</text>
+            <text x="240" y="88">"I don't have the ability to say what will work — I try to eliminate what won't"</text>
+            <text x="240" y="118">Builds a system that operates in the face of ignorance about the future</text>
+            <text x="240" y="148">Supply and demand, labour versus capital — non-negotiable, he says</text>
+            <text x="240" y="178" class="t--acc">"The single most fundamental problem in microeconomics." Owner cares; agent doesn't.</text>
+            <text x="240" y="208">Applies to capital, reputation, relationships and knowledge alike</text>
+            <text x="240" y="238">Explicitly more useful than calculus for anyone in business</text>
+            <text x="240" y="268">Tail events; he credits Taleb as a philosopher-scientist of the first rank</text>
+            <text x="240" y="298">Rates of change — understand the idea, never solve an integral</text>
+            <text x="240" y="328">The one he calls least understood and most important: no falsifiable</text>
+            <text x="240" y="342">predictions, no science. He applies it to macroeconomics, and rejects it.</text>
+            <text x="240" y="358">Play iterated games; pick partners you can keep playing with</text>
+          </g>
+          <rect x="20" y="154" width="720" height="30" class="f-acc" opacity="0.07"/>
+          <path d="M20 372 H 740" class="s-hair" stroke-width="0.7"/>
+          <g class="t t--xs">
+            <text x="20" y="390" class="t--acc">Two decision rules do more work than the rest combined:</text>
+            <text x="300" y="390">"If you cannot decide, the answer is no" and "if you're evenly split, take the</text>
+            <text x="300" y="402">path more painful in the short term" — because the other path has the pain hidden further out.</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>The principal–agent row is the one I would keep if I could only keep one. It quietly explains the small-company argument, the equity argument, and the compensation argument all at once: the closer you tie someone's pay to the exact value they create, the more principal and the less agent they become — and the better the work gets, for reasons that have nothing to do with motivation talks.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Time, and the four kinds of luck</h5>
+    <p>
+      Two of the book's most quoted practical devices sit here. The first is the aspirational hourly rate:
+      pick a number that feels absurdly high, then enforce it. Naval used $5,000/hour long before he had
+      money, and reckons in hindsight he was worth about $1,000. The rule is symmetric — if fixing
+      something costs less than your rate, outsource it; if it costs more, ignore it. He gives the
+      unglamorous version too, arguing with electricians and returning broken speakers, and admits he
+      still failed at it regularly.
+    </p>
+    <p>
+      The second is the taxonomy of luck, worked out with his co-founder Nivi, and it is the mechanism
+      behind the title of his most famous piece — <em>How to Get Rich (Without Getting Lucky)</em>. The
+      point is not that luck is irrelevant. It is that three of the four kinds are things you can build.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 12</b><span>Four kinds of luck, and how much of each is yours</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 292" role="img" aria-label="Four ascending blocks representing blind luck, luck from hustle, luck from a prepared mind, and luck that seeks you out because of character.">
+          <rect x="24"  y="196" width="168" height="52" class="f-hair"/>
+          <rect x="204" y="164" width="168" height="84" class="f-plate3"/>
+          <rect x="384" y="120" width="168" height="128" class="f-och" opacity="0.5"/>
+          <rect x="564" y="64"  width="168" height="184" class="f-acc"/>
+
+          <g class="t t--xs t--ink">
+            <text x="36" y="216">01 · BLIND LUCK</text>
+            <text x="216" y="184">02 · HUSTLE</text>
+            <text x="396" y="140">03 · PREPARED MIND</text>
+          </g>
+          <text x="576" y="84" class="t t--xs t--rev">04 · DESTINY</text>
+
+          <g class="t t--xs">
+            <text x="36" y="232">Fortune, fate.</text>
+            <text x="36" y="244">Nothing to do here.</text>
+            <text x="216" y="200">Motion creates surface</text>
+            <text x="216" y="212">area. You stir the petri</text>
+            <text x="216" y="224">dish until something</text>
+            <text x="216" y="236">combines.</text>
+            <text x="396" y="156">You are skilled enough</text>
+            <text x="396" y="168">in a field to notice a</text>
+            <text x="396" y="180">break others can't see.</text>
+            <text x="396" y="192">Sensitivity, not effort.</text>
+          </g>
+          <g class="t t--xs t--rev">
+            <text x="576" y="104">You build a character, a brand,</text>
+            <text x="576" y="118">a reputation so distinctive that</text>
+            <text x="576" y="132">other people's luck becomes yours.</text>
+            <text x="576" y="152">The deep-sea diver: somebody else</text>
+            <text x="576" y="166">finds the wreck, and has to come</text>
+            <text x="576" y="180">to you to reach it.</text>
+            <text x="576" y="204">"It stops being luck. The definition</text>
+            <text x="576" y="218">fades from luck to destiny."</text>
+          </g>
+
+          <path d="M24 266 H 736" class="s-hair" stroke-width="0.7"/>
+          <text x="24" y="284" class="t t--xs t--acc">In 1,000 parallel universes, you want to be wealthy in 999 — not in the fifty where you got lucky. The taxonomy exists to move you rightward.</text>
+        </svg>
+      </div>
+      <figcaption>The fourth type is where the wealth advice and the reputation advice fuse. Buffett is the worked example: he gets offered deals nobody else is offered — bailing out banks, buying warrants — not because he is smarter on the day but because his reputation is a standing asset that generates deal flow. Character as an income-producing instrument is an idea worth sitting with.</figcaption>
+    </figure>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 13</b><span>The three decisions, and how little time we give them</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 256" role="img" aria-label="Paired bars comparing the years locked in by three big life decisions against the time most people spend making them, and Naval's recommended deliberation period.">
+          <g class="t t--sm t--ink" style="font-size:9px"><text x="20" y="40">THE DECISION</text><text x="220" y="40">YEARS IT COMMITS YOU</text><text x="220" y="52" class="t--ox">TIME MOST PEOPLE SPEND DECIDING</text></g>
+          <path d="M20 62 H 740" class="s-ink" stroke-width="1.2"/>
+
+          <g class="t t--xs t--ink">
+            <text x="20" y="94">Where you live</text>
+            <text x="20" y="150">Who you're with</text>
+            <text x="20" y="206">What you do</text>
+          </g>
+
+          <rect x="220" y="80" width="440" height="14" class="f-acc"/>
+          <rect x="220" y="98" width="14"  height="10" class="f-ox"/>
+          <text x="670" y="92" class="t t--xs">10–20 years</text>
+          <text x="242" y="107" class="t t--xs t--ox">days</text>
+
+          <rect x="220" y="136" width="330" height="14" class="f-acc"/>
+          <rect x="220" y="154" width="26"  height="10" class="f-ox"/>
+          <text x="560" y="148" class="t t--xs">a decade, often more</text>
+          <text x="254" y="163" class="t t--xs t--ox">weeks</text>
+
+          <rect x="220" y="192" width="176" height="14" class="f-acc"/>
+          <rect x="220" y="210" width="14"  height="10" class="f-ox"/>
+          <text x="406" y="204" class="t t--xs">≈5 years per job</text>
+          <text x="242" y="219" class="t t--xs t--ox">days</text>
+
+          <path d="M20 236 H 740" class="s-hair" stroke-width="0.7"/>
+          <text x="20" y="252" class="t t--xs t--acc">Naval's rule: spend one to two years on each. "These are highly dominating decisions." Say no to almost everything else to make the room.</text>
+        </svg>
+      </div>
+      <figcaption>Stated this way the mismatch is almost comic, and the prescription — a year or two of deliberate deciding — is one of the few pieces of advice in the book that would cost a normal person nothing to adopt. It is also in direct tension with "impatience with actions," "inspiration is perishable," and "if you can't decide, the answer is no," which the book never reconciles.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Reading, which he treats as the master skill</h5>
+    <p>
+      Naval's reading advice is the most personally revealing material in the book, partly because it is
+      the least strategic. Books were his only friends as an immigrant kid in Queens; he read comics and
+      what he calls mental junk food, and credits the fact that nobody told him what to read. The
+      strategic claim is that reading one to two hours a day puts you in the top fraction of a percent,
+      and accounts for whatever success and intelligence he has. The tactical claim is that the way most
+      adults read is broken.
+    </p>
+    <p>
+      The breakage is a conflict between two trainings: a shredded attention span from feeds, and a
+      school-instilled obligation to finish every book. Together they produce the person stuck on page
+      332 who has stopped reading entirely. His hack is to treat books as blog posts — buy every one
+      mentioned, keep ten to twenty in flight, start in the middle, abandon without guilt.
+      <em>"The number of books completed is a vanity metric."</em>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 14</b><span>How he says he reads, versus how you were taught to</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 300" role="img" aria-label="A funnel showing many books started, most abandoned, a few forming a foundation, and those few reread, alongside a panel of reading rules.">
+          <path d="M40 56 H 400 L 320 132 H 120 Z" class="f-plate3"/>
+          <path d="M120 140 H 320 L 280 200 H 160 Z" class="f-och" opacity="0.45"/>
+          <path d="M160 208 H 280 L 250 264 H 190 Z" class="f-acc"/>
+
+          <g class="t t--xs t--mid t--ink">
+            <text x="220" y="82">10–20 BOOKS IN FLIGHT AT ONCE</text>
+            <text x="220" y="170">SKIMMED, JUMPED, ABANDONED</text>
+          </g>
+          <text x="220" y="100" class="t t--xs t--mid">every book anyone mentions gets bought</text>
+          <text x="220" y="186" class="t t--xs t--mid">"most books make one point, then give you examples"</text>
+          <text x="220" y="232" class="t t--xs t--mid t--rev">THE FEW THAT ARE</text>
+          <text x="220" y="246" class="t t--xs t--mid t--rev">THE FOUNDATION</text>
+          <path d="M220 264 V 276" class="s-acc" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="220" y="290" class="t t--xs t--mid t--acc">…and are reread, repeatedly</text>
+
+          <path d="M430 46 V 292" class="s-hair" stroke-width="0.7"/>
+          <g class="t t--xs t--ink"><text x="450" y="60">THE RULES</text></g>
+          <g class="s-hair" stroke-width="0.6">
+            <path d="M450 74 H740"/><path d="M450 104 H740"/><path d="M450 134 H740"/><path d="M450 164 H740"/><path d="M450 194 H740"/><path d="M450 224 H740"/>
+          </g>
+          <g class="t t--xs">
+            <text x="450" y="94">Read what you love until you love to read</text>
+            <text x="450" y="124">Foundations first: arithmetic, probability, microeconomics,</text>
+            <text x="450" y="136">the hard sciences. "No book in the library should scare you."</text>
+            <text x="450" y="156">Originals before commentary — Darwin before Dawkins,</text>
+            <text x="450" y="168">Smith or Marx before whoever is interpreting them now</text>
+            <text x="450" y="188">The older the problem, the older the solution</text>
+            <text x="450" y="218">Confusion is the soreness of a working muscle</text>
+            <text x="450" y="248">Notes are optional; teaching is not. "Teaching forces learning."</text>
+          </g>
+          <text x="450" y="274" class="t t--xs t--ox">The failure case he names: people who are very well-read and</text>
+          <text x="450" y="288" class="t t--xs t--ox">not very smart, because they read the wrong things in the wrong order.</text>
+        </svg>
+      </div>
+      <figcaption>"Foundation is critical" is the load-bearing claim here — that reading a hundred derivative books on evolution without reading Darwin leaves you judging every new idea against axioms you never examined. It is also the strongest internal argument against reading the <em>Almanack</em> as a foundation, which is presumably why Jorgenson prints thirty-five pages of primary sources at the back.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= HAPPINESS ======================= -->
+  <section class="movement" id="happiness" aria-labelledby="hp-h">
+    <div class="movement__head">
+      <span class="roman">Part II</span>
+      <h2 id="hp-h">Happiness: A Skill, and Mostly a Subtraction</h2>
+      <span class="gloss">"The three big ones in life are wealth, health, and happiness. We pursue them in that order, but their importance is reverse."</span>
+    </div>
+
+    <p class="lede">
+      Naval's most credible claim about happiness is a before-and-after. Ten years ago he would have rated
+      himself 2 or 3 out of 10, and would have dismissed the question as uninteresting. He now says 9, and
+      says money is a very small piece of it. <strong>The whole of Part II rests on treating happiness as a
+      trainable skill rather than a temperament</strong> — like nutrition, like fitness — with a genetic
+      range you cannot escape and a large conditioned component you can.
+    </p>
+
+    <p>
+      His working definition is subtractive and worth stating precisely: <em>happiness is what is there
+      when you remove the sense that something is missing.</em> Not positive thinking — he argues every
+      positive thought contains its negative as contrast, which is duality, which is the Tao Te Ching's
+      point long before it was his. Happiness is the absence of desire, especially desire for external
+      things, and it shows up as internal silence. He is careful to distinguish it from joy: "You'll
+      notice when I say happiness, I mean peace." Peace is happiness at rest; happiness is peace in
+      motion.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 15</b><span>Two models of happiness, one of which does not work</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 268" role="img" aria-label="A comparison of the additive model of happiness, where goods stack and the baseline resets, with the subtractive model, where the sense of something missing is removed.">
+          <g class="t t--sm" style="font-size:9px"><text x="20" y="40" class="t--ox">ADDITIVE · WHAT WE DO</text><text x="420" y="40" class="t--acc">SUBTRACTIVE · WHAT HE ARGUES</text></g>
+          <path d="M20 50 H 360" class="s-ox" stroke-width="1.4"/>
+          <path d="M410 50 H 740" class="s-acc" stroke-width="1.4"/>
+
+          <rect x="40" y="180" width="70" height="26" class="f-plate3"/>
+          <rect x="40" y="152" width="70" height="26" class="f-plate3"/>
+          <rect x="40" y="124" width="70" height="26" class="f-plate3"/>
+          <rect x="40" y="96"  width="70" height="26" class="f-plate3"/>
+          <g class="t t--xs t--mid">
+            <text x="75" y="197">money</text><text x="75" y="169">status</text><text x="75" y="141">the car</text><text x="75" y="113">the house</text>
+          </g>
+          <path d="M120 110 C 170 110, 175 196, 215 196" class="s-ox" fill="none" stroke-width="1.1"/>
+          <path d="M208 191 L 220 196 L 208 201 Z" class="f-ox"/>
+          <path d="M225 196 H 350" class="s-graph" stroke-width="1" stroke-dasharray="4 4"/>
+          <g class="t t--xs t--ox">
+            <text x="180" y="128">hedonic</text>
+            <text x="180" y="140">adaptation</text>
+          </g>
+          <text x="230" y="188" class="t t--xs">baseline, unchanged</text>
+          <text x="20" y="228" class="t t--xs t--ox">"I know the instant the car arrives I won't care about it anymore. I'm addicted to the desiring."</text>
+
+          <path d="M430 196 H 720" class="s-graph" stroke-width="1"/>
+          <rect x="430" y="120" width="290" height="76" class="f-ox" opacity="0.14"/>
+          <text x="575" y="152" class="t t--xs t--mid t--ox">THE SENSE THAT SOMETHING IS MISSING</text>
+          <text x="575" y="168" class="t t--xs t--mid">desire · regret · nexting · comparison</text>
+          <path d="M575 112 V 84" class="s-acc" stroke-width="1.2"/>
+          <path d="M570 92 L 575 80 L 580 92 Z" class="f-acc"/>
+          <text x="575" y="72" class="t t--xs t--mid t--acc">REMOVE THIS</text>
+          <text x="575" y="212" class="t t--xs t--mid">what is left is not neutrality — it is the state small children live in</text>
+          <text x="410" y="244" class="t t--xs t--acc">"Happiness is the state when nothing is missing. When nothing is</text>
+          <text x="410" y="258" class="t t--xs t--acc">missing, your mind shuts down and stops running into past or future."</text>
+        </svg>
+      </div>
+      <figcaption>The subtractive model has a real advantage: it explains why the additive one keeps failing without appealing to anyone's character. It has a real cost too, which the book underplays — the same subtraction that removes anxiety removes the pull that makes people build things, and Naval has been notably ambivalent about whether he still wants that pull.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Desire as a contract</h5>
+    <p>
+      The line most people take from the book is this: <strong>desire is a contract you make with yourself
+      to be unhappy until you get what you want.</strong> It is not an instruction to want nothing — Naval
+      is explicit that you are a living creature, you locally reverse entropy, you should self-actualise
+      and do things. It is an instruction to <em>count</em>. Hold one big desire at a time, know that it
+      is the axis of your suffering, and recognise that you have chosen where to be unhappy.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 16</b><span>The loop, and the one place to intervene</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 302" role="img" aria-label="A circular diagram of the desire loop: desire, striving, attainment, adaptation and a new desire, with the intervention point marked at the moment of desire.">
+          <circle cx="250" cy="150" r="96" class="f-none s-hair" stroke-width="1"/>
+          <g class="f-plate" style="stroke:var(--ink);stroke-width:1.2">
+            <circle cx="250" cy="54"  r="26"/>
+            <circle cx="341" cy="120" r="26"/>
+            <circle cx="307" cy="226" r="26"/>
+            <circle cx="193" cy="226" r="26"/>
+            <circle cx="159" cy="120" r="26"/>
+          </g>
+          <g class="t t--xs t--mid t--ink">
+            <text x="250" y="52">DESIRE</text><text x="250" y="64">1</text>
+            <text x="341" y="118">STRIVE</text><text x="341" y="130">2</text>
+            <text x="307" y="224">GET IT</text><text x="307" y="236">3</text>
+            <text x="193" y="220">ADAPT</text><text x="193" y="232">4</text>
+            <text x="159" y="118">WANT</text><text x="159" y="130">MORE</text>
+          </g>
+          <g class="s-graph" fill="none" stroke-width="1">
+            <path d="M278 68 A 96 96 0 0 1 336 94"/>
+            <path d="M344 148 A 96 96 0 0 1 325 203"/>
+            <path d="M281 234 A 96 96 0 0 1 219 234"/>
+            <path d="M175 203 A 96 96 0 0 1 156 148"/>
+            <path d="M164 94 A 96 96 0 0 1 222 68"/>
+          </g>
+          <g class="f-graph">
+            <path d="M332 88 L 340 98 L 328 99 Z"/><path d="M328 199 L 324 210 L 335 206 Z"/>
+            <path d="M224 231 L 214 238 L 224 242 Z"/><path d="M158 152 L 152 142 L 164 143 Z"/>
+            <path d="M218 63 L 228 70 L 218 74 Z"/>
+          </g>
+          <path d="M250 28 V 6" class="s-acc" stroke-width="1.4"/>
+          <path d="M245 16 L 250 4 L 255 16 Z" class="f-acc"/>
+
+          <path d="M400 44 V 258" class="s-hair" stroke-width="0.7"/>
+          <g class="t t--xs">
+            <text x="424" y="62" class="t--acc">THE ONLY EXIT IS AT 1</text>
+            <text x="424" y="88">Steps 2 through 5 are automatic. By the time you</text>
+            <text x="424" y="102">are striving, the contract is already signed.</text>
+            <text x="424" y="130" class="t--ink">The test, applied in the moment:</text>
+            <text x="424" y="148">"Is it so important to me that I'll be unhappy</text>
+            <text x="424" y="162">unless this goes my way?" With the vast majority</text>
+            <text x="424" y="176">of things, he says, the answer is plainly no.</text>
+            <text x="424" y="204" class="t--ink">The quota:</text>
+            <text x="424" y="222">one big desire at a time. Two and you are distracted;</text>
+            <text x="424" y="236">"even one is hard enough."</text>
+          </g>
+          <text x="424" y="272" class="t t--xs t--ox">"It's way more important to perfect your desires than to</text>
+          <text x="424" y="286" class="t t--xs t--ox">try to do something you don't 100 percent desire."</text>
+        </svg>
+      </div>
+      <figcaption>What makes this more than a Buddhism restatement is the accounting metaphor. A contract has terms and a price, and framing desire that way makes the cost visible before you sign rather than after. Whether anyone can actually intervene at step 1 — Naval, with a car on order, refreshing forums nightly, apparently could not — is a separate question the book answers honestly and does not resolve.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Envy, and the single-player game</h5>
+    <p>
+      The envy passage is the most personally useful thing in Part II. Jealousy was hard for him, and what
+      dissolved it was noticing that the swap is not itemisable. You cannot take his body, her money, his
+      personality. You would have to be that person entirely — their reactions, their family, their
+      self-image, their happiness level, 24/7. Once the trade is stated as a wholesale swap, almost nobody
+      accepts it, and the envy has nowhere to stand.
+    </p>
+    <p>
+      Underneath sits the game distinction. Looking good, making money, buying a house, politics,
+      academia, status — all multiplayer, all externally scored. Health, meditation, yoga, reading,
+      happiness — single-player, no external validation, no scoreboard. He argues we have become so
+      socially driven that we no longer know how to win the single-player games, and that this is exactly
+      why yoga and meditation are so hard to sustain: they have no extrinsic value at all.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 17</b><span>Which game is this, and who is keeping score</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 276" role="img" aria-label="A two-column comparison of multiplayer games and single-player games, with what each is scored by and why single-player games are hard to sustain.">
+          <path d="M20 52 H 370" class="s-ox" stroke-width="1.4"/>
+          <path d="M390 52 H 740" class="s-acc" stroke-width="1.4"/>
+          <g class="t t--sm" style="font-size:9px"><text x="20" y="44" class="t--ox">MULTIPLAYER · EXTERNALLY SCORED</text><text x="390" y="44" class="t--acc">SINGLE-PLAYER · UNSCORED</text></g>
+
+          <g class="s-hair" stroke-width="0.6">
+            <path d="M20 84 H370"/><path d="M20 112 H370"/><path d="M20 140 H370"/><path d="M20 168 H370"/><path d="M20 196 H370"/>
+            <path d="M390 84 H740"/><path d="M390 112 H740"/><path d="M390 140 H740"/><path d="M390 168 H740"/><path d="M390 196 H740"/>
+          </g>
+          <g class="t t--xs t--ink">
+            <text x="20" y="76">Making money</text>
+            <text x="20" y="104">Looking good; the gym as display</text>
+            <text x="20" y="132">Status, titles, rankings</text>
+            <text x="20" y="160">Politics and academia</text>
+            <text x="20" y="188">Sport; any contest with a loser</text>
+            <text x="390" y="76">Being happy</text>
+            <text x="390" y="104">Health, for its own sake</text>
+            <text x="390" y="132">Meditation and yoga</text>
+            <text x="390" y="160">Reading what interests you</text>
+            <text x="390" y="188">Peace of mind</text>
+          </g>
+          <g class="t t--xs">
+            <text x="20" y="220" class="t--ox">Everyone can see whether you're winning.</text>
+            <text x="20" y="234">That is the appeal, and the trap: you can only</text>
+            <text x="20" y="248">rise by someone else falling.</text>
+            <text x="390" y="220" class="t--acc">Nobody can see it, so nothing sustains it</text>
+            <text x="390" y="234">but the thing itself. Which is why almost</text>
+            <text x="390" y="248">everyone quits. "All the real scorecards are internal."</text>
+          </g>
+          <text x="20" y="270" class="t t--xs">Buffett's test, paraphrased in the book: would you rather be the world's best lover and known as the worst, or the worst and known as the best?</text>
+        </svg>
+      </div>
+      <figcaption>The framing earns its keep and then overreaches. "The reality is life is a single-player game. You're born alone. You're going to die alone… you're gone in three generations, and nobody cares" is doing something other than describing games — it is a metaphysical claim, and it sits uneasily beside a book that elsewhere makes marriage, children and long-term partners central to a good life.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">The habits, itemised</h5>
+    <p>
+      Where the philosophy is abstract, the practices are not, and Naval lists them plainly enough to be
+      audited. The unifying logic is that you are a combination of your habits and the people you spend
+      the most time with — the "five chimps theory," that you can predict a chimp's behaviour from the
+      five it hangs around. He treats friend selection as a happiness intervention, which is
+      uncomfortable and probably correct.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 18</b><span>Everything he names as an actual practice</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 334" role="img" aria-label="A ledger of the concrete happiness habits named in the book, grouped into subtractions, additions and reframes.">
+          <g class="t t--sm" style="font-size:9px"><text x="20" y="40" class="t--ox">SUBTRACT</text><text x="270" y="40" class="t--cool">ADD</text><text x="520" y="40">REFRAME</text></g>
+          <path d="M20 48 H 250" class="s-ox" stroke-width="1.2"/>
+          <path d="M270 48 H 500" class="s-cool" stroke-width="1.2"/>
+          <path d="M520 48 H 740" class="s-ink" stroke-width="1.2"/>
+
+          <g class="t t--xs">
+            <text x="20" y="72">Alcohol</text>
+            <text x="20" y="94">Sugar</text>
+            <text x="20" y="116">Caffeine</text>
+            <text x="20" y="138">Facebook, Snapchat, Twitter</text>
+            <text x="20" y="160">Video games</text>
+            <text x="20" y="182">The news</text>
+            <text x="20" y="204">People who are permanently</text>
+            <text x="20" y="216">in conflict</text>
+            <text x="20" y="238">Secrets — "the more you have,</text>
+            <text x="20" y="250">the less happy you'll be"</text>
+            <text x="20" y="272">Phone, calendar, alarm clock</text>
+            <text x="20" y="284">— his three worst apps</text>
+
+            <text x="270" y="72">A workout, every single day</text>
+            <text x="270" y="94">Sunlight on skin</text>
+            <text x="270" y="116">Insight meditation</text>
+            <text x="270" y="138">Time with people happier than you</text>
+            <text x="270" y="160">Walking meetings</text>
+            <text x="270" y="182">Cold showers, walked into</text>
+            <text x="270" y="194">without hesitating</text>
+            <text x="270" y="216">Telling your friends you are a</text>
+            <text x="270" y="228">happy person, so consistency</text>
+            <text x="270" y="240">bias does the rest</text>
+            <text x="270" y="262">Music and exercise as a reset</text>
+            <text x="270" y="274">when caught in a funk</text>
+
+            <text x="520" y="72">"What is the positive of this?"</text>
+            <text x="520" y="84">— practised until sub-second</text>
+            <text x="520" y="106">"Stop asking why and start</text>
+            <text x="520" y="118">saying wow"</text>
+            <text x="520" y="140">"Is it so important that I'll be</text>
+            <text x="520" y="152">unhappy unless it goes my way?"</text>
+            <text x="520" y="174">One big desire at a time</text>
+            <text x="520" y="196">Look up, and smile</text>
+            <text x="520" y="218">Death, kept in view</text>
+            <text x="520" y="240">A personal metric: what share</text>
+            <text x="520" y="252">of today was obligation rather</text>
+            <text x="520" y="264">than interest?</text>
+          </g>
+          <path d="M20 296 H 740" class="s-hair" stroke-width="0.7"/>
+          <text x="20" y="310" class="t t--xs t--acc">Changing one: pick one thing · cultivate the desire · visualise it · plan a sustainable path ·</text>
+          <text x="20" y="324" class="t t--xs t--acc">name triggers and substitutes · tell your friends · track meticulously · bake in the new self-image.</text>
+        </svg>
+      </div>
+      <figcaption>Two things stand out. First, how much of the column on the left is dopamine management rather than morality — the argument against video games and social media is about withdrawal cycles, not virtue. Second, that "tell your friends you're a happy person" is a deliberate use of a cognitive bias against yourself, which is either clever or slightly alarming, and possibly both.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Acceptance, and the death hack</h5>
+    <p>
+      The operational core of the happiness section is a three-way test. In any situation you can change
+      it, accept it, or leave it. What is not on the list — and what Naval says is responsible for most of
+      our misery — is the fourth thing everyone actually does: sit around wishing it were different while
+      doing none of the three. His most-used private word, he says, is a single one: <em>accept.</em>
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 19</b><span>Three doors, and the one that isn't</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 256" role="img" aria-label="A decision diagram with three valid responses to a situation — change it, accept it, leave it — and a fourth invalid response of wishing without acting.">
+          <rect x="290" y="36" width="180" height="42" class="f-plate" style="stroke:var(--ink);stroke-width:1.4"/>
+          <text x="380" y="54" class="t t--xs t--mid t--ink">THE THING BOTHERING YOU</text>
+          <text x="380" y="68" class="t t--xs t--mid">right now, today</text>
+
+          <g class="s-graph" stroke-width="1" fill="none">
+            <path d="M340 78 C 300 106, 190 106, 150 122"/>
+            <path d="M380 78 V 122"/>
+            <path d="M420 78 C 460 106, 570 106, 610 122"/>
+          </g>
+
+          <rect x="60"  y="126" width="180" height="60" class="f-cool" opacity="0.22"/>
+          <rect x="290" y="126" width="180" height="60" class="f-acc" opacity="0.22"/>
+          <rect x="520" y="126" width="180" height="60" class="f-och" opacity="0.22"/>
+
+          <g class="t t--xs t--mid t--ink">
+            <text x="150" y="146">CHANGE IT</text><text x="380" y="146">ACCEPT IT</text><text x="610" y="146">LEAVE IT</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="150" y="164">This is a desire. It will</text>
+            <text x="150" y="176">cost you until it's done.</text>
+            <text x="380" y="164">"Be okay whatever the</text>
+            <text x="380" y="176">outcome is." Step back.</text>
+            <text x="610" y="164">Cleanest of the three,</text>
+            <text x="610" y="176">and least often taken.</text>
+          </g>
+
+          <rect x="230" y="204" width="300" height="34" class="f-ox" opacity="0.12"/>
+          <text x="380" y="220" class="t t--xs t--mid t--ox">WISH IT WERE DIFFERENT · DO NONE OF THE THREE</text>
+          <text x="380" y="234" class="t t--xs t--mid">"That struggle or aversion is responsible for most of our misery."</text>
+        </svg>
+      </div>
+      <figcaption>The value is in making the fourth box explicit. Most unhappiness does not come from choosing badly among the three; it comes from not noticing you are refusing to choose. Naval's two acceptance hacks — writing down previous sufferings and tracing what came of them, and asking "what is the positive of this?" until the answer is instant — are the only technique in the book he claims to have measurably improved at.</figcaption>
+    </figure>
+
+    <p>
+      Underneath acceptance he puts something bleaker, and states it without softening: <em>embrace
+      death.</em> There is no legacy. Our works will be dust, our civilisations dust, our planet dust. He
+      uses the Sumerians as the test — name one — and follows it with the thought that in a hundred
+      thousand years, "Americans" will land the same way. The move is meant to be liberating rather than
+      nihilistic: if the whole thing is a firefly blink, unhappiness buys nobody anything, and the
+      remaining question is only how you interpret the time.
+    </p>
+    <div class="pull">
+      "You're going to die one day, and none of this is going to matter. So enjoy yourself. Do something
+      positive. Project some love. Make someone happy. Laugh a little bit. Appreciate the moment. And do
+      your work."
+      <cite>p. 155</cite>
+    </div>
+  </section>
+
+  <!-- ======================= SAVING YOURSELF ======================= -->
+  <section class="movement" id="self" aria-labelledby="sf-h">
+    <div class="movement__head">
+      <span class="roman">Part II, cont.</span>
+      <h2 id="sf-h">Saving Yourself: Body, Habits, Mind</h2>
+      <span class="gloss">"Doctors won't make you healthy. Nutritionists won't make you slim. Gurus won't make you calm."</span>
+    </div>
+
+    <p class="lede">
+      The section opens with a priority ordering that most people would not say out loud: Naval's number
+      one priority in life, above his happiness, above his family, above his work, is his own health.
+      Physical first, then mental, then spiritual, then his family's health, then his family's wellbeing,
+      and only then the world. <strong>The ordering exists to kill a specific excuse.</strong> Because
+      health is genuinely first, he can never say he does not have time to exercise.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 20</b><span>The stack, in his stated order</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 284" role="img" aria-label="A six-level priority stack from physical health at the base to the rest of the world at the top.">
+          <rect x="140" y="204" width="480" height="34" class="f-acc"/>
+          <rect x="170" y="166" width="420" height="34" class="f-acc" opacity="0.72"/>
+          <rect x="200" y="128" width="360" height="34" class="f-acc" opacity="0.5"/>
+          <rect x="230" y="90"  width="300" height="34" class="f-och" opacity="0.5"/>
+          <rect x="260" y="52"  width="240" height="34" class="f-och" opacity="0.32"/>
+          <rect x="290" y="14"  width="180" height="34" class="f-plate3"/>
+
+          <g class="t t--xs t--mid">
+            <text x="380" y="225" class="t--rev">1 · PHYSICAL HEALTH</text>
+            <text x="380" y="187" class="t--rev">2 · MENTAL HEALTH</text>
+            <text x="380" y="149" class="t--ink">3 · SPIRITUAL HEALTH</text>
+            <text x="380" y="111" class="t--ink">4 · FAMILY'S HEALTH</text>
+            <text x="380" y="73" class="t--ink">5 · FAMILY'S WELLBEING</text>
+            <text x="380" y="35" class="t--ink">6 · EVERYTHING ELSE</text>
+          </g>
+
+          <path d="M100 238 V 14" class="s-hair" stroke-width="0.7"/>
+          <g class="t t--xs t--acc">
+            <text x="92" y="232" class="t--end">non-negotiable</text>
+            <text x="92" y="30" class="t--end">can wait</text>
+          </g>
+          <text x="640" y="222" class="t t--xs">"I do not start my day</text>
+          <text x="640" y="234" class="t t--xs">until I've worked out."</text>
+          <text x="20" y="262" class="t t--xs">The habit he names as most positively life-changing is not a philosophy: it is a light workout,</text>
+          <text x="20" y="276" class="t t--xs">done every single day, with breaks countable on one hand per year.</text>
+        </svg>
+      </div>
+      <figcaption>"I don't have time" is just another way of saying "it's not a priority" — and the fix is not more discipline but an explicit ordering, made once, so the daily negotiation never happens. That is a genuinely portable idea, and it does not require agreeing with the order he chose.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">Diet, briefly and cautiously</h5>
+    <p>
+      He hedges heavily here and is right to: "diet and nutrition are like politics — everybody thinks
+      they're an expert," and identity gets wrapped up in what people already eat. The one mechanism he
+      commits to is the interaction rather than either macronutrient alone. <strong>Dietary fat drives
+      satiety; dietary sugar drives hunger; the sugar effect dominates.</strong> Which is why every
+      dessert is fat and carbohydrate together, why the combination barely occurs in nature outside
+      tropical fruit, and why any sensible diet avoids it. The rest is heuristics: the more processed the
+      food, the less of it; quality control leads to quantity control; subtract before you add; ditch the
+      extremists and anything invented in the last few hundred years.
+    </p>
+
+    <h5 class="sub-h">Meditation, and the sixty-day experiment</h5>
+    <p>
+      Naval is unusually specific about meditation, and unusually deflationary about what it does. It will
+      not give you control of your mind. Its advantage is recognising how out of control the mind already
+      is — "a monkey flinging feces, running around the room" — because you have to see the creature in
+      operation before you feel any distaste for it, and in that separation is the liberation. He is also
+      honest that it helps less than you would hope: "You can be a long-time meditator, but if someone
+      says the wrong thing in the wrong way, you go back to your ego-driven self."
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 21</b><span>Four methods he tried, and what each is for</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 300" role="img" aria-label="A table of meditation methods Naval describes — choiceless awareness, the sixty-minute surrender, transcendental chanting, and incidental practices — with dose, mechanism and verdict.">
+          <path d="M20 54 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px"><text x="20" y="46">METHOD</text><text x="210" y="46">DOSE</text><text x="320" y="46">WHAT IT ACTUALLY DOES</text></g>
+          <g class="s-hair" stroke-width="0.6"><path d="M20 118 H740"/><path d="M20 194 H740"/><path d="M20 238 H740"/></g>
+          <g class="s-hair" stroke-width="0.6"><path d="M200 54 V 282"/><path d="M310 54 V 282"/></g>
+
+          <g class="t t--xs t--ink">
+            <text x="20" y="76">Choiceless awareness</text>
+            <text x="20" y="90">(nonjudgmental awareness)</text>
+            <text x="20" y="140">The surrender hour</text>
+            <text x="20" y="212">Transcendental / chanting</text>
+            <text x="20" y="258">Incidental practice</text>
+          </g>
+          <g class="t t--xs">
+            <text x="210" y="76">10–15 min,</text>
+            <text x="210" y="90">walking, outdoors</text>
+            <text x="210" y="140">60 min, first thing,</text>
+            <text x="210" y="154">for 60 days</text>
+            <text x="210" y="212">variable</text>
+            <text x="210" y="258">free</text>
+
+            <text x="320" y="72">Walk without judging anything you see. He found roughly</text>
+            <text x="320" y="86">90% of his own thoughts were fear-based, 10% desire-based —</text>
+            <text x="320" y="100">and that naming a fear tends to dissolve it. His preferred method.</text>
+            <text x="320" y="136" class="t--acc">Sit, eyes closed, make no effort for or against anything. Unresolved</text>
+            <text x="320" y="150">things surface "like a giant inbox of unanswered emails going back to</text>
+            <text x="320" y="164">childhood," and get resolved by observation alone. The stated goal is</text>
+            <text x="320" y="178">a morning where the inbox is empty. Anything under an hour, he says,</text>
+            <text x="320" y="192">is not long enough to get there.</text>
+            <text x="320" y="212">Repetitive chanting to make white noise and bury the thoughts.</text>
+            <text x="320" y="226">He describes it; he does not recommend it.</text>
+            <text x="320" y="258">Hiking is walking meditation · journaling is writing meditation ·</text>
+            <text x="320" y="272">praying is gratitude meditation · showering is accidental meditation.</text>
+          </g>
+          <rect x="20" y="120" width="720" height="74" class="f-acc" opacity="0.06"/>
+        </svg>
+      </div>
+      <figcaption>The "inbox zero" metaphor is the most concrete claim about meditation I have read from someone with no institutional stake in it, and it is falsifiable in the small way that matters: sixty days, one hour, first thing. Naval's framing is that after sixty days you will be tired of listening to your own mind, which is a lower and much more believable promise than enlightenment.</figcaption>
+    </figure>
+
+    <p>
+      The adjacent lesson comes from cold showers, learned via Wim Hof and undertaken by a man who says
+      he is constitutionally opposed to ice baths. He worked from wincing his way in to walking straight
+      under full blast, and extracted a general principle: <em>most of our suffering comes from
+      avoidance.</em> The suffering in a cold shower is almost entirely the tiptoeing. Once you are in,
+      it is not suffering — it is just cold. Your body saying it is cold is a different event from your
+      mind saying it is cold.
+    </p>
+
+    <h5 class="sub-h">Habits, and honesty about change</h5>
+    <p>
+      His account of habit change is refreshingly unsentimental. We are thousands of habits running
+      subconsciously with a little neocortex left over for novelty; you become your habits. But he pushes
+      back hard on the language of trying: "Whenever we say we're going to try to do something or try to
+      form a habit, we're wimping out." When we really want something we simply do it — we approach the
+      person, we take the drink. So the honest move when you cannot start is not more resolve but a
+      smaller, externally committed goal, and an admission that you do not want the change yet.
+    </p>
+    <div class="claim">
+      <b>Impatience with actions, patience with results</b>
+      Anything that has to be done, do now — inspiration is perishable. But markets take time to adopt
+      products, people take time to trust each other, and products take time to polish. The failure mode
+      most people run is exactly inverted: patient about starting, impatient about outcomes.
+    </div>
+  </section>
+
+  <!-- ======================= PHILOSOPHY ======================= -->
+  <section class="movement" id="philosophy" aria-labelledby="ph-h">
+    <div class="movement__head">
+      <span class="roman">Part II, end</span>
+      <h2 id="ph-h">Philosophy: Rational Buddhism</h2>
+      <span class="gloss">Eleven pages, carrying everything the previous hundred and sixty set up.</span>
+    </div>
+
+    <p class="lede">
+      Asked for the meaning of life, Naval gives three answers rather than one, and the sequence matters
+      because each undercuts the last. <strong>First: it is personal, nobody can hand it to you, and the
+      important part is not the answer but sitting with the question for years.</strong> Second: there
+      is no meaning — you were dead for ten billion years and will be dead for another seventy, anything
+      you do will fade, and if there were an intrinsic meaning you could always ask why that, and it
+      would be turtles all the way down. Third, and stranger: perhaps there is one, and it is
+      unsatisfying — living systems locally reverse entropy while globally accelerating it, so everything
+      you build hastens the heat death in which all distinctions vanish and we become one thing.
+    </p>
+
+    <p>
+      "Rational Buddhism" is his name for the reconciliation. The Buddhist internal technology stays —
+      meditation, the analysis of desire, the base layer of awareness beneath the monkey mind — because
+      he says he has verified those for himself. What goes is anything unfalsifiable: past-life karma,
+      chakras, levitation, superpowers. On the other pole sits evolution, which he treats as the binding
+      explanatory principle for why humans are the way they are. <em>"Try everything, test it for
+      yourself, be skeptical, keep what's useful, and discard what's not."</em>
+    </p>
+
+    <h5 class="sub-h">Values, stated as refusals</h5>
+    <p>
+      His core values are all phrased as things he will not do, which is more useful than the usual
+      positive formulation because refusals are testable. Total honesty, because dishonesty forks his
+      mind into threads and pulls him out of the present. No short-term dealing — if you deal
+      short-term with someone else, he will stop dealing with you. Only peer relationships, neither above
+      nor below. No anger, and no angry people; he cuts them out without judging them, having been through
+      it himself. And the point of the list: finding good partners, colleagues and spouses is mostly
+      finding people whose values line up, because when they line up the small things stop mattering.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 22</b><span>Life Formulas I, 2008 — the whole system as an equation tree</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 396" role="img" aria-label="An equation tree expanding Naval's 2008 Life Formulas from happiness down through health, wealth, income, leverage and specific knowledge.">
+          <rect x="230" y="20" width="300" height="34" class="f-acc"/>
+          <text x="380" y="42" class="t t--xs t--mid t--rev">HAPPINESS = HEALTH + WEALTH + GOOD RELATIONSHIPS</text>
+
+          <g class="s-graph" stroke-width="1" fill="none">
+            <path d="M310 54 V 74 H 150 V 92"/>
+            <path d="M420 54 V 74 H 470 V 92"/>
+            <path d="M500 54 V 74 H 660 V 92"/>
+          </g>
+
+          <rect x="40"  y="92" width="220" height="30" class="f-plate3"/>
+          <rect x="360" y="92" width="220" height="30" class="f-plate3"/>
+          <rect x="600" y="92" width="140" height="30" class="f-plate3"/>
+          <text x="150" y="112" class="t t--xs t--mid t--ink">HEALTH = EXERCISE + DIET + SLEEP</text>
+          <text x="470" y="112" class="t t--xs t--mid t--ink">WEALTH = INCOME + WEALTH × RoI</text>
+          <text x="670" y="112" class="t t--xs t--mid">(left undefined)</text>
+
+          <g class="s-graph" stroke-width="1" fill="none">
+            <path d="M100 122 V 140 H 70 V 156"/>
+            <path d="M150 122 V 156"/>
+            <path d="M200 122 V 140 H 235 V 156"/>
+            <path d="M420 122 V 156"/>
+            <path d="M530 122 V 140 H 590 V 156"/>
+          </g>
+
+          <rect x="20"  y="156" width="110" height="52" class="f-plate" style="stroke:var(--hair);stroke-width:1"/>
+          <rect x="140" y="156" width="80"  height="52" class="f-plate" style="stroke:var(--hair);stroke-width:1"/>
+          <rect x="230" y="156" width="110" height="52" class="f-plate" style="stroke:var(--hair);stroke-width:1"/>
+          <rect x="360" y="156" width="180" height="52" class="f-och" opacity="0.35"/>
+          <rect x="550" y="156" width="190" height="52" class="f-plate" style="stroke:var(--hair);stroke-width:1"/>
+
+          <g class="t t--xs t--mid t--ink">
+            <text x="75" y="174">EXERCISE</text><text x="180" y="174">DIET</text><text x="285" y="174">SLEEP</text>
+            <text x="450" y="174">INCOME</text><text x="645" y="174">RETURN ON INVESTMENT</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="75" y="188">high-intensity</text><text x="75" y="200">resistance + sport + rest</text>
+            <text x="180" y="188">natural foods +</text><text x="180" y="200">fasting + plants</text>
+            <text x="285" y="188">no alarms + 8–9 hrs</text><text x="285" y="200">+ circadian rhythm</text>
+            <text x="450" y="190">accountability + leverage</text><text x="450" y="202">+ specific knowledge</text>
+            <text x="645" y="188">buy-and-hold + valuation</text><text x="645" y="200">+ margin of safety</text>
+          </g>
+
+          <g class="s-graph" stroke-width="1" fill="none">
+            <path d="M400 208 V 226 H 200 V 244"/>
+            <path d="M450 208 V 244"/>
+            <path d="M500 208 V 226 H 620 V 244"/>
+          </g>
+          <rect x="80"  y="244" width="240" height="46" class="f-plate3"/>
+          <rect x="350" y="244" width="200" height="46" class="f-acc" opacity="0.35"/>
+          <rect x="560" y="244" width="180" height="46" class="f-plate3"/>
+          <g class="t t--xs t--mid t--ink">
+            <text x="200" y="262">ACCOUNTABILITY</text><text x="450" y="262">LEVERAGE</text><text x="650" y="262">SPECIFIC KNOWLEDGE</text>
+          </g>
+          <g class="t t--xs t--mid">
+            <text x="200" y="278">personal brand + platform</text><text x="200" y="290">+ taking risk</text>
+            <text x="450" y="278">capital + people</text><text x="450" y="290">+ intellectual property</text>
+            <text x="650" y="278">knowing how to do something</text><text x="650" y="290">society can't yet train for</text>
+          </g>
+
+          <path d="M20 314 H 740" class="s-hair" stroke-width="0.7"/>
+          <g class="t t--xs">
+            <text x="20" y="334" class="t--acc">Written in 2008, eleven years before the tweetstorm that made him famous. The vocabulary is already complete.</text>
+            <text x="20" y="352">Note what is not expanded: "good relationships" gets a term in the top line and no formula beneath it. The one input</text>
+            <text x="20" y="366">that cannot be decomposed into a controllable process is the one the system has nothing to say about.</text>
+            <text x="20" y="386" class="t--ox">His own caveat, printed above it: "These are notes to myself. Your frame of reference, and therefore your calculations, may vary."</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>This single page from 2008 is the best proof in the book that Naval's framework is genuinely his and genuinely old — the famous 2019 tweetstorm is this diagram, expanded and given better lines. It is also the clearest exhibit for the critique: a life rendered as an engineering system, in which every term decomposes into inputs you control, except the one about other people.</figcaption>
+    </figure>
+
+    <p>
+      The section closes on the present moment, and here the writing is at its best because it stops
+      being advice. There is nothing but this moment; nobody has gone back in time, nobody has usefully
+      predicted the future. "You're dying and being reborn at every moment. It's up to you whether to
+      forget or remember that." And the epigraph he chooses, from the <em>Iliad</em>: everything is more
+      beautiful because we're doomed — you will never be lovelier than you are now, and we will never be
+      here again.
+    </p>
+
+    <div class="slab wide">
+      "A calm mind, a fit body, and a house full of love. These things cannot be bought. They must be earned."
+      <span>p. 124 · the hinge between the two halves of the book</span>
+    </div>
+  </section>
+
+  <!-- ======================= TENSIONS ======================= -->
+  <section class="movement" id="tension" aria-labelledby="tn-h">
+    <div class="movement__head">
+      <span class="roman">Push back</span>
+      <h2 id="tn-h">Where the Almanack Is Weakest</h2>
+      <span class="gloss">Naval's own instruction: consider everything, take nothing as gospel, bring your A-game.</span>
+    </div>
+
+    <p class="lede">
+      Tim Ferriss's foreword does the reader a service by saying it first: follow his advice, but only if
+      it survives stress-testing in your own life. What follows is that stress test. None of these are
+      reasons not to read the book; several of them are things the book half-admits and then moves past.
+    </p>
+
+    <div class="caveats wide">
+      <div>
+        <span class="mk">01</span>
+        <div>
+          <h4>The sample is one, and it survived</h4>
+          <p>"In 1,000 parallel universes, you want to be wealthy in 999" is a claim about a distribution, argued from a single realisation of it. The book contains its own counter-evidence — the lost first fortune, the second he says he was cheated out of, the years as "radioactive mud" — and treats them as texture rather than as data. A method that produces wealth deterministically should be demonstrable in people who are not Naval, and the book never tries.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">02</span>
+        <div>
+          <h4>Everything is out of context by construction</h4>
+          <p>Jorgenson says so plainly. Aphorisms are pointers to experience you already have; strip the experience and they become posters. Naval says this himself about mental models — and the format of the book is the exact machine for producing the failure he warns about. The reader most likely to quote "desire is a contract" is the reader least likely to have paid for it.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">03</span>
+        <div>
+          <h4>The two halves need each other and undermine each other</h4>
+          <p>Part I runs on desire, ambition, one big goal, sixteen hours a day. Part II says desire is chosen unhappiness and the winners are those who step out of the game entirely. Naval's bridge is sequencing — get rich first, Buddha was a prince — but sequencing does not dissolve the contradiction, it schedules it. And the person who has spent thirty years becoming high-anxiety in order to succeed is, by his own account, unable to switch it off afterwards.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">04</span>
+        <div>
+          <h4>The hourly rate has a floor it does not acknowledge</h4>
+          <p>"Set an absurdly high aspirational rate and outsource anything below it" is excellent advice for someone with slack and terrible advice for someone without. Naval insists he applied it before he had money; but he applied it as a Dartmouth graduate in Silicon Valley with a rising option on his time. The rule is a forecasting device disguised as a budgeting device, and the disguise makes it read as universally applicable when it is not.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">05</span>
+        <div>
+          <h4>"Life is a single-player game" is doing metaphysics in a game-theory costume</h4>
+          <p>It is a genuinely useful corrective to status-chasing. It is also asserted, not argued, and it sits directly against the book's own claims that all returns come from compound relationships, that your five chimps determine your happiness, and that meeting his wife required him to have developed values worth having. The single-player frame is true of the scoreboard, not of the life.</p>
+        </div>
+      </div>
+      <div>
+        <span class="mk">06</span>
+        <div>
+          <h4>Fifty pages of advice about people, almost none about being needed by them</h4>
+          <p>Labour leverage is dismissed as messy. Networking is a waste of time. Angry people, unhappy people and people in conflict are cut out. Expectations others have of you are "completely their problem." Taken together this is a coherent optimisation, and what it optimises away is obligation — which is also where a great deal of most people's meaning is located. The 2008 formula leaves "good relationships" undefined for the same reason.</p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 23</b><span>Four things the book is routinely taken to say, and does not</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 264" role="img" aria-label="A table contrasting four popular misreadings of the Almanack with what the text actually says.">
+          <path d="M20 52 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm" style="font-size:9px"><text x="20" y="46" class="t--ox">THE POPULAR VERSION</text><text x="390" y="46" class="t--acc">WHAT THE TEXT SAYS</text></g>
+          <g class="s-hair" stroke-width="0.7"><path d="M20 106 H740"/><path d="M20 160 H740"/><path d="M20 210 H740"/></g>
+
+          <g class="t t--xs t--ox">
+            <text x="20" y="76">Work is optional; find your passion</text>
+            <text x="20" y="90">and the money follows</text>
+            <text x="20" y="130">Don't want things; wanting is</text>
+            <text x="20" y="144">the problem</text>
+            <text x="20" y="182">Hard work doesn't matter any more</text>
+            <text x="20" y="234">You can get rich quickly if you</text>
+            <text x="20" y="248">find the right leverage</text>
+          </g>
+          <g class="t t--xs">
+            <text x="390" y="72">"Work as hard as you can" — the qualifier is that who and</text>
+            <text x="390" y="86">what you work on matter more, not that effort is unnecessary.</text>
+            <text x="390" y="100">He describes playing at it sixteen hours a day, seven days a week.</text>
+            <text x="390" y="126">"You should self-actualize. You should do what you are meant to</text>
+            <text x="390" y="140">do." Hold one big desire; know its price. Not zero desires.</text>
+            <text x="390" y="178">"Without hard work, you'll develop neither judgment nor</text>
+            <text x="390" y="192">leverage." Direction beats speed; it does not replace it.</text>
+            <text x="390" y="230">"There are no get-rich-quick schemes. Those are just someone</text>
+            <text x="390" y="244">else getting rich off you." The stated unit of time is a decade.</text>
+          </g>
+          <rect x="20" y="212" width="720" height="44" class="f-ox" opacity="0.07"/>
+        </svg>
+      </div>
+      <figcaption>The fourth row is the one worth guarding against, because it is the form the book takes in circulation. Naval's timeline is decades — the better part of one just to identify what you can uniquely provide, then years of compounding, with an explicit instruction not to keep count because if you do you will run out of patience before it arrives.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ======================= READING IT ======================= -->
+  <section class="movement" id="reading" aria-labelledby="rd-h">
+    <div class="movement__head">
+      <span class="roman">Practical</span>
+      <h2 id="rd-h">Reading It, and What to Read Next</h2>
+      <span class="gloss">The bonus section is not filler; it is the book's real bibliography.</span>
+    </div>
+
+    <p class="lede">
+      Read it the way it was built: non-linearly, in short sittings, with a specific problem in hand. It
+      is organised for consultation, and reading it front to back in two evenings produces the same
+      fatigue as reading a dictionary — the density is uniform, which means nothing stands out. Jorgenson
+      says he opens the Happiness chapter when he is feeling off and reviews sections before making an
+      investment. That is the intended usage.
+    </p>
+    <p>
+      A better protocol, if you want the ideas to survive the week: take the three or four claims that
+      actually bit, and go to the primary sources for each. The Farnam Street interview with Shane
+      Parrish (source [4] here, and by a wide margin the most-quoted) is more nuanced than any excerpt
+      from it. The 2019 <em>How to Get Rich</em> series is the wealth material in Naval's own structure.
+      The Joe Rogan episode is where the happiness material is least edited. All of it is free, which is
+      the whole point of the object.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 24</b><span>The shelf he actually names</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 356" role="img" aria-label="A table of the books Naval recommends, grouped by category, with his stated reason for each.">
+          <path d="M20 44 H 740" class="s-ink" stroke-width="1.4"/>
+          <g class="t t--sm t--ink" style="font-size:9px"><text x="20" y="38">TITLE</text><text x="330" y="38">AUTHOR</text><text x="470" y="38">WHY, IN HIS WORDS</text></g>
+
+          <text x="20" y="66" class="t t--xs t--acc">SCIENCE, HISTORY, ECONOMICS</text>
+          <g class="s-hair" stroke-width="0.6">
+            <path d="M20 74 H740"/><path d="M20 96 H740"/><path d="M20 118 H740"/><path d="M20 140 H740"/><path d="M20 162 H740"/><path d="M20 184 H740"/>
+          </g>
+          <g class="t t--xs t--ink">
+            <text x="20" y="90">The Beginning of Infinity</text>
+            <text x="20" y="112">Sapiens</text>
+            <text x="20" y="134">The Rational Optimist</text>
+            <text x="20" y="156">The Lessons of History</text>
+            <text x="20" y="178">Poor Charlie's Almanack</text>
+          </g>
+          <g class="t t--xs">
+            <text x="330" y="90">David Deutsch</text><text x="470" y="90">"Not the easiest read, but it made me smarter"</text>
+            <text x="330" y="112">Yuval Noah Harari</text><text x="470" y="112">"The best book of the last decade I have read"</text>
+            <text x="330" y="134">Matt Ridley</text><text x="470" y="134">"The most brilliant and enlightening book I've read in years"</text>
+            <text x="330" y="156">Will &amp; Ariel Durant</text><text x="470" y="156">Very incisive, and unusually short for a history</text>
+            <text x="330" y="178">ed. Peter Kaufman</text><text x="470" y="178">Masquerades as business; is advice on overcoming oneself</text>
+          </g>
+
+          <text x="20" y="206" class="t t--xs t--acc">RISK AND UNCERTAINTY</text>
+          <g class="s-hair" stroke-width="0.6"><path d="M20 214 H740"/><path d="M20 236 H740"/></g>
+          <g class="t t--xs t--ink"><text x="20" y="230">Skin in the Game · Fooled by Randomness</text></g>
+          <g class="t t--xs"><text x="330" y="230">Nassim Taleb</text><text x="470" y="230">"One of the greatest philosopher-scientists of our times"</text></g>
+
+          <text x="20" y="258" class="t t--xs t--acc">PHILOSOPHY AND THE INTERNAL</text>
+          <g class="s-hair" stroke-width="0.6">
+            <path d="M20 266 H740"/><path d="M20 288 H740"/><path d="M20 310 H740"/>
+          </g>
+          <g class="t t--xs t--ink">
+            <text x="20" y="282">The Book of Life · Total Freedom</text>
+            <text x="20" y="304">Meditations</text>
+          </g>
+          <g class="t t--xs">
+            <text x="330" y="282">Jiddu Krishnamurti</text><text x="470" y="282">"Extremely influential… look at your own mind at all times"</text>
+            <text x="330" y="304">Marcus Aurelius</text><text x="470" y="304">"Absolutely life-changing" — power does not fix the inside</text>
+          </g>
+          <text x="20" y="326" class="t t--xs">Also: Feynman's Six Easy Pieces · Rovelli · Thinking Physics · Siddhartha · The Prophet · The Tao of Seneca · Borges · Ted Chiang · Snow Crash</text>
+          <text x="20" y="346" class="t t--xs t--ox">And the admission worth keeping: "when I tell people what I'm reading, I skip two-thirds of my books… they'll sound trivial or silly. Who cares?"</text>
+        </svg>
+      </div>
+      <figcaption>Four of the books on this shelf are already summarised on this site, which is not a coincidence — Naval's foundations and mine overlap almost completely, and the overlap is the argument for reading the originals rather than the almanack of them.</figcaption>
+    </figure>
+
+    <div class="cards wide">
+      <div>
+        <span class="k">On this site</span>
+        <h4><a href="the-beginning-of-infinity.html">The Beginning of Infinity</a></h4>
+        <p>David Deutsch. Naval's first nonfiction recommendation, and the source of his epistemology.</p>
+      </div>
+      <div>
+        <span class="k">On this site</span>
+        <h4><a href="marcus-aurelius-meditations.html">Meditations</a></h4>
+        <p>Marcus Aurelius. The book he calls life-changing, for the same reason he wrote his own.</p>
+      </div>
+      <div>
+        <span class="k">On this site</span>
+        <h4><a href="lessons-of-history.html">The Lessons of History</a></h4>
+        <p>Will &amp; Ariel Durant. Short, incisive, and on his list for exactly that reason.</p>
+      </div>
+      <div>
+        <span class="k">On this site</span>
+        <h4><a href="fooled-by-randomness.html">Fooled by Randomness</a></h4>
+        <p>Nassim Taleb. Naval's black-swan model, and a useful corrective to "wealthy in 999 universes."</p>
+      </div>
+    </div>
+
+    <h5 class="sub-h">If you keep only seven things</h5>
+
+    <ol class="takeaways wide">
+      <li><b>Separate wealth from money from status, and check which game you are in.</b><span>Wealth earns while you sleep; money is the receipt; status is a ranking someone else has to lose for you to gain. Most of the confusion and most of the resentment in this subject comes from using one word for three things.</span></li>
+      <li><b>Specific knowledge is found, not built — and the test is that it feels like play.</b><span>If society can train you for it, society can replace you. Look at what you were doing effortlessly at fourteen that nobody had to make you do, and ask what the scaled version of it would be.</span></li>
+      <li><b>Leverage is a multiplier on judgment, and two of the three kinds need nobody's permission.</b><span>Code and media replicate at zero marginal cost and require no gatekeeper. That is genuinely new, it is genuinely available, and it is the one structural claim in the book that has only got more true since 2020.</span></li>
+      <li><b>Accountability under your own name is the price of the other two.</b><span>Capital and labour have to be handed to you, and what makes people hand them over is a reputation you can only build by being publicly attached to outcomes — including the bad ones.</span></li>
+      <li><b>Three of the four kinds of luck are manufacturable.</b><span>Hustle produces surface area, skill produces sensitivity, and a distinctive character makes other people's luck come to you. Only the first kind is out of your hands, and it is the only kind worth ignoring.</span></li>
+      <li><b>Desire is a contract to be unhappy until the condition is met — so sign few of them.</b><span>Not zero: you are meant to do things. One at a time, consciously chosen, with the price named. And the test in the moment: is this so important that I will be unhappy unless it goes my way?</span></li>
+      <li><b>Change it, accept it, or leave it — and notice the fourth thing you are actually doing.</b><span>Wishing without acting is where most misery lives, and it is invisible precisely because it does not feel like a choice. Naval's most-used private word is one syllable long.</span></li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="colophon__in">
+    <p class="eyebrow eyebrow--accent">Colophon</p>
+    <h2 style="font-size:var(--step-2);margin:0.6rem 0 0.8rem">The Almanack of Naval Ravikant · Eric Jorgenson</h2>
+    <p class="note">
+      A reader's summary of the 2020 compilation <em>The Almanack of Naval Ravikant: A Guide to Wealth and
+      Happiness</em>, assembled by Eric Jorgenson from a decade of Naval Ravikant's tweets, essays,
+      podcasts and live AMAs. Quotations are given with page references to the paperback so they can be
+      checked against the free edition at navalmanack.com; where the book is itself quoting a tweet or an
+      interview, that is noted. Every plate was drawn for this document.
+    </p>
+    <dl>
+      <dt>The book in one line</dt>
+      <dd>How to build the thing you want,<br>and then discover you wanted something else.</dd>
+      <dt>Plates</dt>
+      <dd>24 hand-drawn figures<br>Prose-led; diagrams where they earn their place</dd>
+      <dt>Go to the sources</dt>
+      <dd>nav.al · "How to Get Rich" (2019)<br>Farnam Street interview · JRE #1309</dd>
+      <dt>Read alongside</dt>
+      <dd>Poor Charlie's Almanack · Munger<br>Total Freedom · Krishnamurti</dd>
+    </dl>
+  </div>
+</footer>
+
+<script src="civ-plate.js" defer></script>
+<script src="book-toc.js" defer></script>
+</body>
+</html>

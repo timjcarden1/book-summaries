@@ -23,6 +23,7 @@ The site is plain static HTML/CSS/JS with no build step. Open `index.html` local
 | [Fooled by Randomness](fooled-by-randomness.html) | Nassim Nicholas Taleb | — |
 | [Titan](titan-rockefeller.html) | Ron Chernow | — |
 | [The Mobile Wave](the-mobile-wave.html) | Michael J. Saylor | — |
+| [The Almanack of Naval Ravikant](almanack-naval-ravikant.html) | Eric Jorgenson | — |
 | [The Book of Elon](the-book-of-elon.html) | Eric Jorgenson | — |
 
 The index lists the summaries only. The print PDFs are still in the repo and reachable by direct link, but they are no longer surfaced on the home page.
