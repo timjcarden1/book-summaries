@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Causes of Portuguese Backwardness — Nuno Palma</title>
+<meta name="description" content="An illustrated, chapter-by-chapter summary of Nuno Palma's As Causas do Atraso Português (2023): the quantitative case that Portugal's decline began with Brazilian gold in the eighteenth century, not with empire, religion or the Estado Novo — and that EU funds are the same curse today.">
+<meta name="color-scheme" content="light dark">
+<style>
+/* ------------------------------------------------------------
+   PALETTE — limestone and lime-wash, azulejo cobalt, Minas gold,
+   Setúbal terracotta, Alentejo green
+   ------------------------------------------------------------ */
+:root {
+  --plate:    #EDE7DB;
+  --plate-2:  #F6F2E9;
+  --plate-3:  #DFD8C7;
+  --ink:      #1A1B1C;
+  --graphite: #5D605C;
+  --hair:     #C8C1B0;
+  --accent:   #1C5A85;            /* azulejo cobalt */
+  --book-toc-accent: #1C5A85;
+  --accent-w: #D8E4EC;
+  --oxide:    #A63A2C;            /* terracotta      */
+  --ochre:    #9A7213;            /* Minas gold      */
+  --cool:     #3F7A5E;            /* Alentejo green  */
+
+  --display: "Palatino Linotype", Palatino, "Iowan Old Style", "Hoefler Text", Georgia, serif;
+  --body:    "Charter", "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --label:   "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --plate: #121416; --plate-2: #1A1D20; --plate-3: #0C0E10;
+    --ink: #E6E3DA; --graphite: #8E928D; --hair: #2F3439;
+    --accent: #6FAFD6;
+    --book-toc-accent: #6FAFD6; --accent-w: #1B303C;
+    --oxide: #E08A78; --ochre: #D6B255; --cool: #7CBF9C;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --plate: #121416; --plate-2: #1A1D20; --plate-3: #0C0E10;
+  --ink: #E6E3DA; --graphite: #8E928D; --hair: #2F3439;
+  --accent: #6FAFD6;
+  --book-toc-accent: #6FAFD6; --accent-w: #1B303C;
+  --oxide: #E08A78; --ochre: #D6B255; --cool: #7CBF9C;
+  color-scheme: dark;
+}
+@media print {
+  :root {
+    --plate: #EDE7DB; --plate-2: #F6F2E9; --plate-3: #DFD8C7;
+    --ink: #1A1B1C; --graphite: #5D605C; --hair: #C8C1B0;
+    --accent: #1C5A85;
+    --book-toc-accent: #1C5A85; --accent-w: #D8E4EC;
+    --oxide: #A63A2C; --ochre: #9A7213; --cool: #3F7A5E;
+  }
+}
+</style>
+<link rel="stylesheet" href="civ-plate.css">
+<link rel="stylesheet" href="book-toc.css">
+</head>
+<body>
+
+<button class="toggle" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+
+<nav class="rail" aria-label="Sections">
+  <a href="#argument" data-rail="argument"><span class="bar"></span><span class="num">The argument</span></a>
+  <a href="#record"   data-rail="record"><span class="bar"></span><span class="num">I · The record</span></a>
+  <a href="#empire"   data-rail="empire"><span class="bar"></span><span class="num">4–5 · Empire &amp; faith</span></a>
+  <a href="#gold"     data-rail="gold"><span class="bar"></span><span class="num">6 · The gold</span></a>
+  <a href="#liberal"  data-rail="liberal"><span class="bar"></span><span class="num">7 · Liberal century</span></a>
+  <a href="#republic" data-rail="republic"><span class="bar"></span><span class="num">8 · First Republic</span></a>
+  <a href="#novo"     data-rail="novo"><span class="bar"></span><span class="num">9 · Estado Novo</span></a>
+  <a href="#today"    data-rail="today"><span class="bar"></span><span class="num">10 · Today</span></a>
+  <a href="#verdict"  data-rail="verdict"><span class="bar"></span><span class="num">Reading it</span></a>
+</nav>
+
+<!-- ==========================================================
+     HERO
+     ========================================================== -->
+<header class="hero">
+  <svg class="hero__field" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M-20 40 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"/>
+      <path d="M-20 88 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"/>
+      <path d="M-20 136 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"/>
+      <path d="M-20 184 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"/>
+      <path d="M-20 232 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"/>
+      <path d="M-20 280 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"/>
+      <path d="M-20 328 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"/>
+      <path d="M-20 376 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"/>
+    </g>
+  </svg>
+
+  <div class="hero__inner">
+    <div class="hero__meta">
+      <p class="eyebrow">Nuno Palma · b. 1983</p>
+      <p class="eyebrow">Dom Quixote · 2023</p>
+      <p class="eyebrow eyebrow--accent">As Causas do Atraso Português</p>
+    </div>
+
+    <h1>The Causes of<br>Portuguese<br>Backwardness
+      <span class="sub">Why Portugal is rich by world standards and poor by European ones — a quantitative economic history that dates the fall precisely, and blames almost nobody the country expects.</span>
+    </h1>
+
+    <div class="hero__rule" role="presentation"></div>
+
+    <p class="hero__thesis">
+      Palma is an economic historian at Manchester who spent a decade rebuilding Portuguese GDP,
+      wages, prices, population and fiscal capacity from the archives, year by year, back to 1527.
+      This book is what those numbers say, and what they say is uncomfortable in every direction:
+      <span class="accent">Portugal was not behind in 1700. It became behind in the eighteenth
+      century, and the cause was Brazilian gold.</span> Everything the country normally blames —
+      empire, Catholicism, the Inquisition, the 1755 earthquake, Napoleon, the Estado Novo —
+      either happened at the wrong time or points the wrong way.
+    </p>
+
+    <dl class="facts">
+      <div><dt>Covers</dt><dd>c. 1250 – 2023<span>with a hard focus on 1690–1850</span></dd></div>
+      <div><dt>Structure</dt><dd>10 chapters<span>Part I record, Part II argument</span></dd></div>
+      <div><dt>Built on</dt><dd>1,032 notes<span>and ~25 of his own papers</span></dd></div>
+      <div><dt>Verdict</dt><dd>Pessimistic<span>the epilogue says so outright</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="flow">
+
+  <!-- ==========================================================
+       THE ARGUMENT
+       ========================================================== -->
+  <section class="movement" id="argument" aria-labelledby="argument-h">
+    <div class="movement__head">
+      <span class="roman">Orientation</span>
+      <h2 id="argument-h">The Book, and the Shape of Its Argument</h2>
+      <span class="gloss">What Palma is claiming, why it is unusual, and how the ten chapters fit together.</span>
+    </div>
+
+    <p class="lede">
+      The question in the first line of the preamble is the whole book: <em>why is Portugal today a
+      rich country by world standards but a poor one in a European context?</em> Palma's answer has
+      two halves. The historical half says the backwardness is roughly three centuries deep and has a
+      datable origin. The contemporary half says the mechanism that produced it in 1720 is running
+      again now, under a different name — EU structural funds.
+    </p>
+
+    <p>
+      The book opens where every Portuguese discussion of decline has opened since 1871: with Antero
+      de Quental at the Casino Lisbonense, arguing that Portugal fell in the sixteenth century because
+      it stayed Catholic and submitted to the Counter-Reformation. Palma's opening move is to say that
+      Quental — whose lecture Eduardo Lourenço called the founding act of modern Portuguese culture,
+      and who shot himself on a garden bench in Ponta Delgada twenty years later — was wrong about
+      both the date and the cause. The rest of the book is the demonstration.
+    </p>
+
+    <figure class="fig wide reveal">
+      <div class="fig__label"><b>Plate 01</b><span>The shape of the argument · c. 1250 – 2025</span></div>
+      <div class="fig__frame">
+        <svg viewBox="0 0 760 300" role="img" aria-label="A timeline from 1250 to 2025 divided into six phases: not behind, the divergence begins, collapse, stagnation at the bottom, the great catch-up, and divergence again.">
+          <text x="20" y="24" class="t t--acc t--sm">Portugal's position relative to Western Europe — the six phases the book identifies</text>
+
+          <!-- band -->
+          <rect x="40" y="52" width="130" height="34" class="f-cool" opacity="0.85"/>
+          <rect x="170" y="52" width="72" height="34" class="f-och" opacity="0.9"/>
+          <rect x="242" y="52" width="82" height="34" class="f-ox" opacity="0.9"/>
+          <rect x="324" y="52" width="196" height="34" class="f-graph" opacity="0.55"/>
+          <rect x="520" y="52" width="130" height="34" class="f-cool" opacity="0.85"/>
+          <rect x="650" y="52" width="80" height="34" class="f-ox" opacity="0.9"/>
+
+          <g class="t t--xs t--rev t--mid">
+            <text x="105" y="73">NOT BEHIND</text>
+            <text x="206" y="73">THE FALL</text>
+            <text x="283" y="73">COLLAPSE</text>
+            <text x="422" y="73">STAGNATION</text>
+            <text x="585" y="73">CATCH-UP</text>
+            <text x="690" y="73">DIVERGING</text>
+          </g>
+
+          <path d="M40 96 H 730" class="s-graph" stroke-width="1.1"/>
+          <g class="s-hair" stroke-width="0.9">
+            <path d="M40 96 V 104"/><path d="M170 96 V 104"/><path d="M242 96 V 104"/>
+            <path d="M324 96 V 104"/><path d="M520 96 V 104"/><path d="M650 96 V 104"/><path d="M730 96 V 104"/>
+          </g>
+          <g class="t t--xs t--mid t--num t--ink">
+            <text x="40" y="118">1250</text><text x="170" y="118">1690</text><text x="242" y="118">1770</text>
+            <text x="324" y="118">1850</text><text x="520" y="118">1950</text><text x="650" y="118">2000</text><text x="730" y="118">2025</text>
+          </g>
+
+          <g class="t t--xs">
+            <text x="40" y="146" class="t--ink">Cortes constrain the Crown. Agrarian output per head</text>
+            <text x="40" y="158">above England's around 1300. Income doubles 1527–1750.</text>
+            <text x="40" y="170">By 1750 Portugal is among the richer parts of Europe.</text>
+
+            <text x="248" y="146" class="t--ink">Brazilian gold arrives from the 1690s. Industry</text>
+            <text x="248" y="158">de-industrialises, Cortes never meet again after 1698,</text>
+            <text x="248" y="170">Pombal destroys the school network in 1759.</text>
+
+            <text x="40" y="200" class="t--ink">Income per head falls back to its early-1500s level by 1850.</text>
+            <text x="40" y="212">Portugal is the poorest country in Western Europe, and the</text>
+            <text x="40" y="224">most illiterate in Europe (75%) in 1900. It stays there.</text>
+
+            <text x="400" y="200" class="t--ink">1950–2000: income per head multiplies by seven.</text>
+            <text x="400" y="212">The largest discontinuity in Portuguese history — and it</text>
+            <text x="400" y="224">begins under the dictatorship, not under democracy.</text>
+          </g>
+
+          <path d="M40 244 H 730" class="s-hair" stroke-width="1"/>
+          <text x="40" y="264" class="t t--xs t--acc">Two mirror-image episodes of the resource curse frame the whole story:</text>
+          <text x="40" y="278" class="t t--xs">gold at 4–6% of GDP a year from the 1720s to the 1760s · EU transfers at 2–3% of GDP a year since the mid-1980s.</text>
+          <text x="40" y="292" class="t t--xs">Both arrived from outside, with almost no strings. Both, Palma argues, made the country poorer in the long run.</text>
+        </svg>
+      </div>
+      <figcaption>The dates on the axis are the ones the book defends with data, not conventional period breaks. Note where the standard breaks are <em>not</em>: 1755, 1807, 1822, 1834, 1910 and 1974 all fall inside phases rather than starting them.</figcaption>
+    </figure>
+
+    <h5 class="sub-h">The four things this book is arguing against</h5>
+    <div class="cards cards--4 wide">
+      <div>
+        <span class="k">Myth 1</span>
+        <h4>Empire made Portugal rich</h4>
+        <p>Intercontinental trade was a marginal share of a farming economy in the 16th and 17th centuries. It mattered to the Crown's budget in some decades. It never made the country rich, and in the eighteenth century it made it poor.</p>
+      </div>
+      <div>
+        <span class="k k--ox">Myth 2</span>
+        <h4>Catholicism held it back</h4>
+        <p>Literacy, numeracy, family structure and income show no Catholic–Protestant gap before the eighteenth century. Belgium industrialised second. Ireland is now among the richest countries in Europe.</p>
+      </div>
+      <div>
+        <span class="k k--och">Myth 3</span>
+        <h4>Absolutism was ancient</h4>
+        <p>The Cortes rejected 7.3% of royal tax requests between 1385 and 1600; the English Parliament rejected none. Real Portuguese absolutism is an eighteenth-century phenomenon, and it has a cause.</p>
+      </div>
+      <div>
+        <span class="k k--cool">Myth 4</span>
+        <h4>The Estado Novo caused the gap</h4>
+        <p>Portugal was already the poorest and most illiterate country in Western Europe when the regime inherited it. Under it, income per head multiplied by five and child illiteracy went from 58% to 3%.</p>
+      </div>
+    </div>
+
+    <p class="pull">
+      "Everyone who has governed in Portuguese affairs by discourse has erred and been lost; and by this
+      route were lost, even among us, those whom men held to be of the greatest judgement."<cite>Padre António Vieira · epigraph to the book</cite>
+    </p>
+
+    <h5 class="sub-h">A note on method, because the method is the argument</h5>
+    <p>
+      Palma's authority here is not interpretive but archival and statistical. With Jaime Reis he
+      reconstructed Portuguese real GDP per head annually from 1527 to 1850 out of account books from
+      convents, monasteries, hospitals, <em>misericórdias</em>, palaces, farms, the University of
+      Coimbra, the cathedrals of Lisbon and Porto, and municipal chambers — prices, wages and rents,
+      converted into a modern metric system out of a chaos of local units where an <em>almude</em>
+      meant 16.8 litres in Lisbon and 25.4 in Porto. The consumption basket used to deflate it is
+      Portuguese rather than the standard Strasbourg one: 182kg of bread, 26kg of meat, 5.2 litres of
+      olive oil, five chickens, 52 eggs, 28 litres of wine, soap, linen, candles and firewood, with
+      wine substituted for beer and olive oil for butter.
+    </p>
+    <p>
+      He is blunt about what that buys him and what it does not. Levels before the nineteenth century
+      carry at least ten per cent of error, so small differences between countries mean nothing;
+      what the series identifies reliably is <strong>direction and timing</strong>. That distinction
+      does almost all the work in the book. It is why he can say with confidence that Portuguese
+      income fell sharply from the 1770s without claiming to know exactly how rich Portugal was in
+      1750 — and why a great deal of received Portuguese history turns out to be about the wrong decade.
+    </p>
+
+    <h5 class="sub-h">The ten chapters at a glance</h5>
+    <div class="index wide">
+      <a class="index__row" href="#c1"><span class="n">I · 1</span><span class="ttl">Population</span><span class="gist">One million people in 1500, ten million now. Portugal sits west of the Hajnal line on every measure — late female marriage, high celibacy, female labour force participation, no sex-selective neglect. Family structure cannot explain the gap.</span></a>
+      <a class="index__row" href="#c2"><span class="n">I · 2</span><span class="ttl">Political institutions</span><span class="gist">The Cortes as a real constraint on the Crown, more effective than the English Commons until the mid-seventeenth century — and then, in 1698, silent for 122 years.</span></a>
+      <a class="index__row" href="#c3"><span class="n">I · 3</span><span class="ttl">Economy and development</span><span class="gist">The series: income doubles from 1527 to a peak around 1750, then collapses to its early-sixteenth-century level by 1850, and is not recovered until the twentieth century.</span></a>
+      <a class="index__row" href="#c4"><span class="n">II · 4</span><span class="ttl">Expansion and empire</span><span class="gist">A thalassocracy of forts and factories, not a land empire. Fiscally useful in some decades, economically marginal in most, and a genuine contribution to the Scientific Revolution.</span></a>
+      <a class="index__row" href="#c5"><span class="n">II · 5</span><span class="ttl">Culture and religion</span><span class="gist">Weber tested and rejected. The Inquisition as an instrument of politics — Pombal's own brother ran it — rather than a cause of scientific backwardness.</span></a>
+      <a class="index__row" href="#c6"><span class="n">II · 6</span><span class="ttl">The golden curse</span><span class="gist">The core chapter. Dutch disease plus the disappearance of fiscal bargaining, and the single worst decision in Portuguese history: the expulsion of the Jesuits in 1759.</span></a>
+      <a class="index__row" href="#c7"><span class="n">II · 7</span><span class="ttl">A new, liberal country?</span><span class="gist">Neither new nor liberal. Five coups, two civil wars and four bankruptcies before 1851; tariffs among Europe's highest; compulsory schooling decreed in 1835 and never delivered.</span></a>
+      <a class="index__row" href="#c8"><span class="n">II · 8</span><span class="ttl">The First Republic</span><span class="gist">Sixteen years, forty ministers of education, and a franchise deliberately narrowed to keep the rural illiterate majority away from the ballot box. Its schools stood empty.</span></a>
+      <a class="index__row" href="#c9"><span class="n">II · 9</span><span class="ttl">The Estado Novo</span><span class="gist">The chapter that will cost him friends: a dictatorship, condemned as such, that nonetheless ended child illiteracy and presided over the fastest growth in Portuguese history.</span></a>
+      <a class="index__row" href="#c10"><span class="n">II · 10</span><span class="ttl">The contemporary period</span><span class="gist">Diverging since the late 1990s. EU funds as the new Brazilian gold: they anaesthetise the economy, break political accountability, and should — he says plainly — stop.</span></a>
+    </div>
+  </section>
+
+<!--APPEND-->
+
+</main>
+
+<footer class="colophon">
+  <div class="colophon__in">
+    <p class="eyebrow eyebrow--accent">Colophon</p>
+    <h2 style="font-size:var(--step-2);margin:0.6rem 0 0.8rem">Nuno Palma · As Causas do Atraso Português</h2>
+    <p class="note">
+      A reader's summary of the 2023 Dom Quixote edition, 404 pages, written in Portuguese and not yet
+      translated. Every plate was drawn for this document from figures stated in the book; where a
+      chart shows a shape rather than a published series, the caption says so. Numbers in
+      "1990 international dollars" are Geary–Khamis purchasing-power-parity dollars, the standard unit
+      of historical national accounting: about 400 of them per person per year is subsistence.
+    </p>
+    <dl>
+      <dt>Chapters summarised</dt>
+      <dd>Preamble and Introduction<br>Part I · chapters 1–3<br>Part II · chapters 4–10<br>Epilogue</dd>
+      <dt>Plates</dt>
+      <dd>26 hand-drawn figures<br>plus 6 data tables<br>All vector; legible at print size</dd>
+      <dt>Companions on this shelf</dt>
+      <dd>Durant · The Story of Civilization<br>Diamond · Guns, Germs, and Steel<br>for the long-run comparative frame</dd>
+      <dt>Read alongside</dt>
+      <dd>Acemoglu &amp; Robinson · Why Nations Fail<br>— which Palma spends much of<br>chapter 2 correcting on Iberia</dd>
+    </dl>
+  </div>
+</footer>
+
+<script src="civ-plate.js" defer></script>
+<script src="book-toc.js" defer></script>
+</body>
+</html>

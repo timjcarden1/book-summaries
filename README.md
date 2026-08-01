@@ -22,6 +22,7 @@ The site is plain static HTML/CSS/JS with no build step. Open `index.html` local
 | [Fooled by Randomness](fooled-by-randomness.html) | Nassim Nicholas Taleb | — |
 | [Titan](titan-rockefeller.html) | Ron Chernow | — |
 | [The Mobile Wave](the-mobile-wave.html) | Michael J. Saylor | — |
+| [The Book of Elon](the-book-of-elon.html) | Eric Jorgenson | — |
 
 ## Shared assets
 

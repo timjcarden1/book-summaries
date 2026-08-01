@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Book of Elon — Eric Jorgenson · Illustrated Summary</title>
+<meta name="description" content="An illustrated summary of The Book of Elon by Eric Jorgenson: the four parts, The Algorithm, first-principles costing, and how much weight a compiled book of quotations can carry.">
+<link rel="stylesheet" href="reading-summary.css">
+<style>
+:root { --accent:#b4531f; --s1:#b4531f; --accent-2:#35708a; }
+:root[data-theme="dark"] { --accent:#e8934e; --s1:#e8934e; --accent-2:#6fa9c2; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --accent:#e8934e; --s1:#e8934e; --accent-2:#6fa9c2; } }
+
+.elon .hero { background:
+  radial-gradient(circle at 82% 22%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 32%),
+  radial-gradient(circle at 92% 70%,color-mix(in srgb,var(--accent-2) 15%,transparent),transparent 28%),
+  repeating-linear-gradient(102deg,transparent 0 46px,color-mix(in srgb,var(--rule) 26%,transparent) 47px 48px),
+  var(--panel); }
+.elon .book-glyph { background:linear-gradient(158deg,#241505,var(--accent));border-color:#180e04;box-shadow:11px 13px 0 var(--accent-2),0 24px 60px rgba(0,0,0,.24);transform:rotate(-3.5deg); }
+
+/* thrust glyph behind the hero block */
+.thrust { position:absolute;z-index:0;color:color-mix(in srgb,var(--accent) 15%,transparent);font:600 250px/.7 Georgia,serif;transform:rotate(-8deg);letter-spacing:-.06em; }
+
+/* the five-step algorithm strip, used twice */
+.algo { display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:20px; }
+.algo div { padding:12px 10px;background:var(--panel-2);border:1px solid var(--rule);border-radius:4px; }
+.algo b { display:block;font:700 9.4px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px; }
+.algo span { font-size:.82rem;line-height:1.45;color:var(--ink-2); }
+@media(max-width:760px){ .algo{grid-template-columns:1fr 1fr} }
+@media(max-width:460px){ .algo{grid-template-columns:1fr} }
+
+/* ledger for the company-building numbers */
+.ledger { margin-top:22px;border-top:1px solid var(--rule); }
+.ledger div { display:grid;grid-template-columns:auto 1fr auto;gap:10px 16px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--rule); }
+.ledger b { font:700 9.6px/1.4 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--accent); }
+.ledger span { font-size:.9rem;color:var(--ink-2); }
+.ledger i { font:600 .82rem/1 var(--mono);color:var(--ink-3);font-style:normal;white-space:nowrap; }
+@media(max-width:620px){ .ledger div{grid-template-columns:1fr;gap:4px} }
+
+/* figure palette — ignition orange, steel, sober blue, growth */
+:root { --f3:#4a6f86; --f4:#6d8558; }
+:root[data-theme="dark"]{ --f3:#86adc4; --f4:#9fbb8a; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --f3:#86adc4; --f4:#9fbb8a; } }
+</style>
+<link rel="stylesheet" href="book-toc.css">
+<link rel="stylesheet" href="book-figures.css">
+</head>
+<body class="elon">
+<button class="theme-button" id="themeButton" type="button" aria-label="Switch colour theme">Theme</button>
+
+<header class="hero">
+  <div class="hero__inner wrap">
+    <div>
+      <p class="kicker">Eric Jorgenson · assembled from Elon Musk’s own words</p>
+      <h1>The Book of Elon</h1>
+      <p class="hero__subtitle">A field manual for purpose, hardcore work, company-building and long-horizon risk — cut entirely from transcripts, interviews and posts, then rearranged by theme.</p>
+      <p class="hero__thesis"><strong>The load-bearing idea:</strong> physics is law and everything else is a recommendation. Requirements, prices, schedules and industry convention are claims that can be re-derived from the ground up — and usually collapse when you try.</p>
+    </div>
+    <div class="book-orbit" aria-hidden="true"><span class="thrust">Δv</span><div class="book-glyph"><b>Question<br>the<br>requirement</b><span>Delete · simplify · accelerate<br>automate — in that order</span></div></div>
+  </div>
+</header>
+
+<dl class="hero__stats">
+  <div><dt>Published</dt><dd>2026</dd></div>
+  <div><dt>Structure</dt><dd>Four parts + bonus</dd></div>
+  <div><dt>Method</dt><dd>Compiled, not authored</dd></div>
+  <div><dt>Foreword</dt><dd>Naval Ravikant</dd></div>
+</dl>
+
+<main>
+  <section class="orientation wrap" id="orientation">
+    <div class="orientation__grid">
+      <div>
+        <p class="eyebrow"><b>Orientation</b></p>
+        <h2>What this book actually is</h2>
+        <p class="lede">This is not a biography and not reportage. Jorgenson — who did the same job for Naval Ravikant and Balaji Srinivasan — has spent thousands of hours pulling Musk’s remarks out of interviews, talks, memos and posts, then reassembling them by subject so that scattered answers read as continuous argument.</p>
+        <p class="lede">That method is the book’s strength and its central hazard, and to his credit the author says so on the first page: everything here has been lifted out of its original context and edited for flow. What you are reading is a curated, smoothed, retrospectively coherent Musk. The ideas are his; the argument is the editor’s.</p>
+        <p class="lede">Read as a manual it is unusually dense — engineering method, hiring policy, factory economics and civilisational risk in a few hundred pages. Read as evidence it needs the discount rate applied throughout this summary: a subject narrating his own successes, arranged by an admirer.</p>
+      </div>
+      <nav class="quick-map" aria-label="Parts of the summary">
+        <a href="#purpose"><b>Part I</b><span>Pursue purpose</span></a>
+        <a href="#hardcore"><b>Part II</b><span>Ultra hardcore work</span></a>
+        <a href="#companies"><b>Part III</b><span>Building companies</span></a>
+        <a href="#humanity"><b>Part IV</b><span>On behalf of humanity</span></a>
+        <a href="#reading"><b>Critical</b><span>How much weight it holds</span></a>
+      </nav>
+    </div>
+
+    <div class="plate">
+      <div class="plate__head"><span>Plate 01 · construction</span><b>How the book is built, and what that costs</b></div>
+      <div class="plate__body">
+        <div class="concept-grid">
+          <div class="concept-card"><span class="tag">Source</span><b>Primary material only</b><p>Transcripts, interviews, talks, internal memos and posts spanning roughly three decades of public record.</p></div>
+          <div class="concept-card"><span class="tag">Edit</span><b>Smoothed for reading</b><p>Passages are compressed and tidied. Spoken hedges and repetition disappear, which makes claims sound firmer than when spoken.</p></div>
+          <div class="concept-card"><span class="tag">Arrangement</span><b>Thematic, not chronological</b><p>A 2003 remark can sit beside a 2024 one. Changes of mind flatten into a single settled position.</p></div>
+          <div class="concept-card"><span class="tag">Frame</span><b>Q&amp;A staging</b><p>Some questions are written by the editor to supply context, producing an interview that never happened as printed.</p></div>
+          <div class="concept-card"><span class="tag">Omission</span><b>Deliberate exclusions</b><p>Family life and politics are declared out of scope. So is most of the criticism, and the record of the missed deadlines.</p></div>
+          <div class="concept-card"><span class="tag">Caveat</span><b>Stated by the author</b><p>He warns that sourcing cannot be fully authenticated and asks readers to verify against primary sources before quoting.</p></div>
+        </div>
+        <p class="plate__caption">The honesty of that disclosure is genuine, and it is also load-bearing: it transfers the burden of verification to the reader while the book keeps the fluency that removing context buys.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PART I ============================ -->
+  <section class="movement" id="purpose">
+    <div class="wrap">
+      <div class="movement__head"><p class="eyebrow"><b>Part I</b></p><h2>Pursue purpose</h2></div>
+      <p class="movement__dek">The opening part is the philosophical base: a utilitarian test for what to work on, a physicist’s epistemology for how to think about it, and a defence of engineering as the activity that converts thought into consequence.</p>
+    </div>
+  </section>
+
+  <article class="chapter" id="elon-ch1">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part I · 01<span></span></div>
+      <div class="chapter__content">
+        <h3>Usefulness as an arithmetic, not a feeling</h3>
+        <p class="chapter__claim">Choose work by expected total utility: how many people are affected, multiplied by how much each is helped.</p>
+        <div class="chapter__body">
+          <h4>The measure</h4>
+          <p>The book opens on a deliberately unromantic test. Do not ask whether a project is prestigious, world-changing or the kind of thing founders are supposed to do. Ask how much better someone’s situation becomes, and multiply by how many someones. A modest improvement delivered to an enormous number of people scores about the same as a transformation delivered to a few, and both count as success.</p>
+          <p>The consequence is permission rather than pressure: on this measure a well-made ordinary product is honourable work. The framing also quietly does something else — it licenses scale as a moral argument, since the multiplier rewards reach. Nothing in the arithmetic constrains <em>which</em> effects get counted, and the costs a large enterprise imposes are simply not in the equation.</p>
+          <h4>Purpose from a shower thought</h4>
+          <p>The origin story is a college-era attempt to list the areas most likely to matter to humanity’s future. Three seemed clearly good: the internet, sustainable energy, and extending life beyond one planet. Two more — artificial intelligence and rewriting genetics — seemed powerful but double-edged, and he says he could not tell which edge was worse. The capital from selling PayPal eventually bought entry to the first three, and the fourth arrived later anyway.</p>
+          <p>What makes this more than hindsight tidying is that the list is a portfolio built from a stated selection rule, not a list of enthusiasms. The rule — pick by expected effect on the long-run trajectory, accept low probability of personal success — recurs in every later decision in the book.</p>
+          <h4>Create more than you consume</h4>
+          <p>Beneath the utility test sits an economic claim: the pie is not fixed. He treats zero-sum thinking as the root of a great deal of bad behaviour, on the grounds that anyone who believes wealth can only be taken will set about taking it. The prescription is to be a net contributor, measured over a lifetime rather than a quarter.</p>
+        </div>
+        <div class="formula"><span class="accent">Total usefulness</span> = people affected × improvement per person<small>Presented as the closest thing the book has to an objective function. It is a genuine decision rule — and it counts only benefits, never the externalities on the other side of the ledger.</small></div>
+        <div class="detail-grid">
+          <div class="detail-card"><span class="detail-label">Selection</span><h4>Work backwards from effect</h4><p>Pick the problem by its expected consequence, then acquire whatever skills it demands — rather than starting from existing competence.</p></div>
+          <div class="detail-card"><span class="detail-label">Motivation</span><h4>Obsession beats intention</h4><p>Liking the work is treated as a competitive advantage, because it keeps running when discipline is exhausted.</p></div>
+        </div>
+        <div class="critical-note"><b>Read against itself:</b> the arithmetic is presented as first-principles reasoning, but the terms are unquantified. “Improvement per person” is doing all the work, and it is exactly the term that a founder is least able to estimate about their own product.</div>
+        <div class="key-terms"><span class="term">total utility</span><span class="term">positive-sum economy</span><span class="term">net contribution</span><span class="term">the five areas</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch2">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part I · 02<span></span></div>
+      <div class="chapter__content">
+        <h3>Think like a physicist</h3>
+        <p class="chapter__claim">Reason by analogy for ordinary decisions; for the ones that matter, rebuild the argument from what you are confident is true.</p>
+        <div class="chapter__body">
+          <h4>The two modes</h4>
+          <p>Most reasoning is by analogy — we do a thing because it resembles something already done, or because it is how the industry does it. The book is unusually fair about this: analogy is the correct default, because deriving everything from scratch would make daily life impossible. The claim is narrower and therefore stronger. For the few decisions that determine whether a project is possible at all, analogy inherits the conclusion you are trying to test.</p>
+          <p>The procedure is stated plainly: identify what you are most confident is true at a foundational level, treat that as your axiomatic base, build up, then check the conclusion back against the axioms. Applied to physical products, the first question is simply whether the idea violates conservation laws — a cheap test that settles possibility before anyone argues about feasibility.</p>
+          <h4>The two demonstrations</h4>
+          <p>The book leans on two worked examples, and they are the most persuasive pages in it. Battery packs were assumed to cost around six hundred dollars per kilowatt-hour because they always had. Decomposed into constituent metals and polymers priced on the commodity market, the material floor came out near eighty. The gap was not physics; it was manufacturing convention, and therefore attackable.</p>
+          <p>The same teardown applied to rockets produces what he calls the magic-wand number: if the raw materials were stacked on the floor and rearranging the atoms were free, what would the vehicle cost? For rockets the answer was a small fraction of prevailing price. That does not prove a cheap rocket can be built, and the book is careful on this point — it establishes only that success is among the possible outcomes. That is a lower bar than it sounds, and it is precisely the bar worth checking before committing a decade.</p>
+          <h4>Thinking in limits, and being less wrong</h4>
+          <p>Two supporting habits: push a variable to its extreme to expose what actually binds (a trillion dollars on an empty island buys nothing, which tells you money is information about allocation, not value in itself); and treat your own beliefs as provisional. Wishful thinking is named as the standard failure — if a plan feels easy, that is evidence against it, not for it.</p>
+        </div>
+        <div class="chapter-visual">
+          <div class="chapter-visual__head"><span>The teardown</span><b>Inherited price versus material floor</b></div>
+          <div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 440" width="1000" height="440" role="img" aria-labelledby="e2t e2d" style="min-width:780px;width:100%;height:auto">
+  <title id="e2t">Two cost teardowns and the divergence between analogy and first-principles reasoning</title>
+  <desc id="e2d">On the left, two pairs of bars. For battery packs, the inherited industry price of about six hundred dollars per kilowatt-hour towers over a materials floor of about eighty. For launch vehicles, prevailing cost is shown as one hundred per cent against a magic-wand materials floor of under five per cent. On the right, two trajectories leave a shared starting point: reasoning by analogy drifts down slowly in small iterations, while first-principles reasoning drops steeply toward the material floor, with the gap between them labelled as the space where new industries are possible.</desc>
+
+  <text x="70" y="34" class="svg-t">The gap between what a thing costs and what it must cost</text>
+
+  <!-- ---------- left: teardown bars ---------- -->
+  <text x="70" y="70" class="svg-sm">TEARDOWN</text>
+
+  <!-- battery -->
+  <text x="70" y="102" class="svg-b">Battery pack</text>
+  <text x="70" y="120" class="svg-sm">DOLLARS PER KILOWATT-HOUR</text>
+
+  <rect x="70" y="132" width="240" height="30" rx="3" fill="var(--f1)" class="growx" style="--d:.15s"/>
+  <text x="320" y="152" class="svg-num" fill="var(--f1)">~$600 assumed</text>
+
+  <rect x="70" y="170" width="32" height="30" rx="3" fill="var(--f4)" class="growx" style="--d:.45s"/>
+  <text x="112" y="190" class="svg-num" fill="var(--f4)">~$80 in materials</text>
+
+  <!-- rocket -->
+  <text x="70" y="248" class="svg-b">Launch vehicle</text>
+  <text x="70" y="266" class="svg-sm">SHARE OF PREVAILING COST</text>
+
+  <rect x="70" y="278" width="240" height="30" rx="3" fill="var(--f1)" class="growx" style="--d:.3s"/>
+  <text x="320" y="298" class="svg-num" fill="var(--f1)">100% prevailing</text>
+
+  <rect x="70" y="316" width="12" height="30" rx="3" fill="var(--f4)" class="growx" style="--d:.6s"/>
+  <text x="92" y="336" class="svg-num" fill="var(--f4)">&lt;5% “magic wand” floor</text>
+
+  <text x="70" y="388" class="svg-em">The floor does not prove the product is buildable.</text>
+  <text x="70" y="406" class="svg-em">It proves success is one of the possible outcomes.</text>
+
+  <!-- divider -->
+  <line x1="530" y1="60" x2="530" y2="410" class="svg-hair"/>
+
+  <!-- ---------- right: divergence ---------- -->
+  <text x="580" y="70" class="svg-sm">TWO MODES OF REASONING</text>
+
+  <line x1="580" y1="360" x2="950" y2="360" class="svg-axis"/>
+  <line x1="580" y1="110" x2="580" y2="360" class="svg-axis"/>
+  <text transform="translate(560,235) rotate(-90)" text-anchor="middle" class="svg-sm">COST</text>
+  <text x="765" y="384" text-anchor="middle" class="svg-sm">TIME AND EFFORT</text>
+
+  <!-- analogy: shallow drift -->
+  <path d="M580 130 C 650 136, 720 146, 800 156 C 860 163, 910 168, 950 172"
+        fill="none" stroke="var(--f3)" stroke-width="2.4" class="draw" style="--len:400;--d:.3s"/>
+  <text x="828" y="150" class="svg-b" fill="var(--f3)">REASONING BY ANALOGY</text>
+  <text x="828" y="166" class="svg-sm" fill="var(--f3)">SMALL ITERATIONS ON WHAT EXISTS</text>
+
+  <!-- first principles: steep drop -->
+  <path d="M580 130 C 640 152, 676 214, 706 268 C 736 320, 790 336, 950 340"
+        fill="none" stroke="var(--f1)" stroke-width="3" class="draw" style="--len:430;--d:.6s"/>
+  <text x="742" y="322" class="svg-b" fill="var(--f1)">FIRST PRINCIPLES</text>
+
+  <!-- material floor -->
+  <line x1="580" y1="344" x2="950" y2="344" stroke="var(--f4)" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="586" y="336" class="svg-sm" fill="var(--f4)">MATERIAL FLOOR</text>
+
+  <!-- the gap -->
+  <line x1="700" y1="152" x2="700" y2="300" stroke="var(--f2)" stroke-width="1.3" stroke-dasharray="3 3" class="rise" style="--d:1.1s"/>
+  <g class="rise" style="--d:1.2s">
+    <text x="712" y="212" class="svg-b" fill="var(--f2)">the gap</text>
+    <text x="712" y="228" class="svg-sm" fill="var(--f2)">WHERE NEW INDUSTRIES FIT</text>
+  </g>
+</svg>
+          </div>
+          <div class="fig-legend">
+            <span><i style="--c:var(--f1)"></i>Inherited price</span>
+            <span><i style="--c:var(--f4)"></i>Material floor</span>
+            <span><i style="--c:var(--f3)"></i>Analogy</span>
+            <span><i class="dash" style="--c:var(--f2)"></i>Available headroom</span>
+          </div>
+          </div>
+          <p class="chapter-visual__caption">Figures are the book’s own, and they are illustrative rather than audited. The reasoning pattern is the transferable part, not the specific numbers.</p>
+        </div>
+        <div class="critical-note"><b>Survivorship warning:</b> both demonstrations are drawn from ventures that worked. First-principles analysis also cheerfully licenses projects whose material floor is reachable in theory and unreachable in practice; those attempts do not get a chapter.</div>
+        <div class="key-terms"><span class="term">first principles</span><span class="term">reasoning by analogy</span><span class="term">magic-wand number</span><span class="term">thinking in limits</span><span class="term">idiot index</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch3">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part I · 03<span></span></div>
+      <div class="chapter__content">
+        <h3>Engineering as the thing that actually moves</h3>
+        <p class="chapter__claim">Progress is not automatic; it is manufactured by people who build, and it stops when they stop.</p>
+        <div class="chapter__body">
+          <h4>Against inevitability</h4>
+          <p>One of the book’s more genuinely contrarian threads is its rejection of technological progress as a trend line. Technology does not advance by itself — humans make it, and if they stop making it, it stops. From this follows a claim repeated throughout: the rate of innovation is a variable under active management, and every year it either rises or decays.</p>
+          <p>The corollary is a complaint about talent allocation. Too many capable people are drawn into finance and law, which reorganise claims on existing output rather than adding to it. This is offered as both compliment and criticism, and it lands better as a description of incentives than as a moral judgement of individuals.</p>
+        </div>
+        <div class="takeaway"><b>The through-line</b>Every later section — hiring, org design, factories, Mars — is downstream of one claim: goods do not appear, someone makes them, and the making is the hard part.</div>
+        <div class="key-terms"><span class="term">rate of innovation</span><span class="term">talent allocation</span><span class="term">making things</span></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================ PART II ============================ -->
+  <section class="movement" id="hardcore">
+    <div class="wrap">
+      <div class="movement__head"><p class="eyebrow"><b>Part II</b></p><h2>Ultra hardcore work</h2></div>
+      <p class="movement__dek">The operating core of the book, and the part most worth extracting: what leadership costs, how teams are selected, how organisations should be wired, and the five-step engineering procedure the whole method rests on.</p>
+    </div>
+  </section>
+
+  <article class="chapter" id="elon-ch4">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part II · 04<span></span></div>
+      <div class="chapter__content">
+        <h3>What it takes — and what it costs</h3>
+        <p class="chapter__claim">A chief executive’s job is a distillation of everything going wrong; the pain is the role, not a failure of the role.</p>
+        <div class="chapter__body">
+          <h4>The job description</h4>
+          <p>The account of leadership here is bleak and, for that reason, more useful than most. Nothing that is going well requires attention, so the work naturally concentrates into the problems nobody else can fix. Running the company means living in that distillate.</p>
+          <p>Two disciplines follow. The first is technical depth: he argues that separating engineering judgement from spending authority forces one person to defer to another’s summary, and that the decisions are better when both sit in the same head. The second is proximity — go physically to where the problem is, talk to the people whose hands are on the work rather than to their managers. The illustrative case is settling a structural question about Starship’s wall thickness by asking the welders what they thought was safe, then pushing slightly past it.</p>
+          <h4>Visible cost</h4>
+          <p>The factory-floor sleeping is presented not as endurance theatre but as signalling, and he says so explicitly: he slept where people could see him, because a sacrifice nobody observes cannot license the same from anyone else. The related rules — no executive parking, no separate dining, technical managers required to do the technical work — are consistent applications of the same principle.</p>
+          <p>The book also lets in the bill. He describes roughly fifteen years of near-continuous crisis, says the cost was real and lasting, and offers the one piece of retrospective advice he gives his younger self: it would have been fine to stop occasionally. That admission sits somewhat awkwardly beside the surrounding insistence on hundred-hour weeks, and the book does not reconcile them.</p>
+        </div>
+        <div class="compare" style="margin-top:28px">
+          <div class="compare__side"><h4>What is prescribed</h4><ul><li>Eighty- to hundred-hour weeks as the price of entry</li><li>Highest pain threshold in the building</li><li>Live at the constraint until it moves</li><li>Ego minimised to keep the feedback loop intact</li></ul></div>
+          <div class="compare__side good"><h4>What is conceded</h4><ul><li>Long stretches described as continuous pain</li><li>Sustained crisis mode acknowledged as damaging</li><li>Advice to a younger self: ease off occasionally</li><li>Most readers, he says, would not want this life</li></ul></div>
+        </div>
+        <div class="critical-note"><b>The unresolved tension:</b> the book presents extreme hours as necessary and as harmful, without saying how much of the output required the hours and how much simply co-occurred with them. That is the most consequential untested claim in the volume.</div>
+        <div class="key-terms"><span class="term">frontline leadership</span><span class="term">ego-to-ability ratio</span><span class="term">eating glass</span><span class="term">go to the source</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch5">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part II · 05<span></span></div>
+      <div class="chapter__content">
+        <h3>Teams: the output is the vector sum</h3>
+        <p class="chapter__claim">A company is a group of people with a goal; its result is the vector sum of those people, so direction matters as much as magnitude.</p>
+        <div class="chapter__body">
+          <h4>Selection over management</h4>
+          <p>The stated position is that talented people are not managed so much as pointed. The leadership task is to make the goal legible, agree it, then remove obstacles — insisting on a specific decision is described as rare and costly. The recruiting bar is correspondingly high: hire for evidence of exceptional ability, and interrogate a candidate’s hardest past problem in detail, since whoever actually solved it remembers the specifics and whoever did not, cannot.</p>
+          <p>The constraint, he argues, is not capital. Money cannot be converted into excellent engineers because no factory produces them; therefore the binding limit on any ambitious technical company is the small number of exceptional people and the difficulty of assembling them. It follows that mission is a recruiting instrument — a sufficiently interesting problem attracts people that salary alone cannot.</p>
+          <h4>Feedback over feelings</h4>
+          <p>The communication doctrine is deliberately harsh: bad news should travel loudly and often, good news quietly and once. Criticism attaches to the action rather than the person, and what matters about anyone is whether their feedback loop functions. He goes further, naming the wish to be liked as a weakness and warning that camaraderie can suppress the challenge that catches errors.</p>
+          <p>There is a partial correction: he says he over-weighted raw intellect in early hiring and came to regard character as a genuine variable. The book does not, however, examine what a whole organisation running on loud negative feedback selects for over time, or who leaves.</p>
+        </div>
+        <div class="principles">
+          <div class="principle"><div><b>Minimum passing grade is excellent.</b><p>Described as a “special forces” posture appropriate to the startup phase.</p></div></div>
+          <div class="principle"><div><b>A small strong group beats a large adequate one.</b><p>Used to justify keeping engineering teams deliberately small.</p></div></div>
+          <div class="principle"><div><b>Everyone should think like the chief engineer.</b><p>People need enough system-level understanding to recognise a bad local optimisation.</p></div></div>
+          <div class="principle"><div><b>Attitude is not trainable; skills are.</b><p>Offered as the reason to weight disposition heavily at the point of hire.</p></div></div>
+        </div>
+        <div class="key-terms"><span class="term">vector sum</span><span class="term">special forces</span><span class="term">exceptional ability</span><span class="term">feedback loop</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch6">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part II · 06<span></span></div>
+      <div class="chapter__content">
+        <h3>Designing the organisation</h3>
+        <p class="chapter__claim">Information should travel the shortest path that solves the problem — and the shape of the org will otherwise appear, physically, inside the product.</p>
+        <div class="chapter__body">
+          <h4>Against the chain of command</h4>
+          <p>The strongest organisational argument in the book is that routing communication through management hierarchy serves managers rather than companies. If solving a cross-department problem requires a message to climb several levels and descend several more, the latency alone guarantees poor decisions — and then the answer has to make the return trip. The rule is that anyone may talk directly to anyone, without permission, and is obliged to until the right thing happens.</p>
+          <p>The claim that gives this teeth is empirical rather than cultural: organisational boundaries become visible in the finished object. Two teams each convinced they needed an enclosure produce a product with an enclosure inside an enclosure — mass and cost added by an org chart. Once you accept that, silos stop being a morale problem and become an engineering defect.</p>
+          <h4>Clarity as policy</h4>
+          <p>A related discipline targets invented vocabulary. Acronyms multiply, nobody admits to not knowing them, and the result is a private language that people nod along to. The test offered is simply whether a term helps or hurts comprehension — and the enforcement described is unusually blunt for something so small, which is the point: it is treated as infrastructure, not etiquette.</p>
+          <h4>Permission to fail</h4>
+          <p>Innovation is framed as a search with no map, which means false moves are structurally guaranteed. If the penalty for failure is high, the organisation will make conservative choices and can go backwards. He notes not firing the people responsible for early launch failures, on the grounds that they were capable and working hard, and that the fair reason to let someone go is disengagement rather than a bad outcome.</p>
+        </div>
+        <div class="chapter-visual">
+          <div class="chapter-visual__head"><span>Topology</span><b>Two ways to route a cross-department problem</b></div>
+          <div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 400" width="1000" height="400" role="img" aria-labelledby="e6t e6d" style="min-width:780px;width:100%;height:auto">
+  <title id="e6t">Chain-of-command routing compared with direct shortest-path communication</title>
+  <desc id="e6d">On the left, a message from one engineer to another in a different department climbs from engineer to manager to director to vice president, crosses at the top, then descends through vice president, director and manager to reach the second engineer — seven hops, and the same journey again for the reply. On the right, the two engineers are connected directly by a single link, one hop, with a note that any person may contact any other without permission.</desc>
+
+  <text x="60" y="32" class="svg-t">The same problem, two routes</text>
+
+  <!-- ---------- left: chain of command ---------- -->
+  <text x="60" y="66" class="svg-sm">CHAIN OF COMMAND — 7 HOPS EACH WAY</text>
+
+  <g class="svg-sm" fill="var(--ink-3)">
+    <text x="60" y="112">VP</text>
+    <text x="60" y="170">DIRECTOR</text>
+    <text x="60" y="228">MANAGER</text>
+    <text x="60" y="286">ENGINEER</text>
+  </g>
+
+  <!-- nodes -->
+  <g class="pop" style="--d:.2s">
+    <circle cx="180" cy="282" r="13" fill="var(--f1)"/>
+    <circle cx="180" cy="224" r="11" fill="none" stroke="var(--f3)" stroke-width="1.8"/>
+    <circle cx="180" cy="166" r="11" fill="none" stroke="var(--f3)" stroke-width="1.8"/>
+    <circle cx="180" cy="108" r="11" fill="none" stroke="var(--f3)" stroke-width="1.8"/>
+    <circle cx="360" cy="108" r="11" fill="none" stroke="var(--f3)" stroke-width="1.8"/>
+    <circle cx="360" cy="166" r="11" fill="none" stroke="var(--f3)" stroke-width="1.8"/>
+    <circle cx="360" cy="224" r="11" fill="none" stroke="var(--f3)" stroke-width="1.8"/>
+    <circle cx="360" cy="282" r="13" fill="var(--f1)"/>
+  </g>
+
+  <path d="M180 269 L180 235 M180 213 L180 177 M180 155 L180 119 M191 108 L349 108 M360 119 L360 155 M360 177 L360 213 M360 235 L360 269"
+        fill="none" stroke="var(--f3)" stroke-width="2" class="draw" style="--len:560;--d:.4s"/>
+
+  <text x="180" y="316" text-anchor="middle" class="svg-sm" fill="var(--f1)">DEPT A</text>
+  <text x="360" y="316" text-anchor="middle" class="svg-sm" fill="var(--f1)">DEPT B</text>
+
+  <text x="270" y="92" text-anchor="middle" class="svg-b" fill="var(--f3)">cross at the top</text>
+  <text x="270" y="352" text-anchor="middle" class="svg-em">…then the answer makes the same journey back.</text>
+
+  <!-- divider -->
+  <line x1="520" y1="60" x2="520" y2="370" class="svg-hair"/>
+
+  <!-- ---------- right: shortest path ---------- -->
+  <text x="580" y="66" class="svg-sm">SHORTEST PATH — 1 HOP</text>
+
+  <g class="pop" style="--d:.7s">
+    <circle cx="660" cy="220" r="13" fill="var(--f1)"/>
+    <circle cx="880" cy="220" r="13" fill="var(--f1)"/>
+  </g>
+  <path d="M673 220 L867 220" fill="none" stroke="var(--f1)" stroke-width="3" class="draw" style="--len:200;--d:.9s"/>
+
+  <text x="660" y="256" text-anchor="middle" class="svg-sm" fill="var(--f1)">DEPT A</text>
+  <text x="880" y="256" text-anchor="middle" class="svg-sm" fill="var(--f1)">DEPT B</text>
+  <text x="770" y="204" text-anchor="middle" class="svg-b" fill="var(--f1)">talk directly</text>
+
+  <g class="rise" style="--d:1.2s">
+    <text x="580" y="308" class="svg-lab">No permission required — and treated as an obligation,</text>
+    <text x="580" y="326" class="svg-lab">not a courtesy, until the right thing happens.</text>
+    <text x="580" y="352" class="svg-em">Managers who enforce the long route are said not to last.</text>
+  </g>
+</svg>
+          </div>
+          </div>
+          <p class="chapter-visual__caption">The organisational claim worth keeping even if you reject the rest: latency in the org chart shows up as mass and cost in the object.</p>
+        </div>
+        <div class="key-terms"><span class="term">shortest-path communication</span><span class="term">silos</span><span class="term">design necessity</span><span class="term">acronym discipline</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch7">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part II · 07<span></span></div>
+      <div class="chapter__content">
+        <h3>The Algorithm</h3>
+        <p class="chapter__claim">Five steps, and the order is the entire point: most engineering waste comes from running them backwards.</p>
+        <div class="chapter__body">
+          <h4>The procedure</h4>
+          <p>This is the densest practical content in the book and the piece most portable to work that has nothing to do with rockets. The five steps run: make the requirements less dumb; try hard to delete the part or process; simplify or optimise; accelerate cycle time; automate. Each is ordinary. The sequence is not.</p>
+          <div class="algo">
+            <div><b>01 · Requirements</b><span>Every requirement traces to a named person who owns it — never to a department. Requirements from smart people are the most dangerous, because they get questioned least.</span></div>
+            <div><b>02 · Delete</b><span>Remove the part or step outright. If you are not adding roughly one in ten back, you are not deleting aggressively enough.</span></div>
+            <div><b>03 · Simplify</b><span>Only now. The commonest mistake of capable engineers is optimising something that should not exist at all.</span></div>
+            <div><b>04 · Accelerate</b><span>Once the direction is right, speed up. Accelerating a process that should have been deleted just reaches the wrong place sooner.</span></div>
+            <div><b>05 · Automate</b><span>Last. Automating too early is the expensive error — it hard-codes a process before anyone has proved it should exist.</span></div>
+          </div>
+          <h4>Why the order carries the weight</h4>
+          <p>The book’s best self-criticism is that he has personally run the sequence backwards on all five steps. The canonical illustration: a factory step was automated, then accelerated, then optimised — and only afterwards did anyone ask what the component was for. Two departments each believed the other required it. A test showed it did nothing measurable, so it was deleted, taking a substantial robotics installation with it. The lesson is that steps three through five will happily perfect a thing that has no reason to exist, and only steps one and two can catch that.</p>
+          <p>The deliberate over-deletion rule is subtler than it first appears. Teams treat a re-added part as an error, so they under-delete to avoid embarrassment. Announcing in advance that roughly a tenth of deletions will be reversed converts the reversal from failure into evidence the process is calibrated.</p>
+          <h4>Why deletion pays compound interest</h4>
+          <p>In vehicles that must be lifted, mass is recursive. An extra tonne needs propellant to reach orbit, more to slow down, more to land, and structure strong enough to carry it — so its true cost is closer to two tonnes than one. That recursion is why deletion sits at step two rather than being a tidy-up at the end.</p>
+        </div>
+        <div class="chapter-visual">
+          <div class="chapter-visual__head"><span>Sequence</span><b>The order, and the expensive way round</b></div>
+          <div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="e7t e7d" style="min-width:800px;width:100%;height:auto">
+  <title id="e7t">The five-step algorithm in correct order, with the reversed order shown as the common failure</title>
+  <desc id="e7d">Across the top, five boxes run left to right: question requirements, delete, simplify, accelerate, automate, joined by forward arrows. Beneath them a return arrow runs right to left labelled as the expensive route — automating, accelerating and optimising a part before anyone asked whether it should exist. To the right, a small diagram shows mass recursion: one added tonne requires propellant to ascend, to decelerate, to land, and extra structure, totalling roughly one point eight tonnes of true cost.</desc>
+
+  <text x="60" y="34" class="svg-t">The order is the method</text>
+
+  <!-- five steps -->
+  <g class="rise" style="--d:.15s">
+    <rect x="60" y="70" width="132" height="86" rx="4" fill="none" stroke="var(--f1)" stroke-width="2"/>
+    <text x="72" y="94" class="svg-sm" fill="var(--f1)">STEP 01</text>
+    <text x="72" y="118" class="svg-b">Question the</text>
+    <text x="72" y="134" class="svg-b">requirement</text>
+  </g>
+  <g class="rise" style="--d:.3s">
+    <rect x="216" y="70" width="132" height="86" rx="4" fill="none" stroke="var(--f1)" stroke-width="2"/>
+    <text x="228" y="94" class="svg-sm" fill="var(--f1)">STEP 02</text>
+    <text x="228" y="118" class="svg-b">Delete the part</text>
+    <text x="228" y="134" class="svg-b">or process</text>
+  </g>
+  <g class="rise" style="--d:.45s">
+    <rect x="372" y="70" width="132" height="86" rx="4" fill="none" stroke="var(--f3)" stroke-width="2"/>
+    <text x="384" y="94" class="svg-sm" fill="var(--f3)">STEP 03</text>
+    <text x="384" y="118" class="svg-b">Simplify or</text>
+    <text x="384" y="134" class="svg-b">optimise</text>
+  </g>
+  <g class="rise" style="--d:.6s">
+    <rect x="528" y="70" width="132" height="86" rx="4" fill="none" stroke="var(--f3)" stroke-width="2"/>
+    <text x="540" y="94" class="svg-sm" fill="var(--f3)">STEP 04</text>
+    <text x="540" y="118" class="svg-b">Accelerate</text>
+    <text x="540" y="134" class="svg-b">cycle time</text>
+  </g>
+  <g class="rise" style="--d:.75s">
+    <rect x="684" y="70" width="132" height="86" rx="4" fill="none" stroke="var(--f3)" stroke-width="2"/>
+    <text x="696" y="94" class="svg-sm" fill="var(--f3)">STEP 05</text>
+    <text x="696" y="118" class="svg-b">Automate</text>
+  </g>
+
+  <path d="M198 113 L210 113 M354 113 L366 113 M510 113 L522 113 M666 113 L678 113"
+        fill="none" stroke="var(--ink-3)" stroke-width="1.8" class="draw" style="--len:60;--d:.9s"/>
+  <g fill="var(--ink-3)" class="rise" style="--d:.95s">
+    <path d="M210 113 l-7 -4 v8 z"/><path d="M366 113 l-7 -4 v8 z"/>
+    <path d="M522 113 l-7 -4 v8 z"/><path d="M678 113 l-7 -4 v8 z"/>
+  </g>
+
+  <!-- the expensive route -->
+  <path d="M750 172 C 750 216, 600 224, 420 224 C 260 224, 132 216, 126 176"
+        fill="none" stroke="var(--f2)" stroke-width="2.2" stroke-dasharray="6 4" class="draw" style="--len:700;--d:1.1s"/>
+  <g class="rise" style="--d:1.5s">
+    <text x="438" y="250" text-anchor="middle" class="svg-b" fill="var(--f2)">THE EXPENSIVE ROUTE</text>
+    <text x="438" y="268" text-anchor="middle" class="svg-lab">Automate it, speed it up, polish it —</text>
+    <text x="438" y="286" text-anchor="middle" class="svg-lab">then discover nobody needed the part.</text>
+  </g>
+
+  <g class="rise" style="--d:1.6s">
+    <text x="60" y="330" class="svg-sm">CALIBRATION</text>
+    <text x="60" y="354" class="svg-lab">If you never have to add anything back, you are</text>
+    <text x="60" y="372" class="svg-lab">not deleting hard enough. Target roughly 1 in 10.</text>
+  </g>
+
+  <!-- divider -->
+  <line x1="838" y1="190" x2="838" y2="396" class="svg-hair"/>
+
+  <!-- mass recursion -->
+  <text x="862" y="212" class="svg-sm">WHY DELETION COMPOUNDS</text>
+  <g class="growx" style="--d:1.3s">
+    <rect x="862" y="228" width="52" height="18" rx="2" fill="var(--f1)"/>
+    <rect x="862" y="252" width="26" height="14" rx="2" fill="var(--f3)" opacity=".85"/>
+    <rect x="862" y="272" width="20" height="14" rx="2" fill="var(--f3)" opacity=".7"/>
+    <rect x="862" y="292" width="16" height="14" rx="2" fill="var(--f3)" opacity=".55"/>
+    <rect x="862" y="312" width="14" height="14" rx="2" fill="var(--f3)" opacity=".4"/>
+  </g>
+  <g class="svg-sm" fill="var(--ink-3)">
+    <text x="922" y="241">+1 TONNE</text>
+    <text x="896" y="263">ASCENT FUEL</text>
+    <text x="890" y="283">DECEL FUEL</text>
+    <text x="886" y="303">LANDING FUEL</text>
+    <text x="884" y="323">STRUCTURE</text>
+  </g>
+  <line x1="862" y1="338" x2="962" y2="338" class="svg-axis"/>
+  <text x="862" y="360" class="svg-num" fill="var(--f1)">≈1.8× true cost</text>
+  <text x="862" y="380" class="svg-em">per tonne added</text>
+</svg>
+          </div>
+          <div class="fig-legend">
+            <span><i style="--c:var(--f1)"></i>Steps that question existence</span>
+            <span><i style="--c:var(--f3)"></i>Steps that improve execution</span>
+            <span><i class="dash" style="--c:var(--f2)"></i>The common reversal</span>
+          </div>
+          </div>
+        </div>
+        <div class="takeaway"><b>Portable without modification</b>Steps one and two are free, apply to any process, and are the ones organisations reliably skip — because deleting work is harder to justify in a review than optimising it.</div>
+        <div class="key-terms"><span class="term">The Algorithm</span><span class="term">requirement ownership</span><span class="term">over-deletion</span><span class="term">mass recursion</span><span class="term">premature automation</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch8">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part II · 08<span></span></div>
+      <div class="chapter__content">
+        <h3>Maniacal urgency</h3>
+        <p class="chapter__claim">Time is the one input that cannot be replaced, so speed is treated as both the offence and the defence.</p>
+        <div class="chapter__body">
+          <h4>Speed as a moat</h4>
+          <p>The argument against defending intellectual property is characteristically direct: if your rate of innovation is high enough, imitators are copying what you did years ago, and that is fine. Protection comes from the derivative, not the patent. Similarly, a factory running at twice the speed of another is, in effect, two factories — which reframes throughput as a capital-efficiency question rather than an operations one.</p>
+          <h4>Parallel, not serial</h4>
+          <p>Many things have an irreducible gestation period that no effort shortens. The lever is therefore not to hurry each one but to start them all at once. He describes deliberately overlapping the regulatory, banking and engineering workstreams at PayPal so that software readiness and external agreements matured together. The generalised advice — people serialise far more than they need to — is among the most immediately actionable lines in the book.</p>
+          <p>The largest illustration is the 2024 AI cluster: supplier estimates of eighteen to twenty-four months were unacceptable, so the problem was decomposed into building, power and cooling and each was solved by substitution rather than construction — an idle factory instead of a new one, rented generators to cover a tenfold power shortfall, a large share of available mobile chillers, and battery packs with modified firmware to absorb the violent power swings of a training run. The build is described as taking 122 days, then doubling in capacity 92 days after that.</p>
+          <h4>The schedule problem, half-admitted</h4>
+          <p>On deadlines the book is more candid than its reputation suggests, and still incomplete. Internal timelines are set as aggressively as possible on the theory that schedules expand to fill whatever time they are given. He states that the dates he cites are the ones he actually believes, that some are known to be unreachable but are set to pull suppliers forward, and — flatly — that he is habitually optimistic about schedules.</p>
+          <p>The defence offered is that for radical technology the lateness matters less than the eventual arrival. That is a reasonable argument about historical significance and a poor one for anybody deciding whether to rely on a date. The book does not distinguish the two cases, which is precisely where a reader should insert their own discount.</p>
+        </div>
+        <div class="causal-chain">
+          <div class="node">Aggressive internal date</div><div class="arrow">→</div>
+          <div class="node">Work compresses</div><div class="arrow">→</div>
+          <div class="node">Date is missed</div><div class="arrow">→</div>
+          <div class="node">Still earlier than a realistic plan</div>
+        </div>
+        <div class="critical-note"><b>Where the logic leaks:</b> the chain works only if missing dates is cheap. For suppliers, customers, regulators and anyone underwriting the schedule, it is not — and those parties never appear in the argument.</div>
+        <div class="key-terms"><span class="term">parallel gestation</span><span class="term">rate of innovation as moat</span><span class="term">schedule expansion</span><span class="term">vector not scalar</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch9">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part II · 09<span></span></div>
+      <div class="chapter__content">
+        <h3>The factory is the product</h3>
+        <p class="chapter__claim">Designing the thing is the easy half; the machine that builds the machine is where the difficulty and the advantage live.</p>
+        <div class="chapter__body">
+          <h4>Prototype versus production</h4>
+          <p>The claim is that people systematically mistake where the difficulty sits. Designing a rocket is a solved problem in the sense that the equations are public; building one and getting it to orbit is not. A car prototype is achievable; car production is the hard thing. The popular model — a eureka moment followed by mere copying — is described as simply false.</p>
+          <p>From this comes the epiphany the book treats as the most important of the Tesla years: production volume, not vehicle design, is the binding constraint on the mission, so engineering attention should move to the factory itself. He claims more headroom for innovation exists in manufacturing than in the product, and concedes the belief may be wrong while noting it also functions as a recruiting position.</p>
+          <h4>Attack the constraint</h4>
+          <p>A production line moves at the speed of its slowest and least fortunate element, so the only work that matters is work on the current bottleneck — and the bottleneck moves. The simplification cases are consistent with the deletion doctrine: replacing a robot-turntable-robot handoff with a direct handoff removed a step, equipment and a failure mode at once; casting a rear body section as a single piece removed hundreds of robots and shrank the body shop substantially.</p>
+          <p>The underlying argument is about tolerance stack-up: fifty separate parts, each individually within spec, compound into variance no individual tolerance predicts. Combining parts is therefore a quality strategy, not only a cost one. This is the clearest instance in the book of a genuinely first-principles conclusion that contradicts standard practice.</p>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-card"><span class="detail-label">Diagnosis</span><h4>Right answers, wrong questions</h4><p>Fifty engineers each choosing the optimal material for one part produce fifty correct local answers and one incoherent assembly.</p></div>
+          <div class="detail-card"><span class="detail-label">Remedy</span><h4>Fewer, larger pieces</h4><p>Consolidation removes joints, sealants, dissimilar-metal corrosion and the tolerance stack all at once.</p></div>
+        </div>
+        <div class="key-terms"><span class="term">machine that builds the machine</span><span class="term">constraint</span><span class="term">tolerance stack-up</span><span class="term">casting</span></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================ PART III ============================ -->
+  <section class="movement" id="companies">
+    <div class="wrap">
+      <div class="movement__head"><p class="eyebrow"><b>Part III</b></p><h2>Building companies</h2></div>
+      <p class="movement__dek">The narrative part: how the method was arrived at rather than stated. Useful mainly because the early ventures show the same reasoning working at much lower stakes — and show it being overruled.</p>
+    </div>
+  </section>
+
+  <article class="chapter" id="elon-ch10">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part III · 10<span></span></div>
+      <div class="chapter__content">
+        <h3>Zip2 and PayPal: lessons bought cheaply</h3>
+        <p class="chapter__claim">The first two companies taught distribution and feedback — and both lessons arrived through losing control.</p>
+        <div class="chapter__body">
+          <h4>Arrival and the first company</h4>
+          <p>The biography is compressed to what bears on method: leaving South Africa at seventeen on a Canadian passport with a backpack, a case of books and a small amount of money; farm work in Saskatchewan and the worst job of his life cleaning a lumber-mill boiler; university paid for by debt. He abandoned a physics doctorate on energy storage after concluding the work might be academically successful and practically useless — while the internet was visibly happening. Software was chosen partly because it needs no capital.</p>
+          <p>Zip2 began after Netscape ignored his job application. The lesson it taught was structural: the software was competitive, but it was sold through newspaper companies who held board control and would not deploy it properly. Good technology delivered through an intermediary that does not understand it is wasted technology. Hence the rule he takes forward — go direct to the end customer.</p>
+          <h4>PayPal and the corrective</h4>
+          <p>X.com was conceived from an information-theory view of money: money is a database for allocating resources across time and space, and the quality of a monetary system can be judged like a network connection, by bandwidth, latency and error rate. The ambitious plan was full-service finance; the small feature nobody was supposed to care about was payment by email.</p>
+          <p>When demonstrations showed people ignoring the sophisticated part and wanting the simple one, the company followed the customers. He presents this as the decisive lesson — the environment’s feedback overruled the founder’s thesis, and the company survived because it closed that loop quickly. The merger with Confinity is described in equally unsentimental terms: two well-funded competitors a block apart, either combine or destroy each other.</p>
+          <h4>Removed</h4>
+          <p>He was removed as chief executive while travelling, over a set of proposals the board found too risky for the moment. The account is notably ungrudging: he disagrees with the reasoning, accepts the outcome was good, and notes he later invested alongside the people who replaced him. Whatever else it is, it is a clean demonstration of the ego-minimisation he prescribes elsewhere.</p>
+        </div>
+        <div class="ledger">
+          <div><b>1995</b><span>Zip2 founded — maps, directions and classifieds sold to newspaper publishers</span><i>~$2k start</i></div>
+          <div><b>1999</b><span>Zip2 sold to Compaq for cash; proceeds rolled almost entirely into X.com</span><i>~$300m+</i></div>
+          <div><b>2000</b><span>X.com merges with Confinity weeks before the market turns</span><i>$100m raised</i></div>
+          <div><b>2002</b><span>PayPal goes public, then sells to eBay to retire the platform risk</span><i>~$4.5bn</i></div>
+        </div>
+        <div class="critical-note"><b>What the sequence really shows:</b> two of the three formative lessons — sell direct, follow the feedback — were learned by being overruled, first by customers and then by a board. The book files them under founder insight.</div>
+        <div class="key-terms"><span class="term">direct to consumer</span><span class="term">money as information</span><span class="term">closing the loop</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch11">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part III · 11<span></span></div>
+      <div class="chapter__content">
+        <h3>Tesla: a sequenced bet on cost</h3>
+        <p class="chapter__claim">Start where the product can be expensive, and use each generation to buy the volume that makes the next one cheaper.</p>
+        <div class="chapter__body">
+          <h4>The mission argument</h4>
+          <p>The stated purpose is to accelerate the shift from extracting and burning hydrocarbons to a solar-electric economy. The argument is framed to be robust to disagreement about climate: since fossil fuels are finite, the transition must happen eventually, so the only real question is timing — and doing it sooner is strictly better. Energy output is treated as the foundation of economic output, which makes the transition an economic problem rather than only an environmental one.</p>
+          <h4>The staircase</h4>
+          <p>The master plan is a financing structure disguised as a product roadmap. Build an expensive low-volume sports car, because a new technology can only bear its early cost in a segment that tolerates high prices. Use the proceeds to build something cheaper at higher volume, and repeat. Each step buys manufacturing scale, and scale is what actually moves cost — not invention alone.</p>
+          <p>The supporting positions follow the pattern set in Part II: sell directly rather than through dealers, decline advertising and route the money into the product instead, and treat design and beauty as real value rather than decoration. Survival is described honestly as marginal for years, with his own capital committed last and withdrawn last.</p>
+        </div>
+        <div class="chapter-visual">
+          <div class="chapter-visual__head"><span>Sequence</span><b>Each generation funds the next one down</b></div>
+          <div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 380" width="1000" height="380" role="img" aria-labelledby="e11t e11d" style="min-width:760px;width:100%;height:auto">
+  <title id="e11t">The sequenced product strategy: falling price against rising volume across three generations</title>
+  <desc id="e11d">Three descending steps run left to right. The first is a low-volume, high-price sports car; the second a mid-price, mid-volume car; the third a lower-price, high-volume car. A falling price line and a rising volume line cross between the second and third steps, and an arrow beneath shows proceeds from each generation funding the next.</desc>
+
+  <text x="60" y="34" class="svg-t">A roadmap that is really a financing plan</text>
+
+  <line x1="80" y1="300" x2="900" y2="300" class="svg-axis"/>
+  <text x="490" y="330" text-anchor="middle" class="svg-sm">EACH GENERATION BUYS THE SCALE FOR THE NEXT</text>
+
+  <!-- steps -->
+  <g class="grow" style="--d:.2s"><rect x="120" y="96" width="180" height="204" rx="4" fill="var(--f1)" opacity=".92"/></g>
+  <g class="grow" style="--d:.45s"><rect x="400" y="164" width="180" height="136" rx="4" fill="var(--f1)" opacity=".72"/></g>
+  <g class="grow" style="--d:.7s"><rect x="680" y="228" width="180" height="72" rx="4" fill="var(--f1)" opacity=".52"/></g>
+
+  <g fill="#fff">
+    <text x="140" y="128" class="svg-sm" fill="#fff" opacity=".85">GENERATION 01</text>
+    <text x="140" y="152" class="svg-b" fill="#fff">Sports car</text>
+    <text x="140" y="172" class="svg-lab" fill="#fff" opacity=".9">Low volume</text>
+    <text x="140" y="190" class="svg-lab" fill="#fff" opacity=".9">High price</text>
+
+    <text x="420" y="196" class="svg-sm" fill="#fff" opacity=".85">GENERATION 02</text>
+    <text x="420" y="220" class="svg-b" fill="#fff">Affordable car</text>
+    <text x="420" y="240" class="svg-lab" fill="#fff" opacity=".9">Mid volume</text>
+
+    <text x="700" y="256" class="svg-sm" fill="#fff" opacity=".85">GENERATION 03</text>
+    <text x="700" y="280" class="svg-b" fill="#fff">Cheaper still · high volume</text>
+  </g>
+
+  <!-- price line -->
+  <path d="M120 92 L300 92 L400 160 L580 160 L680 224 L860 224"
+        fill="none" stroke="var(--f2)" stroke-width="2.6" class="draw" style="--len:820;--d:.9s"/>
+  <text x="150" y="80" class="svg-b" fill="var(--f2)">PRICE FALLS</text>
+
+  <!-- volume line -->
+  <path d="M120 288 C 300 284, 420 262, 580 214 C 700 178, 800 150, 860 132"
+        fill="none" stroke="var(--f4)" stroke-width="2.6" class="draw" style="--len:800;--d:1.1s"/>
+  <text x="742" y="122" class="svg-b" fill="var(--f4)">VOLUME RISES</text>
+
+  <!-- funding arrows -->
+  <g class="rise" style="--d:1.5s">
+    <path d="M300 344 L392 344" stroke="var(--ink-3)" stroke-width="1.6" fill="none"/>
+    <path d="M400 344 l-8 -4 v8 z" fill="var(--ink-3)"/>
+    <path d="M580 344 L672 344" stroke="var(--ink-3)" stroke-width="1.6" fill="none"/>
+    <path d="M680 344 l-8 -4 v8 z" fill="var(--ink-3)"/>
+    <text x="346" y="366" text-anchor="middle" class="svg-sm">FUNDS</text>
+    <text x="626" y="366" text-anchor="middle" class="svg-sm">FUNDS</text>
+  </g>
+</svg>
+          </div>
+          <div class="fig-legend">
+            <span><i style="--c:var(--f2)"></i>Unit price</span>
+            <span><i style="--c:var(--f4)"></i>Volume</span>
+            <span><i style="--c:var(--f1)"></i>Product generation</span>
+          </div>
+          </div>
+        </div>
+        <div class="key-terms"><span class="term">sequenced strategy</span><span class="term">scale drives cost</span><span class="term">direct sales</span><span class="term">sustainable energy transition</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch12">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part III · 12<span></span></div>
+      <div class="chapter__content">
+        <h3>SpaceX: reusability as the whole argument</h3>
+        <p class="chapter__claim">If the vehicle is discarded on every flight, cost is bounded by manufacturing; if it is not, cost approaches propellant.</p>
+        <div class="chapter__body">
+          <h4>Founded on an expected loss</h4>
+          <p>The framing is unusual and worth taking seriously: he put his own capital in while estimating the probability of success at under ten per cent and expecting to lose it. The justification was that partial progress had value even in failure, since another party could continue from it. This is the clearest instance of the book’s decision rule — expected effect on the trajectory, not risk-adjusted personal return. The first three launches failed, and the company is described as very nearly not surviving.</p>
+          <h4>The holy grail</h4>
+          <p>Full and rapid reusability is the load-bearing engineering claim. Once the vehicle is recovered intact and flown again quickly, the marginal cost of a flight collapses toward propellant and handling. He notes that nothing here requires new physics — orbital mechanics was settled in the 1950s — which places the problem firmly in engineering and economics, exactly where the first-principles method claims to be strongest.</p>
+          <p>The operating philosophy is iteration under real conditions: make it work first and optimise later; accept that hardware must be flown to be understood, because no test stand reproduces the full flight envelope; expect hundreds or thousands of changes between flights. Eliminating risk entirely is explicitly rejected as a goal, since a programme that cannot fail cannot learn.</p>
+        </div>
+        <div class="loop">
+          <div class="loop__step"><b>Fly</b><p>Reach conditions no ground test can reproduce.</p></div>
+          <div class="loop__step"><b>Break</b><p>Failures are treated as information purchased, not as scandal.</p></div>
+          <div class="loop__step"><b>Change</b><p>Hundreds of hardware revisions between flights; software more.</p></div>
+          <div class="loop__step"><b>Repeat sooner</b><p>Cycle time is the variable that compounds.</p></div>
+        </div>
+        <div class="critical-note"><b>Transferability limit:</b> this loop assumes failures are survivable and mostly uninsured against reputation. In medicine, aviation certification or finance the same loop is illegal, and the book never marks that boundary.</div>
+        <div class="key-terms"><span class="term">full reusability</span><span class="term">iterate in flight</span><span class="term">no new physics required</span><span class="term">mass to orbit</span></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================ PART IV ============================ -->
+  <section class="movement" id="humanity">
+    <div class="wrap">
+      <div class="movement__head"><p class="eyebrow"><b>Part IV</b></p><h2>On behalf of humanity</h2></div>
+      <p class="movement__dek">The speculative part, and the weakest as argument: a defence of companies as the effective form of philanthropy, a list of civilisational risks, and the case for a second planet as insurance.</p>
+    </div>
+  </section>
+
+  <article class="chapter" id="elon-ch13">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part IV · 13<span></span></div>
+      <div class="chapter__content">
+        <h3>Companies as philanthropy</h3>
+        <p class="chapter__claim">If philanthropy means love of humanity, then building things people need at prices they can pay is a form of it — and often a more effective one.</p>
+        <div class="chapter__body">
+          <h4>The argument</h4>
+          <p>The position is that a company producing a genuinely useful good at scale delivers more benefit per unit of effort than most charitable giving, because it is disciplined by whether anyone actually wants the output. Capital is recycled rather than consumed, and the enterprise must keep proving its usefulness to survive. He frames it as caring about the reality of doing good rather than its perception.</p>
+          <p>Taken narrowly this is defensible and not new. Taken as stated it does a great deal of work: it converts commercial success into moral credit automatically, and it exempts the holder from the scrutiny that giving normally attracts. The book presents the first reading and relies on the second. A market test demonstrates willingness to pay; it does not measure effects on people who are not customers, which is where most of the interesting objections live.</p>
+          <h4>Abundance</h4>
+          <p>The forward-looking chapters argue that intelligence and energy are both heading toward abundance, that humanoid robots may become a larger market than cars, and that autonomy dramatically raises the utilisation of existing capital. The energy claim is the most concrete: incident solar energy is sufficient by orders of magnitude, and the transition decomposes into a finite list of engineering tasks — repower the grid, electrify transport and heating, handle high-temperature industrial heat, fuel aviation and shipping sustainably, and manufacture the equipment to do it.</p>
+        </div>
+        <div class="takeaway"><b>Worth separating</b>The engineering claim (the sun supplies enough energy, and the transition is a finite build-out) is testable and largely uncontroversial. The moral claim (therefore building the equipment is philanthropy) is a separate argument that the book does not actually make.</div>
+        <div class="key-terms"><span class="term">companies as philanthropy</span><span class="term">sustainable abundance</span><span class="term">utilisation</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch14">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part IV · 14<span></span></div>
+      <div class="chapter__content">
+        <h3>The risk register</h3>
+        <p class="chapter__claim">Civilisation is more fragile than it feels; prioritise the risks that end the trajectory over the ones that are merely tragic.</p>
+        <div class="chapter__body">
+          <h4>The list</h4>
+          <p>The named risks are war, the steady accumulation of regulation, unsustainable energy, misaligned artificial superintelligence, falling birth rates, and asteroid impact. The organising principle is explicitly not severity of suffering but irreversibility — he argues for prioritising what forecloses the future over what is painful but recoverable.</p>
+          <p>Two entries carry most of the book’s conviction. On AI, he describes concluding that the technology could not be stopped, so the remaining lever was to influence how it is built — with truthfulness named as the property that matters most, on the argument that a system trained to be agreeable rather than accurate is the dangerous configuration. On population, he treats sub-replacement fertility as the under-recognised threat and argues the overpopulation concern has the sign inverted.</p>
+          <h4>The regulation argument</h4>
+          <p>The claim is structural rather than partisan: rules accumulate because adding one is easy and removing one is nobody’s job, so the stock grows monotonically and the system slowly stiffens. This is a real phenomenon and the mechanism is correctly identified. It is also the argument most obviously entangled with the interests of the person making it — the constraints described are the ones that bind his own companies — and the book, having excluded politics by policy, never engages with what the rules were for.</p>
+        </div>
+        <div class="chapter-visual">
+          <div class="chapter-visual__head"><span>Register</span><b>Ranked by irreversibility, not by suffering</b></div>
+          <div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 400" width="1000" height="400" role="img" aria-labelledby="e14t e14d" style="min-width:760px;width:100%;height:auto">
+  <title id="e14t">Named civilisational risks plotted by tractability against irreversibility</title>
+  <desc id="e14d">A scatter plot. The horizontal axis runs from low to high tractability, the vertical from recoverable to irreversible. Misaligned superintelligence sits high and to the left as highly irreversible and hard to influence. Asteroid impact is high and moderately tractable. World war is high and low in tractability. Population collapse is upper middle. Unsustainable energy sits mid-height and far right as the most tractable. Regulatory accumulation sits low and to the right, marked as recoverable but compounding.</desc>
+
+  <text x="60" y="32" class="svg-t">What the book chooses to worry about</text>
+
+  <line x1="120" y1="330" x2="900" y2="330" class="svg-axis"/>
+  <line x1="120" y1="70" x2="120" y2="330" class="svg-axis"/>
+  <text x="510" y="362" text-anchor="middle" class="svg-sm">TRACTABLE BY BUILDING SOMETHING →</text>
+  <text transform="translate(98,200) rotate(-90)" text-anchor="middle" class="svg-sm">IRREVERSIBLE →</text>
+
+  <g class="svg-hair" stroke-width="1">
+    <line x1="120" y1="200" x2="900" y2="200"/>
+    <line x1="510" y1="70" x2="510" y2="330"/>
+  </g>
+
+  <g class="pop" style="--d:.3s">
+    <circle cx="210" cy="104" r="9" fill="var(--f2)"/>
+    <circle cx="286" cy="132" r="9" fill="var(--f2)"/>
+    <circle cx="640" cy="118" r="9" fill="var(--f1)"/>
+    <circle cx="430" cy="182" r="9" fill="var(--f2)"/>
+    <circle cx="820" cy="216" r="11" fill="var(--f4)"/>
+    <circle cx="726" cy="292" r="9" fill="var(--f3)"/>
+  </g>
+
+  <g class="rise" style="--d:.7s">
+    <text x="224" y="98" class="svg-b" fill="var(--f2)">Misaligned superintelligence</text>
+    <text x="224" y="114" class="svg-sm">CANNOT BE STOPPED — ONLY STEERED</text>
+
+    <text x="300" y="126" class="svg-b" fill="var(--f2)">World war</text>
+    <text x="300" y="142" class="svg-sm">RESETS THE TRAJECTORY</text>
+
+    <text x="654" y="112" class="svg-b" fill="var(--f1)">Asteroid impact</text>
+    <text x="654" y="128" class="svg-sm">NO DEFENCE AT PRESENT</text>
+
+    <text x="444" y="176" class="svg-b" fill="var(--f2)">Population collapse</text>
+    <text x="444" y="192" class="svg-sm">SLOW AND COMPOUNDING</text>
+
+    <text x="690" y="240" class="svg-b" fill="var(--f4)" text-anchor="end">Unsustainable energy</text>
+    <text x="690" y="256" class="svg-sm" text-anchor="end">A FINITE ENGINEERING BUILD-OUT</text>
+
+    <text x="712" y="286" class="svg-b" fill="var(--f3)" text-anchor="end">Regulatory accumulation</text>
+    <text x="712" y="302" class="svg-sm" text-anchor="end">RECOVERABLE — BUT MONOTONIC</text>
+  </g>
+
+  <text x="136" y="90" class="svg-em">Hard to influence</text>
+  <text x="828" y="348" text-anchor="end" class="svg-em">Solvable by building</text>
+</svg>
+          </div>
+          </div>
+          <p class="chapter-visual__caption">Placement is this summary’s reading of the book’s emphasis, not a quantified assessment. Note the pattern: the risks judged most tractable are the ones his companies address.</p>
+        </div>
+        <div class="key-terms"><span class="term">irreversibility</span><span class="term">truthful AI</span><span class="term">population collapse</span><span class="term">civilisational fragility</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="chapter" id="elon-ch15">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part IV · 15<span></span></div>
+      <div class="chapter__content">
+        <h3>Becoming multiplanetary</h3>
+        <p class="chapter__claim">A self-sustaining second settlement is insurance on life itself — and the window in which it is possible may not stay open.</p>
+        <div class="chapter__body">
+          <h4>The insurance argument</h4>
+          <p>The case is put as risk management rather than adventure. A single-planet species is exposed to a class of events that no amount of terrestrial competence prevents, and this is the first moment in roughly four and a half billion years when extending life beyond its origin has been physically possible. The standard objection — fix Earth first — gets a direct answer: the cost is a small fraction of global output, and the two projects are not in real competition for resources.</p>
+          <p>The engineering requirement is stated as tonnage. A settlement that can survive the interruption of resupply needs a very large mass of equipment delivered, which makes cost per tonne the governing variable and reusable launch its precondition. He is explicit that no new physics is needed, only extremely difficult engineering — the same move made throughout the book, converting an apparently visionary claim into a cost curve.</p>
+          <h4>What to make of it</h4>
+          <p>As a piece of reasoning it is internally consistent and rests on one contestable premise: that the probability of a civilisation-ending event is high enough, soon enough, to justify the expenditure now. The book asserts this rather than defending it. What the argument does supply is a clean example of the method applied to something enormous — identify the physical constraint, reduce it to a unit cost, then attack that number.</p>
+        </div>
+        <div class="causal-chain">
+          <div class="node">Reusable vehicle</div><div class="arrow">→</div>
+          <div class="node">Cost per tonne falls</div><div class="arrow">→</div>
+          <div class="node">Enough mass delivered</div><div class="arrow">→</div>
+          <div class="node">Self-sustaining settlement</div>
+        </div>
+        <div class="key-terms"><span class="term">multiplanetary</span><span class="term">cost per tonne</span><span class="term">life insurance for life</span></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================ CLOSING ============================ -->
+  <section class="closing" id="reading">
+    <div class="wrap">
+      <div class="closing__grid">
+        <div>
+          <p class="eyebrow"><b>A critical reading</b></p>
+          <h2>How much weight it holds</h2>
+          <p class="hero__subtitle">The engineering method is the durable part and survives disagreement about its author. The further the book travels from things that can be measured, the more it relies on the reader already being persuaded.</p>
+          <p class="lede">The structural problem is not dishonesty — the author discloses his method plainly. It is that a compiled book cannot contain a counter-argument. Every claim arrives in its most articulate form, from a subject describing his own record, with the failed predictions and the losing bets edited out by construction rather than by intent.</p>
+          <p class="lede">Read it, then, as an unusually good primary source on how one exceptional operator thinks, rather than as evidence that the thinking is correct. The parts that generalise are the ones that would be testable in your own work by next week.</p>
+        </div>
+        <div class="principles">
+          <div class="principle"><div><b>Take: The Algorithm, in order.</b><p>Question the requirement and delete before optimising. Free, general, and reliably skipped.</p></div></div>
+          <div class="principle"><div><b>Take: cost teardowns.</b><p>Decomposing a price into materials tells you whether headroom exists before you commit years to finding out.</p></div></div>
+          <div class="principle"><div><b>Take: shortest-path communication.</b><p>The claim that org boundaries become visible in the product is concrete and checkable.</p></div></div>
+          <div class="principle"><div><b>Take: parallel over serial.</b><p>Most schedules are serialised out of habit rather than dependency.</p></div></div>
+          <div class="principle"><div><b>Discount: the hours.</b><p>Presented as necessary and as harmful, with no attempt to separate what the output actually required.</p></div></div>
+          <div class="principle"><div><b>Discount: the schedule defence.</b><p>“Late but eventual” is an argument about history, not a basis for anyone relying on a date.</p></div></div>
+          <div class="principle"><div><b>Discount: companies as philanthropy.</b><p>A market test measures willingness to pay, not effects on people who never bought anything.</p></div></div>
+          <div class="principle"><div><b>Discount: the survivorship.</b><p>The method is evidenced entirely by ventures that worked, arranged after the fact.</p></div></div>
+        </div>
+      </div>
+
+      <div class="plate" style="margin-top:34px">
+        <div class="plate__head"><span>Plate 02 · placement</span><b>Where it sits beside the others on this shelf</b></div>
+        <div class="plate__body">
+          <div class="concept-grid">
+            <div class="concept-card"><span class="tag">Method</span><b>Popper, inverted</b><p>Both prize conjecture and error-correction, but <a href="popper-objective-knowledge.html">Popper</a> makes criticism the engine. Here the loop runs on physical tests instead of argument.</p></div>
+            <div class="concept-card"><span class="tag">Optimism</span><b>Deutsch, applied</b><p><a href="the-beginning-of-infinity.html">Deutsch</a> argues problems are soluble given good explanations. This is that thesis with a delivery schedule attached.</p></div>
+            <div class="concept-card"><span class="tag">Caution</span><b>Taleb’s objection</b><p><a href="fooled-by-randomness.html">Fooled by Randomness</a> is the direct rebuttal: a compiled record of a winner is exactly the evidence least able to separate method from luck.</p></div>
+            <div class="concept-card"><span class="tag">Precedent</span><b>The Rockefeller pattern</b><p><a href="titan-rockefeller.html">Titan</a> shows the same shape a century earlier — vertical integration, obsessive cost accounting, and a reputation contested in its own lifetime.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="sources">
+  <div class="wrap"><p>Independent summary and critical reading of <em>The Book of Elon: A Guide to Purpose and Success</em> by Eric Jorgenson (2026), compiled from the published edition’s own structure and stated method. Figures and placements are this summary’s interpretation. No text from the book is reproduced.</p></div>
+</footer>
+
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('themeButton'),k='elon-summary-theme',s=null;try{s=localStorage.getItem(k)}catch(e){}if(s==='light'||s==='dark')r.dataset.theme=s;b.addEventListener('click',function(){var c=r.dataset.theme||((matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'),n=c==='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem(k,n)}catch(e){}})})();
+</script>
+<script src="book-toc.js"></script>
+<script src="book-figures.js"></script>
+</body>
+</html>
