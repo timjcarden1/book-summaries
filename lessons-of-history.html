@@ -579,9 +579,11 @@ figure.fig figcaption {
 .takeaways li {
   list-style: none;
   counter-increment: tk;
-  display: grid; grid-template-columns: 2.4rem 1fr; gap: 0.9rem;
+  display: grid; grid-template-columns: 2.4rem 1fr; gap: 0 0.9rem;
   padding: 1rem 0; border-bottom: var(--rule);
 }
+/* the counter takes column 1; everything else stacks in the text column */
+.takeaways li > * { grid-column: 2; }
 .takeaways li::before {
   content: counter(tk, decimal-leading-zero);
   font-family: var(--label); font-size: 0.78rem; letter-spacing: 0.1em;

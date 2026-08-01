@@ -388,9 +388,11 @@ table.tbl .ox  { color: var(--oxide); }
 .takeaways { counter-reset: tk; display: grid; border-top: 3px solid var(--accent); padding: 0; margin: 0; }
 .takeaways li {
   list-style: none; counter-increment: tk;
-  display: grid; grid-template-columns: 2.4rem 1fr; gap: 0.9rem;
+  display: grid; grid-template-columns: 2.4rem 1fr; gap: 0 0.9rem;
   padding: 0.95rem 0; border-bottom: var(--rule);
 }
+/* the counter takes column 1; everything else stacks in the text column */
+.takeaways li > * { grid-column: 2; }
 .takeaways li::before {
   content: counter(tk, decimal-leading-zero);
   font-family: var(--label); font-size: 0.76rem; letter-spacing: 0.1em;
