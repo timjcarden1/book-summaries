@@ -33,7 +33,7 @@ The index lists the summaries only. The print PDFs are still in the repo and rea
 Each summary is a single HTML file that pulls in a subset of the shared stylesheets and scripts:
 
 - `reading-summary.css` — base palette, typography and layout for the illustrated summaries
-- `civ-plate.css` / `civ-plate.js` — shared chrome for the history summaries (Durant, Livy, Popper, Marcus Aurelius); structure only, each document supplies its own palette
+- `civ-plate.css` / `civ-plate.js` — shared chrome for the history summaries (Durant, Livy, Popper, Marcus Aurelius, Palma); structure only, each document supplies its own palette
 - `book-toc.css` / `book-toc.js` — floating table of contents with scroll tracking, plus the “← All summaries” link back to `index.html` in the sticky top bar
 - `book-figures.css` / `book-figures.js` — figure numbering and captions
 
