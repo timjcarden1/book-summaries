@@ -1,0 +1,391 @@
+{
+  "site": {
+    "name": "Book Summaries",
+    "base": "https://book-summaries-umber.vercel.app",
+    "byline": "Tim Carden"
+  },
+  "shelves": [
+    {
+      "id": "history",
+      "name": "History & civilisation"
+    },
+    {
+      "id": "knowledge",
+      "name": "Knowledge & mind"
+    },
+    {
+      "id": "markets",
+      "name": "Markets, risk & enterprise"
+    }
+  ],
+  "books": [
+    {
+      "slug": "durant-story-of-civilization-i-iv",
+      "title": "The Story of Civilization I–IV",
+      "author": "Will Durant",
+      "years": "1935–1950",
+      "shelf": "history",
+      "tag": "4 volumes",
+      "added": "2026-07-31",
+      "blurb": "Our Oriental Heritage, The Life of Greece, Caesar and Christ and The Age of Faith — four volumes in one illustrated pass.",
+      "accent": "#2A5A85",
+      "paper": "#EDE8DC",
+      "ink": "#1D1811",
+      "muted": "#6C6250",
+      "related": [
+        {
+          "slug": "lessons-of-history",
+          "why": "The Durants' own distillation of these volumes into thirteen chapters."
+        },
+        {
+          "slug": "livy-history-of-rome",
+          "why": "The primary source sitting under Caesar and Christ."
+        },
+        {
+          "slug": "guns-germs-and-steel",
+          "why": "The same sweep, argued from geography rather than character."
+        }
+      ],
+      "pdf": "Durant — The Story of Civilization I–IV.pdf"
+    },
+    {
+      "slug": "livy-history-of-rome",
+      "title": "The History of Rome",
+      "author": "Livy",
+      "years": "c. 27 BC",
+      "shelf": "history",
+      "tag": "Ab Urbe Condita",
+      "added": "2026-07-31",
+      "blurb": "Ab Urbe Condita — the early history, Rome and Italy, the war with Hannibal, and Rome in the Mediterranean.",
+      "accent": "#9C3025",
+      "paper": "#E9E5DC",
+      "ink": "#191A1C",
+      "muted": "#61635E",
+      "related": [
+        {
+          "slug": "durant-story-of-civilization-i-iv",
+          "why": "Durant's Caesar and Christ retells this material as narrative history."
+        },
+        {
+          "slug": "marcus-aurelius-meditations",
+          "why": "The same empire three centuries on, seen from inside the emperor's head."
+        },
+        {
+          "slug": "lessons-of-history",
+          "why": "What the Durants think recurs in exactly this kind of record."
+        }
+      ],
+      "pdf": "Livy — The History of Rome.pdf"
+    },
+    {
+      "slug": "lessons-of-history",
+      "title": "The Lessons of History",
+      "author": "Will & Ariel Durant",
+      "years": "1968",
+      "shelf": "history",
+      "tag": "13 chapters",
+      "added": "2026-07-31",
+      "blurb": "Thirteen short chapters distilling five decades of writing history into what actually recurs.",
+      "accent": "#2C6E67",
+      "paper": "#E8EAE4",
+      "ink": "#171D21",
+      "muted": "#5D6660",
+      "related": [
+        {
+          "slug": "durant-story-of-civilization-i-iv",
+          "why": "The eleven volumes this book is the distillation of."
+        },
+        {
+          "slug": "guns-germs-and-steel",
+          "why": "A rival account of why civilisations diverge, built on evidence rather than pattern."
+        },
+        {
+          "slug": "fooled-by-randomness",
+          "why": "The case for reading less into historical patterns than they seem to offer."
+        }
+      ]
+    },
+    {
+      "slug": "guns-germs-and-steel",
+      "title": "Guns, Germs, and Steel",
+      "author": "Jared Diamond",
+      "years": "1997",
+      "shelf": "history",
+      "tag": "Geography",
+      "added": "2026-07-31",
+      "blurb": "Yali's question, and the twenty-five year answer: why geography and not biology set the shape of the modern world.",
+      "accent": "#3563C9",
+      "paper": "#F2EFE7",
+      "ink": "#16181B",
+      "muted": "#807E73",
+      "related": [
+        {
+          "slug": "palma-causas-do-atraso-portugues",
+          "why": "Geography versus institutions, argued over one country in detail."
+        },
+        {
+          "slug": "lessons-of-history",
+          "why": "The same question of what drives civilisations, answered from pattern instead."
+        },
+        {
+          "slug": "durant-story-of-civilization-i-iv",
+          "why": "The narrative version of the sweep this book explains."
+        }
+      ]
+    },
+    {
+      "slug": "palma-causas-do-atraso-portugues",
+      "title": "The Causes of Portuguese Backwardness",
+      "author": "Nuno Palma",
+      "years": "2023",
+      "shelf": "history",
+      "tag": "Economic history",
+      "added": "2026-08-01",
+      "blurb": "Why Portugal is rich by world standards and poor by European ones — a quantitative history that dates the fall precisely.",
+      "accent": "#1C5A85",
+      "paper": "#EDE7DB",
+      "ink": "#1A1B1C",
+      "muted": "#5D605C",
+      "related": [
+        {
+          "slug": "guns-germs-and-steel",
+          "why": "The geographic explanation this book's chronology is written against."
+        },
+        {
+          "slug": "lessons-of-history",
+          "why": "Recurrence as a way of reading history, next to Palma's insistence on dates."
+        },
+        {
+          "slug": "fooled-by-randomness",
+          "why": "Both books are mostly about not mistaking a story for a cause."
+        }
+      ]
+    },
+    {
+      "slug": "the-beginning-of-infinity",
+      "title": "The Beginning of Infinity",
+      "author": "David Deutsch",
+      "years": "2011",
+      "shelf": "knowledge",
+      "tag": "18 chapters",
+      "added": "2026-07-31",
+      "blurb": "Progress comes from creating good explanations and exposing them to criticism. There is no final theory — only better ones.",
+      "accent": "#6247B7",
+      "paper": "#f4f1e9",
+      "ink": "#191b1d",
+      "muted": "#747a7d",
+      "related": [
+        {
+          "slug": "popper-objective-knowledge",
+          "why": "The epistemology this book is built directly on top of."
+        },
+        {
+          "slug": "fooled-by-randomness",
+          "why": "Fallibilism from the other end — what you cannot learn from outcomes."
+        },
+        {
+          "slug": "the-mobile-wave",
+          "why": "A concrete forecast to test the book's claims about predicting progress."
+        }
+      ]
+    },
+    {
+      "slug": "popper-objective-knowledge",
+      "title": "Objective Knowledge",
+      "author": "Karl Popper",
+      "years": "1972",
+      "shelf": "knowledge",
+      "tag": "Epistemology",
+      "added": "2026-07-31",
+      "blurb": "An evolutionary approach: the solution to induction, the three worlds, and the source of Deutsch's epistemology.",
+      "accent": "#3B4E9B",
+      "paper": "#EBECE9",
+      "ink": "#16171A",
+      "muted": "#5F6165",
+      "related": [
+        {
+          "slug": "the-beginning-of-infinity",
+          "why": "Deutsch's extension of this book, forty years later."
+        },
+        {
+          "slug": "fooled-by-randomness",
+          "why": "Induction as a practical hazard rather than a philosophical one."
+        },
+        {
+          "slug": "guns-germs-and-steel",
+          "why": "A long historical argument worth testing against Popper's standard for explanations."
+        }
+      ],
+      "pdf": "Popper — Objective Knowledge.pdf"
+    },
+    {
+      "slug": "marcus-aurelius-meditations",
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "years": "c. 170–180",
+      "shelf": "knowledge",
+      "tag": "12 books",
+      "added": "2026-07-31",
+      "blurb": "Twelve books of notes a Roman emperor wrote to himself, mostly on campaign, arguing with his own worst impulses.",
+      "accent": "#6D4A6E",
+      "paper": "#E8E6E1",
+      "ink": "#1B1A1C",
+      "muted": "#64625F",
+      "related": [
+        {
+          "slug": "livy-history-of-rome",
+          "why": "The Rome he inherited, written by the historian his tutors gave him."
+        },
+        {
+          "slug": "fooled-by-randomness",
+          "why": "Taleb's Stoicism is drawn from exactly this, applied to markets."
+        },
+        {
+          "slug": "almanack-naval-ravikant",
+          "why": "The same discipline restated for a modern reader, minus the empire."
+        }
+      ],
+      "pdf": "Marcus Aurelius — Meditations.pdf"
+    },
+    {
+      "slug": "fooled-by-randomness",
+      "title": "Fooled by Randomness",
+      "author": "Nassim Nicholas Taleb",
+      "years": "2001",
+      "shelf": "markets",
+      "tag": "Incerto I",
+      "added": "2026-07-31",
+      "blurb": "The hidden role of chance in life and in markets — and why a good outcome does not prove a good decision.",
+      "accent": "#A7333B",
+      "paper": "#f4f1e9",
+      "ink": "#191b1d",
+      "muted": "#747a7d",
+      "related": [
+        {
+          "slug": "popper-objective-knowledge",
+          "why": "The problem of induction, which Taleb treats as a survival problem."
+        },
+        {
+          "slug": "marcus-aurelius-meditations",
+          "why": "The Stoic source Taleb keeps returning to."
+        },
+        {
+          "slug": "titan-rockefeller",
+          "why": "One long career to test the book's argument about skill and luck against."
+        }
+      ]
+    },
+    {
+      "slug": "titan-rockefeller",
+      "title": "Titan",
+      "author": "Ron Chernow",
+      "years": "1998",
+      "shelf": "markets",
+      "tag": "21 plates",
+      "added": "2026-07-31",
+      "blurb": "The man who organised American oil, was broken up for it by the Supreme Court, then gave away more than anyone alive ever had.",
+      "accent": "#9C7325",
+      "paper": "#E3E7DF",
+      "ink": "#1B1E1A",
+      "muted": "#6B6E66",
+      "related": [
+        {
+          "slug": "the-book-of-elon",
+          "why": "The same question of method and scale, a century apart."
+        },
+        {
+          "slug": "fooled-by-randomness",
+          "why": "How much of a record like this is skill, and how you would ever know."
+        },
+        {
+          "slug": "almanack-naval-ravikant",
+          "why": "Leverage and compounding, stated as principle rather than biography."
+        }
+      ]
+    },
+    {
+      "slug": "almanack-naval-ravikant",
+      "title": "The Almanack of Naval Ravikant",
+      "author": "Eric Jorgenson",
+      "years": "2020",
+      "shelf": "markets",
+      "tag": "24 plates",
+      "added": "2026-08-01",
+      "blurb": "Specific knowledge, accountability and leverage; judgment, mental models, and what wealth is actually for.",
+      "accent": "#24518C",
+      "paper": "#EFEEEA",
+      "ink": "#17181B",
+      "muted": "#5F6166",
+      "related": [
+        {
+          "slug": "the-book-of-elon",
+          "why": "The same compiler, the same method, a very different subject."
+        },
+        {
+          "slug": "marcus-aurelius-meditations",
+          "why": "The Stoic spine underneath most of the happiness half."
+        },
+        {
+          "slug": "fooled-by-randomness",
+          "why": "A useful check on advice assembled from one person's outcomes."
+        }
+      ]
+    },
+    {
+      "slug": "the-book-of-elon",
+      "title": "The Book of Elon",
+      "author": "Eric Jorgenson",
+      "years": "2026",
+      "shelf": "markets",
+      "tag": "4 parts",
+      "added": "2026-08-01",
+      "blurb": "Musk's method compiled from his own words: first-principles costing, The Algorithm, and what a curated record can carry.",
+      "accent": "#B4531F",
+      "paper": "#f4f1e9",
+      "ink": "#191b1d",
+      "muted": "#747a7d",
+      "related": [
+        {
+          "slug": "almanack-naval-ravikant",
+          "why": "Jorgenson's earlier book, and the template this one follows."
+        },
+        {
+          "slug": "titan-rockefeller",
+          "why": "The nineteenth-century version of building at this scale."
+        },
+        {
+          "slug": "the-mobile-wave",
+          "why": "Another technologist's forecast, now old enough to be scored."
+        }
+      ]
+    },
+    {
+      "slug": "the-mobile-wave",
+      "title": "The Mobile Wave",
+      "author": "Michael J. Saylor",
+      "years": "2012",
+      "shelf": "markets",
+      "tag": "Forecast",
+      "added": "2026-07-31",
+      "blurb": "A forecast from 2012, most striking where it has since become invisible infrastructure — and most useful in its blind spots.",
+      "accent": "#176BD6",
+      "paper": "#f4f1e9",
+      "ink": "#191b1d",
+      "muted": "#747a7d",
+      "related": [
+        {
+          "slug": "the-book-of-elon",
+          "why": "A newer forecast from inside the industry, not yet scoreable."
+        },
+        {
+          "slug": "the-beginning-of-infinity",
+          "why": "Why long-range prediction fails, stated as epistemology."
+        },
+        {
+          "slug": "titan-rockefeller",
+          "why": "What actually happens when a new infrastructure gets organised."
+        }
+      ]
+    }
+  ]
+}
