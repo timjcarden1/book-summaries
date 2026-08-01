@@ -99,6 +99,7 @@
         <a href="#hardcore"><b>Part II</b><span>Ultra hardcore work</span></a>
         <a href="#companies"><b>Part III</b><span>Building companies</span></a>
         <a href="#humanity"><b>Part IV</b><span>On behalf of humanity</span></a>
+        <a href="#scoring"><b>Audit</b><span>Scoring the record</span></a>
         <a href="#reading"><b>Critical</b><span>How much weight it holds</span></a>
       </nav>
     </div>
@@ -167,9 +168,14 @@
           <h4>The two demonstrations</h4>
           <p>The book leans on two worked examples, and they are the most persuasive pages in it. Battery packs were assumed to cost around six hundred dollars per kilowatt-hour because they always had. Decomposed into constituent metals and polymers priced on the commodity market, the material floor came out near eighty. The gap was not physics; it was manufacturing convention, and therefore attackable.</p>
           <p>The same teardown applied to rockets produces what he calls the magic-wand number: if the raw materials were stacked on the floor and rearranging the atoms were free, what would the vehicle cost? For rockets the answer was a small fraction of prevailing price. That does not prove a cheap rocket can be built, and the book is careful on this point — it establishes only that success is among the possible outcomes. That is a lower bar than it sounds, and it is precisely the bar worth checking before committing a decade.</p>
+          <h4>The idiot index</h4>
+          <p>The teardown becomes an operating instrument through a single ratio: divide what a finished component costs by what its raw materials cost. A machined aluminium bracket that sells for many times the price of the aluminium in it has a high index, and a high index is not a verdict on the supplier — it is a pointer to where the money is going. The name is deliberately rude, and the rudeness is the method: the number identifies the part where somebody has been stupid, and the first candidate for that somebody is the person holding the spreadsheet.</p>
+          <p>What makes the ratio useful is that it is cheap to compute and hard to argue with. Materials have public prices. Anything above them is process, tooling, certification, margin, or convention — all of which are human decisions and therefore movable, unlike the density of aluminium. Applied across a bill of materials it sorts a thousand parts into the handful worth attacking, which is exactly the triage that engineering organisations otherwise do by intuition or by whoever complains loudest.</p>
+          <p>The honest limit is that the denominator is easy and the numerator is not. Certification, low volumes, qualification testing and liability are real costs that a materials price does not capture, and a valve that must not fail in flight is not the same object as a valve that must not fail under a sink. The index tells you where to look; it does not tell you that what you find is waste. Used as an answer rather than a question, it produces exactly the confident cost-cutting that later shows up as a recall.</p>
           <h4>Thinking in limits, and being less wrong</h4>
           <p>Two supporting habits: push a variable to its extreme to expose what actually binds (a trillion dollars on an empty island buys nothing, which tells you money is information about allocation, not value in itself); and treat your own beliefs as provisional. Wishful thinking is named as the standard failure — if a plan feels easy, that is evidence against it, not for it.</p>
         </div>
+        <div class="formula"><span class="accent">Idiot index</span> = finished cost of the part ÷ cost of its raw materials<small>A triage instrument, not a verdict. It sorts a bill of materials by where non-physical cost has accumulated, and says nothing about whether that cost is buying something worth having.</small></div>
         <div class="chapter-visual">
           <div class="chapter-visual__head"><span>The teardown</span><b>Inherited price versus material floor</b></div>
           <div class="chapter-visual__body fig"><div class="scroll-x">
@@ -264,6 +270,16 @@
           <h4>Against inevitability</h4>
           <p>One of the book’s more genuinely contrarian threads is its rejection of technological progress as a trend line. Technology does not advance by itself — humans make it, and if they stop making it, it stops. From this follows a claim repeated throughout: the rate of innovation is a variable under active management, and every year it either rises or decays.</p>
           <p>The corollary is a complaint about talent allocation. Too many capable people are drawn into finance and law, which reorganise claims on existing output rather than adding to it. This is offered as both compliment and criticism, and it lands better as a description of incentives than as a moral judgement of individuals.</p>
+          <h4>Civilisations forget</h4>
+          <p>The supporting evidence is historical and, unusually for this book, not about him. Egypt built the pyramids and then lost the ability; Rome laid aqueducts and concrete that Europe could not match for a millennium afterwards. Capability is not a ratchet. It is a stock held in living hands and current tooling, and it decays when the people who hold it stop practising — which is a claim about apprenticeship and industrial base rather than about ideas, and is stronger for it.</p>
+          <p>The example he returns to is closer to home: after the Apollo programme, human launch capability in the United States went backwards for decades, and after the Shuttle retired in 2011 there was a stretch during which the country that had landed on the Moon could not put a person into orbit without buying a seat from Russia. Whatever one makes of the man, that is a real instance of a rich society losing a capability it had already paid for, and it is the observation the whole enterprise is built on.</p>
+          <h4>Physics as a method rather than a subject</h4>
+          <p>The educational claim underneath all of this is that physics is worth studying not for its content but for the habit it enforces: reduce a question to quantities, check the quantities against conservation laws, and accept the answer even when it is unwelcome. On this reading a physics training is a general-purpose bullshit detector, applicable to schedules and business plans as readily as to propellant.</p>
+          <p>It is also, as stated, too flattering to physics. The method works cleanly where the constraints are physical and the variables are measurable; it degrades where the binding constraints are legal, institutional or about what people want — which is precisely where most of Part IV of this book operates, and precisely where its arguments get weakest. The book does not mark that transition, so the reader has to.</p>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-card"><span class="detail-label">The claim</span><h4>Progress is manufactured</h4><p>Not a trend to be extrapolated but an output to be produced, at a rate that rises or falls depending on how many capable people are pointed at it.</p></div>
+          <div class="detail-card"><span class="detail-label">The evidence</span><h4>Capability is perishable</h4><p>Pyramids, aqueducts, Saturn V. A society can hold the blueprints and still lose the ability to build, because the skill lived in people and tools rather than documents.</p></div>
         </div>
         <div class="takeaway"><b>The through-line</b>Every later section — hiring, org design, factories, Mars — is downstream of one claim: goods do not appear, someone makes them, and the making is the hard part.</div>
         <div class="key-terms"><span class="term">rate of innovation</span><span class="term">talent allocation</span><span class="term">making things</span></div>
@@ -612,11 +628,13 @@
         </div>
         <div class="ledger">
           <div><b>1995</b><span>Zip2 founded — maps, directions and classifieds sold to newspaper publishers</span><i>~$2k start</i></div>
-          <div><b>1999</b><span>Zip2 sold to Compaq for cash; proceeds rolled almost entirely into X.com</span><i>~$300m+</i></div>
-          <div><b>2000</b><span>X.com merges with Confinity weeks before the market turns</span><i>$100m raised</i></div>
-          <div><b>2002</b><span>PayPal goes public, then sells to eBay to retire the platform risk</span><i>~$4.5bn</i></div>
+          <div><b>Feb 1999</b><span>Zip2 sold to Compaq for cash; his share is roughly $22m, most of which goes straight back in</span><i>$307m</i></div>
+          <div><b>Mar 2000</b><span>X.com merges with Confinity weeks before the market turns; he is removed as chief executive that autumn</span><i>$100m raised</i></div>
+          <div><b>Oct 2002</b><span>eBay buys PayPal in stock, months after the IPO; his proceeds are around $180m after tax</span><i>~$1.5bn</i></div>
+          <div><b>2002–06</b><span>That $180m is the entire seed capital for the rest of the book — roughly $100m to SpaceX, $70m to Tesla, $10m to SolarCity</span><i>near-total commitment</i></div>
         </div>
         <div class="critical-note"><b>What the sequence really shows:</b> two of the three formative lessons — sell direct, follow the feedback — were learned by being overruled, first by customers and then by a board. The book files them under founder insight.</div>
+        <div class="takeaway"><b>The unrepeatable precondition</b>Every method in Part II is applied by someone who could fund two capital-intensive companies out of pocket and keep funding them through years of losses. The book presents the method as the cause of the outcome; the balance sheet is at minimum a co-author, and it is the one variable a reader cannot copy.</div>
         <div class="key-terms"><span class="term">direct to consumer</span><span class="term">money as information</span><span class="term">closing the loop</span></div>
       </div>
     </div>
@@ -634,7 +652,20 @@
           <h4>The staircase</h4>
           <p>The master plan is a financing structure disguised as a product roadmap. Build an expensive low-volume sports car, because a new technology can only bear its early cost in a segment that tolerates high prices. Use the proceeds to build something cheaper at higher volume, and repeat. Each step buys manufacturing scale, and scale is what actually moves cost — not invention alone.</p>
           <p>The supporting positions follow the pattern set in Part II: sell directly rather than through dealers, decline advertising and route the money into the product instead, and treat design and beauty as real value rather than decoration. Survival is described honestly as marginal for years, with his own capital committed last and withdrawn last.</p>
+          <h4>What the staircase actually cost</h4>
+          <p>The plan reads cleanly in retrospect and was executed three times against near-failure. The Roadster arrived in 2008 into a collapsing credit market, and the company closed its rescue financing in the last days of December with, by his own account, essentially nothing left. A federal loan in 2010 — repaid early in 2013 — covered the gap to the Model S, and the 2013 quarter that made the company solvent was close enough to the edge that the contingency plan was to be bought. The Model 3 ramp in 2017–18 then reproduced the same crisis at ten times the scale, missing its five-thousand-a-week target by roughly half a year and being fixed, in the end, by a production line erected in a tent in the car park.</p>
+          <p>That last detail is the one worth keeping, because it cuts against the book’s own doctrine. The Model 3 line had been over-automated — his own later description was that excessive automation was a mistake and that human beings are underrated — which is the Algorithm’s fifth step run before its second, committed at enormous cost by the person who wrote the Algorithm. The book records the lesson. It does not dwell on the fact that the most expensive instance of the error in the entire record is his own, four years after he had formulated the rule against it.</p>
+          <h4>The second plan, and what it changed</h4>
+          <p>The 2016 sequel widened the mission from cars to energy — generation, storage, transport of all kinds, and autonomy — and it is where the timeline starts to strain. Solar roofing, a promised affordable sequel, robotaxi networks and full autonomy were all placed on the same staircase, and the parts that shipped shipped years after the parts that were promised. The financing logic that worked for the Roadster-to-Model 3 sequence does not obviously generalise to autonomy, where the constraint is not manufacturing scale but a research problem with no schedule, and the book does not distinguish the two cases.</p>
         </div>
+        <div class="ledger">
+          <div><b>2004</b><span>Leads the Series A of a company founded by others the year before, and takes the chairmanship</span><i>$6.5m</i></div>
+          <div><b>2008</b><span>Roadster ships into the financial crisis; he takes over as chief executive and the rescue round closes on Christmas Eve</span><i>near-insolvent</i></div>
+          <div><b>2010–13</b><span>Federal loan bridges to the Model S; repaid nine years early after the quarter that made the company solvent</span><i>$465m, repaid</i></div>
+          <div><b>2017–18</b><span>Model 3 “production hell” — the 5,000-a-week target slips roughly two quarters and is rescued by a tent line</span><i>~6 months late</i></div>
+          <div><b>2016</b><span>Master Plan Part Deux extends the staircase to storage, autonomy and every vehicle segment</span><i>scope × 4</i></div>
+        </div>
+        <div class="critical-note"><b>The instructive failure:</b> over-automating the Model 3 line is the Algorithm run backwards by its own author, at the largest scale in the book. It is strong evidence that the method is correct — and equally strong evidence that knowing it does not mean you will follow it under schedule pressure.</div>
         <div class="chapter-visual">
           <div class="chapter-visual__head"><span>Sequence</span><b>Each generation funds the next one down</b></div>
           <div class="chapter-visual__body fig"><div class="scroll-x">
@@ -711,6 +742,87 @@
           <h4>The holy grail</h4>
           <p>Full and rapid reusability is the load-bearing engineering claim. Once the vehicle is recovered intact and flown again quickly, the marginal cost of a flight collapses toward propellant and handling. He notes that nothing here requires new physics — orbital mechanics was settled in the 1950s — which places the problem firmly in engineering and economics, exactly where the first-principles method claims to be strongest.</p>
           <p>The operating philosophy is iteration under real conditions: make it work first and optimise later; accept that hardware must be flown to be understood, because no test stand reproduces the full flight envelope; expect hundreds or thousands of changes between flights. Eliminating risk entirely is explicitly rejected as a goal, since a programme that cannot fail cannot learn.</p>
+          <h4>How long the grail took</h4>
+          <p>The claim is from 2002. The first successful orbital flight came in September 2008, on the fourth attempt and the last one the company could afford, and was followed within months by the NASA resupply contract that kept it alive. The first booster landing came in December 2015 — thirteen years in — and the first re-flight of a recovered booster in March 2017, fifteen years in. Individual boosters then went from being flown twice to being flown ten and then twenty times, and the second stage is still expended on every flight.</p>
+          <p>Two things follow, and the book only says the first. Reusability worked: launch cadence rose to a rate no state programme has matched, and the price per kilogram to orbit fell by roughly an order of magnitude against the vehicles it replaced. But it took thirteen years to demonstrate and another decade to make routine, against a founding estimate that treated it as an engineering problem with no new physics — which was true, and was nowhere near sufficient. “No new physics required” is a statement about the ceiling, not about the schedule, and the gap between those two is where almost every date in this book goes wrong.</p>
+          <h4>The part the economics actually rest on</h4>
+          <p>Recovering a booster only pays if refurbishment is cheap and turnaround is fast; a recovered vehicle that needs a year of inspection is a museum piece, not an asset. The programme’s real achievement is therefore the unglamorous one — driving the cost and time of getting a flown booster back into flight condition down far enough that reuse beats building new. That is a manufacturing and process victory, which is the same claim Part II makes about factories, and it is the strongest single piece of evidence in the book that the method does what it says.</p>
+        </div>
+        <div class="chapter-visual">
+          <div class="chapter-visual__head"><span>The record</span><b>Thirteen years to the first landing, and what it bought</b></div>
+          <div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="e12t e12d" style="min-width:800px;width:100%;height:auto">
+  <title id="e12t">Timeline from founding to routine reuse, with the resulting fall in cost per kilogram to orbit</title>
+  <desc id="e12d">On the left, a timeline runs from the company's founding in 2002 through three failed first flights in 2006, 2007 and 2008, the first successful orbital flight in September 2008, the first booster landing in December 2015, the first re-flight of a recovered booster in March 2017, and routine multi-flight reuse thereafter. Six years pass before the first success and thirteen before the first landing. On the right, a descending bar chart compares approximate cost per kilogram to low Earth orbit: the Space Shuttle far above an expendable conventional rocket, which sits above a reusable vehicle, roughly an order of magnitude below the Shuttle, with a dashed line beneath marking the propellant floor that full reuse aims at.</desc>
+
+  <text x="60" y="34" class="svg-t">The grail, and the thirteen years to the first sight of it</text>
+
+  <!-- ---------- left: timeline ---------- -->
+  <text x="60" y="70" class="svg-sm">FOUNDED 2002 · FIRST LANDING 2015</text>
+
+  <line x1="92" y1="100" x2="92" y2="368" class="svg-axis"/>
+
+  <g class="pop" style="--d:.2s">
+    <circle cx="92" cy="112" r="6" fill="var(--f3)"/>
+    <circle cx="92" cy="164" r="6" fill="var(--f2)"/>
+    <circle cx="92" cy="216" r="7" fill="var(--f1)"/>
+    <circle cx="92" cy="268" r="7" fill="var(--f1)"/>
+    <circle cx="92" cy="312" r="7" fill="var(--f1)"/>
+    <circle cx="92" cy="356" r="7" fill="var(--f4)"/>
+  </g>
+
+  <g class="rise" style="--d:.5s">
+    <text x="112" y="108" class="svg-b">2002 · founded</text>
+    <text x="112" y="124" class="svg-sm">SUCCESS ESTIMATED BELOW 10 PER CENT</text>
+
+    <text x="112" y="160" class="svg-b" fill="var(--f2)">2006–08 · three failures</text>
+    <text x="112" y="176" class="svg-sm">THE FOURTH ATTEMPT IS THE LAST ONE AFFORDABLE</text>
+
+    <text x="112" y="212" class="svg-b">Sept 2008 · first orbit</text>
+    <text x="112" y="228" class="svg-sm">RESUPPLY CONTRACT FOLLOWS WITHIN MONTHS</text>
+
+    <text x="112" y="264" class="svg-b">Dec 2015 · first landing</text>
+    <text x="112" y="280" class="svg-sm">THIRTEEN YEARS AFTER THE CLAIM WAS MADE</text>
+
+    <text x="112" y="308" class="svg-b">Mar 2017 · first re-flight</text>
+    <text x="112" y="324" class="svg-sm">RECOVERY TURNED INTO REUSE</text>
+
+    <text x="112" y="352" class="svg-b" fill="var(--f4)">Then · routine</text>
+    <text x="112" y="368" class="svg-sm">SINGLE BOOSTERS FLOWN TEN TIMES AND MORE</text>
+  </g>
+
+  <!-- divider -->
+  <line x1="600" y1="60" x2="600" y2="400" class="svg-hair"/>
+
+  <!-- ---------- right: cost per kg ---------- -->
+  <text x="640" y="70" class="svg-sm">APPROXIMATE COST PER KILOGRAM TO LOW ORBIT</text>
+
+  <rect x="640" y="96" width="300" height="34" rx="3" fill="var(--f2)" class="growx" style="--d:.4s"/>
+  <text x="652" y="119" class="svg-b" fill="#fff">Space Shuttle</text>
+
+  <rect x="640" y="152" width="132" height="34" rx="3" fill="var(--f3)" class="growx" style="--d:.6s"/>
+  <text x="652" y="175" class="svg-b" fill="#fff">Expendable rocket</text>
+
+  <rect x="640" y="208" width="34" height="34" rx="3" fill="var(--f1)" class="growx" style="--d:.8s"/>
+  <text x="684" y="231" class="svg-b" fill="var(--f1)">Reusable booster</text>
+
+  <line x1="640" y1="266" x2="940" y2="266" stroke="var(--f4)" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="640" y="284" class="svg-sm" fill="var(--f4)">PROPELLANT AND HANDLING — THE FLOOR FULL REUSE AIMS AT</text>
+
+  <g class="rise" style="--d:1.2s">
+    <text x="640" y="330" class="svg-em">Roughly an order of magnitude, delivered.</text>
+    <text x="640" y="352" class="svg-lab">The second stage is still thrown away on every flight,</text>
+    <text x="640" y="370" class="svg-lab">which is why the floor remains a target and not a price.</text>
+  </g>
+</svg>
+          </div>
+          <div class="fig-legend">
+            <span><i style="--c:var(--f2)"></i>Failure or highest cost</span>
+            <span><i style="--c:var(--f1)"></i>Milestone delivered</span>
+            <span><i class="dash" style="--c:var(--f4)"></i>Theoretical floor</span>
+          </div>
+          </div>
+          <p class="chapter-visual__caption">Bar lengths are indicative orders of magnitude drawn from public launch-cost estimates, not audited prices. The timeline dates are the external record, not the book’s.</p>
         </div>
         <div class="loop">
           <div class="loop__step"><b>Fly</b><p>Reach conditions no ground test can reproduce.</p></div>
@@ -724,6 +836,94 @@
     </div>
   </article>
 
+  <article class="chapter" id="elon-ch13">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Part III · 13<span></span></div>
+      <div class="chapter__content">
+        <h3>The rest of the portfolio</h3>
+        <p class="chapter__claim">The two famous companies are the case for the method; the other six are where a reader can find out how far it actually travels.</p>
+        <div class="chapter__body">
+          <h4>Why this chapter is the test</h4>
+          <p>A book built from one man’s account of his own career will naturally spend its pages on the ventures that worked. That is not dishonesty, it is arithmetic — there is more to say about a landed booster than about a project that quietly stopped. But it does mean the evidence arrives pre-filtered, and the only way to un-filter it is to look at the ventures the book passes over quickly. If the method is general, it should be visible in all of them, working or not. What is actually visible is that it works superbly on problems where the constraint is manufacturing cost, and much less well everywhere else.</p>
+          <h4>Where it worked again</h4>
+          <p>Starlink is the strongest confirmation outside the two headline companies, and it is barely a separate story: a constellation is a manufacturing problem (build satellites at unit costs nobody had attempted, launch them on your own recovered rockets, sell direct to the end customer) wrapped around a physics problem that was already solved. Every element of the doctrine appears — vertical integration, direct sales, cost teardown, cycle time — and it now supplies much of the cash that pays for the next vehicle. The staircase again, one industry over.</p>
+          <h4>Where it did not</h4>
+          <p>The others are more instructive. The 2013 high-speed tube proposal was published and then handed to anyone who wanted it; more than a decade later, nothing resembling it carries passengers anywhere. The tunnelling company that followed has built a short loop under a convention centre in which cars carry passengers between stations — a real thing, and a very long way from the claim that founded it. Solar roofing was announced in 2016 with a demonstration that was not a working product, and its installed volume has never approached the projections. The brain-interface company reached its first human implant in 2024, years after the dates initially floated, and its eventual significance is still unknown.</p>
+          <p>The pattern is consistent enough to state as a rule. Where the problem was to make a known artefact far cheaper — rockets, batteries, cars, satellites — the method delivered results that the industry said were impossible. Where the problem was regulatory (tunnels, autonomy approval), biological (implants), or about installed labour and demand rather than factory cost (solar roofs), it produced announcements far ahead of delivery. The book never separates these two classes of problem, and the separation is most of what a reader needs.</p>
+          <h4>The two that complicate the moral argument</h4>
+          <p>Two acquisitions sit awkwardly beside Part IV’s claim that building companies is philanthropy. Tesla’s 2016 purchase of the solar company — founded by his cousins, chaired and part-owned by him — was a related-party transaction that shareholders litigated for years; he prevailed, and the episode still illustrates how much the “companies as philanthropy” frame relies on the assumption that the builder’s interests and the public’s coincide. The 2022 purchase of a social network for forty-four billion dollars is the other: the deletion doctrine applied to an organisation rather than a product, staff cut by roughly three-quarters within months, advertisers leaving, and the asset written down by lenders to a fraction of the price before it was folded into the artificial-intelligence company in 2025.</p>
+          <p>That last case deserves care in both directions. It is genuine evidence that a platform could run on a fraction of its previous headcount, which the industry insisted was impossible, and it is genuine evidence that applying a method built for physical products to a business made of people, trust and advertiser relationships destroyed most of the value. Both readings are available; the book supplies neither, because politics is declared out of scope and this acquisition cannot be discussed without it.</p>
+          <h4>The AI position, in sequence</h4>
+          <p>Part IV states that artificial intelligence cannot be stopped, so the only lever is to influence how it is built. The sequence behind that sentence is worth having: he co-founded a nonprofit lab in 2015 explicitly to keep the technology out of a single company’s hands, left its board in 2018, watched it become one of the largest commercial labs in the world, sued it, and founded a competing lab in 2023. Read generously, that is a man updating on evidence about which lever actually works. Read sceptically, it is the strongest argument in the book against its own thesis — the one case where he tried to steer an industry by governance rather than by building, and it did not hold.</p>
+        </div>
+        <div class="chapter-visual">
+          <div class="chapter-visual__head"><span>Portfolio</span><b>Where the method delivered, and where it announced</b></div>
+          <div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 430" width="1000" height="430" role="img" aria-labelledby="e13t e13d" style="min-width:800px;width:100%;height:auto">
+  <title id="e13t">The ventures plotted by type of binding constraint against how far delivery matched the original claim</title>
+  <desc id="e13d">A quadrant chart. The horizontal axis runs from problems whose binding constraint is manufacturing cost on the right to problems constrained by regulation, biology or demand on the left. The vertical axis runs from announced but undelivered at the bottom to delivered at or beyond the claim at the top. Rockets, satellites and electric cars sit top right as manufacturing problems delivered. Brain implants sit low and centre-left, delivered late. Tunnels, high-speed tubes and solar roofing sit bottom left as announced far ahead of delivery. A social network sits centre-left, marked as contested. A dashed diagonal shows the correlation between manufacturing-constrained problems and delivery.</desc>
+
+  <text x="60" y="34" class="svg-t">Two kinds of problem, two records</text>
+
+  <line x1="140" y1="360" x2="920" y2="360" class="svg-axis"/>
+  <line x1="140" y1="70" x2="140" y2="360" class="svg-axis"/>
+  <text x="530" y="392" text-anchor="middle" class="svg-sm">CONSTRAINT IS MANUFACTURING COST →</text>
+  <text transform="translate(118,215) rotate(-90)" text-anchor="middle" class="svg-sm">DELIVERED AS CLAIMED →</text>
+  <text x="150" y="386" class="svg-sm">REGULATION · BIOLOGY · DEMAND</text>
+
+  <g class="svg-hair" stroke-width="1">
+    <line x1="140" y1="215" x2="920" y2="215"/>
+    <line x1="530" y1="70" x2="530" y2="360"/>
+  </g>
+
+  <path d="M200 336 L880 104" fill="none" stroke="var(--ink-3)" stroke-width="1.2" stroke-dasharray="4 5" class="draw" style="--len:740;--d:1.1s"/>
+
+  <g class="pop" style="--d:.3s">
+    <circle cx="836" cy="112" r="11" fill="var(--f1)"/>
+    <circle cx="762" cy="140" r="11" fill="var(--f1)"/>
+    <circle cx="690" cy="168" r="11" fill="var(--f1)"/>
+    <circle cx="392" cy="262" r="9" fill="var(--f3)"/>
+    <circle cx="330" cy="306" r="9" fill="var(--f3)"/>
+    <circle cx="248" cy="330" r="9" fill="var(--f2)"/>
+    <circle cx="292" cy="196" r="9" fill="var(--f2)"/>
+  </g>
+
+  <g class="rise" style="--d:.7s">
+    <text x="822" y="96" text-anchor="end" class="svg-b" fill="var(--f1)">Reusable launch</text>
+    <text x="748" y="124" text-anchor="end" class="svg-b" fill="var(--f1)">Satellite internet</text>
+    <text x="676" y="152" text-anchor="end" class="svg-b" fill="var(--f1)">Electric cars at volume</text>
+
+    <text x="406" y="258" class="svg-b" fill="var(--f3)">Brain implants</text>
+    <text x="406" y="274" class="svg-sm">DELIVERED, YEARS LATE</text>
+
+    <text x="344" y="302" class="svg-b" fill="var(--f3)">Urban tunnels</text>
+    <text x="344" y="318" class="svg-sm">A LOOP, NOT THE CLAIM</text>
+
+    <text x="262" y="326" class="svg-b" fill="var(--f2)">Solar roofing · high-speed tubes</text>
+    <text x="262" y="342" class="svg-sm">ANNOUNCED FAR AHEAD OF DELIVERY</text>
+
+    <text x="306" y="192" class="svg-b" fill="var(--f2)">Social network</text>
+    <text x="306" y="208" class="svg-sm">CONTESTED IN BOTH DIRECTIONS</text>
+  </g>
+
+  <text x="900" y="200" text-anchor="end" class="svg-em">Where cost is the constraint, the method is extraordinary.</text>
+  <text x="900" y="222" text-anchor="end" class="svg-em">Where it is not, the method mostly produces dates.</text>
+</svg>
+          </div>
+          <div class="fig-legend">
+            <span><i style="--c:var(--f1)"></i>Delivered at or beyond the claim</span>
+            <span><i style="--c:var(--f3)"></i>Delivered, far later than promised</span>
+            <span><i style="--c:var(--f2)"></i>Announced, undelivered or contested</span>
+          </div>
+          </div>
+          <p class="chapter-visual__caption">Placement is this summary’s judgement against the public record, not the book’s account. The correlation it shows is the single most useful thing a reader can carry away.</p>
+        </div>
+        <div class="takeaway"><b>The transfer rule</b>Before borrowing anything from this book, ask what is actually binding on your problem. If the answer is cost, tooling or cycle time, the method is the best available. If the answer is a regulator, a biological system or whether anyone wants the thing, you are holding the wrong instrument.</div>
+        <div class="key-terms"><span class="term">portfolio evidence</span><span class="term">binding constraint</span><span class="term">related-party risk</span><span class="term">announcement lead time</span></div>
+      </div>
+    </div>
+  </article>
+
   <!-- ============================ PART IV ============================ -->
   <section class="movement" id="humanity">
     <div class="wrap">
@@ -732,9 +932,9 @@
     </div>
   </section>
 
-  <article class="chapter" id="elon-ch13">
+  <article class="chapter" id="elon-ch14">
     <div class="chapter__grid wrap">
-      <div class="chapter__number chap-n">Part IV · 13<span></span></div>
+      <div class="chapter__number chap-n">Part IV · 14<span></span></div>
       <div class="chapter__content">
         <h3>Companies as philanthropy</h3>
         <p class="chapter__claim">If philanthropy means love of humanity, then building things people need at prices they can pay is a form of it — and often a more effective one.</p>
@@ -751,9 +951,9 @@
     </div>
   </article>
 
-  <article class="chapter" id="elon-ch14">
+  <article class="chapter" id="elon-ch15">
     <div class="chapter__grid wrap">
-      <div class="chapter__number chap-n">Part IV · 14<span></span></div>
+      <div class="chapter__number chap-n">Part IV · 15<span></span></div>
       <div class="chapter__content">
         <h3>The risk register</h3>
         <p class="chapter__claim">Civilisation is more fragile than it feels; prioritise the risks that end the trajectory over the ones that are merely tragic.</p>
@@ -824,9 +1024,9 @@
     </div>
   </article>
 
-  <article class="chapter" id="elon-ch15">
+  <article class="chapter" id="elon-ch16">
     <div class="chapter__grid wrap">
-      <div class="chapter__number chap-n">Part IV · 15<span></span></div>
+      <div class="chapter__number chap-n">Part IV · 16<span></span></div>
       <div class="chapter__content">
         <h3>Becoming multiplanetary</h3>
         <p class="chapter__claim">A self-sustaining second settlement is insurance on life itself — and the window in which it is possible may not stay open.</p>
@@ -844,6 +1044,103 @@
           <div class="node">Self-sustaining settlement</div>
         </div>
         <div class="key-terms"><span class="term">multiplanetary</span><span class="term">cost per tonne</span><span class="term">life insurance for life</span></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================ SCORING ============================ -->
+  <section class="movement" id="scoring">
+    <div class="wrap">
+      <div class="movement__head"><p class="eyebrow"><b>An external check</b></p><h2>Scoring the record</h2></div>
+      <p class="movement__dek">A compiled book cannot mark its own homework, so this section is not from the book at all. It takes the claims that were specific enough to be wrong, and sets them against what the public record says happened.</p>
+    </div>
+  </section>
+
+  <article class="chapter" id="elon-scorecard">
+    <div class="chapter__grid wrap">
+      <div class="chapter__number chap-n">Audit<span></span></div>
+      <div class="chapter__content">
+        <h3>What was promised, and what arrived</h3>
+        <p class="chapter__claim">The direction is right far more often than the date, and the size of that gap is the most reliable finding about him.</p>
+        <div class="chapter__body">
+          <h4>The rule the table shows</h4>
+          <p>Read down the grades and a pattern appears that is more useful than either the admiring or the dismissive account. The things that required building a cheaper version of a known object arrived, several of them at a scale the relevant industry had called impossible. The things that required a research breakthrough on a schedule, or a regulator’s permission, or a change in what people wanted, did not arrive — and were announced with the same confidence and the same specificity as the ones that did.</p>
+          <p>That is not a small distinction, because the announcements are indistinguishable in advance. Nothing in the way a claim is stated tells you which class it belongs to. The only available filter is the one from the portfolio chapter: ask what is binding. Cost and cycle time are tractable to this method and get delivered late; research uncertainty and permission are not, and get delivered years late or never, while the confidence in the announcement stays constant.</p>
+          <h4>How to use the discount</h4>
+          <p>A practical version, for anyone who has to plan around one of these announcements rather than admire it: treat the direction as informative and the date as a marketing instrument. On the record below, manufacturing-constrained goals have run roughly two to three years beyond their stated dates, and research- or regulation-constrained goals have run five years and upward, or have not landed at all. He says as much himself in the schedule chapter — that some dates are set deliberately beyond what is achievable to pull suppliers forward. A reader is entitled to take him at his word and apply it to every date in the book.</p>
+        </div>
+        <div class="scorecard">
+          <div class="score-row"><b>Reusable orbital boosters</b><span class="grade">Delivered</span><span>Claimed at founding in 2002. First landing December 2015, first re-flight March 2017, now routine. Thirteen years to the demonstration, and the strongest evidence in the book.</span></div>
+          <div class="score-row"><b>Order-of-magnitude fall in launch cost</b><span class="grade">Delivered</span><span>Cost per kilogram to orbit fell roughly tenfold against the vehicles it replaced. The second stage is still expendable, so the propellant floor remains a target.</span></div>
+          <div class="score-row"><b>The Tesla staircase</b><span class="grade">Delivered</span><span>Sports car to mass-market car, financed as described, executed through three near-failures. Roughly 500,000 vehicles a year by 2020, close to the date set in 2014.</span></div>
+          <div class="score-row"><b>Satellite broadband at consumer prices</b><span class="grade">Delivered</span><span>Built on the cheap launch it also pays for. The clearest case of the method working twice in a row in different industries.</span></div>
+          <div class="score-row"><b>Model 3 at 5,000 a week</b><span class="grade">Late</span><span>Missed by roughly two quarters and rescued by a temporary line in a car park, after an over-automation error the Algorithm exists to prevent.</span></div>
+          <div class="score-row"><b>Electric semi truck and pickup</b><span class="grade">Late</span><span>Unveiled 2017 and 2019 with production dates of 2019 and 2021; first deliveries came in late 2022 and late 2023, and volume later still.</span></div>
+          <div class="score-row"><b>Brain–computer implant</b><span class="grade">Late</span><span>First human implant in January 2024, several years beyond the dates floated when the company was founded in 2016. Significance still unknown.</span></div>
+          <div class="score-row"><b>A million robotaxis by 2020</b><span class="grade">Missed</span><span>Stated in 2019. Autonomy remained supervised for years afterwards. The clearest instance of a research problem announced on a manufacturing schedule.</span></div>
+          <div class="score-row"><b>Cargo to Mars by 2022, crew by 2024</b><span class="grade">Missed</span><span>Presented with a vehicle roadmap in 2017. The vehicle itself was still in flight testing well past both dates.</span></div>
+          <div class="score-row"><b>High-speed tube transport</b><span class="grade">Missed</span><span>Proposed in 2013 and handed to others. More than a decade later nothing of the kind carries passengers; the tunnelling company built a short car loop instead.</span></div>
+          <div class="score-row"><b>Solar roofing at volume</b><span class="grade">Missed</span><span>Announced in 2016 with a demonstration that was not a working product. Installed volume never approached the projections.</span></div>
+          <div class="score-row"><b>A platform on a fifth of the staff</b><span class="grade">Contested</span><span>The service kept running after roughly three-quarters of staff left, which the industry said was impossible; advertisers left too, and lenders wrote the asset down heavily. Both halves are evidence.</span></div>
+        </div>
+        <div class="chapter-visual">
+          <div class="chapter-visual__head"><span>Slip</span><b>Years between the date given and the thing arriving</b></div>
+          <div class="chapter-visual__body fig"><div class="scroll-x">
+<svg viewBox="0 0 1000 400" width="1000" height="400" role="img" aria-labelledby="e16t e16d" style="min-width:760px;width:100%;height:auto">
+  <title id="e16t">Slip between announced dates and delivery, grouped by whether the binding constraint was manufacturing cost</title>
+  <desc id="e16d">Horizontal bars showing approximate years of slip. In the upper group, constrained by manufacturing: the Model 3 production rate slipped about half a year, the electric semi and pickup about three years, and reusable launch about eight years from claim to first landing. In the lower group, constrained by research or regulation: brain implants slipped about four years, crewed Mars missions and robotaxi fleets have not arrived at all and are shown as open-ended bars, and high-speed tube transport and solar roofing are shown as never delivered. A vertical marker at three years separates the typical manufacturing slip from the rest.</desc>
+
+  <text x="60" y="34" class="svg-t">The date is the least reliable part of any claim</text>
+
+  <text x="60" y="70" class="svg-sm">CONSTRAINT IS MANUFACTURING COST</text>
+
+  <g class="svg-lab" fill="var(--ink-2)">
+    <text x="60" y="106">Model 3 production rate</text>
+    <text x="60" y="142">Semi and pickup delivery</text>
+    <text x="60" y="178">Reusable booster, claim to landing</text>
+  </g>
+
+  <rect x="330" y="92" width="26" height="18" rx="2" fill="var(--f1)" class="growx" style="--d:.2s"/>
+  <rect x="330" y="128" width="156" height="18" rx="2" fill="var(--f1)" class="growx" style="--d:.35s"/>
+  <rect x="330" y="164" width="416" height="18" rx="2" fill="var(--f1)" class="growx" style="--d:.5s"/>
+
+  <g class="svg-num" fill="var(--f1)">
+    <text x="366" y="106">~0.5 yr</text>
+    <text x="496" y="142">~3 yr</text>
+    <text x="756" y="178">~8 yr, then delivered</text>
+  </g>
+
+  <text x="60" y="230" class="svg-sm">CONSTRAINT IS RESEARCH, REGULATION OR DEMAND</text>
+
+  <g class="svg-lab" fill="var(--ink-2)">
+    <text x="60" y="266">Brain implant, first human</text>
+    <text x="60" y="302">Robotaxi fleet · crewed Mars</text>
+    <text x="60" y="338">Tube transport · solar roofing</text>
+  </g>
+
+  <rect x="330" y="252" width="208" height="18" rx="2" fill="var(--f3)" class="growx" style="--d:.65s"/>
+  <text x="548" y="266" class="svg-num" fill="var(--f3)">~4 yr, then delivered</text>
+
+  <rect x="330" y="288" width="520" height="18" rx="2" fill="var(--f2)" class="growx" style="--d:.8s"/>
+  <text x="860" y="302" class="svg-num" fill="var(--f2)">open</text>
+
+  <rect x="330" y="324" width="560" height="18" rx="2" fill="var(--f2)" opacity=".55" class="growx" style="--d:.95s"/>
+  <text x="900" y="338" class="svg-num" fill="var(--f2)">not delivered</text>
+
+  <line x1="486" y1="82" x2="486" y2="352" stroke="var(--ink-3)" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="494" y="378" class="svg-em">Three years — roughly where a manufacturing promise lands.</text>
+</svg>
+          </div>
+          <div class="fig-legend">
+            <span><i style="--c:var(--f1)"></i>Manufacturing-constrained</span>
+            <span><i style="--c:var(--f3)"></i>Delivered after long slip</span>
+            <span><i style="--c:var(--f2)"></i>Open or abandoned</span>
+          </div>
+          </div>
+          <p class="chapter-visual__caption">Slip figures are approximate, measured from the most prominent public date to first delivery. They are this summary’s audit against the public record, not claims made in the book.</p>
+        </div>
+        <div class="critical-note"><b>Why this table belongs in a summary of the book:</b> the schedule chapter asks to be judged on eventual arrival rather than punctuality. That is a fair standard, and it is only fair if somebody keeps the ledger. The book, by construction, cannot.</div>
+        <div class="key-terms"><span class="term">announcement lead time</span><span class="term">discount rate</span><span class="term">constraint class</span><span class="term">eventual arrival</span></div>
       </div>
     </div>
   </article>
@@ -882,12 +1179,27 @@
           </div>
         </div>
       </div>
+
+      <div class="plate" style="margin-top:34px">
+        <div class="plate__head"><span>Plate 03 · practical</span><b>How to read it, and what to read beside it</b></div>
+        <div class="plate__body">
+          <div class="concept-grid">
+            <div class="concept-card"><span class="tag">Order</span><b>Start at Part II</b><p>The Algorithm and the organisational chapters are the transferable content. Part I is the philosophical frame and reads better once you have seen the method work.</p></div>
+            <div class="concept-card"><span class="tag">Pace</span><b>Read Part IV last and slowly</b><p>It is the part where a physics-shaped method is applied to questions that are not physics-shaped, and where the reader has to supply the scepticism the format removes.</p></div>
+            <div class="concept-card"><span class="tag">Method</span><b>Check one quote before trusting the rest</b><p>The author asks for this explicitly. Pick any striking line, find the original interview, and see what the surrounding minute does to it. Do it once and you will read the whole book at the right distance.</p></div>
+            <div class="concept-card"><span class="tag">Test</span><b>Run the first two steps this week</b><p>Take a live requirement, find the person who owns it, and try to delete it. The method costs nothing to test and gives an answer within days.</p></div>
+            <div class="concept-card"><span class="tag">Balance</span><b>Read a hostile account beside it</b><p>Isaacson’s 2023 biography and Vance’s 2015 one both contain the material this book excludes by construction — the failures, the people who left, and the cost to them.</p></div>
+            <div class="concept-card"><span class="tag">Sources</span><b>Go to the primary record</b><p>The engineering claims are best checked against the original talks and launch webcasts rather than any compilation, this summary included.</p></div>
+          </div>
+          <p class="plate__caption">The book’s own instruction — verify before quoting — is the correct one, and it is the instruction most readers of a compiled book will skip.</p>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="sources">
-  <div class="wrap"><p>Independent summary and critical reading of <em>The Book of Elon: A Guide to Purpose and Success</em> by Eric Jorgenson (2026), compiled from the published edition’s own structure and stated method. Figures and placements are this summary’s interpretation. No text from the book is reproduced.</p></div>
+  <div class="wrap"><p>Independent summary and critical reading of <em>The Book of Elon: A Guide to Purpose and Success</em> by Eric Jorgenson (2026), compiled from the published edition’s own structure and stated method. Figures and placements are this summary’s interpretation. No text from the book is reproduced. The dates, milestones and scoring in <a href="#scoring">Scoring the record</a> and <a href="#elon-ch13">The rest of the portfolio</a> are drawn from the public record rather than from the book — principally company announcements and launch webcasts, with Walter Isaacson’s <em>Elon Musk</em> (2023) and Ashlee Vance’s <em>Elon Musk</em> (2015) for the narrative around them. Slip figures are approximate and measured from the most prominent public date to first delivery.</p></div>
 </footer>
 
 <script>

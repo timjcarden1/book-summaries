@@ -42,6 +42,12 @@
 /* quiet aside set in italics */
 .svg-em { font-size: 11px; fill: var(--ink-3); font-style: italic; }
 
+/* Labels that sit inside a filled shape carry fill="#fff". A presentation
+   attribute loses to any of the class rules above, so those labels were
+   rendering in ink on a dark fill. Restate it at equal specificity, after,
+   so the attribute wins. */
+.fig [fill="#fff"] { fill: #fff; }
+
 .svg-rule { stroke: var(--rule-2); fill: none; }
 .svg-hair { stroke: var(--f-grid); fill: none; }
 .svg-axis { stroke: var(--rule-2); fill: none; stroke-width: 1.1; }

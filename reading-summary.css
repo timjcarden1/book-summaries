@@ -437,7 +437,9 @@ strong { font-weight: 700; }
 .timeline__item b { display: block; font: 700 13px/1.25 var(--display); }
 .timeline__item span { display: block; margin-top: 6px; color: var(--ink-3); font: 600 9px/1.4 var(--mono); text-transform: uppercase; }
 
-.loop { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px; counter-reset: loop; }
+/* padding-right reserves space for the trailing ↻ on the last step, which
+   would otherwise hang past the measure and scroll the whole page sideways */
+.loop { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px; padding-right: 30px; counter-reset: loop; }
 .loop__step { position: relative; min-height: 126px; padding: 18px; background: var(--panel-2); border: 1px solid var(--rule); counter-increment: loop; }
 .loop__step::before { content: "0" counter(loop); display: block; margin-bottom: 12px; color: var(--accent); font: 750 10px/1 var(--mono); letter-spacing: .12em; }
 .loop__step::after { content: "→"; position: absolute; right: -29px; top: 44%; color: var(--accent); font: 700 22px/1 var(--mono); }
