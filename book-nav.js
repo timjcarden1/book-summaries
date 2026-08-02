@@ -82,6 +82,10 @@
           {
             "slug": "durant-story-of-civilization-i-iv",
             "why": "The narrative version of the sweep this book explains."
+          },
+          {
+            "slug": "why-nations-fail",
+            "why": "The institutional rebuttal, by authors Diamond reviewed in turn."
           }
         ]
       },
@@ -101,6 +105,29 @@
           {
             "slug": "fooled-by-randomness",
             "why": "Both books are mostly about not mistaking a story for a cause."
+          },
+          {
+            "slug": "why-nations-fail",
+            "why": "The same mechanism — a windfall that lets a crown stop asking — argued across the world."
+          }
+        ]
+      },
+      {
+        "slug": "why-nations-fail",
+        "title": "Why Nations Fail",
+        "author": "Daron Acemoglu & James A. Robinson",
+        "related": [
+          {
+            "slug": "guns-germs-and-steel",
+            "why": "The geographic answer this book was written to demolish — and whose author then reviewed it."
+          },
+          {
+            "slug": "palma-causas-do-atraso-portugues",
+            "why": "The same mechanism run over four centuries of one country, with much better data."
+          },
+          {
+            "slug": "titan-rockefeller",
+            "why": "The monopoly the virtuous-circle chapter uses to prove an inclusive system can break its own most powerful man."
           }
         ]
       },

@@ -6,8 +6,10 @@ static files. Re-run this only when a book is added or its palette changes:
 
     python3 tools/make-og-images.py
 
-Requires Pillow and the macOS system fonts (Iowan Old Style, Avenir Next),
-which are the same faces the pages ask for in CSS.
+Requires Pillow. It prefers the macOS system fonts (Iowan Old Style, Avenir
+Next), which are the faces the pages ask for in CSS, and falls back to the
+nearest Linux equivalents (Bitstream Charter, Liberation Sans) so it also runs
+on the agent droplet.
 """
 
 import json
@@ -22,28 +24,52 @@ OUT = ROOT / "og"
 W, H = 1200, 630
 MARGIN = 88
 
-DISPLAY = "/System/Library/Fonts/Supplemental/Iowan Old Style.ttc"
-LABEL = "/System/Library/Fonts/Avenir Next.ttc"
-DISPLAY_FALLBACK = "/System/Library/Fonts/Supplemental/Georgia.ttf"
-LABEL_FALLBACK = "/System/Library/Fonts/Helvetica.ttc"
+# Faces in preference order, as (path, collection index). macOS comes first so
+# regenerating on a Mac reproduces the cards already committed here; the Linux
+# entries let the agent droplet render a new card without a visible break in
+# style. Iowan Old Style is a Charter derivative and Charter is the second name
+# in the pages' own CSS font stack, so Bitstream Charter is the right stand-in.
+DISPLAY_FACES = {
+    True: [
+        ("/System/Library/Fonts/Supplemental/Iowan Old Style.ttc", 1),
+        ("/usr/share/fonts/X11/Type1/c0632bt_.pfb", 0),                 # Charter Bold
+        ("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf", 0),
+        ("/System/Library/Fonts/Supplemental/Georgia.ttf", 0),
+    ],
+    False: [
+        ("/System/Library/Fonts/Supplemental/Iowan Old Style.ttc", 0),
+        ("/usr/share/fonts/X11/Type1/c0648bt_.pfb", 0),                 # Charter Regular
+        ("/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf", 0),
+        ("/System/Library/Fonts/Supplemental/Georgia.ttf", 0),
+    ],
+}
+
+_LIB = "/usr/share/fonts/truetype/liberation/"
+LABEL_FACES = {
+    "demi":   [("/System/Library/Fonts/Avenir Next.ttc", 2), (_LIB + "LiberationSans-Bold.ttf", 0)],
+    "medium": [("/System/Library/Fonts/Avenir Next.ttc", 5), (_LIB + "LiberationSans-Regular.ttf", 0)],
+    "bold":   [("/System/Library/Fonts/Avenir Next.ttc", 0), (_LIB + "LiberationSans-Bold.ttf", 0)],
+}
+LABEL_LAST_RESORT = [("/System/Library/Fonts/Helvetica.ttc", 0),
+                     ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 0)]
 
 
-def font(path, size, index=0, fallback=None):
-    try:
-        return ImageFont.truetype(path, size, index=index)
-    except OSError:
-        if fallback:
-            return ImageFont.truetype(fallback, size)
-        raise
+def font(candidates, size):
+    """First loadable face in the list, so this runs on macOS and on Linux."""
+    for path, index in candidates:
+        try:
+            return ImageFont.truetype(path, size, index=index)
+        except OSError:
+            continue
+    raise OSError("no usable font among: " + ", ".join(p for p, _ in candidates))
 
 
 def display(size, bold=True):
-    return font(DISPLAY, size, index=1 if bold else 0, fallback=DISPLAY_FALLBACK)
+    return font(DISPLAY_FACES[bool(bold)], size)
 
 
 def label(size, weight="demi"):
-    return font(LABEL, size, index={"demi": 2, "medium": 5, "bold": 0}[weight],
-                fallback=LABEL_FALLBACK)
+    return font(LABEL_FACES[weight] + LABEL_LAST_RESORT, size)
 
 
 def tracked(draw, xy, text, fnt, fill, tracking):

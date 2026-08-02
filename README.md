@@ -18,6 +18,7 @@ The site is plain static HTML/CSS/JS with no build step. Open `index.html` local
 | [The Lessons of History](lessons-of-history.html) | Will & Ariel Durant | History & civilisation | — | 2026-07-31 |
 | [Guns, Germs, and Steel](guns-germs-and-steel.html) | Jared Diamond | History & civilisation | — | 2026-07-31 |
 | [The Causes of Portuguese Backwardness](palma-causas-do-atraso-portugues.html) | Nuno Palma | History & civilisation | — | 2026-08-01 |
+| [Why Nations Fail](why-nations-fail.html) | Daron Acemoglu & James A. Robinson | History & civilisation | — | 2026-08-02 |
 | [The Beginning of Infinity](the-beginning-of-infinity.html) | David Deutsch | Knowledge & mind | — | 2026-07-31 |
 | [Objective Knowledge](popper-objective-knowledge.html) | Karl Popper | Knowledge & mind | [PDF](Popper%20—%20Objective%20Knowledge.pdf) | 2026-07-31 |
 | [Meditations](marcus-aurelius-meditations.html) | Marcus Aurelius | Knowledge & mind | [PDF](Marcus%20Aurelius%20—%20Meditations.pdf) | 2026-07-31 |
