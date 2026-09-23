@@ -164,14 +164,67 @@ cite { font-style: italic; }
 .rail .pm a.is-active::before { background: var(--oxide-fill); border-color: var(--oxide-fill); }
 .rail .n { min-width: 1.7em; opacity: .75; }
 
-.mobile-toc { display: none; margin: 0 0 28px; border: 1px solid var(--rule); background: var(--surface); border-radius: 3px; }
-.mobile-toc summary { cursor: pointer; padding: 12px 16px; font-family: var(--mono); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
-.mobile-toc ol { margin: 0; padding: 0 16px 14px 36px; font-size: 1rem; display: grid; gap: 4px; }
+[hidden] { display: none !important; }
+
+/* phone contents: a floating button opens the rail's list as a bottom sheet */
+.toc-fab {
+  display: none; position: fixed; z-index: 40;
+  right: 14px; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+  align-items: center; gap: 9px; min-height: 46px; max-width: calc(100vw - 28px);
+  padding: 10px 17px 10px 14px; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--ink); color: var(--paper);
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  box-shadow: 0 6px 22px rgba(10, 14, 12, .22);
+}
+.toc-fab svg { width: 16px; height: 16px; flex: none; }
+.toc-fab .where {
+  font-family: var(--body); font-size: .9rem; letter-spacing: 0; text-transform: none; opacity: .78;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 44vw;
+}
+.toc-fab .where:empty { display: none; }
+.toc-backdrop { position: fixed; inset: 0; z-index: 44; background: rgba(10, 14, 12, .45); }
+.toc-sheet {
+  position: fixed; z-index: 45; left: 0; right: 0; bottom: 0;
+  max-height: min(80vh, 680px); overflow-y: auto; overscroll-behavior: contain;
+  background: var(--surface); color: var(--ink);
+  border-top: 1px solid var(--rule-strong); border-radius: 14px 14px 0 0;
+  padding: 0 22px calc(env(safe-area-inset-bottom, 0px) + 20px);
+  box-shadow: 0 -12px 34px rgba(10, 14, 12, .2);
+}
+.toc-sheet__head {
+  position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0 10px; margin-bottom: 4px; background: var(--surface); border-bottom: 1px solid var(--rule);
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2);
+}
+.toc-sheet__close {
+  font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--ink-2); cursor: pointer;
+  background: none; border: 1px solid var(--rule-strong); border-radius: 3px; padding: 9px 13px;
+}
+.toc-sheet ol { list-style: none; margin: 0; padding: 0 0 0 18px; position: relative; }
+.toc-sheet ol::before { content: ""; position: absolute; left: 4px; top: 14px; bottom: 14px; width: 1px; background: var(--rule-strong); }
+.toc-sheet li.grp {
+  position: relative; margin: 14px 0 0 -18px; padding: 6px 0 2px 18px; background: var(--surface);
+  font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3);
+}
+.toc-sheet a {
+  position: relative; display: flex; align-items: baseline; gap: 10px; padding: 9px 0; min-height: 42px;
+  color: var(--ink-2); text-decoration: none; font-size: 1.04rem; line-height: 1.35;
+}
+.toc-sheet a::before {
+  content: ""; position: absolute; left: -18px; top: 1.02em; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--rule-strong);
+}
+.toc-sheet .mes a::before { border-color: var(--gold-fill); }
+.toc-sheet .pm a::before { border-color: var(--oxide-fill); }
+.toc-sheet .n { min-width: 1.9em; font-family: var(--mono); font-size: .78rem; color: var(--ink-3); }
+.toc-sheet a.is-active { color: var(--ink); font-weight: 600; }
+.toc-sheet a.is-active::before { background: var(--gold-fill); border-color: var(--gold-fill); }
+.toc-sheet .pm a.is-active::before { background: var(--oxide-fill); border-color: var(--oxide-fill); }
 
 @media (max-width: 980px) {
   .layout { grid-template-columns: minmax(0, 1fr); padding-block: 32px 72px; }
   .rail { display: none; }
-  .mobile-toc { display: block; }
+  .toc-fab { display: inline-flex; }
 }
 
 /* ---------- sections ---------- */
@@ -408,22 +461,16 @@ tbody td:nth-child(3) { color: var(--ink); }
     </ol>
   </nav>
 
-  <main class="content">
-    <details class="mobile-toc">
-      <summary>Contents</summary>
-      <ol>
-        <li><a href="#origins">Origins</a></li>
-        <li><a href="#method">Method</a></li>
-        <li><a href="#ideas">Twelve ideas</a></li>
-        <li><a href="#part-1">Part I: Man, Economy, and State</a></li>
-        <li><a href="#part-2">Part II: Power and Market</a></li>
-        <li><a href="#mises">Rothbard vs Mises</a></li>
-        <li><a href="#debates">Debates</a></li>
-        <li><a href="#glossary">Glossary</a></li>
-        <li><a href="#reading">Reading path</a></li>
-      </ol>
-    </details>
+  <button class="toc-fab" id="tocOpen" type="button" aria-controls="tocSheet" aria-expanded="false">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span>Contents</span><span class="where"></span>
+  </button>
+  <div class="toc-backdrop" id="tocBackdrop" hidden></div>
+  <div class="toc-sheet" id="tocSheet" role="dialog" aria-modal="true" aria-label="Contents" hidden>
+    <div class="toc-sheet__head"><span>Contents</span><button class="toc-sheet__close" id="tocClose" type="button">Close</button></div>
+  </div>
 
+  <main class="content">
     <!-- ORIGINS -->
     <section class="sec" id="origins">
       <p class="kicker">Origins</p>
@@ -1032,18 +1079,51 @@ tbody td:nth-child(3) { color: var(--ink); }
     try { localStorage.setItem('civ-theme', next); } catch (e) {}
   });
 
-  // Highlight the current section in the side rail.
-  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a[href^="#"]'));
+  // Phone contents: the floating button opens a copy of the rail as a bottom sheet.
+  var fab = document.getElementById('tocOpen'), sheet = document.getElementById('tocSheet'),
+      backdrop = document.getElementById('tocBackdrop'), closeBtn = document.getElementById('tocClose'),
+      railList = document.querySelector('.rail ol'), where = fab && fab.querySelector('.where');
+  if (fab && sheet && backdrop && closeBtn && railList) {
+    sheet.appendChild(railList.cloneNode(true));
+    var openSheet = function () {
+      sheet.hidden = false; backdrop.hidden = false; fab.setAttribute('aria-expanded', 'true');
+      var cur = sheet.querySelector('a.is-active');
+      if (cur) sheet.scrollTop += cur.getBoundingClientRect().top - sheet.getBoundingClientRect().top - sheet.clientHeight / 2;
+      (cur || closeBtn).focus({ preventScroll: true });
+    };
+    var closeSheet = function (refocus) {
+      sheet.hidden = true; backdrop.hidden = true; fab.setAttribute('aria-expanded', 'false');
+      if (refocus) fab.focus({ preventScroll: true });
+    };
+    fab.addEventListener('click', openSheet);
+    closeBtn.addEventListener('click', function () { closeSheet(true); });
+    backdrop.addEventListener('click', function () { closeSheet(true); });
+    sheet.addEventListener('click', function (e) { if (e.target.closest('a[href^="#"]')) closeSheet(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sheet.hidden) closeSheet(true); });
+  }
+
+  // Highlight the current section in the rail and the sheet, and name it on the button.
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a[href^="#"], .toc-sheet a[href^="#"]'));
   if (!('IntersectionObserver' in window) || !links.length) return;
   var byId = {};
-  links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+  links.forEach(function (a) {
+    var id = a.getAttribute('href').slice(1);
+    (byId[id] = byId[id] || []).push(a);
+  });
+  var labelFor = function (a) {
+    var n = a.querySelector('.n');
+    if (!n) return a.textContent.trim();
+    var name = a.textContent.replace(n.textContent, '').trim();
+    return (a.closest('.pm') ? 'P&M ' : 'Ch ') + n.textContent + ' · ' + name;
+  };
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
-      var a = byId[e.target.id];
-      if (!a) return;
+      var group = byId[e.target.id];
+      if (!group) return;
       links.forEach(function (l) { l.classList.remove('is-active'); });
-      a.classList.add('is-active');
+      group.forEach(function (l) { l.classList.add('is-active'); });
+      if (where) where.textContent = labelFor(group[0]);
     });
   }, { rootMargin: '-15% 0px -75% 0px' });
   Object.keys(byId).forEach(function (id) {
