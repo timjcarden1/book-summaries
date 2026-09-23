@@ -239,6 +239,73 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
   .flow .yes { grid-column: 2; }
   .flow .end { padding-left: 3.1rem; }
 }
+
+/* ---------- depth-pass additions ---------- */
+.sub { font-family: var(--mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--claim); margin: 26px 0 10px; }
+.gist + .sub { margin-top: 6px; }
+.chapter > p:not([class]), .sec > p:not([class]), .part > p:not([class]) { margin: 0 0 14px; }
+.line { margin: 18px 0 12px !important; padding: 10px 0 10px 18px; border-left: 3px solid var(--claim); font-family: var(--display); font-size: 1.28rem; line-height: 1.38; color: var(--ink); }
+.line span { display: block; margin-top: 6px; font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cards > div { background: var(--surface); padding: 14px 16px 16px; }
+.cards .k { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--claim); margin: 0; }
+.cards .k.no { color: var(--breach); }
+.cards .k.mid { color: var(--ink-3); }
+.cards h4 { font-family: var(--display); font-weight: 400; font-size: 1.22rem; margin: 6px 0 6px; line-height: 1.16; }
+.cards p { margin: 0; font-size: .97rem; color: var(--ink-2); line-height: 1.52; }
+.cards p + p { margin-top: 6px; }
+.vtl { list-style: none; margin: 0; padding: 0 0 0 26px; position: relative; display: grid; gap: 4px; }
+.vtl::before { content: ""; position: absolute; left: 6px; top: 12px; bottom: 12px; border-left: 2px solid var(--rule-strong); }
+.vtl li { position: relative; padding: 6px 0 8px; }
+.vtl li::before { content: ""; position: absolute; left: -25px; top: 13px; width: 12px; height: 12px; background: var(--claim); border: 2px solid var(--surface); }
+.vtl li.no::before { background: var(--breach); }
+.vtl li.o::before { background: var(--surface); border-color: var(--ink-3); }
+.vtl b { display: block; font-family: var(--display); font-weight: 400; font-size: 1.14rem; line-height: 1.28; color: var(--ink); }
+.vtl span { display: block; font-family: var(--mono); font-size: .76rem; color: var(--ink-3); }
+.vtl em { display: block; margin-top: 3px; font-style: normal; font-size: .98rem; line-height: 1.5; color: var(--ink-2); }
+.ladder { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ladder li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 4px 12px; padding: 10px 12px; background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; }
+.ladder .no { grid-row: 1 / span 3; font-family: var(--display); font-size: 1.7rem; line-height: 1; color: var(--claim); }
+.ladder.bad .no { color: var(--breach); }
+.ladder b { font-family: var(--display); font-weight: 400; font-size: 1.12rem; line-height: 1.25; }
+.ladder span { font-size: .98rem; line-height: 1.48; color: var(--ink-2); }
+.nums table { min-width: 0; }
+.nums th, .nums td { padding: 9px 10px; }
+.nums tbody th { width: auto; font-size: 1rem; }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.hot { color: var(--breach) !important; }
+td.good { color: var(--claim) !important; }
+.fc { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 2px 16px; padding: 16px 0 18px; border-top: 1px solid var(--rule); }
+.fc__v { grid-row: 1 / span 2; align-self: start; margin: 5px 0 0; padding: 5px 6px; text-align: center; border: 1px solid currentColor; border-radius: 3px; font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+.fc__v--held { color: var(--claim); }
+.fc__v--partly { color: var(--ink-2); }
+.fc__v--open { color: var(--ink-3); }
+.fc__v--missed { color: var(--breach); }
+.fc h3 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.24rem; line-height: 1.25; }
+.fc h3 span { margin-left: 6px; font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.fc p { margin: 4px 0 0; font-size: .99rem; color: var(--ink-2); }
+.debate p + p { margin-top: 8px; }
+.foot p + p { margin-top: 10px; }
+.stack th .d, tbody th .d { display: block; margin-top: 3px; font-family: var(--mono); font-size: .72rem; letter-spacing: .04em; color: var(--ink-3); }
+.flow .q .yes + .yes { grid-column: 3; }
+@media (max-width: 760px) {
+  .cards, .cards.three { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .stack table { min-width: 0; }
+  .stack thead { display: none; }
+  .stack tr { display: block; padding: 12px 14px 14px; border-bottom: 1px solid var(--rule); }
+  .stack tbody tr:last-child { border-bottom: 0; }
+  .stack th, .stack td { display: block; width: auto; padding: 0; border: 0; }
+  .stack td { margin-top: 8px; }
+  .stack td::before { content: attr(data-l); display: block; font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  .stack td.v-ok, .stack td.v-no { white-space: normal; }
+  .fc { grid-template-columns: minmax(0, 1fr); }
+  .fc__v { grid-row: auto; justify-self: start; margin: 0 0 6px; }
+  .nums th, .nums td { padding: 9px 7px; }
+  .stack tbody th, .nums .stack tbody th { font-size: 1.2rem; line-height: 1.25; }
+}
 </style>
 <!-- link-preview:start — generated by tools/sync.py -->
 <link rel="canonical" href="https://book-summaries-umber.vercel.app/rothbard-ethics-of-liberty.html">
@@ -285,13 +352,13 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
       <p class="eyebrow"><a class="home-link" href="index.html">← All summaries</a> · A reader’s summary</p>
       <h1>The Ethics of Liberty</h1>
       <div class="axiom">
-        <p>No one may initiate force against another person or their property.</p>
-        <span>The principle the book defends, in our words</span>
+        <p>No one has the right to aggress against the legitimate or just property of another.</p>
+        <span>Chapter 9, where “property” includes each person’s body</span>
       </div>
-      <p class="byline">Murray N. Rothbard · 1982</p>
+      <p class="byline">Murray N. Rothbard · 1982 · 1998 edition with an introduction by Hans-Hermann Hoppe</p>
       <div class="breath">
         <p class="kicker">The whole book in one breath</p>
-        <p><cite>Man, Economy, and State</cite> was value-free economics. This is the moral argument Rothbard kept out of it. He grounds ethics in natural law: what reason can discover about human nature. Each person owns himself. Unowned things become property when someone first puts them to use. And no one may start violence against anyone else’s person or property. From those three ideas he derives a whole legal code covering crime, punishment, contracts, children, speech and self-defence. Then he turns it on the State, which he defines as the one organisation that lives by taking money through taxation and claims a monopoly of force. Measured by the same rules as anyone else, he argues, the State is a criminal organisation. The book closes by taking apart rival defences of liberty (the utilitarians, Isaiah Berlin, Hayek and Nozick) and by setting out a strategy for getting there.</p>
+        <p>Rothbard’s economics had been deliberately value-free. This is the ethics he thought a case for liberty needed and that economics could not supply. Reason can discover what is good for human beings from what they are, so there is a natural law above any government’s decrees. Applied to force, it yields three rules: each person owns his own body; unowned land and resources belong to whoever first puts them to use; and everything else is acquired by exchange or gift. A crime is any invasion of that just property, nothing more. From Crusoe alone on his island, Rothbard builds out a whole code of law: stolen titles go back to victims, including land held by conquest; self-defence is limited by proportion; punishment belongs to the victim, restitution first; parents are trustees, not owners; free speech is a property right; libel and blackmail are legal; contracts bind only when they transfer title. Then he applies the same code to the State, which lives by taxation and claims a monopoly of force. By the rules that bind everyone else it is a criminal organisation, and war between States is mass murder. He takes apart the rival defences of liberty offered by utilitarian economists, Mises, Berlin, Hayek and Nozick, and ends with a strategy: hold to the goal of immediate liberty and seize every step toward it.</p>
       </div>
       <dl class="facts">
         <div><dt>Published</dt><dd>1982 · 2nd ed. 1998</dd></div>
@@ -313,7 +380,8 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
       <li><a href="#overview">Overview</a></li>
       <li><a href="#origins">Origins</a></li>
       <li><a href="#structure">The structure</a></li>
-      <li><a href="#ideas">Twelve ideas</a></li>
+      <li><a href="#ideas">Fourteen ideas</a></li>
+      <li><a href="#front">Introduction and preface</a></li>
       <li class="grp">I · Natural law</li>
       <li class="ch"><a href="#ch-1"><span class="n">1</span>Natural law and reason</a></li>
       <li class="ch"><a href="#ch-2"><span class="n">2</span>Natural law as science</a></li>
@@ -341,9 +409,9 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
       <li class="ch"><a href="#ch-22"><span class="n">22</span>Nature of the State</a></li>
       <li class="ch"><a href="#ch-23"><span class="n">23</span>Its contradictions</a></li>
       <li class="ch"><a href="#ch-24"><span class="n">24</span>Our relations to it</a></li>
-      <li class="ch"><a href="#ch-25"><span class="n">25</span>Interstate relations</a></li>
+      <li class="ch"><a href="#ch-25"><span class="n">25</span>Between States</a></li>
       <li class="grp">IV · Rival theories</li>
-      <li class="ch"><a href="#ch-26"><span class="n">26</span>Utilitarians</a></li>
+      <li class="ch"><a href="#ch-26"><span class="n">26</span>Utilitarians and Mises</a></li>
       <li class="ch"><a href="#ch-27"><span class="n">27</span>Isaiah Berlin</a></li>
       <li class="ch"><a href="#ch-28"><span class="n">28</span>Hayek</a></li>
       <li class="ch"><a href="#ch-29"><span class="n">29</span>Nozick</a></li>
@@ -351,6 +419,8 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
       <li class="ch"><a href="#ch-30"><span class="n">30</span>Strategy for liberty</a></li>
       <li class="grp">Context</li>
       <li><a href="#rivals">Rothbard vs his rivals</a></li>
+      <li><a href="#held-up">What held up</a></li>
+      <li><a href="#theorists">Who’s who</a></li>
       <li><a href="#debates">Debates</a></li>
       <li><a href="#glossary">Glossary</a></li>
       <li><a href="#reading">Reading path</a></li>
@@ -362,99 +432,136 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
     <section class="sec" id="origins">
       <p class="kicker">Origins</p>
       <h2>The moral half of a two-part project</h2>
-      <p>Murray Rothbard (1926–1995) built his economics on Mises’s rule that economic science must be value-free: it can say what a policy does, never whether it is right. He agreed with that for economics, but thought a case for liberty needed more. It needed an ethics, and one that didn’t rest, as Mises’s did, on the claim that people who understood economics would all prefer the same results.</p>
-      <p><cite>The Ethics of Liberty</cite> (1982) is that ethics. Several chapters began as essays in the 1970s, including his critique of Robert Nozick. The 1998 edition, published by New York University Press, added an introduction by Hans-Hermann Hoppe. Where <cite>For a New Liberty</cite> (1973) was Rothbard’s popular manifesto, this is the systematic version.</p>
+      <p>Murray Rothbard (1926–1995) was an economist of the Austrian school, the student and follower of Ludwig von Mises. His treatise <cite>Man, Economy, and State</cite> (1962) and its sequel <cite>Power and Market</cite> (1970) were written in Mises’s value-free manner: economics can say what a policy does, never whether it is right. The preface to this book says he never believed that value-free economics, or the utilitarianism most economists rely on, could establish the case for liberty. Political judgements are value judgements, so a political philosophy has to be an ethics.</p>
+      <p>He found almost no one doing that work. In the whole 19th century only Herbert Spencer’s <cite>Social Statics</cite> (1851) set out a systematic theory of liberty, and in the 20th there were “virtually no libertarian political philosophers”. His own <cite>For a New Liberty</cite> (1973) was a popular manifesto for what he called the “anarchocapitalist” creed. <cite>The Ethics of Liberty</cite> was meant to be the scholarly version: a theory of what law should be, a “prolegomenon” to a libertarian legal code he hoped future jurists would write out in full.</p>
+      <p>The book was long in the making. It began in talks with the William Volker Fund in the early 1960s as a plan to bring “natural rights to libertarians and liberty to conservatives”, and was largely written in 1974–75 with a year off from teaching funded by Charles Koch; Rothbard signed the acknowledgments in New York in May 1980. Several chapters had appeared earlier: the chapter on punishment in 1977, the critique of Nozick in the <cite>Journal of Libertarian Studies</cite> the same year, and the critique of Hayek in the German journal <cite>Ordo</cite> in 1980. It was published by Humanities Press in 1982. New York University Press reissued it in 1998 with a long introduction by Hans-Hermann Hoppe, and the Mises Institute now publishes that edition free. The book is dedicated to Frank Chodorov, F.A. “Baldy” Harper and Rothbard’s father, David, who in the winter of 1949–50 became “my first convert”.</p>
     </section>
 
     <section class="sec" id="structure">
       <p class="kicker">The structure</p>
       <h2>From one man on an island to a critique of every State</h2>
       <ul class="points">
-        <li><strong>Part I, Natural Law</strong>: why ethics can be grounded in reason and human nature, and why that is a radical standard to hold governments to, not a conservative one.</li>
-        <li><strong>Part II, A Theory of Liberty</strong>: starting from Crusoe alone, then with Friday, Rothbard builds property, exchange and the rule against aggression. He then applies them to crime, land, self-defence, punishment, children, speech, contracts and emergencies.</li>
-        <li><strong>Part III, The State versus Liberty</strong>: the State judged by the same code as everyone else.</li>
-        <li><strong>Part IV, Modern Alternative Theories of Liberty</strong>: the utilitarians, Berlin, Hayek and Nozick, and why each fails.</li>
-        <li><strong>Part V, Strategy</strong>: how a movement should pursue the goal without losing it.</li>
+        <li><strong>Part I, Introduction: Natural Law</strong> (5 chapters): outlines, without fully defending, the natural-law ethics the rest depends on, and argues that it is a radical standard, not a conservative one.</li>
+        <li><strong>Part II, A Theory of Liberty</strong> (16 chapters, most of the book): starts with Crusoe alone, adds Friday, and derives property, exchange and the rule against aggression, then applies them to crime, land, self-defence, punishment, children, speech, reputation, bribery, boycotts, contracts, emergencies and animals.</li>
+        <li><strong>Part III, The State versus Liberty</strong> (4 chapters): the State judged by the same code as everyone else.</li>
+        <li><strong>Part IV, Modern Alternative Theories of Liberty</strong> (4 chapters): utilitarian economists and Mises, Isaiah Berlin, F.A. Hayek and Robert Nozick, and why each fails to ground liberty.</li>
+        <li><strong>Part V, Toward a Theory of Strategy for Liberty</strong> (1 chapter): how a movement should pursue the goal, and why Rothbard was optimistic in 1980.</li>
       </ul>
-      <p style="margin-top:16px">Rothbard is careful about scope. This is a political ethics: a theory of when force may be used. It does not tell anyone how to live well. People have a right to do many things that are foolish or wrong, and the book defends the right, not the choice.</p>
+      <p style="margin-top:16px">Rothbard is careful about scope. This is a political ethics, a theory of when force may be used. It does not tell anyone how to live well. He takes his definition of a right from the Jesuit philosopher James Sadowsky: to have a right to do something means only that it would be immoral for others to stop you by force. It does not mean that every use you make of the right is moral. Many of the book’s notorious conclusions depend on this distinction.</p>
     </section>
 
     <section class="sec" id="ideas">
       <p class="kicker">If you remember nothing else</p>
-      <h2>Twelve ideas that carry the book</h2>
+      <h2>Fourteen ideas that carry the book</h2>
       <div class="ideas">
-        <div class="idea"><p class="tag">Ch. 1–4</p><h3>Ethics can be discovered by reason</h3><p>Natural law holds that what is good for human beings follows from what they are, and reason can work it out without revelation or a legislature.</p></div>
-        <div class="idea"><p class="tag">Ch. 3</p><h3>Natural law is a radical standard</h3><p>A law above the State’s law is a standard to judge governments by, and most of them fail it.</p></div>
-        <div class="idea"><p class="tag">Ch. 6, 8</p><h3>You own yourself</h3><p>The alternatives are that some people own others, or that everyone owns a share of everyone. The first is slavery; the second is unworkable. Self-ownership is what remains.</p></div>
-        <div class="idea"><p class="tag">Ch. 6</p><h3>First use makes property</h3><p>Unowned land becomes yours when you mix your labour with it. That is Locke’s homesteading principle, taken strictly.</p></div>
-        <div class="idea"><p class="tag">Ch. 8</p><h3>Never initiate force</h3><p>Aggression means starting violence, or threatening it, against another person or their property. It is the one thing the law may forbid.</p></div>
-        <div class="idea"><p class="tag">Ch. 9–10</p><h3>Stolen titles are void</h3><p>Property taken by force goes back to the victim or their heirs, including land seized by conquest and handed to feudal lords.</p></div>
-        <div class="idea"><p class="tag">Ch. 13</p><h3>Punishment belongs to the victim</h3><p>A criminal loses rights in proportion to what he took. The victim may demand restitution, forgive, or seek proportional punishment.</p></div>
-        <div class="idea"><p class="tag">Ch. 15</p><h3>All rights are property rights</h3><p>Free speech, for instance, is the right to use your own property and make contracts. Seen that way, rights never conflict.</p></div>
-        <div class="idea"><p class="tag">Ch. 19</p><h3>A contract transfers a title</h3><p>Contracts are enforceable as transfers of property, not as bare promises. You can’t sell yourself into slavery, because your will can’t be handed over.</p></div>
-        <div class="idea"><p class="tag">Ch. 22</p><h3>The State is aggression, organised</h3><p>Taxation is theft and conscription is slavery. Judged by the rules that bind everyone else, the State is a criminal band on a grand scale.</p></div>
-        <div class="idea"><p class="tag">Ch. 23</p><h3>Limited government can’t stay limited</h3><p>No one consented to it. It judges its own case, and nothing outside it can keep it within bounds.</p></div>
-        <div class="idea"><p class="tag">Ch. 26–29</p><h3>Other defences of liberty leak</h3><p>Utility, “negative liberty,” Hayek’s coercion and Nozick’s minimal state each leave a door open to State power.</p></div>
+        <div class="idea"><p class="tag">Ch. 1–3</p><h3>Ethics can be discovered by reason</h3><p>Everything has a nature, and what fulfils or thwarts a human being’s nature can be studied like anything else. That law stands above any State’s law, which makes it radical.</p></div>
+        <div class="idea"><p class="tag">Ch. 4–5</p><h3>A right is not a moral licence</h3><p>A right means only that others may not stop you by force. People have the right to do many things that are foolish or wrong.</p></div>
+        <div class="idea"><p class="tag">Ch. 6, 8</p><h3>You own yourself</h3><p>The only alternatives are that some own others, which is slavery, or that everyone owns a share of everyone, which would stop anyone from acting at all.</p></div>
+        <div class="idea"><p class="tag">Ch. 6, 10</p><h3>First use makes property</h3><p>Unowned land becomes yours when you transform it. Claiming a continent from the beach, or fencing land you never use, gives no title.</p></div>
+        <div class="idea"><p class="tag">Ch. 9</p><h3>Only just property is protected</h3><p>“Property rights, period” would protect the thief. Titles traced to theft go back to identifiable victims, without compensation, whatever a government has recorded.</p></div>
+        <div class="idea"><p class="tag">Ch. 10–11</p><h3>Land held by conquest is still stolen</h3><p>Where peasants pay rent to heirs of conquerors, the peasants are the owners. Land reform in the Third World means handing them the title, not paying the landlords.</p></div>
+        <div class="idea"><p class="tag">Ch. 12–13</p><h3>Punishment fits the crime, and the victim decides</h3><p>A criminal loses rights to the extent he took them. Restitution first, then up to “two teeth for a tooth”, which the victim may exact, sell off or forgive.</p></div>
+        <div class="idea"><p class="tag">Ch. 14</p><h3>Parents are trustees, not owners</h3><p>They may not harm a child, but have no enforceable duty to support one; the child becomes free by running away; the rights of guardianship may be sold.</p></div>
+        <div class="idea"><p class="tag">Ch. 15–16</p><h3>All rights are property rights</h3><p>Free speech is the right to use your own hall or a hall you rent. There is no property in your reputation, so libel and blackmail should be legal.</p></div>
+        <div class="idea"><p class="tag">Ch. 19</p><h3>A contract transfers title; a promise does not</h3><p>A debt is enforceable because the money is the creditor’s. A promise to work, marry or obey for life is not, because the will can’t be sold.</p></div>
+        <div class="idea"><p class="tag">Ch. 22</p><h3>The State is organised crime</h3><p>It alone gets its income by coercion. Taxation is theft, conscription slavery, war mass murder, and ideologists persuade the public otherwise.</p></div>
+        <div class="idea"><p class="tag">Ch. 23, 29</p><h3>Limited government can’t stay limited</h3><p>No State arose by consent, none can judge its own limits, and no argument, not even Nozick’s invisible hand, justifies a minimal one.</p></div>
+        <div class="idea"><p class="tag">Ch. 26–28</p><h3>Other defences of liberty leak</h3><p>Utility can’t condemn killing a hated minority; Mises’s value-free case can’t answer people who knowingly prefer statism; Hayek’s “coercion” covers both too much and too little.</p></div>
+        <div class="idea"><p class="tag">Ch. 30</p><h3>Want liberty now, take it in steps</h3><p>The goal is immediate abolition of every invasion of liberty. Any step toward it should be welcomed; no step may contradict it.</p></div>
       </div>
+    </section>
+
+    <section class="sec" id="front">
+      <p class="kicker">Front matter</p>
+      <h2>Hoppe’s introduction and Rothbard’s preface</h2>
+      <p>The 1998 edition opens with a forty-page introduction by Hans-Hermann Hoppe, Rothbard’s colleague at the University of Nevada, Las Vegas, written three years after Rothbard’s death. It is partly a defence of the book and partly a portrait of the later Rothbard.</p>
+      <p class="sub">Hoppe’s introduction (1998)</p>
+      <ul class="points">
+        <li>Rothbard was a “grand system builder” who reunited economics and ethics through the concept of property. Ronald Coase, Harold Demsetz and Armen Alchian rediscovered property at the same time, but as economists who assumed rational ethics impossible they treated rights as assignments that government judges should make to maximise output. To Hoppe that is ethical relativism in disguise.</li>
+        <li>John Rawls’s <cite>A Theory of Justice</cite> (1971) revived political philosophy without property or scarcity: neither word appears in its index, while “equality” has dozens of entries. Rawls’s parties behind the veil of ignorance are “disembodied somnambulists”, and Rawls admitted defining the original position “so that we get the desired result”.</li>
+        <li>Hoppe restates Rothbard’s proof. If A doesn’t own himself, either B owns A, which makes two classes of people and fails the test that a law must apply to everyone, or everyone co-owns everyone, in which case no one could do anything without everyone’s permission and “mankind would die out instantly”. Only self-ownership and first-use-first-own pass both tests.</li>
+        <li>The book was neglected on publication for its anarchism (Hoppe quotes Augustine: without justice the State is “nothing but a band of robbers”) and above all for its method. Rothbard offered axiomatic proofs. Nozick’s <cite>Anarchy, State, and Utopia</cite> (1974), “unsystematic” and playful, became famous overnight, though Nozick credited “a long conversation … with Murray Rothbard” for his interest in anarchist theory. Nozick never answered his critics, including Rothbard’s chapter 29, later called arguments that force a conclusion “not a nice way to behave”, and eventually abandoned libertarianism without saying why.</li>
+        <li>Hoppe sees Rothbard’s distinctive contribution in the brief passage in Chapter 6 on axioms: a proposition that must be assumed in order to argue against it cannot be refuted. On this reading, self-ownership is a precondition of argument itself, the idea Hoppe later developed as “argumentation ethics”.</li>
+        <li>He records the book’s history. It came out at a low point, after Rothbard, a co-founder of the Cato Institute, was forced out by its main funder as too “extreme”; 1982 was also the year the Ludwig von Mises Institute was founded. The book was translated into French, Spanish, Italian and German, and Rothbard never changed his fundamental positions. He did, Hoppe says, later stress “traditional Western bourgeois culture” as the setting for liberty, left the Libertarian Party in 1989, and argued that the right to exclude makes a free society “profoundly unegalitarian”.</li>
+        <li>On the children chapter, Hoppe adds that Rothbard accepted the fetus as human life but denied any “right to life” against the mother, and that he opposed <cite>Roe v. Wade</cite> while favouring legal abortion, because the Supreme Court had no jurisdiction and was centralising power.</li>
+      </ul>
+      <p class="sub">Rothbard’s preface (1980)</p>
+      <ul class="points">
+        <li>All his work, he says, has turned on one question, human liberty; the disciplines of human action can be integrated into a single “science” of liberty.</li>
+        <li>Part I only outlines natural law, which “has been ably expounded and defended elsewhere by ethical philosophers”. Part II is the substance: starting like the best economic treatises with Crusoe, then deriving property and crime, “what law concretely should be”. Part III is brief on the State, because a positive theory of liberty needs little critique of it. Part IV takes on Mises, Hayek, Berlin and Nozick, not in detail but on why their theories fail. Part V attempts “the virtually pioneering task” of a theory of strategy, and explains why Rothbard was “highly optimistic” about the prospects for liberty, particularly in America.</li>
+      </ul>
     </section>
 
     <!-- PART I -->
     <section class="part" id="part-1">
       <p class="part-num">Part I</p>
       <h2>Introduction: Natural Law</h2>
-      <p class="part-lede">Before building anything, Rothbard defends the foundation: that there is an objective ethics grounded in the nature of man, discoverable by reason, and standing above whatever a government happens to decree.</p>
+      <p class="part-lede">Before building anything, Rothbard sketches the foundation: that there is an objective ethics grounded in the nature of man, discoverable by reason, and standing above whatever a government happens to decree. He says plainly that he is outlining this view, not proving it.</p>
     </section>
 
     <article class="chapter" id="ch-1">
       <p class="ch-label">Chapter 1</p>
       <h3>Natural Law and Reason</h3>
-      <p class="gist">The nature of a thing tells us what is good for it, and that includes human beings.</p>
+      <p class="gist">Natural law is a claim about reason, not about God. The Scholastics and Grotius said so themselves.</p>
       <ul class="points">
-        <li>Every entity has a nature, and reason can learn what helps or harms it: poison harms, food nourishes. Ethics for people works the same way.</li>
-        <li>The tradition runs from Aristotle and the Stoics through Aquinas. Rothbard stresses that it doesn’t depend on theology. Hugo Grotius held that natural law would bind even if God did not exist.</li>
-        <li>He answers critics who say “ought” can never be derived from “is.” If a nature can be known, then what serves or harms it can be known too.</li>
+        <li>Among intellectuals who call themselves scientific, “the nature of man” is a red flag to a bull; “Man has no nature!” is the modern rallying cry. A distinguished theorist told the American Political Science Association that man’s nature is purely theological. (A footnote names her: Hannah Arendt.)</li>
+        <li>Both sides assume natural law depends on theology. Its religious defenders weakened it by implying faith was needed; its secular critics gladly agreed and threw it out. Rothbard thinks both are wrong. Even <cite>Black’s Law Dictionary</cite> defines natural law as principles “discoverable by the light of nature or abstract reasoning”.</li>
+        <li>The extreme Augustinian tradition held that only faith could know man’s ends. The Thomist tradition held the opposite: philosophy is independent of theology, and reason can discover the laws, physical and ethical, of the natural order. Whether God created that order is a separate question.</li>
+        <li>Francisco Suárez and the late Spanish Scholastics said natural law would bind “even though God did not exist”. The Protestant jurist Hugo Grotius wrote in <cite>De Iure Belli ac Pacis</cite> (1625) that his account would have some validity even if we conceded “that there is no God”, and that just as God cannot make two times two not equal four, “so He cannot cause that which is intrinsically evil be not evil”. Pufendorf, Burlamaqui and Vattel then built natural law on secular ground.</li>
+        <li>For Aquinas, as Frederick Copleston puts it, reason distinguishes man from the animals: it apprehends ends as objectively good or bad, not just the means to arbitrary ends. Reason is not, as after Hume, “a mere slave to the passions”. Inanimate things and animals follow their natures automatically; man, “the rational animal”, must discover his ends and has free will to choose them.</li>
+        <li>Leo Strauss, criticising the relativist political scientist Arnold Brecht, called positivist social science a “flight from reason”: if reason can choose only means, not ends, then rational conduct is impossible.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-2">
       <p class="ch-label">Chapter 2</p>
       <h3>Natural Law as “Science”</h3>
-      <p class="gist">Natural law is a rational discipline, not a matter of taste.</p>
+      <p class="gist">If apples and stones have natures, so does man; and what fulfils a nature is good for it.</p>
       <ul class="points">
-        <li>Rothbard defends ethics as a field reason can investigate, against positivists and relativists who treat moral claims as mere preference.</li>
-        <li>The method is to study human nature and the conditions of human flourishing, then draw conclusions as one would in any science.</li>
+        <li>An apple falls; two atoms of hydrogen and one of oxygen make water. The world consists of many different things, and different things have different attributes, which is all “nature” means. The laws of their behaviour make up “the structure of natural law. What is ‘mystical’ about that?” It would be arbitrary to deny a nature to man alone.</li>
+        <li>“Who is to establish” the truths about man? “The answer is not who but what: man’s reason.” To the demand for instant proof, the reply is “Go thou and study and find out!”, as a chemist would reply to someone who demanded every law about copper on the spot.</li>
+        <li>That natural-law theorists disagree is no argument against them; economics is notoriously contentious too, and no one throws it out. Disagreement even implies there is something objective to disagree about.</li>
+        <li>Goodness for any creature is the fulfilment of what is best for its kind. Joseph Cropsey: we judge an elephant good by what elephant nature makes possible. So natural law is a “science of happiness” in the ordinary sense, whereas economics and utilitarianism treat happiness formally, as whatever ends people happen to rank highest. For economics that is proper; for ethics it is not.</li>
+        <li>The psychologist Leonard Carmichael argues from biology that some values are fixed: the wanton murder of an adult for amusement will always be recognised as wrong.</li>
+        <li><strong>Is and ought.</strong> Hume is said to have demolished natural law by separating fact from value and making reason the slave of the passions, a view social scientists have followed since Max Weber. Rothbard replies with John Wild that value is the fulfilment of tendencies in a thing’s structure (a withering plant or a lame man exists, but in a deprived mode), and in a footnote with Philippa Foot that an “ought” can follow validly from premises taken together. A. Kenneth Hesselberg showed that Hume himself had to bring reason back to found justice and property. Étienne Gilson: “The natural law always buries its undertakers.”</li>
+        <li>Natural law thus faces two enemies: fideists, who say ethics comes only by revelation, and sceptics, who say it comes from whim or emotion. George Grant traced their “strange alliance” back to William of Ockham.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-3">
       <p class="ch-label">Chapter 3</p>
-      <h3>Natural Law Versus Positive Law</h3>
-      <p class="gist">Law made by a legislature has to answer to a law it didn’t make.</p>
+      <h3>Natural Law versus Positive Law</h3>
+      <p class="gist">A law above the State’s law is a standing reproach to every State.</p>
       <ul class="points">
-        <li>Positive law is whatever the State enacts. Natural law gives a standard outside the State by which enacted law can be judged and found wanting.</li>
-        <li>That made natural law a revolutionary idea in the hands of the Levellers, Locke and the American revolutionaries. Rothbard insists it is radical, not conservative.</li>
-        <li>He discusses Bruno Leoni’s case for law discovered by judges, as in the common law, rather than made by legislators. It is sympathetic, but Rothbard says judge-made law still needs natural law to tell good rulings from bad.</li>
+        <li>Natural law gives an objective standard for judging any action at any time or place, so it is “a profoundly ‘radical’ ethic” that holds the status quo up “to the unsparing and unyielding light of reason”.</li>
+        <li>Legal principles can come from only three sources: tribal custom, the arbitrary will of rulers, or reason discovering natural law. The third is the most fully human and the most revolutionary. Even friends of liberty now choose the first two: some would adopt the common law uncritically despite its anti-libertarian flaws, and Henry Hazlitt would scrap constitutional limits and rely on the legislature’s majority.</li>
+        <li>In a footnote Rothbard recalls Hazlitt’s review of <cite>Man, Economy, and State</cite> in <cite>National Review</cite> (1962), which called his legal ideas “abstract doctrinaire logic” and “instant jurisprudence”. Odd, he says, to rank the common law below majority will but above human reason.</li>
+        <li>Lord Acton saw the radical side. The Greeks’ flaw was to merge politics with morals and put the supreme moral agent in the State; the Stoics began a natural law independent of the State, which Grotius revived, and when Cumberland and Pufendorf spelled it out, “every settled authority … recoiled aghast”. Acton: “Liberalism wishes for what ought to be, irrespective of what is”, which his biographer Gertrude Himmelfarb called “a revolution in permanence”.</li>
+        <li>Why then is natural law called conservative? Because its principles are fixed. But fixed principles independent of custom and authority are a force for change, except in the rare case where a government’s laws happen to match them. The German conservative Adam Müller was bewildered: “A natural law which differs from the positive law!” The conservative political scientist Samuel Huntington agreed that natural law is “inherently non-conservative”.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-4">
       <p class="ch-label">Chapter 4</p>
       <h3>Natural Law and Natural Rights</h3>
-      <p class="gist">From natural law, which binds everyone, to natural rights, which belong to each person.</p>
+      <p class="gist">From a natural law that served the State to natural rights that belong to individuals.</p>
       <ul class="points">
-        <li>The seventeenth century turned natural law into a doctrine of individual rights. The Leveller Richard Overton argued that every person has a property in himself, and John Locke built his theory of property on the same idea.</li>
-        <li>Rothbard adopts the Lockean core, self-ownership plus property through labour, and aims to make it more consistent than Locke did.</li>
+        <li>The great failing of natural-law theory from Plato and Aristotle through the Thomists to Leo Strauss has been statism: from man as a “social animal” it leapt to identify society with the State, and made the State the home of virtue. The Levellers and above all John Locke, in 17th-century England, turned it into an individualist theory of natural rights, which shaped the American revolutionaries.</li>
+        <li>Rothbard quotes Locke’s <cite>Second Treatise</cite> at length: “every man has a property in his own person”; whatever he removes from nature he has “mixed his labour with”; the acorns he gathers are his from the gathering, since “if the first gathering made them not his, nothing else could”, and if the consent of all mankind were needed, “man had starved”.</li>
+        <li>Locke’s theory was “riddled with contradictions”, as pioneers’ theories are; it was purified by later writers, culminating in Herbert Spencer and Lysander Spooner. A footnote rejects the fashion, from Marxists to Straussians, of treating Hobbes as the founder of individualist rights: Hobbes was a statist.</li>
+        <li>Natural rights were revolutionary in practice: in the Declaration of Independence (where, Rothbard notes, the usual triad was “Life, Liberty and Property”) and in William Lloyd Garrison’s 1833 declaration that laws admitting slavery are “utterly null and void”.</li>
+        <li><strong>What a right is.</strong> Following the Jesuit James Sadowsky: to say someone has a right to do something means “that it would be immoral for another … to stop him from doing this by the use of physical force or the threat thereof”, not that every use of the right is moral. Elisha Hurlbut (1845): the manner of exercising a faculty is a question of morals; “the right to its exercise is another thing.”</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-5">
       <p class="ch-label">Chapter 5</p>
       <h3>The Task of Political Philosophy</h3>
-      <p class="gist">The task is to say when force is justified, and nothing more.</p>
+      <p class="gist">To say when force is justified, openly, instead of smuggling in values.</p>
       <ul class="points">
-        <li>Libertarianism, as Rothbard frames it, is a political philosophy only: a theory of the proper use of violence. It is not a complete ethics of how to live.</li>
-        <li>So a person may have a right to do something immoral. Defending the right is not endorsing the act.</li>
-        <li>The book sets out to build that political ethic systematically, then test existing institutions against it.</li>
+        <li>The book’s task is narrow: not personal morality, but the subset of natural law that deals with violence and non-violence between people, “a political philosophy of liberty”.</li>
+        <li>Political science has neglected this. It builds models in imitation of physics or engages in “empirical fact-grubbing”, believing it can advise on policy without taking an ethical position. But any policy recommendation is an ethical judgement. The political scientist’s judgements are hidden, hence unexamined and likelier to be wrong, and they default to favouring whatever status quo exists.</li>
+        <li>Political philosophers, meanwhile, confine themselves to “antiquarian descriptions and exegeses” of dead authors. Rothbard calls for casting out “the hobgoblins of <i>Wertfreiheit</i>, of positivism, of scientism” and setting up a natural-rights standard “to which the wise and honest may repair”.</li>
       </ul>
     </article>
 
@@ -462,7 +569,7 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
     <section class="part" id="part-2">
       <p class="part-num">Part II</p>
       <h2>A Theory of Liberty</h2>
-      <p class="part-lede">Rothbard starts with the simplest society, one man alone, adds a second person, and derives a legal code step by step. Most of the book’s notorious conclusions are here, drawn with the same logic as the uncontroversial ones.</p>
+      <p class="part-lede">The substance of the book. Rothbard starts with the simplest society, one man alone, adds a second person, and derives a legal code step by step. Most of the book’s notorious conclusions are here, drawn with the same logic as the uncontroversial ones.</p>
     </section>
 
     <article class="chapter" id="ch-6">
@@ -470,19 +577,26 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
       <h3>A Crusoe Social Philosophy</h3>
       <p class="gist">Alone on an island, a man owns himself and whatever he first transforms.</p>
       <ul class="points">
-        <li>Crusoe must use his mind to survive: learning, choosing and transforming nature. Ownership of himself follows from his nature as a reasoning, acting being.</li>
-        <li>When he clears a field or builds a hut, he mixes his labour with unowned land and makes it his. This is the homesteading principle: first use, first owner.</li>
-        <li>Land nobody has used remains unowned. Merely claiming it, or drawing a line on a map, is not enough.</li>
+        <li>“Crusoe economics” is derided as unrealistic, but isolating one man against nature makes the basic truths clear before other people complicate them. Rothbard applies the method to ethics, as his economics had applied it to economic theory.</li>
+        <li>Crusoe, with amnesia, finds his own consciousness and body, and nature (“land”, which in economics includes fishing waters and excludes man-made improvements). He has no instincts to guide him, so he must learn his ends and the “recipes” for reaching them, then transform nature into capital goods (an axe, a net) and consumer goods (a cabin, fish). He must produce before he can consume.</li>
+        <li>Reason is man’s means of survival; production is a fusion of spirit and matter, since behind every produced good is an idea. By introspection Crusoe finds his free will and his mind’s command over his body: “his natural ownership over his self”. (A footnote adds that no one can coherently believe his own judgements are determined.)</li>
+        <li><strong>Ethics from the mushroom.</strong> Crusoe is about to eat tasty mushrooms when another castaway shouts that they are poisonous, and he switches to berries. Both have assumed that poison is bad, that life and health are good: “the basis of an ethic, grounded on reality”. Eating them knowingly, for kicks, would be objectively immoral.</li>
+        <li>Why value life? Because a proposition becomes an axiom when anyone who denies it must use it in the attempt. Anyone arguing about values is alive and affirming life; a real opponent of life “would have no business continuing to be alive”.</li>
+        <li><strong>Freedom is not power.</strong> Man is not unfree because he cannot leap the ocean at a bound; he lacks the power. “It is patently absurd to define the ‘freedom’ of an entity as its power to perform an act impossible for its nature!” Social freedom means only the absence of molestation by others, and alone on his island Crusoe has it completely.</li>
+        <li><strong>Homesteading.</strong> By finding, learning to use and transforming unused land, Crusoe has, in Locke’s phrase, “mixed his labor with the soil”, and it becomes his. But if he stood on the shore of a virgin continent and claimed all of it, that would be “sheer empty vainglory”: his property extends only as far as his labour actually reaches.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-7">
       <p class="ch-label">Chapter 7</p>
       <h3>Interpersonal Relations: Voluntary Exchange</h3>
-      <p class="gist">Add Friday, and property can change hands by exchange or gift.</p>
+      <p class="gist">Add Friday, and property can change hands; what changes hands is title.</p>
       <ul class="points">
-        <li>Two owners can swap goods or services, each expecting to gain, and the division of labour begins.</li>
-        <li>Everything legitimately owned was either homesteaded, produced, received in exchange or received as a gift. A free society is the network of those transfers.</li>
+        <li>A million Crusoes on a million islands would need no new theory; what matters is interaction. Crusoe fishes, Friday grows wheat, and both gain by exchange, because people differ in skills and land differs in resources. Ricardo’s law of comparative advantage means both gain even if Crusoe is better at both tasks, as a physician gains by hiring a secretary who types more slowly than he does. On the free market “the ‘weak’ reap the advantages of productivity because it benefits the ‘strong’ to exchange with them.”</li>
+        <li>What is exchanged is not goods but the rights of ownership in them: when Smith trades apples for Jones’s butter, each transfers his title. A medium of exchange emerges, usually gold or silver, and money makes the vertical chain of production possible: Smith makes an axe and sells it to Jones, who fells lumber, sells it to Johnson, who sells to Robbins, a builder, who builds Benton a house.</li>
+        <li><strong>Why the capitalist earns a profit.</strong> Jones sells logs to Polk for 40 ounces of gold; Polk pays X, Y and Z to float them downriver and sells them to Johnson for 110, netting 10. The workers could have done the same if they had saved the capital, wanted to wait for payment and wanted the risk. The capitalist pays them before the product is sold and bears the risk; he does not steal their product.</li>
+        <li>All just property therefore traces to self-ownership, homesteading, and exchange or gift of what was so acquired. Labour services can be sold, but the will cannot: a man can sell his work now but not the capitalised value of his future work. “Voluntary slavery” is a contradiction, since a willing servant isn’t a slave and an unwilling one isn’t voluntary.</li>
+        <li><strong>A universal ethic.</strong> A valid ethic must apply to every person at every time and place. A “natural right” of the Hohenzollerns or Bourbons to rule fails, since it makes one’s rank depend on birth. A natural right to “three square meals a day” fails, since in many times and places they cannot be supplied. Only the rules of natural ownership can be applied everywhere, whatever a society’s wealth: “only a rulerless, purely libertarian world can fulfill the qualifications of natural rights.” People “are born free, and need never be in chains.”</li>
       </ul>
     </article>
 
@@ -491,9 +605,11 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
       <h3>Interpersonal Relations: Ownership and Aggression</h3>
       <p class="gist">The central chapter: the case for self-ownership and the rule against aggression.</p>
       <ul class="points">
-        <li>There are only three possible answers to who owns a person (see the figure below). Rothbard rules out two, leaving universal self-ownership.</li>
-        <li>From self-ownership and homesteading follows the nonaggression rule. No one may initiate violence, or threaten it, against another’s person or legitimately owned property.</li>
-        <li>Everything else in the book is an application of that one rule.</li>
+        <li>Aggressive violence means invading another’s property without consent, whether his body (assault) or his goods (robbery, trespass). The aggressor imposes his will on another’s natural property.</li>
+        <li>There are only three possible answers to who owns a person (see the figure). A philosopher at the University of Michigan, George Mavrodes, suggested a fourth, that no one owns anybody; Rothbard replies that since ownership means control, no one could then do anything.</li>
+        <li><strong>The Columbus complex.</strong> Crusoe cannot own the whole island by landing first, and ejecting Friday from land Friday has cleared would be aggression. Columbus, even had he reached an empty continent, would have owned only what he used. Walking round a territory, a footnote adds, gives title to the boundary line only.</li>
+        <li><strong>The sculptor.</strong> Who should own a sculpture: the sculptor, a group that seizes it, or everyone in the world equally? Most people see that only the first is just. But then the same holds for the miner who dug the clay, the toolmaker, and the homesteader who cleared land: all transformed nature by their labour. “World communism” in practice means a ruling group.</li>
+        <li>So there are only two ways to acquire wealth, in Franz Oppenheimer’s terms: the “economic means” of production and exchange, and the “political means” of seizing what others produced. The aggressor is a parasite, and parasitism cannot be a universal ethic: it needs hosts, and destroys them.</li>
       </ul>
       <figure class="fig">
         <p class="fig-title">Figure · Who owns a person? The three possible answers</p>
@@ -520,7 +636,7 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
             </svg>
             <h4>Some own others</h4>
             <p>A ruling class owns everyone else, as in slavery.</p>
-            <p class="verdict no">Rothbard: a two-tier ethic, not a universal one</p>
+            <p class="verdict no">Rothbard: a two-tier ethic that treats the ruled as subhuman</p>
           </div>
           <div>
             <svg viewBox="0 0 220 120" role="img" aria-label="Five people all connected to each other, each owning a share of every other">
@@ -530,117 +646,221 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
             </svg>
             <h4>Everyone owns everyone</h4>
             <p>Each person owns an equal share of every other person.</p>
-            <p class="verdict no">Rothbard: unworkable, since no one could act without everyone’s leave</p>
+            <p class="verdict no">Rothbard: no one could act without everyone’s prior approval, and in practice a ruling class takes over</p>
           </div>
         </div>
+        <figcaption>The chapter’s three alternatives. The second fails the test that an ethic apply to all human beings; the first is the only one that is both universal and livable.</figcaption>
       </figure>
     </article>
 
     <article class="chapter" id="ch-9">
       <p class="ch-label">Chapter 9</p>
       <h3>Property and Criminality</h3>
-      <p class="gist">A crime is an invasion of property, and stolen property keeps its true owner.</p>
+      <p class="gist">A crime is an invasion of just property, and stolen property keeps its true owner.</p>
       <ul class="points">
-        <li>Crime is defined as aggression against a person or their property, and nothing else. There are no “victimless crimes” in Rothbard’s code.</li>
-        <li>A thief never acquires title. Stolen goods belong to the victim, or to the victim’s heirs, however many times they have changed hands.</li>
-        <li>When no victim can be identified, the current holder, if not the thief, may keep the goods as a new first user (see the figure below).</li>
+        <li>A criminal is anyone who initiates violence against another or his property. (Rothbard notes that lawyers would call most of these torts, since “crime” in law means an offence against the State or community, a category he rejects.)</li>
+        <li><strong>The wristwatch.</strong> We see A seize B’s wrist and take his watch. Is A a thief, or is he taking back a watch B stole from him? Only historical inquiry can say. So the libertarian rule cannot be “protect property, period”, which would protect a thief. It must be that no one may aggress against another’s “legitimate or just property”.</li>
+        <li>This sinks the utilitarian defence of the market, which can only bless whatever titles exist, in practice those recorded by a government, and so is “ethically nihilistic”. The real driving force of 20th-century radicalism, Rothbard thinks, is moral indignation from the (false) theory of surplus value: that capitalists stole from workers. It can be answered only by showing capitalist property is just, not by praising “social peace” or deploring revolutionary violence, since everyone but a Tolstoyan pacifist accepts force against criminals. Libertarians must be prepared to find cases “where violent expropriation of existing property titles will be morally justified”.</li>
+        <li><strong>The king of Ruritania.</strong> Using a device of Mises’s, Rothbard imagines a despotic king facing a successful libertarian revolt. He dissolves his government, first dividing the whole country among himself and eleven relatives, one-twelfth each, and announces that taxes are abolished and replaced by “private rents”, protected by the libertarians’ own principle. A consistent utilitarian must accept it. A libertarian replies that only just titles count, and returns the land to those the king robbed.</li>
+        <li>Hence all property is “private” in the sense that some people control it (an insight credited to Alan Milchman); the real question is never private versus governmental, but legitimate owner versus criminal.</li>
+        <li><strong>Additions.</strong> If Brown steals Black’s car and sells it to Robinson, it goes back to Black without compensation; Robinson may sue Brown. Robinson keeps a radio he added, since it can be removed, but not a repaired engine; on stolen land, he may remove or demolish his buildings. The legal privileges of “negotiable instruments” such as banknotes, and of pawnbrokers, who keep stolen goods, are unjust. Title search and title insurance would grow.</li>
+        <li><strong>Slavery.</strong> Before 1865 slaves were “private property”, a continuing crime. Debating compensation for the masters was absurd: “do we compensate the thief for the loss of the watch, or do we punish him?” The English liberal Benjamin Pearson “had thought it was the slaves who should have been compensated”. Social disruption was irrelevant; it should have been abolished as soon as possible.</li>
       </ul>
       <figure class="fig">
-        <p class="fig-title">Figure · Who gets stolen property back?</p>
+        <p class="fig-title">Figure · Who owns property with a doubtful past?</p>
         <div class="flow">
-          <div class="q"><b>1</b><div class="ask">Is the present holder the thief, or did he knowingly receive stolen goods?</div><div class="yes"><em>If yes</em>Return it to the victim. The holder has no title.</div></div>
-          <div class="q"><b>2</b><div class="ask">Can the victim, or the victim’s heirs, be identified?</div><div class="yes"><em>If yes</em>Return it to them, however long ago it was taken.</div></div>
-          <div class="end"><em>Otherwise</em> the innocent present holder keeps it, in effect as its homesteader.</div>
+          <div class="q"><b>a</b><div class="ask">No criminal origin is known.</div><div class="yes"><em>Then</em>The current title is just.</div></div>
+          <div class="q"><b>b</b><div class="ask">We don’t know, and can’t find out, whether it was stolen.</div><div class="yes"><em>Then</em>Treat it as unowned for a moment: it goes to the current possessor, as its first user.</div></div>
+          <div class="q"><b>c</b><div class="ask">It was stolen, but no victim or heir can be found.</div><div class="yes"><em>Then</em>If the holder is not the thief, he keeps it. If he is the thief, he loses it, and it goes to the first person to take it into use.</div></div>
+          <div class="q"><b>d</b><div class="ask">It was stolen and the victim or heir can be found.</div><div class="yes"><em>Then</em>It goes back to them at once, without compensation to the holder.</div></div>
+          <div class="end"><em>Result</em> Existing titles are presumed just, except where theft and a victim can actually be shown.</div>
         </div>
-        <figcaption>Rothbard’s reasoning in Chapter 9, laid out as a sequence. The same test drives his conclusions about land in Chapters 10 and 11.</figcaption>
+        <figcaption>Rothbard’s four cases, in his own lettering. The same test decides land titles in Chapters 10 and 11 and State property in Chapter 24.</figcaption>
       </figure>
     </article>
 
     <article class="chapter" id="ch-10">
       <p class="ch-label">Chapter 10</p>
       <h3>The Problem of Land Theft</h3>
-      <p class="gist">Land seized by conquest doesn’t become legitimate with age.</p>
+      <p class="gist">Land never used can’t be owned, and land taken by conquest doesn’t become legitimate with age.</p>
       <ul class="points">
-        <li>Much of the world’s land was taken by force: conquerors granting estates to lords, who then collected rent from the peasants actually working it.</li>
-        <li>Applying Chapter 9, the peasants and their heirs are the rightful owners, and the lords’ titles are void. Rothbard therefore supports land reform that returns land to its cultivators where titles trace back to such theft.</li>
-        <li>This cuts against conservatives who treat every existing title as sacred. It also cuts against the Left, because the reform is restitution to specific people, not nationalisation.</li>
+        <li>Land lasts, so its history goes back further than other goods. That matters less than it seems: if Henry Jones I stole land from James Smith and the Smiths are lost to antiquity, Henry Jones X owns it.</li>
+        <li><strong>Never-used land.</strong> A capital good’s existence proves someone transformed nature; a piece of land may never have been touched. If Mr. Green legally owns acreage whose north-west portion has never been used, his title to that part is void. While nobody else wants it, the claim is “mere meaningless verbiage”; if he evicts a settler who clears it, he becomes an aggressor.</li>
+        <li>Land need not be kept in use, however. Once transformed, it can lie idle, like a watch in a drawer; Rothbard rejects the 19th-century “use-theory” of Joshua K. Ingalls. And you can tell virgin land from used land: “The hand of man will in some way be evident.”</li>
+        <li><strong>Adverse possession.</strong> The common law lets an intruder who works another’s land for 20 years keep it, an arbitrary rule. Rothbard puts the burden on the newcomer: land that bears the mark of human use should be presumed owned, and he must check the title; land that bears none he may take at once.</li>
+        <li><strong>Feudalism.</strong> The more important case today: centuries ago Jones seized land Smith was farming and made him pay rent. Today Smith’s descendants, or unrelated families, farm it and pay rent to Jones’s heirs. The aggression is continuing, so the current farmers are the victims and the true owners, whether or not they descend from Smith, and the land should be transferred to them “without compensation to the monopoly landlords”. Feudal rent is “permanent tribute”.</li>
+        <li>“Feudalism” here means only conquest and continuing rent, not serfdom or entail; Rothbard borrows the broad sense from Robert Nisbet. Rent as such is legitimate: someone who homesteads land may rent it out. Where the facts are unclear, the rule is to presume the title just. In practice feudalism is easy to detect, because both crime and victims are obvious.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-11">
       <p class="ch-label">Chapter 11</p>
       <h3>Land Monopoly, Past and Present</h3>
-      <p class="gist">Governments block homesteading by claiming land nobody uses.</p>
+      <p class="gist">Why the free market sounds hollow in the Third World, and why North America escaped feudalism.</p>
       <ul class="points">
-        <li>States claim vast unused lands and grant favoured interests (railroads, speculators) title to land they never homesteaded.</li>
-        <li>Rothbard shares the concern of land reformers like Henry George about “land monopoly,” but locates the cause in State grants and claims, not in private ownership of land.</li>
-        <li>His remedy is to open unused government land to homesteading.</li>
+        <li>Two kinds of land title are invalid: feudalism, and “land-engrossing”, arbitrary claims to virgin land used to keep settlers out. Rothbard calls both “land monopoly”, meaning a privilege to land beyond the libertarian rule.</li>
+        <li>Land monopoly is a crucial problem in Asia, the Middle East and Latin America. The United States escaped it by a happy accident, except for lands in the Southwest seized from Mexicans after the U.S. conquest, which Reies López Tijerina’s movement tried to reclaim in the 1960s. American laissez-faire economists preaching free markets to poor countries are not heard, because “free market” to American conservatives does not mean ending feudal titles.</li>
+        <li>The Mexican writer Carlos Fuentes put it to North Americans: you had four centuries of capitalist development, we had four centuries of “underdevelopment within a feudal structure”, with slavery and the <i>latifundio</i>.</li>
+        <li>Examples: the Shah owned more than half of Iran’s arable land and close to 10,000 villages, “So far, this great reformer has sold two of his villages.” The Cerro de Pasco Corporation, a North American mining company in Peru, bought its land legitimately from a convent, but from 1959 seized neighbouring Indian lands; villagers at Rancas were massacred, and when Indians retook their land peacefully, the government sent troops.</li>
+        <li><strong>Oil.</strong> A company that discovers and drills a field owns it as a homesteader, and a government that claims the land and leases it has no right to. But a company that gets a monopoly concession over a vast area in advance, or uses the State to evict peasants (as Creole Oil did in Venezuela), is a partner in aggression.</li>
+        <li><strong>Land reform.</strong> Usual programmes transfer a little poor land to peasants with full compensation, often paid by the peasants. If the landlord’s title is just, this is confiscation; if it is unjust, it is “picayune”. The right answer is to vacate unjust titles without compensation, which requires “detailed and wholesale empirical inquiry” into titles.</li>
+        <li>Some American conservatives praise feudalism as a bulwark of liberty compared with “Oriental despotism”; that is like saying prison is not as bad as execution. The German historians Schmoller, Bücher, Ehrenberg and Sombart, joined by the Marxists, set feudalism against the strong central State; in fact the absolute monarch was a “super-feudal overlord”, the French Revolution attacked both, and capitalism flourished first where both were weakest: the Italian city-states and 17th-century Holland and England.</li>
+        <li><strong>North America.</strong> Proprietors in New York, Maryland and the Carolinas tried to set up feudal estates, but with virgin land and no existing peasants they had to attract settlers and sold their land in pieces. Settlers paid for what should have been free, but once bought the title was just. Quitrents were refused and abandoned; the exception, the Hudson Valley, ended in the Anti-Rent wars of the 1840s.</li>
+        <li><strong>Slavery again.</strong> Justice required not only freeing the slaves without compensation to masters, but giving them the plantation lands they had worked, the abolitionist demand for “forty acres and a mule”. The North, like Czar Alexander freeing the serfs in 1861, freed the bodies but left the land with the former masters, who soon became their masters again as landlords and employers.</li>
       </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Land titles, valid and invalid</p>
+        <div class="cards three">
+          <div><p class="k">Valid</p><h4>Homesteaded, bought, inherited</h4><p>Land someone once transformed, and its chain of sales and gifts. It may lie idle. Rent on it is legitimate.</p></div>
+          <div><p class="k no">Invalid</p><h4>Engrossed</h4><p>Claims to land never used: the beach-claimed continent, Green’s untouched north-west corner, a monopoly concession granted in advance. Void once someone else comes to use it.</p></div>
+          <div><p class="k no">Invalid</p><h4>Feudal</h4><p>Land seized by conquest and still rented to those who farm it. Title passes to the farmers, without compensation to the landlords.</p></div>
+        </div>
+        <figcaption>Chapters 10 and 11 in one view. Where the history is unknown, Rothbard presumes the title valid.</figcaption>
+      </figure>
     </article>
 
     <article class="chapter" id="ch-12">
       <p class="ch-label">Chapter 12</p>
       <h3>Self-Defense</h3>
-      <p class="gist">You may defend yourself and your property, but not by aggressing against innocent people.</p>
+      <p class="gist">You may defend yourself against actual or clearly threatened invasion, and no further.</p>
       <ul class="points">
-        <li>The right to self-defence follows from self-ownership, and so does the right to have the means of it, including arms.</li>
-        <li>Defence must stay within limits. It stops at the aggressor. Using innocent third parties, for example as shields, is itself aggression.</li>
-        <li>You may defend others, and hire others to defend you. That is the basis for private defence agencies.</li>
+        <li>A right of property includes the right to defend it, so pacifists who believe in property, like Robert LeFevre, contradict themselves. And anyone may hire others to defend him, as he may hire a gardener.</li>
+        <li>Defence stops where it begins to invade someone else. It may be used only against actual or directly threatened invasion of person or property, never against non-violent “harm” to income or property values. If people picket, leaflet and speak to organise a boycott of Smith’s factory, for trivial or even immoral reasons, that is their right; if Smith breaks it up by force, he is the criminal.</li>
+        <li>Invasion includes intimidation, a direct threat (a gunman demanding your wallet), and fraud, which is “implicit theft”: taking Jones’s car and not paying the agreed $1,000, or delivering an older, poorer car than agreed.</li>
+        <li><strong>The threat must be overt.</strong> It must be “palpable, immediate, and direct”. Prohibition in the 1920s was defended as protection, because drinkers commit more crimes; by that logic everyone could be forced to take vitamins, since the undernourished are irritable. The burden of proof lies on whoever uses defensive force. Shooting a man across the street because his angry look seems to threaten you would be grotesque.</li>
+        <li><strong>Only some contracts are enforceable.</strong> Breaking a promise to marry in six months, or to give someone money later, may be wrong, but it steals nothing. A debt is different: if Brown lends Green $1,000 for $1,100 next year, Green who refuses to pay has kept Brown’s property. “It is not the proper business of law to make people be truthful or to keep their promises.”</li>
+        <li><strong>The bubble-gum thief.</strong> Some “maximalist” libertarians say a storekeeper may kill a boy who steals his bubble gum, since the thief has put himself outside the law. Rothbard calls this “a grotesque lack of proportion”: the storekeeper who kills becomes the greater criminal. The rule: “the criminal, or invader, loses his own right to the extent that he has deprived another man of his.” (A footnote credits David Gordon with noticing that the maximalist view would license executing socialists.)</li>
+        <li><strong>Incitement.</strong> A speaker who shouts “Go! Burn! Loot! Kill!” to a crowd is not responsible for what free people then choose to do; the head of a gang who orders a crime is. Everyone has an absolute right to bear arms; oddly, the law bans concealed weapons, when it is open ones that intimidate.</li>
+        <li><strong>No force against the innocent.</strong> Suspects are innocent until convicted, so beating, torturing or wiretapping them is criminal. Rothbard allows one qualification: police who coerce a suspect act at their own risk, justified if he is convicted, and guilty of assault if not, and never beyond what the crime warrants.</li>
+        <li>Nor may anyone be forced to help defend another. That rules out conscription, compulsory testimony (the right to silence should cover testifying against anyone), compulsory jury duty (“jury slavery”; pay jurors the market wage) and the subpoena. A defendant would be invited, not compelled, to attend trial, and could be jailed before conviction only by a jailer willing to face a kidnapping charge if he is acquitted.</li>
       </ul>
+      <figure class="fig nums">
+        <p class="fig-title">Figure · When may force be used?</p>
+        <div class="table-wrap stack">
+          <table>
+            <thead><tr><th scope="col">Situation</th><th scope="col">Force allowed?</th><th scope="col">Why</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A gunman demands your wallet</th><td class="v-ok" data-l="Force">Yes</td><td data-l="Why">A direct threat is equivalent to invasion.</td></tr>
+              <tr><th scope="row">A buyer takes the car and won’t pay</th><td class="v-ok" data-l="Force">Yes</td><td data-l="Why">Fraud is implicit theft.</td></tr>
+              <tr><th scope="row">Pickets urge a boycott of your shop</th><td class="v-no" data-l="Force">No</td><td data-l="Why">Loss of income is not invasion.</td></tr>
+              <tr><th scope="row">Drinkers might commit crimes</th><td class="v-no" data-l="Force">No</td><td data-l="Why">A remote risk is not an overt threat.</td></tr>
+              <tr><th scope="row">A man glares at you across the street</th><td class="v-no" data-l="Force">No</td><td data-l="Why">Not immediate or overt.</td></tr>
+              <tr><th scope="row">A boy steals bubble gum</th><td class="v-ok" data-l="Force">In proportion</td><td data-l="Why">Recover it and more; killing him would be murder.</td></tr>
+              <tr><th scope="row">A speaker urges a mob to riot</th><td class="v-no" data-l="Force">No</td><td data-l="Why">The rioters chose; speech is his right.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>The chapter’s examples, sorted by Rothbard’s test: force only against actual or overtly threatened invasion, and only in proportion.</figcaption>
+      </figure>
     </article>
 
     <article class="chapter" id="ch-13">
       <p class="ch-label">Chapter 13</p>
       <h3>Punishment and Proportionality</h3>
-      <p class="gist">A criminal forfeits rights to the extent he violated them, and the victim decides.</p>
+      <p class="gist">A criminal forfeits rights to the extent he violated them, and the victim decides how much to exact.</p>
       <ul class="points">
-        <li>Restitution comes first: the criminal must repay the victim.</li>
-        <li>Beyond that, the victim may punish in proportion to the crime. Rothbard’s formula is roughly two teeth for a tooth: repay what was taken and suffer the same loss in turn.</li>
-        <li>Because the right belongs to the victim, the victim may also forgive, or sell the right to punish. Crimes are offences against people, not against “society” or the State.</li>
+        <li>Few parts of libertarian theory are “in a less satisfactory state”, Rothbard admits; libertarians have stated the rule against aggression without saying what may be done to aggressors. (The chapter first appeared in 1977 in <cite>Assessing the Criminal</cite>, edited by Randy Barnett and John Hagel.)</li>
+        <li><strong>A maximum, not a requirement.</strong> In a libertarian system there are only two parties, the victim and the accused. There is no crime against “society” and no district attorney. Proportionality sets the most a victim may exact; beyond it, the punisher becomes an aggressor. So capital punishment is for murder only, and a merchant who executed a bubble-gum thief would himself be a murderer, prosecutable by the thief’s heirs.</li>
+        <li>The victim may take less. A Tolstoyan may forgive entirely. The criminal may buy his way out, an old institution in Western law. To guard against lax heirs, people could state in their wills how their murderers should be punished, or name a crime-insurance company as prosecutor.</li>
+        <li><strong>Restitution first.</strong> The debt is to the victim, not to “society”. If A stole $15,000 from B, he must first repay it, plus damages, court and police costs and lost interest, and if he has spent it, he must be made to work for B until it is paid, “a state of enslavement to his victim”. (The 13th Amendment itself allows involuntary servitude as punishment for crime.) Today, absurdly, B pays taxes to catch A and then to keep him in prison for ten or twenty years.</li>
+        <li>This was once the rule. In medieval Ireland the king was a crime insurer who paid the victim and collected from the criminal; in parts of colonial America thieves were indentured to their victims. As the State grew it took the criminal’s property for itself and the victim was forgotten (the criminologist William Tallack, 1900).</li>
+        <li><strong>Beyond restitution.</strong> Restitution alone deters nothing and doesn’t cover assault. So the criminal must also lose what he took: the thief pays back $15,000 and then another $15,000, “two teeth for a tooth”, in Walter Block’s phrase. Something more is owed for the fear and uncertainty the victim suffered (a point Rothbard credits to Robert Nozick). For a beating, the victim may have the attacker beaten “rather more” severely, or accept payment instead.</li>
+        <li><strong>Taking the law into your own hands</strong> is allowed, since all punishment derives from the victim’s right of self-defence, but at your own risk. If Hatfield kills McCoy and McCoy’s brother kills Hatfield, the brother is cleared if a court later finds Hatfield guilty, and is a murderer if it doesn’t. So most people would leave it to the courts. (A footnote says the libertarian system implies private, competing police and courts rather than a State monopoly, and refers to <cite>For a New Liberty</cite> for how they would work.)</li>
+        <li>This is frankly retributive. H.L.A. Hart calls the <i>lex talionis</i> the “crudest form” of retribution and quotes Blackstone: theft can’t be punished by theft, defamation by defamation, adultery by adultery. Rothbard replies that theft and forgery are robbery, which restitution handles, and that adultery and defamation are not crimes at all.</li>
       </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Three theories of punishment</p>
+        <div class="cards three">
+          <div><p class="k">Rothbard’s choice</p><h4>Retribution</h4><p>Punishment in proportion to the crime, set by the victim, restitution first.</p><p>“The barbaric turns out to be the just.”</p></div>
+          <div><p class="k no">Rejected</p><h4>Deterrence</h4><p>People need little deterring from murder and a lot from shoplifting, so deterrence would hang the bubble-gum thief and jail the murderer for months. It would also allow secretly executing an innocent man the public thinks guilty.</p></div>
+          <div><p class="k no">Rejected</p><h4>Rehabilitation</h4><p>Indeterminate sentences: the mass murderer “cured” in three weeks walks free, the incorrigible fruit thief stays locked up for life, at the pleasure of experts.</p></div>
+        </div>
+        <figcaption>The chapter’s comparison. On rehabilitation Rothbard quotes C.S. Lewis’s essay “The Humanitarian Theory of Punishment” (1949): “It may be better to live under robber barons than under omnipotent moral busybodies.”</figcaption>
+      </figure>
     </article>
 
     <article class="chapter" id="ch-14">
       <p class="ch-label">Chapter 14</p>
       <h3>Children and Rights</h3>
-      <p class="gist">The book’s most controversial chapter: where a child’s rights begin.</p>
+      <p class="gist">The book’s most controversial chapter: where a child’s rights begin and a parent’s duties end.</p>
+      <p class="sub">Abortion</p>
       <ul class="points">
-        <li>On abortion, Rothbard argues that a woman owns her body and may expel an unwanted fetus, whatever its status. No one has a right to live inside another person against her will.</li>
-        <li>Parents may not aggress against their children, but in his account they have no enforceable legal duty to support them. The duty is moral, not a matter for law.</li>
-        <li>He would let parents transfer guardianship to others for payment, a “free market” in adoption, and argues this would benefit children compared with State placement.</li>
-        <li>A child becomes a full self-owner when he leaves home or shows he can support himself. The right to run away is his decisive right.</li>
+        <li>A newborn is a potential, not an actual, self-owner. Rothbard thinks the Catholic view that the fetus is a living person has been dismissed too quickly, and that the usual reply, that life begins at birth, is arbitrary.</li>
+        <li>His own ground is the mother’s absolute right to her body “and everything within it”. A fetus is there with her consent; if she withdraws it, the fetus becomes a “parasitic ‘invader’” she may expel. Abortion is expulsion, not murder, and laws against it invade her rights.</li>
+        <li>Did she “contract” with the fetus by conceiving? No: a promise is not an enforceable contract, a fetus can’t contract, and the will is inalienable, so she can’t be enslaved into bearing a child. Even granting that the fetus is fully human, no born human has a right to live as “a coercive parasite” inside an unwilling host.</li>
+        <li>He avoids the phrase “right to life”, which could imply a claim on someone else’s support. Judith Jarvis Thomson (1971): if only the touch of Henry Fonda’s cool hand on my fevered brow would save my life, I still have no right that he fly in from the West Coast to give it.</li>
       </ul>
+      <p class="sub">Parents and children</p>
+      <ul class="points">
+        <li>The mother, as creator, becomes owner of the baby, since a third party could claim it only by seizing it. But not in “absolute fee simple”, or a 50-year-old would be subject to a 70-year-old parent. Parents are “trustee-owners” who may not murder, mutilate or torture their child.</li>
+        <li>Rights are negative, so no one may be forced to act for another. A parent therefore has no enforceable duty to feed, clothe or educate a child, and “should have the legal right not to feed the child, i.e., to allow it to die”. Whether he has a moral duty is a separate question. The same answers the case of a deformed baby, and that of Dr Kenneth Edelin of Boston City Hospital, convicted of manslaughter in 1975 for letting a fetus die after an abortion.</li>
+        <li>Following the political scientist Williamson Evers, Rothbard rejects both grounds for a duty. Helplessness: A’s needs don’t bind B, and why the parents in particular? Creation: then a raped mother would owe nothing, a step-parent nothing, and a natural parent would owe support for life; and what of a scientist who creates a child in a laboratory, or a poor family who could save a sick child only by starving? A rescuer who pulls a child from a burning wreck has also “brought life” to it; must he support it forever?</li>
+        <li><strong>When does childhood end?</strong> Any age, 18 or 21, is arbitrary. The child living at home is under his parents’ rules, as anyone is on another’s property; he becomes a full self-owner “when he leaves or ‘runs away’ from home”. He has an absolute right to run away at any age, and forcing him back is enslavement.</li>
+        <li><strong>A market in children.</strong> A parent may also transfer his trusteeship, by adoption or sale. That sounds monstrous, but there is already a market with a legal maximum price of zero and a few licensed agencies, which produces a shortage: couples who want children are turned away while unwanted children are neglected. A footnote cites a Massachusetts court that refused to let a Jewish couple adopt twins born to willing Catholic parents, and a “baby ring” broken up in New York that had brought babies from poor Greek parents to eager American ones: “Everyone gained; who lost?”</li>
+      </ul>
+      <p class="sub">The State and children today</p>
+      <ul class="points">
+        <li>Current juvenile law is almost the reverse. The State may seize children for abuse or abandonment, which Rothbard accepts, but also for “neglect” defined by vague standards of a “fit environment” or the child’s “best interests”. Cases: <i>In re Watson</i> (1950), a mother’s religious feelings “amounting to fanaticism”; <i>Hunter v. Powers</i> (1954), a child handing out religious literature; <i>In re Black</i> (Utah), eight children taken because their parents did not teach that polygamy was wrong; a 1962 case, five children taken because their mother “frequently entertained male companions”. By one estimate only about 5% of “child abuse” cases involve physical aggression.</li>
+        <li>Children themselves are held by compulsory schooling and barred from work by child-labour laws, then jailed as truants. By estimates Rothbard cites, a quarter to a half of incarcerated juveniles had done nothing that would be a crime for an adult, and 50–80% of girls were held for “immorality”. The Supreme Court’s <i>In re Gault</i> (1967) gave accused juveniles some adult procedural rights, but only when charged with adult crimes. Roscoe Pound: “the powers of the Star Chamber were a trifle in comparison with those of our juvenile courts.”</li>
+        <li>Rothbard closes with an 1870 Illinois judgment, <i>People ex rel. O’Connell v. Turner</i>, striking down confinement of children who had committed no crime: “The disability of minors does not make slaves or criminals of them.”</li>
+      </ul>
+      <figure class="fig nums">
+        <p class="fig-title">Figure · Punished for being children (New York, around 1970)</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Measure</th><th scope="col">Delinquents</th><th scope="col">PINS</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Stay, range (months)</th><td class="num">2–28</td><td class="num hot">4–48</td></tr>
+              <tr><th scope="row">Stay, median (months)</th><td class="num">9</td><td class="num hot">13</td></tr>
+              <tr><th scope="row">Stay, average (months)</th><td class="num">10.7</td><td class="num hot">16.3</td></tr>
+              <tr><th scope="row">Detained before placement</th><td class="num">31%</td><td class="num hot">54%</td></tr>
+              <tr><th scope="row">Of those detained, held over 30 days</th><td class="num">25%</td><td class="num hot">50%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>Paul Lerman’s figures (“Child Convicts”, 1971), quoted in the chapter. Delinquents had committed real crimes; “persons in need of supervision” (PINS) had not, and were held longer. A Hawaii study found about 70% of girls in a state training school were there for “immorality” offences, against 13% of boys.</figcaption>
+      </figure>
     </article>
 
     <article class="chapter" id="ch-15">
       <p class="ch-label">Chapter 15</p>
-      <h3>“Human Rights” as Property Rights</h3>
+      <h3>“Human Rights” As Property Rights</h3>
       <p class="gist">Every genuine right is a property right, which is why rights never conflict.</p>
       <ul class="points">
-        <li>“Free speech” means the right to use your own voice, printing press or rented hall, and to address whoever agrees to listen. It is a right over property.</li>
-        <li>Justice Holmes’s example of falsely shouting fire in a crowded theatre isn’t a limit on free speech. It is a violation of the theatre owner’s and patrons’ contract and property.</li>
-        <li>Conflicts between rights, such as speech against privacy or assembly against order, dissolve once each is traced back to who owns what.</li>
+        <li>Liberals reserve “rights” for things like speech and deny them to property; Peter Singer, for one, keeps rights for personal liberty and turns utilitarian on economics. But human rights and property rights are the same in two senses: only humans own property, and a person’s right to his body is a property right. Human rights not framed as property become vague and get traded away for “public policy”.</li>
+        <li>Quoting his <cite>Power and Market</cite>: free speech is supposed to mean saying whatever you like. “But the neglected question is: Where?” Not on property where you are trespassing. You have the right to hire a hall and address those who come, or to print a pamphlet and sell it to willing buyers; there is no extra “right of free speech” beyond that.</li>
+        <li><strong>Fire in a crowded theatre.</strong> Justice Holmes used the man who falsely shouts “Fire!” to argue that free speech can’t be absolute. But the shouter is either the owner, breaking his contract with patrons who paid for a quiet performance, or a patron, breaking the terms of his admission. Property rights settle it without weakening any right. (A footnote with David Gordon adds that blaming the shouter for a panic is the incitement fallacy again: correctly shouting “Fire!” could cause a panic too.) Justice Hugo Black, the First Amendment “absolutist”, made the same point: “Buying the theater tickets did not buy the opportunity to make a speech there.”</li>
+        <li><strong>The chairman’s problem.</strong> Bertrand de Jouvenel asked how a chairman should allocate time at a meeting, or an editor space for letters, among people who each think they have a right to speak. The space is free, so demand exceeds supply, as in any rationing problem; the owner could auction it. The letter-writer has a request, not a right. De Jouvenel came close with his “right to buttonhole” and his case of Primus, who gathered an audience, telling Secundus, who demands the floor: “I have made up this congregation. Go thou and do likewise.”</li>
+        <li><strong>Where ownership is muddled.</strong> Conflicts over speech arise mostly on government streets (a march that blocks traffic, handbills that litter) and in government assemblies, where no one really owns the space. In New York, residents used local government to keep McDonald’s out of their neighbourhoods, really objecting to the litter and the “undesirables” it would draw onto public streets. If streets were private, owners could admit or exclude as they chose, at a cost in lost custom, and a varied pattern of access would emerge.</li>
+        <li><strong>Immigration.</strong> Likewise there is no “human right” to immigrate: “on whose property does someone else have the right to trample?” But current laws also violate the rights of owners who would gladly rent or sell to immigrants. With private streets and land, people could move wherever owners agreed to have them.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-16">
       <p class="ch-label">Chapter 16</p>
       <h3>Knowledge, True and False</h3>
-      <p class="gist">Libel, slander and blackmail, judged by the property test.</p>
+      <p class="gist">You own what’s in your head, so you may publish it, keep quiet about it, or sell your silence.</p>
       <ul class="points">
-        <li>A reputation consists of what other people think, and you don’t own other people’s minds. So there is no property right in reputation, and libel and slander laws are unjustified.</li>
-        <li>By the same reasoning, blackmail should be legal. It is an offer to sell silence about information one has a right to publish.</li>
-        <li>Rothbard adds that ending libel law might even help reputations, because people would weigh unfounded accusations more sceptically.</li>
+        <li>May Smith print that “Jones is a liar”, “a convicted thief” or “a homosexual”? The statement may be true, knowingly false, or, most often, somewhere in between.</li>
+        <li><strong>If true</strong>, he may publish it, and Jones may reply. Current libel law punishes even true statements made with “malice”, but legality should depend on the act, not the motive.</li>
+        <li><strong>Privacy.</strong> There is no “right to privacy” except the right to protect one’s property: burglary and wiretapping are crimes because they invade property. Smith owns the knowledge in his head, and no one can own knowledge in someone else’s. The courts’ distinction between public figures and private persons is fallacious.</li>
+        <li><strong>The right to know</strong>, invoked in the Watergate and Pentagon Papers disputes, is equally spurious: no one has a right to knowledge others won’t share. Nor do journalists, doctors, lawyers or priests have special privileges of confidentiality. Everyone should have the right to keep silent, in court or anywhere, and compulsory testimony is “the central evil”.</li>
+        <li><strong>Secrets and copyright.</strong> Knowledge received on a condition is different. If Brown shows Green a secret invention on condition that he keep it secret, Green who discloses it steals Brown’s residual right. Common-law copyright works the same way: Brown sells mousetraps stamped “copyright Mr. Brown”, keeping the right to make copies, and even Black, who never signed anything but copies Green’s trap, gets no better title than Green had. Brown must prove Black had access rather than inventing it independently. (A footnote points to his economics for why he distinguishes copyright from patents.)</li>
+        <li><strong>Blackmail.</strong> If Smith may publish or keep silent, he may sell his silence to Jones: “How can the right to blackmail be denied?” When he first suggested this in <cite>Man, Economy, and State</cite>, he met “a storm of abuse” from readers who confused the right with its morality. Walter Block (“The Blackmailer as Hero”, 1972) adds that outlawing blackmail only encourages the blackmailer to publish, while a blackmailer at least lets you buy him off, unlike a gossip. And which parts would be illegal: Jones offering first? Smith hinting?</li>
+        <li><strong>If false</strong>, and Smith knows it, publishing is grossly immoral, but should still be legal. Jones’s “reputation” consists of other people’s beliefs, which he cannot own. Otherwise Robinson, whose better mousetrap ruins Brown’s reputation for mousetraps, could be sued, and so could an investment adviser whose bearish letter lowers a stock (an example from Evers), or a critic who pans a book.</li>
+        <li>Pragmatically, libel law may harm the people it protects. People now assume derogatory reports are true, “otherwise they’d sue for libel”; without it they would be more sceptical. And the poor can’t afford to sue, or to risk publishing true but damaging facts about the rich.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-17">
       <p class="ch-label">Chapter 17</p>
       <h3>Bribery</h3>
-      <p class="gist">The wrong in bribery lies with the one who takes it.</p>
+      <p class="gist">The crime lies with the one who takes the bribe, because he breaks a contract with his employer.</p>
       <ul class="points">
-        <li>An employee who takes a bribe to favour a supplier breaks his agreement with his employer, so he is the wrongdoer.</li>
-        <li>The briber has made an offer, and in Rothbard’s view offering is no crime.</li>
+        <li>Black pays Green, the purchasing agent of XYZ Company, to buy Black’s materials. Black has simply lowered his price by giving a rebate; XYZ’s internal arrangements are not his business. Green has broken his employment contract to buy in XYZ’s interest, either buying from a firm he would otherwise not have used or paying more than needed. “There should be a property right to pay a bribe, but not to take one.” Liberals who blame the giver for “corrupting” the taker deny the taker’s free will.</li>
+        <li><strong>Payola.</strong> A record company pays a disc jockey to play Record A. Listeners may feel betrayed, and rival companies lose airtime, but neither owns the programme. The DJ has broken his contract with the station or sponsor, so he is the one to prosecute; had the company paid the station owner directly, nobody’s rights would be violated.</li>
+        <li><strong>Plugola</strong>, where a second company pays the producer to mention its product on a sponsored show, violates the sponsor’s right to be the only advertiser; again the producer, not the payer, is the violator.</li>
+        <li>Bribing government officials is treated separately in Chapter 24.</li>
       </ul>
     </article>
 
@@ -649,174 +869,349 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
       <h3>The Boycott</h3>
       <p class="gist">Refusing to deal, and urging others to refuse, is always legitimate.</p>
       <ul class="points">
-        <li>Everyone may decline to trade with anyone, for any reason, and may persuade others to do likewise.</li>
-        <li>That includes secondary boycotts. Only violence, or threats of it, crosses the line.</li>
+        <li>A boycott is attempted persuasion, so it is legal whether its aim is absurd or admirable, against non-union grapes or union grapes. It may cut a firm’s income, like libel, but that invades no right. The answer is a counter-boycott.</li>
+        <li>Secondary boycotts, in which unions urge consumers to shun firms that deal with non-union firms, should be legal, though current labour law bans them. So should the League of Decency’s boycotts of pornographic films, and boycotts of those who give in to the League. Boycotts give people a non-coercive way to act against conduct they think immoral but which is legal.</li>
+        <li>Picketing is harder. Mass picketing that blocks entrances, sit-ins, sit-down strikes and threats to those who cross lines are all invasive. Even “peaceful picketing” is complicated by the fact that the pavement belongs to the government; private street owners would simply decide.</li>
+        <li>Employers’ blacklists, another form of boycott, would be legal. So would the “yellow-dog contract”, in which a worker agrees he may be fired if he joins a union; both were legal before the Norris–LaGuardia Act, which Rothbard dates to 1931 (it was passed in 1932).</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-19">
       <p class="ch-label">Chapter 19</p>
       <h3>Property Rights and the Theory of Contracts</h3>
-      <p class="gist">A contract is enforceable as a transfer of title, not as a promise.</p>
+      <p class="gist">A contract is enforceable when it transfers title, not because a promise was made.</p>
       <ul class="points">
-        <li>The title-transfer theory holds that a contract binds when it transfers ownership of something, now or on a condition. A mere promise to do something in the future is not enforceable.</li>
-        <li>Failing to repay a loan is theft, because the creditor’s money or its equivalent now belongs to him.</li>
-        <li>You can’t sell yourself into slavery, or be forced to perform labour you promised. Your will can’t be transferred, so such “contracts” are void (see the table below).</li>
+        <li>Many libertarians treat contract as absolute and would enforce any voluntary agreement. Rothbard says the right to contract derives from the right of property, so only contracts whose breach is an implicit theft can be enforced: those where title to property has already passed. Following Williamson Evers (“Toward a Reformulation of the Law of Contracts”, 1977), he calls this the <strong>title-transfer theory</strong>.</li>
+        <li>If Smith gives Jones $1,000 now for an IOU of $1,100 in a year, Jones must pay not because he promised, or because Smith expected it, but because Smith’s transfer was conditional and the $1,100 is now Smith’s. Current law leans on promises and expectations, which taken seriously would force a man to marry the woman he promised to, or at least pay damages for the wedding plans, as “breach of promise” suits once did.</li>
+        <li><strong>What can’t be sold.</strong> Physical property is alienable; the will is not. That is why the Declaration calls natural rights “unalienable”, and why, in Evers’s words, rights founded on self-ownership cannot be used to destroy their own foundation. Rousseau made the same argument against slave contracts. If Smith agrees to obey the Jones Corporation for life, he may, but he may also quit, and owes no damages for its dashed expectations. That is the corporation’s entrepreneurial risk.</li>
+        <li><strong>Deserters.</strong> Libertarians have no trouble calling for amnesty for draftees who desert. The promise theory would punish and return enlistees; the title-transfer theory frees them too, since an enlistment is a promise about one’s future will.</li>
+        <li>Courts rightly refuse to force a worker to perform, but they wrongly bar an engineer who quits a five-year contract with ARAMCO from working for a similar firm for the rest of the term, “only one step removed from direct compulsory slavery”. The employer’s remedies are a blacklist, and the return of any money paid in advance: if Smith took $1,000,000 for lifelong service, he may leave, but must repay it with interest.</li>
+        <li><strong>The movie star.</strong> An actor who fails to appear at a theatre can’t be forced to appear or to pay the theatre’s costs; it trusted him at its own risk. If he took an advance, he must return it. The remedy is a <strong>performance bond</strong>: “If I do not appear … I hereby transfer … to the theater owners” a stated sum. That transfers title and is enforceable.</li>
+        <li><strong>The penal bond.</strong> The legal historian A.W.B. Simpson showed that such bonds were the rule for all contracts in the Middle Ages and early modern period, usually for double the sum owed. Their decline, and the rise of <i>assumpsit</i> (enforcing promises backed by “consideration”), came not from business needs but from courts refusing to enforce the penalties (see the figure). Rothbard blames the mistaken idea that enforcement exists to compensate the creditor, rather than to protect property titles.</li>
+        <li><strong>Gifts.</strong> “I hereby give you $10,000” transfers title. “I promise to give you $10,000 in one year” is a bare promise, <i>nudum pactum</i> in Roman law, unenforceable. “I hereby agree to transfer $10,000 to you in one year’s time” transfers a future title and is enforceable. Hobbes drew the same distinction between “I will that this be thine tomorrow” and “I will give it thee tomorrow”. A grandfather who promises to pay for college and stops after a year owes nothing, unless he transferred title, for instance in dated instalments, or made payment conditional on a service the grandson has performed.</li>
+        <li><strong>Fraud and warranties</strong> are enforceable because they describe what is being sold: a box sold as containing a radio that holds scrap metal, or a package labelled 5 ounces that holds less, means the seller took money without delivering. <strong>Bankruptcy laws</strong> are not: they discharge debts and so give “a license to steal”. The debtor’s future income should be attached; the old practice treated defaulters as thieves, though prison was excessive. That creditors charge more interest because bankruptcy exists makes it no more just than high crime makes robbery of storekeepers just (an example credited to Walter Block). A creditor may forgive his own debt, but a majority of creditors may not forgive for the rest.</li>
+        <li><strong>Partial titles.</strong> One can sell some rights and keep others: copyright, or a restrictive covenant against building above a certain height, provided some living person holds the reserved right. If no one does, the owner may homestead it. So entail, which binds all future owners to keep land in the family, is invalid: rights belong to the living. On whether “purchase breaks hire”, the title-transfer theory says a tenant owns the use of the land for his lease, so a buyer can’t evict him.</li>
+        <li><strong>The social contract.</strong> The most important implication: all social-contract theories, Hobbes’s surrender of all rights or Locke’s surrender of self-defence, describe mere promises of future conduct, and no past promise can bind later generations. Trenchard and Gordon’s <cite>Cato’s Letters</cite> said no man can give away the liberties of his posterity.</li>
       </ul>
-      <figure class="fig">
+      <figure class="fig nums">
         <p class="fig-title">Figure · What the title-transfer theory enforces</p>
-        <div class="table-wrap" style="margin:0">
+        <div class="table-wrap stack">
           <table>
             <thead><tr><th scope="col">Agreement</th><th scope="col">Enforceable?</th><th scope="col">Why</th></tr></thead>
             <tbody>
-              <tr><th scope="row">A loan</th><td class="v-ok">Yes</td><td>The borrower received money on condition of returning its title. Not paying is theft.</td></tr>
-              <tr><th scope="row">A conditional sale</th><td class="v-ok">Yes</td><td>“This is yours when you deliver” transfers title the moment the condition is met.</td></tr>
-              <tr><th scope="row">A promise to work</th><td class="v-no">No</td><td>Labour can’t be compelled. Quitting is allowed, though pay already given for work not done must be returned.</td></tr>
-              <tr><th scope="row">A promise to marry</th><td class="v-no">No</td><td>No title changed hands, only a promise of future conduct.</td></tr>
-              <tr><th scope="row">Selling yourself into slavery</th><td class="v-no">Void</td><td>The will is inalienable. It can’t be transferred, so the sale transfers nothing.</td></tr>
+              <tr><th scope="row">$1,000 now for $1,100 next year</th><td class="v-ok" data-l="Enforceable">Yes</td><td data-l="Why">The $1,100 became the lender’s; not paying is theft.</td></tr>
+              <tr><th scope="row">“I hereby give you $10,000”</th><td class="v-ok" data-l="Enforceable">Yes</td><td data-l="Why">Title passed at once.</td></tr>
+              <tr><th scope="row">“I promise to give you $10,000 in a year”</th><td class="v-no" data-l="Enforceable">No</td><td data-l="Why">A bare promise; no title passed.</td></tr>
+              <tr><th scope="row">“I hereby agree to transfer $10,000 in a year”</th><td class="v-ok" data-l="Enforceable">Yes</td><td data-l="Why">A future title transferred now.</td></tr>
+              <tr><th scope="row">A promise to marry</th><td class="v-no" data-l="Enforceable">No</td><td data-l="Why">Not even damages for wedding costs.</td></tr>
+              <tr><th scope="row">Lifelong obedience to a company</th><td class="v-no" data-l="Enforceable">No</td><td data-l="Why">The will is inalienable. Any advance must be repaid.</td></tr>
+              <tr><th scope="row">An actor’s performance bond</th><td class="v-ok" data-l="Enforceable">Yes</td><td data-l="Why">Money, which is alienable, passes if he fails to appear.</td></tr>
+              <tr><th scope="row">A bankruptcy discharge</th><td class="v-no" data-l="Enforceable">Invalid</td><td data-l="Why">Cancels the creditor’s property without his consent.</td></tr>
+              <tr><th scope="row">Entail on family land</th><td class="v-no" data-l="Enforceable">No</td><td data-l="Why">Binds owners not yet born; rights belong to the living.</td></tr>
             </tbody>
           </table>
         </div>
-        <figcaption>Our examples, applying the theory as Chapter 19 states it.</figcaption>
+        <figcaption>The chapter’s own examples. The test is always the same: has title to something alienable already passed?</figcaption>
+      </figure>
+      <figure class="fig">
+        <p class="fig-title">Figure · How English courts abolished the penal bond</p>
+        <ol class="vtl">
+          <li><b>Penal bonds are the rule</b><span>Middle Ages to the 16th century</span><em>Each party binds himself to pay a penalty, usually double, if he defaults. Owe $1,000 and fail to pay, and you owe $2,000. Almost no one needs to sue for “damages”.</em></li>
+          <li class="o"><b>Chancery relieves “extreme hardship”</b><span>Elizabethan era</span><em>The Courts of Chancery begin to excuse debtors from the agreed penalty.</em></li>
+          <li class="o"><b>Relief widens</b><span>Early 17th century</span><em>Any debtor who meets misfortune and pays late owes only the principal plus “reasonable damages”.</em></li>
+          <li class="no"><b>Penalties abolished</b><span>1660s and early 1670s</span><em>Chancery refuses to enforce any penalty; debtors owe principal, interest and damages set by a jury.</em></li>
+          <li class="no"><b>Common-law courts follow; statute confirms</b><span>1670s to about 1700</span><em>The penal bond disappears, and enforcement by “consideration” and damages takes its place.</em></li>
+        </ol>
+        <figcaption>From A.W.B. Simpson’s article “The Penal Bond with Conditional Defeasance” (1966), as the chapter summarises it. Rothbard notes that the State kept such penalties for itself, in bail and contempt of court.</figcaption>
       </figure>
     </article>
 
     <article class="chapter" id="ch-20">
       <p class="ch-label">Chapter 20</p>
       <h3>Lifeboat Situations</h3>
-      <p class="gist">Emergencies don’t suspend property rights.</p>
+      <p class="gist">Emergencies don’t suspend property rights; they are settled by asking who owns the boat.</p>
       <ul class="points">
-        <li>Critics test libertarian ethics with lifeboats and starving men. Rothbard answers that an ethics should be built for ordinary life, not for rare extremes.</li>
-        <li>Even in extremes, taking another’s property remains a wrong. The victim may choose not to prosecute, and sympathy may be appropriate.</li>
+        <li>Critics say extreme cases, eight seats in a lifeboat and more than eight people, refute absolute rights. Rothbard replies that ethics is for normal life (“hard cases make bad law”), and that no one abandons the duty to save a drowning child because he could save only one of two.</li>
+        <li>The lifeboat problem is a problem of ill-defined ownership. If the owner or captain has set rules in advance, or survives, he allocates the seats however he likes, by first come, women and children first, or anything else. If he is dead and left no rules, the boat is abandoned, and the first eight to reach it homestead it. Anyone who throws them out is an aggressor, perhaps a murderer, and may be prosecuted on shore. The scramble must be non-violent.</li>
+        <li>Harsh? The situation is already harsh, and the alternatives are worse. “Women and children first” gives men lesser rights; saving “superior” minds raises the question of who decides. In <i>R v Dudley and Stephens</i> (1884), an English court refused to excuse sailors who killed and ate a cabin boy; Lord Coleridge asked, “Who is to be the judge of this sort of necessity?” An American court in 1842 (<i>United States v. Holmes</i>) had suggested choosing by lot, without explaining why chance is fair.</li>
+        <li>Eric Mack’s plank that can hold only one of two shipwrecked men: the first to reach it owns it for the occasion.</li>
+        <li><strong>Against the “contextualists”.</strong> Some libertarians say that when a man’s life is at stake, rights lapse and seizing a place is moral. Rothbard answers that this confuses personal ethics (what should Smith do?) with rights. Even if it were moral for Smith to force his way in, he would still be invading another’s property; the owner may repel him on the spot and may later prosecute him or pardon him. “The right of property continues, then, to be absolute, even in the tragic lifeboat situation.”</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-21">
       <p class="ch-label">Chapter 21</p>
-      <h3>“Rights” of Animals</h3>
+      <h3>The “Rights” of Animals</h3>
       <p class="gist">Rights belong to beings that reason and choose.</p>
       <ul class="points">
-        <li>Rights derive from human nature as rational and self-directing. Animals lack that nature and so, in Rothbard’s view, have no rights in the political sense.</li>
-        <li>This doesn’t mean cruelty is good, only that it isn’t a matter for law in his framework.</li>
+        <li>The growing fashion for animal rights has trouble saying where rights stop: few would follow Albert Schweitzer in refusing to step on a cockroach, and extending rights to bacteria and plants would kill off the human race.</li>
+        <li>The deeper flaw: rights are not feelings but conclusions from the nature of man, a being who reasons, chooses, transforms his environment, communicates and joins in the division of labour. Natural rights are absolute but “relative to the species man”. No other animal has that nature. The Bible’s “dominion” captures the point.</li>
+        <li>Animals live by eating other species. The wolf is not an evil aggressor against lambs, nor is a man who kills a wolf punishing it for a crime. Rights, crime and aggression apply only between human beings.</li>
+        <li>Martians would have rights if they were rational beings who could communicate and trade with us. If they could live only on human blood, like vampires, they would be deadly enemies, not because they were wicked but because their nature clashes with ours.</li>
+        <li>There is “rough justice” in the quip that “we will recognize the rights of animals whenever they petition for them.” Babies can’t petition either, but babies are future adults.</li>
       </ul>
     </article>
 
     <!-- PART III -->
     <section class="part" id="part-3">
       <p class="part-num">Part III</p>
-      <h2>The State Versus Liberty</h2>
-      <p class="part-lede">With a code in hand that applies to everyone equally, Rothbard asks what happens when the State is held to it.</p>
+      <h2>The State versus Liberty</h2>
+      <p class="part-lede">With a code in hand that applies to everyone equally, Rothbard asks what happens when the State is held to it. The preface calls this part brief, since a positive theory of liberty needs little critique of the State; it is still some of the most quoted writing in the book.</p>
     </section>
 
     <article class="chapter" id="ch-22">
       <p class="ch-label">Chapter 22</p>
       <h3>The Nature of the State</h3>
-      <p class="gist">The State is the organisation that lives by taxation and claims a monopoly of force.</p>
+      <p class="gist">The State is the one organisation that lives by coercion, and it survives by persuading its victims otherwise.</p>
       <ul class="points">
-        <li>Every other institution gets its income by production and exchange. The State alone takes it by compulsion. Taxation is therefore theft, and conscription is slavery.</li>
-        <li>War, carried out by the State, is mass murder on a scale no private criminal could manage.</li>
-        <li>Rothbard retells Augustine’s story of the pirate captured by Alexander the Great. The pirate asks why he is called a robber for using one ship when Alexander, who plunders with a navy, is called an emperor.</li>
-        <li>States survive by persuading the majority that their rule is legitimate. Court intellectuals, priests in the past and experts now, supply the justification.</li>
+        <li>That the State performs necessary services, law, police, fire-fighting, streets, mail, doesn’t show that only it can. Suppose Smith, one of many cantaloupe dealers in a neighbourhood, drives out his rivals by force. His monopoly is not essential to the supply of cantaloupes; it will be costly and inefficient, and no one would accuse those who want to end it of wanting to deprive people of cantaloupes. “The State is only our hypothetical Smith on a gigantic and all-encompassing scale.”</li>
+        <li>States have taken compulsory monopolies of police, army, law and courts, the mint and money creation (“the power to counterfeit”), unused land (“the public domain”), roads, rivers and coastal waters, and the post, useful for watching subversives. Highways often began as routes for troops. Historically the State allied with an established church that taught the duty to obey Caesar; now it relies on secular intellectuals.</li>
+        <li><strong>Taxation is theft.</strong> Everyone else gets income by selling goods or services or by gift. “Only the State obtains its revenue by coercion.” Try to define taxation in a way that doesn’t also describe theft. If taxes became voluntary contributions, would anything like the current revenue come in? Joseph Schumpeter: the theory that construes taxes on the analogy of club dues “only proves how far removed this part of the social sciences is from scientific habits of mind.”</li>
+        <li>Some economists say taxes are “really” voluntary because everyone wants, say, a dam and agrees to coerce everyone else so no one shirks (see the figure). Others say voting makes government voluntary. But majority support would make murder by a democratically elected government, like the Nazis’ murder of Jews, a “voluntary suicide”. Representatives are not agents in any legal sense; in Lysander Spooner’s words they are “really the agents of nobody”. In America fewer than 40% of eligible voters vote at all, so a winner may have 21%. And, as Spooner wrote, a man who votes is like a man forced into battle who fights to save his life: the ballot is “a mere substitute for a bullet”.</li>
+        <li>So the State is “a vast criminal organization far more formidable and successful than any ‘private’ Mafia in history”. Franz Oppenheimer defined it as “the organization of the political means”. Spooner’s highwayman, who at least doesn’t pretend to be your protector and leaves you alone once he has your money, is by comparison “too much of a gentleman”.</li>
+        <li><strong>The Emperor’s clothes.</strong> Because the State is visible, permanent and high in status, it needs an ideology: that its theft is “taxation”, its murder “war” or “repression of internal subversion”, its kidnapping and slavery “conscription”. “The age-old success of the ideologists of the State is perhaps the most gigantic hoax in the history of mankind.” All States rest on the support, active or passive, of a majority, as Étienne de La Boétie saw in the 16th century and David Hume later put it: “as Force is always on the side of the governed, the governors have nothing to support them but opinion.”</li>
+        <li><strong>Court intellectuals.</strong> Priests once supplied the ideology; now “scientific” economists and “national security managers” do, while the State shapes minds through public schools, compulsory attendance, subsidies to universities and control of the airwaves. Intellectuals, whose services the market often values little, get power and status in return. Rothbard quotes Joseph Needham praising Chinese despotism because it “could make poets and scholars into officials”; Berlin professors who wanted to be “the intellectual bodyguard of the House of Hohenzollern”; the political scientist Richard Neustadt calling the President the “sole crownlike symbol of the Union”; and Richard Nixon, on the eve of his election, saying the President “must articulate the nation’s values, define its goals and marshall its will”, which he sets beside Ernst Huber’s description of the head of state in 1930s Germany.</li>
+        <li><strong>A definition.</strong> States also act as if they owned their territory, like a medieval king as feudal overlord, which is the only sense in slogans like “America, love it or leave it!” Homesteading theory demolishes that claim. The State is the organisation that “(a) acquires its revenue by physical coercion (taxation); and (b) … achieves a compulsory monopoly of force and of ultimate decision-making power over a given territorial area”. Both are crimes. Albert Jay Nock: “The State claims and exercises the monopoly of crime.” In a truly free society it would cease to exist, and its genuine services would be opened to competition. And it is grotesque for conservatives to ask the most criminal group in society to enforce morality.</li>
       </ul>
+      <figure class="fig nums">
+        <p class="fig-title">Figure · The same act, two names</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Done by anyone else</th><th scope="col">Done by the State</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Theft</th><td>Taxation</td></tr>
+              <tr><th scope="row">Murder</th><td>War, or “repression of internal subversion”</td></tr>
+              <tr><th scope="row">Kidnapping, slavery</th><td>Conscription</td></tr>
+              <tr><th scope="row">Counterfeiting</th><td>Creating money</td></tr>
+              <tr><th scope="row">A protection racket</th><td>A monopoly of defence and courts</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>The double standard the chapter says the State’s ideologists exist to maintain. The first three pairs are Rothbard’s own; counterfeiting and the protection racket come from his remarks on money and on Paine in Chapters 22 and 29.</figcaption>
+      </figure>
+      <figure class="fig">
+        <p class="fig-title">Figure · Is a tax for a dam “really” voluntary?</p>
+        <ol class="ladder bad">
+          <li><span class="no">1</span><b>Coercion of all by all is still coercion</b><span>Agreeing to force one another doesn’t make the force voluntary.</span></li>
+          <li><span class="no">2</span><b>No one knows what each would pay</b><span>The State may take $1,000 from Jones who would have paid $500. A buyer who pays $200 for a television shows he values it more; a taxpayer shows nothing.</span></li>
+          <li><span class="no">3</span><b>It proves too much</b><span>By the same logic a tax-funded established church is voluntary, because everyone wants everyone else not to shirk.</span></li>
+          <li><span class="no">4</span><b>It is mystical</b><span>What of environmentalists who oppose all dams, or Protestants paying for a Catholic church? One anarchist in the country refutes it.</span></li>
+        </ol>
+        <figcaption>The chapter’s four objections to the economists’ argument that taxes solve a free-rider problem everyone wants solved.</figcaption>
+      </figure>
     </article>
 
     <article class="chapter" id="ch-23">
       <p class="ch-label">Chapter 23</p>
       <h3>The Inner Contradictions of the State</h3>
-      <p class="gist">No story of consent can justify it, and no limit can bind it.</p>
+      <p class="gist">Limited government is a utopia: nothing keeps it limited, and even its own principles can’t say where the limits are.</p>
       <ul class="points">
-        <li>Social-contract theories fail because no one signed. Rothbard draws on Lysander Spooner’s <cite>No Treason</cite>, which argued that the Constitution binds no one who didn’t agree to it.</li>
-        <li>A State that holds a monopoly on final judgement decides disputes in which it is itself a party. Nothing outside it can hold it to its own limits.</li>
-        <li>The minimal State of the classical liberals is therefore unstable. It either grows or it isn’t really a State.</li>
+        <li>Centuries of habit (“death and taxes”) make the State seem a force of nature. So imagine starting from zero: people arrive on Earth, and someone proposes that, to keep the peace, everyone hand all their guns and all final decisions to “the Jones family over there”. The cry “who would guard us from the Jones family?” would end the discussion. Only longevity makes us accept the same argument today.</li>
+        <li><strong>No mechanism to keep it limited.</strong> Once coercion is legitimate at the heart of society, rulers have every incentive to expand it and face little resistance. On the market one person’s gain benefits others; in politics it comes at their expense. “Power corrupts,” as Acton said.</li>
+        <li><strong>No neutral tax.</strong> John C. Calhoun showed that any tax divides society into net tax-payers and net tax-consumers with opposed interests. And a written constitution can’t hold: a supreme court chosen by the government will favour loose readings that expand its power, and the “ins” will beat the “outs”.</li>
+        <li><strong>The State didn’t make the law.</strong> Most law, and its most libertarian parts, came from tribal custom, common-law judges, the law merchant and admiralty courts run by shippers, whose judges found law rather than made it (footnotes cite Bruno Leoni and Hayek). Ancient Ireland, for about a thousand years until Cromwell’s conquest, had “no trace of State-administered justice”: competing schools of jurists applied customary law rooted in natural law, and competing, voluntarily supported <i>tuatha</i> enforced it.</li>
+        <li><strong>The State can’t obey its own laws.</strong> Randy Barnett, developing Lon Fuller’s <cite>The Morality of Law</cite>, argues that proper law binds the lawmaker too. Fuller applied that only to procedure; applied to substance, it condemns the State, which takes property by force and imposes its jurisdiction on the innocent, as it forbids its subjects to do. “The State qua state, therefore, is an illegal system.”</li>
+        <li><strong>How much protection?</strong> “Protection” is not one lump. It could mean one policeman for the country or an armed bodyguard and a tank for every citizen. A government “limited” to free clothing would have to decide whether everyone gets Balenciaga originals. Without prices there is no criterion.</li>
+        <li><strong>Who pays?</strong> Laissez-faire writers have no theory of taxation. “Ability to pay” is, as Frank Chodorov said, the highwayman’s rule, and if everything were priced that way, David Rockefeller would pay $1 million for a loaf of bread.</li>
+        <li><strong>How big?</strong> They have no theory of the State’s size either. The world already lives in “international anarchy”, and a contract dispute between a citizen of North Dakota and one of Manitoba is settled smoothly. And if a region may secede, why not a city, a block, an individual? Any right of secession leads logically to anarchism; Mises himself accepted secession down to the individual in principle, stopping short for “technical considerations”.</li>
+        <li><strong>Why only protection?</strong> If the State may tax to provide police, why not steel plants, shoes or dams, which consumers also value? Laissez-faire can exclude only “second-degree” coercion like price controls, and its limits “may be stretched to virtually complete collectivism”.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-24">
       <p class="ch-label">Chapter 24</p>
       <h3>The Moral Status of Relations to the State</h3>
-      <p class="gist">You owe the State no more than you would owe a gang.</p>
+      <p class="gist">You owe the State what you would owe a gang: prudence, not obedience.</p>
       <ul class="points">
-        <li>Since the State’s claims rest on force, there is no moral duty to tell it the truth or to cooperate beyond what prudence dictates.</li>
-        <li>Paying taxes under threat is not a moral fault, any more than handing a wallet to a robber is.</li>
-        <li>Rothbard also asks who rightly owns property the State holds. His answer runs back to the homesteading and restitution principles: the victims, and those who actually use it.</li>
+        <li>Since the State is a criminal organisation that owns nothing justly, it is not unjust to refuse its taxes, disobey its orders, break contracts with it or take its property. Taking from the State is removing property “from the criminal sector of society”, a kind of homesteading and “a positive good”. The exception is specific stolen property: if the State confiscates Brown’s jewels and Green steals them from the State, Green commits no crime, but Brown may take them back. Most State property, like a TVA dam or a post office, has no identifiable owner, so Green’s title would be just.</li>
+        <li>Lying to the State is a fortiori legitimate, on a tax return as to a robber asking where the valuables are. Rothbard is not advising civil disobedience, which may be imprudent against superior force; relations with the State are simply matters of prudence, as with “an enemy with currently prevailing power”.</li>
+        <li><strong>Government debt.</strong> Libertarians who insist the State must honour its debts forget that it can pay only by taxing more. The bondholder is “an eager investor in future robbery”, and repudiation is legitimate. Likewise a soldier may leave a State army at any time, whatever his enlistment terms.</li>
+        <li><strong>Bribing officials.</strong> An “aggressive” bribe, a Mafia leader paying police to shut out rival casinos, joins in the State’s aggression. A “defensive” bribe, Robinson paying police to let his casino operate where gambling is banned, is legitimate. In many countries business would stop without such bribes, so a “corrupt” government can be better than an incorruptible one. A footnote cites the Soviet economy’s dependence on <i>blat</i>, and H.L. Mencken’s father, who in 1885 paid a Baltimore councilman $20 to let his sign hang outside his business; after the reform wave of 1895 the city demanded $62.75 a year, and the sign came down the next day.</li>
+        <li>Officials rightly have no right to privacy about their official acts, and should have less protection from libel; the common-law crime of “seditious libel” was fortunately gone by the 19th century.</li>
+        <li>Some anarchists call voting immoral. Rothbard disagrees: people didn’t choose the coercive setting they are in, voting under it implies no consent, and it can’t be wrong to use a limited choice of rulers to reduce the State’s power.</li>
+        <li>The State is not a legitimate but bumbling institution, as utilitarian economists think, but “an inherently illegitimate institution of organized aggression”. The leap from man’s being a social animal to the necessity of the State is a non sequitur, made even by Aristotelians and Thomists. Nock’s distinction between “social power” and “State power” makes history a race between them.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-25">
       <p class="ch-label">Chapter 25</p>
-      <h3>Interstate Relations</h3>
-      <p class="gist">War between States, judged by the rule against harming the innocent.</p>
+      <h3>On Relations Between States</h3>
+      <p class="gist">War between States always kills the innocent, so every State war is to be condemned.</p>
       <ul class="points">
-        <li>Even a defensive war is limited to force against the actual aggressors. Killing civilians is aggression, whatever the cause.</li>
-        <li>Weapons that can’t discriminate, above all nuclear weapons, can’t be used justly, so their use is ruled out.</li>
-        <li>Rothbard favours neutrality and non-intervention abroad. War enlarges the State at home, a point he takes from Randolph Bourne’s line that war is the health of the State.</li>
+        <li>In an ideal world there would be no States and no foreign policy. Given States, the criterion is to reduce their coercion of individuals as far as possible, abroad as at home.</li>
+        <li>In a stateless world, if Smith robs Jones, Jones may pursue him but may not harm innocent third parties: not bomb a building or spray machine-gun fire into a crowd to catch him, not steal to finance his posse or conscript others into it. If he does, and Smith’s crime was only theft, Jones becomes the greater criminal. His cry is not “Give me liberty or give me death” but “Give me liberty or give <em>them</em> death”.</li>
+        <li><strong>Weapons.</strong> Conservatives say modern weapons differ only in degree. When the degree is counted in lives, that is a large difference; but the real difference is in kind. A bow and arrow, even a rifle, can be aimed at aggressors alone; nuclear weapons, and even conventional aerial bombs, cannot. Their use or threat is “a crime against humanity for which there can be no justification”, and nuclear disarmament is “the highest political good that can be pursued in the modern world”. Would libertarians rage about price controls and shrug at mass murder? A footnote cites G.E.M. Anscombe’s pamphlet <cite>Mr. Truman’s Degree</cite> (1956), protesting Oxford’s honorary degree for President Truman.</li>
+        <li><strong>Vertical and horizontal violence.</strong> Between a State and its subjects, violence is “vertical”: one-way oppression, or revolution. Between States, which live in anarchy with one another, it is “horizontal”, and differs in three ways: weapons of mass destruction can be used on another territory (not one’s own), targets can’t be pinpointed, and each State treats the other’s civilians as enemies. And State wars must be paid for by taxing one’s own people. So while some revolutions and private conflicts can be just, “State wars are always to be condemned.”</li>
+        <li>What if a State is defending a citizen whose property another State seized? A citizen who invests abroad takes his chances with the foreign State; his own State may not tax its people and kill foreigners to protect him. Libertarians should press States to confine themselves to their own territory, avoid war, and seek a cease-fire and peace as fast as possible, as the international law of the 18th and 19th centuries tried to secure through the laws of war and neutrality, protecting civilians and neutral trade (“freedom of the seas”). The British jurist F.J.P. Veale: hostilities “must be limited to the armed forces actually engaged.”</li>
+        <li>No foreign aid, which taxes one people to strengthen another’s oppressor. Imperialism is to be opposed, even where colonial rulers seemed to protect property better than native governments: the property protected was mostly Europeans’, often taken from natives, and “gunboat diplomacy” mostly served foreign holders of native government bonds. If Walldavia annexes western Ruritania, the Ruritanian State may not go to war to recover it; the legitimate routes are an uprising by the West Ruritanians and private help from sympathisers.</li>
+        <li>War breeds tyranny at home. Randolph Bourne: “war is the health of the State.” A State can die only by defeat or revolution, so in war it mobilises everyone, suppresses dissent and turns society, in Nock’s phrase, into an “army on the march”.</li>
       </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · When is violence legitimate?</p>
+        <div class="cards three">
+          <div><p class="k">Can be just</p><h4>Private defence</h4><p>Force against the actual aggressor, paid for voluntarily, with weapons that can be aimed.</p></div>
+          <div><p class="k mid">Can be just</p><h4>Revolution</h4><p>“Vertical” violence against a State, if financed voluntarily and aimed only at the rulers.</p></div>
+          <div><p class="k no">Never just</p><h4>War between States</h4><p>“Horizontal” violence: financed by taxation, unable to spare civilians, and with modern weapons indiscriminate by nature.</p></div>
+        </div>
+        <figcaption>Chapter 25’s distinctions. The test throughout is the one from Chapter 12: violence only against the aggressor, never against innocent third parties.</figcaption>
+      </figure>
     </article>
 
     <!-- PART IV -->
     <section class="part" id="part-4">
       <p class="part-num">Part IV</p>
       <h2>Modern Alternative Theories of Liberty</h2>
-      <p class="part-lede">Four rival defences of freedom. In each, Rothbard finds a gap through which the State’s power returns (a summary table follows the book’s chapters).</p>
+      <p class="part-lede">Four defences of liberty from writers “very roughly in the free-market, or classical liberal, tradition”. Rothbard doesn’t review their work in full; he asks why each fails to ground a systematic theory of individual rights.</p>
     </section>
 
     <article class="chapter" id="ch-26">
       <p class="ch-label">Chapter 26</p>
       <h3>Utilitarian Free-Market Economics</h3>
-      <p class="gist">Utility can’t ground rights, not even in Mises’s hands.</p>
+      <p class="gist">Utility can’t ground rights, not even in the hands of Mises, the most uncompromising free-market economist of all.</p>
+      <p class="sub">A. Utilitarian social philosophy</p>
       <ul class="points">
-        <li>Economists who defend the market by its results (prosperity, efficiency) have nothing to say to someone who values something else more, such as equality or power.</li>
-        <li>Mises argued that almost everyone shares the goal of prosperity, so the case for the market is practically unanimous. Rothbard respects the argument but finds it hostage to that assumption.</li>
-        <li>Utility also can’t answer the question of justice: who rightly owns what to begin with.</li>
+        <li>Economics became a discipline in the 19th century, when utilitarianism dominated philosophy, so economists, laissez-faire or statist, speak of weighing “social costs” and “social benefits”. The greatest good of the greatest number, with each counting for one and “good” meaning the satisfaction of whatever people want, looks value-free. It isn’t.</li>
+        <li>Why the greatest number? Suppose most people hate the few redheads among them and want to kill them; is that good? Felix Adler: utilitarians never explain why the majority’s happiness should bind the minority. Why should each count for one? Why are wants mere givens, when people change them under persuasion? And if values are subjective, how can utilities be added across people? Economics itself says they are subjective and ordinal, so “social utility” is meaningless. (A footnote with David Gordon adds that the wish to see an innocent suffer would have to be counted too.)</li>
+      </ul>
+      <p class="sub">B. The Unanimity and Compensation Principles</p>
+      <ul class="points">
+        <li>Economists who want to recommend policy without values use “Pareto optimality”: a change is good if someone gains and no one loses, which strictly requires unanimity. James Buchanan made this the basis of his case for voluntary agreements. The flaw: approving only changes everyone agrees to freezes the status quo, however unjust, a “massive and totally unsupported value judgment”.</li>
+        <li>The Compensation Principle, that a policy is good if the gainers could compensate the losers, assumes utilities can be measured. A railway’s smoke damages a farmer’s land: its market price ignores his attachment to it, and asking him invites lies. A single militant anarchist who can’t be compensated for the existence of government destroys the case for any government action. When Parliament debated compensating slave-owners, Benjamin Pearson “had thought it was the slaves who should have been compensated.”</li>
+        <li>In an exchange with Warren Samuels (1975), Buchanan admitted defending the status quo “not because I like it”, since it “has no propriety at all save for its existence … we start from here not from somewhere else.” Rothbard answers with Acton, and gives Samuels the last word: contractual solutions can’t leave “the status quo power structure to go unspecified and unexamined”.</li>
+      </ul>
+      <p class="sub">C. Ludwig von Mises and “value-free” laissez faire</p>
+      <ul class="points">
+        <li>Mises was both the most passionate advocate of laissez faire and the most rigorous opponent of objective ethics. He tried two ways to reconcile them.</li>
+        <li><strong>First:</strong> an economist may call a policy “bad” without a value judgement if it produces results its own supporters consider undesirable, as price controls produce shortages. But by Mises’s own theory, values are shown only in action; how does he know what the supporters want? Some may be socialists who welcome shortages as a step to full control, egalitarians who prefer that the rich can’t buy more, intellectuals who complain of “excessive affluence”, or officials who want jobs in the control bureaucracy. And people with high time preference may accept the long-run harm for short-run gains; Mises can’t say the long run is “better”.</li>
+        <li><strong>Second:</strong> the economist as citizen joins the majority in wanting peace and prosperity: liberalism, in Mises’s words, “presupposes that people prefer life to death, health to sickness … abundance to poverty.” But people have other goals too: equality, envy, power, even the thrill of national unity in a crisis. William Rappard pointed out that British voters favour confiscatory taxes more for equality than for gain, and that the urban majority in Switzerland repeatedly voted, knowingly, to subsidise farmers and slow industrialisation: “A more agricultural Switzerland, though poorer, such is the dominant wish of the Swiss people today.” Mises’s reply, that intervention is cumulative and the “reserve fund” nearly exhausted, is not always true and not decisive.</li>
+        <li>Nor can Mises rebut a majority that wants to kill a few hated redheads at little cost to production. His dismissal of egalitarian arguments as “emotional talk” and “arbitrary, allegedly ethical standards” fails on his own terms, since for him all ultimate values are arbitrary and emotional. The case for liberty needs “an objective ethics which affirms the overriding value of liberty”; one “cannot be a methodological slave to every goal that the majority of the public might happen to cherish.”</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-27">
       <p class="ch-label">Chapter 27</p>
-      <h3>Isaiah Berlin on Negative Liberty</h3>
-      <p class="gist">Liberty is the absence of aggression, not the absence of obstacles.</p>
+      <h3>Isaiah Berlin on Negative Freedom</h3>
+      <p class="gist">Berlin had the right idea, freedom as non-interference, but never defined interference, and slid into equating freedom with opportunity.</p>
       <ul class="points">
-        <li>Berlin distinguished negative liberty (freedom from interference) from positive liberty (self-mastery).</li>
-        <li>Rothbard welcomes the distinction but objects that Berlin later widened negative liberty to mean having more options and fewer obstacles of any kind. Once poverty counts as a lack of liberty, liberty becomes a case for State action.</li>
+        <li>In <cite>Two Concepts of Liberty</cite> (1958) Berlin defended “negative” liberty, absence of interference, against “positive” liberty, which is really power or self-mastery. It looks like Rothbard’s view, but its vagueness undid it.</li>
+        <li>Berlin first defined liberty as the absence of obstacles to fulfilling one’s desires, and later saw the flaw himself: one could then make people free by conditioning them to want less. In <cite>Four Essays on Liberty</cite> (1969) he changed it to “the area within which a man can act unobstructed by others”, and then to the absence of obstacles to “possible choices”, created by “alterable human practices”.</li>
+        <li>William Parent pointed out that this confuses freedom with opportunity. An employer who won’t hire a redhead reduces the redhead’s opportunities, not his freedom; a man too busy to buy a concert ticket was still free to buy it. A footnote from David Gordon adds that forbidding the employer’s choice would itself obstruct him.</li>
+        <li>Stung by critics who said he was defending laissez faire, Berlin attacked it: its “evils” led to “brutal violations of ‘negative’ liberty … including that of free expression or association”, and children were “destroyed in mines or mills”. He preferred Mill and de Tocqueville to Cobden and Spencer. Rothbard calls this absurd, since laissez faire is freedom of person and property, including expression and association, and ignorant of historians such as T.S. Ashton, Hayek, W.H. Hutt and R.M. Hartwell, who argued the new industries relieved workers’ poverty.</li>
+        <li>Berlin’s line “Freedom for the wolves has often meant death to the sheep”, and his “bloodstained story of economic individualism”, identify the free market with the coercion it excludes. The market benefits “the weak” most, as comparative advantage shows; it is under State rule that the jungle reigns.</li>
       </ul>
     </article>
 
     <article class="chapter" id="ch-28">
       <p class="ch-label">Chapter 28</p>
-      <h3>F. A. Hayek and the Concept of Coercion</h3>
-      <p class="gist">Hayek defines coercion too loosely and trusts general rules too much.</p>
+      <h3>F.A. Hayek and the Concept of Coercion</h3>
+      <p class="gist">Hayek defines coercion to include too much that is peaceful and too little that is violent.</p>
       <ul class="points">
-        <li>In <cite>The Constitution of Liberty</cite>, Hayek counts as coercion some things that are not aggression, such as a sole owner of a desert spring setting its price. He also excuses State coercion that follows general, known and equal rules.</li>
-        <li>Rothbard replies that general rules can be tyrannical: universal conscription is perfectly general. Only a property-based definition of coercion reliably protects liberty.</li>
+        <li>In <cite>The Constitution of Liberty</cite> (1960) Hayek begins well, defining freedom as the absence of coercion. But he defines coercion as “control of the environment or circumstances of a person by another” so that he serves another’s ends, and says physical force “is not the only way”.</li>
+        <li><strong>Too broad.</strong> A “morose husband” or “nagging wife” can be coercive, says Hayek, though outlawing them would mean more coercion. But coercion can’t be added up, and a spouse is free to leave. He calls dismissal coercive “in periods of acute unemployment” or in a mining town, though it is only a refusal to go on exchanging, and the miners chose to go there. He says a famous painter who charges a high fee does not coerce, but the owner of the only spring in a desert, whose rivals’ springs dried up, does. Rothbard: the spring’s owner caused neither the desert nor the drought; he may refuse to sell or charge what buyers will pay. The same goes for the only physician in town during an epidemic; calling him coercive would justify enslaving him.</li>
+        <li>Ronald Hamowy asked what a “reasonable” price would be (one cent a gallon? ten dollars? the settlers’ friendship?) and what if the owner regards the water as sacred and won’t sell at all, which by Hayek’s definition isn’t coercion though it is worse. Hayek’s example of a hostess who invites you only if you dress properly would, on his own criteria, be coercion if your dinner jacket is at the cleaners and your social standing depends on the party. Hayek replied (1967) that the coerced must be left worse off than without the action; Hamowy answered that the party case qualifies.</li>
+        <li>Rothbard’s own argument, from <cite>Power and Market</cite>: if refusing to trade is “economic power”, then when B pulls a gun to force A to trade, B is defending himself. There is no middle ground between treating violence or refusal to exchange as the crime, and outlawing refusal means general slavery.</li>
+        <li><strong>No line between aggression and defence.</strong> Hayek says coercion can’t be wholly avoided, because it can only be prevented by threatening coercion, and that “free society has met this problem by conferring the monopoly of coercion on the state”. But defensive force is different in kind from aggression, and no society “conferred” anything: States seized their monopolies by conquest and keep them by taxation and by outlawing competing defence. (A footnote: wrongful coercion should be prohibited, not minimised, a “side-constraint” in Nozick’s term.)</li>
+        <li><strong>Too narrow.</strong> Hayek holds that coercion is minimal or absent when it follows general, known, equal rules, because then one can avoid it: “Provided that I know beforehand … I need never be coerced.” Hamowy: then a thug who promises to kill me if I shop at Mr. Y’s, when I can shop elsewhere, is not coercing me, and a hoodlum-infested neighbourhood is like a plague swamp. Hayek even says taxation and military service, being predictable, lose “the evil nature of coercion”.</li>
+        <li>Rothbard’s test case: society A is governed by general, equal, known rules: everyone is enslaved one year in three, criticising the government is punished by death, alcohol is banned, everyone bows to Mecca three times a day and wears a green uniform. Society B is totally free, except that once a year the king commits one arbitrary act against one person. Which is freer? J.W.N. Watkins imagined a general rule forbidding foreign travel, and a man with a dying father abroad. Bruno Leoni added that with legislatures changing laws daily, even “certain” rules are certain only for the moment.</li>
+        <li>For Hayek, rights flow from government’s rule of law rather than from a moral theory, which is why his book ends up endorsing a long list of interventions. Rothbard welcomes Hayek’s later turn, in <cite>Law, Legislation, and Liberty</cite> (1973), toward judge-found common law, but not its emphasis on law as “fulfilling expectations”.</li>
       </ul>
+      <figure class="fig nums">
+        <p class="fig-title">Figure · Is it coercion?</p>
+        <div class="table-wrap stack">
+          <table>
+            <thead><tr><th scope="col">Case</th><th scope="col">Hayek</th><th scope="col">Rothbard</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A nagging spouse</th><td data-l="Hayek">A kind of coercion, not worth outlawing</td><td data-l="Rothbard">Not coercion; one can leave</td></tr>
+              <tr><th scope="row">Dismissal in a slump or mining town</th><td data-l="Hayek">Can be “true coercion”</td><td data-l="Rothbard">A refusal to exchange</td></tr>
+              <tr><th scope="row">A painter’s high fee</th><td data-l="Hayek">Not coercion</td><td data-l="Rothbard">Not coercion</td></tr>
+              <tr><th scope="row">The only spring in the desert</th><td data-l="Hayek">“A clear case of coercion”</td><td data-l="Rothbard">Not coercion; he may refuse or set any price</td></tr>
+              <tr><th scope="row">A hostess’s dress code</th><td data-l="Hayek">Not coercion</td><td data-l="Rothbard">Not coercion, but Hayek’s criteria say it is</td></tr>
+              <tr><th scope="row">Taxes and conscription under known rules</th><td data-l="Hayek">Largely stripped of coercion’s evil</td><td data-l="Rothbard">Aggression, however predictable</td></tr>
+              <tr><th scope="row">Slavery one year in three, by general rule</th><td data-l="Hayek">Would pass the rule-of-law test</td><td data-l="Rothbard">Obviously despotic</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>The chapter’s cases. The last row is Rothbard’s reductio; the others are Hayek’s own examples and Hamowy’s.</figcaption>
+      </figure>
     </article>
 
     <article class="chapter" id="ch-29">
       <p class="ch-label">Chapter 29</p>
       <h3>Robert Nozick and the Immaculate Conception of the State</h3>
-      <p class="gist">No invisible hand turns protection agencies into a legitimate State.</p>
+      <p class="gist">No invisible hand turns protection agencies into a legitimate State, and if one did, it would lead straight back to anarchy.</p>
       <ul class="points">
-        <li>Nozick’s <cite>Anarchy, State, and Utopia</cite> (1974) argued that a minimal State could arise from anarchy without violating anyone’s rights. A dominant protection agency would forbid risky enforcement by others and compensate them.</li>
-        <li>Rothbard answers that no actual State arose that way, which is the “immaculate conception.” Banning others’ enforcement because it is merely risky is itself aggression, and Nozick’s compensation principle would license almost any prohibition.</li>
+        <li>Nozick’s <cite>Anarchy, State, and Utopia</cite> (1974) argues that a minimal State could arise from a free-market anarchy by an “invisible hand”, without violating anyone’s rights: first a dominant protective agency, then an “ultraminimal state” that forbids others to enforce rights, then a minimal “night-watchman” State. (Rothbard’s critique first appeared in the <cite>Journal of Libertarian Studies</cite> in 1977, alongside others by Randy Barnett, Roy Childs, John Sanders and others.)</li>
+        <li><strong>History.</strong> Nozick never mentions how any real State began. Every one whose origins are known began by conquest and exploitation; Thomas Paine said the first king was “nothing better than the principal ruffian of some restless gang”, and the first “contract” was a protection racket. So, on his own terms, Nozick should call for abolishing every existing State and waiting for his invisible hand to produce a legitimate one.</li>
+        <li><strong>Inalienability.</strong> Even an immaculately conceived State would not be justified now, because the rights that social-contract theories surrender are inalienable, and no one can surrender his posterity’s: George Mason’s Virginia Declaration of Rights says so, and the Leveller Richard Overton wrote that “every one as he is himself, so he hath a self propriety.”</li>
+        <li><strong>No dominant agency.</strong> Nozick’s scenarios of agencies battling each other contradict his assumption that they act in good faith, and make no economic sense: they would agree on arbitrators in advance. From that he leaps, with an illegitimate “thus”, to “one unified federal judicial system”. The United States already has over 23,000 professional arbitrators and many private guard firms with no sign of natural monopoly; the fairs of Champagne, ancient Ireland and the barbarian tribes after Rome all had competing courts. Insurance has a better claim to be a natural monopoly, yet is competitive. As Roy Childs said, lumping all protection together as a “monopoly” is like calling all farmers a food monopoly.</li>
+        <li><strong>Risk.</strong> Nozick says the dominant agency may forbid independents’ “risky” procedures. Why not arbitrate? By what right does it stop independents serving their own clients? The independents could equally ban its risks, and who guards against the monopolist? Once force is allowed against mere risk, there is no stopping point: lock up teenage black males, the highest-crime group, and “compensate” them in what Nozick calls “resort detention centers”; bring back Prohibition with free grape juice; adopt Dr Arnold Hutschnecker’s plan to identify future criminals in grade school. Such a State is conceived “not immaculately … but by a savage act of rape.” Risk can’t even be measured outside lotteries and roulette. The right approach is Williamson Evers’s “proper assumption of risk”: each bears his own, and may insure.</li>
+        <li><strong>Compensation.</strong> The ultraminimal State becomes minimal by “compensating” those it forbids to use other agencies, with its own protection. But compensation after the fact doesn’t make aggression permissible (Barnett: “That’s what right means”); utility can’t be measured, so no one knows what compensation is due; a single anarchist horrified by the State’s appearance could never be compensated; and the payment is in kind, the State itself. Childs: “Let me be the first to publicly reject this admittedly generous offer.” Charging existing clients more to fund it would drive them to independents, spiralling the State into “the invisible dustbin of history”.</li>
+        <li><strong>Locke’s proviso.</strong> Nozick, following Locke, lets someone appropriate land only if others are not made worse off. That could outlaw all private land, and there is no way to measure it; latecomers bear their own risk. “There is no longer a vast frontier in the United States, and there is no point in crying over the fact … Even Locke could nod once in a while.”</li>
+        <li><strong>“Drop dead” exchanges.</strong> Nozick would forbid “nonproductive” exchanges, where one party pays only not to be made worse off, as with blackmail. But then Brown, who threatens to build a pink building his neighbour will hate unless paid, must be banned, while the neighbour who offers first may pay, and two bidders at an auction, or two suitors, would each be better off if the other dropped dead. Nozick concedes that “people value a blackmailer’s silence, and pay for it,” and would let the blackmailer charge only what he could get by revealing the secret, a medieval “just price”. The only just price is the one agreed.</li>
+        <li>Nor are there “procedural rights” to the least risky procedure, which would require others’ positive action, and lead, as Jeffrey Paul showed, to an infinite regress.</li>
+        <li><strong>The invisible hand strikes back.</strong> Childs imagined a maverick agency that copies the minimal State’s procedures and lets it watch. It can charge less, since it pays no compensation; clients defect; the State stops compensating and becomes ultraminimal, then stops spying and becomes merely dominant, grows fat and inefficient, and ends as one agency among many.</li>
+        <li>Nozick also has no theory of taxation, of how much protection to supply, or of why his dominant firm should hold elections. And, as a “Kantian intuitionist”, he has no theory of rights at all.</li>
       </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Nozick’s stages, and Rothbard’s objection at each</p>
+        <ol class="vtl">
+          <li class="o"><b>State of nature with protective agencies</b><span>Nozick’s start</span><em>Agencies act in good faith. Rothbard: then they will agree on arbitrators, not fight.</em></li>
+          <li class="no"><b>One dominant protective agency</b><span>“Thus emerges … one unified federal judicial system”</span><em>Rothbard: a non sequitur. Thousands of arbitrators, and the historical record, show no natural monopoly.</em></li>
+          <li class="no"><b>Ultraminimal state</b><span>Forbids independents’ “risky” procedures</span><em>Rothbard: banning mere risk is aggression, and has no stopping point short of a total State.</em></li>
+          <li class="no"><b>Minimal state</b><span>Compensates those it forbids, with protection</span><em>Rothbard: compensation doesn’t license aggression, can’t be measured, and is paid in the very thing the anarchist rejects.</em></li>
+          <li><b>Back to anarchy</b><span>Childs’s reversal</span><em>A copying agency undercuts the minimal State until it is one agency among many.</em></li>
+        </ol>
+        <figcaption>The chapter ends with ten numbered conclusions, the last that on Nozick’s own terms the invisible hand would lead from his minimal State “back to anarchism”. Rothbard calls the book “the most important attempt in this century to rebut anarchism and to justify the State”.</figcaption>
+      </figure>
     </article>
 
     <!-- PART V -->
     <section class="part" id="part-5">
       <p class="part-num">Part V</p>
       <h2>Toward a Theory of Strategy for Liberty</h2>
-      <p class="part-lede">A short final part on how to pursue the goal.</p>
+      <p class="part-lede">A theory of strategy for liberty, Rothbard says, has been “virtually nonexistent”; he sets out on “an uncharted sea”.</p>
     </section>
 
     <article class="chapter" id="ch-30">
       <p class="ch-label">Chapter 30</p>
       <h3>Toward a Theory of Strategy for Liberty</h3>
-      <p class="gist">Hold to the goal of complete liberty, and never trade it for a step backwards.</p>
+      <p class="gist">Hold to the goal of immediate and total liberty, never contradict it, and seize every step toward it.</p>
+      <p class="sub">The goal</p>
       <ul class="points">
-        <li>Rothbard argues, as the abolitionists did about slavery, that the goal itself should be immediate liberty. Gradualism as a goal only prolongs injustice.</li>
-        <li>Transitional steps are acceptable if they reduce State power and never add new coercion elsewhere.</li>
-        <li>A movement needs a committed core that keeps the principles intact. It must avoid two errors: opportunism, which sells out the goal, and sectarianism, which refuses any real-world engagement.</li>
-        <li>Education and ideas come first, because States rest on public opinion.</li>
+        <li>Natural law is an “iron benchmark” against which every State falls short. Acton distinguished the Whig, who governs by compromise, from the Liberal, who “begins the reign of ideas”: “One is a policy aiming at a philosophy. The other is a philosophy seeking a policy.” Libertarianism is the second.</li>
+        <li>Liberty must be the “highest political end” (Acton again), which is not the highest end of life. Many libertarians care more for self-expression or bearing witness than for winning, but victory needs priority. And it must rest on a moral “passion for justice”: “Justice, not the weak reed of mere utility, must be the motivating force.”</li>
+        <li><strong>Abolitionism.</strong> Since liberty is the highest political end, it should be reached as fast as possible. Leonard Read, arguing after the Second World War for ending price and wage controls at once, said that if there were a button that would do it, “I would put my finger on it and push!” A libertarian should push a button abolishing all invasions of liberty, which no utilitarian would do.</li>
+        <li>“Unrealistic” confuses the goal with estimates of how to reach it. Liberty is realistic in a way ending poverty is not: injustice is done by people, so it could end at once if enough people willed it. William Lloyd Garrison demanded immediate emancipation while expecting it to come gradually: “Urge immediate abolition as earnestly as we may, it will, alas! be gradual abolition in the end.” But “gradualism in theory is perpetuity in practice”: an abolitionist who asked for emancipation in five years would be saying slavery should continue until then.</li>
+        <li><strong>Ends and means.</strong> “What else but an end could possibly justify any means?” Critics of that maxim really mean that some means, like murder, violate more important ends. The libertarian end justifies the fastest means, but not means that contradict it, such as gradualism in theory or aggression.</li>
+      </ul>
+      <p class="sub">Transitional demands</p>
+      <ul class="points">
+        <li>Steps toward liberty are necessary, provided they (a) always keep the final goal in view and (b) never contradict it. A proposal to cut the budget 10% a year for ten years is fine as a minimum, if cutting 25% a year, or 100% now, would be welcome. A detailed plan (repeal law A in Year 1, law D in Year 2) is worse: it implies law D should stay until Year 2, and treats the State as a tool for engineering liberty rather than “the permanent enemy of mankind”.</li>
+        <li>Welcome any cut in State power on any front. Push to cut or repeal the income tax, but never propose replacing it with a sales tax. Welcome a tax cut even if the deficit grows; conservatives who oppose tax cuts not matched by spending cuts put budget-balancing above liberty. Fight spending when the budget is voted on.</li>
+        <li>Setting priorities is not betrayal. Denationalising lighthouses matters less than ending conscription or the income tax, unless you live on a fog-bound island that depends on shipping.</li>
+      </ul>
+      <p class="sub">The movement</p>
+      <ul class="points">
+        <li>Ideas govern the world in the long run, but only through people. Libertarianism needs a self-conscious movement and a “cadre”, as Buddhism or physics did, and professionals, not just “Friends of Physics”. A “vanguard” is no more sinister than a vanguard of physicists; libertarians were a majority among the American revolutionaries and in 19th-century England.</li>
+        <li>Think of a ladder from total statism to pure liberty; help people up a few rungs. “United fronts” on single issues, with conservatives against the income tax or civil libertarians against the draft and censorship of pornography or “subversive” speech, multiply influence and show allies that liberty is one interconnected system.</li>
+        <li>Movements suffer two deviations, in Marxist terms: “right opportunism”, which joins the establishment and gives up the goal for small gains (“while everyone knows we must have taxation … a 2 percent tax cut”), and “left sectarianism”, which sees betrayal in every transitional demand, like the Socialist Labor Party answering every issue with “socialism and only socialism”. The same person may swing from one to the other.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · The two deviations</p>
+        <div class="cards">
+          <div><p class="k no">Deviation</p><h4>Right opportunism</h4><p>Joins the establishment for short-run gains and gives up the goal: “while everyone knows we must have taxation, the state of the economy requires a 2 percent tax cut.”</p><p>Result: gains that lead nowhere.</p></div>
+          <div><p class="k no">Deviation</p><h4>Left sectarianism</h4><p>Sees betrayal in every transitional demand and every choice of priorities, like attacking a candidate who stresses the income tax and the draft for “neglecting” lighthouses.</p><p>Result: purity without progress.</p></div>
+        </div>
+        <figcaption>The two errors the chapter warns against. The right path holds to the full goal while pressing for any step that doesn’t contradict it.</figcaption>
+      </figure>
+      <p class="sub">Why optimism</p>
+      <ul class="points">
+        <li>Change needs “subjective conditions”, a movement ready with an alternative, and “objective conditions”, a crisis seen as the system’s fault. Every modern revolution had both: the American (Britain ending “salutary neglect”), the French (a fiscal crisis and the <i>philosophes</i>), Russia in 1917 (a losing war), Italy and Germany after the First World War (defeat and economic crisis), China in 1949 (war, runaway inflation and price controls).</li>
+        <li><strong>Long run.</strong> Unlike conservatives, who see only decline, Marxists and libertarians are both optimists. Pre-industrial despotisms could tax peasants at subsistence forever, but an industrial economy needs free markets and the division of labour. Once people are committed to industrial living standards, statism must fail.</li>
+        <li><strong>Short run.</strong> The cushion of 19th-century wealth that let statism do damage invisibly (Mises’s “reserve fund”) is exhausted. Communist countries are retreating from central planning, especially Yugoslavia; West Germany’s Social Democrats have dropped socialism; Britain’s Conservative Party has been taken over by its free-market wing.</li>
+        <li>In the United States Rothbard dates a “systemic breakdown of statism” to 1973–74: an inflationary depression from late 1973 through 1975 that Keynesian “fine tuning” could not explain; F.A. Hayek’s Nobel prize in 1974 for his long-forgotten business-cycle theory; New York City’s partial default in 1975; California’s Proposition 13 in 1978; a growing shortage of capital. In the 1930s people blamed a supposedly laissez-faire 1920s; now everyone knows the State has run the economy for forty years. Socialism, the corporate State and the “Welfare-Warfare State” have all been tried. “What is there left to try but freedom?”</li>
+        <li>Public schools are under attack from all sides for failing to educate, costing too much and forcing one answer on disputes over integration, religion, sex education and method. Prohibitionism in personal morality, over pornography, prostitution, sex between consenting adults, drugs and abortion, is increasingly seen as unjust and unenforceable.</li>
+        <li>Above all, Watergate (1973–74) “desanctified” the presidency and government itself. “No one would dare today to intone that ‘we are the government’.” The delegitimation of government in the public’s eyes is “the most vital condition” for liberty, and since 1971, especially since 1973, the libertarian movement has made its greatest strides of the century. “The current prospects of liberty, even in the short-run, are highly encouraging.”</li>
       </ul>
     </article>
 
@@ -824,76 +1219,147 @@ td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; lett
     <section class="sec" id="rivals" style="margin-top:56px">
       <p class="kicker">Context</p>
       <h2>Rothbard vs his rivals</h2>
-      <p>Part IV in one table: where each rival defence of liberty sits, and the hole Rothbard finds in it.</p>
-      <div class="table-wrap">
+      <p>Part IV and Chapter 23 in one table: where each defence of liberty stands, and the hole Rothbard finds in it.</p>
+      <div class="table-wrap stack">
         <table>
           <thead><tr><th scope="col">Thinker</th><th scope="col">Their case for liberty</th><th scope="col">Rothbard’s objection</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Utilitarian economists, Mises</th><td>Markets produce the most prosperity, which nearly everyone wants.</td><td>Silent against those who value other ends, and unable to say who rightly owns what.</td></tr>
-            <tr><th scope="row">Isaiah Berlin</th><td>Negative liberty: freedom from interference.</td><td>Later widened to “fewer obstacles,” which lets poverty count as unfreedom and invites the State in.</td></tr>
-            <tr><th scope="row">F. A. Hayek</th><td>Freedom under general, known, equal rules; coercion minimised.</td><td>General rules can still be tyrannical, and coercion should mean aggression against property.</td></tr>
-            <tr><th scope="row">Robert Nozick</th><td>A minimal State can arise from anarchy without violating rights.</td><td>No State arose that way, and banning “risky” enforcement is itself aggression.</td></tr>
-            <tr><th scope="row">Classical liberals</th><td>Limited government protects rights.</td><td>A monopoly judge of its own limits won’t stay limited.</td></tr>
+            <tr><th scope="row">Utilitarian economists</th><td data-l="Their case">Markets maximise satisfaction; judge policies by social costs and benefits.</td><td data-l="Objection">Utilities can’t be added; the majority could vote to kill the redheads.</td></tr>
+            <tr><th scope="row">James Buchanan</th><td data-l="Their case">Good changes are those everyone would agree to.</td><td data-l="Objection">Freezes an unjust status quo.</td></tr>
+            <tr><th scope="row">Ludwig von Mises</th><td data-l="Their case">Once people see intervention’s results, they will reject it; liberalism serves the goals nearly all share.</td><td data-l="Objection">Some people knowingly prefer equality, power or the short run; a value-free science can’t say they’re wrong.</td></tr>
+            <tr><th scope="row">Isaiah Berlin</th><td data-l="Their case">Negative liberty: freedom from interference.</td><td data-l="Objection">Never defines interference; slides into freedom as opportunity, and blames laissez faire for coercion.</td></tr>
+            <tr><th scope="row">F.A. Hayek</th><td data-l="Their case">Freedom as absence of coercion, under general, known, equal rules.</td><td data-l="Objection">Counts refusals to trade as coercion, excuses taxes and conscription as predictable.</td></tr>
+            <tr><th scope="row">Robert Nozick</th><td data-l="Their case">A minimal State can arise from anarchy without violating rights.</td><td data-l="Objection">No State arose that way; banning risk and paying compensation license aggression.</td></tr>
+            <tr><th scope="row">Classical liberals</th><td data-l="Their case">Limited government protects rights.</td><td data-l="Objection">A monopoly that judges its own limits won’t stay limited, and can’t say how much, who pays or how big.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
+    <!-- HELD UP -->
+    <section class="sec" id="held-up">
+      <p class="kicker">Forty years on</p>
+      <h2>What held up</h2>
+      <p>Chapter 30 makes dated claims about the late 1970s and the prospects for liberty. Evidence on what followed comes from general knowledge, not from the book, and should be checked before being relied on.</p>
+      <div class="fc"><p class="fc__v fc__v--held">Held</p><h3>Central planning is failing <span>Ch. 30</span></h3><p>Rothbard saw Communist regimes retreating from planning in 1980. Within a decade the Soviet bloc collapsed (1989–91) and Eastern Europe moved to market economies. Yugoslavia, which he singled out, broke up in war in the 1990s.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>The breakdown of statism, 1973–74 <span>Ch. 30</span></h3><p>The stagflation he describes was real, and Hayek’s 1974 Nobel (shared with Gunnar Myrdal) did revive interest in the Austrian school. But inflation was ended not by abandoning central banking but by the Federal Reserve under Paul Volcker, which squeezed it from about 14% in 1980 to about 3% by 1983. Government spending did not fall as a share of the economy.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>A turn toward free markets <span>Ch. 30</span></h3><p>The free-market takeover of Britain’s Conservatives led to Margaret Thatcher’s government (1979), followed by Ronald Reagan’s (1981): tax cuts, deregulation and privatisation. Neither cut the State as Rothbard wanted, and he was a sharp critic of Reagan. The income tax and the draft registration he opposed remain.</p></div>
+      <div class="fc"><p class="fc__v fc__v--held">Held</p><h3>Government desanctified <span>Ch. 30</span></h3><p>Trust in the federal government, which Pew and earlier surveys put near three-quarters in the mid-1960s, had fallen to about a third by 1974. It has recovered only briefly since and has stood near a fifth in recent years.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>Moral prohibitions will go the way of alcohol <span>Ch. 30</span></h3><p>Sodomy laws were struck down nationally in <i>Lawrence v. Texas</i> (2003); cannabis became legal in Colorado and Washington in 2012 and then in many other states, and in Canada in 2018. But prostitution remains illegal almost everywhere in the US, other drugs remain banned, and <i>Dobbs</i> (2022) returned abortion law to the states, several of which banned it.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>Public schools under attack <span>Ch. 14, 30</span></h3><p>Homeschooling became legal in every US state by the early 1990s, charter schools spread, and from 2022 several states created universal education savings accounts, starting with Arizona. Compulsory attendance laws remain everywhere.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>Nuclear disarmament, “the highest political good” <span>Ch. 25</span></h3><p>World nuclear stockpiles fell from a peak of about 70,000 warheads in the mid-1980s to about 12,000 today. They have not been abolished, and several major arms-control treaties have lapsed.</p></div>
+      <div class="fc"><p class="fc__v fc__v--missed">Missed</p><h3>The “reserve fund” is exhausted <span>Ch. 26, 30</span></h3><p>Following Mises, Rothbard thought statism had used up its cushion and would soon produce visible collapse. Western welfare states kept growing for four more decades, financing themselves partly by borrowing on a scale he did not foresee.</p></div>
+      <div class="fc"><p class="fc__v fc__v--missed">Missed</p><h3>The book’s own slips <span>Ch. 18, 22</span></h3><p>Rothbard dates the Norris–LaGuardia Act to 1931; it was passed in 1932. His figure that “less than 40 percent” of eligible Americans vote fits midterm elections, not presidential ones, in which turnout then ran above half.</p></div>
+    </section>
+
+    <!-- THEORISTS -->
+    <section class="sec" id="theorists">
+      <p class="kicker">Context</p>
+      <h2>Who’s who</h2>
+      <p>The people Rothbard builds on, argues with and borrows from, in rough order of appearance.</p>
+      <div class="table-wrap stack">
+        <table>
+          <thead><tr><th scope="col">Who</th><th scope="col">In the book</th><th scope="col">Rothbard’s verdict</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Thomas Aquinas, Francisco Suárez <span class="d">13th, 16th c.</span></th><td data-l="In the book">Natural law known by reason; binding even if God did not exist.</td><td data-l="Verdict">The rationalist tradition he claims.</td></tr>
+            <tr><th scope="row">Hugo Grotius <span class="d">1583–1645</span></th><td data-l="In the book">Secular natural law; two times two.</td><td data-l="Verdict">Restorer of the Scholastic view.</td></tr>
+            <tr><th scope="row">John Locke <span class="d">1632–1704</span></th><td data-l="In the book">Property in one’s person; mixing labour with land.</td><td data-l="Verdict">The founder, “riddled with contradictions”; his proviso rejected.</td></tr>
+            <tr><th scope="row">David Hume <span class="d">1711–1776</span></th><td data-l="In the book">Is/ought gap; reason slave of the passions.</td><td data-l="Verdict">Refuted, and forced back to natural law on justice.</td></tr>
+            <tr><th scope="row">Lord Acton <span class="d">1834–1902</span></th><td data-l="In the book">Natural law as “revolution in permanence”; Whig vs Liberal.</td><td data-l="Verdict">Hero of the radical reading.</td></tr>
+            <tr><th scope="row">Lysander Spooner <span class="d">1808–1887</span></th><td data-l="In the book">No Treason; voting not consent; the highwayman.</td><td data-l="Verdict">The great anarchist lawyer.</td></tr>
+            <tr><th scope="row">Franz Oppenheimer <span class="d">1864–1943</span></th><td data-l="In the book">Economic vs political means; the State.</td><td data-l="Verdict">Adopted wholesale.</td></tr>
+            <tr><th scope="row">Albert Jay Nock <span class="d">1870–1945</span></th><td data-l="In the book">“Monopoly of crime”; social vs State power.</td><td data-l="Verdict">Adopted.</td></tr>
+            <tr><th scope="row">Williamson Evers <span class="d">1970s</span></th><td data-l="In the book">Title-transfer contracts; children; assumption of risk.</td><td data-l="Verdict">The source of several chapters.</td></tr>
+            <tr><th scope="row">Walter Block <span class="d">b. 1941</span></th><td data-l="In the book">Blackmailer as hero; “two teeth for a tooth”.</td><td data-l="Verdict">Endorsed.</td></tr>
+            <tr><th scope="row">Ludwig von Mises <span class="d">1881–1973</span></th><td data-l="In the book">Value-free economics; utilitarian liberalism.</td><td data-l="Verdict">Revered teacher, but his case for liberty fails.</td></tr>
+            <tr><th scope="row">Isaiah Berlin <span class="d">1909–1997</span></th><td data-l="In the book">Two Concepts of Liberty.</td><td data-l="Verdict">Confused freedom with opportunity.</td></tr>
+            <tr><th scope="row">F.A. Hayek <span class="d">1899–1992</span></th><td data-l="In the book">The Constitution of Liberty.</td><td data-l="Verdict">Fatally loose concept of coercion.</td></tr>
+            <tr><th scope="row">Robert Nozick <span class="d">1938–2002</span></th><td data-l="In the book">Anarchy, State, and Utopia.</td><td data-l="Verdict">Fails “totally and in each of its parts”.</td></tr>
+            <tr><th scope="row">Ronald Hamowy, Roy Childs, Randy Barnett</th><td data-l="In the book">Critics of Hayek and Nozick.</td><td data-l="Verdict">Allies whose arguments he builds on.</td></tr>
+            <tr><th scope="row">Hans-Hermann Hoppe <span class="d">b. 1949</span></th><td data-l="In the book">Introduction to the 1998 edition.</td><td data-l="Verdict">(Not in Rothbard’s text.)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DEBATES -->
     <section class="sec" id="debates">
       <p class="kicker">Context</p>
       <h2>Where it has been argued with</h2>
-      <div class="debate"><h3>The foundation</h3><p>Philosophers outside the natural-law tradition doubt that “ought” can be read off human nature as directly as Rothbard claims. Even sympathisers sought other foundations. Hans-Hermann Hoppe’s “argumentation ethics” (late 1980s) tried to derive self-ownership from the act of arguing itself.</p></div>
-      <div class="debate"><h3>Children</h3><p>Chapter 14’s positions, no legal duty to feed a child and a market in guardianship, are the most criticised in the book, including by libertarians who accept the rest. Defenders say they follow strictly from the premises. Critics say that is the problem with the premises.</p></div>
-      <div class="debate"><h3>Initial acquisition</h3><p>Locke qualified property with a proviso that “enough and as good” be left for others, and Nozick kept a version of it. Rothbard drops the proviso entirely. Critics ask whether first use can really justify permanent, unlimited ownership of scarce land.</p></div>
-      <div class="debate"><h3>Libel, blackmail and punishment</h3><p>Legal scholars dispute the claims that reputation isn’t ownable, that blackmail is a legitimate trade, and that the victim may set proportional punishment. They argue the reasoning ignores harms and incentives the law exists to handle.</p></div>
-      <div class="debate"><h3>Anarchy or minimal State</h3><p>Nozick and followers of Ayn Rand hold that some State is necessary and can be legitimate. Rothbard’s Chapter 29 is one side of a long exchange that remains the central split inside libertarian thought.</p></div>
+      <div class="debate"><h3>The foundation</h3><p>Philosophers outside the natural-law tradition doubt that “ought” can be read off human nature as directly as Part I claims, and Rothbard admits he only outlines it. Libertarians have sought other foundations: David Friedman’s <cite>The Machinery of Freedom</cite> (1973) reached anarcho-capitalism on consequentialist grounds, and Hoppe’s “argumentation ethics” (1988) tried to derive self-ownership from the act of arguing, building on the axiom passage in Chapter 6. Critics of Hoppe, libertarian and not, say that at most it shows arguers must not attack each other while arguing.</p></div>
+      <div class="debate"><h3>Children</h3><p>No position in the book is more criticised, including by libertarians who accept the rest: that parents have no enforceable duty to feed a child and may sell their rights of guardianship. Defenders say it follows strictly from the premises; critics say that is the problem with the premises. Some libertarians have tried to get a duty of care back into the theory, arguing that parents who conceive a helpless child take on obligations to it. Hoppe’s introduction stresses that Rothbard separated legal right from moral duty.</p></div>
+      <div class="debate"><h3>Initial acquisition</h3><p>Locke qualified property with a proviso, “enough and as good” left for others, and Nozick kept a version of it. Rothbard drops it entirely, and the absence of the proviso is the gap left-libertarians such as Hillel Steiner and Michael Otsuka, who accept self-ownership, press on: why should first use give permanent, unlimited ownership of scarce land and resources?</p></div>
+      <div class="debate"><h3>Punishment</h3><p>Randy Barnett, whose volume first printed Chapter 13, argued in “Restitution: A New Paradigm of Criminal Justice” (1977) for restitution alone, without Rothbard’s retributive “two teeth”. Others ask how proportionality can be measured, and whether private enforcement by victims and their agents would be fair to the poor.</p></div>
+      <div class="debate"><h3>Blackmail and libel</h3><p>Legal scholars call the legality of blackmail a paradox: each part (revealing a secret, asking for money) is legal, the combination is not. James Lindgren’s “Unraveling the Paradox of Blackmail” (1984) is a classic attempt to explain why. Rothbard and Block answer that there is no paradox, only a bad law; critics reply that the blackmailer trades on someone else’s interest in the information.</p></div>
+      <div class="debate"><h3>Anarchy or minimal State</h3><p>Nozick never replied. Ayn Rand and her followers insisted competing protection agencies would fight. Tyler Cowen (1992) argued that a network of agencies that cooperate on arbitration would be a cartel able to act as a State; David Friedman replied that the arguments cut both ways. The dispute between Rothbard’s anarchism and minimal-State libertarianism remains the central split in libertarian thought.</p></div>
     </section>
 
+    <!-- GLOSSARY -->
     <section class="sec" id="glossary">
       <p class="kicker">Terms of art</p>
       <h2>Glossary</h2>
       <dl class="gloss">
         <dt>Natural law</dt><dd>Ethics derived by reason from the nature of man and the world, binding regardless of any government.</dd>
         <dt>Positive law</dt><dd>Whatever a State enacts and enforces.</dd>
+        <dt>Right</dt><dd>After Sadowsky: others may not stop you by force. Not a claim that your use of it is moral.</dd>
+        <dt>Praxeology</dt><dd>Mises’s term for the logic of human action, the method of Austrian economics.</dd>
+        <dt>Crusoe economics</dt><dd>Analysing one isolated person first, then adding others, to see basic truths clearly.</dd>
         <dt>Self-ownership</dt><dd>Each person’s exclusive right to control his own body.</dd>
-        <dt>Homesteading</dt><dd>Acquiring unowned land or resources by first putting them to use.</dd>
-        <dt>Aggression</dt><dd>Initiating physical force, or threatening it, against another’s person or property.</dd>
-        <dt>Nonaggression principle</dt><dd>The rule that no one may commit aggression. The single prohibition of the legal code.</dd>
-        <dt>Restitution</dt><dd>The criminal repaying the victim. For Rothbard, the first purpose of justice.</dd>
-        <dt>Proportionality</dt><dd>Punishment limited to the scale of the crime, set by the victim.</dd>
-        <dt>Title-transfer theory</dt><dd>The view that contracts are enforceable only as transfers of property titles.</dd>
+        <dt>Homesteading</dt><dd>Acquiring unowned land or resources by first transforming them. Claims beyond actual use (the “Columbus complex”) give no title.</dd>
+        <dt>Just property</dt><dd>Property traceable to self-ownership, homesteading, exchange or gift, as opposed to titles derived from theft.</dd>
+        <dt>Land monopoly</dt><dd>Invalid land titles: feudal rent on conquered land, and “engrossed” claims to land never used.</dd>
+        <dt>Aggression</dt><dd>Initiating physical force, or directly threatening it, against another’s person or just property.</dd>
+        <dt>Implicit theft</dt><dd>Fraud or breach of a title-transferring contract: keeping property that has become another’s.</dd>
+        <dt>Economic and political means</dt><dd>Oppenheimer: getting wealth by production and exchange, or by seizing it.</dd>
+        <dt>Proportionality</dt><dd>A criminal loses rights to the extent he took them; the victim may exact up to that limit.</dd>
+        <dt>Restitution</dt><dd>The criminal repaying the victim. For Rothbard, the first part of punishment.</dd>
+        <dt>Two teeth for a tooth</dt><dd>Walter Block’s phrase: return what was taken, then lose as much again.</dd>
+        <dt>Trustee-ownership</dt><dd>A parent’s limited ownership of a child: no aggression, no enforceable duty to support, ends when the child leaves.</dd>
+        <dt>Title-transfer theory</dt><dd>Contracts are enforceable only when they transfer title to alienable property.</dd>
+        <dt>Nudum pactum</dt><dd>A bare promise, unenforceable in Roman law and in Rothbard’s.</dd>
+        <dt>Penal bond</dt><dd>A contract in which a party agrees to pay a fixed penalty, often double, if he defaults.</dd>
         <dt>Inalienability</dt><dd>The will cannot be transferred, so no one can sell himself into slavery.</dd>
-        <dt>The State</dt><dd>The organisation that obtains revenue by taxation and claims a monopoly of force over a territory.</dd>
-        <dt>Negative liberty</dt><dd>Berlin’s term for freedom from interference by others.</dd>
-        <dt>Abolitionism</dt><dd>Holding immediate liberty as the goal, while accepting steps that genuinely reduce coercion.</dd>
+        <dt>The State</dt><dd>The organisation that gets revenue by taxation and claims a monopoly of force and final decision over a territory.</dd>
+        <dt>Court intellectuals</dt><dd>Priests, experts and scholars who supply the State’s legitimacy in exchange for status and power.</dd>
+        <dt>Vertical and horizontal violence</dt><dd>Between a State and its subjects; between States.</dd>
+        <dt>Pareto optimality</dt><dd>A change is good if someone gains and no one loses. Rothbard: a defence of the status quo.</dd>
+        <dt>Negative freedom</dt><dd>Berlin’s term for absence of interference by others.</dd>
+        <dt>Dominant protective agency</dt><dd>Nozick’s first stage toward the State.</dd>
+        <dt>Proper assumption of risk</dt><dd>Evers: each bears the risks to his own person and property, and may insure; none may coerce others to reduce them.</dd>
+        <dt>Abolitionism</dt><dd>Holding immediate liberty as the goal while accepting any step that reduces coercion.</dd>
+        <dt>Right opportunism, left sectarianism</dt><dd>Giving up the goal for short-run gains; refusing all steps short of the goal.</dd>
+        <dt>Argumentation ethics</dt><dd>Hoppe’s later argument that self-ownership is presupposed by any argument.</dd>
       </dl>
     </section>
 
+    <!-- READING -->
     <section class="sec" id="reading">
       <p class="kicker">Using it</p>
       <h2>A reading path</h2>
       <p>The chapters are short and mostly independent. For the argument’s spine:</p>
       <ol class="steps">
-        <li><div><p class="phase">Chapters 1, 3 and 5</p><p>What natural law is, why it is radical, and the limited scope of the project.</p></div></li>
-        <li><div><p class="phase">Chapters 6–9</p><p>Crusoe, exchange, self-ownership and crime: the whole system in four chapters.</p></div></li>
-        <li><div><p class="phase">Chapters 13, 15, 16, 19</p><p>The applications that show how far the logic runs.</p></div></li>
+        <li><div><p class="phase">Chapters 1–4</p><p>What natural law is, why it is radical, and what a “right” means.</p></div></li>
+        <li><div><p class="phase">Chapters 6–9</p><p>Crusoe, exchange, self-ownership and just property: the whole system in four chapters.</p></div></li>
+        <li><div><p class="phase">Chapters 12, 13, 16, 19</p><p>Self-defence, punishment, blackmail and contracts: where the logic leads.</p></div></li>
         <li><div><p class="phase">Chapters 22–23</p><p>The State under the same rules as everyone else.</p></div></li>
-        <li><div><p class="phase">Chapters 28–29</p><p>Hayek and Nozick, the two critiques most often read on their own.</p></div></li>
+        <li><div><p class="phase">Chapters 28–30</p><p>Hayek and Nozick, then the strategy chapter.</p></div></li>
       </ol>
       <p style="margin-top:28px" class="kicker">Read alongside</p>
       <ul class="books">
         <li>John Locke, <cite>Second Treatise of Government</cite> (1689): self-ownership and property through labour.</li>
-        <li>Murray N. Rothbard, <cite>For a New Liberty</cite> (1973): the popular manifesto version.</li>
+        <li>Murray N. Rothbard, <cite>For a New Liberty</cite> (1973, revised 1978): the popular version, with the practical account of private courts and police this book leaves out.</li>
+        <li>Murray N. Rothbard, <a href="rothbard-man-economy-and-state.html"><cite>Man, Economy, and State</cite></a>, summarised on this site: the economics this ethics stands beside.</li>
         <li>Robert Nozick, <cite>Anarchy, State, and Utopia</cite> (1974): the minimal-State case Chapter 29 answers.</li>
-        <li>Lysander Spooner, <cite>No Treason</cite> (1867–70): the case against consent that Chapter 23 builds on.</li>
-        <li><cite>Man, Economy, and State</cite>, summarised on this site: the economics this ethics is meant to stand beside.</li>
+        <li>Lysander Spooner, <cite>No Treason</cite> (1867–70), and Franz Oppenheimer, <cite>The State</cite> (1908): the sources of Part III.</li>
+        <li>David Friedman, <cite>The Machinery of Freedom</cite> (1973): anarcho-capitalism argued from consequences instead of natural law.</li>
       </ul>
     </section>
-  </main>
+</main>
 </div>
 
 <footer class="wrap foot">
-  <p>A study summary of Murray N. Rothbard, <cite>The Ethics of Liberty</cite> (1982; second edition 1998, introduction by Hans-Hermann Hoppe). Paraphrased throughout, with no direct quotation; the principle in the hero is our own wording. Chapter titles follow the book. The contracts table uses our examples to illustrate Chapter 19’s theory, and the plat is a drawing, not a map.</p>
+  <p>A study summary of Murray N. Rothbard, <cite>The Ethics of Liberty</cite> (Humanities Press, 1982; New York University Press, 1998, with an introduction by Hans-Hermann Hoppe). Checked against the full text of the 1998 edition in the Mises Institute’s free reprint (2016), including Hoppe’s introduction; three pages whose text layer is damaged in that file were read from the page images. Quotations are from that edition. Chapter titles and section letters follow the book. “What held up”, “Who’s who” and “Debates” draw on events and writers after the book, from general knowledge, and are worth checking before being relied on. The plat is a drawing, not a map.</p>
+  <p>Corrections to the earlier version of this page. Bruno Leoni is not discussed in Chapter 3; he appears only in footnotes to Chapters 23, 28 and 29. The Leveller Richard Overton is not in Chapter 4; he is quoted in a footnote to Chapter 29. Chapter 11 does not discuss States granting unused land to railroads and speculators or mention Henry George; it is about feudal titles in poor countries, oil concessions, land reform and colonial North America. The story of Alexander and the pirate is not in Chapter 22; the book’s only mention of Augustine is Hoppe’s line about a “band of robbers” in the introduction. Chapter 23 does not rest on Spooner’s <cite>No Treason</cite> (Spooner is quoted in Chapter 22; the social contract is rejected in Chapters 19 and 29). Chapter 21 says nothing about cruelty to animals. A child becomes a self-owner by leaving home, not by showing he can support himself. In Chapter 24, State property goes to whoever takes it from the State unless a specific victim can be identified, not to “those who use it”. Chapter 1 does not take up “is and ought”; Chapter 2 does. Chapter 27 is titled “Isaiah Berlin on Negative Freedom”. The contracts table now uses the book’s own examples, and the earlier note that the page contained no direct quotation no longer applies.</p>
 </footer>
 
 <script>
