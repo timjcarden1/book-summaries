@@ -28,10 +28,10 @@
       "tag": "4 volumes",
       "added": "2026-07-31",
       "blurb": "Our Oriental Heritage, The Life of Greece, Caesar and Christ and The Age of Faith — four volumes in one illustrated pass.",
-      "accent": "#2A5A85",
-      "paper": "#EDE8DC",
-      "ink": "#1D1811",
-      "muted": "#6C6250",
+      "accent": "#6B2D5C",
+      "paper": "#ECEBE7",
+      "ink": "#1B1C20",
+      "muted": "#6A6C72",
       "related": [
         {
           "slug": "lessons-of-history",
@@ -57,10 +57,10 @@
       "tag": "Ab Urbe Condita",
       "added": "2026-07-31",
       "blurb": "Ab Urbe Condita — the early history, Rome and Italy, the war with Hannibal, and Rome in the Mediterranean.",
-      "accent": "#9C3025",
-      "paper": "#E9E5DC",
-      "ink": "#191A1C",
-      "muted": "#61635E",
+      "accent": "#8C2A22",
+      "paper": "#EDEDEA",
+      "ink": "#1E1A18",
+      "muted": "#6E6863",
       "related": [
         {
           "slug": "durant-story-of-civilization-i-iv",
@@ -142,10 +142,10 @@
       "tag": "Economic history",
       "added": "2026-08-01",
       "blurb": "Why Portugal is rich by world standards and poor by European ones — a quantitative history that dates the fall precisely.",
-      "accent": "#1C5A85",
-      "paper": "#EDE7DB",
-      "ink": "#1A1B1C",
-      "muted": "#5D605C",
+      "accent": "#1F4E9C",
+      "paper": "#EDF0F3",
+      "ink": "#141A22",
+      "muted": "#65707C",
       "related": [
         {
           "slug": "guns-germs-and-steel",
@@ -175,9 +175,9 @@
       "added": "2026-08-02",
       "blurb": "Institutions, not geography or culture — the inclusive/extractive argument, the cases it stands on, and an audit of how its predictions have aged.",
       "accent": "#2F7A45",
-      "paper": "#EFEDE4",
+      "paper": "#EEEDE6",
       "ink": "#191A16",
-      "muted": "#5E6157",
+      "muted": "#6B6D64",
       "related": [
         {
           "slug": "guns-germs-and-steel",
@@ -258,10 +258,10 @@
       "tag": "Epistemology",
       "added": "2026-07-31",
       "blurb": "An evolutionary approach: the solution to induction, the three worlds, and the source of Deutsch's epistemology.",
-      "accent": "#3B4E9B",
-      "paper": "#EBECE9",
-      "ink": "#16171A",
-      "muted": "#5F6165",
+      "accent": "#A8661A",
+      "paper": "#EFEEEA",
+      "ink": "#17181C",
+      "muted": "#6A6C72",
       "related": [
         {
           "slug": "the-beginning-of-infinity",
@@ -287,10 +287,10 @@
       "tag": "12 books",
       "added": "2026-07-31",
       "blurb": "Twelve books of notes a Roman emperor wrote to himself, mostly on campaign, arguing with his own worst impulses.",
-      "accent": "#6D4A6E",
-      "paper": "#E8E6E1",
-      "ink": "#1B1A1C",
-      "muted": "#64625F",
+      "accent": "#5B2A6E",
+      "paper": "#EEEDF0",
+      "ink": "#1B1A21",
+      "muted": "#6D6A75",
       "related": [
         {
           "slug": "livy-history-of-rome",

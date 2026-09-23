@@ -2,61 +2,295 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Objective Knowledge — Karl Popper, 1972</title>
-<meta name="description" content="An illustrated summary of Karl Popper's Objective Knowledge: An Evolutionary Approach — the solution to induction, the three worlds, and the source of David Deutsch's epistemology.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Objective Knowledge — Karl Popper</title>
+<meta name="description" content="A chapter-by-chapter summary of Karl Popper's Objective Knowledge: the solution to the problem of induction, falsifiability, World 3, the aim of science, clouds and clocks, evolution, Tarski's truth, and the bucket and the searchlight.">
+<script>try{var t=localStorage.getItem('civ-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Epilogue:wght@400;500;600;700;800&display=swap">
 <style>
 /* ------------------------------------------------------------
-   PALETTE — drawing paper, graphite, indigo, rust, teal
+   PALETTE: plain paper, ink, and one searchlight amber for what a theory lights
+   up. Epilogue for headings and labels, EB Garamond for reading.
    ------------------------------------------------------------ */
 :root {
-  --plate:    #EBECE9;
-  --plate-2:  #F5F6F3;
-  --plate-3:  #DEDFDB;
-  --ink:      #16171A;
-  --graphite: #5F6165;
-  --hair:     #C5C7C2;
-  --accent:   #3B4E9B;
-  --book-toc-accent: #3B4E9B;   /* indigo — conjecture   */
-  --accent-w: #DEE3F2;
-  --oxide:    #B4531F;   /* rust — refutation     */
-  --ochre:    #7A6A2C;
-  --cool:     #24756B;   /* teal — world 3        */
-
-  --display: "Avenir Next", "Avenir", "Futura", "Helvetica Neue", ui-sans-serif, sans-serif;
-  --body:    "Charter", "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
-  --label:   "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+  color-scheme: light;
+  --paper: #EFEEEA;
+  --paper-2: #E4E3DD;
+  --surface: #F8F7F4;
+  --ink: #17181C;
+  --ink-2: #41434A;
+  --ink-3: #6A6C72;
+  --rule: #CFCEC7;
+  --rule-strong: #A4A39C;
+  --accent: #A8661A;
+  --accent-2: #2C5D8A;
+  --display: "Epilogue", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --body: "EB Garamond", Garamond, "Iowan Old Style", Georgia, serif;
+  --label: "Epilogue", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --body-size: 1.2rem;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --plate: #131417; --plate-2: #1B1C20; --plate-3: #0E0F11;
-    --ink: #E3E4E1; --graphite: #91938F; --hair: #32343A;
-    --accent: #8298E4;
-  --book-toc-accent: #8298E4; --accent-w: #1B2340;
-    --oxide: #E08A55; --ochre: #C0AE5A; --cool: #58B4A8;
     color-scheme: dark;
+  --paper: #111215;
+  --paper-2: #18191D;
+  --surface: #1C1D22;
+  --ink: #E8E7E2;
+  --ink-2: #BCBBB5;
+  --ink-3: #8F8F8A;
+  --rule: #2B2C31;
+  --rule-strong: #46474D;
+  --accent: #EDB36A;
+  --accent-2: #8FB8E0;
   }
 }
 :root[data-theme="dark"] {
-  --plate: #131417; --plate-2: #1B1C20; --plate-3: #0E0F11;
-  --ink: #E3E4E1; --graphite: #91938F; --hair: #32343A;
-  --accent: #8298E4;
-  --book-toc-accent: #8298E4; --accent-w: #1B2340;
-  --oxide: #E08A55; --ochre: #C0AE5A; --cool: #58B4A8;
   color-scheme: dark;
+  --paper: #111215;
+  --paper-2: #18191D;
+  --surface: #1C1D22;
+  --ink: #E8E7E2;
+  --ink-2: #BCBBB5;
+  --ink-3: #8F8F8A;
+  --rule: #2B2C31;
+  --rule-strong: #46474D;
+  --accent: #EDB36A;
+  --accent-2: #8FB8E0;
 }
-@media print {
-  :root {
-    --plate: #EBECE9; --plate-2: #F5F6F3; --plate-3: #DEDFDB;
-    --ink: #16171A; --graphite: #5F6165; --hair: #C5C7C2;
-    --accent: #3B4E9B;
-  --book-toc-accent: #3B4E9B; --accent-w: #DEE3F2;
-    --oxide: #B4531F; --ochre: #7A6A2C; --cool: #24756B;
-  }
+
+* { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: var(--body-size, 1.12rem); line-height: 1.62; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+cite { font-style: italic; }
+[hidden] { display: none !important; }
+.wrap { max-width: 1200px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 44px); }
+.kicker { font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; }
+.home-link { color: var(--ink-2); text-decoration: none; }
+.home-link:hover { color: var(--ink); text-decoration: underline; }
+
+.hero { border-bottom: 1px solid var(--rule); }
+.hero-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 60px); align-items: center; padding-block: clamp(48px, 8vw, 96px) clamp(40px, 6vw, 68px); }
+.eyebrow { font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(3rem, 8vw, 5.6rem); line-height: .95; letter-spacing: -.015em; margin: 20px 0 0; text-wrap: balance; }
+.subtitle { margin: 12px 0 0; font-family: var(--body); font-style: italic; font-size: clamp(1.15rem, 2.2vw, 1.45rem); color: var(--ink-2); max-width: 32ch; }
+.byline { font-family: var(--label); font-weight: 500; font-size: .82rem; letter-spacing: .08em; color: var(--ink-2); margin: 16px 0 0; }
+.thesis { margin: 24px 0 0; padding: 14px 0 14px 18px; border-left: 3px solid var(--accent); max-width: 40ch; }
+.thesis p { margin: 0; font-family: var(--display); font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.28; }
+.thesis span { display: block; margin-top: 8px; font-family: var(--label); font-size: .74rem; color: var(--ink-3); }
+.breath { margin-top: 26px; max-width: 62ch; }
+.breath p:last-child { font-size: 1.1em; line-height: 1.62; color: var(--ink-2); margin: 0; }
+.facts { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 14px 36px; margin: 30px 0 0; padding-top: 20px; border-top: 1px solid var(--rule); }
+.facts dt { font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.facts dd { margin: 4px 0 0; font-family: var(--display); font-weight: 600; font-size: 1.22rem; }
+.hero-fig { margin: 0; }
+.hero-fig svg, .hero-fig canvas { display: block; width: 100%; height: auto; }
+.hero-fig figcaption { font-family: var(--label); font-size: .78rem; line-height: 1.5; color: var(--ink-3); margin-top: 10px; }
+
+.layout { display: grid; grid-template-columns: 216px minmax(0, 1fr); gap: clamp(32px, 5vw, 76px); padding-block: 44px 96px; }
+.content { min-width: 0; max-width: 780px; }
+.content p { max-width: 66ch; }
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 22px); align-self: start; max-height: calc(100vh - 44px); overflow-y: auto; scrollbar-width: thin; font-family: var(--label); font-size: .8rem; padding: 4px 4px 12px 0; }
+.rail ol { list-style: none; margin: 0; padding: 0 0 0 16px; position: relative; }
+.rail ol::before { content: ""; position: absolute; left: 3px; top: 8px; bottom: 8px; width: 1px; background: var(--rule-strong); }
+.rail li.grp { margin: 16px 0 4px -16px; font-weight: 600; font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); background: var(--paper); position: relative; padding-left: 16px; }
+.rail a { display: flex; gap: 6px; padding: 3px 0; color: var(--ink-3); text-decoration: none; position: relative; line-height: 1.35; }
+.rail a::before { content: ""; position: absolute; left: -16px; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1px solid var(--rule-strong); }
+.rail .ch a::before { border-color: var(--accent); }
+.rail a:hover { color: var(--ink); }
+.rail a.is-active { color: var(--ink); }
+.rail a.is-active::before { background: var(--accent); border-color: var(--accent); }
+.rail .n { min-width: 2em; opacity: .75; }
+
+.chrome { position: fixed; z-index: 40; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: calc(env(safe-area-inset-top, 0px) + 14px) 14px 0; pointer-events: none; }
+.chrome > * { pointer-events: auto; }
+.chrome__end { display: flex; gap: 6px; flex: none; }
+.chrome__start { display: flex; gap: 6px; min-width: 0; flex: 0 1 auto; }
+.chip { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; font-family: var(--label); font-weight: 600; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; white-space: nowrap; padding: 7px 11px; border: 1px solid var(--rule); border-radius: 3px; cursor: pointer; background: color-mix(in srgb, var(--paper) 88%, transparent); color: var(--ink-2); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.chip:hover { color: var(--ink); border-color: var(--rule-strong); }
+.chip--back { flex: none; }
+.chip--back span[aria-hidden] { font-size: 1.05rem; line-height: 1; letter-spacing: 0; }
+.chip--aa { font-family: var(--display); font-size: 1.02rem; font-weight: 700; letter-spacing: 0; text-transform: none; }
+.chip--toc { display: none; min-width: 0; overflow: hidden; }
+.chip--toc svg { width: 15px; height: 15px; flex: none; }
+.chip--toc .where { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-family: var(--body); font-weight: 400; font-size: .92rem; letter-spacing: 0; text-transform: none; opacity: .82; }
+.chip--toc .where:empty { display: none; }
+.toc-backdrop { position: fixed; inset: 0; z-index: 38; background: rgba(12, 12, 12, .45); }
+.toc-sheet { position: fixed; z-index: 39; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 53px); max-height: min(76vh, 680px); overflow-y: auto; overscroll-behavior: contain; background: var(--surface); color: var(--ink); border-bottom: 1px solid var(--rule-strong); border-radius: 0 0 14px 14px; padding: 0 22px 18px; box-shadow: 0 14px 34px rgba(12, 12, 12, .2); }
+.toc-sheet__head { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 12px 0 10px; margin-bottom: 4px; background: var(--surface); border-bottom: 1px solid var(--rule); font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.toc-sheet__close { font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--ink-2); cursor: pointer; background: none; border: 1px solid var(--rule-strong); border-radius: 3px; padding: 9px 13px; }
+.toc-sheet ol { list-style: none; margin: 0; padding: 0 0 0 18px; position: relative; }
+.toc-sheet ol::before { content: ""; position: absolute; left: 4px; top: 14px; bottom: 14px; width: 1px; background: var(--rule-strong); }
+.toc-sheet li.grp { position: relative; margin: 14px 0 0 -18px; padding: 6px 0 2px 18px; background: var(--surface); font-family: var(--label); font-weight: 600; font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.toc-sheet a { position: relative; display: flex; align-items: baseline; gap: 10px; padding: 9px 0; min-height: 42px; color: var(--ink-2); text-decoration: none; font-size: 1.04rem; line-height: 1.35; }
+.toc-sheet a::before { content: ""; position: absolute; left: -18px; top: 1.02em; width: 9px; height: 9px; border-radius: 50%; background: var(--surface); border: 1px solid var(--rule-strong); }
+.toc-sheet .ch a::before { border-color: var(--accent); }
+.toc-sheet .n { min-width: 2em; font-family: var(--label); font-size: .8rem; color: var(--ink-3); }
+.toc-sheet a.is-active { color: var(--ink); font-weight: 600; }
+.toc-sheet a.is-active::before { background: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 980px) {
+  .layout { grid-template-columns: minmax(0, 1fr); padding-block: 32px 72px; }
+  .rail { display: none; }
+  .chrome { pointer-events: auto; padding: calc(env(safe-area-inset-top, 0px) + 8px) 12px 8px; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+  .chip { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .chip--back .back-label { display: none; }
+  .chip--toc { display: inline-flex; background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .chip--toc:hover { color: var(--paper); border-color: var(--ink); }
+  .hero-inner { padding-block-start: 92px; }
+  html section, html article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 70px); }
 }
+
+section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px); }
+.sec { padding-block: 8px 52px; }
+.sec h2 { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 4.4vw, 2.8rem); line-height: 1.04; margin: 0 0 18px; text-wrap: balance; }
+.sec > p { margin: 0 0 16px; }
+.points { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+.points li { position: relative; padding-left: 22px; }
+.points li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.points strong { font-weight: 600; }
+.line { margin: 18px 0 6px !important; padding: 12px 0 12px 18px; border-left: 3px solid var(--accent-2, var(--accent)); font-family: var(--display); font-style: italic; font-size: 1.3rem; line-height: 1.35; color: var(--ink); }
+.line span { display: block; margin-top: 6px; font-family: var(--label); font-style: normal; font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+
+.ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 12px; }
+.idea { border-top: 1px solid var(--rule-strong); padding: 16px 0 26px; }
+.idea .tag { font-family: var(--label); font-weight: 600; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0; }
+.idea h3 { font-family: var(--display); font-weight: 700; font-size: 1.3rem; line-height: 1.12; margin: 6px 0 8px; text-wrap: balance; }
+.idea p:last-child { margin: 0; font-size: .98em; color: var(--ink-2); line-height: 1.55; }
+
+.part { margin-top: 40px; padding: 40px 0 6px; border-top: 3px solid var(--ink); }
+.part-num { font-family: var(--label); font-weight: 600; font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0; }
+.part h2 { font-family: var(--display); font-weight: 700; font-size: clamp(2.2rem, 5.4vw, 3.3rem); line-height: 1; margin: 6px 0 14px; text-wrap: balance; }
+.part-lede { font-size: 1.06em; color: var(--ink-2); margin: 0 0 8px; }
+.chapter { padding: 32px 0 8px; border-top: 1px solid var(--rule); margin-top: 26px; }
+.part + .chapter { border-top: 0; margin-top: 0; }
+.ch-label { font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.chapter h3 { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 3.2vw, 2.05rem); line-height: 1.08; margin: 8px 0 10px; text-wrap: balance; }
+.gist { font-style: italic; font-size: 1.1em; color: var(--ink-2); margin: 0 0 14px; }
+
+.fig { margin: 30px 0 10px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: clamp(14px, 3vw, 24px); }
+.fig-title { font-family: var(--label); font-weight: 600; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+.fig figcaption { font-size: .95em; color: var(--ink-2); margin-top: 14px; line-height: 1.5; }
+.fig-scroll { overflow-x: auto; }
+.fig-scroll svg { display: block; width: 100%; height: auto; }
+.fig svg.free { display: block; width: 100%; height: auto; }
+.v-axis { stroke: var(--rule-strong); stroke-width: 1; fill: none; }
+.v-guide { stroke: var(--rule-strong); stroke-width: 1; stroke-dasharray: 3 4; fill: none; }
+.v-a { fill: var(--accent); }
+.v-b { fill: var(--accent-2, var(--ink-3)); }
+.v-faint { fill: var(--paper-2); stroke: var(--rule-strong); stroke-width: 1; }
+.v-line { fill: none; stroke: var(--accent); stroke-width: 2.2; }
+.v-line-b { fill: none; stroke: var(--accent-2, var(--ink-3)); stroke-width: 2.2; }
+.v-lab { fill: var(--ink); font: 600 13px var(--label); }
+.v-sub { fill: var(--ink-3); font: 12.5px var(--label); }
+.v-in { fill: var(--surface); font: 600 13px var(--label); }
+.v-tick { fill: var(--ink-3); font: 12.5px var(--label); font-variant-numeric: tabular-nums; }
+.v-num { fill: var(--ink); font: 600 12.5px var(--label); font-variant-numeric: tabular-nums; }
+
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cards > div { background: var(--surface); padding: 14px 16px 16px; }
+.cards .k { font-family: var(--label); font-weight: 600; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0; }
+.cards h4 { font-family: var(--display); font-weight: 700; font-size: 1.18rem; margin: 6px 0 6px; line-height: 1.12; }
+.cards p { margin: 0; font-size: .94em; color: var(--ink-2); line-height: 1.5; }
+.fence { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid var(--ink); }
+.fence > div { padding: 16px 18px 18px 0; }
+.fence > div + div { padding: 16px 0 18px 18px; border-left: 2px dashed var(--rule-strong); }
+.fence .k { font-family: var(--label); font-weight: 600; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.fence h4 { font-family: var(--display); font-weight: 700; font-size: 1.35rem; margin: 6px 0 10px; line-height: 1.08; }
+.fence > div:first-child h4 { color: var(--accent); }
+.fence > div + div h4 { color: var(--accent-2, var(--ink-2)); }
+.fence dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; margin: 0; font-size: .95em; }
+.fence dt { font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); padding-top: .3em; }
+.fence dd { margin: 0; color: var(--ink-2); line-height: 1.45; }
+.table-wrap { overflow-x: auto; margin: 22px 0 4px; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); }
+.fig .table-wrap { margin: 0; }
+table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: .95em; line-height: 1.5; }
+th, td { padding: 12px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+thead th { font-family: var(--label); font-weight: 600; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
+tbody th { font-family: var(--display); font-weight: 700; font-size: 1.02rem; width: 22%; }
+tbody td { color: var(--ink-2); }
+td.num, th.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.debate { padding: 16px 0 18px; border-top: 1px solid var(--rule); }
+.debate h3 { font-family: var(--display); font-weight: 700; font-size: 1.24rem; margin: 0 0 6px; }
+.debate p { margin: 0; color: var(--ink-2); font-size: 1em; }
+.gloss { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); margin: 20px 0 0; }
+.gloss dt, .gloss dd { padding: 11px 0; border-top: 1px solid var(--rule); }
+.gloss dt { font-family: var(--display); font-weight: 700; font-size: 1.04rem; padding-right: 20px; line-height: 1.3; }
+.gloss dd { margin: 0; color: var(--ink-2); font-size: .98em; line-height: 1.5; }
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 14px 0 0; display: grid; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-top: 1px solid var(--rule); }
+.steps li::before { content: counter(step); font-family: var(--display); font-weight: 700; font-size: 1.8rem; line-height: 1; color: var(--accent); }
+.steps .phase { font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); margin: 2px 0 0; }
+.steps p { margin: 4px 0 0; font-size: 1em; color: var(--ink-2); }
+/* A loop drawn in HTML so it reflows at any width: steps run down, the rail on the left carries it back to the top. */
+.cycle { list-style: none; margin: 0; padding: 0 0 0 36px; max-width: 640px; position: relative; display: grid; gap: 24px; }
+.cycle::before { content: ""; position: absolute; left: 8px; top: 22px; bottom: 22px; width: 20px; border: 2px solid var(--accent); border-right: 0; border-radius: 12px 0 0 12px; }
+.cycle::after { content: ""; position: absolute; left: 24px; top: 16px; border: 7px solid transparent; border-left: 9px solid var(--accent); border-right: 0; }
+.cycle li { position: relative; background: var(--paper); border: 1px solid var(--rule-strong); border-radius: 8px; padding: 10px 14px 11px; }
+.cycle li + li::before { content: ""; position: absolute; left: 50%; top: -20px; height: 14px; border-left: 2px solid var(--accent); }
+.cycle li + li::after { content: ""; position: absolute; left: calc(50% - 5px); top: -9px; border: 5px solid transparent; border-top: 7px solid var(--accent); border-bottom: 0; }
+.cycle b { display: block; font-family: var(--display); font-size: 1.08rem; line-height: 1.2; color: var(--ink); }
+.cycle span { display: block; margin-top: 3px; font-size: .92em; line-height: 1.45; color: var(--ink-2); }
+.cycle-note { margin: 14px 0 0 36px; font-family: var(--label); font-size: .8rem; color: var(--ink-3); }
+/* Horizontal bars in HTML: label above, value below, so nothing shrinks on a phone. */
+.hbars { display: grid; gap: 18px; }
+.hbar p { margin: 0; }
+.hbar__lab { font-family: var(--label); font-weight: 600; font-size: .92rem; color: var(--ink); margin-bottom: 6px !important; }
+.hbar__track { height: 26px; background: var(--paper-2); border-radius: 3px; overflow: hidden; }
+.hbar__fill { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.hbar__fill.b { background: var(--accent-2, var(--ink-3)); }
+.hbar__val { margin-top: 5px !important; font-family: var(--label); font-size: .88rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.hbar__val b { color: var(--ink); font-weight: 600; }
+.books { list-style: none; padding: 0; margin: 14px 0 0; display: grid; }
+.books li { padding: 11px 0; border-top: 1px solid var(--rule); font-size: 1em; color: var(--ink-2); }
+.books cite { color: var(--ink); }
+.foot { border-top: 1px solid var(--rule); padding-block: 26px 40px; font-family: var(--label); font-size: .78rem; color: var(--ink-3); line-height: 1.6; }
+.foot p { margin: 0; max-width: 90ch; }
+
+@media (max-width: 760px) {
+  body { font-size: calc(var(--body-size, 1.12rem) * .95); }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .hero-fig { max-width: 460px; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+  .ideas, .gloss, .cards, .cards.three { grid-template-columns: minmax(0, 1fr); }
+  .gloss dd { border-top: 0; padding-top: 0; }
+  .fence { grid-template-columns: minmax(0, 1fr); }
+  .fence > div + div { padding: 16px 0 18px; border-left: 0; border-top: 2px dashed var(--rule-strong); }
+}
+
+/* ---------- this book ---------- */
+
+.hero h1 { font-weight: 800; font-size: clamp(3rem, 8vw, 5.4rem); letter-spacing: -.03em; line-height: .95; }
+.sec h2, .part h2 { font-weight: 800; letter-spacing: -.02em; }
+.chapter h3 { font-weight: 700; letter-spacing: -.015em; font-size: clamp(1.45rem, 3vw, 1.85rem); }
+.idea h3, .cards h4, .fence h4 { letter-spacing: -.01em; }
+.thesis p { font-family: var(--body); font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
+.bs-panel { fill: var(--ink); }
+.bs-dim { fill: var(--paper); opacity: .22; }
+.bs-hit { fill: var(--accent); }
+.bs-beam { fill: var(--accent); opacity: .22; }
+.bs-line { stroke: var(--paper); stroke-width: 2; fill: none; opacity: .85; }
+.bs-t { fill: var(--paper); font: 700 13.5px var(--label); letter-spacing: .12em; }
+.bs-s { fill: var(--paper); opacity: .78; font: 13px var(--label); }
+.schema { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 6px 0 4px; }
+.schema .s { padding: 12px 16px; border: 1.5px solid var(--ink); background: var(--surface); font-family: var(--display); font-weight: 700; font-size: 1.1rem; }
+.schema .s small { display: block; font-family: var(--label); font-weight: 500; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-top: 2px; }
+.schema .s.p2 { border-color: var(--accent); color: var(--accent); }
+.schema .arr { font-family: var(--label); color: var(--ink-3); font-size: 1.2rem; }
+.worlds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.worlds > div { background: var(--surface); padding: 14px 16px 16px; }
+.worlds .w { font-family: var(--display); font-weight: 800; font-size: 2rem; line-height: 1; color: var(--ink-3); }
+.worlds > div:last-child .w { color: var(--accent); }
+.worlds h4 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; margin: 6px 0 6px; }
+.worlds p { margin: 0; font-size: .95em; color: var(--ink-2); line-height: 1.45; }
+@media (max-width: 760px) { .worlds { grid-template-columns: minmax(0, 1fr); } }
+
 </style>
-<link rel="stylesheet" href="civ-plate.css">
-<link rel="stylesheet" href="book-toc.css">
 <!-- link-preview:start — generated by tools/sync.py -->
 <link rel="canonical" href="https://book-summaries-umber.vercel.app/popper-objective-knowledge.html">
 <meta property="og:type" content="article">
@@ -78,1547 +312,489 @@
 </head>
 <body>
 
-<button class="toggle" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+<div class="chrome">
+  <div class="chrome__start">
+    <a class="chip chip--back" href="index.html" aria-label="All summaries"><span aria-hidden="true">←</span><span class="back-label">All summaries</span></a>
+    <button class="chip chip--toc" id="tocOpen" type="button" aria-controls="tocSheet" aria-expanded="false">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span>Contents</span><span class="where"></span>
+    </button>
+  </div>
+  <div class="chrome__end">
+    <a class="chip chip--aa" href="settings.html" title="Text size" aria-label="Text size settings">Aa</a>
+    <button class="chip" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+  </div>
+</div>
+<div class="toc-backdrop" id="tocBackdrop" hidden></div>
+<div class="toc-sheet" id="tocSheet" role="dialog" aria-modal="true" aria-label="Contents" hidden>
+  <div class="toc-sheet__head"><span>Contents</span><button class="toc-sheet__close" id="tocClose" type="button">Close</button></div>
+</div>
 
-<nav class="rail" aria-label="Sections">
-  <a href="#induction" data-rail="induction"><span class="bar"></span><span class="num">Induction</span></a>
-  <a href="#schema"    data-rail="schema"><span class="bar"></span><span class="num">The schema</span></a>
-  <a href="#worlds"    data-rail="worlds"><span class="bar"></span><span class="num">Three worlds</span></a>
-  <a href="#aim"       data-rail="aim"><span class="bar"></span><span class="num">Aim of science</span></a>
-  <a href="#evolution" data-rail="evolution"><span class="bar"></span><span class="num">Evolution</span></a>
-  <a href="#deutsch"   data-rail="deutsch"><span class="bar"></span><span class="num">→ Deutsch</span></a>
-  <a href="#afterlife" data-rail="afterlife"><span class="bar"></span><span class="num">Afterlife</span></a>
-  <a href="#caveats"   data-rail="caveats"><span class="bar"></span><span class="num">Objections</span></a>
-</nav>
-
-<!-- ==========================================================
-     HERO
-     ========================================================== -->
-<header class="hero">
-  <svg class="hero__field" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
-    <g fill="none" stroke="currentColor" stroke-width="1">
-      <path d="M40 380 L 130 260 L 220 320 L 310 150 L 400 240 L 490 90 L 580 200 L 670 70 L 760 190 L 850 50 L 940 170 L 1030 40 L 1120 150"/>
-      <path d="M40 400 L 130 300 L 220 350 L 310 210 L 400 290 L 490 160 L 580 260 L 670 140 L 760 250 L 850 120 L 940 230 L 1030 110 L 1120 210"/>
-    </g>
-    <g stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 7" opacity="0.8">
-      <path d="M0 60 H1200"/><path d="M0 130 H1200"/><path d="M0 200 H1200"/>
-      <path d="M0 270 H1200"/><path d="M0 340 H1200"/>
-    </g>
-    <g fill="currentColor">
-      <circle cx="310" cy="150" r="4"/><circle cx="490" cy="90" r="4"/><circle cx="670" cy="70" r="4"/>
-      <circle cx="850" cy="50" r="4"/><circle cx="1030" cy="40" r="4"/>
-    </g>
-  </svg>
-
-  <div class="hero__inner">
-    <div class="hero__meta">
-      <p class="eyebrow">Karl Popper · 1902–1994</p>
-      <p class="eyebrow">Clarendon Press · 1972</p>
-      <p class="eyebrow eyebrow--accent">An Evolutionary Approach</p>
+<header class="hero" id="overview">
+  <div class="wrap hero-inner">
+    <div>
+      <p class="eyebrow"><a class="home-link" href="index.html">← All summaries</a> · A reader’s summary</p>
+      <h1>Objective Knowledge</h1>
+      <p class="subtitle">An Evolutionary Approach</p>
+      <div class="thesis">
+        <p>“I think I have solved a major philosophical problem: the problem of induction.”</p>
+        <span>The opening of Chapter 1</span>
+      </div>
+      <p class="byline">Karl Popper · Clarendon Press · 1972</p>
+      <div class="breath">
+        <p class="kicker">The whole book in one breath</p>
+        <p>Popper’s solution to the problem of induction is not a better way to justify generalising from experience. It is the claim that we never generalise from experience at all. We guess, and then we try to destroy the guess. Knowledge grows from problems, through bold conjectures, by eliminating errors, to new and better problems, and the same cycle runs through evolution, perception and science. Observation never comes first: a theory or interest tells us what to look for, like a searchlight rather than a bucket. Once a guess is written down it becomes an objective thing, part of a “World 3” of theories and arguments that exists outside anyone’s head, where it can be criticised and allowed to die in our place. We can never be certain, but we can get closer to the truth.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Chapters</dt><dd>9 + appendix</dd></div>
+        <div><dt>Written</dt><dd>1965–71</dd></div>
+        <div><dt>Core move</dt><dd>Conjecture, refutation</dd></div>
+        <div><dt>Downstream</dt><dd>David Deutsch</dd></div>
+      </dl>
     </div>
-
-    <h1>Objective<br>Knowledge
-      <span class="sub">Nine essays arguing that knowledge is not a state of mind, that induction does not exist, and that we grow by killing our own guesses.</span>
-    </h1>
-
-    <div class="hero__rule" role="presentation"></div>
-
-    <p class="hero__thesis">
-      Popper opens chapter one with a sentence almost no philosopher would risk: <em>I think I have
-      solved a major philosophical problem: the problem of induction.</em> The solution is not a better
-      justification for generalising from experience. It is the claim that
-      <span class="accent">we never generalise from experience at all — we guess, and then we try to
-      destroy the guess.</span> Everything else in the book follows from taking that seriously: a theory
-      of mind, a theory of evolution, a theory of what science is for, and an account of knowledge as
-      something that exists outside anybody's head.
-    </p>
-
-    <dl class="facts">
-      <div><dt>Chapters</dt><dd>9 + appendix<span>papers, 1965–71</span></dd></div>
-      <div><dt>Core move</dt><dd>Conjecture<span>then refutation</span></dd></div>
-      <div><dt>New here</dt><dd>World 3<span>knowledge without a knower</span></dd></div>
-      <div><dt>Downstream</dt><dd>Deutsch<span>almost entirely</span></dd></div>
-    </dl>
+    <figure class="hero-fig">
+      <svg id="bucket" role="img" aria-label="Two theories of knowledge. The bucket: a mind passively filled by observations. The searchlight: a theory lights up the few observations that matter to it."></svg>
+      <figcaption>The book’s appendix in one picture. In the bucket theory, the mind is filled by whatever observations fall into it. In the searchlight theory, a question or theory comes first and lights up what is worth seeing. Our drawing.</figcaption>
+    </figure>
   </div>
 </header>
 
-<main class="flow">
-  <!-- ======================= THE MAN ======================= -->
-  <section class="movement" id="man" aria-labelledby="man-h">
-    <div class="movement__head">
-      <span class="roman">Context</span>
-      <h2 id="man-h">Where These Ideas Came From</h2>
-      <span class="gloss">A cabinetmaker's apprentice from Vienna who spent seventy years attacking certainty.</span>
-    </div>
-
-    <p class="lede">
-      <em>Objective Knowledge</em> is a late book — Popper was seventy when it appeared, and the papers
-      it collects were written between 1965 and 1971. Nearly everything in it is a development of
-      positions he had held since his twenties, and those positions were formed in a specific place at a
-      specific moment: Vienna between the wars, where two things were simultaneously true. Einstein had
-      just overturned Newton, and half the intellectual class had adopted doctrines that seemed to
-      explain everything and could be refuted by nothing.
-    </p>
-
-    <p>
-      Popper was born in 1902 to a Viennese family of Jewish descent that had converted to Lutheranism —
-      a background that made him, in the 1930s, exactly the wrong sort of person to remain in Austria. His
-      father was a lawyer with a fourteen-thousand-volume library. Popper left school early, spent time as
-      a manual worker, and apprenticed himself to a cabinetmaker, an experience he described as more
-      instructive than most of his formal education; the master craftsman he worked under, Adalbert Pösch,
-      appears in his autobiography as a man who claimed to know everything and could not be told anything.
-      He qualified as a schoolteacher, took a doctorate in the psychology of thought in 1928, and taught
-      in Viennese secondary schools while writing the book that made his name.
-    </p>
-    <p>
-      The formative year was 1919, when he was seventeen. He had been briefly attracted to Marxism, and
-      broke with it after an incident in which unarmed young socialists — some of them his friends — were
-      shot by police during a demonstration the party had encouraged. What appalled him was not only the
-      deaths but the ease with which the theory absorbed them: the episode was immediately explained as a
-      necessary stage, confirming the doctrine rather than testing it. In the same year, Eddington's
-      eclipse expedition tested Einstein's prediction that starlight would bend by a specific amount near
-      the sun. <strong>Popper noticed that the two cases had opposite structures, and spent the rest of
-      his life on the difference.</strong>
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 01</b><span>Ninety-two years, and where this book sits</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 262" role="img" aria-label="A timeline of Karl Popper's life from 1902 to 1994 marking his major books, his emigration to New Zealand, his career at the London School of Economics, and the publication of Objective Knowledge in 1972.">
-          <!-- scale: x=50 at 1900, 7.24 px per year to 1995 -->
-          <path d="M50 120 H 738" class="s-graph" stroke-width="1.2"/>
-          <g class="s-hair" stroke-width="0.7" stroke-dasharray="2 5">
-            <path d="M50 44 V 150"/><path d="M195 44 V 150"/><path d="M340 44 V 150"/>
-            <path d="M485 44 V 150"/><path d="M630 44 V 150"/>
-          </g>
-          <g class="t t--xs t--mid">
-            <text x="50" y="166">1900</text><text x="195" y="166">1920</text><text x="340" y="166">1940</text>
-            <text x="485" y="166">1960</text><text x="630" y="166">1980</text>
-          </g>
-
-          <rect x="64" y="112" width="666" height="16" class="f-plate3"/>
-          <text x="70" y="124" class="t t--xs">1902 – 1994</text>
-
-          <!-- periods -->
-          <rect x="64" y="88" width="253" height="10" class="f-hair"/>
-          <text x="70" y="82" class="t t--xs">Vienna</text>
-          <rect x="317" y="88" width="65" height="10" class="f-och"/>
-          <text x="323" y="82" class="t t--xs t--och">New Zealand</text>
-          <rect x="382" y="88" width="348" height="10" class="f-acc"/>
-          <text x="388" y="82" class="t t--xs t--acc">London School of Economics</text>
-
-          <!-- events above -->
-          <g class="s-ink" stroke-width="1">
-            <path d="M188 112 V 66"/><path d="M296 112 V 52"/><path d="M375 112 V 66"/><path d="M376 112 V 66"/>
-          </g>
-          <g class="t t--xs">
-            <text x="120" y="60">1919 · the year that decided it</text>
-            <text x="222" y="46">1934 · Logik der Forschung — falsifiability, in German</text>
-            <text x="330" y="60">1937 · emigration</text>
-          </g>
-
-          <!-- books below -->
-          <g class="s-acc" stroke-width="1"><path d="M376 128 V 186"/><path d="M419 128 V 200"/><path d="M506 128 V 186"/><path d="M571 128 V 214"/><path d="M622 128 V 200"/></g>
-          <g class="t t--xs t--acc">
-            <text x="256" y="198">1945 · The Open Society and Its Enemies</text>
-            <text x="380" y="212">1957 · The Poverty of Historicism</text>
-            <text x="470" y="198">1963 · Conjectures and Refutations</text>
-            <text x="470" y="226">1972 · OBJECTIVE KNOWLEDGE</text>
-            <text x="740" y="212" class="t--end">1977 · The Self and Its Brain, with Eccles</text>
-          </g>
-          <circle cx="571" cy="128" r="4" class="f-acc"/>
-
-          <text x="50" y="36" class="t t--acc t--sm">The arguments are from the 1930s; the formulations here are from the 1960s</text>
-          <text x="50" y="252" class="t t--xs">Students and colleagues at the LSE included Imre Lakatos, Paul Feyerabend, John Watkins and David Miller — three of whom became critics.</text>
-        </svg>
-      </div>
-      <figcaption>The gap between 1934 and 1959 is a translation delay: <em>Logik der Forschung</em> appeared in English as <em>The Logic of Scientific Discovery</em> only twenty-five years after publication, which is why anglophone philosophy encountered Popper's ideas out of order and often through his critics.</figcaption>
-    </figure>
-
-    <h5 class="sub-h">The official opposition</h5>
-    <p>
-      Popper is routinely described as a member of the Vienna Circle, and he was not. The Circle — Moritz
-      Schlick, Rudolf Carnap, Otto Neurath and others — were logical positivists: they held that a
-      statement is meaningful only if it can be verified by experience, which made metaphysics not false
-      but literally nonsense. Popper knew them, published in their book series, and disagreed with them
-      about nearly everything of consequence. Neurath called him <em>die offizielle Opposition</em>, and
-      the label stuck because it was accurate.
-    </p>
-    <p>
-      The disagreement matters for reading this book, because Popper's targets are often positivist rather
-      than commonsensical. Where the positivists sought a criterion of <em>meaning</em>, Popper sought a
-      criterion of <em>scientific status</em> — and insisted that unscientific does not mean meaningless.
-      Metaphysical ideas, on his account, are frequently the seedbed of scientific ones: atomism was
-      metaphysics for two thousand years before it was physics. Where the positivists wanted to ground
-      science in observation, Popper argued that observation is theory-laden and cannot ground anything.
-      And where they hoped an inductive logic could assign probabilities to theories, he thought the whole
-      programme was chasing something that does not exist.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 02</b><span>Popper against the Circle, point by point</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 250" role="img" aria-label="A comparison of the logical positivist positions of the Vienna Circle with Popper's contrasting positions on meaning, the empirical basis, induction, metaphysics and the direction of inference.">
-          <rect x="20" y="20" width="352" height="30" class="f-plate3"/>
-          <rect x="388" y="20" width="352" height="30" class="f-acc" opacity="0.14"/>
-          <text x="196" y="40" class="t t--mid t--ink" style="font-size:12px">THE VIENNA CIRCLE</text>
-          <text x="564" y="40" class="t t--mid t--acc" style="font-size:12px">POPPER</text>
-
-          <g class="t t--sm t--mid t--ink" style="font-size:9px">
-            <text x="380" y="76">THE CRITERION</text><text x="380" y="112">SORTS</text><text x="380" y="148">THE BASIS</text>
-            <text x="380" y="184">METAPHYSICS</text><text x="380" y="220">INDUCTION</text>
-          </g>
-          <path d="M380 58 V 232" class="s-hair" stroke-width="1"/>
-          <g class="s-hair" stroke-width="0.7"><path d="M20 86 H740"/><path d="M20 122 H740"/><path d="M20 158 H740"/><path d="M20 194 H740"/></g>
-
-          <g class="t t--xs t--end">
-            <text x="340" y="76">Verifiability</text>
-            <text x="340" y="112">Meaningful from meaningless</text>
-            <text x="340" y="148">Protocol sentences — bedrock observation</text>
-            <text x="340" y="184">Nonsense, to be eliminated</text>
-            <text x="340" y="220">A logic of confirmation is achievable</text>
-          </g>
-          <g class="t t--xs">
-            <text x="420" y="76">Falsifiability</text>
-            <text x="420" y="112">Scientific from non-scientific</text>
-            <text x="420" y="148">Piles driven into a swamp; no bedrock exists</text>
-            <text x="420" y="184">Often meaningful, and the parent of science</text>
-            <text x="420" y="220">There is no such logic and none is needed</text>
-          </g>
-
-          <text x="20" y="238" class="t t--xs">The second row is the crucial one. Popper is not saying unscientific claims are worthless — he is saying they are a different kind of thing.</text>
-        </svg>
-      </div>
-      <figcaption>Popper later claimed to have "killed logical positivism," and while that overstates a single person's role, the verifiability criterion did collapse — partly because it could not survive its own test, being neither verifiable nor analytic. The demarcation problem he substituted for it is still live.</figcaption>
-    </figure>
-  </section>
-
-  <!-- ======================= DEMARCATION ======================= -->
-  <section class="movement" id="demarcation" aria-labelledby="dem-h">
-    <div class="movement__head">
-      <span class="roman">The famous criterion</span>
-      <h2 id="dem-h">What Makes a Theory Scientific</h2>
-      <span class="gloss">Not that it explains a lot. That it forbids a lot.</span>
-    </div>
-
-    <p class="lede">
-      This is the idea Popper is best known for and the one most often misstated, including by people who
-      invoke it approvingly. It is not a theory of meaning, not a theory of truth, and not a claim that
-      unfalsifiable statements are worthless. It is a proposal for where to draw one particular line:
-      <strong>a theory belongs to empirical science if there is some conceivable observation that would
-      count decisively against it, and its author can say in advance what that observation is.</strong>
-    </p>
-
-    <p>
-      The contrast that produced it is the one from 1919. Popper had been struck that Marx's theory of
-      history, Freud's psychoanalysis and Adler's individual psychology all shared a feature their
-      adherents regarded as their greatest strength: whatever happened, the theory accounted for it.
-      A man pushes a child into a river and a man risks his life to save a child from a river; Freudian
-      theory explains the first as repression and the second as sublimation, and Adlerian theory explains
-      the first as an attempt to prove himself and the second as an attempt to prove himself. Neither
-      could name a piece of human behaviour that would embarrass it. Popper's anecdote about Adler is
-      exact: when he reported a case that seemed not to fit, Adler analysed it in terms of inferiority
-      feelings without having seen the child, and when asked how he could be so certain, said "because of
-      my thousandfold experience" — to which Popper replied that with this new case it was presumably
-      thousand-and-one-fold.
-    </p>
-    <p>
-      Einstein's theory was in a different position entirely, and the difference was not that it was
-      better supported. It was that Einstein had specified in advance a result that would sink it. General
-      relativity predicted that light passing the sun would be deflected by 1.75 arcseconds — twice the
-      Newtonian figure. Had Eddington's plates shown the Newtonian value, or no deflection, the theory
-      would have been finished, and Einstein said as much. <strong>A theory that takes that risk is doing
-      something a theory that explains everything is not doing.</strong>
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 03</b><span>The test Popper actually proposes</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 298" role="img" aria-label="A decision diagram asking whether a theory forbids any observable outcome, whether that outcome can be specified in advance, and whether the theory is protected by ad hoc rescues.">
-          <defs><marker id="dq" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-graph"/></marker></defs>
-
-          <rect x="20" y="40" width="200" height="52" class="f-plate3"/>
-          <rect x="20" y="40" width="3" height="52" class="f-acc"/>
-          <text x="34" y="60" class="t t--acc t--sm">A theory arrives</text>
-          <text x="34" y="78" class="t t--xs">Does it forbid ANY observable</text>
-          <text x="34" y="90" class="t t--xs">state of affairs?</text>
-
-          <path d="M226 66 H 268" class="s-graph" stroke-width="1.3" marker-end="url(#dq)"/>
-          <rect x="274" y="40" width="200" height="52" class="f-plate3"/>
-          <rect x="274" y="40" width="3" height="52" class="f-acc"/>
-          <text x="288" y="60" class="t t--acc t--sm">If so —</text>
-          <text x="288" y="78" class="t t--xs">Can you say NOW, before the</text>
-          <text x="288" y="90" class="t t--xs">test, what would refute it?</text>
-
-          <path d="M480 66 H 522" class="s-graph" stroke-width="1.3" marker-end="url(#dq)"/>
-          <rect x="528" y="40" width="212" height="52" class="f-plate3"/>
-          <rect x="528" y="40" width="3" height="52" class="f-acc"/>
-          <text x="542" y="60" class="t t--acc t--sm">And if it survives —</text>
-          <text x="542" y="78" class="t t--xs">Was it rescued by a patch invented</text>
-          <text x="542" y="90" class="t t--xs">after the awkward result?</text>
-
-          <g class="s-ox" stroke-width="1.3" fill="none" marker-end="url(#dq)">
-            <path d="M120 96 V 132"/><path d="M374 96 V 132"/><path d="M634 96 V 132"/>
-          </g>
-          <g class="t t--xs t--ox t--mid"><text x="120" y="112">no</text><text x="374" y="112">no</text><text x="634" y="112">yes</text></g>
-
-          <rect x="20" y="136" width="720" height="42" class="f-plate3"/>
-          <rect x="20" y="136" width="3" height="42" class="f-ox"/>
-          <text x="36" y="154" class="t t--ox t--sm">NOT EMPIRICAL SCIENCE — which is not an insult</text>
-          <text x="36" y="170" class="t t--xs">Mathematics, logic, metaphysics, ethics and much of philosophy live here, and Popper regards several of them as indispensable.</text>
-
-          <rect x="20" y="196" width="720" height="42" class="f-accw"/>
-          <rect x="20" y="196" width="3" height="42" class="f-acc"/>
-          <text x="36" y="214" class="t t--acc t--sm">EMPIRICAL SCIENCE</text>
-          <text x="36" y="230" class="t t--xs">It has stuck its neck out, it has said where the axe would fall, and it has not moved the target after the fact.</text>
-
-          <text x="20" y="258" class="t t--xs">The third box is where most disputes actually happen. Any theory can be saved from any result by a sufficiently ingenious auxiliary</text>
-          <text x="20" y="272" class="t t--xs">hypothesis; what Popper forbids is not the modification but the modification that reduces testability instead of increasing it.</text>
-          <text x="20" y="286" class="t t--xs t--ox">This is a methodological rule — a decision about how to behave — not a logical theorem, and Popper says so.</text>
-        </svg>
-      </div>
-      <figcaption>The most common misuse of the criterion is to deploy it as a slur, as though "unfalsifiable" meant "rubbish." Popper's own view was the reverse: he thought the metaphysical doctrine of atomism, unfalsifiable for millennia, was one of the most fruitful ideas ever had, and he wrote a defence of Darwinism as a "metaphysical research programme" on precisely these grounds.</figcaption>
-    </figure>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 04</b><span>Degrees of falsifiability — a theory is as good as what it rules out</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 262" role="img" aria-label="Nested regions showing that a more precise and universal theory forbids a larger set of possible observations and is therefore more testable.">
-          <rect x="30" y="40" width="440" height="180" class="f-plate3"/>
-          <text x="250" y="234" class="t t--mid t--xs">everything that could conceivably be observed</text>
-
-          <rect x="60" y="62" width="380" height="136" class="f-none s-hair" stroke-width="1.2"/>
-          <text x="70" y="78" class="t t--xs">"The planets move somehow"</text>
-          <rect x="96" y="94" width="308" height="88" class="f-none s-graph" stroke-width="1.2"/>
-          <text x="106" y="110" class="t t--xs">"The planets move in closed curves"</text>
-          <rect x="136" y="124" width="228" height="46" class="f-none s-acc" stroke-width="1.6"/>
-          <text x="146" y="140" class="t t--xs t--acc">"In ellipses, with the sun at a focus"</text>
-          <rect x="176" y="148" width="148" height="16" class="f-acc"/>
-          <text x="250" y="160" class="t t--rev t--mid t--xs">…and sweeping equal areas</text>
-
-          <g class="s-ox" stroke-width="1.2" fill="none" marker-end="url(#dq2)">
-            <path d="M478 92 H 520"/><path d="M478 150 H 520"/>
-          </g>
-          <defs><marker id="dq2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-ox"/></marker></defs>
-
-          <text x="528" y="66" class="t t--acc t--sm">Reading the diagram</text>
-          <g class="t t--xs">
-            <text x="528" y="88">Each inner box is a stronger claim.</text>
-            <text x="528" y="102">The area OUTSIDE it — everything it</text>
-            <text x="528" y="116">forbids — grows as you go inward.</text>
-            <text x="528" y="140">More forbidden means more chances</text>
-            <text x="528" y="154">to be caught, which means more</text>
-            <text x="528" y="168">testable, which for Popper means</text>
-            <text x="528" y="182">better — and simultaneously less</text>
-            <text x="528" y="196">probable.</text>
-          </g>
-
-          <path d="M20 246 H 740" class="s-hair" stroke-width="1"/>
-          <text x="20" y="258" class="t t--xs">Simplicity, on this account, is not an aesthetic preference: a simpler law is one with fewer adjustable parameters, and therefore one that forbids more.</text>
-        </svg>
-      </div>
-      <figcaption>This is Popper's answer to the old puzzle of why scientists prefer simple theories. It is not that nature is simple or that simple theories are more likely true — it is that a simpler theory is easier to kill, and being easy to kill is the property that makes a theory worth having.</figcaption>
-    </figure>
-
-    <h5 class="sub-h">And nothing underneath</h5>
-    <p>
-      If theories are tested against observations, what are the observations tested against? Popper's
-      answer is the most vertiginous thing in his epistemology and the one that most clearly separates him
-      from the empiricists he is often lumped with. Observation statements — he calls them basic
-      statements — are themselves theory-laden, fallible, and accepted by a kind of convention among
-      investigators. They are not certain. They can be, and are, overturned. There is no floor.
-    </p>
-    <p class="pull">
-      "Science does not rest upon solid bedrock. The bold structure of its theories rises, as it were,
-      above a swamp. It is like a building erected on piles… we simply stop when we are satisfied that
-      the piles are firm enough to carry the structure, at least for the time being."<cite>The Logic of Scientific Discovery, §30 — the image recurs throughout Objective Knowledge</cite>
-    </p>
-    <p>
-      The consequence is that Popper's system has no foundations anywhere: not in observation, not in
-      reason, not in probability. What holds it up is not a base but a practice — the continual attempt to
-      knock it over. This is why he calls his position <em>critical rationalism</em> rather than
-      rationalism, and why he thinks the demand for justification, in epistemology as in politics, is the
-      root error rather than the goal.
-    </p>
-  </section>
-
-
-  <!-- ======================= INDUCTION ======================= -->
-  <section class="movement" id="induction" aria-labelledby="ind-h">
-    <div class="movement__head">
-      <span class="roman">Chapter 1</span>
-      <h2 id="ind-h">The Problem of Induction, and Its Dissolution</h2>
-      <span class="gloss">Hume was right, and it does not matter.</span>
-    </div>
-
-    <p class="lede">
-      Hume's problem: no number of observed instances can justify a universal law, because the inference
-      from "all observed A are B" to "all A are B" is not valid, and any attempt to justify it by
-      experience assumes the very principle in question. Hume accepted the logic and then explained our
-      confidence psychologically — as habit and custom. <strong>Popper accepts Hume's logic and rejects
-      the psychology.</strong> We do not form expectations by repetition; we bring expectations to
-      experience, and experience's only job is to knock them down.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 05</b><span>The asymmetry the whole book rests on</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 262" role="img" aria-label="A diagram contrasting verification, which no number of confirming instances achieves, with falsification, which a single counter-instance achieves.">
-          <defs><marker id="a1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-ox"/></marker></defs>
-
-          <text x="20" y="26" class="t t--acc t--sm">The claim: ALL SWANS ARE WHITE</text>
-          <path d="M20 34 H 740" class="s-ink" stroke-width="1.4"/>
-
-          <!-- verification row -->
-          <text x="20" y="60" class="t t--ink t--sm">Confirming instances</text>
-          <g class="f-hair">
-            <circle cx="200" cy="72" r="7"/><circle cx="226" cy="72" r="7"/><circle cx="252" cy="72" r="7"/><circle cx="278" cy="72" r="7"/>
-            <circle cx="304" cy="72" r="7"/><circle cx="330" cy="72" r="7"/><circle cx="356" cy="72" r="7"/><circle cx="382" cy="72" r="7"/>
-            <circle cx="408" cy="72" r="7"/><circle cx="434" cy="72" r="7"/><circle cx="460" cy="72" r="7"/><circle cx="486" cy="72" r="7"/>
-            <circle cx="512" cy="72" r="7"/><circle cx="538" cy="72" r="7"/><circle cx="564" cy="72" r="7"/><circle cx="590" cy="72" r="7"/>
-          </g>
-          <text x="606" y="76" class="t t--xs">… and a million more</text>
-          <text x="200" y="98" class="t t--xs">Every white swan you ever see leaves the claim exactly as uncertain as it was.</text>
-          <text x="200" y="112" class="t t--xs t--graph">Logical value of a confirming instance: none. There is no valid inference here.</text>
-
-          <path d="M20 132 H 740" class="s-hair" stroke-width="1"/>
-
-          <!-- falsification row -->
-          <text x="20" y="158" class="t t--ink t--sm">One counter-instance</text>
-          <circle cx="200" cy="170" r="9" class="f-ox"/>
-          <path d="M216 170 H 268" class="s-ox" stroke-width="1.6" marker-end="url(#a1)"/>
-          <rect x="276" y="152" width="200" height="36" class="f-plate3"/>
-          <rect x="276" y="152" width="3" height="36" class="f-ox"/>
-          <text x="290" y="168" class="t t--ox t--xs">MODUS TOLLENS</text>
-          <text x="290" y="182" class="t t--xs">If T then P.  Not-P.  Therefore not-T.</text>
-          <text x="492" y="170" class="t t--xs t--ox">A deductively valid inference — and the</text>
-          <text x="492" y="184" class="t t--xs t--ox">only one experience ever gives us.</text>
-
-          <rect x="20" y="208" width="720" height="46" class="f-accw"/>
-          <rect x="20" y="208" width="3" height="46" class="f-acc"/>
-          <text x="36" y="226" class="t t--acc t--sm">The consequence</text>
-          <text x="36" y="242" class="t t--xs">Since only refutation is logically available, science cannot be a method of proving things. It can only be a</text>
-          <text x="36" y="254" class="t t--xs">method of proposing things and attacking them. Induction is not unreliable — it is not a thing that happens.</text>
-        </svg>
-      </div>
-      <figcaption>The swan example is Popper's shorthand, not his argument. The argument is that the logical relation between a universal statement and a singular one is asymmetric: universals are not entailed by any number of singulars, but they are contradicted by one. Everything he builds stands on that asymmetry.</figcaption>
-    </figure>
-
-    <h5 class="sub-h">The problem, split into answerable pieces</h5>
-    <p>
-      Popper's actual method in chapter 1 is to refuse the question as usually posed and break it into
-      separate ones — some of which have a clean answer. The distinction between the third question and
-      the first is the one most readers miss, and it is where the whole dispute with his critics lives.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 06</b><span>Four questions, three answers</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 268" role="img" aria-label="A table of Popper's reformulated problems of induction — the logical problems L1 to L3 and the pragmatic problem — with his answer to each.">
-          <path d="M20 52 H 740" class="s-ink" stroke-width="1.4"/>
-          <g class="t t--sm t--ink" style="font-size:9px">
-            <text x="20" y="46">QUESTION</text><text x="470" y="46">POPPER'S ANSWER</text>
-          </g>
-          <g class="s-hair" stroke-width="0.7"><path d="M20 96 H740"/><path d="M20 140 H740"/><path d="M20 194 H740"/></g>
-
-          <rect x="20" y="196" width="720" height="58" class="f-plate3" opacity="0.55"/>
-          <g class="t t--xs t--acc"><text x="20" y="74">L1</text><text x="20" y="118">L2</text><text x="20" y="162">L3</text><text x="20" y="216">PP</text></g>
-          <g class="t t--xs">
-            <text x="52" y="74">Can a theory's TRUTH be justified by</text><text x="52" y="88">empirical reasons?</text>
-            <text x="52" y="118">Can a theory's FALSITY be justified by</text><text x="52" y="132">empirical reasons?</text>
-            <text x="52" y="162">Can a PREFERENCE for one theory over</text><text x="52" y="176">another be justified by empirical reasons?</text>
-            <text x="52" y="216">Which theory should I rely on for practical</text><text x="52" y="230">action — and why?</text>
-          </g>
-          <g class="t t--xs">
-            <text x="470" y="74" class="t--ox" style="font-size:12px">NO.</text><text x="512" y="74">And no probability</text>
-            <text x="470" y="88">calculus repairs it.</text>
-            <text x="470" y="118" class="t--cool" style="font-size:12px">YES.</text><text x="516" y="118">By modus tollens,</text>
-            <text x="470" y="132">assuming the test report holds.</text>
-            <text x="470" y="162" class="t--cool" style="font-size:12px">YES.</text><text x="516" y="162">Prefer the theory that</text>
-            <text x="470" y="176">has survived the severest tests so far.</text>
-            <text x="470" y="216">The best-tested one — because we</text>
-            <text x="470" y="230">know of nothing better, NOT because</text>
-            <text x="470" y="244">it is probably true.</text>
-          </g>
-        </svg>
-      </div>
-      <figcaption>Corroboration is a report on past performance, not a forecast. Popper insists it confers no probability of future truth — which is exactly what critics find unsatisfying, since we do in fact build bridges on well-corroborated theories. He would say: yes, and we have no guarantee, and pretending otherwise is what he is objecting to.</figcaption>
-    </figure>
-  </section>
-
-  <!-- ======================= THE SCHEMA ======================= -->
-  <section class="movement" id="schema" aria-labelledby="sch-h">
-    <div class="movement__head">
-      <span class="roman">Chapters 2 &amp; Appendix</span>
-      <h2 id="sch-h">The Engine, and the Mind That Runs It</h2>
-      <span class="gloss">One four-step loop, applied from the amoeba to general relativity.</span>
-    </div>
-
-    <p class="lede">
-      If knowledge does not come from experience, where does it come from? Popper's answer is that all
-      knowledge — biological, perceptual, scientific — is produced by the same cycle, and that the cycle
-      starts not with observation but with a <strong>problem</strong>. This four-term schema is the most
-      portable thing in the book, and the piece that later becomes the backbone of David Deutsch's work.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 07</b><span>The tetradic schema · P₁ → TT → EE → P₂</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 288" role="img" aria-label="The four-step cycle of problem, tentative theory, error elimination, and new problem, shown as a loop with multiple competing theories at the second step.">
-          <defs><marker id="s-ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-graph"/></marker>
-                <marker id="s-ox" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-ox"/></marker></defs>
-
-          <rect x="20" y="86" width="120" height="54" class="f-accw"/>
-          <rect x="20" y="86" width="3" height="54" class="f-acc"/>
-          <text x="34" y="108" class="t t--acc" style="font-size:14px">P₁</text>
-          <text x="34" y="124" class="t t--xs">A problem — something</text>
-          <text x="34" y="136" class="t t--xs">that does not fit</text>
-
-          <path d="M144 113 H 190" class="s-graph" stroke-width="1.3" marker-end="url(#s-ar)"/>
-
-          <g class="f-plate3">
-            <rect x="196" y="52" width="150" height="30"/><rect x="196" y="90" width="150" height="30"/>
-            <rect x="196" y="128" width="150" height="30"/><rect x="196" y="166" width="150" height="30"/>
-          </g>
-          <g class="f-acc"><rect x="196" y="52" width="3" height="30"/><rect x="196" y="90" width="3" height="30"/><rect x="196" y="128" width="3" height="30"/><rect x="196" y="166" width="3" height="30"/></g>
-          <g class="t t--xs t--ink">
-            <text x="210" y="71">TT₁ — a guess</text><text x="210" y="109">TT₂ — a rival guess</text>
-            <text x="210" y="147">TT₃ — another</text><text x="210" y="185">TT₄ — another still</text>
-          </g>
-          <text x="196" y="42" class="t t--acc t--sm">TENTATIVE THEORIES · invented, not derived</text>
-
-          <path d="M350 113 H 396" class="s-graph" stroke-width="1.3" marker-end="url(#s-ar)"/>
-
-          <rect x="402" y="52" width="150" height="144" class="f-plate3"/>
-          <rect x="402" y="52" width="3" height="144" class="f-ox"/>
-          <text x="416" y="76" class="t t--ox" style="font-size:13px">EE</text>
-          <text x="416" y="94" class="t t--xs">Error elimination:</text>
-          <text x="416" y="108" class="t t--xs">criticism, argument,</text>
-          <text x="416" y="122" class="t t--xs">and severe testing.</text>
-          <text x="416" y="146" class="t t--xs">Try hardest to kill</text>
-          <text x="416" y="160" class="t t--xs">the theory you like</text>
-          <text x="416" y="174" class="t t--xs">best.</text>
-          <g class="s-ox" stroke-width="1.4">
-            <path d="M356 67 L 398 67"/><path d="M356 143 L 398 143"/><path d="M356 181 L 398 181"/>
-          </g>
-          <g class="t t--ox" style="font-size:13px"><text x="366" y="60">✕</text><text x="366" y="136">✕</text><text x="366" y="174">✕</text></g>
-
-          <path d="M556 113 H 602" class="s-graph" stroke-width="1.3" marker-end="url(#s-ar)"/>
-          <rect x="608" y="86" width="130" height="54" class="f-accw"/>
-          <rect x="608" y="86" width="3" height="54" class="f-acc"/>
-          <text x="622" y="108" class="t t--acc" style="font-size:14px">P₂</text>
-          <text x="622" y="124" class="t t--xs">A new problem —</text>
-          <text x="622" y="136" class="t t--xs">deeper than the first</text>
-
-          <path d="M673 144 C 673 220, 80 220, 80 148" class="f-none s-graph" stroke-width="1.3" stroke-dasharray="5 4" marker-end="url(#s-ar)"/>
-          <text x="376" y="234" class="t t--mid t--xs">and the cycle runs again, from a better starting point</text>
-
-          <rect x="20" y="248" width="718" height="34" class="f-accw"/>
-          <rect x="20" y="248" width="3" height="34" class="f-acc"/>
-          <text x="36" y="264" class="t t--acc t--xs">The point most often missed</text>
-          <text x="36" y="277" class="t t--xs">P₂ is never the same as P₁. Progress is not measured by problems solved but by the quality of the problems you now have.</text>
-        </svg>
-      </div>
-      <figcaption>Note where observation enters: nowhere at the start. It appears only inside error elimination, as an instrument for killing theories. This inverts the textbook picture of science — observe, generalise, confirm — and it is the inversion Deutsch later restates as "theory always comes first."</figcaption>
-    </figure>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 08</b><span>Two theories of the mind · the bucket and the searchlight</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 262" role="img" aria-label="A comparison of the bucket theory of mind, in which sense data pour in and accumulate, with the searchlight theory, in which expectations select what is observed.">
-          <defs><marker id="b-ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-graph"/></marker></defs>
-
-          <text x="20" y="26" class="t t--graph" style="font-size:12px">THE BUCKET · classical empiricism</text>
-          <g class="s-graph" stroke-width="1.2" fill="none" marker-end="url(#b-ar)">
-            <path d="M60 44 V 78"/><path d="M110 44 V 78"/><path d="M160 44 V 78"/><path d="M210 44 V 78"/><path d="M260 44 V 78"/>
-          </g>
-          <text x="160" y="40" class="t t--mid t--xs">sensations arrive, unbidden</text>
-          <path d="M56 86 L 74 190 H 246 L 264 86" class="f-none s-graph" stroke-width="1.6"/>
-          <path d="M74 150 H 246" class="f-hair" stroke="none"/>
-          <rect x="78" y="150" width="164" height="38" class="f-hair"/>
-          <text x="160" y="174" class="t t--mid t--xs">what has accumulated</text>
-          <text x="20" y="214" class="t t--xs">Knowledge is what has poured in and settled. The mind starts empty</text>
-          <text x="20" y="228" class="t t--xs">and is filled by experience; generalisation happens by repetition.</text>
-          <text x="20" y="250" class="t t--xs t--ox">Popper: no such thing has ever been observed to happen.</text>
-
-          <path d="M380 16 V 250" class="s-hair" stroke-width="1"/>
-
-          <text x="404" y="26" class="t t--acc" style="font-size:12px">THE SEARCHLIGHT · Popper</text>
-          <circle cx="452" cy="150" r="20" class="f-accw"/>
-          <circle cx="452" cy="150" r="20" class="f-none s-acc" stroke-width="1.4"/>
-          <text x="452" y="154" class="t t--mid t--acc t--xs">theory</text>
-          <path d="M470 138 L 720 74 L 720 226 L 470 162 Z" class="f-acc" opacity="0.12"/>
-          <path d="M470 138 L 720 74" class="s-acc" stroke-width="1.2"/>
-          <path d="M470 162 L 720 226" class="s-acc" stroke-width="1.2"/>
-          <g class="f-acc"><circle cx="600" cy="120" r="4"/><circle cx="640" cy="160" r="4"/><circle cx="580" cy="180" r="4"/><circle cx="676" cy="112" r="4"/></g>
-          <g class="f-hair"><circle cx="530" cy="60" r="4"/><circle cx="700" cy="42" r="4"/><circle cx="520" cy="242" r="4"/><circle cx="620" cy="250" r="4"/></g>
-          <text x="588" y="98" class="t t--xs t--acc">what the theory makes visible</text>
-          <text x="404" y="214" class="t t--xs">The expectation comes first and decides what counts as data.</text>
-          <text x="404" y="228" class="t t--xs">There is no observation without a prior question — "observe!" is</text>
-          <text x="404" y="242" class="t t--xs">an unanswerable instruction until someone says what to observe.</text>
-        </svg>
-      </div>
-      <figcaption>The appendix in which this appears is the most readable thing Popper wrote, and it is where his epistemology touches ordinary experience. Every experiment is designed to answer a question; every instrument is built to detect something specific. The grey dots are not hidden — they are simply not being looked for.</figcaption>
-    </figure>
-  </section>
-
-  <!-- ======================= THREE WORLDS ======================= -->
-  <section class="movement" id="worlds" aria-labelledby="w-h">
-    <div class="movement__head">
-      <span class="roman">Chapters 3 &amp; 4</span>
-      <h2 id="w-h">Epistemology Without a Knowing Subject</h2>
-      <span class="gloss">The claim the book is named for, and the one philosophers still argue about.</span>
-    </div>
-
-    <p class="lede">
-      Almost all epistemology since Descartes has asked about the states of a knowing mind: what do
-      <em>I</em> believe, and am <em>I</em> justified? Popper says this is the wrong object of study.
-      The knowledge that matters — the content of a theory, the logical consequences it has whether or
-      not anyone has noticed them, the problem it leaves unsolved — <strong>is not a mental state and
-      does not depend on there being a mind that holds it.</strong>
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 09</b><span>The three worlds</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 300" role="img" aria-label="A diagram of Popper's three worlds — physical objects, mental states, and the objective contents of thought — with the interactions between them.">
-          <defs><marker id="w-ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-graph"/></marker></defs>
-
-          <rect x="20" y="46" width="216" height="150" class="f-plate3"/>
-          <rect x="20" y="46" width="216" height="4" class="f-graph"/>
-          <text x="34" y="72" class="t t--ink" style="font-size:14px">WORLD 1</text>
-          <text x="34" y="90" class="t t--xs">Physical objects and states</text>
-          <text x="34" y="116" class="t t--xs">Stones, stars, organisms,</text>
-          <text x="34" y="130" class="t t--xs">brains, forces, printed ink,</text>
-          <text x="34" y="144" class="t t--xs">the paper of a book.</text>
-          <text x="34" y="172" class="t t--xs t--graph">Everything physics studies.</text>
-
-          <rect x="272" y="46" width="216" height="150" class="f-plate3"/>
-          <rect x="272" y="46" width="216" height="4" class="f-ox"/>
-          <text x="286" y="72" class="t t--ink" style="font-size:14px">WORLD 2</text>
-          <text x="286" y="90" class="t t--xs">Mental states</text>
-          <text x="286" y="116" class="t t--xs">Beliefs, intentions,</text>
-          <text x="286" y="130" class="t t--xs">sensations, the experience</text>
-          <text x="286" y="144" class="t t--xs">of understanding something.</text>
-          <text x="286" y="172" class="t t--xs t--ox">Subjective. Private. Yours.</text>
-
-          <rect x="524" y="46" width="216" height="150" class="f-accw"/>
-          <rect x="524" y="46" width="216" height="4" class="f-cool"/>
-          <text x="538" y="72" class="t t--ink" style="font-size:14px">WORLD 3</text>
-          <text x="538" y="90" class="t t--xs">Objective contents of thought</text>
-          <text x="538" y="116" class="t t--xs">Theories, problems, arguments,</text>
-          <text x="538" y="130" class="t t--xs">proofs, the state of a debate —</text>
-          <text x="538" y="144" class="t t--xs">what a library contains as</text>
-          <text x="538" y="158" class="t t--xs">distinct from its paper.</text>
-          <text x="538" y="182" class="t t--xs t--cool">Man-made, and autonomous.</text>
-
-          <g class="s-graph" stroke-width="1.3" fill="none" marker-end="url(#w-ar)">
-            <path d="M240 106 H 268"/><path d="M268 136 H 240"/>
-            <path d="M492 106 H 520"/><path d="M520 136 H 492"/>
-          </g>
-          <text x="254" y="100" class="t t--mid t--xs">↔</text>
-          <text x="506" y="100" class="t t--mid t--xs">↔</text>
-
-          <path d="M632 200 C 632 232, 128 232, 128 200" class="f-none s-hair" stroke-width="1.4" stroke-dasharray="5 4"/>
-          <text x="380" y="248" class="t t--mid t--xs">World 3 reaches World 1 only through a mind that grasps it — and then builds the aircraft</text>
-
-          <rect x="20" y="258" width="720" height="36" class="f-plate3"/>
-          <rect x="20" y="258" width="3" height="36" class="f-cool"/>
-          <text x="36" y="274" class="t t--cool t--xs">Why this is not Plato</text>
-          <text x="36" y="288" class="t t--xs">Popper's World 3 is created by human beings and has a history. It is not eternal, not perfect, and not discovered in a heaven of forms.</text>
-        </svg>
-      </div>
-      <figcaption>The test case Popper offers: if all machines and all subjective knowledge were destroyed but the libraries survived, civilisation could restart. If the libraries were destroyed too, it could not. The difference between those two worlds is exactly what World 3 is.</figcaption>
-    </figure>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 10</b><span>Invented, and then discovered</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 240" role="img" aria-label="A diagram showing how the invented sequence of natural numbers generates unintended properties such as primes and unsolved conjectures, illustrating the autonomy of World 3.">
-          <defs><marker id="n-ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" class="f-cool"/></marker></defs>
-
-          <rect x="20" y="46" width="200" height="66" class="f-accw"/>
-          <rect x="20" y="46" width="3" height="66" class="f-acc"/>
-          <text x="34" y="68" class="t t--acc t--sm">WE INVENT</text>
-          <text x="34" y="86" class="t t--xs">The sequence of natural</text>
-          <text x="34" y="100" class="t t--xs">numbers. A human construction.</text>
-
-          <path d="M226 79 H 272" class="s-cool" stroke-width="1.4" marker-end="url(#n-ar)"/>
-
-          <rect x="278" y="30" width="220" height="98" class="f-plate3"/>
-          <rect x="278" y="30" width="3" height="98" class="f-cool"/>
-          <text x="292" y="52" class="t t--cool t--sm">AND THEN FIND</text>
-          <text x="292" y="70" class="t t--xs">Odd and even. Primes. Their</text>
-          <text x="292" y="84" class="t t--xs">infinity. Their distribution.</text>
-          <text x="292" y="98" class="t t--xs">Goldbach's conjecture, still</text>
-          <text x="292" y="112" class="t t--xs">unproved after three centuries.</text>
-
-          <path d="M504 79 H 550" class="s-cool" stroke-width="1.4" marker-end="url(#n-ar)"/>
-          <rect x="556" y="46" width="184" height="66" class="f-plate3"/>
-          <rect x="556" y="46" width="3" height="66" class="f-ox"/>
-          <text x="570" y="68" class="t t--ox t--sm">NONE OF WHICH</text>
-          <text x="570" y="86" class="t t--xs">we put there, chose, or can</text>
-          <text x="570" y="100" class="t t--xs">now vote to change.</text>
-
-          <path d="M20 150 H 740" class="s-hair" stroke-width="1"/>
-          <text x="20" y="172" class="t t--acc t--sm">This is the argument for World 3's autonomy, in one example</text>
-          <text x="20" y="192" class="t t--xs">A product of human activity acquires consequences its makers did not intend and cannot revoke. Those consequences are</text>
-          <text x="20" y="206" class="t t--xs">objectively there to be found, argued about, and got wrong. The same holds of a scientific theory: once stated, it has</text>
-          <text x="20" y="220" class="t t--xs">implications nobody has drawn, and those implications are what later scientists spend their careers discovering.</text>
-          <text x="20" y="236" class="t t--xs t--cool">Deutsch's version: abstractions are real because they have effects and cannot be reasoned away.</text>
-        </svg>
-      </div>
-      <figcaption>This is the passage that converts most readers, and it is worth sitting with. It gives a precise sense in which mathematics is both invented and discovered, without either Platonism or the claim that mathematics is merely a convention we could have chosen differently.</figcaption>
-    </figure>
-
-    <div class="claim claim--acc">
-      <b>The practical consequence</b>
-      If knowledge is a World 3 object, then the right question about a theory is never "how confident is
-      its author?" or "what are their credentials?" but "what does it say, what does it forbid, and where
-      does it break?" Popper thinks the entire tradition of asking after the <em>sources</em> of
-      knowledge — reason, sensation, authority, revelation — is a hangover from asking who should rule.
-      The better question is structural: how do we arrange things so that errors get found?
-    </div>
-  </section>
-
-  <!-- ======================= THREE VIEWS + TRUTH ======================= -->
-  <section class="movement" id="realism" aria-labelledby="re-h">
-    <div class="movement__head">
-      <span class="roman">Chapters 2, 5 &amp; 9</span>
-      <h2 id="re-h">Realism, and What Truth Is For</h2>
-      <span class="gloss">Theories are guesses about how things actually are — not summaries, not tools.</span>
-    </div>
-
-    <p class="lede">
-      A recurring worry about Popper is that if we can never justify a theory, and corroboration confers
-      no probability of truth, then talk of truth has quietly dropped out and we are left with an
-      elaborate game. Popper's answer occupies chapters 2, 5 and 9, and it is unambiguous:
-      <strong>theories are attempts to describe a real world that exists independently of us, they are
-      true or false regardless of what anyone believes, and the fact that we cannot certify which is
-      which does not make the distinction idle.</strong>
-    </p>
-
-    <p>
-      He positions this between two rivals he thinks are both wrong. The first is <em>essentialism</em> —
-      the doctrine that science aims at ultimate explanations, at descriptions of the essences or natures
-      of things that need no further explanation and admit of none. Popper's objection is not that essences
-      are unreal but that the doctrine is a stop sign: it invites us to declare an explanation final, and
-      any explanation declared final is one nobody will try to get behind. Newton's gravitation was
-      treated this way for two centuries; Einstein got behind it.
-    </p>
-    <p>
-      The second rival is <em>instrumentalism</em>, the view — held in various forms by Berkeley, Mach,
-      Duhem and, in Popper's reading, by Bohr — that theories are not descriptions of anything but
-      calculating devices for generating predictions from observations, and so are neither true nor false,
-      only more or less useful. Popper's objection here is sharper and more interesting: an instrument
-      cannot be refuted. A hammer that fails at a task is not shown to be false; it is simply the wrong
-      tool, and you reach for another. If theories are instruments, then the anomalies that drive science
-      forward are not discoveries about the world but merely notes on the limits of applicability, and the
-      entire critical enterprise loses its point.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 11</b><span>Three views of what a theory is</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 276" role="img" aria-label="A comparison of essentialism, instrumentalism and conjectural realism across what a theory is, whether it can be refuted, what the aim of science is, and the characteristic failure of each.">
-          <rect x="20" y="20" width="230" height="30" class="f-plate3"/>
-          <rect x="264" y="20" width="230" height="30" class="f-plate3"/>
-          <rect x="508" y="20" width="232" height="30" class="f-acc" opacity="0.14"/>
-          <text x="135" y="40" class="t t--mid t--ink" style="font-size:12px">ESSENTIALISM</text>
-          <text x="379" y="40" class="t t--mid t--ink" style="font-size:12px">INSTRUMENTALISM</text>
-          <text x="624" y="40" class="t t--mid t--acc" style="font-size:12px">CONJECTURAL REALISM</text>
-          <g class="t t--xs t--mid t--graph">
-            <text x="135" y="62">Aristotle, and Newton's heirs</text>
-            <text x="379" y="62">Berkeley, Mach, Duhem, Bohr</text>
-            <text x="624" y="62">Popper</text>
-          </g>
-
-          <path d="M20 74 H 740" class="s-ink" stroke-width="1.2"/>
-          <g class="s-hair" stroke-width="0.7"><path d="M20 124 H740"/><path d="M20 174 H740"/><path d="M20 224 H740"/></g>
-          <g class="t t--sm t--ink" style="font-size:9px">
-            <text x="20" y="92">A THEORY IS</text><text x="20" y="142">CAN IT BE REFUTED?</text>
-            <text x="20" y="192">SCIENCE AIMS AT</text><text x="20" y="242">IT GOES WRONG BY</text>
-          </g>
-
-          <g class="t t--xs">
-            <text x="30" y="110">A description of the</text><text x="30" y="122">essence of a thing</text>
-            <text x="274" y="110">A calculating device for</text><text x="274" y="122">generating predictions</text>
-            <text x="518" y="110">A genuine guess about how</text><text x="518" y="122">the world actually is</text>
-
-            <text x="30" y="160">In principle no — an</text><text x="30" y="172">essence just IS what it is</text>
-            <text x="274" y="160">No. A tool that fails is</text><text x="274" y="172">not false, only unsuitable</text>
-            <text x="518" y="160" class="t--acc">Yes — and that is the</text><text x="518" y="172" class="t--acc">whole point of having one</text>
-
-            <text x="30" y="210">Final explanations that</text><text x="30" y="222">need no further account</text>
-            <text x="274" y="210">Successful prediction and</text><text x="274" y="222">economy of description</text>
-            <text x="518" y="210">Deeper explanations, each</text><text x="518" y="222">raising new problems</text>
-
-            <text x="30" y="260" class="t--ox">Declaring a question closed</text>
-            <text x="274" y="260" class="t--ox">Making criticism pointless</text>
-            <text x="518" y="260" class="t--ox">Never reaching certainty</text>
-          </g>
-          <rect x="508" y="126" width="232" height="48" class="f-acc" opacity="0.08"/>
-        </svg>
-      </div>
-      <figcaption>The last row is Popper being fair to his opponents. His position genuinely costs something: it offers no security, no point at which you may stop, and no way to know you have arrived. He regards that as an accurate description of the human situation rather than a defect of the theory.</figcaption>
-    </figure>
-
-    <h5 class="sub-h">Tarski, and why Popper stopped being embarrassed about truth</h5>
-    <p>
-      Popper is candid that until the mid-1930s he had been uneasy about the notion of truth, because the
-      correspondence theory — a statement is true if it corresponds to the facts — seemed either empty or
-      paradoxical. What rehabilitated it for him was Alfred Tarski's work of 1933, which showed how to
-      define truth for a formalised language without contradiction, by talking about the object language
-      in a richer metalanguage. The famous schema — "snow is white" is true if and only if snow is white —
-      looks trivial, and its triviality is the point: it shows that correspondence can be stated precisely
-      and consistently, which is all Popper needed.
-    </p>
-    <p>
-      What this buys him is a distinction he uses constantly and which the rest of his system would
-      collapse without: the difference between <em>truth</em> and <em>certainty</em>. Truth is objective
-      and absolute — a statement is true or it is not, and no amount of belief affects this. Certainty is
-      a psychological state, is always attainable and is worth nothing. Popper's whole epistemology is an
-      attempt to keep the first while abandoning the second, and his complaint against most of the
-      tradition is that it conflated them and then, finding certainty unavailable, concluded that truth
-      must be relative too.
-    </p>
-
-    <figure class="fig reveal">
-      <div class="fig__label"><b>Plate 12</b><span>Truth as a regulative ideal — Popper's own image</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 258" role="img" aria-label="A mountain wrapped in cloud, with a climber unable to tell the true summit from a subsidiary peak, illustrating that truth exists objectively even when we cannot know we have reached it.">
-          <path d="M60 216 L 250 76 L 340 150 L 430 40 L 560 160 L 640 110 L 730 216 Z" class="f-plate3"/>
-          <path d="M60 216 L 250 76 L 340 150 L 430 40 L 560 160 L 640 110 L 730 216" class="f-none s-graph" stroke-width="1.4"/>
-          <g class="f-hair" opacity="0.9">
-            <rect x="40" y="86" width="700" height="20"/><rect x="40" y="118" width="700" height="16"/>
-          </g>
-          <circle cx="430" cy="40" r="6" class="f-acc"/>
-          <text x="430" y="28" class="t t--mid t--acc t--xs">the summit — true, and there whether or not you find it</text>
-          <circle cx="250" cy="76" r="5" class="f-ox"/>
-          <text x="250" y="66" class="t t--mid t--ox t--xs">a subsidiary peak</text>
-
-          <circle cx="322" cy="164" r="4" class="f-ink"/>
-          <text x="322" y="182" class="t t--mid t--xs">the climber</text>
-
-          <text x="60" y="112" class="t t--xs">cloud</text>
-          <path d="M20 234 H 740" class="s-hair" stroke-width="1"/>
-          <text x="20" y="248" class="t t--xs">You may reach the top and not know it. You may believe you are at the top and be on a lesser peak. Neither possibility puts the summit in doubt.</text>
-        </svg>
-      </div>
-      <figcaption>Popper uses this figure in chapter 2 and it does a lot of work. It separates the objectivity of truth from our access to it, which is exactly the separation that lets him be a realist about truth and a fallibilist about knowledge at the same time — a combination that looks contradictory until you have the picture.</figcaption>
-    </figure>
-
-    <div class="claim claim--acc">
-      <b>Commonsense realism, yes — the commonsense theory of knowledge, no</b>
-      This is the argument of chapter 2, and the title "Two Faces of Common Sense" names the split. Common
-      sense is right that there is a real world of chairs and stars, existing independently of observers,
-      and Popper defends this vigorously against idealism and subjectivism. Common sense is wrong about how
-      we come to know it — it holds the bucket theory, that knowledge is what has flowed in through the
-      senses. Popper's position is that you should keep the first face and discard the second, and that
-      almost all of modern philosophy has done the reverse: grown sophisticated about knowledge while
-      losing its nerve about the world.
-    </div>
-  </section>
-
-  <!-- ======================= AIM OF SCIENCE ======================= -->
-  <section class="movement" id="aim" aria-labelledby="aim-h">
-    <div class="movement__head">
-      <span class="roman">Chapters 5 &amp; 9</span>
-      <h2 id="aim-h">What Science Is Actually For</h2>
-      <span class="gloss">Not prediction, not saving the phenomena — explanation.</span>
-    </div>
-
-    <p class="lede">
-      Popper's answer is deliberately plain: the aim of science is <strong>to find satisfactory
-      explanations of whatever strikes us as being in need of explanation.</strong> Prediction is a
-      by-product and a testing device, not the goal. This puts him against the instrumentalists, for
-      whom a theory is a calculating tool that is neither true nor false, and against the positivists,
-      for whom explanation is suspect metaphysics.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 13</b><span>The counterintuitive rule: better theories are less probable</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 280" role="img" aria-label="A diagram showing that as a theory's content and the range of events it forbids increase, its logical probability falls, and its testability rises.">
-          <path d="M70 214 H 720" class="s-graph" stroke-width="1.1"/>
-          <path d="M70 214 V 46" class="s-graph" stroke-width="1.1"/>
-          <text x="395" y="240" class="t t--mid t--xs">CONTENT — how much the theory forbids  →</text>
-          <text x="58" y="130" class="t t--end t--xs" transform="rotate(-90 58 130)">value  →</text>
-
-          <path d="M70 60 C 200 90, 380 150, 720 200" class="f-none s-graph" stroke-width="2" stroke-dasharray="6 4"/>
-          <path d="M70 200 C 200 170, 380 110, 720 60" class="f-none s-acc" stroke-width="2.4"/>
-
-          <text x="480" y="188" class="t t--xs t--graph">logical probability — falls</text>
-          <text x="470" y="80" class="t t--xs t--acc">testability, explanatory power — rise</text>
-
-          <g class="s-hair" stroke-width="0.7" stroke-dasharray="2 5">
-            <path d="M200 46 V 214"/><path d="M480 46 V 214"/>
-          </g>
-          <text x="200" y="228" class="t t--mid t--xs">"it may rain"</text>
-          <text x="480" y="228" class="t t--mid t--xs">"rain here at 3pm"</text>
-          <text x="690" y="228" class="t t--mid t--xs">Newton</text>
-
-          <rect x="20" y="252" width="720" height="24" class="f-accw"/>
-          <text x="34" y="268" class="t t--xs">A tautology forbids nothing, is certainly true, and tells you nothing. A law of nature forbids enormously much, is therefore very improbable, and is worth having.</text>
-          <text x="70" y="36" class="t t--acc t--sm">Popper's inversion of the probabilists</text>
-        </svg>
-      </div>
-      <figcaption>This is where Popper and the Carnap school parted permanently. If the aim is high probability, the safest strategy is to say as little as possible — which is the opposite of what good science does. Popper's criterion rewards the theory that sticks its neck out furthest and survives.</figcaption>
-    </figure>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 14</b><span>What a good successor theory has to do</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 252" role="img" aria-label="Three requirements for a new theory — explain the old theory's successes, correct its errors, and predict new phenomena — illustrated by the transition from Newton to Einstein.">
-          <g class="f-plate3">
-            <rect x="20" y="46" width="228" height="86"/><rect x="266" y="46" width="228" height="86"/><rect x="512" y="46" width="228" height="86"/>
-          </g>
-          <g class="f-acc"><rect x="20" y="46" width="228" height="3"/><rect x="266" y="46" width="228" height="3"/><rect x="512" y="46" width="228" height="3"/></g>
-          <g class="t t--acc t--sm"><text x="34" y="70">1 · ABSORB</text><text x="280" y="70">2 · CORRECT</text><text x="526" y="70">3 · RISK</text></g>
-          <g class="t t--xs">
-            <text x="34" y="92">Explain everything the old</text><text x="34" y="106">theory got right, and explain</text><text x="34" y="120">why it worked as far as it did.</text>
-            <text x="280" y="92">Say something different where</text><text x="280" y="106">the old theory was wrong, and</text><text x="280" y="120">say where that difference shows.</text>
-            <text x="526" y="92">Predict something new that</text><text x="526" y="106">nobody was looking for — then</text><text x="526" y="120">survive the test of it.</text>
-          </g>
-
-          <path d="M20 158 H 740" class="s-hair" stroke-width="1"/>
-          <text x="20" y="180" class="t t--ink t--sm">The case Popper keeps returning to</text>
-          <g class="t t--xs">
-            <text x="20" y="202">Newton's mechanics falls out of</text><text x="20" y="216">relativity as the limiting case at</text><text x="20" y="230">low velocity — so three centuries</text><text x="20" y="244">of success are explained, not denied.</text>
-            <text x="266" y="202">Mercury's perihelion had been a</text><text x="266" y="216">known anomaly for decades.</text><text x="266" y="230">Relativity gets it exactly right</text><text x="266" y="244">without an adjustable parameter.</text>
-            <text x="512" y="202">Light bends near the sun — a</text><text x="512" y="216">prediction nobody had reason to</text><text x="512" y="230">make, tested in 1919, and it</text><text x="512" y="244">could easily have failed.</text>
-          </g>
-        </svg>
-      </div>
-      <figcaption>Popper's word for the third column is <em>risk</em>, and he means it literally: a theory that cannot fail a test is not doing scientific work. The 1919 eclipse is his standing example because Einstein specified in advance what result would sink the theory.</figcaption>
-    </figure>
-
-    <div class="claim">
-      <b>Verisimilitude — the idea, and the formalism that failed</b>
-      Popper wanted to say that a false theory can still be <em>closer to the truth</em> than another
-      false theory, and proposed measuring it as truth content minus falsity content. In 1974 — two years
-      after this book — David Miller and Pavel Tichý independently showed the definition collapses: on
-      it, no false theory can ever be closer to the truth than another. Popper accepted the refutation.
-      The intuition survives and is used constantly; the formal account does not. Read chapter 2's
-      confident passages on verisimilitude with that in mind.
-    </div>
-  </section>
-
-  <!-- ======================= EVOLUTION ======================= -->
-  <section class="movement" id="evolution" aria-labelledby="ev-h">
-    <div class="movement__head">
-      <span class="roman">Chapters 6 &amp; 7</span>
-      <h2 id="ev-h">Clouds, Clocks, and the Tree of Knowledge</h2>
-      <span class="gloss">Where the subtitle — "an evolutionary approach" — earns its place.</span>
-    </div>
-
-    <p class="lede">
-      Popper's most original move is to treat the growth of knowledge as continuous with the growth of
-      life. Both proceed by variation and selection; both are ways of solving problems set by an
-      environment. The difference is one that matters enormously, and he states it in a sentence that is
-      the emotional centre of the book: <strong>we can let our theories die in our stead.</strong>
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 15</b><span>From the amoeba to Einstein — same schema, one difference</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 258" role="img" aria-label="A comparison showing that an amoeba and a scientist both use the trial-and-error schema, but the amoeba dies with its failed trial while the scientist's theory dies instead.">
-          <rect x="20" y="20" width="352" height="30" class="f-och" opacity="0.16"/>
-          <rect x="388" y="20" width="352" height="30" class="f-acc" opacity="0.14"/>
-          <text x="196" y="40" class="t t--mid t--och" style="font-size:12px">THE AMOEBA</text>
-          <text x="564" y="40" class="t t--mid t--acc" style="font-size:12px">EINSTEIN</text>
-
-          <g class="t t--sm t--mid t--ink" style="font-size:9px">
-            <text x="380" y="78">PROBLEM</text><text x="380" y="112">TENTATIVE THEORY</text><text x="380" y="146">ERROR ELIMINATION</text>
-            <text x="380" y="180">ATTITUDE TO ERROR</text><text x="380" y="216">IF THE TRIAL FAILS</text>
-          </g>
-          <path d="M380 58 V 232" class="s-hair" stroke-width="1"/>
-          <g class="s-hair" stroke-width="0.7"><path d="M20 88 H740"/><path d="M20 122 H740"/><path d="M20 156 H740"/><path d="M20 192 H740"/></g>
-
-          <g class="t t--xs t--end">
-            <text x="336" y="78">Survive: find food, avoid harm</text>
-            <text x="336" y="112">An expectation built into its structure</text>
-            <text x="336" y="146">The environment does it, unasked</text>
-            <text x="336" y="180">Cannot criticise its own expectations</text>
-            <text x="336" y="216">The organism dies with it</text>
-          </g>
-          <g class="t t--xs">
-            <text x="424" y="78">Understand: reconcile two theories that clash</text>
-            <text x="424" y="112">A hypothesis stated in language, outside himself</text>
-            <text x="424" y="146">He designs the test that could destroy it</text>
-            <text x="424" y="180">Actively hunts for it — that is the method</text>
-            <text x="424" y="216">The theory dies, and he does not</text>
-          </g>
-          <rect x="388" y="196" width="352" height="30" class="f-acc" opacity="0.10"/>
-
-          <text x="20" y="248" class="t t--xs t--acc">This is Popper's whole case for consciousness, language and criticism having survival value: they let selection operate on our guesses rather than on us.</text>
-        </svg>
-      </div>
-      <figcaption>The continuity claim is strong and the difference is everything. Language makes a theory a World 3 object — something outside the organism that can be examined, attacked and abandoned. Popper thinks this is the single largest change in the history of life on earth.</figcaption>
-    </figure>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 16</b><span>Clouds and clocks · against determinism and against pure chance</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 276" role="img" aria-label="A spectrum from clouds to clocks with the two failed extreme positions marked, and Popper's alternative of plastic control shown as a chain from World 3 to World 1.">
-          <path d="M60 92 H 700" class="s-graph" stroke-width="1.2"/>
-          <g class="f-hair"><circle cx="90" cy="72" r="13"/><circle cx="110" cy="66" r="10"/><circle cx="72" cy="66" r="9"/></g>
-          <g class="f-none s-ink" stroke-width="1.3"><circle cx="670" cy="70" r="15"/></g>
-          <path d="M670 70 V 60 M670 70 L 678 74" class="s-ink" stroke-width="1.3"/>
-          <text x="90" y="112" class="t t--mid t--xs t--ink">CLOUDS</text>
-          <text x="90" y="126" class="t t--mid t--xs">irregular, disorderly,</text>
-          <text x="90" y="138" class="t t--mid t--xs">unpredictable</text>
-          <text x="670" y="112" class="t t--mid t--xs t--ink">CLOCKS</text>
-          <text x="670" y="126" class="t t--mid t--xs">regular, orderly,</text>
-          <text x="670" y="138" class="t t--mid t--xs">predictable</text>
-
-          <path d="M150 60 H 640" class="s-ox" stroke-width="1.6"/>
-          <text x="395" y="52" class="t t--mid t--ox t--xs">PHYSICAL DETERMINISM: "all clouds are clocks" — Popper says this makes argument meaningless</text>
-
-          <path d="M150 168 H 640" class="s-ox" stroke-width="1.6"/>
-          <text x="395" y="186" class="t t--mid t--ox t--xs">PURE INDETERMINISM: "all clocks are clouds" — randomness is not freedom either</text>
-
-          <text x="60" y="212" class="t t--acc t--sm">Popper's alternative: plastic control</text>
-          <g class="t t--xs">
-            <text x="60" y="234">A control that guides without determining — a dog on a long leash, not a rail. World 3 (a theory, an argument,</text>
-            <text x="60" y="248">a purpose) exerts plastic control over World 2, which exerts it over World 1. Nothing is compelled; the space</text>
-            <text x="60" y="262">of what happens is narrowed. This is Popper's answer to Compton's problem: how an idea can move a body.</text>
-          </g>
-        </svg>
-      </div>
-      <figcaption>Popper's motive here is moral as much as physical. If determinism is true, then arguing with someone is only pushing their atoms about, and the distinction between persuading and manipulating collapses. He wants an account of the world in which reasons can be causes without being compulsions.</figcaption>
-    </figure>
-  </section>
-
-  <!-- ======================= OBJECTIVE MIND ======================= -->
-  <section class="movement" id="mind" aria-labelledby="mi-h">
-    <div class="movement__head">
-      <span class="roman">Chapter 4</span>
-      <h2 id="mi-h">Understanding, and How to Read Anything</h2>
-      <span class="gloss">The most useful chapter in the book, and the least discussed.</span>
-    </div>
-
-    <p class="lede">
-      Chapter 4 asks what it means to understand a text, an action, a work of art or a historical event.
-      The traditional answer in the German tradition Popper grew up in — Dilthey's, and later
-      Collingwood's — is empathy: you understand a past agent by re-enacting their mental states, putting
-      yourself in their position, recovering what it felt like to be them. <strong>Popper thinks this is
-      exactly wrong, and that it makes the humanities look unrigorous for no good reason.</strong>
-    </p>
-
-    <p>
-      His alternative follows straight from the three worlds. Understanding is not a World 2 operation on
-      someone else's World 2 states, which we have no access to anyway. It is a World 3 operation: you
-      reconstruct the <em>problem situation</em> — the problem the author or agent was facing, the
-      background of assumptions they were working within, the options that were available, and what would
-      have counted for them as a solution. Having done that, you can assess whether the move they made
-      was adequate to the problem, which is something you can argue about with evidence and be shown to
-      have got wrong. Empathy offers nothing to argue about.
-    </p>
-    <p>
-      Popper calls the method <em>situational analysis</em> or situational logic, and he offers it as the
-      characteristic method of the social sciences and of history. The explanation of an action is a
-      reconstruction of the situation as the agent saw it, plus the assumption that the agent acted
-      appropriately to it. That assumption — he calls it the rationality principle — is almost certainly
-      false in many individual cases, and Popper says so; he treats it as a deliberately simplifying
-      element, so that when an explanation fails it is the reconstruction of the situation, not human
-      rationality, that we should suspect first.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 17</b><span>Two ways to understand a text or an action</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 276" role="img" aria-label="A comparison of empathetic re-enactment with Popper's method of reconstructing the problem situation, showing what each can and cannot be checked against.">
-          <defs><marker id="u-a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" class="f-graph"/></marker></defs>
-
-          <text x="20" y="26" class="t t--ox" style="font-size:12px">RE-ENACTMENT — the traditional account</text>
-          <rect x="20" y="42" width="90" height="34" class="f-plate3"/>
-          <text x="65" y="63" class="t t--mid t--xs">the text</text>
-          <path d="M116 59 H 148" class="s-graph" stroke-width="1.2" marker-end="url(#u-a)"/>
-          <rect x="154" y="42" width="110" height="34" class="f-plate3"/>
-          <text x="209" y="58" class="t t--mid t--xs">my feeling of</text><text x="209" y="70" class="t t--mid t--xs">what he felt</text>
-          <path d="M270 59 H 302" class="s-graph" stroke-width="1.2" marker-end="url(#u-a)"/>
-          <rect x="308" y="42" width="60" height="34" class="f-plate3"/>
-          <text x="338" y="63" class="t t--mid t--xs">done</text>
-          <text x="20" y="98" class="t t--xs t--ox">Nothing here can be checked. If two readers disagree there is</text>
-          <text x="20" y="112" class="t t--xs t--ox">no procedure, because each is reporting a private state.</text>
-
-          <path d="M20 130 H 740" class="s-hair" stroke-width="1"/>
-
-          <text x="20" y="152" class="t t--acc" style="font-size:12px">PROBLEM-SITUATION RECONSTRUCTION — Popper</text>
-          <g class="f-plate3">
-            <rect x="20" y="168" width="128" height="60"/><rect x="164" y="168" width="128" height="60"/>
-            <rect x="308" y="168" width="128" height="60"/><rect x="452" y="168" width="128" height="60"/>
-          </g>
-          <g class="f-acc"><rect x="20" y="168" width="128" height="3"/><rect x="164" y="168" width="128" height="3"/><rect x="308" y="168" width="128" height="3"/><rect x="452" y="168" width="128" height="3"/></g>
-          <g class="s-graph" stroke-width="1.2" fill="none" marker-end="url(#u-a)">
-            <path d="M154 198 H 158"/><path d="M298 198 H 302"/><path d="M442 198 H 446"/>
-          </g>
-          <g class="t t--xs">
-            <text x="30" y="188">What problem was</text><text x="30" y="200">he facing? What did</text><text x="30" y="212">he take as given?</text>
-            <text x="174" y="188">What options were</text><text x="174" y="200">actually open in that</text><text x="174" y="212">situation?</text>
-            <text x="318" y="188">Which did he take,</text><text x="318" y="200">and was it adequate</text><text x="318" y="212">to the problem?</text>
-            <text x="462" y="188">What new problem</text><text x="462" y="200">did his solution</text><text x="462" y="212">create?</text>
-          </g>
-          <rect x="596" y="168" width="144" height="60" class="f-accw"/>
-          <rect x="596" y="168" width="3" height="60" class="f-acc"/>
-          <text x="610" y="190" class="t t--acc t--xs">All four are claims</text>
-          <text x="610" y="204" class="t t--xs">about World 3 objects.</text>
-          <text x="610" y="218" class="t t--xs">Every one can be</text>
-          <text x="610" y="232" class="t t--xs">disputed with evidence.</text>
-
-          <text x="20" y="252" class="t t--xs">Popper's example is reading a philosopher: do not ask what Plato felt, ask what problem the Republic was a proposed solution to,</text>
-          <text x="20" y="266" class="t t--xs">what he was arguing against, and whether the proposal solves it. Then you have something a scholar can be wrong about.</text>
-        </svg>
-      </div>
-      <figcaption>This is, incidentally, the method of this document. Summarising a book well means reconstructing what its author took the problem to be — which is why the sections here are organised around Popper's questions rather than around his chapter order.</figcaption>
-    </figure>
-  </section>
-
-  <!-- ======================= POLITICS ======================= -->
-  <section class="movement" id="politics" aria-labelledby="po-h">
-    <div class="movement__head">
-      <span class="roman">The parallel</span>
-      <h2 id="po-h">Why This Is Also a Political Theory</h2>
-      <span class="gloss">The same mistake, in two disciplines — and the same repair.</span>
-    </div>
-
-    <p class="lede">
-      Popper never separated his epistemology from his politics, and <em>Objective Knowledge</em> keeps
-      gesturing at a connection worked out at length in <em>The Open Society and Its Enemies</em>. The
-      link is not an analogy or a metaphor. It is that the two fields have made <strong>the same
-      structural error, which is to ask a question about authority when they should be asking a question
-      about correction.</strong>
-    </p>
-
-    <p>
-      In epistemology the bad question is: <em>what are the sources of our knowledge?</em> Reason,
-      the senses, intuition, revelation, authority — the tradition has fought over which of these
-      guarantees truth, and Popper's answer is that none does, that knowledge has no pure source, and
-      that the pedigree of an idea is irrelevant to its worth. A theory that arrived in a dream is not
-      thereby worse than one derived from careful observation; both must face the same tests. The right
-      question is not where a belief came from but how we can find out whether it is wrong.
-    </p>
-    <p>
-      In politics the bad question is: <em>who should rule?</em> The best, the wisest, the majority, the
-      workers, the philosopher-kings — Plato posed it in this form and, on Popper's account, poisoned
-      political theory for two thousand years, because every answer to it licenses the concentration of
-      unaccountable power in whoever qualifies. The right question, once you accept that rulers will
-      sometimes be incompetent or malicious, is institutional: <em>how do we arrange things so that bad
-      rulers can be removed, and can do limited damage while they are there?</em> On this view democracy
-      is not fundamentally about the wisdom of the people or the legitimacy of majorities. It is defined
-      by a single property — that a government can be got rid of without violence.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 18</b><span>The same repair, applied twice</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 280" role="img" aria-label="A parallel table showing the mistaken authority question and the corrected error-correction question in both epistemology and politics.">
-          <rect x="20" y="24" width="352" height="28" class="f-acc" opacity="0.13"/>
-          <rect x="388" y="24" width="352" height="28" class="f-och" opacity="0.16"/>
-          <text x="196" y="43" class="t t--mid t--acc" style="font-size:12px">EPISTEMOLOGY</text>
-          <text x="564" y="43" class="t t--mid t--och" style="font-size:12px">POLITICS</text>
-
-          <rect x="20" y="66" width="720" height="58" class="f-plate3"/>
-          <rect x="20" y="66" width="3" height="58" class="f-ox"/>
-          <text x="36" y="84" class="t t--ox t--sm">THE QUESTION THAT MISLEADS — both are questions about authority</text>
-          <text x="196" y="106" class="t t--mid t--xs t--ink" style="font-size:12px">"What are the sources of knowledge?"</text>
-          <text x="564" y="106" class="t t--mid t--xs t--ink" style="font-size:12px">"Who should rule?"</text>
-          <text x="196" y="120" class="t t--mid t--xs">every answer confers immunity from criticism</text>
-          <text x="564" y="120" class="t t--mid t--xs">every answer confers unaccountable power</text>
-
-          <path d="M380 128 V 148" class="s-acc" stroke-width="1.6"/>
-          <rect x="20" y="152" width="720" height="58" class="f-accw"/>
-          <rect x="20" y="152" width="3" height="58" class="f-acc"/>
-          <text x="36" y="170" class="t t--acc t--sm">THE QUESTION THAT WORKS — both are questions about correction</text>
-          <text x="196" y="192" class="t t--mid t--xs t--ink" style="font-size:12px">"How do we detect and remove error?"</text>
-          <text x="564" y="192" class="t t--mid t--xs t--ink" style="font-size:12px">"How do we remove rulers without blood?"</text>
-          <text x="196" y="206" class="t t--mid t--xs">institutions: peer review, replication, open publication</text>
-          <text x="564" y="206" class="t t--mid t--xs">institutions: elections, courts, a free press, opposition</text>
-
-          <path d="M20 226 H 740" class="s-hair" stroke-width="1"/>
-          <g class="t t--xs">
-            <text x="20" y="244">The practical corollary in both fields is the same and Popper calls it piecemeal: prefer reforms whose consequences you can</text>
-            <text x="20" y="258">observe and reverse over comprehensive plans whose failures cannot be isolated. A large enough change destroys the very</text>
-            <text x="20" y="272">feedback that would tell you it was a mistake — which is the epistemological case against utopian politics.</text>
-          </g>
-        </svg>
-      </div>
-      <figcaption>Read this way, <em>Objective Knowledge</em> and <em>The Open Society</em> are one project. Both hold that we are certain to be wrong, that no authority can be trusted to prevent it, and that the only defence is an arrangement in which being wrong is survivable and discoverable.</figcaption>
-    </figure>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 19</b><span>Where Popper sits among his critics</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 272" role="img" aria-label="A comparison of Popper, Kuhn, Lakatos and Feyerabend on the unit of appraisal, the response to anomaly, and whether scientific progress is rational.">
-          <path d="M20 60 H 740" class="s-ink" stroke-width="1.4"/>
-          <g class="t t--sm t--ink" style="font-size:9px">
-            <text x="20" y="54">THINKER</text><text x="150" y="54">UNIT OF APPRAISAL</text><text x="360" y="54">WHEN AN ANOMALY APPEARS</text><text x="590" y="54">IS PROGRESS RATIONAL?</text>
-          </g>
-          <g class="s-hair" stroke-width="0.7"><path d="M20 108 H740"/><path d="M20 152 H740"/><path d="M20 196 H740"/></g>
-
-          <g class="t t--xs t--acc" style="font-size:11px"><text x="20" y="82">POPPER</text></g>
-          <g class="t t--xs t--ink"><text x="20" y="126">KUHN</text><text x="20" y="170">LAKATOS</text><text x="20" y="214">FEYERABEND</text></g>
-          <g class="t t--xs t--graph"><text x="20" y="94">1902–1994</text><text x="20" y="138">1922–1996</text><text x="20" y="182">1922–1974</text><text x="20" y="226">1924–1994</text></g>
-
-          <g class="t t--xs">
-            <text x="150" y="82">The single theory</text><text x="360" y="82">Take it seriously; the theory</text><text x="360" y="94">may be dead</text><text x="590" y="82" class="t--cool">Yes — it is the model of rationality</text>
-            <text x="150" y="126">The paradigm</text><text x="360" y="126">Usually tolerate it; puzzles are</text><text x="360" y="138">the normal state of affairs</text><text x="590" y="126">Only within a paradigm</text>
-            <text x="150" y="170">The research programme</text><text x="360" y="170">Protect the hard core; adjust</text><text x="360" y="182">the belt around it</text><text x="590" y="170">Yes, if the programme is progressive</text>
-            <text x="150" y="214">Nothing systematic</text><text x="360" y="214">Whatever works; keep the</text><text x="360" y="226">refuted theory if it is fruitful</text><text x="590" y="214" class="t--ox">"Anything goes"</text>
-          </g>
-          <rect x="20" y="62" width="720" height="44" class="f-acc" opacity="0.07"/>
-
-          <text x="20" y="250" class="t t--xs">Lakatos and Feyerabend were both close to Popper at the LSE. Popper's reply to Kuhn is that "normal science" describes a real</text>
-          <text x="20" y="262" class="t t--xs">phenomenon and a regrettable one — the uncritical specialist is, he says, a person who has been badly taught.</text>
-        </svg>
-      </div>
-      <figcaption>The honest position for a reader is that Kuhn describes what scientists do better, and Popper describes what makes the activity worth trusting. They are answering different questions and much of the sixty-year argument between their followers comes from pretending otherwise.</figcaption>
-    </figure>
-  </section>
-
-  <!-- ======================= DEUTSCH ======================= -->
-  <section class="movement" id="deutsch" aria-labelledby="d-h">
-    <div class="movement__head">
-      <span class="roman">Downstream</span>
-      <h2 id="d-h">Popper → Deutsch</h2>
-      <span class="gloss">What <em>The Beginning of Infinity</em> takes, what it sharpens, and where it departs.</span>
-    </div>
-
-    <p class="lede">
-      Deutsch is explicit that his epistemology is Popper's, and reading them in order is the single
-      best argument for starting here. Nearly every foundational move in <em>The Fabric of Reality</em>
-      and <em>The Beginning of Infinity</em> — the rejection of induction and empiricism, fallibilism,
-      knowledge as conjecture plus criticism, problems as the engine — is in this book first. What
-      Deutsch adds is a sharper criterion and a much longer reach.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 20</b><span>The inheritance, item by item</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 292" role="img" aria-label="A table mapping Popper's positions in Objective Knowledge to David Deutsch's corresponding positions, marking which are inherited unchanged, which are sharpened, and which depart.">
-          <path d="M20 56 H 740" class="s-ink" stroke-width="1.4"/>
-          <g class="t t--sm t--ink" style="font-size:9px">
-            <text x="20" y="50">POPPER, 1972</text><text x="330" y="50">DEUTSCH</text><text x="650" y="50">RELATION</text>
-          </g>
-          <g class="s-hair" stroke-width="0.7">
-            <path d="M20 88 H740"/><path d="M20 120 H740"/><path d="M20 152 H740"/><path d="M20 184 H740"/><path d="M20 216 H740"/><path d="M20 248 H740"/>
-          </g>
-
-          <g class="t t--xs">
-            <text x="20" y="76">Induction does not exist</text><text x="330" y="76">Identical, and stated more bluntly</text>
-            <text x="20" y="108">Knowledge grows by conjecture and criticism</text><text x="330" y="108">Identical; the core of both books</text>
-            <text x="20" y="140">All knowledge is fallible; certainty is unavailable</text><text x="330" y="140">Identical — "fallibilism"</text>
-            <text x="20" y="172">P₁ → TT → EE → P₂</text><text x="330" y="172">"Problems are inevitable; problems are soluble"</text>
-            <text x="20" y="204">Theories must be testable and risky</text><text x="330" y="204">Good explanations are HARD TO VARY</text>
-            <text x="20" y="236">The aim of science is explanation</text><text x="330" y="236">Explanation is the whole of it; reach is unlimited</text>
-            <text x="20" y="268">Propensity interpretation of probability</text><text x="330" y="268">Everettian quantum mechanics; many worlds</text>
-          </g>
-          <g class="t t--xs t--mid">
-            <text x="690" y="76" class="t--cool">taken</text><text x="690" y="108" class="t--cool">taken</text><text x="690" y="140" class="t--cool">taken</text>
-            <text x="690" y="172" class="t--cool">taken</text><text x="690" y="204" class="t--acc">sharpened</text><text x="690" y="236" class="t--acc">extended</text>
-            <text x="690" y="268" class="t--ox">departs</text>
-          </g>
-          <rect x="20" y="188" width="720" height="60" class="f-acc" opacity="0.07"/>
-        </svg>
-      </div>
-      <figcaption>The fifth row is the one worth dwelling on. Popper's criterion is testability: does the theory forbid something observable? Deutsch's is stricter and applies where testing cannot reach — a good explanation has so little slack that changing any detail wrecks it. It rules out the conspiracy theory and the just-so story that Popper's criterion admits when they are carefully stated.</figcaption>
-    </figure>
-
-    <figure class="fig reveal">
-      <div class="fig__label"><b>Plate 21</b><span>Hard to vary — the refinement, in one comparison</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 236" role="img" aria-label="A comparison of a bad explanation whose details can be swapped freely with a good explanation whose parts are locked together.">
-          <text x="20" y="26" class="t t--ox" style="font-size:12px">EASY TO VARY — a bad explanation</text>
-          <text x="20" y="44" class="t t--xs">"Winter comes because a goddess is grieving."</text>
-          <g class="f-plate3">
-            <rect x="20" y="60" width="76" height="26"/><rect x="104" y="60" width="76" height="26"/><rect x="188" y="60" width="76" height="26"/><rect x="272" y="60" width="76" height="26"/>
-          </g>
-          <g class="t t--xs t--mid"><text x="58" y="77">goddess</text><text x="142" y="77">grieving</text><text x="226" y="77">winter</text><text x="310" y="77">earth</text></g>
-          <g class="s-ox" stroke-width="1.2" stroke-dasharray="3 3" fill="none">
-            <path d="M58 92 V 108 H 142"/><path d="M226 92 V 108 H 310"/>
-          </g>
-          <text x="20" y="128" class="t t--xs t--ox">Swap "goddess" for "god", "grieving" for "angry", winter for</text>
-          <text x="20" y="142" class="t t--xs t--ox">summer — the explanation still "works" just as well.</text>
-          <text x="20" y="164" class="t t--xs">Every part is detachable, so the account explains nothing:</text>
-          <text x="20" y="178" class="t t--xs">it would have accommodated any outcome equally.</text>
-
-          <path d="M380 16 V 220" class="s-hair" stroke-width="1"/>
-
-          <text x="404" y="26" class="t t--acc" style="font-size:12px">HARD TO VARY — a good one</text>
-          <text x="404" y="44" class="t t--xs">"Winter comes because the axis is tilted 23.4°."</text>
-          <g class="f-accw">
-            <rect x="404" y="60" width="76" height="26"/><rect x="488" y="60" width="76" height="26"/><rect x="572" y="60" width="76" height="26"/><rect x="656" y="60" width="76" height="26"/>
-          </g>
-          <g class="f-none s-acc" stroke-width="1.2">
-            <rect x="404" y="60" width="76" height="26"/><rect x="488" y="60" width="76" height="26"/><rect x="572" y="60" width="76" height="26"/><rect x="656" y="60" width="76" height="26"/>
-          </g>
-          <g class="t t--xs t--mid"><text x="442" y="77">tilt 23.4°</text><text x="526" y="77">orbit</text><text x="610" y="77">insolation</text><text x="694" y="77">seasons</text></g>
-          <g class="s-acc" stroke-width="1.6"><path d="M480 73 H 488"/><path d="M564 73 H 572"/><path d="M648 73 H 656"/></g>
-          <text x="404" y="128" class="t t--xs t--acc">Change the tilt and you get the wrong day length. Change the</text>
-          <text x="404" y="142" class="t t--xs t--acc">orbit and the dates move. Nothing can be adjusted in isolation.</text>
-          <text x="404" y="164" class="t t--xs">It also predicts, without being asked to, that the hemispheres</text>
-          <text x="404" y="178" class="t t--xs">have opposite seasons — which is how you would find it wrong.</text>
-          <text x="20" y="212" class="t t--xs">Popper would call the right-hand theory more testable. Deutsch's point is that testability alone does not distinguish the two well enough:</text>
-          <text x="20" y="226" class="t t--xs">a sufficiently careful myth can be made to forbid something. Rigidity of structure is the property that actually does the work.</text>
-        </svg>
-      </div>
-      <figcaption>Deutsch's example, not Popper's — included because it shows precisely where the tradition moved forward. If you read <em>The Beginning of Infinity</em> first and found the "hard to vary" idea striking, this book is where the argument it is repairing was made.</figcaption>
-    </figure>
-  </section>
-
-  <!-- ======================= AFTERLIFE ======================= -->
-  <section class="movement" id="afterlife" aria-labelledby="af-h">
-    <div class="movement__head">
-      <span class="roman">Downstream</span>
-      <h2 id="af-h">What Was Built On It</h2>
-      <span class="gloss">Deutsch is the direct heir. He is not the only one, and the other lines of descent are stranger.</span>
-    </div>
-
-    <p class="lede">
-      A philosophy of science is not usually a practical instrument. This one escaped the seminar
-      room in at least four directions, and the escapes are worth knowing because they show which
-      parts of the argument survive contact with real decisions — and which part gets misused most.
-    </p>
-
-    <h5 class="sub-h">A student at the LSE, and a theory of markets</h5>
-    <p>
-      George Soros studied under Popper in London in the early 1950s and has said for decades that
-      his approach to markets is applied Popper. The connection is real and specific rather than
-      decorative. His working method was to state a thesis about why a market was mispriced, define
-      in advance what would show the thesis wrong, and treat the position as an experiment rather
-      than a conviction — closing it when the refuting evidence arrived rather than defending it.
-      That is the conjecture-and-refutation schema with money attached, and it inverts the usual
-      relationship between a trader and being wrong: error is the signal you paid for, not the thing
-      to be avoided.
-    </p>
-    <p>
-      His theoretical addition, reflexivity, is where he departs from his teacher. In markets the
-      participants' beliefs alter the facts they are beliefs about — expectations of a rising price
-      help produce it — so the object of study will not hold still while it is tested. Popper's
-      schema assumes a world that does not respond to being conjectured about. Whether reflexivity
-      genuinely breaks the schema or merely complicates the test is arguable; that it identifies a
-      real limitation of the method outside physics is not. The philanthropic network Soros later
-      built took its name directly from Popper's other book, which is the plainest evidence that he
-      thought the debt was substantial.
-    </p>
-
-    <h5 class="sub-h">Evolutionary epistemology as a research programme</h5>
-    <p>
-      Chapter 7's argument — that knowledge grows by variation and selective elimination, that the
-      amoeba and Einstein differ mainly in that Einstein can let his theories die in his place — was
-      taken up by Donald Campbell as "blind variation and selective retention" and became a working
-      framework in psychology and the study of creativity. The Popperian element that survives is the
-      insistence that the variation is genuinely blind: the trial does not know in advance that it
-      will succeed, and any account of discovery that smuggles in foresight is explaining creativity
-      by assuming it. That constraint is doing real work in modern discussions of how novelty arises,
-      including in machine learning, where the tension between undirected search and guided search is
-      exactly Popper's problem in a new register.
-    </p>
-
-    <h5 class="sub-h">Where the word escaped and got worse</h5>
-    <p>
-      The public afterlife is less happy. "Falsifiable" became a rhetorical weapon — a way of ruling
-      an opponent's claim out of court without engaging with it — and this usage inverts Popper's
-      intent twice over. He proposed falsifiability as a criterion of the empirical character of a
-      theory, not of its meaningfulness or worth; he explicitly denied that unfalsifiable ideas are
-      nonsense, and held that metaphysical ideas are often the seedbed from which testable ones grow.
-      And the demarcation was never meant to be applied by a single test to a single sentence, which
-      is precisely how it is used in argument.
-    </p>
-    <p>
-      The related misuse is in evidence-based practice, which owes Popper a genuine debt for the idea
-      that a trial's function is to expose a treatment to potential refutation rather than to
-      accumulate confirmations. The debt gets repaid badly when the standard becomes procedural — a
-      claim without a randomised trial is dismissed regardless of what other evidence exists — since
-      Popper's point was about the logic of testing, not about a hierarchy of study designs.
-    </p>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 23</b><span>Four lines of descent</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 250" role="img" aria-label="A diagram showing four lines of descent from Popper's epistemology: Deutsch's hard-to-vary explanations, Soros's reflexivity and testable market theses, Campbell's blind variation and selective retention, and the popular misuse of falsifiability as a rhetorical device.">
-          <rect x="30" y="98" width="126" height="54" rx="4" class="f-acc"/>
-          <text x="93" y="120" class="t t--mid t--xs t--rev">OBJECTIVE</text>
-          <text x="93" y="136" class="t t--mid t--xs t--rev">KNOWLEDGE</text>
-
-          <g class="s-graph" stroke-width="1.2" fill="none">
-            <path d="M160 116 C 240 66, 300 56, 372 52"/>
-            <path d="M160 124 C 240 106, 300 100, 372 98"/>
-            <path d="M160 132 C 240 152, 300 158, 372 162"/>
-            <path d="M160 140 C 240 196, 300 208, 372 214"/>
-          </g>
-
-          <g class="t t--xs t--ink">
-            <text x="384" y="48">Deutsch · hard-to-vary explanations</text>
-            <text x="384" y="94">Soros · theses stated so they can fail</text>
-            <text x="384" y="158">Campbell · blind variation, selective retention</text>
-            <text x="384" y="210">Public usage · "that's unfalsifiable"</text>
-          </g>
-          <g class="t t--xs">
-            <text x="384" y="62">Sharpens the criterion; extends the reach</text>
-            <text x="384" y="108">Adds reflexivity, which the schema does not model</text>
-            <text x="384" y="172">Creativity as undirected trial plus severe selection</text>
-            <text x="384" y="224" class="t--ox">Inverts him: he never said unfalsifiable meant meaningless</text>
-          </g>
-
-          <text x="30" y="34" class="t t--acc t--sm">One book, four descendants, one of them hostile to its parent</text>
-          <text x="30" y="196" class="t t--xs">The healthy lines share</text>
-          <text x="30" y="208" class="t t--xs">one habit: they say in</text>
-          <text x="30" y="220" class="t t--xs">advance what would</text>
-          <text x="30" y="232" class="t t--xs">count as being wrong.</text>
-        </svg>
-      </div>
-      <figcaption>The test for whether someone is actually using Popper rather than citing him: ask what they have specified in advance that would make them abandon the position. Everything on the healthy side of this diagram can answer; the popular usage cannot, because it is a move in an argument rather than a method for holding a belief.</figcaption>
-    </figure>
-
-    <h5 class="sub-h">Using it on an ordinary Monday</h5>
-    <p>
-      The schema is small enough to run without any philosophical commitment. Take a decision you are
-      about to make and write the problem as a question rather than a plan. Write two or three rival
-      answers, including one you dislike. For each, state the observation that would kill it, and be
-      specific enough that the observation could actually arrive within a useful period. Then look
-      for that observation deliberately rather than waiting to encounter it — this is the step almost
-      everyone skips, and it is the entire method. Adopt the survivor provisionally, and expect to
-      repeat.
-    </p>
-    <p>
-      Two failure modes are worth naming because Popper named them. The first is the ad hoc rescue:
-      when the killing observation arrives, adding a special-case explanation that saves the theory
-      at the cost of making it explain less. The rule is not that you may never amend, it is that an
-      amendment must be independently testable, or you have bought survival by giving up content. The
-      second is the unfalsifiable formulation — a plan or belief stated so that no result could
-      disconfirm it. If you cannot say what would make you drop it, you are not holding a theory. You
-      are holding an attachment, and the distinction is the whole of this book.
-    </p>
-  </section>
-
-  <!-- ======================= OBJECTIONS ======================= -->
-  <section class="movement" id="caveats" aria-labelledby="c-h">
-    <div class="movement__head">
-      <span class="roman">Against</span>
-      <h2 id="c-h">The Standing Objections</h2>
-      <span class="gloss">Popper has been argued with for sixty years. Here is where the pressure is.</span>
-    </div>
-
-    <div class="caveats wide">
-      <div>
-        <span class="mk">01</span>
-        <div>
-          <h4>You can never falsify a single hypothesis — the Duhem–Quine problem</h4>
-          <p>A test never confronts one theory; it confronts the theory plus assumptions about instruments, background conditions and auxiliary hypotheses. When the result comes out wrong, logic alone does not say which member of the bundle to blame. Popper knew this and answered with methodological rules — do not save a theory by ad hoc rescue — but rules are not deductions, and this is the deepest crack in the edifice.</p>
-        </div>
-      </div>
-      <div>
-        <span class="mk">02</span>
-        <div>
-          <h4>Scientists do not behave this way — Kuhn and Lakatos</h4>
-          <p>Kuhn observed that anomalies are usually tolerated, not treated as refutations, and that theories are abandoned only when a replacement exists. Lakatos tried to rescue Popper by shifting the unit from the single theory to the research programme, with a protected hard core. Popper's reply is that he is describing what makes an activity rational, not what working scientists happen to do.</p>
-        </div>
-      </div>
-      <div>
-        <span class="mk">03</span>
-        <div>
-          <h4>If corroboration says nothing about the future, why act on it?</h4>
-          <p>Popper insists that a well-tested theory is not thereby more likely to be true. But we do board the aircraft. Critics — Salmon most sharply — argue that either corroboration carries some forward-looking weight, in which case something like induction is back, or it does not, in which case Popper has no account of rational action. This is the objection Popper answered least convincingly.</p>
-        </div>
-      </div>
-      <div>
-        <span class="mk">04</span>
-        <div>
-          <h4>The formal theory of verisimilitude is dead</h4>
-          <p>Refuted in 1974 by Miller and Tichý, and Popper conceded. Later repairs exist and none commands agreement. Since "closer to the truth" is doing real load-bearing work whenever Popper explains why we should prefer a better-corroborated theory, this is not a footnote.</p>
-        </div>
-      </div>
-      <div>
-        <span class="mk">05</span>
-        <div>
-          <h4>World 3 is either trivial or mysterious</h4>
-          <p>The complaint from both directions: if World 3 just means "what books and arguments say", it is an unremarkable way of speaking; if it means more, it needs a metaphysics Popper never supplies. He was uninterested in the objection, holding that the autonomy argument — invented sequences producing unbidden consequences — settles it.</p>
-        </div>
-      </div>
-      <div>
-        <span class="mk">06</span>
-        <div>
-          <h4>And a note on the prose</h4>
-          <p>This is a collection of lectures and papers, not a book written straight through, and it repeats itself considerably. Chapters 8 and 9 are technical and can be skipped on a first pass. Popper is also a pugnacious writer who spends real space on grievances against contemporaries.</p>
-        </div>
-      </div>
-    </div>
-
-    <figure class="fig wide reveal">
-      <div class="fig__label"><b>Plate 22</b><span>The book itself — what is in each chapter</span></div>
-      <div class="fig__frame">
-        <svg viewBox="0 0 760 288" role="img" aria-label="A chapter map of Objective Knowledge indicating the subject and reading priority of each of the nine chapters and the appendix.">
-          <path d="M20 46 H 740" class="s-ink" stroke-width="1.4"/>
-          <g class="t t--sm t--ink" style="font-size:9px"><text x="20" y="40">CH.</text><text x="70" y="40">SUBJECT</text><text x="620" y="40">START HERE?</text></g>
-          <g class="s-hair" stroke-width="0.7">
-            <path d="M20 72 H740"/><path d="M20 96 H740"/><path d="M20 120 H740"/><path d="M20 144 H740"/><path d="M20 168 H740"/>
-            <path d="M20 192 H740"/><path d="M20 216 H740"/><path d="M20 240 H740"/><path d="M20 264 H740"/>
-          </g>
-          <g class="t t--xs t--acc"><text x="20" y="64">1</text><text x="20" y="88">2</text><text x="20" y="112">3</text><text x="20" y="136">4</text><text x="20" y="160">5</text><text x="20" y="184">6</text><text x="20" y="208">7</text><text x="20" y="232">8</text><text x="20" y="256">9</text><text x="20" y="280">App.</text></g>
-          <g class="t t--xs">
-            <text x="70" y="64">Conjectural Knowledge — the solution to induction</text>
-            <text x="70" y="88">Two Faces of Common Sense — realism yes, the bucket no</text>
-            <text x="70" y="112">Epistemology Without a Knowing Subject — World 3</text>
-            <text x="70" y="136">On the Theory of the Objective Mind — World 3 applied</text>
-            <text x="70" y="160">The Aim of Science — explanation, depth, testability</text>
-            <text x="70" y="184">Of Clouds and Clocks — freedom, determinism, plastic control</text>
-            <text x="70" y="208">Evolution and the Tree of Knowledge — the biological analogy</text>
-            <text x="70" y="232">A Realist View of Logic, Physics and History</text>
-            <text x="70" y="256">Philosophical Comments on Tarski's Theory of Truth</text>
-            <text x="70" y="280">The Bucket and the Searchlight — the clearest thing here</text>
-          </g>
-          <g class="t t--xs t--mid">
-            <text x="660" y="64" class="t--cool">essential</text><text x="660" y="88" class="t--cool">essential</text><text x="660" y="112" class="t--cool">essential</text>
-            <text x="660" y="136">second pass</text><text x="660" y="160" class="t--cool">essential</text><text x="660" y="184" class="t--acc">rewarding</text>
-            <text x="660" y="208" class="t--acc">rewarding</text><text x="660" y="232">technical</text><text x="660" y="256">technical</text>
-            <text x="660" y="280" class="t--cool">read first</text>
-          </g>
-        </svg>
-      </div>
-      <figcaption>A workable route for a first reading: the appendix, then chapter 1, then 3, then 5, then 7. That is roughly half the book and contains all of the argument that matters downstream.</figcaption>
-    </figure>
-
-    <ol class="takeaways wide">
-      <li><b>There is no such thing as induction, and nothing is lost.</b><span>We never reason from instances to laws. We guess laws and then hunt for the instance that kills them. The asymmetry between confirmation and refutation is doing all the logical work.</span></li>
-      <li><b>Observation is always selective.</b><span>"Observe!" is not an instruction anyone can follow. A theory, an interest or a problem must come first to say what counts as data — the searchlight, not the bucket.</span></li>
-      <li><b>Ask what a theory forbids, not who holds it.</b><span>The question about sources — reason, senses, authority — is a leftover from asking who should rule. Replace it with an institutional question: how do we arrange things so errors are found fast?</span></li>
-      <li><b>The best theories are the least probable.</b><span>Content, testability and explanatory depth all rise together, and logical probability falls as they do. Safety and informativeness pull in opposite directions.</span></li>
-      <li><b>Progress is measured in better problems.</b><span>P₂ is never P₁. A field that has stopped generating new and harder problems is not consolidating; it has stopped.</span></li>
-      <li><b>Knowledge exists outside heads, and that is what makes criticism possible.</b><span>Once a guess is written down it becomes an object others can attack. This, for Popper, is what language is for and why it changed everything.</span></li>
-      <li><b>Let the theory die instead of you.</b><span>The one-sentence summary of the whole book, and the reason Popper thought his epistemology was also a moral and political position.</span></li>
+<div class="wrap layout">
+  <nav class="rail" aria-label="Contents">
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#origins">Where the ideas came from</a></li>
+      <li><a href="#demarcation">What makes a theory scientific</a></li>
+      <li><a href="#ideas">Seven ideas</a></li>
+      <li class="grp">The book</li>
+      <li class="ch"><a href="#ch-1" data-label="Ch 1 · Conjectural knowledge"><span class="n">1</span>Conjectural knowledge</a></li>
+      <li class="ch"><a href="#ch-2" data-label="Ch 2 · Common sense"><span class="n">2</span>Two faces of common sense</a></li>
+      <li class="ch"><a href="#ch-3" data-label="Ch 3 · Without a knower"><span class="n">3</span>Knowledge without a knower</a></li>
+      <li class="ch"><a href="#ch-4" data-label="Ch 4 · The objective mind"><span class="n">4</span>The objective mind</a></li>
+      <li class="ch"><a href="#ch-5" data-label="Ch 5 · The aim of science"><span class="n">5</span>The aim of science</a></li>
+      <li class="ch"><a href="#ch-6" data-label="Ch 6 · Clouds and clocks"><span class="n">6</span>Clouds and clocks</a></li>
+      <li class="ch"><a href="#ch-7" data-label="Ch 7 · Evolution"><span class="n">7</span>Evolution and knowledge</a></li>
+      <li class="ch"><a href="#ch-8" data-label="Ch 8 · Logic and history"><span class="n">8</span>Logic, physics, history</a></li>
+      <li class="ch"><a href="#ch-9" data-label="Ch 9 · Truth"><span class="n">9</span>Tarski and truth</a></li>
+      <li class="ch"><a href="#appendix" data-label="Appendix · Bucket and searchlight"><span class="n">A</span>The bucket and the searchlight</a></li>
+      <li class="grp">Context</li>
+      <li><a href="#politics">Also a political theory</a></li>
+      <li><a href="#deutsch">Popper to Deutsch</a></li>
+      <li><a href="#afterlife">What was built on it</a></li>
+      <li><a href="#objections">The standing objections</a></li>
+      <li><a href="#reading">Reading it</a></li>
     </ol>
-  </section>
+  </nav>
 
-</main>
+  <main class="content">
 
-<footer class="colophon">
-  <div class="colophon__in">
-    <p class="eyebrow eyebrow--accent">Colophon</p>
-    <h2 style="font-size:var(--step-2);margin:0.6rem 0 0.8rem">Objective Knowledge · Karl Popper</h2>
-    <p class="note">
-      A reader's summary of <em>Objective Knowledge: An Evolutionary Approach</em>, Clarendon Press 1972,
-      revised 1979. Every plate was drawn for this document. Where later work has undercut a position —
-      most importantly the formal theory of verisimilitude — it is marked in the text rather than left
-      standing. The Deutsch comparisons draw on <em>The Fabric of Reality</em> and
-      <em>The Beginning of Infinity</em>.
-    </p>
-    <dl>
-      <dt>The argument in one line</dt>
-      <dd>We do not derive knowledge from experience.<br>We invent it, and experience kills the bad guesses.</dd>
-      <dt>Plates</dt>
-      <dd>13 hand-drawn figures<br>All vector; all legible at print size</dd>
-      <dt>Read next</dt>
-      <dd>Conjectures and Refutations · Popper<br>The Beginning of Infinity · Deutsch</dd>
-      <dt>Also in this series</dt>
-      <dd>The Beginning of Infinity · Deutsch<br>Guns, Germs and Steel · Diamond</dd>
-    </dl>
-  </div>
+    <section class="sec" id="origins">
+      <p class="kicker">Origins</p>
+      <h2>Vienna, 1919: two theories with opposite structures</h2>
+      <p>Popper was seventy when this book appeared, and it collects papers from 1965 to 1971. Nearly everything in it develops positions he held since his twenties, formed in interwar Vienna. Born in 1902 to a family of Jewish descent, he left school early, worked as a cabinetmaker’s apprentice, trained as a teacher and took a doctorate in the psychology of thought.</p>
+      <p>In 1919, at seventeen, he broke with Marxism after police shot unarmed young socialists at a demonstration. What appalled him was how easily the theory absorbed the deaths as a necessary stage, confirmed rather than tested. The same year, Eddington’s eclipse expedition tested Einstein’s prediction that starlight would bend by a specific amount near the sun. Popper saw that the two cases had opposite structures, and spent his life on the difference.</p>
+      <p>He is often called a member of the Vienna Circle, and wasn’t. The Circle’s logical positivists held that a statement means something only if experience can verify it. Popper disagreed about nearly everything, and Otto Neurath called him “the official opposition.” Where they sought a criterion of meaning, Popper sought a criterion of scientific status, and he insisted that unscientific doesn’t mean meaningless. His 1934 <cite>Logik der Forschung</cite> reached English only in 1959, which is why English-speaking philosophy met his ideas out of order.</p>
+    </section>
+
+    <section class="sec" id="demarcation">
+      <p class="kicker">The idea he is known for</p>
+      <h2>What makes a theory scientific</h2>
+      <p>A theory belongs to empirical science if some conceivable observation would count decisively against it, and its author can say in advance what that observation is. It is not a theory of meaning, not a theory of truth, and not a claim that unfalsifiable ideas are worthless.</p>
+      <figure class="fig">
+        <p class="fig-title">Figure · The 1919 contrast</p>
+        <div class="fence">
+          <div><p class="k">Explains everything</p><h4>Freud and Adler</h4><dl><dt>Case</dt><dd>A man pushes a child into a river, and another saves a child from a river. Each theory explains both.</dd><dt>Risk</dt><dd>None: no behaviour could embarrass it.</dd><dt>Popper</dt><dd>Told of a case that didn’t fit, Adler explained it from his “thousandfold experience.” Popper replied that it was presumably now a thousand-and-one-fold.</dd></dl></div>
+          <div><p class="k">Forbids something</p><h4>Einstein</h4><dl><dt>Case</dt><dd>General relativity predicted starlight near the sun would bend by 1.75 arcseconds, twice the Newtonian figure.</dd><dt>Risk</dt><dd>Total: a Newtonian result would have sunk it, and Einstein said so.</dd><dt>Popper</dt><dd>A theory that takes that risk is doing something a theory that explains everything isn’t.</dd></dl></div>
+        </div>
+        <figcaption>The common misuse is to treat “unfalsifiable” as “rubbish.” Popper thought atomism, untestable for two thousand years, one of the most fruitful ideas ever, and called Darwinism a metaphysical research programme.</figcaption>
+      </figure>
+      <p>Underneath observations there is no bedrock. Popper’s “basic statements” are themselves theory-laden and accepted by agreement among investigators. His image, from <cite>The Logic of Scientific Discovery</cite>, is science as a building on piles driven into a swamp: we stop driving when the piles seem firm enough for now. What holds the structure up is not a foundation but the continual attempt to knock it down, which is why he called his position critical rationalism.</p>
+    </section>
+
+    <section class="sec" id="ideas">
+      <p class="kicker">If you remember nothing else</p>
+      <h2>Seven ideas</h2>
+      <div class="ideas">
+        <div class="idea"><p class="tag">Ch. 1</p><h3>There is no induction, and nothing is lost</h3><p>We never reason from instances to laws. We guess laws and hunt for the instance that kills them. The asymmetry between confirmation and refutation does all the work.</p></div>
+        <div class="idea"><p class="tag">Appendix</p><h3>Observation is always selective</h3><p>“Observe!” isn’t an instruction anyone can follow. A theory, interest or problem must say what counts as data.</p></div>
+        <div class="idea"><p class="tag">Politics</p><h3>Ask how to find errors, not who has authority</h3><p>The question about the sources of knowledge is a leftover of asking who should rule. Ask how to arrange things so errors are found fast.</p></div>
+        <div class="idea"><p class="tag">Ch. 5</p><h3>The best theories are the least probable</h3><p>Content, testability and explanatory depth rise together as probability falls. Safety and informativeness pull in opposite directions.</p></div>
+        <div class="idea"><p class="tag">Ch. 7</p><h3>Progress means better problems</h3><p>The problem you end with is never the one you started with. A field that stops producing harder problems has stopped.</p></div>
+        <div class="idea"><p class="tag">Ch. 3</p><h3>Knowledge exists outside heads</h3><p>Once a guess is written down it becomes an object others can attack. That, for Popper, is what language is for.</p></div>
+        <div class="idea"><p class="tag">Ch. 7</p><h3>Let the theory die instead of you</h3><p>The one-line summary of the book, and why Popper thought his epistemology was also a moral and political position.</p></div>
+      </div>
+    </section>
+
+    <section class="part" id="the-book">
+      <p class="kicker">The book, in order</p>
+      <h2>Nine essays and an appendix</h2>
+      <p class="part-lede">A collection of lectures and papers rather than a book written straight through, so it repeats itself. The argument runs from induction through realism and World 3 to evolution and truth.</p>
+    </section>
+
+    <article class="chapter" id="ch-1">
+      <p class="ch-label">Chapter 1</p>
+      <h3>Conjectural Knowledge: My Solution of the Problem of Induction</h3>
+      <p class="gist">Hume was right about the logic and wrong about the psychology.</p>
+      <ul class="points">
+        <li>Hume showed that no number of observed cases can justify a universal law, and then explained our confidence as habit. Popper accepts the logic and rejects the psychology: we don’t form expectations by repetition, we bring them to experience, and experience’s job is to knock them down.</li>
+        <li>The key is an asymmetry. No number of singular observations entails a universal statement, but one contradicts it. Many white swans can’t prove all swans are white, and one black swan disproves it.</li>
+        <li>Popper splits the problem into answerable pieces. We can’t justify believing a theory true, but we can justify preferring one theory to another because it has survived severer tests.</li>
+        <li>That preference is what he calls corroboration: a report on past performance, explicitly not a forecast or a probability of future truth.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Popper’s schema for the growth of knowledge</p>
+        <div class="schema">
+          <div class="s">P₁<small>A problem</small></div><span class="arr">→</span>
+          <div class="s">TT<small>Tentative theory</small></div><span class="arr">→</span>
+          <div class="s">EE<small>Error elimination</small></div><span class="arr">→</span>
+          <div class="s p2">P₂<small>A new, better problem</small></div>
+        </div>
+        <figcaption>Observation doesn’t appear at the start. It enters only inside error elimination, as a tool for killing theories. That inverts the textbook picture of observe, generalise, confirm.</figcaption>
+      </figure>
+    </article>
+
+    <article class="chapter" id="ch-2">
+      <p class="ch-label">Chapter 2</p>
+      <h3>Two Faces of Common Sense</h3>
+      <p class="gist">For commonsense realism; against the commonsense theory of knowledge.</p>
+      <ul class="points">
+        <li>Common sense is right that there is a real world independent of us, and Popper defends realism against idealists and positivists.</li>
+        <li>Common sense is wrong about how we know that world. It pictures the mind as a bucket filled by the senses, and that “bucket theory” is the root of the problem of induction.</li>
+        <li>Truth and certainty come apart. Truth is objective and absolute, while certainty is a feeling that is easy to have and worth nothing. Popper keeps the first and abandons the second.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-3">
+      <p class="ch-label">Chapter 3</p>
+      <h3>Epistemology Without a Knowing Subject</h3>
+      <p class="gist">The knowledge that matters isn’t a mental state.</p>
+      <ul class="points">
+        <li>Since Descartes, epistemology has asked about a knowing mind: what do I believe, and am I justified? Popper says that is the wrong object of study.</li>
+        <li>He distinguishes three worlds (see the figure below). The content of a theory, its logical consequences and the problems it leaves open belong to World 3. They exist whether or not anyone has noticed them.</li>
+        <li>His test case: destroy all machines and all human know-how but keep the libraries, and civilisation can restart. Destroy the libraries too, and it can’t.</li>
+        <li>World 3 is made by us, yet partly autonomous. We invent the natural numbers, and the primes and unsolved problems about them follow without our leave. That is a precise sense in which mathematics is both invented and discovered.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Popper’s three worlds</p>
+        <div class="worlds">
+          <div><span class="w">1</span><h4>The physical world</h4><p>Stones, stars, brains, books as physical objects.</p></div>
+          <div><span class="w">2</span><h4>Mental states</h4><p>Feelings, beliefs, perceptions: what goes on in a mind.</p></div>
+          <div><span class="w">3</span><h4>Objective contents of thought</h4><p>Theories, arguments, problems and their logical consequences, whether or not anyone thinks of them.</p></div>
+        </div>
+      </figure>
+    </article>
+
+    <article class="chapter" id="ch-4">
+      <p class="ch-label">Chapter 4</p>
+      <h3>On the Theory of the Objective Mind</h3>
+      <p class="gist">How to understand a text, an action or a historical event.</p>
+      <ul class="points">
+        <li>The German tradition (Dilthey, and Collingwood in England) said understanding a past agent means re-living their mental states through empathy. Popper thinks that is exactly wrong, and it makes the humanities look unrigorous for no reason.</li>
+        <li>His alternative is a World 3 operation: reconstruct the problem situation, meaning the problem the agent faced, their background assumptions, the options open to them and what would have counted as a solution. Then you can argue, with evidence, about whether their move fitted the problem.</li>
+        <li>He calls this situational analysis, with a “rationality principle” (the agent acted appropriately to the situation) as a deliberate simplification. When an explanation fails, suspect the reconstruction of the situation first.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-5">
+      <p class="ch-label">Chapter 5</p>
+      <h3>The Aim of Science</h3>
+      <p class="gist">To find satisfactory explanations. Prediction is a by-product and a testing device.</p>
+      <ul class="points">
+        <li>Popper sets himself against essentialism, which seeks ultimate explanations and so becomes a stop sign, and against instrumentalism, which treats theories as calculating tools that are neither true nor false.</li>
+        <li>An instrument can’t be refuted: a hammer that fails is just the wrong tool. If theories were instruments, anomalies would be notes on their limits rather than discoveries about the world, and criticism would lose its point.</li>
+        <li>Science seeks theories of ever greater depth and content. Since more content means lower probability, high probability can’t be the aim. The safest theory says as little as possible, the opposite of good science.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-6">
+      <p class="ch-label">Chapter 6</p>
+      <h3>Of Clouds and Clocks</h3>
+      <p class="gist">Human freedom and rationality in a world that is neither pure clockwork nor pure chance.</p>
+      <ul class="points">
+        <li>Physical systems range from regular “clocks” to disorderly “clouds.” Classical physics treated all clouds as secretly clocks. Popper argues all clocks are, in some degree, clouds.</li>
+        <li>Neither determinism nor randomness explains free, rational action. Pure chance is no more freedom than pure clockwork.</li>
+        <li>His motive is moral as much as physical. If determinism were true, arguing with someone would just be pushing their atoms about, and persuasion and manipulation would be the same thing. He wants a world in which reasons can be causes without being compulsions: plastic control, by ideas, of behaviour.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-7">
+      <p class="ch-label">Chapter 7</p>
+      <h3>Evolution and the Tree of Knowledge</h3>
+      <p class="gist">From the amoeba to Einstein, one method.</p>
+      <ul class="points">
+        <li>All knowledge, biological, perceptual and scientific, grows by the same cycle of trial and error elimination.</li>
+        <li>The difference between the amoeba and Einstein is that the amoeba’s errors die with it, while Einstein can state his theory, criticise it and let it die instead of him.</li>
+        <li>Language makes a theory a World 3 object outside the organism, something that can be examined, attacked and discarded. Popper thinks this is the largest change in the history of life.</li>
+        <li>Where the tree of life branches outward into ever more specialised forms, the tree of knowledge grows the other way: many specialised problems converge toward unified theories.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-8">
+      <p class="ch-label">Chapter 8</p>
+      <h3>A Realist View of Logic, Physics, and History</h3>
+      <p class="gist">Realism applied to three fields.</p>
+      <ul class="points">
+        <li>Logic is best understood as the theory of valid transmission of truth from premises to conclusion, and of falsity back from conclusion to premises: the logic of criticism.</li>
+        <li>Physics aims to describe a real world, against instrumentalist readings of quantum mechanics.</li>
+        <li>History is understood through reconstructing problem situations, as in Chapter 4. Technical in places, and safe to skip on a first reading.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-9">
+      <p class="ch-label">Chapter 9</p>
+      <h3>Philosophical Comments on Tarski’s Theory of Truth</h3>
+      <p class="gist">Why Popper stopped being embarrassed about truth.</p>
+      <ul class="points">
+        <li>Until the 1930s Popper was uneasy about truth as correspondence to the facts, which seemed empty or paradoxical. Alfred Tarski’s 1933 work showed how to define truth for a formal language without contradiction, by speaking about it in a richer metalanguage.</li>
+        <li>The schema (“snow is white” is true if and only if snow is white) looks trivial, and that is the point: correspondence can be stated precisely and consistently.</li>
+        <li>Popper builds on it his idea of verisimilitude, or closeness to the truth: a theory can be false yet closer to the truth than its rival. His formal definition of it was later shown not to work (see the objections below).</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="appendix">
+      <p class="ch-label">Appendix 1</p>
+      <h3>The Bucket and the Searchlight: Two Theories of Knowledge</h3>
+      <p class="gist">The most readable thing Popper wrote, and the picture at the top of this page.</p>
+      <ul class="points">
+        <li>The bucket theory: the mind is an empty container filled by the senses, and knowledge is what accumulates.</li>
+        <li>The searchlight theory: we always approach the world with expectations, questions and theories, and these light up what we notice. Every experiment answers a question and every instrument is built to detect something specific.</li>
+        <li>Popper once began a lecture by telling the audience simply to “observe” and write down what they saw. The instruction fails, because observation needs a chosen object, a task and a point of view.</li>
+      </ul>
+    </article>
+
+    <section class="sec" id="politics" style="margin-top:56px">
+      <p class="kicker">Context</p>
+      <h2>Why this is also a political theory</h2>
+      <p>Popper never separated his epistemology from his politics, worked out in <cite>The Open Society and Its Enemies</cite> (1945). Both fields made the same error: asking a question about authority when they should ask about correction.</p>
+      <div class="fence">
+        <div><p class="k">The wrong question</p><h4>Who is the authority?</h4><dl><dt>Knowledge</dt><dd>What are the sources of knowledge: reason, the senses, authority?</dd><dt>Politics</dt><dd>Who should rule: the wisest, the best, the majority?</dd></dl></div>
+        <div><p class="k">The right question</p><h4>How do we correct errors?</h4><dl><dt>Knowledge</dt><dd>How can we find out whether a belief is wrong? Its pedigree is irrelevant.</dd><dt>Politics</dt><dd>How can bad rulers be removed without violence, and limited while in office?</dd></dl></div>
+      </div>
+    </section>
+
+    <section class="sec" id="deutsch">
+      <p class="kicker">Context</p>
+      <h2>Popper to Deutsch</h2>
+      <p>David Deutsch says plainly that his epistemology is Popper’s. Nearly every foundation of <cite>The Beginning of Infinity</cite> (no induction, fallibilism, conjecture and criticism, problems as the engine) is in this book first.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">Idea</th><th scope="col">Popper</th><th scope="col">Deutsch</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Where knowledge comes from</th><td>Conjecture and refutation</td><td>The same, extended to all knowledge creation</td></tr>
+          <tr><th scope="row">Observation</th><td>Theory-laden, a searchlight</td><td>“Theory always comes first”</td></tr>
+          <tr><th scope="row">The engine</th><td>P₁ → TT → EE → P₂</td><td>Problems are inevitable, and soluble</td></tr>
+          <tr><th scope="row">What makes a theory good</th><td>Testability: it forbids something observable</td><td>Hard to vary: changing any detail wrecks it, even where testing can’t reach</td></tr>
+          <tr><th scope="row">Society</th><td>Remove rulers without violence</td><td>The same criterion, plus dynamic versus static societies</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px">Deutsch’s “hard to vary” criterion is stricter than testability. It rules out carefully stated conspiracy theories and just-so stories that Popper’s criterion admits. See <a href="the-beginning-of-infinity.html">the Deutsch summary</a> on this site.</p>
+    </section>
+
+    <section class="sec" id="afterlife">
+      <p class="kicker">Context</p>
+      <h2>What was built on it</h2>
+      <ul class="points">
+        <li><strong>George Soros</strong> studied under Popper at the LSE and has long said his approach to markets is applied Popper: state why a market is mispriced, say in advance what would prove you wrong, and close the position when it arrives. His concept of reflexivity, where beliefs change the facts they are about, marks where markets strain Popper’s schema. His Open Society Foundations take their name from Popper’s other book.</li>
+        <li><strong>Evolutionary epistemology.</strong> Donald Campbell’s “blind variation and selective retention” carried Chapter 7’s argument into psychology and the study of creativity.</li>
+        <li><strong>Where the word got worse.</strong> “Unfalsifiable” became a debating weapon for ruling claims out of court, which inverts Popper’s intent twice: he denied unfalsifiable ideas are nonsense, and he never meant the test to be applied sentence by sentence.</li>
+        <li><strong>On an ordinary Monday.</strong> Write the problem as a question, write two or three rival answers including one you dislike, name for each the observation that would kill it, and go looking for that observation. Beware the ad hoc rescue, an amendment that saves a theory by making it say less.</li>
+      </ul>
+    </section>
+
+    <section class="sec" id="objections">
+      <p class="kicker">Context</p>
+      <h2>The standing objections</h2>
+      <div class="debate"><h3>You can’t falsify a single hypothesis</h3><p>The Duhem–Quine problem: a test confronts a theory together with assumptions about instruments and conditions, and logic alone doesn’t say which to blame. Popper answered with methodological rules against ad hoc rescues, but rules aren’t deductions. This is the deepest crack.</p></div>
+      <div class="debate"><h3>Scientists don’t behave this way</h3><p>Thomas Kuhn observed that anomalies are usually tolerated and theories dropped only when a replacement exists. Imre Lakatos tried to rescue Popper with research programmes that protect a hard core. Popper replied that he describes what makes science rational, not what scientists happen to do.</p></div>
+      <div class="debate"><h3>If corroboration says nothing about the future, why act on it?</h3><p>Wesley Salmon pressed hardest: either corroboration carries forward-looking weight, and something like induction is back, or it doesn’t, and Popper has no account of rational action. We do board the plane. This is the objection Popper answered least well.</p></div>
+      <div class="debate"><h3>Verisimilitude failed</h3><p>David Miller and Pavel Tichý showed in 1974 that Popper’s formal definition of closeness to truth doesn’t work, and Popper conceded. Later repairs exist and none commands agreement, which matters because “closer to the truth” does real work in his account.</p></div>
+      <div class="debate"><h3>World 3: trivial or mysterious?</h3><p>If it just means what books and arguments say, it is an unremarkable way of talking. If it means more, it needs a metaphysics Popper never supplies.</p></div>
+    </section>
+
+    <section class="sec" id="reading">
+      <p class="kicker">Using it</p>
+      <h2>Reading it</h2>
+      <p>A workable first route covers about half the book and all of the argument that matters later:</p>
+      <ol class="steps">
+        <li><div><p class="phase">Appendix</p><p>The bucket and the searchlight: the most readable thing Popper wrote.</p></div></li>
+        <li><div><p class="phase">Chapter 1</p><p>The solution to the problem of induction.</p></div></li>
+        <li><div><p class="phase">Chapter 3</p><p>World 3 and knowledge without a knower.</p></div></li>
+        <li><div><p class="phase">Chapter 5</p><p>What science is for.</p></div></li>
+        <li><div><p class="phase">Chapter 7</p><p>Evolution, and letting theories die in our place.</p></div></li>
+      </ol>
+      <p style="margin-top:28px" class="kicker">Read alongside</p>
+      <ul class="books">
+        <li>Karl Popper, <cite>Conjectures and Refutations</cite> (1963): the more accessible collection.</li>
+        <li>Karl Popper, <cite>The Open Society and Its Enemies</cite> (1945): the political half of the project.</li>
+        <li><cite>The Beginning of Infinity</cite>, summarised on this site: the tradition carried forward.</li>
+        <li><cite>Fooled by Randomness</cite>, summarised on this site: Taleb’s practical Popperism for traders.</li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer class="wrap foot">
+  <p>A reader’s summary of Karl Popper, <cite>Objective Knowledge: An Evolutionary Approach</cite> (Clarendon Press, 1972; revised 1979). Paraphrased throughout, except the opening sentence of Chapter 1 and short phrases marked in quotation marks. Where later work has undercut a position, most importantly the formal theory of verisimilitude, it is marked. The bucket-and-searchlight drawing, the schema and the three-worlds panel are our diagrams. The print PDF of the earlier version of this summary remains in the site’s repository.</p>
 </footer>
 
-<script src="civ-plate.js" defer></script>
-<script src="book-toc.js" defer></script>
+<script>
+/* Figure kit: every drawing is laid out at the width it is shown at, one unit per CSS pixel,
+   so labels keep their stated size on a phone instead of shrinking with the picture. */
+var FIG = (function () {
+  var ns = 'http://www.w3.org/2000/svg';
+  function el(parent, name, attrs, txt) {
+    var e = document.createElementNS(ns, name);
+    for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+    if (txt != null) e.textContent = txt;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  // Text that wraps inside max pixels; returns the number of lines drawn.
+  function text(parent, x, y, str, cls, max, lh, anchor) {
+    var t = el(parent, 'text', { x: x, y: y, 'class': cls || null, 'text-anchor': anchor || null });
+    if (!max) { t.textContent = str; return 1; }
+    var words = String(str).split(' '), line = [], n = 1, span = el(t, 'tspan', { x: x, dy: 0 });
+    words.forEach(function (w) {
+      line.push(w); span.textContent = line.join(' ');
+      if (line.length > 1 && span.getComputedTextLength() > max) {
+        line.pop(); span.textContent = line.join(' ');
+        line = [w]; n++;
+        span = el(t, 'tspan', { x: x, dy: lh || 17 }, w);
+      }
+    });
+    return n;
+  }
+  function width(parent, str, cls) {
+    var t = el(parent, 'text', { x: -9999, y: -9999, 'class': cls || null }, str), w = t.getComputedTextLength();
+    parent.removeChild(t);
+    return w;
+  }
+  function fit(id, draw) {
+    var svg = typeof id === 'string' ? document.getElementById(id) : id;
+    if (!svg) return;
+    var last = 0;
+    function run(force) {
+      var w = svg.clientWidth;
+      if (!w || (w === last && force !== true)) return;
+      last = w;
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + Math.ceil(draw(svg, w)));
+    }
+    run();
+    var timer;
+    window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(run, 120); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { run(true); });
+  }
+  return { el: el, text: text, width: width, fit: fit };
+})();
+
+(function () {
+  // The picture scales with the page; its words are set at real size on top of it, so they
+  // stay legible on a phone.
+  FIG.fit('bucket', function (root, W) {
+  var k = W / 460, svg = FIG.el(root, 'g', { transform: 'scale(' + k + ')' });
+  function el(n, a, t) { return FIG.el(null, n, a, t); }
+  function label(x, y, str, cls, max) { FIG.text(root, x * k, y * k, str, cls, max, 16, 'middle'); }
+  var seed = 1972;
+  function r() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  svg.appendChild(el('rect', { x: 0, y: 0, width: 460, height: 362, rx: 6, 'class': 'bs-panel' }));
+  // left: the bucket
+  label(110, 30, 'THE BUCKET', 'bs-t');
+  svg.appendChild(el('path', { d: 'M52 150 L68 290 H152 L168 150', 'class': 'bs-line' }));
+  svg.appendChild(el('path', { d: 'M52 150 Q110 170 168 150', 'class': 'bs-line' }));
+  for (var i = 0; i < 70; i++) {
+    var x = 40 + r() * 140, y = 50 + r() * 90;
+    svg.appendChild(el('circle', { cx: x, cy: y, r: 2.2, 'class': 'bs-dim' }));
+  }
+  for (i = 0; i < 40; i++) {
+    var bx = 76 + r() * 68, by = 200 + r() * 82;
+    svg.appendChild(el('circle', { cx: bx, cy: by, r: 2.2, 'class': 'bs-dim' }));
+  }
+  label(110, 322, 'everything falls in', 'bs-s', 200 * k);
+  svg.appendChild(el('path', { d: 'M230 20 V340', stroke: 'var(--paper)', 'stroke-opacity': '.25' }));
+  // right: the searchlight
+  label(345, 30, 'THE SEARCHLIGHT', 'bs-t');
+  svg.appendChild(el('path', { d: 'M262 290 L338 70 L430 118 Z', 'class': 'bs-beam' }));
+  svg.appendChild(el('rect', { x: 250, y: 282, width: 24, height: 16, rx: 3, fill: 'var(--accent)' }));
+  for (i = 0; i < 110; i++) {
+    var sx = 245 + r() * 200, sy = 50 + r() * 230;
+    var inBeam = (function (px, py) {
+      var ax = 262, ay = 290, bx2 = 338, by2 = 70, cx = 430, cy = 118;
+      var d = (by2 - cy) * (ax - cx) + (cx - bx2) * (ay - cy);
+      var a = ((by2 - cy) * (px - cx) + (cx - bx2) * (py - cy)) / d;
+      var b = ((cy - ay) * (px - cx) + (ax - cx) * (py - cy)) / d;
+      return a > 0 && b > 0 && a + b < 1;
+    })(sx, sy);
+    svg.appendChild(el('circle', { cx: sx, cy: sy, r: inBeam ? 3.4 : 2.2, 'class': inBeam ? 'bs-hit' : 'bs-dim' }));
+  }
+  label(345, 322, 'a question picks what matters', 'bs-s', 200 * k);
+  return 362 * k;
+  });
+})();
+
+
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if (btn) btn.addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('civ-theme', next); } catch (e) {}
+  });
+
+  var fab = document.getElementById('tocOpen'), sheet = document.getElementById('tocSheet'),
+      backdrop = document.getElementById('tocBackdrop'), closeBtn = document.getElementById('tocClose'),
+      railList = document.querySelector('.rail ol'), where = fab && fab.querySelector('.where');
+  if (fab && sheet && backdrop && closeBtn && railList) {
+    sheet.appendChild(railList.cloneNode(true));
+    var openSheet = function () {
+      sheet.hidden = false; backdrop.hidden = false; fab.setAttribute('aria-expanded', 'true');
+      var cur = sheet.querySelector('a.is-active');
+      if (cur) sheet.scrollTop += cur.getBoundingClientRect().top - sheet.getBoundingClientRect().top - sheet.clientHeight / 2;
+      (cur || closeBtn).focus({ preventScroll: true });
+    };
+    var closeSheet = function (refocus) {
+      sheet.hidden = true; backdrop.hidden = true; fab.setAttribute('aria-expanded', 'false');
+      if (refocus) fab.focus({ preventScroll: true });
+    };
+    fab.addEventListener('click', function () { if (sheet.hidden) openSheet(); else closeSheet(false); });
+    closeBtn.addEventListener('click', function () { closeSheet(true); });
+    backdrop.addEventListener('click', function () { closeSheet(true); });
+    sheet.addEventListener('click', function (e) { if (e.target.closest('a[href^="#"]')) closeSheet(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sheet.hidden) closeSheet(true); });
+  }
+
+  // Highlight the current section in the rail and the sheet, and name it on the Contents button.
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a[href^="#"], .toc-sheet a[href^="#"]'));
+  if (!('IntersectionObserver' in window) || !links.length) return;
+  var byId = {};
+  links.forEach(function (a) {
+    var id = a.getAttribute('href').slice(1);
+    (byId[id] = byId[id] || []).push(a);
+  });
+  var labelFor = function (a) {
+    if (a.dataset.label) return a.dataset.label;
+    var n = a.querySelector('.n');
+    return n ? n.textContent.trim() + ' · ' + a.textContent.replace(n.textContent, '').trim() : a.textContent.trim();
+  };
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var group = byId[e.target.id];
+      if (!group) return;
+      links.forEach(function (l) { l.classList.remove('is-active'); });
+      group.forEach(function (l) { l.classList.add('is-active'); });
+      if (where) where.textContent = labelFor(group[0]);
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+  Object.keys(byId).forEach(function (id) {
+    var node = document.getElementById(id);
+    if (node) io.observe(node);
+  });
+})();
+</script>
 <script src="book-nav.js" defer></script>
 </body>
 </html>

@@ -22,6 +22,45 @@ from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
+SVG_MIN_PX = 12    # rendered size of the smallest label drawn inside an SVG, at 390px wide
+HTML_MIN_PX = 11   # rendered size of the smallest HTML text inside a figure
+
+# Returns one row per visible figure: how many labels render below the floor, the
+# smallest size, a sample label, and whether a graphic inside it scrolls sideways.
+FIGURE_PROBE = """([svgMin, htmlMin]) => {
+  const shown = el => el.getClientRects().length > 0 && getComputedStyle(el).visibility !== 'hidden';
+  const out = [];
+  document.querySelectorAll('figure, .fig').forEach((fig, i) => {
+    if (!shown(fig) || fig.parentElement.closest('figure, .fig')) return;
+    const title = fig.querySelector('.fig-title, figcaption');
+    const name = fig.id || (title ? title.textContent.trim().slice(0, 48) : 'figure ' + (i + 1));
+    const row = { name, svg: 0, svgMin: 99, svgSample: '', html: 0, htmlMin: 99, htmlSample: '' };
+    fig.querySelectorAll('svg text').forEach(t => {
+      if (!t.textContent.trim() || !shown(t)) return;
+      const m = t.getScreenCTM();
+      if (!m) return;
+      const px = parseFloat(getComputedStyle(t).fontSize) * Math.hypot(m.a, m.b);
+      if (px < row.svgMin) { row.svgMin = px; row.svgSample = t.textContent.trim().slice(0, 30); }
+      if (px < svgMin) row.svg++;
+    });
+    fig.querySelectorAll('*').forEach(el => {
+      if (el.closest('svg') || !shown(el)) return;
+      if (![...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) return;
+      const px = parseFloat(getComputedStyle(el).fontSize);
+      if (px < row.htmlMin) { row.htmlMin = px; row.htmlSample = (el.className || el.tagName) + ': ' + el.textContent.trim().slice(0, 24); }
+      if (px < htmlMin) row.html++;
+    });
+    row.svgMin = Math.round(row.svgMin * 10) / 10;
+    row.htmlMin = Math.round(row.htmlMin * 10) / 10;
+    row.scrolls = [...fig.querySelectorAll('*')].some(el =>
+      el.scrollWidth > el.clientWidth + 2 && /auto|scroll/.test(getComputedStyle(el).overflowX)
+      && el.querySelector('svg, canvas'));
+    row.small = row.svg + row.html;
+    out.push(row);
+  });
+  return out;
+}"""
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -90,6 +129,19 @@ def main():
 
         phone.evaluate("window.scrollTo({left: 400, top: window.scrollY, behavior: 'instant'})")
         check("no sideways scroll on a phone", phone.evaluate("window.scrollX") == 0)
+
+        # Graphics must read on a phone without pinching (Tim, 2026-09-23): a wide SVG that
+        # shrinks to 390px turns 12px labels into 7px ones, and a figure that scrolls
+        # sideways is not a fix. Measure what each label actually renders at.
+        figs = phone.evaluate(FIGURE_PROBE, [SVG_MIN_PX, HTML_MIN_PX])
+        small = [f for f in figs if f["small"]]
+        check(f"graphics readable on a phone (SVG text >= {SVG_MIN_PX}px, labels >= {HTML_MIN_PX}px)",
+              not small, "; ".join(
+                  f"{f['name']}: " + (f"{f['svg']} drawn labels down to {f['svgMin']}px ({f['svgSample']!r}) " if f['svg'] else "")
+                  + (f"{f['html']} labels down to {f['htmlMin']}px ({f['htmlSample']!r})" if f['html'] else "")
+                  for f in small[:6]))
+        wide = [f["name"] for f in figs if f["scrolls"]]
+        check("no graphic scrolls sideways on a phone", not wide, ", ".join(wide[:6]))
         check("no script errors", not errors, "; ".join(errors[:3]))
         browser.close()
     httpd.shutdown()
