@@ -88,6 +88,27 @@ body.book-toc-enabled.book-has-native-topbar section[id] {
   line-height: 1;
 }
 
+/* text-size settings, at the far end of the bar */
+.book-toc-top__settings {
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0 15px;
+  color: var(--book-toc-muted);
+  text-decoration: none;
+  border-left: 1px solid color-mix(in srgb, var(--book-toc-rule) 70%, transparent);
+  font: 600 15px/1 Georgia, "Iowan Old Style", serif;
+  white-space: nowrap;
+}
+
+.book-toc-top__settings:hover,
+.book-toc-top__settings:focus-visible {
+  color: var(--book-toc-accent);
+  background: color-mix(in srgb, var(--book-toc-accent) 7%, transparent);
+}
+
 .book-toc-top__toggle {
   align-self: stretch;
   display: inline-flex;

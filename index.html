@@ -67,6 +67,9 @@ body {
   border-radius: 999px; cursor: pointer;
 }
 .theme-button:hover { color: var(--ink); border-color: var(--rule-2); }
+.corner { position: fixed; top: .9rem; right: .9rem; z-index: 50; display: flex; gap: .45rem; }
+.corner .theme-button { position: static; }
+.corner a.theme-button { text-decoration: none; font: 600 .82rem/1 var(--display); letter-spacing: 0; text-transform: none; padding: .34rem .75rem; display: inline-flex; align-items: center; }
 
 /* ---------- hero ---------- */
 .hero { border-bottom: 1px solid var(--rule); padding: clamp(3.2rem, 11vw, 6rem) 0 clamp(2rem, 6vw, 3.2rem); }
@@ -247,9 +250,13 @@ footer a { color: var(--ink-2); }
 <meta name="twitter:description" content="Illustrated, chapter-by-chapter summaries of the books I&#x27;ve read.">
 <meta name="twitter:image" content="https://book-summaries-umber.vercel.app/og/index.png">
 <!-- link-preview:end -->
+<script src="site-settings.js"></script>
 </head>
 <body>
-<button class="theme-button" id="themeButton" type="button" aria-label="Switch colour theme">Theme</button>
+<div class="corner">
+  <a class="theme-button" href="settings.html" title="Text size" aria-label="Text size settings">Aa</a>
+  <button class="theme-button" id="themeButton" type="button" aria-label="Switch colour theme">Theme</button>
+</div>
 
 <header class="hero">
   <div class="wrap">
@@ -390,7 +397,7 @@ footer a { color: var(--ink-2); }
 </main>
 
 <footer class="wrap">
-  <p>Summaries written and illustrated for personal reading. Each page carries its own theme toggle and table of contents.</p>
+  <p>Summaries written and illustrated for personal reading. Each page carries its own theme toggle and table of contents. Text size for the whole site is in <a href="settings.html">Settings</a>.</p>
 </footer>
 
 <script>

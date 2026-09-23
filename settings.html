@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings — Book Summaries</title>
+<meta name="description" content="Reading settings for Book Summaries: text size across every page.">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232f6f69'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23f4f1e9' text-anchor='middle'%3E%C2%B6%3C/text%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('book-summaries-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<style>
+:root {
+  color-scheme: light;
+  --paper: #f4f1e9;
+  --panel: #fbfaf6;
+  --panel-2: #e9e4d8;
+  --ink: #191b1d;
+  --ink-2: #444a4e;
+  --ink-3: #747a7d;
+  --rule: #cbc4b6;
+  --rule-2: #aaa291;
+  --accent: #2f6f69;
+  --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --body: "Avenir Next", Avenir, "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #151719; --panel: #1c1f22; --panel-2: #262a2e;
+    --ink: #ece9df; --ink-2: #b8b5ad; --ink-3: #85847f;
+    --rule: #373b3e; --rule-2: #505559;
+    --accent: #5fa89f;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #151719; --panel: #1c1f22; --panel-2: #262a2e;
+  --ink: #ece9df; --ink-2: #b8b5ad; --ink-3: #85847f;
+  --rule: #373b3e; --rule-2: #505559;
+  --accent: #5fa89f;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+.wrap { width: min(100% - 2.4rem, 640px); margin-inline: auto; }
+a { color: var(--accent); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.top { padding: clamp(2rem, 7vw, 3.4rem) 0 0; }
+.home { font: 600 .68rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; }
+.home:hover { color: var(--ink); }
+h1 { margin: 1.4rem 0 0; font-family: var(--display); font-weight: 600; font-size: clamp(2.2rem, 7vw, 3.2rem); line-height: 1.04; letter-spacing: -.01em; }
+.intro { margin: .7rem 0 0; color: var(--ink-2); max-width: 44ch; }
+
+.setting { margin-top: 2.2rem; padding: 1.4rem 1.3rem 1.5rem; background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; }
+.setting__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.setting h2 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 1.35rem; }
+.value { font: 600 1rem/1 var(--mono); color: var(--accent); font-variant-numeric: tabular-nums; }
+.setting p.hint { margin: .35rem 0 0; font-size: .92rem; color: var(--ink-3); }
+
+.stepper { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .9rem; margin-top: 1.3rem; }
+.stepper button {
+  width: 3.1rem; height: 3.1rem; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--rule-2); background: var(--paper); color: var(--ink);
+  font-family: var(--display); line-height: 1; display: grid; place-items: center;
+}
+.stepper button:hover { border-color: var(--ink-3); }
+.stepper button:disabled { opacity: .35; cursor: default; }
+#smaller { font-size: 1rem; }
+#larger { font-size: 1.55rem; }
+input[type="range"] { width: 100%; accent-color: var(--accent); height: 2rem; margin: 0; }
+.scale { display: flex; justify-content: space-between; margin-top: .2rem; padding-inline: 4.1rem; font: 500 .64rem/1 var(--mono); letter-spacing: .08em; color: var(--ink-3); }
+
+.preview { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+.preview .label { margin: 0; font: 600 .64rem/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.preview h3 { margin: .7rem 0 .3rem; font-family: var(--display); font-weight: 600; font-size: 1.3rem; line-height: 1.2; }
+.preview p { margin: 0; font-family: var(--display); font-size: 1.06rem; line-height: 1.6; color: var(--ink-2); }
+
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; margin-top: 1.3rem; }
+.reset {
+  padding: .6rem 1rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: transparent; color: var(--ink-2);
+  font: 600 .68rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+}
+.reset:hover { color: var(--ink); border-color: var(--rule-2); }
+.status { font-size: .88rem; color: var(--ink-3); }
+
+footer { margin: 2.6rem auto 3rem; font-size: .85rem; color: var(--ink-3); }
+</style>
+<script src="site-settings.js"></script>
+</head>
+<body>
+
+<main class="wrap">
+  <div class="top">
+    <a class="home" href="index.html">← All summaries</a>
+    <h1>Settings</h1>
+    <p class="intro">These apply to every summary on this site, on this device.</p>
+  </div>
+
+  <section class="setting" aria-labelledby="size-h">
+    <div class="setting__head">
+      <h2 id="size-h">Text size</h2>
+      <span class="value" id="sizeValue" aria-live="polite">100%</span>
+    </div>
+    <p class="hint">This page resizes as you change it, so what you see here is what the summaries will look like.</p>
+
+    <div class="stepper">
+      <button type="button" id="smaller" aria-label="Smaller text">A</button>
+      <input type="range" id="sizeRange" min="80" max="160" step="5" value="100" aria-label="Text size" aria-describedby="sizeValue">
+      <button type="button" id="larger" aria-label="Larger text">A</button>
+    </div>
+    <div class="scale" aria-hidden="true"><span>80%</span><span>160%</span></div>
+
+    <div class="preview">
+      <p class="label">Preview</p>
+      <h3>Interest is the price of time</h3>
+      <p>Everyone prefers a good now to the same good later. That time preference, not the productivity of capital, sets the rate of interest, and interest shows up in every price spread, not just in loans.</p>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="reset" id="reset">Reset to 100%</button>
+      <span class="status" id="status"></span>
+    </div>
+  </section>
+
+  <footer>Saved in this browser only. Open tabs update straight away.</footer>
+</main>
+
+<script>
+(function () {
+  var s = window.bookSummarySettings;
+  var range = document.getElementById('sizeRange');
+  var value = document.getElementById('sizeValue');
+  var smaller = document.getElementById('smaller');
+  var larger = document.getElementById('larger');
+  var reset = document.getElementById('reset');
+  var status = document.getElementById('status');
+  if (!s) { status.textContent = 'Settings could not load. Reload the page to try again.'; return; }
+
+  function show(scale) {
+    var pct = Math.round(scale * 100);
+    range.value = pct;
+    value.textContent = pct + '%';
+    smaller.disabled = scale <= s.min;
+    larger.disabled = scale >= s.max;
+    reset.disabled = pct === 100;
+  }
+  function set(scale) { show(s.setTextScale(scale)); status.textContent = 'Saved.'; }
+
+  range.addEventListener('input', function () { set(parseInt(range.value, 10) / 100); });
+  smaller.addEventListener('click', function () { set(s.textScale() - 0.1); });
+  larger.addEventListener('click', function () { set(s.textScale() + 0.1); });
+  reset.addEventListener('click', function () { set(1); });
+  window.addEventListener('storage', function () { show(s.textScale()); });
+  show(s.textScale());
+})();
+</script>
+</body>
+</html>

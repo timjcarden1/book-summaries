@@ -172,9 +172,17 @@
     sideLinks.appendChild(makeLink(entry, "side"));
   });
 
+  var settings = document.createElement("a");
+  settings.className = "book-toc-top__settings";
+  settings.href = "settings.html";
+  settings.title = "Text size";
+  settings.setAttribute("aria-label", "Text size settings");
+  settings.textContent = "Aa";
+
   top.appendChild(home);
   top.appendChild(toggle);
   top.appendChild(topLinks);
+  top.appendChild(settings);
   side.appendChild(sideHead);
   side.appendChild(sideLinks);
 
