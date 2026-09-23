@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Meditations — Marcus Aurelius</title>
-<meta name="description" content="A reader's summary of Marcus Aurelius's Meditations: the life behind the notebook, the debts of Book 1, the Stoic kit he uses, providence or atoms, the ten things to remember when angry, a map of the twelve books, and the case against Stoicism.">
+<meta name="description" content="A comprehensive reader's summary of Marcus Aurelius's Meditations: all twelve books entry by entry, the life behind the notebook, the Stoic method, what held up, and how to read it.">
 <script>try{var t=localStorage.getItem('civ-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -281,6 +281,91 @@ td.num, th.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .ten li.do { color: var(--ink); }
 @media (max-width: 760px) { .ten { grid-template-columns: minmax(0, 1fr); } }
 
+
+/* ---------- depth pass (2026-09-23): sub-heads, plates, verdicts ---------- */
+.sub { font-family: var(--label); font-weight: 400; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 24px 0 10px; }
+.gist + .sub { margin-top: 6px; }
+.sec > .sub { margin-top: 26px; }
+.points + .line, .fig + .line, .content p + .line { margin-top: 22px !important; }
+.fig .table-wrap table { min-width: 0; }
+
+/* Book 1: who taught him what */
+.debts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 26px; }
+.debts li { display: grid; grid-template-columns: 2.9rem minmax(0, 1fr); gap: 10px; padding: 11px 0 12px; border-top: 1px solid var(--rule); }
+.debts .r { font-family: var(--label); font-size: .86rem; color: var(--accent); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.debts b { font-family: var(--display); font-weight: 400; font-size: 1.12rem; line-height: 1.25; color: var(--ink); }
+.debts i { font-family: var(--label); font-style: normal; font-size: .82rem; line-height: 1.25; color: var(--ink-3); }
+.debts i::before { content: " · "; }
+.debts p { margin: 4px 0 0; font-size: .95rem; line-height: 1.45; color: var(--ink-2); }
+
+/* 8.25: who saw whom die */
+.chain { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.chain li { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 10px; }
+.chain__a, .chain__b { padding: 9px 12px 10px; border-radius: 3px; background: var(--paper); border: 1px solid var(--rule); }
+.chain__b { border-style: dashed; border-color: var(--rule-strong); }
+.chain b { display: block; font-family: var(--display); font-weight: 400; font-size: 1.12rem; line-height: 1.2; color: var(--ink); }
+.chain span { display: block; margin-top: 2px; font-family: var(--label); font-size: .8rem; line-height: 1.3; color: var(--ink-3); }
+.chain__m { margin: 0; font-family: var(--label); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); text-align: center; white-space: nowrap; }
+.chain__m::after { content: "→"; display: block; font-size: 1.1rem; letter-spacing: 0; line-height: 1; }
+
+/* 7.21 in several translations */
+.versions { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.versions li { padding: 12px 14px 13px; background: var(--paper); border-left: 3px solid var(--accent-2); border-radius: 0 3px 3px 0; }
+.versions li:first-child { border-left-color: var(--accent); }
+.versions span { display: block; font-family: var(--label); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.versions p { margin: 5px 0 0; font-size: 1.04rem; line-height: 1.45; color: var(--ink); }
+.versions p[lang="grc"] { font-size: 1.12rem; }
+.versions i { display: block; margin-top: 5px; font-size: .92rem; color: var(--ink-2); }
+
+/* vertical timeline, drawn in HTML so it reflows */
+.vtl { list-style: none; margin: 0; padding: 0 0 0 26px; position: relative; display: grid; gap: 4px; }
+.vtl::before { content: ""; position: absolute; left: 6px; top: 12px; bottom: 12px; border-left: 2px solid var(--rule-strong); }
+.vtl li { position: relative; padding: 6px 0 8px; }
+.vtl li::before { content: ""; position: absolute; left: -25px; top: 13px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--surface); }
+.vtl li.b::before { background: var(--accent-2); }
+.vtl li.o::before { background: var(--surface); border: 2px solid var(--rule-strong); }
+.vtl b { display: block; font-family: var(--label); font-weight: 400; font-size: 1.02rem; line-height: 1.3; color: var(--ink); }
+.vtl span { display: block; font-family: var(--label); font-size: .88rem; color: var(--ink-3); }
+.vtl em { display: block; margin-top: 3px; font-style: normal; font-size: .98rem; line-height: 1.45; color: var(--ink-2); }
+.vtl .era { padding: 8px 0 0; font-family: var(--label); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.vtl .era::before { display: none; }
+.key { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 14px 0 0; font-family: var(--label); font-size: .86rem; color: var(--ink-3); }
+.key span::before { content: ""; display: inline-block; width: 11px; height: 11px; margin-right: 7px; vertical-align: -1px; border-radius: 50%; background: var(--accent); }
+.key .b::before { background: var(--accent-2); }
+.key .o::before { background: transparent; border: 2px solid var(--rule-strong); }
+
+/* held / partly / missed verdicts */
+.fc { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 2px 16px; padding: 16px 0 18px; border-top: 1px solid var(--rule); }
+.fc__v { grid-row: 1 / span 2; align-self: start; margin: 5px 0 0; padding: 5px 6px; text-align: center; border: 1px solid currentColor; border-radius: 3px; font-family: var(--label); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+.fc__v--held { color: var(--accent-2); }
+.fc__v--partly { color: var(--ink-2); }
+.fc__v--missed { color: var(--accent); }
+.fc h3 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 1.28rem; line-height: 1.2; }
+.fc h3 span { margin-left: 6px; font-family: var(--label); font-size: .74rem; letter-spacing: .1em; color: var(--ink-3); white-space: nowrap; }
+.fc p { margin: 4px 0 0; font-size: 1rem; color: var(--ink-2); }
+
+/* tables that turn into cards on a phone */
+@media (max-width: 640px) {
+  .stack table { min-width: 0; }
+  .stack thead { display: none; }
+  .stack tr { display: block; padding: 12px 16px 14px; border-bottom: 1px solid var(--rule); }
+  .stack tbody tr:last-child { border-bottom: 0; }
+  .stack th, .stack td { display: block; width: auto; padding: 0; border: 0; }
+  .stack td { margin-top: 6px; }
+  .stack td::before { content: attr(data-l); display: block; font-family: var(--label); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+  .stack td.num { white-space: normal; }
+  .stack.compact td { margin-top: 3px; }
+  .stack.compact td::before { display: none; }
+  .stack.compact td + td { color: var(--ink); }
+  .stack.compact td + td::before { display: inline; content: "→ "; letter-spacing: 0; text-transform: none; font-size: 1em; color: var(--accent); }
+}
+@media (max-width: 760px) {
+  .debts { grid-template-columns: minmax(0, 1fr); }
+  .chain li { gap: 6px; }
+  .chain__a, .chain__b { padding: 8px 9px 9px; }
+  .fc { grid-template-columns: minmax(0, 1fr); }
+  .fc__v { grid-row: auto; justify-self: start; margin: 0 0 6px; }
+}
 </style>
 <!-- link-preview:start — generated by tools/sync.py -->
 <link rel="canonical" href="https://book-summaries-umber.vercel.app/marcus-aurelius-meditations.html">
@@ -328,24 +413,24 @@ td.num, th.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
       <h1>Meditations</h1>
       <p class="subtitle">Ta eis heauton, “to himself”</p>
       <div class="thesis">
-        <p>“Soon you will have forgotten the world, and soon the world will have forgotten you.”</p>
-        <span>Book 7.21</span>
+        <p>“Take care that thou art not made into a Caesar, that thou art not dyed with this dye; for such things happen.”</p>
+        <span>Book 6.30 · George Long’s translation</span>
       </div>
       <p class="byline">Marcus Aurelius · written c. 170–180, in Greek</p>
       <div class="breath">
         <p class="kicker">The whole book in one breath</p>
-        <p>This is the private notebook of the most powerful man on earth, and he isn’t explaining anything to anyone. Writing at night on campaign, in Greek, Marcus tells himself the same handful of things over and over, because he keeps failing to remember them. Separate what is up to you (your judgements, intentions and conduct) from what isn’t (everything else). The injury is in your judgement of an event, not the event. Other people behave badly out of ignorance, and they are your kin anyway. Everything passes, you will die soon, and so will everyone who remembers you, so act well now. Most readers’ consolation is not that Marcus had answers, but that a man with absolute power and thirty years of practice still struggled with anger, procrastination, vanity and the fear of death.</p>
+        <p>This is the private notebook of the most powerful man on earth, written in Greek, largely in army camps on the Danube, in the last decade of his life. It explains nothing to anyone. In 487 entries, some a single line and a few of them two pages long, Marcus tells himself the same handful of things again and again because he keeps forgetting them: only his own judgements, aims and acts are his; things cannot touch the mind, only his opinions about them can; people who wrong him do it from ignorance, and they are his kin anyway; everything changes, he will soon be dead and forgotten, and so the one thing worth doing is to act justly now. Book 1 is a list of what he owed to the people who formed him. Books 2 to 12 are exercises, not arguments. Most readers take comfort not from any answer Marcus found but from the fact that a man with absolute power and decades of practice was still struggling, at the end, with anger, sloth, vanity and the fear of death.</p>
       </div>
       <dl class="facts">
-        <div><dt>Books</dt><dd>12, all fragments</dd></div>
-        <div><dt>Length</dt><dd>≈ 35,000 words</dd></div>
-        <div><dt>Written</dt><dd>On the Danube front</dd></div>
+        <div><dt>Books</dt><dd>12</dd></div>
+        <div><dt>Entries</dt><dd>487</dd></div>
+        <div><dt>Written</dt><dd>In camp, in Greek</dd></div>
         <div><dt>Audience</dt><dd>Himself alone</dd></div>
       </dl>
     </div>
     <figure class="hero-fig">
-      <svg id="reign" role="img" aria-label="Timeline of Marcus Aurelius's reign, 161 to 180: war with Parthia, the Antonine plague, the death of Lucius Verus, the Danube wars, the revolt of Avidius Cassius, the death of his wife, and his own death, with the years he wrote the Meditations marked across the last decade"></svg>
-      <figcaption>His reign, 161–180. Almost every event a biographer would call decisive falls in the years the notebook was written, and the notebook is silent about all of them.</figcaption>
+      <svg id="reign" role="img" aria-label="Timeline of Marcus Aurelius's reign, 161 to 180: war with Parthia, the plague, the deaths of Lucius Verus and of his son Annius, the invasion of Italy and the Danube wars, the revolt of Avidius Cassius and the death of Faustina, Commodus made co-emperor, and his own death, with the years he wrote the Meditations marked across the last decade"></svg>
+      <figcaption>His reign, 161–180. Almost every event a biographer would call decisive falls in the years the notebook was written, and the notebook names almost none of them.</figcaption>
     </figure>
   </div>
 </header>
@@ -355,19 +440,35 @@ td.num, th.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
     <ol>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#life">The life behind it</a></li>
-      <li><a href="#ideas">Seven things to keep</a></li>
-      <li class="grp">The book</li>
-      <li class="ch"><a href="#book1" data-label="Book 1 · Debts and lessons"><span class="n">1</span>Debts and lessons</a></li>
-      <li><a href="#system">The system he uses</a></li>
+      <li><a href="#book">The notebook itself</a></li>
+      <li><a href="#ideas">Twelve things to keep</a></li>
+      <li><a href="#system">The Stoic kit</a></li>
+      <li class="grp">The twelve books</li>
+      <li class="ch"><a href="#b1" data-label="Book 1 · Debts"><span class="n">1</span>Debts</a></li>
+      <li class="ch"><a href="#b2" data-label="Book 2 · Among the Quadi"><span class="n">2</span>Among the Quadi</a></li>
+      <li class="ch"><a href="#b3" data-label="Book 3 · At Carnuntum"><span class="n">3</span>At Carnuntum</a></li>
+      <li class="ch"><a href="#b4" data-label="Book 4 · The retreat"><span class="n">4</span>The retreat within</a></li>
+      <li class="ch"><a href="#b5" data-label="Book 5 · Getting up"><span class="n">5</span>The work of a human being</a></li>
+      <li class="ch"><a href="#b6" data-label="Book 6 · Not a Caesar"><span class="n">6</span>Not made a Caesar</a></li>
+      <li class="ch"><a href="#b7" data-label="Book 7 · Borrowed voices"><span class="n">7</span>Borrowed voices</a></li>
+      <li class="ch"><a href="#b8" data-label="Book 8 · The citadel"><span class="n">8</span>The citadel</a></li>
+      <li class="ch"><a href="#b9" data-label="Book 9 · Impiety"><span class="n">9</span>Injustice is impiety</a></li>
+      <li class="ch"><a href="#b10" data-label="Book 10 · Be one"><span class="n">10</span>Be one</a></li>
+      <li class="ch"><a href="#b11" data-label="Book 11 · Rules for anger"><span class="n">11</span>Rules for anger</a></li>
+      <li class="ch"><a href="#b12" data-label="Book 12 · Three acts"><span class="n">12</span>Three acts are the play</a></li>
+      <li class="grp">Threads through the books</li>
       <li><a href="#atoms">Providence or atoms</a></li>
-      <li class="ch"><a href="#ten" data-label="Book 11 · Ten things when angry"><span class="n">11</span>Ten things when angry</a></li>
-      <li><a href="#themes">What he keeps telling himself</a></li>
-      <li><a href="#guide">A guide to the twelve books</a></li>
-      <li class="grp">Context</li>
+      <li><a href="#death">Twelve ways to face death</a></li>
+      <li><a href="#fame">The names he forgot</a></li>
+      <li><a href="#silences">What the notebook leaves out</a></li>
+      <li class="grp">Reading Marcus</li>
       <li><a href="#stoics">Among the Stoics</a></li>
-      <li><a href="#uncomfortable">The uncomfortable parts</a></li>
-      <li><a href="#case">The case against Stoicism</a></li>
-      <li><a href="#afterlife">From nothing to everywhere</a></li>
+      <li><a href="#readers">Readers and critics</a></li>
+      <li><a href="#heldup">What held up</a></li>
+      <li><a href="#debates">Where it’s argued with</a></li>
+      <li><a href="#afterlife">How it survived</a></li>
+      <li><a href="#translations">One sentence, four translators</a></li>
+      <li><a href="#glossary">Glossary</a></li>
       <li><a href="#reading">How to read it</a></li>
     </ol>
   </nav>
@@ -377,178 +478,920 @@ td.num, th.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
     <section class="sec" id="life">
       <p class="kicker">The life behind the notebook</p>
       <h2>An heir for twenty-three years, an emperor for nineteen</h2>
-      <p>Marcus was born in Rome in 121 into a wealthy senatorial family. Hadrian noticed him young, nicknamed him <em>Verissimus</em>, “most truthful,” and in 138 arranged for his successor Antoninus Pius to adopt both Marcus and Lucius Verus. Marcus was seventeen, and he waited twenty-three years to rule, studying philosophy so intensely that his rhetoric tutor Fronto complained. Their surviving letters show a different Marcus: chatty, affectionate, fussing about his sore throat.</p>
-      <p>Becoming emperor in 161, he insisted the Senate make Lucius his equal co-emperor, the first joint rule in Roman history. Then almost everything went wrong at once: war with Parthia, a pandemic brought home by the army, a permanent crisis on the Danube, the revolt of his most trusted general, and the deaths of his wife and most of his children. He wrote this notebook in the last decade of it, mostly in camp, in Greek, the language of philosophy rather than government.</p>
-      <p>It was never meant to be read. It has no argument, no structure and no audience, and the title we use isn’t his. That is precisely what makes it useful.</p>
+      <p class="sub">A boy Hadrian noticed</p>
+      <p>Marcus was born in Rome on 26 April 121 as Marcus Annius Verus, into a rich senatorial family whose roots lay in southern Spain. His father died when he was about three, and he was brought up by his grandfather, Annius Verus, three times consul and prefect of the city, and by his mother, Domitia Lucilla, heiress to a brickmaking fortune. Both open Book 1 of the <cite>Meditations</cite>. He was taught at home rather than at school (1.4). At around twelve, according to the ancient biography in the <cite>Historia Augusta</cite>, he took up the philosopher’s rough cloak and wanted to sleep on the ground until his mother talked him into a couch spread with skins, which matches his “plank bed and skin” at 1.6. The emperor Hadrian took an interest in the boy, made him a Salian priest at eight and, punning on Verus, called him <em>Verissimus</em>, “most truthful.”</p>
+      <p class="sub">The long apprenticeship</p>
+      <p>In 138 Hadrian’s chosen heir, Lucius Aelius, died. Hadrian adopted the senator we know as Antoninus Pius on condition that Antoninus in turn adopt two boys: Marcus, then sixteen, and Aelius’s seven-year-old son, the future Lucius Verus. Marcus was betrothed to Antoninus’s daughter Faustina, married her in 145 and spent the next twenty-three years at his adoptive father’s side, consul at eighteen and learning the empire’s business from a man who ruled it for twenty-three years, largely in peace. His Latin rhetoric tutor was Marcus Cornelius Fronto, whose letters with him survive and show a warm, joking, sometimes anxious young man. In his mid-twenties he turned from rhetoric to philosophy, and it was the Stoic Junius Rusticus, later prefect of Rome, who lent him the lecture notes of Epictetus that shaped everything he wrote (1.7).</p>
+      <p class="sub">Emperor, 161</p>
+      <p>Antoninus died at his villa at Lorium on 7 March 161, having given the officer of the guard that evening the watchword <em>aequanimitas</em>, equanimity. Marcus at once had the senate make Lucius his equal, the first time Rome had two emperors ruling together. That August Faustina bore twins, one of them Commodus. Then almost everything went wrong. Parthia invaded Armenia; the war lasted until 166, and the returning army brought back a plague, probably smallpox, that ran through the empire for years and killed millions. Germanic and Sarmatian peoples pressed on the Danube. Lucius died in early 169, and the same year Marcus lost his seven-year-old son Annius. In 170 the Marcomanni and Quadi broke through, besieged Aquileia and burned a town in northern Italy, the first invasion of Italy in almost three centuries.</p>
+      <p class="sub">The hard decade</p>
+      <p>Marcus spent most of the 170s with the armies: at Carnuntum, near modern Vienna, in 171–173, fighting the Quadi, Marcomanni and the Sarmatian Iazyges. In 175 Avidius Cassius, his most successful general, proclaimed himself emperor in the East on a report that Marcus was dead, and was killed by his own officers after about three months. Marcus toured the East, and Faustina died on the journey, in a village in Cappadocia, that winter. In 176 he was initiated into the mysteries at Eleusis and endowed chairs of philosophy at Athens for the four main schools. In 177 he made his teenage son Commodus co-emperor; that summer Christians were tortured and killed at Lyon. He went north again in 178 and died on campaign on 17 March 180, probably at Vindobona or Sirmium, aged fifty-eight. Of the fourteen or so children Faustina bore him, only Commodus and four or five daughters outlived him.</p>
+      <p>The historian Cassius Dio, who lived through what followed, wrote that Marcus “did not meet with the good fortune that he deserved,” and that with his death the history of Rome “descends from a kingdom of gold to one of iron and rust.” The notebook was written in these years. It was never meant to be read.</p>
+    </section>
+
+    <section class="sec" id="book">
+      <p class="kicker">The work</p>
+      <h2>A notebook with no title, no plan and one reader</h2>
+      <p>What survives is twelve “books” of entries in Greek, the language of philosophy for an educated Roman, although his letters to Fronto are in Latin. The Greeks called such things <em>hypomnemata</em>, personal notes kept for rereading, and that is what these are: reminders, arguments with himself, definitions, lists, quotations copied out for later. Nobody is addressed except “thou,” and “thou” is Marcus. The title under which the book reached us, <em>Ta eis heauton</em>, “the things to himself,” comes from the manuscripts and is probably not his.</p>
+      <ul class="points">
+        <li><strong>Where it was written.</strong> Between Books 1 and 2 one manuscript tradition carries the note “Among the Quadi at the Granua,” a river in modern Slovakia, and between Books 2 and 3 “This in Carnuntum,” the army base on the Danube. Editors disagree whether each note closes the book before it or heads the one after, but together they put at least the early books in the camps of the early 170s.</li>
+        <li><strong>Book 1 is different.</strong> It is continuous, finished and addressed to no one, a list of debts rather than an exercise. Many scholars since the Austrian editor Heinrich Schenkl have thought it was written last and set at the front as a kind of dedication.</li>
+        <li><strong>The rest is fragments.</strong> The entries run from five words to more than nine hundred; the median, in George Long’s translation, is 64. Some are polished aphorisms, some half-finished thoughts, and a few are unreadable in the manuscripts.</li>
+        <li><strong>He copied as well as wrote.</strong> Book 7 contains a run of quotations from Plato, Euripides and others (7.35–7.51), and Book 11 ends with sayings of Epictetus and Socrates (11.22–39). Parts of the book are a commonplace book.</li>
+        <li><strong>The numbering is modern.</strong> The division into twelve books is in the manuscripts; the numbered entries come from Thomas Gataker’s edition of 1652. References here are to book and entry in Long’s numbering, which almost every translation follows.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Entries per book, and how long they run</p>
+        <div class="hbars">
+          <div class="hbar"><p class="hbar__lab">Book 1 · the debts</p><div class="hbar__track"><span class="hbar__fill b" style="width:22.7%"></span></div><p class="hbar__val"><b>17 entries</b> · 2,800 words · longest 1.16, on Antoninus Pius</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 2 · among the Quadi</p><div class="hbar__track"><span class="hbar__fill" style="width:22.7%"></span></div><p class="hbar__val"><b>17 entries</b> · 2,300 words</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 3 · at Carnuntum</p><div class="hbar__track"><span class="hbar__fill" style="width:21.3%"></span></div><p class="hbar__val"><b>16 entries</b> · 2,800 words</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 4</p><div class="hbar__track"><span class="hbar__fill" style="width:68%"></span></div><p class="hbar__val"><b>51 entries</b> · 4,300 words</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 5</p><div class="hbar__track"><span class="hbar__fill" style="width:48%"></span></div><p class="hbar__val"><b>36 entries</b> · 4,400 words</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 6</p><div class="hbar__track"><span class="hbar__fill" style="width:78.7%"></span></div><p class="hbar__val"><b>59 entries</b> · 4,500 words</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 7</p><div class="hbar__track"><span class="hbar__fill" style="width:100%"></span></div><p class="hbar__val"><b>75 entries</b> · 4,200 words · many one line long</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 8</p><div class="hbar__track"><span class="hbar__fill" style="width:81.3%"></span></div><p class="hbar__val"><b>61 entries</b> · 4,500 words</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 9</p><div class="hbar__track"><span class="hbar__fill" style="width:56%"></span></div><p class="hbar__val"><b>42 entries</b> · 4,200 words</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 10</p><div class="hbar__track"><span class="hbar__fill" style="width:50.7%"></span></div><p class="hbar__val"><b>38 entries</b> · 4,500 words</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 11</p><div class="hbar__track"><span class="hbar__fill" style="width:52%"></span></div><p class="hbar__val"><b>39 entries</b> · 3,800 words · longest 11.18, the rules for anger</p></div>
+          <div class="hbar"><p class="hbar__lab">Book 12</p><div class="hbar__track"><span class="hbar__fill" style="width:48%"></span></div><p class="hbar__val"><b>36 entries</b> · 3,100 words</p></div>
+        </div>
+        <figcaption>Our count, in George Long’s translation (about 45,500 words in all); bars to scale by number of entries. Books 1–3 are a few long meditations. From Book 4 the entries shorten and multiply, and Book 7 is seventy-five fragments. The two longest entries are the rules for anger (11.18, about 920 words) and the portrait of Antoninus Pius (1.16, about 880).</figcaption>
+      </figure>
     </section>
 
     <section class="sec" id="ideas">
       <p class="kicker">If you remember nothing else</p>
-      <h2>Seven things to keep</h2>
+      <h2>Twelve things to keep</h2>
       <div class="ideas">
-        <div class="idea"><p class="tag">The discipline of assent</p><h3>The injury is in the judgement</h3><p>Between what happens and how you feel sits one step, your assent, and it is the only place you have any purchase.</p></div>
-        <div class="idea"><p class="tag">The dichotomy of control</p><h3>Separate what is yours, often</h3><p>Your judgement, intention and conduct are yours. Your body, reputation, other people and whether the plan works are not. The discipline is applying it to today’s problem.</p></div>
-        <div class="idea"><p class="tag">Action</p><h3>Obligation survives the loss of control</h3><p>That outcomes aren’t up to you doesn’t release you from acting well. This separates Stoicism from fatalism, and modern summaries drop it.</p></div>
-        <div class="idea"><p class="tag">Other people</p><h3>Difficult people are mistaken, not enemies</h3><p>Treat wrongdoing as a failure of understanding. True or not, holding the thought makes anger hard to sustain.</p></div>
-        <div class="idea"><p class="tag">Scale</p><h3>Get the size of things right</h3><p>Death, deep time, the view from above and the plain physical description of a prized object all shrink what fear or rank has inflated.</p></div>
-        <div class="idea"><p class="tag">Time</p><h3>Only the present can be lost</h3><p>The past is spent and the future isn’t yours yet, so the present is all that is actually at stake.</p></div>
-        <div class="idea"><p class="tag">Practice</p><h3>He never finished</h3><p>Book 12 tells him what Book 2 told him. There is no arrival. That a man ran the practice for a decade and still needed it is the book’s most reassuring fact.</p></div>
+        <div class="idea"><p class="tag">Judgement · 4.7, 8.47</p><h3>The injury is in the opinion</h3><p>“Take away thy opinion, and then there is taken away the complaint, ‘I have been harmed.’” Between what happens and what you feel sits a judgement, and it is the one place you have any purchase.</p></div>
+        <div class="idea"><p class="tag">Control · 6.41, 12.3</p><h3>Only three things are yours</h3><p>Your judgement, your aim and your act. Body, reputation, other people and results belong to the world. Most misery comes from treating the second list as if it were the first.</p></div>
+        <div class="idea"><p class="tag">Action · 5.20, 6.50</p><h3>Act anyway, with a reservation</h3><p>That results are not yours does not excuse you from trying. Aim “conditionally,” and when blocked, turn the obstacle into material for another virtue.</p></div>
+        <div class="idea"><p class="tag">Other people · 2.1, 7.22</p><h3>Wrongdoers are kin who are mistaken</h3><p>They act from ignorance of good and bad, and they share your reason. So they cannot really harm you, and you have no ground to hate them.</p></div>
+        <div class="idea"><p class="tag">Anger · 11.18</p><h3>Gentleness is the strong position</h3><p>Anger is a weakness, like pain; mildness “possesses strength, nerves, and courage.” And anger usually costs more than the thing you are angry about.</p></div>
+        <div class="idea"><p class="tag">Perspective · 6.13, 9.30</p><h3>Get the size of things right</h3><p>Describe a prized thing plainly (a purple robe is sheep’s wool dyed in shellfish blood), or look down on it from above. Both shrink what rank or appetite inflates.</p></div>
+        <div class="idea"><p class="tag">Time · 2.14, 3.10</p><h3>Only the present can be lost</h3><p>The past is gone and the future not yet yours, so the longest life and the shortest lose exactly the same thing: this moment.</p></div>
+        <div class="idea"><p class="tag">Death · 4.17, 9.3</p><h3>Death is near and natural</h3><p>“Do not act as if thou wert going to live ten thousand years.” Dying is a work of nature like teething or growing grey, and there is no point fearing it.</p></div>
+        <div class="idea"><p class="tag">Fame · 4.3, 4.19</p><h3>Praise is noise from the dying</h3><p>The people who might remember you will die soon too, and then the people who remember them. Posthumous fame is a relay of forgetting.</p></div>
+        <div class="idea"><p class="tag">Duty · 5.1, 6.54</p><h3>You exist for the common work</h3><p>“That which is not good for the swarm, neither is it good for the bee.” Getting out of bed is joining the work that plants, ants and bees already do.</p></div>
+        <div class="idea"><p class="tag">Acceptance · 4.23, 10.6</p><h3>You are a part of a whole</h3><p>Whether the universe is run by providence or is atoms colliding, a part has no business resenting the whole. He argues it both ways and lands in the same place.</p></div>
+        <div class="idea"><p class="tag">Practice · 5.9, 8.1</p><h3>He never finished</h3><p>“It is plain that thou art far from philosophy.” Book 12 repeats what Book 2 said. Return to philosophy not as a schoolmaster but as a salve for sore eyes.</p></div>
       </div>
     </section>
 
-    <article class="chapter" id="book1">
-      <p class="ch-label">Book 1</p>
-      <h3>Debts and Lessons</h3>
-      <p class="gist">A list of what he owes to each person who formed him, and the only book that isn’t an argument with himself.</p>
+    <section class="sec" id="system">
+      <p class="kicker">The Stoic kit</p>
+      <h2>A practitioner’s tools, not a textbook</h2>
+      <p>Stoicism was nearly five centuries old when Marcus wrote. It was founded at Athens around 300 BCE by Zeno, a merchant from Citium in Cyprus, taught in the Painted Stoa that gave it its name, and systematised by Chrysippus into three parts: logic, physics and ethics. Marcus tells himself to apply all three to “every impression on the soul” (8.13), but he wrote no treatise on any of them. What he takes, mostly through Epictetus, is a set of operations he can run on himself when he is angry, frightened, bored or reluctant to get up.</p>
+      <p class="sub">The pieces</p>
       <ul class="points">
-        <li>Marcus goes through grandfather, parents, tutors, philosophers, his adoptive father and finally the gods, and names for each the specific quality he took from them.</li>
-        <li>The lessons are unglamorous and mostly about restraint: not to take sides at the races, not to correct people’s grammar in public, not to plead “I’m too busy” to dodge obligations, not to be taken in by wonder-workers.</li>
-        <li>The philosopher Rusticus told him his character needed work, steered him away from showy rhetoric, and lent him his own copy of Epictetus. Almost everything in the other eleven books descends from that loan.</li>
-        <li>Antoninus Pius gets the longest entry, a portrait of the ruler Marcus intended to be: steady, unmoved by flattery, willing to hear opposition, never rushed and never dithering, the same in private as in public.</li>
-        <li>The last entry thanks the gods for what went right: good family and teachers, never being told he lacked the means to help someone, not getting further in rhetoric and poetry. Many scholars think Book 1 was written separately, perhaps last.</li>
+        <li><strong>The ruling part.</strong> A person is “a little flesh and breath, and the ruling part” (2.2; again at 12.3). The ruling part, the <em>hegemonikon</em>, is reason, and it is a fragment of the reason that runs the universe: the daemon “which Zeus hath given to every man for his guardian and guide, a portion of himself” (5.27).</li>
+        <li><strong>Impressions and assent.</strong> Events arrive as impressions. The mind can accept or refuse the judgement that comes with them. “Things themselves touch not the soul” (5.19). His plainest example: “I see that my child is sick. I do see; but that he is in danger, I do not see” (8.49). Add nothing to the first report.</li>
+        <li><strong>Good, bad and indifferent.</strong> Only virtue is good and only vice is bad. Death, life, honour, pain and pleasure “equally happen to good men and bad,” so they are neither (2.11). Stoics called them indifferents, while still allowing that some, like health, are rationally preferred; Marcus keeps the idea when he says that in “things indifferent I attempt to ascertain the value of each” (3.11).</li>
+        <li><strong>Acting with a reservation.</strong> A Stoic aims at outcomes “conditionally” (6.50; 8.41): he tries to win, but he is not wrecked if he loses, because what was his was the trying. This is what makes obstacles usable: “the mind converts and changes every hindrance to its activity into an aid” (5.20).</li>
+        <li><strong>The city of the world.</strong> If reason is common to all people, so is law, so all are fellow citizens, “the world is in a manner a state” (4.4). “My city and country, so far as I am Antoninus, is Rome, but so far as I am a man, it is the world” (6.44).</li>
+        <li><strong>The whole.</strong> The universe is “one living being, having one substance and one soul” (4.40), everything woven together “and the bond is holy” (7.9). Whatever happens to a part is good for the whole, and so, rightly seen, for the part.</li>
       </ul>
-    </article>
-
-    <article class="chapter" id="system">
-      <p class="ch-label">The system</p>
-      <h3>What He Takes from Stoicism</h3>
-      <p class="gist">A practitioner’s kit, not an introduction to the school.</p>
-      <ul class="points">
-        <li>Stoicism was four centuries old, with a full physics, logic and ethics. Marcus uses little of the first two. Mostly through Epictetus, he takes a small set of operations he can run on himself when angry, frightened or reluctant to get out of bed.</li>
-        <li>The school had no social entry requirement. Its founders included a Cypriot merchant, and Marcus learned it from Epictetus, a man who had been a slave.</li>
-        <li>The core distinction is between what is up to us and what isn’t (see the figure below). The operational core is that emotions follow judgements, and judgements can be examined, which modern cognitive therapy rediscovered in the twentieth century.</li>
-        <li>Pierre Hadot’s reading has become standard: these are spiritual exercises, not doctrines. Almost every entry in Books 2–12 exercises one of three disciplines: of assent (judgements), of desire (accepting what happens), and of action (serving others justly).</li>
-      </ul>
+      <p class="sub">Three disciplines</p>
+      <p>The French scholar Pierre Hadot, in <cite>The Inner Citadel</cite> (1992), showed that almost every entry in Books 2–12 exercises one of three disciplines, which Marcus took from Epictetus and quotes in Epictetus’s own words at 11.37. Marcus sometimes packs all three into one sentence, as at 7.54 and 9.6.</p>
+      <figure class="fig">
+        <p class="fig-title">Figure · The three disciplines, after Hadot</p>
+        <div class="cards three">
+          <div><p class="k">Assent</p><h4>What you believe</h4><p>Governs judgements about impressions. Belongs to logic. Marcus: “thy present opinion founded on understanding” (9.6); “assents to nothing false or uncertain” (8.7).</p></div>
+          <div><p class="k">Desire</p><h4>What you want</h4><p>Governs desire and aversion toward what happens. Belongs to physics, the study of the whole. Marcus: “thy present disposition of contentment with everything which happens” (9.6).</p></div>
+          <div><p class="k">Action</p><h4>What you do</h4><p>Governs impulses toward other people. Belongs to ethics, and its virtue is justice. Marcus: “thy present conduct directed to social good” (9.6).</p></div>
+        </div>
+        <figcaption>Epictetus’s three topics (<cite>Discourses</cite> 3.2), as Hadot reads them in Marcus. The formula at 7.54 gives the same three in another order: acquiesce in thy present condition, behave justly to those about thee, examine thy present thoughts.</figcaption>
+      </figure>
       <figure class="fig">
         <p class="fig-title">Figure · What is up to you</p>
         <div class="fence">
-          <div><p class="k">Up to you</p><h4>Yours to govern</h4><dl><dt>Judgement</dt><dd>What you assent to about what happens</dd><dt>Intention</dt><dd>What you aim at, and why</dd><dt>Conduct</dt><dd>How you act, now</dd></dl></div>
-          <div><p class="k">Not up to you</p><h4>Accept, and act anyway</h4><dl><dt>Body</dt><dd>Health, pain, ageing, death</dd><dt>Others</dt><dd>What people think, say and do</dd><dt>Outcomes</dt><dd>Whether the plan works</dd></dl></div>
+          <div><p class="k">Up to you</p><h4>Yours to govern</h4><dl><dt>Judgement</dt><dd>What you assent to about what happens</dd><dt>Aim</dt><dd>What you try for, and why</dd><dt>Act</dt><dd>How you behave, now</dd></dl></div>
+          <div><p class="k">Not up to you</p><h4>Accept, and act anyway</h4><dl><dt>Body</dt><dd>Health, pain, age, death</dd><dt>Others</dt><dd>What people think, say and do</dd><dt>Outcomes</dt><dd>Whether the plan works</dd></dl></div>
         </div>
-        <figcaption>Note which side “whether the plan works” falls on. You are still obliged to act well. What you are released from is the demand that the world cooperate.</figcaption>
+        <figcaption>Note which side “whether the plan works” falls on. You are still obliged to act well (8.32). What you are released from is the demand that the world cooperate. Marcus’s own version: of body, breath and mind, “the first two are thine, so far as it is thy duty to take care of them; but the third alone is properly thine” (12.3).</figcaption>
       </figure>
-    </article>
-
-    <article class="chapter" id="atoms">
-      <p class="ch-label">Physics</p>
-      <h3>Providence or Atoms</h3>
-      <p class="gist">He never decides, and shows his ethics survive either answer.</p>
-      <ul class="points">
-        <li>Orthodox Stoicism held that the cosmos is one rational, living whole, and that accepting what happens is recognition, not resignation.</li>
-        <li>Marcus keeps raising the alternative: either providence, or Epicurean atoms colliding by chance with no plan. He states the choice in at least nine places and never settles it.</li>
-        <li>His conclusions hold either way. If there is providence, complaint is incoherent. If there are only atoms, nothing is owed to you, and your own mind is all the more worth governing. The ethics bear the load and the metaphysics is scaffolding. That is why the book works for readers who share none of his cosmology.</li>
-        <li>He leans hard on Heraclitus’s flux: everything is turning into something else, and the courts of Vespasian and Trajan, full of people marrying, quarrelling and scheming, are gone. That consoles, since whatever is unbearable will pass, and it deflates, since whatever you chase will pass too. The one thing exempt is how you behave now.</li>
-      </ul>
-    </article>
-
-    <article class="chapter" id="ten">
-      <p class="ch-label">Book 11.18</p>
-      <h3>Ten Things to Remember When Angry</h3>
-      <p class="gist">The one numbered list in the book, and the closest it comes to instructions for a bad afternoon.</p>
-      <ol class="ten">
-        <li>We were made for one another, and I was set over them as a leader.</li>
-        <li>Consider what these people are like at table and in bed, and what their opinions compel them to do.</li>
-        <li>If they are right, don’t be vexed. If wrong, they act involuntarily, out of ignorance.</li>
-        <li>You often do wrong yourself and are much like them.</li>
-        <li>You can’t be sure they are doing wrong at all. Much is done for reasons you can’t see.</li>
-        <li>Life is very short, and soon we will all be laid out dead.</li>
-        <li>It isn’t their acts that disturb us, but our judgements of them. Take away the judgement and the anger goes.</li>
-        <li>Anger and grief do us more harm than the things we are angry about.</li>
-        <li class="do">Kindness, if sincere, is unbeatable: correct them gently, and without a lecture.</li>
-        <li>To expect bad people not to do wrong is madness.</li>
-      </ol>
-      <p style="margin-top:14px">Our paraphrase. Item 7 is the principle and the rest apply it. Only item 9 says what to do; the other nine are about how to see, which fits the whole method, since the intervention point is the judgement. Several items, like the Socratic claim in item 3, Marcus asserts rather than proves. He is assembling thoughts that, held together at the right moment, make anger harder to keep up.</p>
-    </article>
-
-    <article class="chapter" id="themes">
-      <p class="ch-label">Obsessions</p>
-      <h3>What He Keeps Telling Himself</h3>
-      <p class="gist">A man doesn’t write the same reminder for ten years unless he keeps needing it.</p>
-      <ul class="points">
-        <li><strong>Death, constantly.</strong> Augustus and his court are “all dead, all buried.” Alexander and his mule-driver came to the same end. Don’t act as if you will live ten thousand years. Mortality is his scaling device: set against it, a courtier’s slight shrinks to nothing, and the present hour becomes the whole stock of life.</li>
-        <li><strong>Other people.</strong> Book 2 opens by warning him that today he will meet meddling, ungrateful, arrogant, dishonest people. The part usually left out: they act from ignorance of good and bad, they are his kin through shared reason, and so they can’t injure him and he can’t hate them. Wrongdoing is treated like an arithmetic mistake. Easy to hold in the abstract, and nearly impossible when someone is being intolerable.</li>
-        <li><strong>The obstacle.</strong> At 5.20, what stands in the way becomes the way. It isn’t a slogan about grit. An obstruction to one purpose is material for another, because the virtue in practice is responding well to what is in front of you.</li>
-        <li><strong>Getting out of bed.</strong> At 5.1, at dawn, he argues with himself: he rises to do the work of a human being, so was he made to lie under the blankets and keep warm? “But this is more pleasant.” Then do you exist for pleasure? The ruler of Rome, at war, in his fifties, arguing with himself about the snooze button, in several books.</li>
-      </ul>
-    </article>
-
-    <section class="sec" id="guide">
-      <p class="kicker">A map</p>
-      <h2>A guide to the twelve books</h2>
-      <p>The books have no titles, themes or order, so the usual experience is remembering a line and being unable to find it. References are given as book.section, which works in any translation.</p>
-      <div class="table-wrap"><table>
-        <thead><tr><th scope="col">Book</th><th scope="col">What to look for</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">1</th><td>The debts: what he learned from each teacher, and Antoninus Pius at length.</td></tr>
-          <tr><th scope="row">2</th><td>Headed “among the Quadi.” 2.1: the difficult people you will meet today.</td></tr>
-          <tr><th scope="row">3</th><td>Headed “at Carnuntum.” Doing each act as if it were your last, and the mind that needs nothing.</td></tr>
-          <tr><th scope="row">4</th><td>4.3: the retreat into yourself, the inner citadel. The book philosophers rate highest, and it repays rereading.</td></tr>
-          <tr><th scope="row">5</th><td>5.1: getting out of bed. 5.20: the obstacle becomes the way.</td></tr>
-          <tr><th scope="row">6</th><td>The densest stretch of often-quoted entries. 6.6: the best revenge is not to be like the one who wronged you. The best single book to sample.</td></tr>
-          <tr><th scope="row">7</th><td>7.21: forgetting and being forgotten. Flux and change.</td></tr>
-          <tr><th scope="row">8–9</th><td>Death, fame and the courts of past emperors. Providence or atoms, repeatedly.</td></tr>
-          <tr><th scope="row">10</th><td>10.16: stop arguing about what a good man is, and be one.</td></tr>
-          <tr><th scope="row">11</th><td>11.18: the ten things to remember when angry.</td></tr>
-          <tr><th scope="row">12</th><td>The same reminders once more, and a last reflection on leaving the stage.</td></tr>
-        </tbody>
-      </table></div>
     </section>
 
-    <section class="sec" id="stoics" style="margin-top:20px">
+    <section class="part" id="books">
+      <p class="part-num">The twelve books</p>
+      <h2>Book by book</h2>
+      <p class="part-lede">The books have no titles and no subjects, and the same thoughts recur in all of them, so the usual experience is remembering a line and being unable to find it. What follows goes through each book in order, with the entries that carry its weight. Titles are ours; quotations are from George Long’s translation of 1862.</p>
+    </section>
+
+    <article class="chapter" id="b1">
+      <p class="ch-label">Book 1 · 17 entries</p>
+      <h3>Debts</h3>
+      <p class="gist">A list of what he owed to each person who formed him, ending with the gods: the one book that is not an argument with himself.</p>
+      <p>Each entry begins “From…” with no verb, so translators supply “I learned” or “I observed”; Long warns that Marcus is not claiming to have acquired every virtue he admired. The list runs from family through tutors to philosophers, then to his adoptive father and finally the gods, and what it praises is almost entirely restraint.</p>
+      <figure class="fig">
+        <p class="fig-title">Figure · Who taught him what</p>
+        <ol class="debts">
+          <li><span class="r">1.1</span><div><b>Grandfather Verus</b><i>Annius Verus, three times consul</i><p>Good morals and the government of his temper.</p></div></li>
+          <li><span class="r">1.2</span><div><b>His father</b><i>dead when Marcus was small, known by reputation</i><p>Modesty and a manly character.</p></div></li>
+          <li><span class="r">1.3</span><div><b>His mother</b><i>Domitia Lucilla</i><p>Piety, generosity, abstaining even from evil thoughts, a simple life “far removed from the habits of the rich.”</p></div></li>
+          <li><span class="r">1.4</span><div><b>Great-grandfather</b><i>probably Catilius Severus</i><p>Good teachers at home, not public schools, and spending freely on them.</p></div></li>
+          <li><span class="r">1.5</span><div><b>His tutor</b><i>unnamed</i><p>To back neither the Greens nor the Blues at the races, to want little, work with his hands and ignore slander.</p></div></li>
+          <li><span class="r">1.6</span><div><b>Diognetus</b><i>a teacher of his boyhood</i><p>No trifles, no belief in miracle-workers or exorcists, no quail-fighting; tolerance of plain speech; a taste for philosophy.</p></div></li>
+          <li><span class="r">1.7</span><div><b>Junius Rusticus</b><i>Stoic, later prefect of Rome</i><p>That his character needed work; to avoid rhetoric, poetry and display; to read closely; and a copy of Epictetus’s lectures.</p></div></li>
+          <li><span class="r">1.8</span><div><b>Apollonius</b><i>Stoic teacher</i><p>To be the same in sharp pain, in long illness and at the loss of a child, and to take favours from friends gracefully.</p></div></li>
+          <li><span class="r">1.9</span><div><b>Sextus</b><i>of Chaeronea, Plutarch’s nephew or grandson</i><p>Kindness, a household run like a family, living by nature; free of passion yet “most affectionate.”</p></div></li>
+          <li><span class="r">1.10</span><div><b>Alexander</b><i>the grammarian</i><p>Never to correct someone’s grammar to their face, but to use the right word in reply.</p></div></li>
+          <li><span class="r">1.11</span><div><b>Fronto</b><i>his rhetoric tutor</i><p>What envy, duplicity and hypocrisy are in a tyrant, and how cold the aristocracy is to its children.</p></div></li>
+          <li><span class="r">1.12</span><div><b>Alexander the Platonist</b><i>his secretary for Greek letters</i><p>Not to say “I have no leisure,” or plead urgent business to dodge what he owed to others.</p></div></li>
+          <li><span class="r">1.13</span><div><b>Catulus</b><i>Cinna Catulus, a Stoic</i><p>To take a friend’s complaint seriously even when unfair, to praise his teachers, to love his children truly.</p></div></li>
+          <li><span class="r">1.14</span><div><b>Severus</b><i>Claudius Severus, a Peripatetic</i><p>Love of kin, truth and justice; the heroes of resistance to tyranny; and the idea of a state with one law for all.</p></div></li>
+          <li><span class="r">1.15</span><div><b>Claudius Maximus</b><i>Stoic, governor of Africa</i><p>Self-command, cheerfulness in illness, never hurried, never putting things off, never showing surprise.</p></div></li>
+          <li><span class="r">1.16</span><div><b>His father</b><i>the emperor Antoninus Pius</i><p>The longest entry: a portrait of the ruler Marcus meant to be.</p></div></li>
+          <li><span class="r">1.17</span><div><b>The gods</b><i>for everything else</i><p>Family, teachers, a wife, children, cures by dreams, and the temptations he never met.</p></div></li>
+        </ol>
+        <figcaption>Identifications follow the standard commentaries; some are uncertain, and the word “brother” before Severus at 1.14 is doubtful. Missing from the list: Hadrian, who made Marcus’s career, and Herodes Atticus, his famous teacher of Greek rhetoric.</figcaption>
+      </figure>
+      <p class="sub">What the list values</p>
+      <ul class="points">
+        <li>Almost every lesson is a refusal: of display, of partisanship, of excuses, of superstition, of fine writing. Rusticus taught him “not to walk about in the house in my outdoor dress” and to write letters as plainly as the one Rusticus wrote from Sinuessa to his mother (1.7).</li>
+        <li>The tutor’s lessons read like a charter for a man who would one day sit in the imperial box: no side at the chariot races, no favourite type of gladiator (1.5).</li>
+        <li>Fronto, the teacher whose letters show the most affection, gets one sentence, and it is about tyranny: he taught Marcus “what envy and duplicity and hypocrisy are in a tyrant,” and that Roman patricians “are rather deficient in paternal affection” (1.11). It is the only hint in the book of what court life under Hadrian had looked like.</li>
+        <li>From Severus comes the book’s one political programme: “a polity in which there is the same law for all,” with “equal rights and equal freedom of speech,” and “a kingly government which respects most of all the freedom of the governed.” With it comes a list of heroes of the senatorial opposition to earlier emperors: Thrasea, Helvidius, Cato, Dion, Brutus (1.14).</li>
+        <li>Claudius Maximus “never showed amazement and surprise, and was never in a hurry, and never put off doing a thing” (1.15). Several items describe the kind of man Marcus kept failing to be.</li>
+      </ul>
+      <p class="sub">The portrait of Antoninus Pius (1.16)</p>
+      <ul class="points">
+        <li>The emperor who adopted him gets nearly nine hundred words: mild, immovable once he had deliberated, indifferent to honours, willing to hear anyone “who had anything to propose for the common weal.”</li>
+        <li>He “considered himself no more than any other citizen,” released his friends from the duty of dining with him or escorting him, and did not tire of them.</li>
+        <li>He stopped applause and flattery at once, watched the treasury, economised on shows and public buildings, and “patiently” endured the blame that economy brought.</li>
+        <li>He was not superstitious, not a flatterer of the crowd, not curious about food, clothes or “the beauty of his slaves,” and he looked after his health so well that he seldom needed a doctor.</li>
+        <li>Homely details break in: his clothes came from his villa at Lorium, after headaches he went straight back to work, and “we know how he behaved to the toll-collector at Tusculum who asked his pardon,” a story now lost.</li>
+        <li>The last line borrows Xenophon’s praise of Socrates: he could both abstain from and enjoy the things most people can neither give up nor enjoy in moderation.</li>
+      </ul>
+      <p class="sub">What he thanks the gods for (1.17)</p>
+      <ul class="points">
+        <li>Good grandparents, parents, a sister, teachers, friends; a ruler and father who showed him “it is possible for a man to live in a palace without wanting either guards or embroidered dresses, or torches and statues.”</li>
+        <li>That he was not brought up longer with “my grandfather’s concubine,” that he kept his youth chaste and “never touched either Benedicta or Theodotus,” and that when he did fall in love he was cured.</li>
+        <li>That although often out of temper with Rusticus, he never did anything he had to regret; that his mother, though fated to die young, spent her last years with him.</li>
+        <li>“Such a brother,” meaning Lucius Verus, whose character roused him “to vigilance over myself”; “such a wife, so obedient, and so affectionate, and so simple”; children “not stupid nor deformed in body.”</li>
+        <li>Remedies shown in dreams, against spitting blood and giddiness; and that he never wasted time on writers of history, syllogisms or astronomy.</li>
+        <li>An admission slips into the thanks: he still falls short of living by nature “through my own fault, and through not observing the admonitions of the gods.”</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="b2">
+      <p class="ch-label">Book 2 · 17 entries · “Among the Quadi”</p>
+      <h3>Begin the morning</h3>
+      <p class="gist">The shortest book, and in miniature the whole method: rehearse the day’s annoyances, remember death, throw away the books, keep the god within clean.</p>
+      <p class="sub">The morning exercise</p>
+      <ul class="points">
+        <li>The book opens with its most famous entry: “Begin the morning by saying to thyself, I shall meet with the busybody, the ungrateful, arrogant, deceitful, envious, unsocial” (2.1). The point is not pessimism but inoculation: expect it, and it loses its power to surprise.</li>
+        <li>The reason he gives is usually dropped. Such people act “by reason of their ignorance of what is good and evil,” and they share his reason and “portion of the divinity,” so he “can neither be injured by any of them … nor can I be angry with my kinsman, nor hate him.”</li>
+        <li>“For we are made for co-operation, like feet, like hands, like eyelids, like the rows of the upper and lower teeth.” To be vexed and turn away is itself to act against them.</li>
+      </ul>
+      <p class="sub">No more time</p>
+      <ul class="points">
+        <li>“Throw away thy books” (2.2), “cast away the thirst after books” (2.3): reading had become a way of putting off living.</li>
+        <li>“Thou art an old man; no longer let this be a slave, no longer be pulled by the strings like a puppet” (2.2). He was probably about fifty.</li>
+        <li>“Remember how long thou hast been putting off these things” (2.4). A limit is fixed to his time, and if he does not use it to clear his mind, “it will go and thou wilt go, and it will never return.”</li>
+        <li>Do “every act of thy life as if it were the last” (2.5), and think “as a Roman and a man” with dignity, affection, freedom and justice.</li>
+        <li>People who are frantically busy without an aim are triflers too (2.7); what makes a man unhappy is not failing to read other minds but failing to watch his own (2.8).</li>
+      </ul>
+      <p class="sub">Gods or no gods, and the one life</p>
+      <ul class="points">
+        <li>Death is nothing to fear whether there are gods or not (2.11): if they exist they will not harm him, and if not, “what is it to me to live in a universe devoid of gods or devoid of providence?” He then insists they do exist and care, and argues that since death, pain, honour and dishonour fall equally on good and bad, they cannot be goods or evils.</li>
+        <li>Death is “an operation of nature; and if any one is afraid of an operation of nature, he is a child” (2.12).</li>
+        <li>“No man loses any other life than this which he now lives, nor lives any other than this which he now loses” (2.14). However long you live, even thirty thousand years, you lose only the present moment, the only thing you have.</li>
+        <li>From the Cynic Monimus, a motto that recurs through the book: “all is opinion” (2.15).</li>
+        <li>An aside from Aristotle’s successor Theophrastus: wrongs done from desire are worse than wrongs done from anger, because anger at least begins in pain (2.10).</li>
+      </ul>
+      <p class="sub">Five ways to harm yourself (2.16)</p>
+      <p>The soul does violence to itself when it resents what happens and becomes “a tumor on the universe”; when it turns against a person in anger; when pleasure or pain overpowers it; when it acts a part and speaks insincerely; and when it does anything without an aim.</p>
+      <p class="line">“Of human life the time is a point, and the substance is in a flux, and the perception dull … and after fame is oblivion. What then is that which is able to conduct a man? One thing, and only one, philosophy.”<span>2.17, the book’s last entry, followed by the note “This in Carnuntum”</span></p>
+    </article>
+
+    <article class="chapter" id="b3">
+      <p class="ch-label">Book 3 · 16 entries · “At Carnuntum”</p>
+      <h3>Make haste</h3>
+      <p class="gist">Longer entries on urgency, on the beauty of things that are not meant to be beautiful, and on a mind with nothing to hide.</p>
+      <p class="sub">Before the mind goes</p>
+      <ul class="points">
+        <li>The book opens with a fear more specific than death: that the understanding may fail first (3.1). Breathing and appetite survive dotage; the power to judge, to do one’s duty and to decide whether to leave life does not. “We must make haste.”</li>
+        <li>“Neither wilt thou read thy own memoirs, nor the acts of the ancient Romans and Hellenes, and the selections from books which thou wast reserving for thy old age” (3.14). He may mean these very notes.</li>
+      </ul>
+      <p class="sub">The beauty of by-products (3.2)</p>
+      <ul class="points">
+        <li>Bread splits in the oven against the baker’s intention, and the cracks are attractive; figs gape when ripe; olives near rotting have “a peculiar beauty”; so do the bending ears of corn, the lion’s eyebrows and the foam at a boar’s mouth.</li>
+        <li>Someone who has come to understand nature will see real animals’ jaws with as much pleasure as painted ones, and find “a certain maturity and comeliness” in an old man or woman. It is the book’s one passage of pure delight.</li>
+      </ul>
+      <p class="sub">Everyone dies (3.3)</p>
+      <ul class="points">
+        <li>Hippocrates cured many and died of disease; astrologers foretold deaths and died; Alexander, Pompey and Caesar destroyed cities and armies and then left life themselves.</li>
+        <li>Heraclitus, who theorised that the world would end in fire, died of dropsy “smeared all over with mud” (the ancient cure was a coat of dung); “lice destroyed Democritus; and other lice killed Socrates,” meaning his accusers.</li>
+        <li>“Thou hast embarked, thou hast made the voyage, thou art come to shore; get out.” If there is another life, there are gods there too; if nothing, then no more pain and pleasure.</li>
+      </ul>
+      <p class="sub">The transparent mind</p>
+      <ul class="points">
+        <li>Think only thoughts you could state at once if someone asked, “What hast thou now in thy thoughts?” (3.4). Such a man is “a priest and minister of the gods … a fighter in the noblest fight.”</li>
+        <li>Let the god within be guardian of one who is “manly and of ripe age, and engaged in matter political, and a Roman, and a ruler,” standing at his post ready to be recalled (3.5).</li>
+        <li>If you find anything better than justice, truth, temperance and courage, turn to it with all your soul; you will not (3.6). Never value anything that requires you to break a promise, hate, curse, or “desire anything which needs walls and curtains” (3.7).</li>
+        <li>Receiving impressions is common to cattle; being pulled by desire is common to beasts and to “a Phalaris and a Nero”; even the scoundrel has intelligence. What belongs to the good man alone is contentment with his lot and a clean god within (3.16).</li>
+      </ul>
+      <p class="sub">Tools</p>
+      <ul class="points">
+        <li>The method of physical definition (3.11): define anything that confronts you “in its substance, in its nudity,” name its parts and what it will dissolve into, and ask what virtue it calls for. Man is “a citizen of the highest city, of which all other cities are like families.”</li>
+        <li>Keep your principles ready “as physicians have always their instruments and knives ready” (3.13).</li>
+        <li>Life is a point, the earth a nook, and posthumous fame is carried by “a succession of poor human beings, who will very soon die” (3.10).</li>
+      </ul>
+      <p class="line">“A man then must stand erect, not be kept erect by others.”<span>3.5</span></p>
+    </article>
+
+    <article class="chapter" id="b4">
+      <p class="ch-label">Book 4 · 51 entries</p>
+      <h3>The retreat within</h3>
+      <p class="gist">The entries grow shorter and more numerous. The book is built around one long meditation on retreat and a sustained assault on the fear of being forgotten.</p>
+      <p class="sub">The inner retreat (4.3)</p>
+      <ul class="points">
+        <li>“Men seek retreats for themselves, houses in the country, sea-shores, and mountains; and thou too art wont to desire such things very much.” But you can retire into yourself whenever you choose, and nowhere is quieter.</li>
+        <li>The retreat is not escape but review: brief first principles that “cleanse the soul completely, and … send thee back free from all discontent with the things to which thou returnest.”</li>
+        <li>Then a drill in four rounds, each ending “and be quiet at last.” Angry at people? They exist for one another, and they do wrong involuntarily. Unhappy with your lot? “Either there is providence or atoms.” Troubled by the body? The mind stands apart from it. Wanting fame? “For the whole earth is a point.”</li>
+        <li>Two thoughts to keep closest: “things do not touch the soul,” and everything you see changes and will soon not exist. “The universe is transformation: life is opinion.”</li>
+      </ul>
+      <p class="sub">The world as a city</p>
+      <ul class="points">
+        <li>A chain of “if this is so” (4.4): if mind is common, so is reason; so is law; so we are fellow citizens; so “the world is in a manner a state.”</li>
+        <li>Change your mind whenever someone shows you are wrong, but only from being persuaded that it is just or useful, “not because it appears pleasant or brings reputation” (4.12).</li>
+        <li>“Everything harmonizes with me, which is harmonious to thee, O Universe” (4.23). Athenians call their city “Dear city of Cecrops”; “wilt not thou say, Dear city of Zeus?”</li>
+        <li>Democritus advised doing few things. Better: do what is necessary, and ask of each act and each thought, “Is this one of the unnecessary things?” (4.24).</li>
+      </ul>
+      <p class="sub">Harm, praise and death</p>
+      <ul class="points">
+        <li>“Take away thy opinion, and then there is taken away the complaint, ‘I have been harmed’” (4.7). What does not make a man worse cannot make his life worse (4.8).</li>
+        <li>“Within ten days thou wilt seem a god to those to whom thou art now a beast and an ape, if thou wilt return to thy principles” (4.16).</li>
+        <li>“Do not act as if thou wert going to live ten thousand years. Death hangs over thee. While thou livest, while it is in thy power, be good” (4.17).</li>
+        <li>Anything beautiful is beautiful in itself: “Is such a thing as an emerald made worse than it was, if it is not praised?” (4.20).</li>
+        <li>Where do souls go, if they survive? Into the air, as bodies go into the earth, where they change and make room for new ones, just as the animals we eat are “in a manner buried” in us (4.21).</li>
+        <li>“Many grains of frankincense on the same altar: one falls before, another falls after; but it makes no difference” (4.15).</li>
+      </ul>
+      <p class="sub">The dead and the forgotten</p>
+      <ul class="points">
+        <li>Picture the reign of Vespasian: people “marrying, bringing up children, sick, dying, warring, feasting,” flattering, plotting, “desiring consulship, kingly power.” All gone. Then Trajan’s reign: the same (4.32).</li>
+        <li>Names once famous are now antique words: Camillus, Caeso, Volesus, Leonnatus (Haines reads Dentatus, an early Roman hero), then Scipio and Cato, then Augustus, “then also Hadrianus and Antoninus” (4.33), his own adoptive grandfather and father.</li>
+        <li>Physicians who frowned over the sick, astrologers, philosophers of immortality, conquerors, tyrants, whole cities (Helice, Pompeii, Herculaneum): all dead (4.48). “What was yesterday a little mucus, to-morrow will be a mummy or ashes.”</li>
+        <li>So end your journey “as an olive falls off when it is ripe, blessing nature who produced it, and thanking the tree on which it grew.”</li>
+        <li>The long-lived gained nothing: “Cadicianus, Fabius, Julianus, Lepidus” carried many to their graves and were then carried out (4.50). Nobody now knows who they were.</li>
+        <li>“Thou art a little soul bearing about a corpse, as Epictetus used to say” (4.41).</li>
+      </ul>
+      <p class="sub">The promontory (4.49)</p>
+      <p>“Be like the promontory against which the waves continually break, but it stands firm and tames the fury of the water around it.” Do not say “Unhappy am I because this has happened to me,” but “happy am I, though this has happened to me,” because you came through it unbroken. The principle to apply to every vexation: “not that this is a misfortune, but that to bear it nobly is good fortune.”</p>
+      <p class="line">“The universe is transformation: life is opinion.”<span>4.3</span></p>
+    </article>
+
+    <article class="chapter" id="b5">
+      <p class="ch-label">Book 5 · 36 entries</p>
+      <h3>The work of a human being</h3>
+      <p class="gist">The emperor argues with himself about getting up, then about the harder work: doing good without keeping score, and turning obstacles into material.</p>
+      <p class="sub">Getting out of bed (5.1)</p>
+      <ul class="points">
+        <li>“In the morning when thou risest unwillingly, let this thought be present: I am rising to the work of a human being.” Was he made “to lie in the bed-clothes and keep myself warm? But this is more pleasant.” Then was he made for pleasure, and not for action?</li>
+        <li>Little plants, little birds, ants, spiders and bees all work at their share of the universe. Sleep is necessary, but nature set limits to it, as to food, and he overshoots them while stopping short in his work.</li>
+        <li>The craftsman who loves his art forgets to wash and eat; “thou valuest thy own nature less than the turner values the turning art, or the dancer the dancing art.” He returns to the same argument at 8.12.</li>
+      </ul>
+      <p class="sub">No excuses</p>
+      <ul class="points">
+        <li>“Men cannot admire the sharpness of thy wits”: granted. But sincerity, dignity, endurance, contentment, kindness and frankness need no talent, and he still falls short “voluntarily” (5.5).</li>
+        <li>Do not return to philosophy as to a schoolmaster, but as people with sore eyes return to their sponge and egg (5.9). And “be content if the greater part of what thou doest is consistent with man’s nature.”</li>
+        <li>“It is hardly possible to endure even the most agreeable” of those who live with him, “to say nothing of a man being hardly able to endure himself” (5.10).</li>
+        <li>“Whose soul have I now, that of a child, or of a young man, or of a feeble woman, or of a tyrant, or of a domestic animal, or of a wild beast?” (5.11).</li>
+      </ul>
+      <p class="sub">Doing good like a vine (5.6)</p>
+      <ul class="points">
+        <li>Three kinds of benefactor: one enters the favour in his accounts; one does not say so but thinks of the other as his debtor; a third “does not even know what he has done, but he is like a vine which has produced grapes, and seeks for nothing more.”</li>
+        <li>Like a horse after a race or a bee after its honey, the good man “does not call out for others to come and see, but he goes on to another act.” He answers his own objection: to be social is not to want the credit.</li>
+      </ul>
+      <p class="sub">What nature prescribes (5.8)</p>
+      <p>A doctor prescribes riding or cold baths; the nature of the universe prescribes “disease, or mutilation, or loss.” Both are unpleasant and both are for health: in the second case, the health of the whole, which would be “mutilated” if any link in the chain of causes were cut. So accept what happens, because it was fitted to you like a squared stone in a wall, and because it serves the whole.</p>
+      <p class="sub">The obstacle and the way</p>
+      <ul class="points">
+        <li>“The soul is dyed by the thoughts” (5.16). Dye it with this one: where a man can live, he can live well. “But he must live in a palace; well then, he can also live well in a palace.”</li>
+        <li>“Nothing happens to any man which he is not formed by nature to bear” (5.18). “Things themselves touch not the soul, not in the least degree” (5.19).</li>
+        <li>People who obstruct him become, to that extent, as indifferent as sun, wind or a wild beast. They can stop his action but not his disposition, which acts “conditionally”: “the mind converts and changes every hindrance to its activity into an aid … and that which is an obstacle on the road helps us on this road” (5.20). Gregory Hays’s modern translation renders the thought “what stands in the way becomes the way.”</li>
+        <li>“That which does no harm to the state, does no harm to the citizen” (5.22).</li>
+      </ul>
+      <p class="sub">Small and large</p>
+      <ul class="points">
+        <li>“Art thou angry with him whose armpits stink? … What good will this anger do thee?” (5.28). If a man is at fault, use your reason to rouse his and show him.</li>
+        <li>On suicide, the Stoic open door: “The house is smoky, and I quit it” (5.29). Until then he stays, and is free.</li>
+        <li>How has he behaved to gods, parents, brothers, children, teachers, nurses, friends and slaves (5.31)? He can recall how much he has endured, and that his service is nearly done.</li>
+        <li>“Soon, very soon, thou wilt be ashes, or a skeleton, and either a name or not even a name” (5.33). Meanwhile the things most prized in life are “like little dogs biting one another.”</li>
+        <li>A last glimpse of public life (5.36): “When thou art calling out on the Rostra, hast thou forgotten, man, what these things are?”</li>
+      </ul>
+      <p class="line">“Such as are thy habitual thoughts, such also will be the character of thy mind; for the soul is dyed by the thoughts.”<span>5.16</span></p>
+    </article>
+
+    <article class="chapter" id="b6">
+      <p class="ch-label">Book 6 · 59 entries</p>
+      <h3>Not made a Caesar</h3>
+      <p class="gist">The densest run of quotable entries, and the book in which Marcus speaks most directly about being emperor.</p>
+      <p class="sub">The court and the purple</p>
+      <ul class="points">
+        <li>If you had a stepmother and a mother, you would be dutiful to the first and keep returning to the second. “Let the court and philosophy now be to thee step-mother and mother” (6.12).</li>
+        <li>“Take care that thou art not made into a Caesar, that thou art not dyed with this dye; for such things happen” (6.30). Keep simple, good, pure, serious, “a friend of justice, a worshipper of the gods, kind, affectionate.”</li>
+        <li>The same entry returns to Antoninus Pius as the model: his evenness, his refusal to act in a hurry or listen to slander, his patience with unjust critics, “and how religious he was without superstition. Imitate all this.”</li>
+        <li>Asked to spell the name Antoninus, would you shout each letter at people who got angry? No; you would count the letters out calmly. Every duty is made of such parts (6.26).</li>
+      </ul>
+      <p class="sub">Seeing things bare (6.13)</p>
+      <ul class="points">
+        <li>The classic exercise: roast meat is “the dead body of a fish, … of a bird or of a pig”; fine Falernian wine is “only a little grape-juice”; the imperial purple is “some sheep’s wool dyed with the blood of a shell-fish.” The Greek adds a clinical description of sex, which Long’s Victorian translation leaves out.</li>
+        <li>Do the same all through life: “lay them bare and look at their worthlessness and strip them of all the words by which they are exalted. For outward show is a wonderful perverter of the reason.”</li>
+        <li>The multitude admires stones and vines, the more refined admire flocks, the more educated admire skill or “a number of slaves”; the wise value only a rational and social soul (6.14).</li>
+      </ul>
+      <p class="sub">Other people</p>
+      <ul class="points">
+        <li>“The best way of avenging thyself is not to become like [the wrong-doer]” (6.6).</li>
+        <li>In the gymnasium a sparring partner scratches you or butts your head; you do not sulk or suspect him afterwards, you just keep out of his way. Treat many of life’s opponents the same (6.20).</li>
+        <li>“If any man is able to convince me and show me that I do not think or act right, I will gladly change; for I seek the truth, by which no man was ever injured” (6.21).</li>
+        <li>When you want cheering up, think of the virtues of the people around you: the energy of one, the modesty of another, the generosity of a third (6.48).</li>
+        <li>To a jaundiced man honey tastes bitter. “Why then am I angry?” A false opinion has as much power as bile (6.57).</li>
+      </ul>
+      <p class="sub">The whole and its workers</p>
+      <ul class="points">
+        <li>“The universe is either a confusion … or it is unity and order and providence” (6.10). If the first, why want to stay? If the second, “I venerate, and I am firm.”</li>
+        <li>“Alexander the Macedonian and his groom by death were brought to the same state” (6.24), whether taken back into the universe’s reason or scattered as atoms.</li>
+        <li>We all work toward one end, some knowingly, some unaware, as Heraclitus said sleepers are workers too; even those who resist what happens are used. Choose what kind of worker to be, and not “the mean and ridiculous verse in the play” that Chrysippus mentions (6.42).</li>
+        <li>“My city and country, so far as I am Antoninus, is Rome, but so far as I am a man, it is the world” (6.44).</li>
+        <li>“Asia, Europe, are corners of the universe; all the sea a drop … Athos a little clod” (6.36). Even the lion’s jaws and poisons are by-products of what is grand and beautiful.</li>
+        <li>Great minds are dust too: Heraclitus, Pythagoras, Socrates, Eudoxus, Hipparchus, Archimedes, and the satirist Menippus who mocked it all (6.47).</li>
+        <li>“That which is not good for the swarm, neither is it good for the bee” (6.54).</li>
+      </ul>
+      <p class="line">“The best way of avenging thyself is not to become like [the wrong-doer].”<span>6.6</span></p>
+    </article>
+
+    <article class="chapter" id="b7">
+      <p class="ch-label">Book 7 · 75 entries</p>
+      <h3>Borrowed voices</h3>
+      <p class="gist">The most fragmented book: seventy-five entries, many a single line, with a run of quotations from Plato, Euripides and others copied out for use.</p>
+      <p class="sub">Nothing new</p>
+      <ul class="points">
+        <li>“What is badness? It is that which thou hast often seen.” Old histories, recent ones and today’s houses are full of the same things. “There is nothing new: all things are both familiar and short-lived” (7.1).</li>
+        <li>Principles die only when the thoughts that feed them go out, and he can fan them back into a flame. “To recover thy life is in thy power. Look at things again as thou didst use to look at them” (7.2).</li>
+        <li>Parades, plays, flocks, a bone thrown to puppies, crumbs thrown into a fishpond, ants hauling loads, mice scurrying, puppets on strings: that is the spectacle. Keep good humour in it, but know that “every man is worth just so much as the things are worth about which he busies himself” (7.3).</li>
+        <li>“To have contemplated human life for forty years is the same as to have contemplated it for ten thousand years. For what more wilt thou see?” (7.49).</li>
+      </ul>
+      <p class="sub">Asking for help</p>
+      <ul class="points">
+        <li>Is my understanding equal to this task? If not, give it to someone better, or do it with help (7.5).</li>
+        <li>“Be not ashamed to be helped.” A soldier lamed in an assault who cannot climb the wall alone should take a comrade’s hand (7.7). It is one of the few places where the emperor admits he could not do the job alone.</li>
+      </ul>
+      <p class="sub">Member, not part</p>
+      <ul class="points">
+        <li>All things are woven together, “and the bond is holy”: one universe, one god, one substance, one law, one reason, one truth (7.9).</li>
+        <li>A pun that only works in Greek (7.13): call yourself a <em>melos</em>, a limb of the body of rational beings, not a <em>meros</em>, a mere part. If you say “part,” “thou dost not yet love men from thy heart; beneficence does not yet delight thee for its own sake.”</li>
+        <li>“Whatever any one does or says, I must be emerald and keep my color” (7.15).</li>
+        <li>“It is peculiar to man to love even those who do wrong” (7.22): they are kin, they err from ignorance, you will both be dead soon, and they have not damaged your ruling part.</li>
+        <li>When someone wrongs you, ask what he thought good or bad. If you share the error, forgive him; if you do not, you will find it easier to be kind to him (7.26).</li>
+      </ul>
+      <p class="sub">Short rules</p>
+      <ul class="points">
+        <li>“Wipe out the imagination. Stop the pulling of the strings. Confine thyself to the present … Think of thy last hour. Let the wrong which is done by a man stay there where the wrong was done” (7.29).</li>
+        <li>Three headings in a row (7.32–34). On death: “it is either extinction or change.” On pain: what is unbearable carries us off, and what lasts can be borne. On fame: as heaps of sand bury the sand beneath, so events bury what came before.</li>
+        <li>“Consider thyself to be dead, and to have completed thy life up to the present time; and live according to nature the remainder which is allowed thee” (7.56).</li>
+        <li>“Look within. Within is the fountain of good, and it will ever bubble up, if thou wilt ever dig” (7.59).</li>
+        <li>“The art of life is more like the wrestler’s art than the dancer’s” (7.61): it must stand ready for sudden attacks.</li>
+        <li>Epicurus, the rival school’s founder, is quoted with approval: pain “is neither intolerable nor everlasting” if you remember its limits and add nothing to it in imagination (7.64). Drowsiness, heat and loss of appetite are forms of pain too.</li>
+      </ul>
+      <p class="sub">The quotations (7.35–7.51)</p>
+      <ul class="points">
+        <li>From Plato’s <cite>Republic</cite>: a man who surveys all time and all being cannot think human life anything great, and so will not think death an evil (7.35).</li>
+        <li>From the Cynic Antisthenes: “It is royal to do good and to be abused” (7.36).</li>
+        <li>Lines from Euripides and other poets, several only a few words long: “Life must be reaped like the ripe ears of corn” (7.40).</li>
+        <li>From Plato’s <cite>Apology</cite>, twice: a man should ask only whether he acts justly, not calculate his chances of living (7.44); and wherever he is posted, by himself or a commander, he should stay and face the danger (7.45).</li>
+        <li>“This is a fine saying of Plato,” the view from above (7.48): whoever talks about human beings should look down on their assemblies, armies, farming, marriages, treaties, births, deaths, lawcourts and markets, “an orderly combination of contraries.”</li>
+      </ul>
+      <p class="sub">Socrates and the divine man</p>
+      <ul class="points">
+        <li>How do we know Socrates was better than Telauges? Not by his noble death, his debating or his refusal to arrest Leon of Salamis, but by what kind of soul he had (7.66).</li>
+        <li>“It is very possible to be a divine man and to be recognized as such by no one” (7.67). And a confession: he has “despaired of becoming a dialectician and skilled in the knowledge of nature,” but that is no reason to give up being free, modest, social and obedient to God.</li>
+        <li>The gods put up with bad people for ever and care for them; “thou, who art destined to end so soon, art thou wearied of enduring the bad, and this too when thou art one of them?” (7.70).</li>
+      </ul>
+      <p class="line">“Look within. Within is the fountain of good, and it will ever bubble up, if thou wilt ever dig.”<span>7.59</span></p>
+    </article>
+
+    <article class="chapter" id="b8">
+      <p class="ch-label">Book 8 · 61 entries</p>
+      <h3>The citadel</h3>
+      <p class="gist">Candid about failure, full of the dead of his own family and court, and home to the image Hadot took for his title.</p>
+      <p class="sub">Too late to be a philosopher</p>
+      <ul class="points">
+        <li>“It is no longer in thy power to have lived the whole of thy life … like a philosopher; but both to many others and to thyself it is plain that thou art far from philosophy” (8.1). So stop worrying how he seems, and live the rest as nature wants.</li>
+        <li>He has searched for happiness “not in syllogisms, nor in wealth, nor in reputation, nor in enjoyment, nor anywhere.” It lies in doing what human nature requires.</li>
+        <li>“Thou hast not leisure to read. But thou hast leisure to check arrogance” (8.8), and to rise above pleasure, pain and the love of fame.</li>
+        <li>“Let no man any longer hear thee finding fault with the court life or with thy own” (8.9).</li>
+        <li>“Thou choosest rather to become good to-morrow than to be good to-day” (8.22).</li>
+      </ul>
+      <p class="sub">Tests to apply</p>
+      <ul class="points">
+        <li>Before every act: “Shall I repent of it? A little time and I am dead, and all is gone” (8.2).</li>
+        <li>Of any thing: what is it in itself, what is it made of, what causes it, what is it doing in the world, how long will it last? (8.11).</li>
+        <li>Of any person: “What opinions has this man about good and bad?” Given his opinions, his acts will not surprise you (8.14). It is as foolish to be surprised at the world as at a fig tree bearing figs (8.15).</li>
+        <li>“To change thy opinion and to follow him who corrects thy error is as consistent with freedom as it is to persist in thy error” (8.16).</li>
+        <li>“Speak both in the senate and to every man … appropriately, not with any affectation: use plain discourse” (8.30).</li>
+      </ul>
+      <p class="sub">The dead of the court</p>
+      <ul class="points">
+        <li>“Lucilla saw Verus die, and then Lucilla died” (8.25), a chain of mourners who died in turn; see “The names he forgot” below.</li>
+        <li>Augustus’s whole court, wife, daughter, descendants, Agrippa, his philosopher Areius, Maecenas, his physicians and priests, is dead; and on tombs you read “The last of his race” (8.31).</li>
+        <li>“Does Panthea or Pergamus now sit by the tomb of Verus?” (8.37). Panthea was Lucius Verus’s mistress; the name Verus here is an editor’s conjecture. Even if the mourners did sit there, would the dead know or care? “All this is foul smell and blood in a bag.”</li>
+        <li>“Nobody and nowhere, like Hadrianus and Augustus” (8.5).</li>
+      </ul>
+      <p class="sub">Obstacles and the limb that can rejoin</p>
+      <ul class="points">
+        <li>Build life one act at a time. If something external blocks an act, accept it and turn to what is allowed, and another action takes its place (8.32).</li>
+        <li>A hand or head lying severed from the body: that is what a man makes of himself when he resents events or cuts himself off from others. But God has given man alone the power to reattach himself (8.34).</li>
+        <li>As nature absorbs whatever opposes it, “the rational animal is able to make every hindrance its own material” (8.35).</li>
+        <li>Do not picture all the troubles of a lifetime at once. Ask of the present one, “What is there in this which is intolerable and past bearing?” (8.36).</li>
+        <li>“A cucumber is bitter. Throw it away. There are briers in the road. Turn aside from them. This is enough” (8.50). Do not ask why such things exist; a carpenter would laugh at you for complaining about shavings in his workshop.</li>
+      </ul>
+      <p class="sub">The citadel and the spring</p>
+      <ul class="points">
+        <li>“The mind which is free from passions is a citadel, for man has nothing more secure to which he can fly for refuge” (8.48). Hadot named his book after it.</li>
+        <li>“Say nothing more to thyself than what the first appearances report” (8.49). Someone speaks ill of you: that was reported; that you were harmed was not. “I see that my child is sick. I do see; but that he is in danger, I do not see.”</li>
+        <li>Curse a clear spring or throw mud in it, and it keeps sending up clean water and soon washes the mud away (8.51).</li>
+        <li>Understanding should fall on things like sunlight through a gap into a dark room: straight, steady, lighting what receives it (8.57).</li>
+        <li>“Men exist for the sake of one another. Teach them then, or bear with them” (8.59).</li>
+      </ul>
+      <p class="line">“The mind which is free from passions is a citadel, for man has nothing more secure to which he can fly for refuge and for the future be inexpugnable.”<span>8.48</span></p>
+    </article>
+
+    <article class="chapter" id="b9">
+      <p class="ch-label">Book 9 · 42 entries</p>
+      <h3>Injustice is impiety</h3>
+      <p class="gist">Opens with the book’s most sustained argument, contains its bleakest cry, and ends with its most practical advice on ingratitude.</p>
+      <p class="sub">The argument (9.1)</p>
+      <ul class="points">
+        <li>Nature made rational beings for one another, so “he who acts unjustly acts impiously.” The lie is impious too, because nature is truth.</li>
+        <li>Even the unintentional liar offends nature, having neglected the powers that would have let him tell true from false.</li>
+        <li>So is the man who pursues pleasure as good and avoids pain as evil, because he must end by accusing nature of rewarding the bad and punishing the good; and fear of pain will make him fear things that must happen, and love of pleasure will make him unjust.</li>
+        <li>Pain and pleasure, death and life, honour and dishonour: nature uses them indifferently, and so should we.</li>
+      </ul>
+      <p class="sub">Tired of people</p>
+      <ul class="points">
+        <li>Better to leave life without tasting lying, hypocrisy, luxury and pride; next best, to leave when sick of them. The corruption of the mind is “a pestilence, much more, indeed, than any such corruption and change of this atmosphere” (9.2). It is the book’s only glance at the plague.</li>
+        <li>Wait for death as for a child to come out of the womb (9.3). The cheap comfort is to think whom you are leaving: people whose principles you do not share. “Come quick, O death, lest perchance I, too, should forget myself.”</li>
+        <li>“He often acts unjustly who does not do a certain thing; not only he who does a certain thing” (9.5).</li>
+        <li>“To-day I have got out of all trouble, or rather I have cast out all trouble, for it was not outside, but within and in my opinions” (9.13).</li>
+      </ul>
+      <p class="sub">Like to like</p>
+      <ul class="points">
+        <li>Earth seeks earth and fire seeks fire; bees swarm, cattle herd; men form states, friendships, families, treaties. Only rational beings have forgotten this pull, “but still, though men strive to avoid [this union], they are caught and held by it” (9.9).</li>
+        <li>Any act with no social purpose “is of the nature of a mutiny,” like a man standing apart in an assembly (9.23).</li>
+        <li>Childhood, youth and manhood each ended; each change was a death, and none was frightening. Nor was the change from his life under his grandfather to life under his mother, then under his father (9.21).</li>
+      </ul>
+      <p class="sub">No Republic</p>
+      <p>“How worthless are all these poor people who are engaged in matters political, and, as they suppose, are playing the philosopher!” (9.29). Do what nature requires now, “nor yet expect Plato’s Republic: but be content if the smallest thing goes on well.” The reason is political realism: “who can change men’s opinions? and without a change of opinions what else is there than the slavery of men who groan while they pretend to obey?” Alexander, Philip and Demetrius of Phalerum may judge whether they understood nature, but “if they acted like tragedy heroes, no one has condemned me to imitate them.”</p>
+      <p class="sub">Prayer, sickness, ingratitude</p>
+      <ul class="points">
+        <li>Pray differently (9.40). Not “How shall I be released from this?” but “How shall I not desire to be released?”; not “How shall I not lose my little son?” but “How shall I not be afraid to lose him?”</li>
+        <li>Epicurus again (9.41): in illness he talked philosophy, not symptoms, and gave the doctors no chance to look solemn. Do the same.</li>
+        <li>When someone is shameless, ask whether a world without shameless people is possible. It is not; this is one of them (9.42). Nature gave mildness as the antidote to the stupid, and every wrongdoer can be taught.</li>
+        <li>If someone proves ungrateful, blame yourself for trusting him or for giving in expectation of a return. Do you want payment for a kindness, “just as if the eye demanded a recompense for seeing, or the feet for walking”?</li>
+      </ul>
+      <p class="line">“Nor yet expect Plato’s Republic: but be content if the smallest thing goes on well, and consider such an event to be no small matter.”<span>9.29</span></p>
+    </article>
+
+    <article class="chapter" id="b10">
+      <p class="ch-label">Book 10 · 38 entries</p>
+      <h3>Be one</h3>
+      <p class="gist">Long, pressing entries that ask when he will finally be the man he keeps describing, with the notebook’s one sardonic look at his own wars.</p>
+      <p class="sub">When?</p>
+      <ul class="points">
+        <li>“Wilt thou, then, my soul, never be good and simple and one and naked, more manifest than the body which surrounds thee?” (10.1). Never content, never wanting nothing, never at peace with gods and men?</li>
+        <li>Everything that happens is either bearable or it kills you; either way, do not complain (10.3).</li>
+        <li>“Whether the universe is [a concourse of] atoms, or nature,” he is a part of the whole and akin to the other parts, and that is enough to make him content and social (10.6).</li>
+        <li>“No longer talk at all about the kind of man that a good man ought to be, but be such” (10.16).</li>
+      </ul>
+      <p class="sub">Keeping the names (10.8)</p>
+      <ul class="points">
+        <li>He has taken the names good, modest, truthful, rational, equanimous and magnanimous. Keep them, and return to them quickly if lost. Rational means attention to each thing; equanimity, the willing acceptance of what nature assigns; magnanimity, the mind raised above pain, pleasure, fame and death.</li>
+        <li>To cling to life as it is would be like the half-eaten beast-fighters in the arena, covered in wounds, who beg to be kept alive for the next day’s claws.</li>
+        <li>If he can keep the names, it is like living on the Islands of the Blessed. If not, retreat to some corner where he can, or leave life, “not in passion, but with simplicity and freedom and modesty.”</li>
+      </ul>
+      <p class="sub">The spider and the Sarmatians (10.10)</p>
+      <p>“A spider is proud when it has caught a fly, and another when he has caught a poor hare, and another when he has taken a little fish in a net, and another when he has taken wild boars, and another when he has taken bears, and another when he has taken Sarmatians. Are not these robbers, if thou examinest their opinions?” The Sarmatians were the people Marcus himself was fighting. Apart from the place notes between the early books, it is the notebook’s only reference to his own war, and it counts the conqueror among the robbers.</p>
+      <p class="sub">Nature gives and takes</p>
+      <ul class="points">
+        <li>The instructed man says to nature, “Give what thou wilt; take back what thou wilt,” not proudly but gladly (10.14).</li>
+        <li>“Live as on a mountain” (10.15): it makes no difference where, if you live everywhere as a citizen of the world. “Let them know a real man who lives according to nature. If they cannot endure him, let them kill him.”</li>
+        <li>All individual things are, in substance, a fig seed, and in time, a turn of a drill (10.17). Look at the arrogant when they are eating, sleeping and on the toilet (10.19).</li>
+        <li>Euripides says “the earth loves the shower”; “I say then to the universe, that I love as thou lovest” (10.21).</li>
+        <li>Picture whole courts as plays with the same script and different actors: Hadrian’s, Antoninus’s, Philip’s, Alexander’s, Croesus’s (10.27).</li>
+        <li>Everyone who complains is like a pig at the sacrifice, kicking and squealing (10.28).</li>
+      </ul>
+      <p class="sub">Children, leaves and the deathbed</p>
+      <ul class="points">
+        <li>Homer’s leaves (10.34): “Leaves, also, are thy children,” and leaves are the people who praise you, and those who will pass your fame on; the wind scatters them and the forest grows more.</li>
+        <li>A healthy eye does not demand green things only. “That which says, Let my dear children live, and let all men praise whatever I may do, is an eye which seeks for green things” (10.35).</li>
+        <li>No one is so fortunate that some at his deathbed will not be glad (10.36). Even of a good man someone will think, “Let us at last breathe freely, being relieved from this schoolmaster.” And in his own case, he reckons, many more. Go kindly anyway.</li>
+        <li>When you see someone, think of his counterpart in the past: when you see yourself, “think of any other Caesar” (10.31). Where are they now? Nowhere.</li>
+        <li>The last entry: what pulls the strings is the hidden power within. The body is a tool, like an axe that happens to grow on you (10.38).</li>
+      </ul>
+      <p class="line">“No longer talk at all about the kind of man that a good man ought to be, but be such.”<span>10.16</span></p>
+    </article>
+
+    <article class="chapter" id="b11">
+      <p class="ch-label">Book 11 · 39 entries</p>
+      <h3>Rules for anger</h3>
+      <p class="gist">The longest single entry, a numbered method for handling people who offend you, followed by a scrapbook of sayings.</p>
+      <p class="sub">The rational soul</p>
+      <ul class="points">
+        <li>Its properties: it sees itself, shapes itself and bears its own fruit; it is complete wherever life is cut off, unlike a dance or a play; and “he who is forty years old, if he has any understanding at all, has seen … all things which have been and all that will be” (11.1).</li>
+        <li>Break a song into its notes, a dance into its movements, a boxing match into its holds, and ask of each whether it masters you. Do this with everything except virtue (11.2).</li>
+        <li>Readiness to die should come from judgement, “not from mere obstinacy, as with the Christians, but considerately and with dignity” (11.3). This is the book’s only mention of Christians, and the phrase may be a later reader’s note in the margin.</li>
+        <li>“How plain does it appear that there is not another condition of life so well suited for philosophizing as this in which thou now happenest to be” (11.7).</li>
+      </ul>
+      <p class="sub">Cut off and grafted</p>
+      <ul class="points">
+        <li>A branch cut from a branch is cut from the tree. A man cuts himself off from society when he hates his neighbour; he can grow back, but if it happens often, the graft never quite takes (11.8).</li>
+        <li>Those who get in your way should not turn you from your course, nor from your kindness to them: both failures are desertions (11.9).</li>
+        <li>An honest man should be like someone who smells strong: you know as soon as he comes near. “Nothing is more disgraceful than a wolfish friendship” (11.15).</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · When someone offends you: the rules of 11.18</p>
+        <ol class="ten">
+          <li>Remember what you are to other people: we are made for one another, and you were set over them “as a ram over the flock or a bull over the herd.”</li>
+          <li>Consider what they are like at table and in bed, what their opinions compel them to do, and how proud they are of it.</li>
+          <li>If they are right, you should not be displeased; if wrong, they act “involuntarily and in ignorance,” and they hate to be called unjust.</li>
+          <li>You do plenty wrong yourself, and where you abstain it is often from cowardice or concern for your reputation.</li>
+          <li>You cannot even be sure they are doing wrong: much is done for reasons you do not see.</li>
+          <li>Life is a moment, and soon “we are all laid out dead.”</li>
+          <li>It is not their acts that disturb you but your opinions about them. Drop the judgement that you have suffered something grievous, and the anger goes.</li>
+          <li>Anger and vexation cause more pain than the acts that provoke them.</li>
+          <li class="do">Kindness is invincible if it is genuine. Correct the man gently, even as he is trying to hurt you: “Not so, my child: we are constituted by nature for something else.” No sarcasm, no lecture, no audience.</li>
+          <li class="do">A tenth, “from the leader of the Muses”: to expect bad men not to do wrong is madness. But to let them wrong others and expect them to spare you “is irrational and tyrannical.”</li>
+        </ol>
+        <figcaption>Our condensation of 11.18, the longest entry in the book. Marcus numbers nine rules, calls them gifts from the Muses, adds a tenth from Apollo, and closes with the claim that gentleness, not anger, is the manly and strong position: “as the sense of pain is a characteristic of weakness, so also is anger.” Only the ninth says what to do; the other nine are ways of seeing.</figcaption>
+      </figure>
+      <p class="sub">Four habits to wipe out (11.19)</p>
+      <p>Guard against four aberrations of the mind: a thought that is not necessary; one that tends to break up social union; saying what you do not really think; and reproaching yourself, which shows the divine part yielding to the body.</p>
+      <p class="sub">The scrapbook (11.22–39)</p>
+      <ul class="points">
+        <li>The town mouse and the country mouse (11.22). Socrates called popular opinions bogeys to frighten children (11.23).</li>
+        <li>At public shows the Spartans gave strangers the seats in the shade and sat anywhere themselves (11.24).</li>
+        <li>Socrates declined an invitation from King Perdiccas so as not to receive a favour he could not return (11.25).</li>
+        <li>The Pythagoreans told their pupils to look at the sky each morning, at bodies that always do their work the same way, “for there is no veil over a star” (11.27).</li>
+        <li>Epictetus: “To look for the fig in winter is a mad-man’s act: such is he who looks for his child when it is no longer allowed” (11.33). When you kiss your child, whisper “To-morrow perchance thou wilt die”; it is no worse an omen than saying corn will be reaped (11.34).</li>
+        <li>“No man can rob us of our free will” (11.36). And the dispute is “not about any common matter, but about being mad or not” (11.38).</li>
+      </ul>
+      <p class="line">“For there is no veil over a star.”<span>11.27</span></p>
+    </article>
+
+    <article class="chapter" id="b12">
+      <p class="ch-label">Book 12 · 36 entries</p>
+      <h3>Three acts are the whole play</h3>
+      <p class="gist">A summing-up that reads like a last book: the old reminders restated plainly, a rare doubt about the gods’ justice, and an ending on leaving the stage.</p>
+      <p class="sub">Now, not later</p>
+      <ul class="points">
+        <li>Everything he is trying to reach by a roundabout road he can have now, if he forgets the past, trusts the future to providence, and directs the present by piety and justice (12.1).</li>
+        <li>Fear not that you must some time stop living, but “never to have begun to live according to nature.” Then you will stop being “a stranger in thy native land.”</li>
+        <li>You are body, breath and mind; only the mind is properly yours. Strip off everything else, past and future included, and become like Empedocles’ sphere, “All round and in its joyous rest reposing” (12.3).</li>
+        <li>Practise even what you despair of: the left hand, useless for most things, holds the bridle better than the right because it is used to it (12.6).</li>
+        <li>Be a pancratiast, not a gladiator: the gladiator can drop his sword and be killed, but the fighter whose weapon is his hand always has it (12.9).</li>
+      </ul>
+      <p class="sub">Other people’s opinion</p>
+      <ul class="points">
+        <li>“Every man loves himself more than all the rest of men, but yet sets less value on his own opinion of himself than on the opinion of others” (12.4). None of us could bear a single day of saying every thought aloud.</li>
+        <li>“If it is not right, do not do it: if it is not true, do not say it” (12.17).</li>
+        <li>How do I know this act was wrong? And if it was, how do I know he has not already condemned himself? To want the bad not to do wrong is to want a fig tree without juice (12.16).</li>
+      </ul>
+      <p class="sub">The one doubt (12.5)</p>
+      <p>How can the gods, having ordered everything well, have allowed the best men, the ones closest to them, to be “completely extinguished” at death? He answers his own question: if it were just for them to survive, the gods would have arranged it, and since in this very inquiry “thou art disputing with the Deity,” he must trust the gods’ justice. It is the nearest the notebook comes to wanting an afterlife.</p>
+      <p class="sub">The reckoning</p>
+      <ul class="points">
+        <li>Either iron necessity, or a providence that can be moved, or a leaderless chaos (12.14). In the last case, “be content that in such a tempest thou hast in thyself a certain ruling intelligence.” The storm may carry off the body and breath, “for the intelligence at least it will not carry away.”</li>
+        <li>A lamp shines until it goes out; will truth, justice and temperance go out in you before you die? (12.15).</li>
+        <li>“Everything is opinion, and opinion is in thy power. Take away then … thy opinion, and like a mariner who has doubled the promontory, thou wilt find calm, everything stable, and a waveless bay” (12.22).</li>
+        <li>A list of what he has forgotten when troubled (12.26): that everything happens by nature, that another’s wrong is nothing to him, that the human race is one community “not of a little blood or seed, but of intelligence,” that nothing is a man’s own, “that everything is opinion,” and that everyone lives and loses only the present.</li>
+        <li>Think of the famous, the embittered, the fortunate: “where are they all now? Smoke and ash and a tale, or not even a tale” (12.27). Tiberius on Capri is one of his examples.</li>
+        <li>How does he know the gods exist? He has never seen his own soul either, yet honours it; from their power, felt constantly, he infers them (12.28).</li>
+        <li>How small a part of time, of substance, of the world-soul, “on what a small clod of the whole earth thou creepest!” (12.32).</li>
+      </ul>
+      <p class="sub">Leaving the stage (12.36)</p>
+      <p>The last entry. “Man, thou hast been a citizen in this great state [the world]; what difference does it make to thee whether for five years [or three]?” An actor dismissed by the magistrate who hired him complains that he has played only three acts of five. “Thou sayest well, but in life the three acts are the whole drama,” and the length is set by whoever composed it. “Depart then satisfied, for he also who releases thee is satisfied.”</p>
+      <p class="line">“Depart then satisfied, for he also who releases thee is satisfied.”<span>12.36, the last words of the book</span></p>
+    </article>
+
+    <section class="part" id="threads">
+      <p class="part-num">Threads through the books</p>
+      <h2>Four things he kept returning to</h2>
+      <p class="part-lede">Because the notebook has no plan, its real structure is repetition. These four threads run through all twelve books.</p>
+    </section>
+
+    <section class="sec" id="atoms">
+      <p class="kicker">Physics</p>
+      <h2>Providence or atoms</h2>
+      <p>Orthodox Stoicism held that the universe is one rational, living whole run by providence, so that accepting what happens is recognition rather than resignation. Marcus believed this, and says so. But again and again he sets beside it the rival picture of the Epicureans: a universe of atoms colliding by chance, with no plan and no one in charge. He never settles the question, and he does not need to, because his conclusions survive either answer. If there is providence, complaint is incoherent. If there are only atoms, nothing is owed to you, and the one ordered thing in the storm, your own mind, is all the more worth governing (12.14). The ethics carry the weight; the physics is scaffolding. This is why the book still works for readers who share none of his cosmology.</p>
+      <figure class="fig">
+        <p class="fig-title">Figure · Every place he poses the choice</p>
+        <div class="table-wrap stack compact"><table>
+          <thead><tr><th scope="col">Entry</th><th scope="col">The alternatives</th><th scope="col">Either way</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">2.11</th><td data-l="The alternatives">Gods who care, or no gods, or gods who do not care</td><td data-l="Either way">Death is nothing to fear</td></tr>
+            <tr><th scope="row">4.3</th><td data-l="The alternatives">“Either there is providence or atoms”</td><td data-l="Either way">Be content with your lot</td></tr>
+            <tr><th scope="row">4.27</th><td data-l="The alternatives">A well-ordered universe, or “a chaos huddled together”</td><td data-l="Either way">Keep order in yourself</td></tr>
+            <tr><th scope="row">6.10</th><td data-l="The alternatives">Confusion and dispersion, or unity, order and providence</td><td data-l="Either way">Why stay in chaos? Or else: trust the governor</td></tr>
+            <tr><th scope="row">6.24</th><td data-l="The alternatives">Alexander and his groom taken back into the world’s reason, or scattered as atoms</td><td data-l="Either way">Death makes them equal</td></tr>
+            <tr><th scope="row">6.44</th><td data-l="The alternatives">The gods decide about me, or about the whole, or about nothing</td><td data-l="Either way">I can still decide what my nature requires</td></tr>
+            <tr><th scope="row">7.32</th><td data-l="The alternatives">Death as dispersion, as atoms, or as annihilation</td><td data-l="Either way">It is extinction or change</td></tr>
+            <tr><th scope="row">7.50</th><td data-l="The alternatives">Atoms coming apart, or elements dispersing</td><td data-l="Either way">What came from earth returns to it</td></tr>
+            <tr><th scope="row">8.17</th><td data-l="The alternatives">Blame the atoms, or the gods?</td><td data-l="Either way">“Both are foolish. Thou must blame nobody.”</td></tr>
+            <tr><th scope="row">9.28</th><td data-l="The alternatives">A mind acting in each event, or once for all, or atoms</td><td data-l="Either way">“If there is a god, all is well; and if chance rules, do not thou also be governed by it”</td></tr>
+            <tr><th scope="row">9.39</th><td data-l="The alternatives">One intelligent source, or only atoms</td><td data-l="Either way">Why then are you disturbed?</td></tr>
+            <tr><th scope="row">10.6</th><td data-l="The alternatives">Atoms, or nature</td><td data-l="Either way">I am a part of a whole, and akin to its parts</td></tr>
+            <tr><th scope="row">11.18</th><td data-l="The alternatives">“If all things are not mere atoms…”</td><td data-l="Either way">We are made for one another</td></tr>
+            <tr><th scope="row">12.14</th><td data-l="The alternatives">Necessity, a providence that hears, or chaos with no director</td><td data-l="Either way">The storm cannot carry off the mind</td></tr>
+            <tr><th scope="row">12.24</th><td data-l="The alternatives">Chance, or providence</td><td data-l="Either way">Blame neither</td></tr>
+          </tbody>
+        </table></div>
+        <figcaption>Our count: fifteen entries, from Book 2 to Book 12. In several (2.11, 6.10, 6.44) he says which answer he prefers, providence, and in none does the conclusion depend on it.</figcaption>
+      </figure>
+      <p class="sub">Change as the law of things</p>
+      <ul class="points">
+        <li>From Heraclitus he takes the flux: “the death of earth is to become water, and the death of water is to become air, and the death of air is to become fire, and reversely” (4.46). Time is “a river made up of the events which happen” (4.43).</li>
+        <li>Nature “loves nothing so much as to change the things which are and to make new things like them” (4.36); it moulds a horse out of its substance as if out of wax, breaks it up and makes a tree (7.23).</li>
+        <li>Nothing comes from nothing or goes to nothing (4.4, 5.13): the parts of him will be reduced into parts of the universe “and so on forever.” The universe has no rubbish heap outside itself, so it remakes its own decay into new things (8.50).</li>
+        <li>This consoles, because whatever is unbearable will pass, and it deflates, because whatever you want will pass too. The one thing not carried away is how you behave now.</li>
+      </ul>
+    </section>
+
+    <section class="sec" id="death">
+      <p class="kicker">The constant</p>
+      <h2>Twelve ways to face death</h2>
+      <p>Death is on almost every page. It is not morbidity but a measuring rod: set against death, a courtier’s slight shrinks to nothing and the present hour becomes the whole stock of life. Marcus tries every argument he knows, Stoic, Epicurean and Platonic, and he does not seem to think any one of them enough.</p>
+      <figure class="fig">
+        <p class="fig-title">Figure · The arguments he uses, with where</p>
+        <div class="cards">
+          <div><p class="k">It is natural · 2.12, 9.3</p><h4>An operation of nature</h4><p>Like teething, growing grey or giving birth. Only a child fears what nature does.</p></div>
+          <div><p class="k">It is universal · 3.3, 4.48</p><h4>The doctors died too</h4><p>Hippocrates, the astrologers, Alexander, Pompey, Caesar, whole cities.</p></div>
+          <div><p class="k">It takes little · 2.14</p><h4>You lose only the present</h4><p>The longest life and the shortest lose the same moment.</p></div>
+          <div><p class="k">Either way · 7.32, 8.58</p><h4>Extinction or change</h4><p>No sensation, so no harm; or a new kind of sensation, and you go on living.</p></div>
+          <div><p class="k">The voyage · 3.3</p><h4>You have reached shore</h4><p>“Thou hast embarked, thou hast made the voyage, thou art come to shore; get out.”</p></div>
+          <div><p class="k">Ripeness · 4.48</p><h4>The olive falls</h4><p>Leave blessing the tree on which you grew.</p></div>
+          <div><p class="k">Completeness · 11.1, 12.36</p><h4>Three acts can be the play</h4><p>A good life is whole wherever it is cut off; the author decides its length.</p></div>
+          <div><p class="k">Urgency · 3.1</p><h4>The mind may go first</h4><p>Dotage takes judgement before breath, so hurry.</p></div>
+          <div><p class="k">Rehearsal · 2.5, 7.69</p><h4>Each act as the last</h4><p>“Passing every day as the last” is the perfection of character.</p></div>
+          <div><p class="k">Rehearsal · 7.56</p><h4>You are already dead</h4><p>Count your life as finished and live the rest as a bonus, according to nature.</p></div>
+          <div><p class="k">Company · 9.3, 10.36</p><h4>Some will be relieved</h4><p>You leave people who do not share your principles, and some at the bedside will be glad.</p></div>
+          <div><p class="k">Oblivion · 4.19, 7.21</p><h4>Fame dies with its keepers</h4><p>Those who would remember you are dying too.</p></div>
+        </div>
+        <figcaption>The twelve are ours, grouped from the text. The Epicurean argument at 8.58, that without sensation there is no harm, sits beside the Stoic ones without apology.</figcaption>
+      </figure>
+      <p>What he never says is that death is good in itself, or that he looks forward to an afterlife. The furthest he goes is the puzzled question at 12.5 and the refusal, there and at 11.3, to decide between extinction, dispersal and survival.</p>
+    </section>
+
+    <section class="sec" id="fame">
+      <p class="kicker">Oblivion</p>
+      <h2>The names he forgot</h2>
+      <p>His favourite weapon against vanity is a list of names. The famous dead of Rome, the courts of earlier emperors, his own family and teachers, and people so obscure that nobody now knows who they were: all of them are offered as proof that everyone is forgotten. The irony is the book’s own survival. Most of the names he chose as examples of oblivion are now known only because he wrote them down, and some not even then.</p>
+      <figure class="fig">
+        <p class="fig-title">Figure · “Such is everything”: the mourners of 8.25</p>
+        <ol class="chain">
+          <li><div class="chain__a"><b>Lucilla</b><span>his mother</span></div><p class="chain__m">saw die</p><div class="chain__b"><b>Verus</b><span>his father</span></div></li>
+          <li><div class="chain__a"><b>Secunda</b><span>wife of Maximus</span></div><p class="chain__m">saw die</p><div class="chain__b"><b>Maximus</b><span>his Stoic teacher</span></div></li>
+          <li><div class="chain__a"><b>Epitynchanus</b><span>unknown</span></div><p class="chain__m">saw die</p><div class="chain__b"><b>Diotimus</b><span>unknown</span></div></li>
+          <li><div class="chain__a"><b>Antoninus</b><span>Antoninus Pius</span></div><p class="chain__m">saw die</p><div class="chain__b"><b>Faustina</b><span>his wife, d. 140</span></div></li>
+          <li><div class="chain__a"><b>Celer</b><span>Hadrian’s secretary</span></div><p class="chain__m">saw die</p><div class="chain__b"><b>Hadrian</b><span>emperor, d. 138</span></div></li>
+        </ol>
+        <figcaption>After each pair Marcus adds that the mourner died too: “and then Lucilla died.” Identifications are the usual ones; Celer is taken to be Caninius Celer, who also taught Marcus Greek. The entry goes on to “Charax and Demetrius the Platonist, and Eudaemon … All ephemeral, dead long ago.”</figcaption>
+      </figure>
+      <p class="sub">The roll-calls</p>
+      <div class="table-wrap stack"><table>
+        <thead><tr><th scope="col">Entry</th><th scope="col">Names</th><th scope="col">Who they were</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">4.33</th><td data-l="Names">Camillus, Caeso, Volesus, Leonnatus (or Dentatus); Scipio, Cato; Augustus; Hadrian, Antoninus</td><td data-l="Who they were">Heroes of early Rome, then the Republic, then the emperors, ending with his own adoptive family</td></tr>
+          <tr><th scope="row">4.50</th><td data-l="Names">Cadicianus, Fabius, Julianus, Lepidus</td><td data-l="Who they were">People who clung to life to a great age. No one now knows who they were</td></tr>
+          <tr><th scope="row">6.47</th><td data-l="Names">Philistion, Phoebus, Origanion; Heraclitus, Pythagoras, Socrates; Eudoxus, Hipparchus, Archimedes, Menippus</td><td data-l="Who they were">Three people otherwise unknown, then the greatest minds of Greece</td></tr>
+          <tr><th scope="row">8.31</th><td data-l="Names">Augustus’s wife, daughter, Agrippa, Areius, Maecenas</td><td data-l="Who they were">A whole imperial court, dead to the last physician</td></tr>
+          <tr><th scope="row">10.31</th><td data-l="Names">Satyron, Eutyches, Hymen, Euphrates, Eutychion, Silvanus, Alciphron, Tropaeophorus, Xenophon, Crito, Severus</td><td data-l="Who they were">Philosophers and acquaintances; Euphrates is known from Pliny, most of the rest from nowhere else</td></tr>
+          <tr><th scope="row">12.27</th><td data-l="Names">Fabius Catullinus, Lucius Lupus, Stertinius at Baiae, Tiberius at Capri, Velius Rufus</td><td data-l="Who they were">Men who retired to country houses, gardens and islands, the emperor Tiberius among them</td></tr>
+        </tbody>
+      </table></div>
+      <p>The argument itself is laid out at 4.19: whoever wants posthumous fame forgets that everyone who remembers him will die soon, and so will they who come after, “until the whole remembrance shall have been extinguished.” And even if the rememberers were immortal, “what then is this to thee?” The entry at 7.21 puts it in one sentence: “Near is thy forgetfulness of all things; and near the forgetfulness of thee by all.”</p>
+    </section>
+
+    <section class="sec" id="silences">
+      <p class="kicker">Absences</p>
+      <h2>What the notebook leaves out</h2>
+      <p>The reign was one of the most eventful in Roman history, and the notebook passes over nearly all of it. That is the clearest evidence of what the book is: a record of one activity within a life, the daily work on his own judgements, rather than a record of the life. But the silences are not total, and where the events leak through they leak through as exercises.</p>
+      <figure class="fig">
+        <p class="fig-title">Figure · The reign’s events, and what the notebook says</p>
+        <div class="table-wrap stack"><table>
+          <thead><tr><th scope="col">Event</th><th scope="col">In the notebook</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">The plague, from 165–66</th><td data-l="In the notebook">Only as a comparison: a corrupted mind is worse than any “corruption and change of this atmosphere” (9.2)</td></tr>
+            <tr><th scope="row">Death of Lucius Verus, 169</th><td data-l="In the notebook">Thanks for “such a brother” (1.17); perhaps his tomb at 8.37, if the conjecture “Verus” is right</td></tr>
+            <tr><th scope="row">Deaths of his children</th><td data-l="In the notebook">Never narrated. But a sick child (8.49), a prayer not to fear losing “my little son” (9.40), “Let my dear children live” (10.35) and Epictetus on kissing a child (11.34)</td></tr>
+            <tr><th scope="row">The wars on the Danube</th><td data-l="In the notebook">The place notes “among the Quadi” and “Carnuntum,” and the Sarmatians in a list of robbers (10.10)</td></tr>
+            <tr><th scope="row">The invasion of Italy, 170</th><td data-l="In the notebook">Nothing</td></tr>
+            <tr><th scope="row">Revolt of Avidius Cassius, 175</th><td data-l="In the notebook">Nothing, unless every entry on betrayal and ingratitude (9.42) is read as about him</td></tr>
+            <tr><th scope="row">Death of Faustina, 175</th><td data-l="In the notebook">Nothing; she appears in the thanks of 1.17 and, as a wife near her time, in a comparison at 9.3</td></tr>
+            <tr><th scope="row">Commodus made co-emperor, 177</th><td data-l="In the notebook">Nothing</td></tr>
+            <tr><th scope="row">The martyrs of Lyon, 177</th><td data-l="In the notebook">One phrase about Christians at 11.3, perhaps not his</td></tr>
+            <tr><th scope="row">Life at court</th><td data-l="In the notebook">Often: the palace (1.17, 5.16), the court as stepmother (6.12), “made into a Caesar” (6.30), “finding fault with the court life” (8.9), the senate (8.30)</td></tr>
+          </tbody>
+        </table></div>
+        <figcaption>Dates are the conventional ones; the invasion of Italy is dated by some to 167 or 169.</figcaption>
+      </figure>
+      <p>His children are the notable leak. Stoic doctrine told him a child’s death was not an evil, and he quotes the hardest version of that doctrine from Epictetus. But he also prays, at 9.40, not to lose his little son, before correcting the prayer, and at 10.35 he catches himself wishing his children to live and files the wish under a diseased eye. Marcus lost at least half of his children, several of them before he began writing. The doctrine is on the page; so is the effort it cost.</p>
+    </section>
+
+    <section class="part" id="reading-marcus">
+      <p class="part-num">Reading Marcus</p>
+      <h2>Context, critics and use</h2>
+    </section>
+
+    <section class="sec" id="stoics">
       <p class="kicker">Context</p>
       <h2>Among the Stoics</h2>
-      <div class="table-wrap"><table>
-        <thead><tr><th scope="col">Writer</th><th scope="col">Who he was</th><th scope="col">How he writes</th></tr></thead>
+      <p>Marcus is the last of the great Stoics and the only one whose writing was not meant for anyone else. Of the school’s founders he names only Chrysippus, twice. His real teacher is Epictetus, whom he never met.</p>
+      <div class="table-wrap stack"><table>
+        <thead><tr><th scope="col">Who</th><th scope="col">When</th><th scope="col">What he was</th><th scope="col">In the Meditations</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Seneca</th><td>Courtier, Nero’s tutor, one of Rome’s richest men</td><td>Polished letters written for publication, shadowed by the gap between his wealth and his subject</td></tr>
-          <tr><th scope="row">Epictetus</th><td>A former slave who became a teacher</td><td>Lecture notes taken by a student: direct, sometimes abrasive, addressed to a room</td></tr>
-          <tr><th scope="row">Marcus Aurelius</th><td>Emperor</td><td>Notes to one reader, himself, with nobody to persuade or impress, which is why he admits he couldn’t get out of bed</td></tr>
+          <tr><th scope="row">Zeno of Citium</th><td class="num" data-l="When">c. 334–262 BCE</td><td data-l="What he was">Founder; a merchant from Cyprus who taught in the Painted Stoa at Athens</td><td data-l="In the Meditations">Never named, though “living according to nature” is his formula</td></tr>
+          <tr><th scope="row">Cleanthes</th><td class="num" data-l="When">c. 330–230 BCE</td><td data-l="What he was">Zeno’s successor, a former boxer, author of the <cite>Hymn to Zeus</cite></td><td data-l="In the Meditations">Not named</td></tr>
+          <tr><th scope="row">Chrysippus</th><td class="num" data-l="When">c. 279–206 BCE</td><td data-l="What he was">Third head; built the school’s logic and physics into a system</td><td data-l="In the Meditations">Named twice (6.42, 7.19)</td></tr>
+          <tr><th scope="row">Panaetius</th><td class="num" data-l="When">c. 185–109 BCE</td><td data-l="What he was">Brought a softened Stoicism to Rome’s governing class, in the circle of Scipio Aemilianus</td><td data-l="In the Meditations">Not named</td></tr>
+          <tr><th scope="row">Posidonius</th><td class="num" data-l="When">c. 135–51 BCE</td><td data-l="What he was">Scientist and historian at Rhodes, visited by Cicero and Pompey</td><td data-l="In the Meditations">Not named</td></tr>
+          <tr><th scope="row">Seneca</th><td class="num" data-l="When">c. 4 BCE–65 CE</td><td data-l="What he was">Nero’s tutor and minister, one of Rome’s richest men; polished letters written for publication</td><td data-l="In the Meditations">Not named</td></tr>
+          <tr><th scope="row">Musonius Rufus</th><td class="num" data-l="When">c. 30–100</td><td data-l="What he was">A Roman knight exiled by Nero; Epictetus’s teacher</td><td data-l="In the Meditations">Not named</td></tr>
+          <tr><th scope="row">Epictetus</th><td class="num" data-l="When">c. 50–135</td><td data-l="What he was">A former slave from Phrygia who taught at Nicopolis in Greece; his lectures were taken down by his pupil Arrian</td><td data-l="In the Meditations">Named in eight entries and quoted at 4.41 and 11.33–38; the source of most of the method (1.7)</td></tr>
+          <tr><th scope="row">Marcus Aurelius</th><td class="num" data-l="When">121–180</td><td data-l="What he was">Emperor</td><td data-l="In the Meditations">Notes to one reader, with nobody to persuade, which is why he admits he cannot get out of bed</td></tr>
         </tbody>
       </table></div>
-      <p style="margin-top:14px">Among the rival schools, the Epicureans advised withdrawing from public life, and the Stoics demanded participation: hold office, raise children, fight the war. That is why Stoicism became the philosophy of Rome’s governing class, and why the modern version as a private calming technique loses so much.</p>
+      <p class="sub">Whom else he uses</p>
+      <ul class="points">
+        <li><strong>Socrates</strong> is named in eleven entries, more than anyone else: as the model of a soul content to be just (7.66), the man who could abstain and enjoy (1.16), who called popular opinions bogeys (11.23).</li>
+        <li><strong>Heraclitus</strong> supplies the flux and the fire (4.46), and the sleepers who are also workers (6.42).</li>
+        <li><strong>Plato</strong> is quoted for the view from above (7.48) and, from the <cite>Apology</cite>, for staying at one’s post (7.44–45); his <cite>Republic</cite> is the ideal not to wait for (9.29).</li>
+        <li><strong>Epicurus</strong>, the rival school’s founder, is quoted with approval on pain (7.64) and on talking philosophy in sickness (9.41). The Epicurean atoms are the alternative he keeps open.</li>
+        <li><strong>The poets</strong>: Homer’s leaves (10.34), Euripides on the earth loving the shower (10.21), and lines and half-lines from others, often only a few words long. Tragedy and comedy get a short history of their uses at 11.6.</li>
+      </ul>
+      <p>The political difference between the schools matters for reading him. Epicureans advised withdrawal from public life. Stoics demanded the opposite: hold office, raise children, fight the war, “a Roman, and a ruler” at his post (3.5). That is why Stoicism became the philosophy of Rome’s governing class, and why the modern version, a private technique for calm, loses so much of what Marcus meant.</p>
     </section>
 
-    <section class="sec" id="uncomfortable">
-      <p class="kicker">Context</p>
-      <h2>The uncomfortable parts</h2>
-      <div class="debate"><h3>Universal brotherhood, and slavery</h3><p>Marcus writes that his city, as a man, is the world, and that all rational beings share one citizenship. He ruled a society in which a large share of people were legal property, and nothing in the twelve books treats that as a problem, though his own teacher Epictetus had been a slave. It is a real limit on how far the universalism reached.</p></div>
-      <div class="debate"><h3>The Christians</h3><p>Christians were executed in his reign, notably at Lyon in 177. The single mention of them (11.3) is dismissive, and some scholars think it a later insertion. Whether he ordered or approved the killings is disputed.</p></div>
-      <div class="debate"><h3>Commodus</h3><p>He chose his son as successor: the first biological succession in over eighty years, ending a run of adopted emperors. Commodus was a catastrophe. The notebook, written in exactly those years, says nothing about the choice, the plague, his children’s deaths or the revolt of Avidius Cassius. It records one activity within his life, not the life.</p></div>
+    <section class="sec" id="readers">
+      <p class="kicker">Reception</p>
+      <h2>Readers and critics</h2>
+      <div class="table-wrap stack"><table>
+        <thead><tr><th scope="col">Reader</th><th scope="col">When</th><th scope="col">What they saw</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Cassius Dio</th><td class="num" data-l="When">early 200s</td><td data-l="What they saw">A good ruler unlucky in his times, after whom Rome fell “from a kingdom of gold to one of iron and rust”</td></tr>
+          <tr><th scope="row">Themistius</th><td class="num" data-l="When">364</td><td data-l="What they saw">Praised Marcus’s “precepts” in a speech to the emperor Valens, perhaps the earliest trace of the book</td></tr>
+          <tr><th scope="row">Arethas of Caesarea</th><td class="num" data-l="When">c. 907</td><td data-l="What they saw">A Byzantine archbishop who owned an old copy falling to pieces, had it recopied, and recommended it to a fellow bishop</td></tr>
+          <tr><th scope="row">Thomas Gataker</th><td class="num" data-l="When">1652</td><td data-l="What they saw">An English Puritan scholar whose Latin translation and commentary gave the entries their numbers</td></tr>
+          <tr><th scope="row">Edward Gibbon</th><td class="num" data-l="When">1776</td><td data-l="What they saw">The age from Nerva to Marcus as the period “during which the condition of the human race was most happy and prosperous”</td></tr>
+          <tr><th scope="row">John Stuart Mill</th><td class="num" data-l="When">1859</td><td data-l="What they saw">In <cite>On Liberty</cite>, the best of rulers, “a better Christian in all but the dogmatic sense,” who persecuted Christians: proof that no one, however wise, is entitled to suppress an opinion</td></tr>
+          <tr><th scope="row">Matthew Arnold</th><td class="num" data-l="When">1863</td><td data-l="What they saw">“Perhaps the most beautiful figure in history,” in an essay that made the book a Victorian favourite</td></tr>
+          <tr><th scope="row">Ernest Renan</th><td class="num" data-l="When">1882</td><td data-l="What they saw">In <cite>Marc-Aurèle et la fin du monde antique</cite>, the most purely human book there is</td></tr>
+          <tr><th scope="row">Thomas W. Africa</th><td class="num" data-l="When">1961</td><td data-l="What they saw">Visions of vast time and shrinking earth as the effects of the opium in his doctor’s prescription</td></tr>
+          <tr><th scope="row">P. A. Brunt</th><td class="num" data-l="When">1974</td><td data-l="What they saw">A close reading of what the self-reproaches reveal about the man and the temptations of his office</td></tr>
+          <tr><th scope="row">R. B. Rutherford</th><td class="num" data-l="When">1989</td><td data-l="What they saw">A literary study of the book’s style, images and rhetoric: a writer, not just a moralist</td></tr>
+          <tr><th scope="row">Pierre Hadot</th><td class="num" data-l="When">1992</td><td data-l="What they saw">In <cite>The Inner Citadel</cite>, spiritual exercises in three disciplines; the gloom is technique, not mood</td></tr>
+          <tr><th scope="row">Martha Nussbaum</th><td class="num" data-l="When">1994</td><td data-l="What they saw">In <cite>The Therapy of Desire</cite>, Stoic therapy as powerful but costly: to be invulnerable is to stop loving what can be lost</td></tr>
+          <tr><th scope="row">Christopher Gill</th><td class="num" data-l="When">2013</td><td data-l="What they saw">A commentary on Books 1–6 arguing that the thought is coherent, orthodox Stoicism</td></tr>
+          <tr><th scope="row">Ryan Holiday</th><td class="num" data-l="When">2014</td><td data-l="What they saw">In <cite>The Obstacle Is the Way</cite>, 5.20 as a creed for athletes and founders</td></tr>
+          <tr><th scope="row">Donald Robertson</th><td class="num" data-l="When">2019</td><td data-l="What they saw">In <cite>How to Think Like a Roman Emperor</cite>, a psychotherapist reading the book as cognitive therapy</td></tr>
+        </tbody>
+      </table></div>
     </section>
 
-    <section class="sec" id="case">
-      <p class="kicker">Context</p>
-      <h2>The case against Stoicism</h2>
-      <div class="debate"><h3>The fortress is safe because it is empty</h3><p>From Aristotle to Martha Nussbaum: some external things really are goods, and grief at a child’s death is an accurate perception of loss, not an error of reasoning. Stoicism buys invulnerability by shrinking what you may care about. Marcus himself writes of his teachers and children with a tenderness his doctrine doesn’t license.</p></div>
-      <div class="debate"><h3>Fate and responsibility</h3><p>The Stoics were determinists who also held that our judgements are up to us. Chrysippus’s answer was the cylinder: a push starts it rolling, but its shape decides how. Critics note that the shape, your character, came from the same causal chain.</p></div>
-      <div class="debate"><h3>Indifferents that aren’t indifferent</h3><p>If health and wealth are truly indifferent, there is no reason to prefer them. The Stoic “preferred indifferents” let the Stoic live like everyone else while holding a doctrine that would forbid it.</p></div>
-      <div class="debate"><h3>A philosophy that changes nothing</h3><p>Locating all value in inner judgement supplies no lever against an unjust order, and fine consolation for living inside one. Hegel called it freedom in thought that leaves the world untouched. Nietzsche added that “live according to nature” reads your ideal into nature and then claims to derive it from there.</p></div>
-      <div class="debate"><h3>What none of this touches</h3><p>The practical psychology survives: emotions follow judgements, judgements can be examined, and rehearsing a difficulty in advance blunts it. You can take the psychology and decline the cosmology, but the result is a set of techniques, not Stoicism.</p></div>
+    <section class="sec" id="heldup">
+      <p class="kicker">Checked against what we now know</p>
+      <h2>What held up</h2>
+      <p>Marcus makes no forecasts in the ordinary sense, but the book is full of claims about the mind, the world and memory that can be checked. Our verdicts:</p>
+      <div class="fc"><p class="fc__v fc__v--held">Held</p><h3>Feelings follow judgements <span>4.7, 8.47, 11.18</span></h3><p>The founding premise of cognitive therapy. Aaron Beck and his colleagues traced the philosophical origins of their method to the Stoics in 1979, and Albert Ellis credited Epictetus. Challenging the judgement to change the feeling is now one of the best-tested treatments in psychology.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>You will soon be forgotten <span>4.6, 7.21, 8.25</span></h3><p>Wrong about himself: he is read eighteen and a half centuries later. Right about almost everyone else he names. Cadicianus, Fabius, Julianus and Lepidus (4.50), Philistion, Phoebus and Origanion (6.47) survive only as names in his list, and nobody knows who they were.</p></div>
+      <div class="fc"><p class="fc__v fc__v--held">Held</p><h3>Nothing comes from nothing <span>4.4, 5.13, 8.50</span></h3><p>Matter is not destroyed but reworked, and the body is rebuilt constantly from food and air (10.7). Chemistry confirmed the conservation of mass in the eighteenth century and physiology the constant turnover of the body’s material.</p></div>
+      <div class="fc"><p class="fc__v fc__v--missed">Missed</p><h3>The universe is one living being, renewed by fire <span>4.40, 5.13, 10.7</span></h3><p>The Stoic physics behind the ethics, a world-soul and periodic conflagration, has no place in modern cosmology. The ethics turned out to be detachable from it, which is Marcus’s own “either way” argument.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>Forty years show you everything <span>7.49, 11.1</span></h3><p>True of ambition, flattery, court intrigue and grief, which the book describes in terms any modern office would recognise. False of knowledge and technology: the world of his readers would have been unimaginable to him, starting with the printing press that made his notebook a bestseller.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>People do wrong from ignorance <span>2.1, 7.63, 11.18</span></h3><p>Research on perpetrators, notably Roy Baumeister’s <cite>Evil</cite> (1997), finds that most people who do harm believe themselves justified or provoked, as Marcus says. That wrongdoing is always “involuntary” is harder to defend.</p></div>
+      <div class="fc"><p class="fc__v fc__v--held">Held</p><h3>Anger harms the angry <span>11.18</span></h3><p>His eighth rule says anger costs more than its cause. Studies of chronic anger and hostility link them with heart disease; a 2009 meta-analysis by Yoichi Chida and Andrew Steptoe found a modest but real association with future coronary disease.</p></div>
+      <div class="fc"><p class="fc__v fc__v--missed">Missed</p><h3>Christians die from mere obstinacy <span>11.3</span></h3><p>If the phrase is his, he misread the movement completely. Within a century and a half of his death the empire had a Christian emperor, and within two centuries Christianity was its official religion.</p></div>
+      <div class="fc"><p class="fc__v fc__v--held">Held</p><h3>Rule cannot change minds by decree <span>9.29</span></h3><p>“Without a change of opinions what else is there than the slavery of men who groan while they pretend to obey?” A fair summary of how imposed reform tends to fare, from Rome to the twentieth century, and a check on his own power that few rulers wrote down.</p></div>
+    </section>
+
+    <section class="sec" id="debates">
+      <p class="kicker">Disputes</p>
+      <h2>Where it’s argued with</h2>
+      <div class="debate"><h3>Diary of a sad man, or exercise book?</h3><p>Nineteenth-century readers such as Matthew Arnold (1863) and Ernest Renan (1882) heard a melancholy soul, lonely on his throne, resigned rather than hopeful. Pierre Hadot (1992) answered that the bleak passages, sex as friction, purple as shellfish blood, life as a bag of blood and smell, are a deliberate technique, the “physical definition” of 3.11, performed to loosen desire. On Hadot’s reading they tell us about the method, not the mood. Most scholars now take a middle view: the exercises are technique, but the choice of what to exercise against is revealing.</p></div>
+      <div class="debate"><h3>Was Book 1 written last?</h3><p>Heinrich Schenkl, the book’s early twentieth-century editor, argued that Book 1, finished and orderly unlike the rest, was composed late and set at the front; C. R. Haines accepted this in his Loeb edition of 1916. It cannot be proved, and some think Book 1 was simply written as a separate piece at any time.</p></div>
+      <div class="debate"><h3>Opium</h3><p>Thomas W. Africa’s article “The Opium Addiction of Marcus Aurelius” (1961) noted that Galen, the emperor’s physician, prescribed him a daily theriac containing poppy juice, and that when Galen removed the poppy Marcus could not sleep. Africa read the book’s cosmic visions as drug effects. Pierre Hadot replied that the view from above and the vastness of time are standard exercises found in Plato, Cicero and Seneca, and that the prescription shows no sign of addiction. The thesis now has few defenders.</p></div>
+      <div class="debate"><h3>Was he a Stoic at all?</h3><p>In a 1982 essay John Rist pointed to the constant “providence or atoms,” the doubt about survival after death (12.5) and the pessimism, and asked whether Marcus was a Stoic at all. Christopher Gill (2013) answers that the disjunctions are an old argumentative device that proves his ethics hold even on the rival’s assumptions, and that the core is orthodox.</p></div>
+      <div class="debate"><h3>The Christians</h3><p>The single mention (11.3) is grammatically awkward, and Haines (1916) called it “pretty certainly a gloss.” The persecutions are real: Justin Martyr was condemned in Rome around 165 by the city prefect, who was Marcus’s own teacher Junius Rusticus, and the martyrs of Lyon died in 177. How far Marcus directed either is disputed. John Stuart Mill (1859) made him the classic case of a good ruler doing wrong through certainty: if Marcus could persecute, anyone could.</p></div>
+      <div class="debate"><h3>Commodus</h3><p>From Nerva in 96, emperors had adopted their successors; Marcus chose his son, and Commodus was a disaster. Machiavelli (in his <cite>Discourses</cite> on Livy, around 1517) and Gibbon (1776) made the choice the end of Rome’s best age. The biographer Anthony Birley (1966, revised 1987) and most modern historians answer that none of the adoptive emperors had a surviving son; passing over Commodus would have made him a rallying point for civil war. The notebook, written in those very years, says nothing either way.</p></div>
+      <div class="debate"><h3>One law for all, and slavery</h3><p>Marcus praises “a polity in which there is the same law for all” (1.14) and calls every rational being his kin and fellow citizen (4.4). He ruled a society in which millions were legal property, and nothing in the twelve books treats that as a problem, though the teacher he revered, Epictetus, had been a slave. Slaves appear in the book as property he should treat well (5.31) and as possessions the vulgar admire (6.14). The universalism is sincere and it has edges.</p></div>
+      <div class="debate"><h3>The self-help Marcus</h3><p>Since the 2010s the book has become a bestseller, promoted as a manual for resilience and productivity. Hadot’s own point cuts against the most stripped-down versions: the exercises were meant to serve justice and the common good (the discipline of action) and to rest on a view of the whole (the discipline of desire). A reading that keeps only the calm keeps one discipline of three.</p></div>
     </section>
 
     <section class="sec" id="afterlife">
-      <p class="kicker">Context</p>
-      <h2>From nothing to everywhere</h2>
-      <p>For most of its history the book was known to a few scholars. It was first printed in 1559, found an English readership in the nineteenth century, and became a mass-market book only in the last two decades, helped by Gregory Hays’s plain modern translation.</p>
-      <p>Its deepest afterlife is clinical. Albert Ellis credited Epictetus when he developed Rational Emotive Behavior Therapy in the 1950s, and Aaron Beck’s cognitive therapy made the same move: find the automatic thought, examine the belief behind it, test it. What carried over was the machinery. What didn’t was the point: Marcus examines his judgements because some are false and a life built on false judgements is not a good life, whatever it feels like.</p>
+      <p class="kicker">Transmission</p>
+      <h2>How it survived</h2>
+      <p>For most of its history the book was nearly lost. It survived through a handful of copies in Byzantium, reached print in the Reformation, and became a mass-market book only in the last twenty years.</p>
+      <figure class="fig">
+        <p class="fig-title">Figure · From camp notebook to bestseller</p>
+        <ol class="vtl">
+          <li class="era">Antiquity</li>
+          <li><b>170s · Written</b><span>In camp, in Greek</span><em>Private notes. How they survived his death is unknown.</em></li>
+          <li><b>364 · Themistius</b><span>Constantinople</span><em>An orator praises Marcus’s “precepts,” perhaps the book.</em></li>
+          <li class="era">Byzantium</li>
+          <li><b>c. 907 · Arethas</b><span>Archbishop of Caesarea</span><em>Has an old, crumbling copy recopied and recommends the book to a fellow bishop.</em></li>
+          <li><b>c. 1000 · The Suda</b><span>Byzantine encyclopedia</span><em>Quotes it and describes twelve books on the conduct of his own life.</em></li>
+          <li><b>14th century · Vatican manuscript</b><span>Vat. gr. 1950</span><em>One of only two complete copies known, and the only one that survives.</em></li>
+          <li class="era">Print</li>
+          <li class="b"><b>1559 · First printed edition</b><span>Zurich</span><em>Wilhelm Xylander prints the Greek with a Latin translation from a manuscript since lost.</em></li>
+          <li class="b"><b>1634 · First English</b><span>Meric Casaubon</span><em>A learned, loose translation, followed by Collier (1701), Graves (1792) and others.</em></li>
+          <li class="b"><b>1652 · Gataker</b><span>Cambridge</span><em>Latin translation and commentary; the numbered entries.</em></li>
+          <li class="b"><b>1742 · The Foulis translation</b><span>Glasgow</span><em>By the philosophers Francis Hutcheson and James Moor.</em></li>
+          <li class="b"><b>1862 · George Long</b><span>London</span><em>Literal and Victorian, and for decades the standard English version.</em></li>
+          <li class="b"><b>1916 · C. R. Haines</b><span>Loeb Classical Library</span><em>Greek and English on facing pages.</em></li>
+          <li class="b"><b>1944 · A. S. L. Farquharson</b><span>Oxford</span><em>The great scholarly edition and commentary.</em></li>
+          <li class="era">Modern</li>
+          <li class="o"><b>1964 · Maxwell Staniforth</b><span>Penguin Classics</span><em>The Penguin version for the next forty years.</em></li>
+          <li class="o"><b>1992 · Pierre Hadot</b><span>Paris; English 1998</span><em><cite>The Inner Citadel</cite> changes how scholars read it.</em></li>
+          <li class="o"><b>2002 · Gregory Hays</b><span>Modern Library</span><em>A plain, lively version that drives the twenty-first-century revival.</em></li>
+          <li class="o"><b>2010s–2020s · Bestseller</b><span>Worldwide</span><em>Therapy, self-help, sport and business make it one of the most read books of antiquity.</em></li>
+        </ol>
+        <p class="key"><span>Manuscript age</span><span class="b">Scholarly editions</span><span class="o">Popular era</span></p>
+      </figure>
+      <p>Its deepest modern afterlife is clinical. Albert Ellis, founding what became rational emotive behaviour therapy in the 1950s, credited Epictetus, and Aaron Beck’s cognitive therapy made the same move: find the automatic thought, examine the belief behind it, test it. What carried over was the machinery. What did not was the purpose: Marcus examines his judgements because some are false, and a life built on false judgements is not a good life, whatever it feels like.</p>
+    </section>
+
+    <section class="sec" id="translations">
+      <p class="kicker">Versions</p>
+      <h2>One sentence, four translators</h2>
+      <p>The Greek is terse, often ungrammatical, sometimes corrupt, and every translation is an interpretation. Here is 7.21 as it has come into English over three centuries.</p>
+      <figure class="fig">
+        <p class="fig-title">Figure · Meditations 7.21</p>
+        <ol class="versions">
+          <li><span>The Greek</span><p lang="grc">ἐγγὺς μὲν ἡ σὴ περὶ πάντων λήθη, ἐγγὺς δὲ ἡ πάντων περὶ σοῦ λήθη.</p><i>Literally: near, your forgetting of all things; near, the forgetting of you by all.</i></li>
+          <li><span>Meric Casaubon, 1634</span><p>“The time when thou shalt have forgotten all things, is at hand. And that time also is at hand, when thou thyself shalt be forgotten by all.”</p></li>
+          <li><span>George Long, 1862</span><p>“Near is thy forgetfulness of all things; and near the forgetfulness of thee by all.”</p></li>
+          <li><span>George Chrystal, 1902, after the Foulis version of 1742</span><p>“The time is at hand when you shall forget all things, and when all shall forget you.”</p></li>
+          <li><span>C. R. Haines, 1916</span><p>“A little while and thou wilt have forgotten everything, a little while and everything will have forgotten thee.”</p></li>
+        </ol>
+        <figcaption>Casaubon spelling modernised as in the Project Gutenberg text. The Greek is two mirror-image halves of seven words each; Long keeps the mirror, Casaubon doubles the length, Haines turns it into a cadence.</figcaption>
+      </figure>
+      <ul class="points">
+        <li><strong>What the Victorians left out.</strong> At 6.13, where Marcus describes sex as clinically as he describes wine and purple, Long simply omits the clause. Haines translates it. Check for gaps if you read a nineteenth-century version.</li>
+        <li><strong>Thou or you.</strong> Every public-domain version uses “thou,” which suits the self-address but distances it. Modern versions (Staniforth 1964, Hays 2002, Martin Hammond 2006, Robin Hard 2011, Robin Waterfield 2021) use “you.”</li>
+        <li><strong>Why this page quotes Long.</strong> His is the complete, proofread text we could check every quotation against. He is literal, faithful and old-fashioned; for a first read, a modern translation is easier.</li>
+      </ul>
+    </section>
+
+    <section class="sec" id="glossary">
+      <p class="kicker">Terms</p>
+      <h2>Glossary</h2>
+      <dl class="gloss">
+        <dt>Ruling part (hegemonikon)</dt><dd>The reasoning, choosing centre of a person; the only part that is truly “thine” (12.3).</dd>
+        <dt>Daemon</dt><dd>The divine spark within, “a portion of” Zeus given as guardian (5.27). Keeping it clean is the aim of the whole book.</dd>
+        <dt>Logos</dt><dd>Reason, both the reason in each person and the rational order that runs the universe.</dd>
+        <dt>Impression (phantasia)</dt><dd>The way an event presents itself to the mind, before judgement. “Wipe out the imagination” means erase the added judgement (7.29).</dd>
+        <dt>Assent</dt><dd>Accepting an impression as true. Under the discipline of assent the mind “assents to nothing false or uncertain” (8.7).</dd>
+        <dt>Impulse</dt><dd>The movement toward action; the discipline of action directs it to “social acts.”</dd>
+        <dt>Desire and aversion</dt><dd>Wanting and shunning; Stoics restrict both to what is in our power (8.7, 11.37).</dd>
+        <dt>Choice (prohairesis)</dt><dd>The faculty of will; “no man can rob us of our free will” (11.36).</dd>
+        <dt>Passions</dt><dd>Fear, grief, lust, anger: disturbances based on false judgements. Freedom from them (apatheia) is the Stoic ideal (8.48).</dd>
+        <dt>Indifferents</dt><dd>Everything neither virtue nor vice: health, wealth, fame, death. They “happen equally to good men and bad” (2.11).</dd>
+        <dt>Preferred indifferents</dt><dd>Indifferents it is rational to choose, like health, though they are not goods; hence “in things indifferent I attempt to ascertain the value of each” (3.11).</dd>
+        <dt>Appropriate act</dt><dd>What a role or relation calls for: the duties of a son, a friend, an emperor.</dd>
+        <dt>Right act (katorthoma)</dt><dd>An appropriate act done from a perfect disposition; Marcus says the word signifies that such acts “proceed by the right road” (5.14).</dd>
+        <dt>Reservation</dt><dd>Aiming at an outcome “conditionally,” so that failure is not a harm (6.50, 8.41).</dd>
+        <dt>Physical definition</dt><dd>Describing a thing in bare physical terms to strip off its prestige (3.11, 6.13).</dd>
+        <dt>View from above</dt><dd>Imagining the earth from a height to see human affairs at their scale (7.48, 9.30, 12.24).</dd>
+        <dt>Cosmopolis</dt><dd>The world as one city of all rational beings, “the most ancient city and polity” (2.16, 4.4).</dd>
+        <dt>Sympathy</dt><dd>The interconnection of all parts of the universe: “all things are implicated with one another” (6.38).</dd>
+        <dt>Conflagration</dt><dd>The Stoic doctrine that the universe is periodically consumed by fire and reborn; Marcus mentions it only as one possibility (10.7).</dd>
+        <dt>Eudaimonia</dt><dd>Happiness, which Marcus glosses by its etymology as “a good daemon” (7.17).</dd>
+        <dt>Smooth flow</dt><dd>The Stoic image of the good life as a stream running easily; “a life which flows in quiet” (2.5), “an equable flow of happiness” (5.34).</dd>
+        <dt>Hypomnemata</dt><dd>Personal notes for rereading, the genre the Meditations belong to.</dd>
+        <dt>Aequanimitas</dt><dd>Equanimity, the watchword Antoninus Pius gave on his deathbed; Marcus defines it as “the voluntary acceptance of the things which are assigned to thee by the common nature” (10.8).</dd>
+      </dl>
     </section>
 
     <section class="sec" id="reading">
       <p class="kicker">Using it</p>
       <h2>How to read it</h2>
       <ol class="steps">
-        <li><div><p class="phase">Choose the translation carefully</p><p>Gregory Hays (Modern Library, 2002) for a first read: plain and alive. Robin Hard (Oxford) or Martin Hammond (Penguin) for more literal versions with better notes. Avoid the free Victorian George Long translation.</p></div></li>
-        <li><div><p class="phase">Don’t read it straight through</p><p>It has no argument to follow, and two sittings produce fatigue. Read a few entries at a time.</p></div></li>
-        <li><div><p class="phase">Sample Book 6 first</p><p>The densest run of the famous entries.</p></div></li>
-        <li><div><p class="phase">Then Book 4, slowly</p><p>The one that repays rereading.</p></div></li>
-        <li><div><p class="phase">Keep it by the bed</p><p>Different entries surface at different points of life, as you would expect of a book organised around problems rather than topics.</p></div></li>
+        <li><div><p class="phase">Pick a modern translation first</p><p>Gregory Hays (2002) is the plainest and most alive; Martin Hammond (Penguin, 2006) and Robin Hard (Oxford, 2011) are closer to the Greek with better notes; Robin Waterfield’s annotated edition (2021) explains almost every line. Long and Haines are free and faithful, but read them second.</p></div></li>
+        <li><div><p class="phase">Start with Book 2</p><p>Seventeen entries, the whole method in miniature, and the morning exercise that opens it.</p></div></li>
+        <li><div><p class="phase">Then Book 1, as a portrait</p><p>Read 1.16 on Antoninus Pius slowly: it is the person Marcus was trying to become.</p></div></li>
+        <li><div><p class="phase">Sample, don’t march</p><p>The book has no argument to follow and two long sittings produce fatigue. A few entries at a time, and reread.</p></div></li>
+        <li><div><p class="phase">Use the threads</p><p>When a line strikes you, find its cousins: the tables above list where he returns to providence, death, fame and anger.</p></div></li>
+        <li><div><p class="phase">Keep it near the bed</p><p>Different entries surface at different points of life, as you would expect of a book organised around problems rather than topics.</p></div></li>
       </ol>
       <p style="margin-top:28px" class="kicker">Read alongside</p>
       <ul class="books">
         <li>Epictetus, <cite>Discourses</cite> and <cite>Handbook</cite>: the source of nearly everything Marcus practises.</li>
-        <li>Pierre Hadot, <cite>The Inner Citadel</cite> (1992): the reading of the book as spiritual exercises.</li>
-        <li>Seneca, <cite>Letters to Lucilius</cite>: the Stoic courtier’s version.</li>
-        <li><cite>Fooled by Randomness</cite>, summarised on this site: Taleb’s modern use of Stoic dignity under bad luck.</li>
+        <li>Pierre Hadot, <cite>The Inner Citadel</cite> (1992; English 1998): the book that explains the three disciplines.</li>
+        <li>Anthony Birley, <cite>Marcus Aurelius: A Biography</cite> (1966, revised 1987): the life and the wars.</li>
+        <li>Seneca, <cite>Letters to Lucilius</cite>: the Stoic courtier’s version, written for readers.</li>
+        <li>Livy, <cite>The History of Rome</cite>, <a href="livy-history-of-rome.html">summarised on this site</a>: the Republic whose heroes Marcus lists as forgotten.</li>
+        <li>Taleb, <cite>Fooled by Randomness</cite>, <a href="fooled-by-randomness.html">summarised on this site</a>: a modern use of Stoic dignity under bad luck.</li>
       </ul>
     </section>
 
@@ -556,7 +1399,8 @@ td.num, th.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 </div>
 
 <footer class="wrap foot">
-  <p>A reader’s summary of the twelve books of Marcus Aurelius’s <cite>Ta eis heauton</cite>, written c. 170–180 and first printed in 1559. References are by book and section so they can be found in any edition. The hero line (7.21) and the short phrases in quotation marks follow common translations; everything else, including the list from 11.18, is paraphrase. The reign timeline and the tables are our diagrams. The print PDF of the earlier version of this summary remains in the site’s repository.</p>
+  <p>A reader’s summary of the twelve books of Marcus Aurelius’s <cite>Ta eis heauton</cite>, written c. 170–180 and first printed in 1559. Checked entry by entry against George Long’s translation of 1862 (Project Gutenberg), with C. R. Haines’s Loeb edition of 1916 (Greek and English, via the Internet Archive) for readings Long leaves out or disputes, and the translations of Meric Casaubon (1634) and George Chrystal (1902) for the comparison of 7.21. Quotations are Long’s unless marked; references are by book and entry in his numbering. The counts of entries and words, the “providence or atoms” list, the twelve arguments on death and the verdicts in “What held up” are ours. Facts of the life follow Cassius Dio, the <cite>Historia Augusta</cite> and Anthony Birley’s biography.</p>
+  <p>This version corrects the earlier one on several points: the old hero quotation (“Soon you will have forgotten the world…”) matched no translation and is replaced by exact wording; Marcus was sixteen, not seventeen, when Antoninus adopted him; Stoicism was nearly five centuries old, not four; Marcus knew Epictetus through his recorded lectures, not in person; “Among the Quadi” and “At Carnuntum” are notes between books whose placement is disputed, not headings of Books 2 and 3; 11.18 is nine rules and a tenth, not ten, and not the book’s only numbered list (see 2.16, 11.19 and 12.24); Long’s translation is literal rather than free; and the notebook is not silent about his children. The print PDF of the earlier version remains in the site’s repository.</p>
 </footer>
 
 <script>
@@ -617,13 +1461,13 @@ var FIG = (function () {
     var el = FIG.el, band = el(svg, 'g'), yearX = 36, ax = 50, lx = 66, max = W - lx - 6;
     var ev = [
       [161, 'Becomes emperor, with Lucius Verus as co-emperor', 0],
-      [162, 'War with Parthia', 1],
-      [165, 'The army brings plague home', 1],
-      [169, 'Lucius Verus dies', 1],
-      [170, 'War on the Danube, for most of a decade', 1],
+      [162, 'War with Parthia, to 166', 1],
+      [166, 'The army brings plague back from the East', 1],
+      [169, 'Lucius Verus dies; so does Marcus\u2019s son Annius, aged seven', 1],
+      [170, 'Germanic tribes invade Italy; war on the Danube for most of the decade', 1],
       [175, 'Avidius Cassius revolts; Faustina dies', 1],
       [177, 'Commodus made co-emperor', 1],
-      [180, 'Dies on campaign', 0]
+      [180, 'Dies on campaign, aged 58', 0]
     ];
     var y = 16, first = 0, bandTop = 0;
     ev.forEach(function (e, i) {
