@@ -180,17 +180,26 @@ def home_card(site, count):
     return img
 
 
-def main():
+def main(argv):
+    """No arguments: every card plus the index card. With slugs: only those
+    books' cards, so the droplet (Linux fonts) never redraws cards made on a Mac."""
     data = json.loads((ROOT / "tools" / "books.json").read_text(encoding="utf-8"))
     OUT.mkdir(exist_ok=True)
 
-    home_card(data["site"], len(data["books"])).save(OUT / "index.png", optimize=True)
-    print("og/index.png")
+    only = set(argv)
+    unknown = only - {book["slug"] for book in data["books"]}
+    if unknown:
+        raise SystemExit("unknown slug(s): " + ", ".join(sorted(unknown)))
+    if not only:
+        home_card(data["site"], len(data["books"])).save(OUT / "index.png", optimize=True)
+        print("og/index.png")
     for book in data["books"]:
+        if only and book["slug"] not in only:
+            continue
         card(book, data["site"]).save(OUT / f"{book['slug']}.png", optimize=True)
         print(f"og/{book['slug']}.png")
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))

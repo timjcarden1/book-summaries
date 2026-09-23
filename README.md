@@ -23,7 +23,7 @@ The site is plain static HTML/CSS/JS with no build step. Open `index.html` local
 | [The Beginning of Infinity](the-beginning-of-infinity.html) | David Deutsch | Knowledge & mind | — | 2026-07-31 |
 | [Objective Knowledge](popper-objective-knowledge.html) | Karl Popper | Knowledge & mind | [PDF](Popper%20—%20Objective%20Knowledge.pdf) | 2026-07-31 |
 | [Meditations](marcus-aurelius-meditations.html) | Marcus Aurelius | Knowledge & mind | [PDF](Marcus%20Aurelius%20—%20Meditations.pdf) | 2026-07-31 |
-| [Fooled by Randomness](fooled-by-randomness.html) | Nassim Nicholas Taleb | Markets, risk & enterprise | — | 2026-07-31 |
+| [Fooled by Randomness](fooled-by-randomness.html) | Nassim Nicholas Taleb | Markets, risk & enterprise | — | 2026-09-23 |
 | [Titan](titan-rockefeller.html) | Ron Chernow | Markets, risk & enterprise | — | 2026-07-31 |
 | [The Almanack of Naval Ravikant](almanack-naval-ravikant.html) | Eric Jorgenson | Markets, risk & enterprise | — | 2026-08-01 |
 | [The Book of Elon](the-book-of-elon.html) | Eric Jorgenson | Markets, risk & enterprise | — | 2026-08-01 |
@@ -61,8 +61,11 @@ Neither runs at deploy time. Their output is committed, so the published site st
 
 1. Add `your-book.html` at the repo root. It is self-contained, apart from the `book-nav` files that `sync.py` injects.
 2. Add its entry to `tools/books.json`, including two or three `related` links with a line on why each one is worth reading next.
-3. Run `python3 tools/sync.py` and `python3 tools/make-og-images.py`. On the droplet, the OG script falls back to Linux fonts and redraws every card, so commit only the new book's PNG there.
-4. Commit and push — both hosts redeploy automatically from `main`.
+3. Run `python3 tools/sync.py`, then `python3 tools/make-og-images.py <slug>`. With a slug it draws only that book's card. Without one it redraws every card, which on the droplet (Linux fonts) changes the Mac-made ones.
+4. Run `python3 tools/check_page.py <slug>` (Playwright). It must print all PASS: script errors, sideways scrolling on a phone, the phone Contents button and its jump, Aa and Theme, and the related-books nav. Take one look at the screenshots it saves.
+5. Commit and push. Both hosts redeploy automatically from `main`.
+
+**Redoing a summary** keeps its slug, replaces the page in the default design, updates the palette in `books.json`, and **sets `added` to the redo date** (Tim, 2026-09-23). The full procedure is the `/book-summary` skill in the revenueflow-automations repo.
 
 ## Publishing
 

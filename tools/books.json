@@ -318,12 +318,12 @@
       "years": "2001",
       "shelf": "markets",
       "tag": "Incerto I",
-      "added": "2026-07-31",
+      "added": "2026-09-23",
       "blurb": "The hidden role of chance in life and in markets — and why a good outcome does not prove a good decision.",
-      "accent": "#A7333B",
-      "paper": "#f4f1e9",
-      "ink": "#191b1d",
-      "muted": "#747a7d",
+      "accent": "#2346A8",
+      "paper": "#ECEFF1",
+      "ink": "#121A21",
+      "muted": "#66717B",
       "related": [
         {
           "slug": "popper-objective-knowledge",
