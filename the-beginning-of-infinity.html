@@ -75,7 +75,7 @@ cite { font-style: italic; }
 .breath { margin-top: 26px; max-width: 62ch; }
 .breath p:last-child { font-size: 1.16rem; line-height: 1.6; color: var(--ink-2); margin: 0; }
 .facts { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 14px 36px; margin: 30px 0 0; padding-top: 20px; border-top: 1px solid var(--rule); }
-.facts dt { font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.facts dt { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
 .facts dd { margin: 4px 0 0; font-family: var(--display); font-weight: 700; font-size: 1.12rem; }
 
 .spiral { margin: 0; }
@@ -85,7 +85,7 @@ cite { font-style: italic; }
 .sp-glow { fill: none; stroke: var(--spark); stroke-width: 2.4; }
 .sp-dot { fill: var(--spark); }
 .sp-node { fill: var(--surface); stroke: var(--ink); stroke-width: 1.4; }
-.sp-lab { fill: var(--ink); font: 500 12.5px var(--mono); }
+.sp-lab { fill: var(--ink); font: 500 13px var(--mono); }
 .sp-lab.s { fill: var(--spark); }
 
 /* ---------- layout ---------- */
@@ -159,7 +159,7 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 
 .ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 12px; }
 .idea { border-top: 1px solid var(--rule-strong); padding: 16px 0 26px; }
-.idea .tag { font-family: var(--mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--spark); margin: 0; }
+.idea .tag { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--spark); margin: 0; }
 .idea h3 { font-family: var(--display); font-weight: 700; font-size: 1.22rem; line-height: 1.15; letter-spacing: -.01em; margin: 6px 0 8px; text-wrap: balance; }
 .idea p:last-child { margin: 0; font-size: 1.02rem; color: var(--ink-2); line-height: 1.55; }
 
@@ -175,40 +175,39 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 
 /* ---------- figures ---------- */
 .fig { margin: 30px 0 10px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: clamp(14px, 3vw, 24px); }
-.fig-title { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+.fig-title { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
 .fig figcaption { font-size: 1rem; color: var(--ink-2); margin-top: 14px; line-height: 1.5; }
 
 .fence { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid var(--ink); }
 .fence > div { padding: 16px 18px 18px 0; }
 .fence > div + div { padding: 16px 0 18px 18px; border-left: 2px dashed var(--rule-strong); }
-.fence .k { font-family: var(--mono); font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.fence .k { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
 .fence h4 { font-family: var(--display); font-weight: 700; font-size: 1.3rem; margin: 6px 0 10px; line-height: 1.1; }
 .fence > div:first-child h4 { color: var(--ink-3); }
 .fence > div + div h4 { color: var(--spark); }
 .fence dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; margin: 0; font-size: 1rem; }
-.fence dt { font-family: var(--mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); padding-top: .3em; }
+.fence dt { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); padding-top: .3em; }
 .fence dd { margin: 0; color: var(--ink-2); line-height: 1.45; }
 
 .table-wrap { overflow-x: auto; margin: 22px 0 4px; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); }
 table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 1rem; line-height: 1.5; }
 th, td { padding: 12px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
 tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
-thead th { font-family: var(--mono); font-size: .64rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
+thead th { font-family: var(--mono); font-size: 0.74rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
 tbody th { font-family: var(--display); font-weight: 700; font-size: 1rem; width: 24%; }
 tbody td { color: var(--ink-2); }
 td.num, th.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 td.hot { color: var(--spark); font-weight: 700; }
 td.dim { color: var(--ink-3); }
 
-.hotel svg { display: block; width: 100%; height: auto; min-width: 520px; }
-.hotel-wrap { overflow-x: auto; }
+svg.hotel { display: block; width: 100%; height: auto; }
 .h-room { fill: var(--paper-2); stroke: var(--rule-strong); stroke-width: 1; }
 .h-room.free { fill: var(--surface); stroke: var(--spark); stroke-dasharray: 3 3; }
 .h-guest { fill: var(--ink-2); }
 .h-new { fill: var(--spark); }
 .h-arrow { fill: none; stroke: var(--ink-3); stroke-width: 1.2; }
-.h-lab { fill: var(--ink-2); font: 11.5px var(--mono); }
-.h-num { fill: var(--ink-3); font: 10.5px var(--mono); }
+.h-lab { fill: var(--ink-2); font: 13px var(--mono); }
+.h-num { fill: var(--ink-3); font: 13px var(--mono); }
 
 .debate { padding: 16px 0 18px; border-top: 1px solid var(--rule); }
 .debate h3 { font-family: var(--display); font-weight: 700; font-size: 1.18rem; margin: 0 0 6px; }
@@ -257,6 +256,57 @@ td.dim { color: var(--ink-3); }
 <!-- link-preview:end -->
 <link rel="stylesheet" href="book-nav.css">
 <script src="site-settings.js"></script>
+<script>
+/* Figure kit: every drawing is laid out at the width it is shown at, one unit per CSS pixel,
+   so labels keep their stated size on a phone instead of shrinking with the picture. */
+var FIG = (function () {
+  var ns = 'http://www.w3.org/2000/svg';
+  function el(parent, name, attrs, txt) {
+    var e = document.createElementNS(ns, name);
+    for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+    if (txt != null) e.textContent = txt;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  // Text that wraps inside max pixels; returns the number of lines drawn.
+  function text(parent, x, y, str, cls, max, lh, anchor) {
+    var t = el(parent, 'text', { x: x, y: y, 'class': cls || null, 'text-anchor': anchor || null });
+    if (!max) { t.textContent = str; return 1; }
+    var words = String(str).split(' '), line = [], n = 1, span = el(t, 'tspan', { x: x, dy: 0 });
+    words.forEach(function (w) {
+      line.push(w); span.textContent = line.join(' ');
+      if (line.length > 1 && span.getComputedTextLength() > max) {
+        line.pop(); span.textContent = line.join(' ');
+        line = [w]; n++;
+        span = el(t, 'tspan', { x: x, dy: lh || 17 }, w);
+      }
+    });
+    return n;
+  }
+  function width(parent, str, cls) {
+    var t = el(parent, 'text', { x: -9999, y: -9999, 'class': cls || null }, str), w = t.getComputedTextLength();
+    parent.removeChild(t);
+    return w;
+  }
+  function fit(id, draw) {
+    var svg = typeof id === 'string' ? document.getElementById(id) : id;
+    if (!svg) return;
+    var last = 0;
+    function run(force) {
+      var w = svg.clientWidth;
+      if (!w || (w === last && force !== true)) return;
+      last = w;
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + Math.ceil(draw(svg, w)));
+    }
+    run();
+    var timer;
+    window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(run, 120); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { run(true); });
+  }
+  return { el: el, text: text, width: width, fit: fit };
+})();
+</script>
 </head>
 <body>
 
@@ -298,7 +348,7 @@ td.dim { color: var(--ink-3); }
       </dl>
     </div>
     <figure class="spiral">
-      <svg id="spiral" viewBox="0 0 440 420" role="img" aria-label="An outward spiral: a problem leads to a conjecture, criticism, a better explanation, and then to a new, deeper problem, round and round without end"></svg>
+      <svg id="spiral" role="img" aria-label="An outward spiral: a problem leads to a conjecture, criticism, a better explanation, and then to a new, deeper problem, round and round without end"></svg>
       <figcaption>How knowledge grows: conjecture, criticism, a better explanation, and a deeper problem, with each turn wider than the last. There is no final turn. Our diagram of the book’s method.</figcaption>
     </figure>
   </div>
@@ -518,13 +568,7 @@ td.dim { color: var(--ink-3); }
       </ul>
       <figure class="fig">
         <p class="fig-title">Figure · The Infinity Hotel takes infinitely many new guests</p>
-        <div class="hotel-wrap">
-          <svg class="hotel" viewBox="0 0 640 190" role="img" aria-label="Every guest moves from room n to room 2n, which fills the even rooms and frees all the odd rooms for new guests">
-            <text class="h-lab" x="10" y="20">Full: guest in every room</text>
-            <text class="h-lab" x="10" y="140">After each guest moves from room n to room 2n</text>
-            <g id="hotelRows"></g>
-          </svg>
-        </div>
+        <svg class="hotel" id="hotelRows" role="img" aria-label="Every guest moves from room n to room 2n, which fills the even rooms and frees all the odd rooms for new guests"></svg>
         <figcaption>Every existing guest moves to the room with double their number. All the even rooms are now full, and infinitely many odd rooms stand empty for new arrivals, in a hotel that was already full.</figcaption>
       </figure>
     </article>
@@ -749,53 +793,73 @@ td.dim { color: var(--ink-3); }
 
   // Hero: an outward logarithmic spiral. The first turn is labelled with the growth-of-knowledge cycle.
   (function spiral() {
-    var svg = document.getElementById('spiral');
-    if (!svg) return;
-    var cx = 222, cy = 206, a = 12, b = 0.169, turns = 2.6, d = '', pts = [];
-    for (var i = 0; i <= 900; i++) {
-      var t = i / 900 * turns * 2 * Math.PI, r = a * Math.exp(b * t);
-      var x = cx + r * Math.cos(t), y = cy + r * Math.sin(t);
-      pts.push([x, y, t, r]);
-      d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1);
-    }
-    svg.appendChild(el('path', { d: d, 'class': 'sp-line' }));
-    // the outermost stretch glows: the frontier, still growing
-    var tail = pts.slice(740).map(function (p, i) { return (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join('');
-    svg.appendChild(el('path', { d: tail, 'class': 'sp-glow' }));
-    var last = pts[pts.length - 1];
-    svg.appendChild(el('circle', { cx: last[0], cy: last[1], r: 5, 'class': 'sp-dot' }));
-    var labels = [['Problem', 1.0], ['Conjecture', 1.25], ['Criticism', 1.5], ['Better explanation', 1.75], ['Deeper problem', 2.0]];
-    labels.forEach(function (lab, k) {
-      var t = lab[1] * 2 * Math.PI, r = a * Math.exp(b * t);
-      var x = cx + r * Math.cos(t), y = cy + r * Math.sin(t);
-      svg.appendChild(el('circle', { cx: x, cy: y, r: 5, 'class': 'sp-node' }));
-      var anchor = Math.cos(t) > 0.2 ? 'start' : Math.cos(t) < -0.2 ? 'end' : 'middle';
-      var dx = anchor === 'start' ? 10 : anchor === 'end' ? -10 : 0, dy = Math.sin(t) > 0.2 ? 18 : Math.sin(t) < -0.2 ? -10 : 4;
-      svg.appendChild(el('text', { x: x + dx, y: y + dy, 'text-anchor': anchor, 'class': 'sp-lab' + (k === 4 ? ' s' : '') }, lab[0]));
+    // The curve scales with the page; its labels are set at real size on top, clamped inside the frame.
+    FIG.fit('spiral', function (root, W) {
+      var k = W / 440, svg = FIG.el(root, 'g', { transform: 'scale(' + k + ')' });
+      var cx = 214, cy = 150, a = 12, b = 0.169, turns = 2.6, d = '', pts = [];
+      for (var i = 0; i <= 900; i++) {
+        var t = i / 900 * turns * 2 * Math.PI, r = a * Math.exp(b * t);
+        var x = cx + r * Math.cos(t), y = cy + r * Math.sin(t);
+        pts.push([x, y, t, r]);
+        d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1);
+      }
+      svg.appendChild(el('path', { d: d, 'class': 'sp-line', 'vector-effect': 'non-scaling-stroke' }));
+      var tail = pts.slice(740).map(function (p, i) { return (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join('');
+      svg.appendChild(el('path', { d: tail, 'class': 'sp-glow', 'vector-effect': 'non-scaling-stroke' }));
+      var last = pts[pts.length - 1];
+      root.appendChild(el('circle', { cx: last[0] * k, cy: last[1] * k, r: 5, 'class': 'sp-dot' }));
+      function label(x, y, str, anchor, cls) {
+        var w = FIG.width(root, str, cls), room = anchor === 'start' ? W - 2 - x : anchor === 'end' ? x - 2 : W;
+        if (w > room && str.indexOf(' ') > 0) {
+          // too long for its side: break onto two lines, keeping the same anchor
+          var cut = str.indexOf(' ');
+          label(x, y - 9, str.slice(0, cut), anchor, cls);
+          label(x, y + 8, str.slice(cut + 1), anchor, cls);
+          return;
+        }
+        var left = anchor === 'start' ? x : anchor === 'end' ? x - w : x - w / 2;
+        left = Math.max(2, Math.min(W - 2 - w, left));
+        root.appendChild(el('text', { x: left, y: y, 'class': cls }, str));
+      }
+      var labels = [['Problem', 0.75], ['Conjecture', 1.0], ['Criticism', 1.25], ['Better explanation', 1.5], ['Deeper problem', 1.75]];
+      labels.forEach(function (lab, n) {
+        var t = lab[1] * 2 * Math.PI, r = a * Math.exp(b * t);
+        var x = (cx + r * Math.cos(t)) * k, y = (cy + r * Math.sin(t)) * k;
+        root.appendChild(el('circle', { cx: x, cy: y, r: 5, 'class': 'sp-node' }));
+        var anchor = Math.cos(t) > 0.2 ? 'start' : Math.cos(t) < -0.2 ? 'end' : 'middle';
+        var dx = anchor === 'start' ? 10 : anchor === 'end' ? -10 : 0, dy = Math.sin(t) > 0.2 ? 20 : Math.sin(t) < -0.2 ? -11 : 5;
+        label(x + dx, y + dy, lab[0], anchor, 'sp-lab' + (n === 4 ? ' s' : ''));
+      });
+      label(last[0] * k + 12, last[1] * k - 9, '… no final turn', 'start', 'sp-lab s');
+      return 300 * k;
     });
-    svg.appendChild(el('text', { x: last[0] + 12, y: last[1] - 8, 'text-anchor': 'start', 'class': 'sp-lab s' }, '… no final turn'));
   })();
 
-  // Chapter 8: the Infinity Hotel, rooms 1-12 shown, before and after every guest moves from n to 2n.
+  // Chapter 8: the Infinity Hotel, before and after every guest moves from room n to room 2n,
+  // with as many rooms as fit at a legible size.
   (function hotel() {
-    var g = document.getElementById('hotelRows');
-    if (!g) return;
-    var x0 = 14, w = 44, gap = 6, n = 12;
-    for (var i = 1; i <= n; i++) {
-      var x = x0 + (i - 1) * (w + gap);
-      g.appendChild(el('rect', { x: x, y: 30, width: w, height: 38, 'class': 'h-room' }));
-      g.appendChild(el('circle', { cx: x + w / 2, cy: 49, r: 7, 'class': 'h-guest' }));
-      g.appendChild(el('text', { x: x + w / 2, y: 82, 'text-anchor': 'middle', 'class': 'h-num' }, String(i)));
-      var free = i % 2 === 1;
-      g.appendChild(el('rect', { x: x, y: 150, width: w, height: 38, 'class': 'h-room' + (free ? ' free' : '') }));
-      g.appendChild(el('circle', { cx: x + w / 2, cy: 169, r: 7, 'class': free ? 'h-new' : 'h-guest', opacity: free ? 0.9 : 1 }));
-      if (i <= 6) {
-        var tx = x0 + (2 * i - 1) * (w + gap) + w / 2;
-        g.appendChild(el('path', { d: 'M' + (x + w / 2) + ' 88 C ' + (x + w / 2) + ' 118, ' + tx + ' 108, ' + tx + ' 146', 'class': 'h-arrow' }));
+    FIG.fit('hotelRows', function (g, W) {
+      var gap = 6, n = Math.max(6, Math.min(12, Math.floor((W - 20 + gap) / (40 + gap)))), w = (W - 20 - (n - 1) * gap) / n, x0 = 0;
+      var r1 = 30, r2 = 150;
+      g.appendChild(el('text', { x: 0, y: 17, 'class': 'h-lab' }, 'Before: a guest in every room'));
+      for (var i = 1; i <= n; i++) {
+        var x = x0 + (i - 1) * (w + gap), free = i % 2 === 1;
+        g.appendChild(el('rect', { x: x, y: r1, width: w, height: 38, rx: 2, 'class': 'h-room' }));
+        g.appendChild(el('circle', { cx: x + w / 2, cy: r1 + 19, r: 7, 'class': 'h-guest' }));
+        g.appendChild(el('text', { x: x + w / 2, y: r1 + 56, 'text-anchor': 'middle', 'class': 'h-num' }, String(i)));
+        g.appendChild(el('rect', { x: x, y: r2, width: w, height: 38, rx: 2, 'class': 'h-room' + (free ? ' free' : '') }));
+        g.appendChild(el('circle', { cx: x + w / 2, cy: r2 + 19, r: 7, 'class': free ? 'h-new' : 'h-guest', opacity: free ? 0.9 : 1 }));
+        g.appendChild(el('text', { x: x + w / 2, y: r2 + 56, 'text-anchor': 'middle', 'class': 'h-num' }, String(i)));
+        if (2 * i <= n) {
+          var tx = x0 + (2 * i - 1) * (w + gap) + w / 2;
+          g.appendChild(el('path', { d: 'M' + (x + w / 2) + ' ' + (r1 + 64) + ' C ' + (x + w / 2) + ' ' + (r1 + 96) + ', ' + tx + ' ' + (r2 - 36) + ', ' + tx + ' ' + (r2 - 4), 'class': 'h-arrow' }));
+        }
       }
-    }
-    g.appendChild(el('text', { x: x0 + n * (w + gap) - 4, y: 54, 'class': 'h-num' }, '…'));
-    g.appendChild(el('text', { x: x0 + n * (w + gap) - 4, y: 174, 'class': 'h-num' }, '…'));
+      g.appendChild(el('text', { x: W - 2, y: r1 + 24, 'text-anchor': 'end', 'class': 'h-num' }, '…'));
+      g.appendChild(el('text', { x: W - 2, y: r2 + 24, 'text-anchor': 'end', 'class': 'h-num' }, '…'));
+      var y = r2 + 84, lines = FIG.text(g, 0, y, 'After: every guest moves from room n to room 2n. The odd rooms are free for new guests.', 'h-lab', W - 2, 18);
+      return y + (lines - 1) * 18 + 8;
+    });
   })();
 
   var fab = document.getElementById('tocOpen'), sheet = document.getElementById('tocSheet'),

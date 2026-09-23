@@ -72,7 +72,7 @@ cite { font-style: italic; }
 .breath { margin-top: 26px; max-width: 60ch; }
 .breath p:last-child { font-size: 1.2rem; line-height: 1.58; color: var(--ink-2); margin: 0; }
 .facts { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 14px 36px; margin: 30px 0 0; padding-top: 20px; border-top: 1px solid var(--rule); }
-.facts dt { font-family: var(--label); font-weight: 600; font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.facts dt { font-family: var(--label); font-weight: 600; font-size: 0.74rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
 .facts dd { margin: 4px 0 0; font-family: var(--display); font-weight: 600; font-size: 1.4rem; }
 
 .years { margin: 0; }
@@ -153,7 +153,7 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 
 .ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 12px; }
 .idea { border-top: 1px solid var(--rule-strong); padding: 16px 0 26px; }
-.idea .tag { font-family: var(--label); font-weight: 600; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--war); margin: 0; }
+.idea .tag { font-family: var(--label); font-weight: 600; font-size: 0.74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--war); margin: 0; }
 .idea h3 { font-family: var(--display); font-weight: 600; font-size: 1.55rem; line-height: 1.08; margin: 6px 0 8px; text-wrap: balance; }
 .idea p:last-child { margin: 0; font-size: 1.06rem; color: var(--ink-2); line-height: 1.5; }
 
@@ -169,16 +169,25 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 
 /* ---------- figures ---------- */
 .fig { margin: 30px 0 10px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: clamp(14px, 3vw, 24px); }
-.fig-title { font-family: var(--label); font-weight: 600; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+.fig-title { font-family: var(--label); font-weight: 600; font-size: 0.74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
 .fig figcaption { font-size: 1.02rem; color: var(--ink-2); margin-top: 14px; line-height: 1.5; }
 .fig-scroll { overflow-x: auto; }
-.fig-scroll svg { display: block; width: 100%; height: auto; min-width: 520px; }
+.fig svg { display: block; width: 100%; height: auto; }
+.v-center { fill: var(--ink-3); font: 15.5px var(--label); }
+.vtl { list-style: none; margin: 0; padding: 0 0 0 26px; position: relative; display: grid; gap: 4px; }
+.vtl::before { content: ""; position: absolute; left: 6px; top: 12px; bottom: 12px; border-left: 2px solid var(--rule-strong); }
+.vtl li { position: relative; padding: 6px 0 8px; }
+.vtl li::before { content: ""; position: absolute; left: -25px; top: 13px; width: 12px; height: 12px; border-radius: 50%; background: var(--war); border: 2px solid var(--surface); }
+.vtl b { display: block; font-family: var(--label); font-weight: 600; font-size: 1rem; line-height: 1.3; color: var(--ink); }
+.vtl span { display: block; font-family: var(--label); font-size: .9rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.vtl .era { padding: 2px 0 0; font-family: var(--label); font-weight: 600; font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.vtl .era::before { display: none; }
 .fig svg.cycle { display: block; width: 100%; max-width: 420px; height: auto; margin-inline: auto; }
 .v-line { fill: none; stroke: var(--war); stroke-width: 2.2; }
 .v-axis { stroke: var(--rule-strong); stroke-width: 1; fill: none; }
 .v-guide { stroke: var(--rule-strong); stroke-width: 1; stroke-dasharray: 3 4; fill: none; }
-.v-lab { fill: var(--ink); font: 600 12.5px var(--label); }
-.v-sub { fill: var(--ink-3); font: 12px var(--label); }
+.v-lab { fill: var(--ink); font: 600 13.5px var(--label); }
+.v-sub { fill: var(--ink-3); font: 13px var(--label); }
 .v-dot { fill: var(--war); }
 .v-dot-p { fill: var(--peace); }
 .v-ring { fill: none; stroke: var(--rule-strong); stroke-width: 1.2; }
@@ -191,7 +200,7 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 1.04rem; line-height: 1.5; }
 th, td { padding: 12px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
 tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
-thead th { font-family: var(--label); font-weight: 600; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
+thead th { font-family: var(--label); font-weight: 600; font-size: 0.74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
 tbody th { font-family: var(--display); font-weight: 600; font-size: 1.2rem; width: 20%; }
 tbody td { color: var(--ink-2); }
 
@@ -240,6 +249,57 @@ tbody td { color: var(--ink-2); }
 <!-- link-preview:end -->
 <link rel="stylesheet" href="book-nav.css">
 <script src="site-settings.js"></script>
+<script>
+/* Figure kit: every drawing is laid out at the width it is shown at, one unit per CSS pixel,
+   so labels keep their stated size on a phone instead of shrinking with the picture. */
+var FIG = (function () {
+  var ns = 'http://www.w3.org/2000/svg';
+  function el(parent, name, attrs, txt) {
+    var e = document.createElementNS(ns, name);
+    for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+    if (txt != null) e.textContent = txt;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  // Text that wraps inside max pixels; returns the number of lines drawn.
+  function text(parent, x, y, str, cls, max, lh, anchor) {
+    var t = el(parent, 'text', { x: x, y: y, 'class': cls || null, 'text-anchor': anchor || null });
+    if (!max) { t.textContent = str; return 1; }
+    var words = String(str).split(' '), line = [], n = 1, span = el(t, 'tspan', { x: x, dy: 0 });
+    words.forEach(function (w) {
+      line.push(w); span.textContent = line.join(' ');
+      if (line.length > 1 && span.getComputedTextLength() > max) {
+        line.pop(); span.textContent = line.join(' ');
+        line = [w]; n++;
+        span = el(t, 'tspan', { x: x, dy: lh || 17 }, w);
+      }
+    });
+    return n;
+  }
+  function width(parent, str, cls) {
+    var t = el(parent, 'text', { x: -9999, y: -9999, 'class': cls || null }, str), w = t.getComputedTextLength();
+    parent.removeChild(t);
+    return w;
+  }
+  function fit(id, draw) {
+    var svg = typeof id === 'string' ? document.getElementById(id) : id;
+    if (!svg) return;
+    var last = 0;
+    function run(force) {
+      var w = svg.clientWidth;
+      if (!w || (w === last && force !== true)) return;
+      last = w;
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + Math.ceil(draw(svg, w)));
+    }
+    run();
+    var timer;
+    window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(run, 120); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { run(true); });
+  }
+  return { el: el, text: text, width: width, fit: fit };
+})();
+</script>
 </head>
 <body>
 
@@ -443,21 +503,7 @@ tbody td { color: var(--ink-2); }
       <p class="line">“The men who can manage men manage the men who can manage only things, and the men who can manage money manage all.”<span>Chapter VIII</span></p>
       <figure class="fig">
         <p class="fig-title">Figure · The rhythm of wealth</p>
-        <div class="fig-scroll">
-          <svg viewBox="0 0 640 230" role="img" aria-label="Schematic: concentration of wealth climbs slowly, then drops at a redistribution, then climbs again, repeatedly">
-            <path class="v-axis" d="M40 20 V190 H620"/>
-            <text class="v-sub" x="40" y="14">concentration of wealth</text>
-            <text class="v-sub" x="620" y="210" text-anchor="end">time →</text>
-            <path class="v-line" d="M40 170 C 120 160, 170 110, 210 70 L 222 150 C 290 140, 340 90, 380 58 L 392 146 C 460 134, 520 84, 560 50 L 572 140 L 610 128"/>
-            <circle class="v-dot" cx="216" cy="110" r="5"/>
-            <circle class="v-dot" cx="386" cy="102" r="5"/>
-            <circle class="v-dot" cx="566" cy="95" r="5"/>
-            <text class="v-lab" x="228" y="112">redistribution</text>
-            <text class="v-sub" x="228" y="128">by law or by revolt</text>
-            <path class="v-guide" d="M210 70 H90"/>
-            <text class="v-sub" x="92" y="64">slow build-up</text>
-          </svg>
-        </div>
+        <svg id="rhythm" role="img" aria-label="Schematic: concentration of wealth climbs slowly, then drops at a redistribution, then climbs again, repeatedly"></svg>
         <figcaption>A schematic of the chapter’s claim, not data. Concentration builds up slowly and is relieved suddenly. Where the relief comes by law, as with Solon, it is peaceful. Where reform fails, as with the Gracchi, it tends to come by force.</figcaption>
       </figure>
     </article>
@@ -475,10 +521,18 @@ tbody td { color: var(--ink-2); }
       <p class="line">“The fear of capitalism has compelled socialism to widen freedom, and the fear of socialism has compelled capitalism to increase equality.”<span>Chapter IX</span></p>
       <figure class="fig">
         <p class="fig-title">Figure · Socialist experiments the Durants survey</p>
-        <div class="fig-scroll">
-          <svg id="socialism" viewBox="0 0 640 250" role="img" aria-label="Timeline of socialist experiments: Egypt under the Ptolemies, Rome under Diocletian, China under Wang Mang and under Wang An-shih, the Anabaptists of Münster, the Inca empire, and the Jesuit missions of Paraguay"></svg>
-        </div>
-        <figcaption>Approximate dates, placed by us on a compressed scale. The chapter treats each as a state-directed economy and traces how it ended.</figcaption>
+        <ol class="vtl" aria-label="Timeline of socialist experiments">
+          <li class="era">Ancient</li>
+          <li><b>Egypt under the Ptolemies</b><span>323–30 BC</span></li>
+          <li><b>China under Wang Mang</b><span>AD 9–23</span></li>
+          <li><b>Rome under Diocletian</b><span>c. AD 284–305</span></li>
+          <li class="era">Medieval and early modern</li>
+          <li><b>China under Wang An-shih</b><span>from 1069</span></li>
+          <li><b>The Inca empire</b><span>15th–16th century</span></li>
+          <li><b>The Anabaptists of Münster</b><span>1534–35</span></li>
+          <li><b>The Jesuit missions of Paraguay</b><span>c. 1620–1750</span></li>
+        </ol>
+        <figcaption>Approximate dates, in order. The chapter treats each as a state-directed economy and traces how it ended.</figcaption>
       </figure>
     </article>
 
@@ -493,7 +547,7 @@ tbody td { color: var(--ink-2); }
       </ul>
       <figure class="fig">
         <p class="fig-title">Figure · Plato’s cycle of governments</p>
-        <svg class="cycle" id="plato" viewBox="0 0 420 330" role="img" aria-label="A cycle of four forms of government: monarchy, aristocracy, democracy and dictatorship, each giving way to the next"></svg>
+        <svg class="cycle" id="plato" role="img" aria-label="A cycle of four forms of government: monarchy, aristocracy, democracy and dictatorship, each giving way to the next"></svg>
         <figcaption>The sequence the Durants take from Plato’s <cite>Republic</cite>. History, they say, rhymes with it often enough to take it seriously, but not so reliably as to call it a law.</figcaption>
       </figure>
     </article>
@@ -642,50 +696,58 @@ tbody td { color: var(--ink-2); }
     ctx.globalAlpha = 1;
   }
 
-  // Chapter IX: timeline of socialist experiments on a compressed scale.
-  (function socialism() {
-    var svg = document.getElementById('socialism');
-    if (!svg) return;
-    var items = [
-      ['Egypt under the Ptolemies', '323–30 BC', 60],
-      ['Rome under Diocletian', 'c. AD 284–305', 150],
-      ['China under Wang Mang', 'AD 9–23', 110],
-      ['China under Wang An-shih', 'from 1069', 250],
-      ['The Inca empire', '15th–16th c.', 345],
-      ['Anabaptists of Münster', '1534–35', 420],
-      ['Jesuit missions of Paraguay', 'c. 1620–1750', 520]
-    ];
-    svg.appendChild(el('path', { d: 'M30 125 H610', 'class': 'v-axis' }));
-    items.sort(function (a, b) { return a[2] - b[2]; }).forEach(function (it, k) {
-      var x = it[2] + 30, up = k % 2 === 0, y = up ? 70 : 180;
-      svg.appendChild(el('path', { d: 'M' + x + ' 125 V' + (up ? 84 : 166), 'class': 'v-guide' }));
-      svg.appendChild(el('circle', { cx: x, cy: 125, r: 5, 'class': 'v-dot' }));
-      var anchor = x > 480 ? 'end' : 'start', dx = anchor === 'end' ? 6 : -6;
-      svg.appendChild(el('text', { x: x + dx, y: y, 'text-anchor': anchor, 'class': 'v-lab' }, it[0]));
-      svg.appendChild(el('text', { x: x + dx, y: y + 16, 'text-anchor': anchor, 'class': 'v-sub' }, it[1]));
-    });
-    svg.appendChild(el('text', { x: 30, y: 150, 'class': 'v-sub' }, 'ancient'));
-    svg.appendChild(el('text', { x: 610, y: 150, 'text-anchor': 'end', 'class': 'v-sub' }, 'early modern'));
-  })();
+  // Chapter VIII: the rhythm of wealth, drawn at the width it is shown at.
+  FIG.fit('rhythm', function (svg, W) {
+    var E = FIG.el, x0 = 4, x1 = W - 4, top = 30, base = 188, c = (x1 - x0 - 30) / 3, d = '';
+    E(svg, 'path', { d: 'M' + x0 + ' ' + (top - 8) + ' V' + base + ' H' + x1, 'class': 'v-axis' });
+    E(svg, 'text', { x: x0 + 8, y: top - 10, 'class': 'v-sub' }, 'concentration of wealth ↑');
+    var y = base - 18, drops = [];
+    d = 'M' + x0 + ' ' + y;
+    for (var i = 0; i < 3; i++) {
+      var sx = x0 + i * c, peak = top + 22 - i * 6, ex = sx + c * 0.94;
+      d += ' C ' + (sx + c * 0.45) + ' ' + (y - 8) + ', ' + (sx + c * 0.72) + ' ' + (peak + 38) + ', ' + ex + ' ' + peak;
+      y = base - 38 - i * 6;
+      d += ' L ' + (ex + 10) + ' ' + y;
+      drops.push([ex + 5, (peak + y) / 2]);
+    }
+    d += ' L ' + x1 + ' ' + (y - 12);
+    E(svg, 'path', { d: d, 'class': 'v-line' });
+    drops.forEach(function (p) { E(svg, 'circle', { cx: p[0], cy: p[1], r: 5, 'class': 'v-dot' }); });
+    E(svg, 'text', { x: x1, y: base + 20, 'text-anchor': 'end', 'class': 'v-sub' }, 'time →');
+    E(svg, 'path', { d: 'M' + x0 + ' ' + (base + 48) + ' C ' + (x0 + 6) + ' ' + (base + 47) + ', ' + (x0 + 10) + ' ' + (base + 40) + ', ' + (x0 + 13) + ' ' + (base + 34), 'class': 'v-line' });
+    var n = FIG.text(svg, x0 + 24, base + 46, 'slow build-up of wealth at the top', 'v-lab', W - 30, 18);
+    var y2 = base + 46 + (n - 1) * 18 + 26;
+    E(svg, 'circle', { cx: x0 + 7, cy: y2 - 5, r: 5, 'class': 'v-dot' });
+    n = FIG.text(svg, x0 + 24, y2, 'a redistribution, by law or by revolt', 'v-lab', W - 30, 18);
+    return y2 + (n - 1) * 18 + 8;
+  });
 
-  // Chapter X: Plato's cycle.
-  (function plato() {
-    var svg = document.getElementById('plato');
-    if (!svg) return;
-    var cx = 210, cy = 165, r = 110, names = ['Monarchy', 'Aristocracy', 'Democracy', 'Dictatorship'];
-    svg.appendChild(el('circle', { cx: cx, cy: cy, r: r, 'class': 'v-ring' }));
+  // Chapter X: Plato's cycle, drawn at the width it is shown at.
+  FIG.fit('plato', function (svg, W) {
+    var E = FIG.el, names = ['Monarchy', 'Aristocracy', 'Democracy', 'Dictatorship'];
+    var cx = W / 2, rx = Math.max(90, Math.min(150, W / 2 - 66)), ry = 108, cy = 26 + ry;
+    E(svg, 'ellipse', { cx: cx, cy: cy, rx: rx, ry: ry, 'class': 'v-ring' });
     names.forEach(function (name, k) {
-      var a = -Math.PI / 2 + k * Math.PI / 2, x = cx + r * Math.cos(a), y = cy + r * Math.sin(a);
-      // arrowhead a little before the next node, on the circle
-      var a2 = a + Math.PI / 2 - 0.36, hx = cx + r * Math.cos(a2), hy = cy + r * Math.sin(a2);
-      var tx = -Math.sin(a2), ty = Math.cos(a2);
-      svg.appendChild(el('polygon', { points: [hx + tx * 8, hy + ty * 8, hx - ty * 5, hy + tx * 5, hx + ty * 5, hy - tx * 5].join(','), 'class': 'v-head' }));
-      svg.appendChild(el('rect', { x: x - 62, y: y - 17, width: 124, height: 34, rx: 17, 'class': 'v-node' }));
-      svg.appendChild(el('text', { x: x, y: y + 6, 'text-anchor': 'middle', 'class': 'v-node-t' }, name));
+      var a = -Math.PI / 2 + k * Math.PI / 2, am = a + Math.PI / 4;
+      var hx = cx + rx * Math.cos(am), hy = cy + ry * Math.sin(am), tx = -rx * Math.sin(am), ty = ry * Math.cos(am), tl = Math.hypot(tx, ty);
+      tx /= tl; ty /= tl;
+      E(svg, 'polygon', { points: [hx + tx * 9, hy + ty * 9, hx - ty * 6 - tx * 3, hy + tx * 6 - ty * 3, hx + ty * 6 - tx * 3, hy - tx * 6 - ty * 3].join(','), 'class': 'v-head' });
     });
-    svg.appendChild(el('text', { x: cx, y: cy - 4, 'text-anchor': 'middle', 'class': 'v-sub' }, 'each fails by'));
-    svg.appendChild(el('text', { x: cx, y: cy + 14, 'text-anchor': 'middle', 'class': 'v-sub' }, 'its own excess'));
-  })();
+    names.forEach(function (name, k) {
+      var a = -Math.PI / 2 + k * Math.PI / 2, x = cx + rx * Math.cos(a), y = cy + ry * Math.sin(a);
+      var w = FIG.width(svg, name, 'v-node-t') + 30;
+      x = Math.max(w / 2 + 1, Math.min(W - w / 2 - 1, x));
+      E(svg, 'rect', { x: x - w / 2, y: y - 18, width: w, height: 36, rx: 18, 'class': 'v-node' });
+      E(svg, 'text', { x: x, y: y + 6, 'text-anchor': 'middle', 'class': 'v-node-t' }, name);
+    });
+    if (2 * rx - 2 * 70 > 120) {
+      E(svg, 'text', { x: cx, y: cy - 4, 'text-anchor': 'middle', 'class': 'v-center' }, 'each fails by');
+      E(svg, 'text', { x: cx, y: cy + 16, 'text-anchor': 'middle', 'class': 'v-center' }, 'its own excess');
+      return cy + ry + 24;
+    }
+    E(svg, 'text', { x: cx, y: cy + ry + 48, 'text-anchor': 'middle', 'class': 'v-center' }, 'Each fails by its own excess.');
+    return cy + ry + 58;
+  });
 
   drawYears();
   var timer;

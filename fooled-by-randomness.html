@@ -87,7 +87,7 @@ cite { font-style: italic; }
 .breath { margin-top: 28px; max-width: 62ch; }
 .breath p:last-child { font-size: 1.14rem; line-height: 1.62; color: var(--ink-2); margin: 0; }
 .facts { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 14px 38px; margin: 32px 0 0; padding-top: 20px; border-top: 1px solid var(--rule); }
-.facts dt { font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.facts dt { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
 .facts dd { margin: 4px 0 0; font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85; font-size: 1.25rem; }
 
 .fan { margin: 0; }
@@ -199,7 +199,7 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 
 .ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 12px; }
 .idea { border-top: 1px solid var(--rule-strong); padding: 16px 0 26px; }
-.idea .tag { font-family: var(--mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--luck); margin: 0; }
+.idea .tag { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--luck); margin: 0; }
 .idea h3 { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 88; font-size: 1.32rem; line-height: 1.12; letter-spacing: -.015em; margin: 6px 0 8px; text-wrap: balance; }
 .idea p:last-child { margin: 0; font-size: 1rem; color: var(--ink-2); line-height: 1.55; }
 
@@ -222,37 +222,56 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 
 /* ---------- figures ---------- */
 .fig { margin: 30px 0 10px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: clamp(14px, 3vw, 24px); }
-.fig-title { font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+.fig-title { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
 .fig figcaption { font-size: .95rem; color: var(--ink-2); margin-top: 14px; line-height: 1.5; }
 .fig svg { display: block; width: 100%; height: auto; }
 .fig-scroll { overflow-x: auto; }
-.fig-scroll svg { min-width: 520px; }
+.f-key { font-family: var(--mono); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; }
+.hbars { display: grid; gap: 16px; }
+.hbar p { margin: 0; }
+.hbar__lab { font-size: 1rem; color: var(--ink); margin-bottom: 6px !important; }
+.hbar__track { height: 24px; background: var(--paper-2); border-radius: 3px; overflow: hidden; }
+.hbar__fill { display: block; height: 100%; min-width: 3px; background: var(--rule-strong); }
+.hbar__fill.luck { background: var(--luck); }
+.hbar__val { margin-top: 5px !important; font-family: var(--mono); font-size: .86rem; color: var(--ink-2); }
+.hbar__val b { color: var(--ink); font-weight: 600; }
+.split { display: flex; height: 42px; border-radius: 3px; overflow: hidden; font-family: var(--mono); font-weight: 700; font-size: .9rem; color: var(--paper); }
+.split > span { display: flex; align-items: center; padding: 0 10px; white-space: nowrap; overflow: hidden; }
+.dv { display: grid; gap: 16px; }
+.dv p { margin: 0; }
+.dv__lab { font-size: 1rem; color: var(--ink); margin-bottom: 6px !important; }
+.dv__track { display: grid; grid-template-columns: 1fr 1fr; height: 24px; background: var(--paper-2); border-radius: 3px; }
+.dv__neg { display: flex; justify-content: flex-end; border-right: 2px solid var(--ink); }
+.dv__pos { display: flex; }
+.dv__fill { height: 100%; }
+.dv__val { margin-top: 5px !important; font-family: var(--mono); font-size: .86rem; color: var(--ink-2); }
+.dv__val b { color: var(--ink); font-weight: 600; }
 .v-luck { fill: var(--luck); }
 .v-ruin { fill: var(--ruin); }
 .v-faint { fill: var(--rule); }
 .v-axis { stroke: var(--rule-strong); stroke-width: 1; fill: none; }
 .v-guide { stroke: var(--rule-strong); stroke-width: 1; stroke-dasharray: 3 4; fill: none; }
 .v-lab { fill: var(--ink-2); font: 13px var(--body); }
-.v-num { fill: var(--ink); font: 600 12px var(--mono); }
-.v-tick { fill: var(--ink-3); font: 11px var(--mono); }
+.v-num { fill: var(--ink); font: 600 13px var(--mono); }
+.v-tick { fill: var(--ink-3); font: 12.5px var(--mono); }
 .v-big { fill: var(--ink); font: 700 15px var(--mono); }
 
 .confusion { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); border-top: 3px solid var(--ink); font-size: 1rem; }
 .confusion > div { padding: 9px 0; border-bottom: 1px solid var(--rule); }
 .confusion .l { color: var(--ink); }
-.confusion .m { padding-inline: 16px; font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); align-self: center; text-align: center; }
+.confusion .m { padding-inline: 16px; font-family: var(--mono); font-size: 0.74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); align-self: center; text-align: center; }
 .confusion .r { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--ruin); text-decoration-thickness: 1.5px; }
-.confusion .h { font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1px solid var(--rule-strong); }
+.confusion .h { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1px solid var(--rule-strong); }
 
 .fence { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid var(--ink); }
 .fence > div { padding: 16px 18px 18px 0; }
 .fence > div + div { padding: 16px 0 18px 18px; border-left: 2px dashed var(--rule-strong); }
-.fence .k { font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.fence .k { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
 .fence h4 { font-family: var(--display); font-weight: 750; font-variation-settings: "wdth" 88; font-size: 1.45rem; margin: 6px 0 10px; line-height: 1; }
 .fence > div:first-child h4 { color: var(--luck); }
 .fence > div + div h4 { color: var(--ruin); }
 .fence dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; margin: 0; font-size: .96rem; }
-.fence dt { font-family: var(--mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); padding-top: .3em; }
+.fence dt { font-family: var(--mono); font-size: 0.74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); padding-top: .3em; }
 .fence dd { margin: 0; color: var(--ink-2); line-height: 1.45; }
 
 /* ---------- comparison, debates, glossary ---------- */
@@ -260,7 +279,7 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 table { border-collapse: collapse; width: 100%; min-width: 600px; font-size: .98rem; line-height: 1.5; }
 th, td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
 tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
-thead th { font-family: var(--mono); font-size: .64rem; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
+thead th { font-family: var(--mono); font-size: 0.74rem; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
 thead th:nth-child(3) { color: var(--luck); }
 tbody th { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 88; font-size: 1.02rem; width: 22%; }
 tbody td { color: var(--ink-2); }
@@ -317,6 +336,57 @@ tbody td:nth-child(3) { color: var(--ink); }
 <!-- link-preview:end -->
 <link rel="stylesheet" href="book-nav.css">
 <script src="site-settings.js"></script>
+<script>
+/* Figure kit: every drawing is laid out at the width it is shown at, one unit per CSS pixel,
+   so labels keep their stated size on a phone instead of shrinking with the picture. */
+var FIG = (function () {
+  var ns = 'http://www.w3.org/2000/svg';
+  function el(parent, name, attrs, txt) {
+    var e = document.createElementNS(ns, name);
+    for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+    if (txt != null) e.textContent = txt;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  // Text that wraps inside max pixels; returns the number of lines drawn.
+  function text(parent, x, y, str, cls, max, lh, anchor) {
+    var t = el(parent, 'text', { x: x, y: y, 'class': cls || null, 'text-anchor': anchor || null });
+    if (!max) { t.textContent = str; return 1; }
+    var words = String(str).split(' '), line = [], n = 1, span = el(t, 'tspan', { x: x, dy: 0 });
+    words.forEach(function (w) {
+      line.push(w); span.textContent = line.join(' ');
+      if (line.length > 1 && span.getComputedTextLength() > max) {
+        line.pop(); span.textContent = line.join(' ');
+        line = [w]; n++;
+        span = el(t, 'tspan', { x: x, dy: lh || 17 }, w);
+      }
+    });
+    return n;
+  }
+  function width(parent, str, cls) {
+    var t = el(parent, 'text', { x: -9999, y: -9999, 'class': cls || null }, str), w = t.getComputedTextLength();
+    parent.removeChild(t);
+    return w;
+  }
+  function fit(id, draw) {
+    var svg = typeof id === 'string' ? document.getElementById(id) : id;
+    if (!svg) return;
+    var last = 0;
+    function run(force) {
+      var w = svg.clientWidth;
+      if (!w || (w === last && force !== true)) return;
+      last = w;
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + Math.ceil(draw(svg, w)));
+    }
+    run();
+    var timer;
+    window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(run, 120); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { run(true); });
+  }
+  return { el: el, text: text, width: width, fit: fit };
+})();
+</script>
 </head>
 <body>
 
@@ -529,40 +599,15 @@ tbody td:nth-child(3) { color: var(--ink); }
       </ul>
       <figure class="fig">
         <p class="fig-title">Figure · Same investor, different zoom</p>
-        <div class="fig-scroll">
-          <svg viewBox="0 0 640 300" role="img" aria-label="Probability that a strategy with 15 percent return and 10 percent volatility shows a gain, by how often you look: year 93 percent, quarter 77, month 67, day 54, hour 51, minute 50.2, second 50.0">
-            <!-- axis 50%..100% maps x 150..600 -->
-            <path class="v-axis" d="M150 262 H600"/>
-            <path class="v-axis" d="M150 262 v5 M262.5 262 v5 M375 262 v5 M487.5 262 v5 M600 262 v5"/>
-            <text class="v-tick" x="150" y="283" text-anchor="middle">50%</text>
-            <text class="v-tick" x="262.5" y="283" text-anchor="middle">62.5%</text>
-            <text class="v-tick" x="375" y="283" text-anchor="middle">75%</text>
-            <text class="v-tick" x="487.5" y="283" text-anchor="middle">87.5%</text>
-            <text class="v-tick" x="600" y="283" text-anchor="middle">100%</text>
-            <text class="v-tick" x="150" y="12">chance the account shows a gain (50% = coin flip)</text>
-            <!-- rows: y = 26 + i*33 -->
-            <text class="v-lab" x="138" y="46" text-anchor="end">A year</text>
-            <rect class="v-luck" x="150" y="31" width="389.9" height="22"/>
-            <text class="v-num" x="547" y="47">93.3%</text>
-            <text class="v-lab" x="138" y="79" text-anchor="end">A quarter</text>
-            <rect class="v-luck" x="150" y="64" width="246" height="22"/>
-            <text class="v-num" x="404" y="80">77.3%</text>
-            <text class="v-lab" x="138" y="112" text-anchor="end">A month</text>
-            <rect class="v-luck" x="150" y="97" width="150.8" height="22"/>
-            <text class="v-num" x="308" y="113">66.7%</text>
-            <text class="v-lab" x="138" y="145" text-anchor="end">A day</text>
-            <rect class="v-luck" x="150" y="130" width="34" height="22"/>
-            <text class="v-num" x="192" y="146">53.8%</text>
-            <text class="v-lab" x="138" y="178" text-anchor="end">An hour</text>
-            <rect class="v-luck" x="150" y="163" width="12" height="22"/>
-            <text class="v-num" x="170" y="179">51.3%</text>
-            <text class="v-lab" x="138" y="211" text-anchor="end">A minute</text>
-            <rect class="v-luck" x="150" y="196" width="2" height="22"/>
-            <text class="v-num" x="160" y="212">50.17%</text>
-            <text class="v-lab" x="138" y="244" text-anchor="end">A second</text>
-            <rect class="v-luck" x="150" y="229" width="1" height="22"/>
-            <text class="v-num" x="160" y="245">50.02%</text>
-          </svg>
+        <p class="f-key">Chance the account shows a gain · bars start at 50%, a coin flip</p>
+        <div class="hbars">
+          <div class="hbar"><p class="hbar__lab">Checked every year</p><div class="hbar__track"><span class="hbar__fill luck" style="width:86.60%"></span></div><p class="hbar__val"><b>93.3%</b> · up about 14 years in 15</p></div>
+          <div class="hbar"><p class="hbar__lab">Checked every quarter</p><div class="hbar__track"><span class="hbar__fill luck" style="width:54.60%"></span></div><p class="hbar__val"><b>77.3%</b> · up about 3 quarters in 4</p></div>
+          <div class="hbar"><p class="hbar__lab">Checked every month</p><div class="hbar__track"><span class="hbar__fill luck" style="width:33.40%"></span></div><p class="hbar__val"><b>66.7%</b> · up about 2 months in 3</p></div>
+          <div class="hbar"><p class="hbar__lab">Checked every day</p><div class="hbar__track"><span class="hbar__fill luck" style="width:7.60%"></span></div><p class="hbar__val"><b>53.8%</b> · barely better than a coin flip</p></div>
+          <div class="hbar"><p class="hbar__lab">Checked every hour</p><div class="hbar__track"><span class="hbar__fill luck" style="width:2.60%"></span></div><p class="hbar__val"><b>51.3%</b> · a coin flip, near enough</p></div>
+          <div class="hbar"><p class="hbar__lab">Checked every minute</p><div class="hbar__track"><span class="hbar__fill luck" style="width:0.34%"></span></div><p class="hbar__val"><b>50.17%</b> · a coin flip</p></div>
+          <div class="hbar"><p class="hbar__lab">Checked every second</p><div class="hbar__track"><span class="hbar__fill luck" style="width:0.04%"></span></div><p class="hbar__val"><b>50.02%</b> · a coin flip</p></div>
         </div>
         <figcaption>Computed from the chapter’s setup: 15% expected annual return, 10% annual volatility, normally distributed, with an eight-hour trading day. The strategy is excellent, but at a daily zoom it is nearly a coin flip.</figcaption>
       </figure>
@@ -604,23 +649,13 @@ tbody td:nth-child(3) { color: var(--ink); }
       </ul>
       <figure class="fig">
         <p class="fig-title">Figure · More likely to rise, still worth betting on a fall</p>
-        <div class="fig-scroll">
-          <svg viewBox="0 0 640 230" role="img" aria-label="A 70 percent chance of a 1 percent rise and a 30 percent chance of a 10 percent fall give an expected change of minus 2.3 percent">
-            <text class="v-tick" x="20" y="18">PROBABILITY</text>
-            <rect class="v-luck" x="20" y="28" width="420" height="30"/>
-            <rect class="v-ruin" x="440" y="28" width="180" height="30"/>
-            <text class="v-big" x="30" y="49" style="fill: var(--paper)">70% · market rises</text>
-            <text class="v-big" x="450" y="49" style="fill: var(--paper)">30% · falls</text>
-            <text class="v-tick" x="20" y="92">SIZE OF THE MOVE</text>
-            <path class="v-axis" d="M320 100 V214"/>
-            <rect class="v-luck" x="320" y="106" width="18" height="26"/>
-            <text class="v-num" x="346" y="124">+1%</text>
-            <rect class="v-ruin" x="140" y="140" width="180" height="26"/>
-            <text class="v-num" x="96" y="158">−10%</text>
-            <rect x="278.6" y="174" width="41.4" height="26" style="fill: var(--ink)"/>
-            <text class="v-num" x="270" y="192" text-anchor="end">Expected: −2.3%</text>
-            <text class="v-tick" x="346" y="192">= 0.7 × (+1%) + 0.3 × (−10%)</text>
-          </svg>
+        <p class="f-key">How likely</p>
+        <div class="split"><span style="flex:70;background:var(--luck)">70% rise</span><span style="flex:30;background:var(--ruin)">30% fall</span></div>
+        <p class="f-key" style="margin-top:24px">How big · left of the line is a loss</p>
+        <div class="dv">
+          <div><p class="dv__lab">If it rises</p><div class="dv__track"><span class="dv__neg"></span><span class="dv__pos"><span class="dv__fill" style="width:10%;background:var(--luck)"></span></span></div><p class="dv__val"><b>+1%</b></p></div>
+          <div><p class="dv__lab">If it falls</p><div class="dv__track"><span class="dv__neg"><span class="dv__fill" style="width:100%;background:var(--ruin)"></span></span><span class="dv__pos"></span></div><p class="dv__val"><b>−10%</b></p></div>
+          <div><p class="dv__lab">What you should expect</p><div class="dv__track"><span class="dv__neg"><span class="dv__fill" style="width:23%;background:var(--ink)"></span></span><span class="dv__pos"></span></div><p class="dv__val"><b>−2.3%</b> = 0.7 × (+1%) + 0.3 × (−10%)</p></div>
         </div>
         <figcaption>The chapter’s example. The market is more likely to rise, but the expected result is a loss, so the rational position is short. Frequency tells you how often; only payoff times probability tells you what to do.</figcaption>
       </figure>
@@ -671,30 +706,16 @@ tbody td:nth-child(3) { color: var(--ink); }
       </ul>
       <figure class="fig">
         <p class="fig-title">Figure · 10,000 coin-flipping managers</p>
-        <div class="fig-scroll">
-          <svg viewBox="0 0 640 250" role="img" aria-label="Managers left with an unbroken record of good years, if each year is a coin flip: 10,000 at the start, 5,000 after one year, 2,500 after two, 1,250 after three, 625 after four, about 313 after five">
-            <!-- bars scaled 10,000 = 440 wide, x from 150 -->
-            <text class="v-lab" x="138" y="36" text-anchor="end">Start</text>
-            <rect class="v-faint" x="150" y="20" width="440" height="24"/>
-            <text class="v-num" x="158" y="37">10,000</text>
-            <text class="v-lab" x="138" y="70" text-anchor="end">After 1 year</text>
-            <rect class="v-faint" x="150" y="54" width="220" height="24"/>
-            <text class="v-num" x="378" y="71">5,000</text>
-            <text class="v-lab" x="138" y="104" text-anchor="end">After 2 years</text>
-            <rect class="v-faint" x="150" y="88" width="110" height="24"/>
-            <text class="v-num" x="268" y="105">2,500</text>
-            <text class="v-lab" x="138" y="138" text-anchor="end">After 3 years</text>
-            <rect class="v-faint" x="150" y="122" width="55" height="24"/>
-            <text class="v-num" x="213" y="139">1,250</text>
-            <text class="v-lab" x="138" y="172" text-anchor="end">After 4 years</text>
-            <rect class="v-faint" x="150" y="156" width="27.5" height="24"/>
-            <text class="v-num" x="185" y="173">625</text>
-            <text class="v-lab" x="138" y="206" text-anchor="end">After 5 years</text>
-            <rect class="v-luck" x="150" y="190" width="13.75" height="24"/>
-            <text class="v-num" x="172" y="207" style="fill: var(--luck)">≈ 313 “geniuses”</text>
-            <text class="v-tick" x="150" y="240">Each year, half keep an unbroken record by pure chance.</text>
-          </svg>
+        <p class="f-key">Managers with an unbroken run of good years</p>
+        <div class="hbars">
+          <div class="hbar"><p class="hbar__lab">At the start</p><div class="hbar__track"><span class="hbar__fill" style="width:100.000%"></span></div><p class="hbar__val"><b>10,000</b></p></div>
+          <div class="hbar"><p class="hbar__lab">After 1 year</p><div class="hbar__track"><span class="hbar__fill" style="width:50.000%"></span></div><p class="hbar__val"><b>5,000</b></p></div>
+          <div class="hbar"><p class="hbar__lab">After 2 years</p><div class="hbar__track"><span class="hbar__fill" style="width:25.000%"></span></div><p class="hbar__val"><b>2,500</b></p></div>
+          <div class="hbar"><p class="hbar__lab">After 3 years</p><div class="hbar__track"><span class="hbar__fill" style="width:12.500%"></span></div><p class="hbar__val"><b>1,250</b></p></div>
+          <div class="hbar"><p class="hbar__lab">After 4 years</p><div class="hbar__track"><span class="hbar__fill" style="width:6.250%"></span></div><p class="hbar__val"><b>625</b></p></div>
+          <div class="hbar"><p class="hbar__lab">After 5 years</p><div class="hbar__track"><span class="hbar__fill luck" style="width:3.125%"></span></div><p class="hbar__val"><b>≈ 313 “geniuses” with a perfect record</b></p></div>
         </div>
+        <p class="f-key" style="margin-top:14px;text-transform:none;letter-spacing:0;font-size:.86rem">Each year, half keep an unbroken record by pure chance.</p>
         <figcaption>The chapter’s thought experiment, computed: 10,000 ÷ 2⁵ = 312.5. Each of those managers has a flawless five-year record and no skill whatsoever.</figcaption>
       </figure>
     </article>
@@ -723,9 +744,7 @@ tbody td:nth-child(3) { color: var(--ink); }
       </ul>
       <figure class="fig">
         <p class="fig-title">Figure · 1,000 people tested</p>
-        <div class="fig-scroll">
-          <svg id="baseRate" viewBox="0 0 640 300" role="img" aria-label="A grid of 1,000 people. One has the disease and tests positive. About 50 healthy people also test positive. So a positive result means about a 2 percent chance of disease."></svg>
-        </div>
+        <svg id="baseRate" role="img" aria-label="A grid of 1,000 people. One has the disease and tests positive. About 50 healthy people also test positive. So a positive result means about a 2 percent chance of disease."></svg>
         <figcaption>One person has the disease (cobalt). About 5% of the other 999, 50 people, test positive anyway (red rings). So of 51 positive results, one is real: 1 ÷ 51 ≈ 2%. This assumes the test catches every true case.</figcaption>
       </figure>
     </article>
@@ -910,8 +929,8 @@ tbody td:nth-child(3) { color: var(--ink); }
     // ruin line
     ctx.strokeStyle = cRule; ctx.lineWidth = 1; ctx.setLineDash([4, 5]);
     ctx.beginPath(); ctx.moveTo(x0, floor); ctx.lineTo(x1, floor); ctx.stroke(); ctx.setLineDash([]);
-    ctx.fillStyle = cInk; ctx.font = '600 10px "JetBrains Mono", monospace';
-    ctx.fillText('RUIN', x1 - 34, floor + 14 > h - 2 ? floor - 6 : floor + 14);
+    ctx.fillStyle = cInk; ctx.font = '600 13px "JetBrains Mono", monospace'; ctx.textAlign = 'right';
+    ctx.fillText('RUIN LINE', x1, floor + 18 > h - 2 ? floor - 8 : floor + 18); ctx.textAlign = 'left';
     function line(p, color, width) {
       ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineJoin = 'round';
       ctx.beginPath(); ctx.moveTo(p.pts[0][0], p.pts[0][1]);
@@ -937,29 +956,31 @@ tbody td:nth-child(3) { color: var(--ink); }
 
   // Chapter 11: 1,000 people, 1 sick, 50 false positives.
   function drawGrid() {
-    var svg = document.getElementById('baseRate');
-    if (!svg) return;
-    var ns = 'http://www.w3.org/2000/svg', cols = 50, rows = 20, gap = 12, ox = 26, oy = 24;
-    var r = rng(1978), idx = [], i;
-    for (i = 0; i < 1000; i++) idx.push(i);
-    for (i = 999; i > 0; i--) { var j = Math.floor(r() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
-    var sick = idx[0], falsePos = {};
-    for (i = 1; i <= 50; i++) falsePos[idx[i]] = true;
-    var frag = document.createDocumentFragment();
-    for (i = 0; i < 1000; i++) {
-      var c = document.createElementNS(ns, 'circle');
-      c.setAttribute('cx', ox + (i % cols) * gap);
-      c.setAttribute('cy', oy + Math.floor(i / cols) * gap);
-      if (i === sick) { c.setAttribute('r', 5); c.setAttribute('class', 'v-luck'); }
-      else if (falsePos[i]) { c.setAttribute('r', 3.6); c.setAttribute('fill', 'none'); c.setAttribute('style', 'stroke: var(--ruin); stroke-width: 1.8'); }
-      else { c.setAttribute('r', 2.6); c.setAttribute('class', 'v-faint'); }
-      frag.appendChild(c);
-    }
-    svg.appendChild(frag);
-    var label = document.createElementNS(ns, 'text');
-    label.setAttribute('x', ox - 4); label.setAttribute('y', 284); label.setAttribute('class', 'v-num');
-    label.textContent = '1 true positive + ~50 false positives → a positive test means ≈ 2%, not 95%';
-    svg.appendChild(label);
+    FIG.fit('baseRate', function (svg, W) {
+      var el = FIG.el, cols = Math.min(50, Math.floor((W - 8) / 10)), gap = (W - 8) / cols, ox = 4 + gap / 2, oy = 8;
+      var r = rng(1978), idx = [], i;
+      for (i = 0; i < 1000; i++) idx.push(i);
+      for (i = 999; i > 0; i--) { var j = Math.floor(r() * (i + 1)), t = idx[i]; idx[i] = idx[j]; idx[j] = t; }
+      var sick = idx[0], falsePos = {};
+      for (i = 1; i <= 50; i++) falsePos[idx[i]] = true;
+      var dot = Math.min(1, gap / 12);
+      for (i = 0; i < 1000; i++) {
+        var a = { cx: ox + (i % cols) * gap, cy: oy + Math.floor(i / cols) * gap };
+        if (i === sick) { a.r = 5.5; a['class'] = 'v-luck'; }
+        else if (falsePos[i]) { a.r = 3.8 * dot + .6; a.fill = 'none'; a.style = 'stroke: var(--ruin); stroke-width: 1.8'; }
+        else { a.r = 2.6 * dot; a['class'] = 'v-faint'; }
+        el(svg, 'circle', a);
+      }
+      var y = oy + Math.ceil(1000 / cols) * gap + 10;
+      el(svg, 'circle', { cx: 8, cy: y + 1, r: 5.5, 'class': 'v-luck' });
+      var n = FIG.text(svg, 22, y + 6, 'the one sick person, who tests positive', 'v-tick', W - 26, 17);
+      y += n * 17 + 10;
+      el(svg, 'circle', { cx: 8, cy: y + 1, r: 4.4, fill: 'none', style: 'stroke: var(--ruin); stroke-width: 1.8' });
+      n = FIG.text(svg, 22, y + 6, 'healthy, but the test says positive: about 50', 'v-tick', W - 26, 17);
+      y += n * 17 + 16;
+      n = FIG.text(svg, 0, y + 6, '1 true positive + ~50 false positives → a positive test means ≈ 2%, not 95%', 'v-num', W - 4, 18);
+      return y + n * 18 + 2;
+    });
   }
 
   drawFan();

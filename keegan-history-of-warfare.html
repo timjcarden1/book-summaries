@@ -105,7 +105,7 @@ cite { font-style: italic; }
   display: grid; grid-template-columns: repeat(4, auto); justify-content: start;
   gap: 14px 40px; margin: 34px 0 0; padding-top: 20px; border-top: 1px solid var(--rule);
 }
-.facts dt { font-family: var(--label); font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.facts dt { font-family: var(--label); font-size: 0.74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
 .facts dd { margin: 4px 0 0; font-family: var(--display); font-stretch: 75%; font-weight: 700; font-size: 1.3rem; font-variant-numeric: tabular-nums; }
 
 /* the strata: the book's four ages as a geological column, oldest at the bottom */
@@ -118,9 +118,9 @@ cite { font-style: italic; }
 .st-tex { fill: var(--paper); opacity: .22; }
 .st-hatch { stroke: var(--paper); stroke-width: 1.2; opacity: .28; fill: none; }
 .st-name { fill: var(--paper); font: 850 30px var(--display); font-stretch: 62%; letter-spacing: .04em; }
-.st-when { fill: var(--paper); font: 600 11px var(--label); letter-spacing: .12em; opacity: .9; }
+.st-when { fill: var(--paper); font: 600 12.5px var(--label); letter-spacing: .05em; opacity: .92; }
 .st-axis { stroke: var(--rule-strong); stroke-width: 1; fill: none; }
-.st-axis-t { fill: var(--ink-3); font: 600 10px var(--label); letter-spacing: .14em; }
+.st-axis-t { fill: var(--ink-3); font: 600 12px var(--label); letter-spacing: .1em; }
 .strata figcaption { font-family: var(--label); font-size: .74rem; color: var(--ink-3); margin-top: 10px; line-height: 1.45; }
 
 /* ---------- layout ---------- */
@@ -248,7 +248,7 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 
 .ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 12px; }
 .idea { border-top: 2px solid var(--ink); padding: 14px 0 26px; }
-.idea .tag { font-family: var(--label); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.idea .tag { font-family: var(--label); font-size: 0.74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
 .idea.m-stone { border-top-color: var(--stone); } .idea.m-stone .tag { color: var(--stone-t); }
 .idea.m-flesh { border-top-color: var(--flesh); } .idea.m-flesh .tag { color: var(--flesh-t); }
 .idea.m-iron { border-top-color: var(--iron); } .idea.m-iron .tag { color: var(--iron-t); }
@@ -281,24 +281,24 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 
 /* ---------- figures ---------- */
 .fig { margin: 30px 0 10px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: clamp(14px, 3vw, 24px); }
-.fig-title { font-family: var(--label); font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+.fig-title { font-family: var(--label); font-size: 0.74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
 .fig figcaption { font-size: .92rem; color: var(--ink-2); margin-top: 14px; line-height: 1.5; }
 
 .cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
 .cases > div { background: var(--surface); padding: 16px 16px 18px; }
-.cases .k { font-family: var(--label); font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ember); margin: 0; }
+.cases .k { font-family: var(--label); font-size: 0.74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ember); margin: 0; }
 .cases h4 { font-family: var(--display); font-weight: 800; font-stretch: 75%; font-size: 1.3rem; text-transform: uppercase; margin: 6px 0 6px; line-height: 1; }
 .cases p:last-child { margin: 0; font-size: .95rem; color: var(--ink-2); line-height: 1.5; }
 
 .fence { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid var(--ink); }
 .fence > div { padding: 16px 18px 18px 0; }
 .fence > div + div { padding: 16px 0 18px 18px; border-left: 2px dashed var(--rule-strong); }
-.fence .k { font-family: var(--label); font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.fence .k { font-family: var(--label); font-size: 0.74rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
 .fence h4 { font-family: var(--display); font-weight: 800; font-stretch: 75%; font-size: 1.45rem; text-transform: uppercase; margin: 6px 0 10px; line-height: 1; }
 .fence > div:first-child h4 { color: var(--iron-t); }
 .fence > div + div h4 { color: var(--flesh-t); }
 .fence dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; margin: 0; font-size: .94rem; }
-.fence dt { font-family: var(--label); font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); padding-top: .2em; }
+.fence dt { font-family: var(--label); font-size: 0.74rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); padding-top: .2em; }
 .fence dd { margin: 0; color: var(--ink-2); line-height: 1.45; }
 
 .armies { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
@@ -316,7 +316,7 @@ section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px)
 table { border-collapse: collapse; width: 100%; min-width: 600px; font-size: .96rem; line-height: 1.5; }
 th, td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
 tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
-thead th { font-family: var(--label); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
+thead th { font-family: var(--label); font-size: 0.74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
 thead th:nth-child(3) { color: var(--ember); }
 tbody th { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: 1.02rem; width: 20%; }
 tbody td { color: var(--ink-2); }
@@ -346,7 +346,7 @@ tbody td:nth-child(3) { color: var(--ink); }
 @media (max-width: 760px) {
   body { font-size: 1.05rem; }
   .hero-inner { grid-template-columns: minmax(0, 1fr); }
-  .strata { justify-self: start; max-width: 300px; }
+  .strata { justify-self: start; max-width: 340px; }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
   .ideas, .cases, .gloss { grid-template-columns: minmax(0, 1fr); }
   .armies { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -376,6 +376,57 @@ tbody td:nth-child(3) { color: var(--ink); }
 <!-- link-preview:end -->
 <link rel="stylesheet" href="book-nav.css">
 <script src="site-settings.js"></script>
+<script>
+/* Figure kit: every drawing is laid out at the width it is shown at, one unit per CSS pixel,
+   so labels keep their stated size on a phone instead of shrinking with the picture. */
+var FIG = (function () {
+  var ns = 'http://www.w3.org/2000/svg';
+  function el(parent, name, attrs, txt) {
+    var e = document.createElementNS(ns, name);
+    for (var k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
+    if (txt != null) e.textContent = txt;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  // Text that wraps inside max pixels; returns the number of lines drawn.
+  function text(parent, x, y, str, cls, max, lh, anchor) {
+    var t = el(parent, 'text', { x: x, y: y, 'class': cls || null, 'text-anchor': anchor || null });
+    if (!max) { t.textContent = str; return 1; }
+    var words = String(str).split(' '), line = [], n = 1, span = el(t, 'tspan', { x: x, dy: 0 });
+    words.forEach(function (w) {
+      line.push(w); span.textContent = line.join(' ');
+      if (line.length > 1 && span.getComputedTextLength() > max) {
+        line.pop(); span.textContent = line.join(' ');
+        line = [w]; n++;
+        span = el(t, 'tspan', { x: x, dy: lh || 17 }, w);
+      }
+    });
+    return n;
+  }
+  function width(parent, str, cls) {
+    var t = el(parent, 'text', { x: -9999, y: -9999, 'class': cls || null }, str), w = t.getComputedTextLength();
+    parent.removeChild(t);
+    return w;
+  }
+  function fit(id, draw) {
+    var svg = typeof id === 'string' ? document.getElementById(id) : id;
+    if (!svg) return;
+    var last = 0;
+    function run(force) {
+      var w = svg.clientWidth;
+      if (!w || (w === last && force !== true)) return;
+      last = w;
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + Math.ceil(draw(svg, w)));
+    }
+    run();
+    var timer;
+    window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(run, 120); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { run(true); });
+  }
+  return { el: el, text: text, width: width, fit: fit };
+})();
+</script>
 </head>
 <body>
 
@@ -453,8 +504,8 @@ tbody td:nth-child(3) { color: var(--ink); }
         <text class="st-when" x="50" y="182">FROM c. 1200 BC</text>
         <text class="st-when" x="50" y="199">CHAPTER 4</text>
         <text class="st-name" x="50" y="268">FLESH</text>
-        <text class="st-when" x="50" y="290">THE HORSE · CHARIOT → MONGOLS</text>
-        <text class="st-when" x="50" y="307">CHAPTER 3</text>
+        <text class="st-when" x="50" y="290">CHARIOT → MONGOLS</text>
+        <text class="st-when" x="50" y="307">CHAPTER 3 · THE HORSE</text>
         <text class="st-name" x="50" y="388">STONE</text>
         <text class="st-when" x="50" y="410">PREHISTORY → FIRST CITIES</text>
         <text class="st-when" x="50" y="427">CHAPTER 2</text>
