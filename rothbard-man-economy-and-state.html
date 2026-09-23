@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Man, Economy, and State — Murray N. Rothbard</title>
+<meta name="description" content="A chapter-by-chapter summary of Man, Economy, and State with Power and Market: praxeology, time-preference interest, the structure of production, monopoly, money and the business cycle, and Rothbard's typology of intervention.">
+<script>try{var t=localStorage.getItem('civ-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --paper: #ECEEE7;
+  --paper-2: #E2E5DC;
+  --surface: #F5F6F1;
+  --ink: #16201B;
+  --ink-2: #3F4B45;
+  --ink-3: #66726B;
+  --rule: #C9CFC4;
+  --rule-strong: #9FA89C;
+  --gold: #86600F;
+  --gold-fill: #BE9135;
+  --oxide: #8E2B24;
+  --oxide-fill: #B0412F;
+  --factor: #4E6A5C;
+  --prior: #D0D6CA;
+  --rosette: rgba(160, 118, 30, 0.40);
+  --rosette-2: rgba(22, 32, 27, 0.14);
+  --accent: #86600F;
+  --display: "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
+  --body: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0E1411;
+    --paper-2: #141C18;
+    --surface: #17201B;
+    --ink: #E3E7DF;
+    --ink-2: #B6C0B8;
+    --ink-3: #8A968F;
+    --rule: #28332D;
+    --rule-strong: #445249;
+    --gold: #D9AE57;
+    --gold-fill: #C99B40;
+    --oxide: #EE8573;
+    --oxide-fill: #D0604A;
+    --factor: #7FA18F;
+    --prior: #2C3832;
+    --rosette: rgba(217, 174, 87, 0.34);
+    --rosette-2: rgba(227, 231, 223, 0.10);
+    --accent: #D9AE57;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0E1411;
+  --paper-2: #141C18;
+  --surface: #17201B;
+  --ink: #E3E7DF;
+  --ink-2: #B6C0B8;
+  --ink-3: #8A968F;
+  --rule: #28332D;
+  --rule-strong: #445249;
+  --gold: #D9AE57;
+  --gold-fill: #C99B40;
+  --oxide: #EE8573;
+  --oxide-fill: #D0604A;
+  --factor: #7FA18F;
+  --prior: #2C3832;
+  --rosette: rgba(217, 174, 87, 0.34);
+  --rosette-2: rgba(227, 231, 223, 0.10);
+  --accent: #D9AE57;
+}
+
+* { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.62;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration-color: var(--gold-fill); text-underline-offset: 3px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--gold-fill); outline-offset: 3px; border-radius: 2px; }
+cite { font-style: italic; }
+.wrap { max-width: 1200px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 44px); }
+.mono { font-family: var(--mono); }
+.kicker {
+  font-family: var(--mono); font-size: .72rem; font-weight: 500;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px;
+}
+
+/* ---------- hero ---------- */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--rule); }
+#rosette {
+  position: absolute; width: min(780px, 92vw); aspect-ratio: 1; height: auto;
+  right: max(-240px, -16vw); top: 50%; transform: translateY(-50%);
+  pointer-events: none; display: block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  #rosette { animation: turn 300s linear infinite; }
+  @keyframes turn { to { rotate: 360deg; } }
+}
+.hero-inner { position: relative; padding-block: clamp(44px, 8vw, 104px) clamp(40px, 6vw, 72px); }
+.eyebrow { font-family: var(--mono); font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.axiom {
+  font-family: var(--display); font-weight: 500; font-variation-settings: "opsz" 96;
+  font-size: clamp(4.4rem, 15vw, 10.5rem); line-height: .84; letter-spacing: -.028em;
+  margin: .16em 0 0; color: var(--ink);
+}
+.axiom em { font-style: italic; font-weight: 400; }
+.axiom .dot { color: var(--gold-fill); }
+.axiom-note { font-family: var(--mono); font-size: .76rem; color: var(--ink-3); margin: 18px 0 0; max-width: 44ch; }
+.hero h1 {
+  font-family: var(--display); font-weight: 600; font-variation-settings: "opsz" 48;
+  font-size: clamp(1.65rem, 3.4vw, 2.55rem); line-height: 1.08; letter-spacing: -.01em;
+  margin: 36px 0 0; max-width: 24ch; text-wrap: balance;
+}
+.hero h1 span { display: block; font-style: italic; font-weight: 400; color: var(--ink-2); }
+.byline { font-family: var(--mono); font-size: .78rem; color: var(--ink-3); margin: 12px 0 0; letter-spacing: .04em; }
+.breath { margin-top: 34px; max-width: 64ch; }
+.breath p:last-child { font-size: 1.2rem; line-height: 1.62; color: var(--ink-2); margin: 0; }
+.facts {
+  display: grid; grid-template-columns: repeat(4, auto); justify-content: start;
+  gap: 14px 44px; margin: 38px 0 0; padding-top: 22px; border-top: 1px solid var(--rule);
+  max-width: 820px;
+}
+.facts dt { font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.facts dd { margin: 4px 0 0; font-family: var(--display); font-size: 1.18rem; font-variant-numeric: tabular-nums; }
+
+/* ---------- layout ---------- */
+.layout {
+  display: grid; grid-template-columns: 212px minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 76px); padding-block: 44px 96px;
+}
+.content { min-width: 0; max-width: 780px; }
+.content p { max-width: 66ch; }
+
+.rail {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 22px); align-self: start;
+  max-height: calc(100vh - 44px); overflow-y: auto; scrollbar-width: thin;
+  font-family: var(--mono); font-size: .74rem; padding: 4px 4px 12px 0;
+}
+.rail ol { list-style: none; margin: 0; padding: 0 0 0 16px; position: relative; }
+.rail ol::before { content: ""; position: absolute; left: 3px; top: 8px; bottom: 8px; width: 1px; background: var(--rule-strong); }
+.rail li.grp { margin: 16px 0 4px -16px; font-size: .64rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); background: var(--paper); position: relative; padding-left: 16px; }
+.rail a { display: flex; gap: 6px; padding: 3px 0; color: var(--ink-3); text-decoration: none; position: relative; line-height: 1.35; }
+.rail a::before {
+  content: ""; position: absolute; left: -16px; top: .62em; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--paper); border: 1px solid var(--rule-strong);
+}
+.rail .mes a::before { border-color: var(--gold-fill); }
+.rail .pm a::before { border-color: var(--oxide-fill); }
+.rail a:hover { color: var(--ink); }
+.rail a.is-active { color: var(--ink); }
+.rail a.is-active::before { background: var(--gold-fill); border-color: var(--gold-fill); }
+.rail .pm a.is-active::before { background: var(--oxide-fill); border-color: var(--oxide-fill); }
+.rail .n { min-width: 1.7em; opacity: .75; }
+
+.mobile-toc { display: none; margin: 0 0 28px; border: 1px solid var(--rule); background: var(--surface); border-radius: 3px; }
+.mobile-toc summary { cursor: pointer; padding: 12px 16px; font-family: var(--mono); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+.mobile-toc ol { margin: 0; padding: 0 16px 14px 36px; font-size: 1rem; display: grid; gap: 4px; }
+
+@media (max-width: 980px) {
+  .layout { grid-template-columns: minmax(0, 1fr); padding-block: 32px 72px; }
+  .rail { display: none; }
+  .mobile-toc { display: block; }
+}
+
+/* ---------- sections ---------- */
+section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px); }
+.sec { padding-block: 8px 52px; }
+.sec h2 {
+  font-family: var(--display); font-weight: 600; font-variation-settings: "opsz" 72;
+  font-size: clamp(2rem, 4.4vw, 2.8rem); line-height: 1.04; letter-spacing: -.012em;
+  margin: 0 0 18px; text-wrap: balance;
+}
+.sec > p { margin: 0 0 16px; }
+
+.timeline { list-style: none; margin: 26px 0 0; padding: 0; display: grid; }
+.timeline li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 18px; padding: 12px 0; border-top: 1px solid var(--rule); }
+.timeline .yr { font-family: var(--display); font-size: 1.22rem; font-weight: 600; color: var(--gold); font-variant-numeric: tabular-nums; line-height: 1.3; }
+.timeline p { margin: 0; color: var(--ink-2); font-size: 1rem; }
+.quote-line { margin-top: 22px !important; padding-left: 18px; border-left: 2px solid var(--gold-fill); color: var(--ink-2); }
+
+.postulates {
+  display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 1px;
+  background: var(--rule); border: 1px solid var(--rule); margin: 26px 0 28px;
+}
+.postulates > div { background: var(--surface); padding: 20px 20px 22px; }
+.postulates > div:first-child { background: var(--paper-2); }
+.postulates .k { font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin: 0; }
+.postulates .s { font-family: var(--display); font-style: italic; font-size: 1.55rem; line-height: 1.1; margin: 8px 0 10px; }
+.postulates > div:first-child .s { font-size: 2rem; }
+.postulates p:last-child { margin: 0; font-size: .95rem; color: var(--ink-2); line-height: 1.5; }
+
+.points { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+.points li { position: relative; padding-left: 24px; }
+.points li::before {
+  content: ""; position: absolute; left: 3px; top: .64em; width: 7px; height: 7px;
+  background: var(--gold-fill); transform: rotate(45deg);
+}
+.pm .points li::before { background: var(--oxide-fill); }
+.points strong { font-weight: 600; }
+
+.ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 12px; }
+.idea { border-top: 1px solid var(--rule-strong); padding: 16px 0 26px; }
+.idea .tag { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 0; }
+.idea.pm .tag { color: var(--oxide); }
+.idea h3 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; line-height: 1.15; margin: 6px 0 8px; text-wrap: balance; }
+.idea p:last-child { margin: 0; font-size: .98rem; color: var(--ink-2); line-height: 1.55; }
+
+/* ---------- parts & chapters ---------- */
+.part { margin-top: 40px; padding: 44px 0 10px; border-top: 3px double var(--rule-strong); }
+.part-num { font-family: var(--display); font-style: italic; font-size: 1.25rem; color: var(--gold); margin: 0; }
+.part.pm .part-num { color: var(--oxide); }
+.part h2 {
+  font-family: var(--display); font-weight: 600; font-variation-settings: "opsz" 96;
+  font-size: clamp(2.4rem, 6vw, 3.7rem); line-height: 1; letter-spacing: -.02em; margin: 6px 0 16px; text-wrap: balance;
+}
+.part-lede { font-size: 1.14rem; color: var(--ink-2); margin: 0 0 8px; }
+
+.chapter { padding: 36px 0 10px; border-top: 1px solid var(--rule); margin-top: 28px; }
+.part + .chapter { border-top: 0; margin-top: 0; }
+.ch-label { font-family: var(--mono); font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin: 0; }
+.pm .ch-label { color: var(--oxide); }
+.chapter h3 {
+  font-family: var(--display); font-weight: 600; font-variation-settings: "opsz" 60;
+  font-size: clamp(1.55rem, 3.2vw, 2.05rem); line-height: 1.08; margin: 8px 0 10px; text-wrap: balance;
+}
+.gist { font-style: italic; font-size: 1.15rem; color: var(--ink-2); margin: 0 0 16px; }
+
+/* ---------- figures ---------- */
+.fig { margin: 30px 0 10px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: clamp(14px, 3vw, 26px); }
+.fig-title { font-family: var(--mono); font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+.fig figcaption { font-size: .92rem; color: var(--ink-2); margin-top: 14px; line-height: 1.5; }
+.fig-scroll { overflow-x: auto; }
+.sop { display: block; width: 100%; min-width: 600px; height: auto; }
+.seg-prior { fill: var(--prior); }
+.seg-factor { fill: var(--factor); }
+.seg-int { fill: var(--gold-fill); }
+.sop-stage { fill: var(--ink-3); font: 500 10.5px var(--mono); letter-spacing: .08em; }
+.sop-name { fill: var(--ink); font: 14px var(--body); }
+.sop-val { fill: var(--ink); font: 600 13px var(--mono); }
+.sop-guide { stroke: var(--rule-strong); stroke-width: 1; stroke-dasharray: 3 3; fill: none; }
+.sop-axis { stroke: var(--rule-strong); stroke-width: 1; fill: none; }
+.sop-tick { fill: var(--ink-3); font: 10.5px var(--mono); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 12px; font-family: var(--mono); font-size: .74rem; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+.sw.prior { background: var(--prior); border: 1px solid var(--rule-strong); }
+.sw.factor { background: var(--factor); }
+.sw.int { background: var(--gold-fill); }
+
+.cycle { list-style: none; counter-reset: step; padding: 0; margin: 0; display: grid; }
+.cycle li { counter-increment: step; display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 12px; padding: 13px 0; border-top: 1px solid var(--rule); }
+.cycle li:first-child { border-top: 0; padding-top: 2px; }
+.cycle li::before { content: counter(step); font-family: var(--display); font-style: italic; font-size: 1.9rem; line-height: 1; color: var(--gold); }
+.cycle .phase { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); margin: 2px 0 0; }
+.cycle p { margin: 4px 0 0; font-size: 1rem; color: var(--ink-2); }
+
+.types { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.types svg { display: block; width: 100%; height: auto; max-width: 280px; }
+.types h4 { font-family: var(--display); font-size: 1.2rem; font-weight: 600; margin: 8px 0 4px; }
+.types p { font-size: .92rem; color: var(--ink-2); margin: 0; line-height: 1.5; }
+.n-i { fill: var(--oxide-fill); }
+.n-i-t { fill: var(--paper); font: 600 14px var(--mono); }
+.n-s { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.5; }
+.n-s-t { fill: var(--ink); font: 600 14px var(--mono); }
+.t-arrow { stroke: var(--oxide-fill); stroke-width: 2; fill: none; }
+.t-head { fill: var(--oxide-fill); }
+.t-ex { stroke: var(--ink-2); stroke-width: 1.5; stroke-dasharray: 5 4; fill: none; }
+.t-lab { fill: var(--ink-2); font: 10.5px var(--mono); }
+
+/* ---------- comparison, debates, glossary ---------- */
+.table-wrap { overflow-x: auto; margin: 22px 0 4px; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 600px; font-size: .96rem; line-height: 1.5; }
+th, td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+thead th { font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
+thead th:nth-child(3) { color: var(--gold); }
+tbody th { font-family: var(--display); font-weight: 600; font-size: 1.04rem; width: 22%; }
+tbody td { color: var(--ink-2); }
+tbody td:nth-child(3) { color: var(--ink); }
+
+.debate { padding: 16px 0 18px; border-top: 1px solid var(--rule); }
+.debate h3 { font-family: var(--display); font-weight: 600; font-size: 1.25rem; margin: 0 0 6px; }
+.debate p { margin: 0; color: var(--ink-2); font-size: 1rem; }
+
+.gloss { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 0; margin: 20px 0 0; }
+.gloss dt, .gloss dd { padding: 11px 0; border-top: 1px solid var(--rule); }
+.gloss dt { font-family: var(--display); font-weight: 600; font-size: 1.04rem; padding-right: 20px; line-height: 1.35; }
+.gloss dd { margin: 0; color: var(--ink-2); font-size: .98rem; line-height: 1.5; }
+
+.books { list-style: none; padding: 0; margin: 14px 0 0; display: grid; }
+.books li { padding: 11px 0; border-top: 1px solid var(--rule); font-size: 1rem; color: var(--ink-2); }
+.books cite { color: var(--ink); }
+
+.foot { border-top: 1px solid var(--rule); padding-block: 26px 40px; font-family: var(--mono); font-size: .74rem; color: var(--ink-3); line-height: 1.6; }
+.foot p { margin: 0; max-width: 90ch; }
+
+@media (max-width: 760px) {
+  body { font-size: 1.0625rem; }
+  #rosette { width: 135vw; right: -62vw; top: 28%; opacity: .75; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+  .postulates { grid-template-columns: minmax(0, 1fr); }
+  .ideas { grid-template-columns: minmax(0, 1fr); }
+  .types { grid-template-columns: minmax(0, 1fr); }
+  .timeline li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .gloss { grid-template-columns: minmax(0, 1fr); }
+  .gloss dd { border-top: 0; padding-top: 0; }
+}
+
+/* ---------- site chrome ---------- */
+.home-link { color: var(--ink-2); text-decoration: none; }
+.home-link:hover { color: var(--ink); text-decoration: underline; }
+.theme-toggle {
+  position: fixed; z-index: 30; top: calc(env(safe-area-inset-top, 0px) + 14px); right: 14px;
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+  padding: 7px 11px; border: 1px solid var(--rule); border-radius: 3px; cursor: pointer;
+  background: color-mix(in srgb, var(--paper) 88%, transparent); color: var(--ink-2);
+  backdrop-filter: blur(6px);
+}
+.theme-toggle:hover { color: var(--ink); border-color: var(--rule-strong); }
+</style>
+<!-- link-preview:start — generated by tools/sync.py -->
+<link rel="canonical" href="https://book-summaries-umber.vercel.app/rothbard-man-economy-and-state.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Summaries">
+<meta property="og:title" content="Man, Economy, and State — Murray N. Rothbard">
+<meta property="og:description" content="Economics deduced from one axiom, “man acts”: interest, capital, money and the business cycle, then the same logic turned on the state.">
+<meta property="og:url" content="https://book-summaries-umber.vercel.app/rothbard-man-economy-and-state.html">
+<meta property="og:image" content="https://book-summaries-umber.vercel.app/og/rothbard-man-economy-and-state.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Man, Economy, and State — Murray N. Rothbard">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Man, Economy, and State — Murray N. Rothbard">
+<meta name="twitter:description" content="Economics deduced from one axiom, “man acts”: interest, capital, money and the business cycle, then the same logic turned on the state.">
+<meta name="twitter:image" content="https://book-summaries-umber.vercel.app/og/rothbard-man-economy-and-state.png">
+<!-- link-preview:end -->
+<link rel="stylesheet" href="book-nav.css">
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+
+<header class="hero" id="overview">
+  <canvas id="rosette" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <p class="eyebrow"><a class="home-link" href="index.html">← All summaries</a> · A reader’s summary</p>
+    <p class="axiom">Man <em>acts</em><span class="dot">.</span></p>
+    <p class="axiom-note">The action axiom. Nearly 1,400 pages of economic theory are deduced from this one sentence.</p>
+    <h1>Man, Economy, and State <span>with Power and Market</span></h1>
+    <p class="byline">Murray N. Rothbard · 1926–1995</p>
+    <div class="breath">
+      <p class="kicker">The whole book in one breath</p>
+      <p>Rothbard starts from one proposition he takes to be undeniable: people act, using scarce means to pursue ends. From that, plus two modest assumptions, he deduces all of economic theory step by step: value, exchange, money, prices, interest, capital, profit and loss. The free market that results is a web of voluntary trades, each expected to benefit both sides. Interest reflects the universal preference for sooner over later, and profit and loss steer entrepreneurs toward what consumers want. <cite>Power and Market</cite> then brings in force. Price controls, tariffs, licences, taxes, subsidies and inflation each leave at least one person worse off, destroy information the market would have produced, and invite the next intervention. Economics can’t choose your values, he concludes, but it can show that the market produces harmony and coercion produces conflict.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Published</dt><dd>1962 · 1970</dd></div>
+      <div><dt>Structure</dt><dd>12 + 7 chapters</dd></div>
+      <div><dt>Length</dt><dd>c. 1,400 pages</dd></div>
+      <div><dt>Lineage</dt><dd>Menger → Böhm-Bawerk → Mises</dd></div>
+    </dl>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Contents">
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#origins">Origins</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#ideas">Twelve ideas</a></li>
+      <li class="grp">Part I · Man, Economy &amp; State</li>
+      <li class="mes"><a href="#mes-1"><span class="n">1</span>Human action</a></li>
+      <li class="mes"><a href="#mes-2"><span class="n">2</span>Direct exchange</a></li>
+      <li class="mes"><a href="#mes-3"><span class="n">3</span>Indirect exchange</a></li>
+      <li class="mes"><a href="#mes-4"><span class="n">4</span>Prices &amp; consumption</a></li>
+      <li class="mes"><a href="#mes-5"><span class="n">5</span>Structure of production</a></li>
+      <li class="mes"><a href="#mes-6"><span class="n">6</span>Interest</a></li>
+      <li class="mes"><a href="#mes-7"><span class="n">7</span>Pricing the factors</a></li>
+      <li class="mes"><a href="#mes-8"><span class="n">8</span>Entrepreneurship</a></li>
+      <li class="mes"><a href="#mes-9"><span class="n">9</span>Particular factors</a></li>
+      <li class="mes"><a href="#mes-10"><span class="n">10</span>Monopoly</a></li>
+      <li class="mes"><a href="#mes-11"><span class="n">11</span>Money</a></li>
+      <li class="mes"><a href="#mes-12"><span class="n">12</span>Intervention, 1962</a></li>
+      <li class="grp">Part II · Power &amp; Market</li>
+      <li class="pm"><a href="#pm-1"><span class="n">1</span>Defence services</a></li>
+      <li class="pm"><a href="#pm-2"><span class="n">2</span>Types of intervention</a></li>
+      <li class="pm"><a href="#pm-3"><span class="n">3</span>Triangular</a></li>
+      <li class="pm"><a href="#pm-4"><span class="n">4</span>Taxation</a></li>
+      <li class="pm"><a href="#pm-5"><span class="n">5</span>Government spending</a></li>
+      <li class="pm"><a href="#pm-6"><span class="n">6</span>Antimarket ethics</a></li>
+      <li class="pm"><a href="#pm-7"><span class="n">7</span>Economics &amp; policy</a></li>
+      <li class="grp">Context</li>
+      <li><a href="#mises">Rothbard vs Mises</a></li>
+      <li><a href="#debates">Debates</a></li>
+      <li><a href="#glossary">Glossary</a></li>
+      <li><a href="#reading">Reading path</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+    <details class="mobile-toc">
+      <summary>Contents</summary>
+      <ol>
+        <li><a href="#origins">Origins</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#ideas">Twelve ideas</a></li>
+        <li><a href="#part-1">Part I: Man, Economy, and State</a></li>
+        <li><a href="#part-2">Part II: Power and Market</a></li>
+        <li><a href="#mises">Rothbard vs Mises</a></li>
+        <li><a href="#debates">Debates</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+        <li><a href="#reading">Reading path</a></li>
+      </ol>
+    </details>
+
+    <!-- ORIGINS -->
+    <section class="sec" id="origins">
+      <p class="kicker">Origins</p>
+      <h2>A textbook that became a treatise</h2>
+      <p>In the early 1950s the William Volker Fund asked Murray Rothbard, a young regular at Ludwig von Mises’s seminar at New York University, to write a college-level version of Mises’s <cite>Human Action</cite>. The project outgrew its brief. What Rothbard delivered was a full treatise that rebuilds Austrian economics from the ground up, fills gaps Mises had left, and in several places breaks with him.</p>
+      <p>The publisher cut the long final part on government, so <cite>Power and Market</cite> appeared separately eight years later. Read together, the two books form one argument. Part I describes the market as it would work if no one used force. Part II adds force and traces its effects.</p>
+      <ol class="timeline">
+        <li><span class="yr">1949</span><p>Mises publishes <cite>Human Action</cite>, the systematic treatise of Austrian economics.</p></li>
+        <li><span class="yr">Early 1950s</span><p>The Volker Fund commissions Rothbard’s textbook version. He works on it for most of the decade.</p></li>
+        <li><span class="yr">1956</span><p>“Toward a Reconstruction of Utility and Welfare Economics” sets out the demonstrated-preference welfare theory the treatise relies on.</p></li>
+        <li><span class="yr">1962</span><p><cite>Man, Economy, and State</cite> is published by D. Van Nostrand in two volumes. The intervention material is cut down to a single chapter.</p></li>
+        <li><span class="yr">1963</span><p><cite>America’s Great Depression</cite> applies the book’s business-cycle theory to 1929.</p></li>
+        <li><span class="yr">1970</span><p>The cut material appears as <cite>Power and Market: Government and the Economy</cite>.</p></li>
+        <li><span class="yr">2004</span><p>The Mises Institute’s Scholar’s Edition puts both books back together in one volume.</p></li>
+      </ol>
+      <p class="quote-line">Mises reviewed it as “an epochal contribution” to the science of human action. Alongside <cite>Human Action</cite>, it remains the most complete systematic statement of Austrian economics.</p>
+    </section>
+
+    <!-- METHOD -->
+    <section class="sec" id="method">
+      <p class="kicker">Method</p>
+      <h2>Economics as logic, not lab work</h2>
+      <p>Rothbard follows Mises in treating economics as a branch of <em>praxeology</em>, the general science of human action. Its laws aren’t hypotheses to be tested against data. They are deduced from premises known to be true, so the conclusions are true as long as the reasoning holds. The whole structure rests on one axiom and two small empirical postulates.</p>
+      <div class="postulates">
+        <div>
+          <p class="k">Axiom</p>
+          <p class="s">Humans act.</p>
+          <p>People pursue ends with scarce means, through time, under uncertainty. Rothbard holds that this is self-evident: anyone can see it by reflecting on their own conduct, and arguing against it is itself an action.</p>
+        </div>
+        <div>
+          <p class="k">Postulate</p>
+          <p class="s">Variety.</p>
+          <p>People and natural resources differ. That is why the division of labour and trade exist.</p>
+        </div>
+        <div>
+          <p class="k">Postulate</p>
+          <p class="s">Leisure is a good.</p>
+          <p>People value free time, so work always has a cost: the leisure given up.</p>
+        </div>
+      </div>
+      <ul class="points">
+        <li><strong>Verbal logic over mathematics.</strong> Equations describe simultaneous, functional relations; action is a causal sequence through time. Calculus assumes smooth, infinitely small changes, while real choices are discrete. Graphs can illustrate a point, but the mathematics does not explain it.</li>
+        <li><strong>History illustrates; it can’t test.</strong> Every historical event has many causes and never repeats under controlled conditions, so statistics can apply a theory but never confirm or refute it.</li>
+        <li><strong>Imaginary constructs isolate one factor at a time.</strong> The Crusoe economy shows action with no exchange. The evenly rotating economy removes uncertainty, so interest can be studied without profit and loss mixed in.</li>
+        <li><strong>Value-free.</strong> Praxeology says what follows from an action, not whether it is good. Rothbard holds to this in both books. Even the critique of intervention is framed as “this policy produces these effects,” not as a moral verdict.</li>
+      </ul>
+    </section>
+
+    <!-- IDEAS -->
+    <section class="sec" id="ideas">
+      <p class="kicker">If you remember nothing else</p>
+      <h2>Twelve ideas that carry the book</h2>
+      <div class="ideas">
+        <div class="idea"><p class="tag">MES ch. 1</p><h3>Everything starts from action</h3><p>Economics is deduced from the fact that people act on purpose. Its laws are logical, not statistical, and hold in every time and place.</p></div>
+        <div class="idea"><p class="tag">MES ch. 1, 4</p><h3>Value is ranked, never measured</h3><p>Utility is ordinal. People rank alternatives; they don’t add up units of satisfaction. The only preferences economics can see are the ones people show by choosing.</p></div>
+        <div class="idea"><p class="tag">MES ch. 2</p><h3>Free exchange benefits both sides</h3><p>A trade happens only when each side values what it gets more than what it gives, so every voluntary exchange raises both parties’ expected well-being.</p></div>
+        <div class="idea"><p class="tag">MES ch. 3, 4</p><h3>Money is a market product</h3><p>The most marketable commodity becomes the medium of exchange. States adopt money; they don’t invent it. The regression theorem traces money’s value back to its value as a commodity.</p></div>
+        <div class="idea"><p class="tag">MES ch. 6</p><h3>Interest is the price of time</h3><p>Everyone prefers a good now to the same good later. That time preference, not the productivity of capital, sets the rate of interest, and interest shows up in every price spread, not just in loans.</p></div>
+        <div class="idea"><p class="tag">MES ch. 5, 8</p><h3>Production is a structure in time</h3><p>Capital goods are waystations on the road to consumer goods. Saving lengthens the structure and raises output and real wages. Consuming capital shortens it.</p></div>
+        <div class="idea"><p class="tag">MES ch. 8</p><h3>Profit and loss steer the economy</h3><p>Entrepreneurs bet on future prices. Right bets earn profit and pull resources toward what consumers want; wrong ones earn losses and push resources away.</p></div>
+        <div class="idea"><p class="tag">MES ch. 10</p><h3>“Monopoly price” is an illusion</h3><p>On a free market there is no “competitive price” to measure a monopoly price against. The only real monopoly is an exclusive privilege granted by the state.</p></div>
+        <div class="idea"><p class="tag">MES ch. 10</p><h3>Firms can’t outgrow calculation</h3><p>A firm that owned every stage of a product would have no outside prices to calculate with. That caps the size of firms, and it is the same reason socialism fails.</p></div>
+        <div class="idea"><p class="tag">MES ch. 11, 12</p><h3>Credit expansion causes boom and bust</h3><p>New bank credit pushes interest below the rate time preference would set. Investment flows into projects that real savings can’t finish, and the bust is the correction.</p></div>
+        <div class="idea pm"><p class="tag">P&amp;M ch. 2–4</p><h3>Force comes in three shapes</h3><p>Autistic, binary and triangular intervention each make at least one person worse off, so no intervention can be shown to raise social welfare. No tax is neutral.</p></div>
+        <div class="idea pm"><p class="tag">P&amp;M ch. 1</p><h3>Even defence can be a market service</h3><p>Police, courts and arbitration are services like any other, and competing private agencies could supply them. The state’s monopoly is not an economic necessity.</p></div>
+      </div>
+    </section>
+
+    <!-- PART I -->
+    <section class="part" id="part-1">
+      <p class="part-num">Part I</p>
+      <h2>Man, Economy, and State</h2>
+      <p class="part-lede">1962, twelve chapters. The market economy is built up in order: from one person acting alone, to exchange, to money, to a full economy with capital, interest, entrepreneurs and a theory of money. Each chapter rests on the ones before it.</p>
+    </section>
+
+    <article class="chapter mes" id="mes-1">
+      <p class="ch-label">Man, Economy, and State · Chapter 1</p>
+      <h3>Fundamentals of Human Action</h3>
+      <p class="gist">What it means to act, and the laws that follow before a second person even appears.</p>
+      <ul class="points">
+        <li>Action is purposeful behaviour: an actor uses means they believe will reach ends they value. Means are scarce by definition. Anything that served every end without limit would not need to be economised.</li>
+        <li>Every action takes time and faces an uncertain future. People rank their ends on an ordinal value scale: they compare, and never measure.</li>
+        <li><strong>Time preference:</strong> other things equal, a satisfaction now is preferred to the same satisfaction later. This is a universal feature of action, not a quirk of psychology.</li>
+        <li><strong>The law of marginal utility</strong> follows from ranking. Each additional unit of a good goes to a less-valued use, so the value of any one unit equals the value of the least important end the supply serves.</li>
+        <li>Goods are ordered by distance from consumption: consumer goods first, then producers’ goods of successively higher orders. The original factors are labour and nature-given land; capital goods are produced factors.</li>
+        <li><strong>The law of returns:</strong> factors have an optimum proportion, and beyond it, adding more of one factor yields less and less.</li>
+        <li>Robinson Crusoe shows capital formation in miniature. To make a tool he must first save, giving up consumption while he builds it. Accumulating capital, not technology alone, is what raises productivity.</li>
+        <li>Cost is the value of the best alternative given up. Every action trades a less satisfactory state for one expected to be better, which yields psychic profit or, if the actor guessed wrong, psychic loss.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-2">
+      <p class="ch-label">Man, Economy, and State · Chapter 2</p>
+      <h3>Direct Exchange</h3>
+      <p class="gist">When two people meet they can trade or they can fight. Price theory is built out of the first choice.</p>
+      <ul class="points">
+        <li>Interpersonal action takes two forms, voluntary exchange and violence. A society of free exchange is <em>contractual</em>; one run by command is <em>hegemonic</em>. This distinction frames the whole book.</li>
+        <li>Exchange happens only when the parties value the goods in reverse order, each preferring what they receive to what they give up. Both expect to gain.</li>
+        <li>The division of labour rests on human and natural variety. Ricardo’s law of association (comparative advantage) shows that even the less productive partner gains by specialising.</li>
+        <li>In an isolated barter, the price falls somewhere in a zone set by the two parties’ valuations. As buyers and sellers compete, it narrows to the range set by the <em>marginal pairs</em>, the last buyer and seller who can just make a trade.</li>
+        <li>Supply and demand schedules come straight from individual value scales. Because a stock exists at any moment, “supply” is really the stock minus sellers’ own reservation demand. The market price is the one at which the total demand to hold the good equals the total stock.</li>
+        <li>Speculation speeds prices toward market-clearing levels. Speculators who guess wrong bear the losses.</li>
+        <li>The market presupposes property: ownership of oneself, title to unowned resources by first use (homesteading), and defence of both against invasion.</li>
+        <li>Barter needs a double coincidence of wants, and that limit is what drives the emergence of money.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-3">
+      <p class="ch-label">Man, Economy, and State · Chapter 3</p>
+      <h3>The Pattern of Indirect Exchange</h3>
+      <p class="gist">How money emerges, and what a monetary economy looks like from the inside.</p>
+      <ul class="points">
+        <li>Following Carl Menger, people trade for goods that are easier to re-trade. The process snowballs until one or two commodities, historically gold and silver, become money. Money arises on the market, not by decree.</li>
+        <li>Once there is money, every good has a money price, and incomes and outlays can be added up in one unit. That is what makes economic calculation, the reckoning of profit and loss, possible.</li>
+        <li>Each person divides their money among consumption, investment and cash held, and ranks those uses by marginal utility like anything else.</li>
+        <li>Production takes time, so capitalists pay the owners of labour and land before the product is sold. Money flows from consumers back through the stages of production as incomes.</li>
+        <li>The chapter introduces the roles the rest of the book analyses: consumer, worker, landowner, capitalist and entrepreneur.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-4">
+      <p class="ch-label">Man, Economy, and State · Chapter 4</p>
+      <h3>Prices and Consumption</h3>
+      <p class="gist">How consumer prices form in money, and why the value of money itself isn’t a circular argument.</p>
+      <ul class="points">
+        <li>Buyers and sellers rank units of money and units of goods on the same value scale. Those rankings produce money demand and supply schedules, and the market price clears them.</li>
+        <li><strong>The Austrian circle.</strong> The demand for money depends on its purchasing power, and its purchasing power depends on demand. Mises’s <em>regression theorem</em> breaks the loop: today’s demand rests on yesterday’s purchasing power, back to the day the money commodity was valued only for its direct uses.</li>
+        <li>Durable goods have two prices: a rent for their services per period, and a price for the good itself, which tends to equal the discounted sum of its expected future rents. This is <em>capitalization</em>.</li>
+        <li>Indifference curves are rejected. Indifference can never show up in action, because to act is to choose. Economics has to rest on <em>demonstrated preference</em>, and it cannot compare utility between people.</li>
+        <li>Concepts that need measurable utility, such as consumer surplus, are rejected for the same reason.</li>
+        <li>Correct speculation smooths prices over time; mistaken speculation is punished by losses.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-5">
+      <p class="ch-label">Man, Economy, and State · Chapter 5</p>
+      <h3>Production: The Structure</h3>
+      <p class="gist">Production is a sequence of stages, and the capitalist’s job is to pay the factors now and wait to be paid later.</p>
+      <ul class="points">
+        <li>The <strong>evenly rotating economy</strong> (ERE) is a construct in which the same things happen every period and nothing is uncertain. With profit and loss gone, what remains is wages, rents and pure interest.</li>
+        <li>Workers and landowners want to be paid now, but the product is ready only later. Capitalists buy their services with present money and sell the product in the future. They supply present goods and earn the time discount, which is interest.</li>
+        <li>Money flows down from consumers through the stages: retailers buy from wholesalers, wholesalers from manufacturers, and so on back to raw materials. Each stage buys from the one above it and pays its own labour, land and interest.</li>
+        <li>In the ERE every stage earns the same rate of interest. If one firm owns several stages, nothing changes: it simply earns the interest implicitly.</li>
+        <li>Businesses spend far more buying intermediate goods from each other than consumers spend on final goods. National-income statistics net that spending out, which hides most economic activity and the savings that sustain it.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · The structure of production in an evenly rotating economy</p>
+        <div class="fig-scroll">
+          <svg class="sop" viewBox="0 0 720 320" role="img" aria-labelledby="sop-t sop-d">
+            <title id="sop-t">Structure of production</title>
+            <desc id="sop-d">Five stages of production. Each stage's revenue equals what it paid the stage above, plus wages and rents, plus interest. Revenues rise from 18 at the raw-materials stage to 100 at retail.</desc>
+            <!-- axis -->
+            <path class="sop-axis" d="M170 278 H670"/>
+            <path class="sop-axis" d="M170 278 v5 M295 278 v5 M420 278 v5 M545 278 v5 M670 278 v5"/>
+            <text class="sop-tick" x="170" y="298" text-anchor="middle">0</text>
+            <text class="sop-tick" x="295" y="298" text-anchor="middle">25</text>
+            <text class="sop-tick" x="420" y="298" text-anchor="middle">50</text>
+            <text class="sop-tick" x="545" y="298" text-anchor="middle">75</text>
+            <text class="sop-tick" x="670" y="298" text-anchor="middle">100</text>
+            <text class="sop-tick" x="420" y="316" text-anchor="middle">money spent per period (illustrative units)</text>
+            <!-- guides -->
+            <path class="sop-guide" d="M260 54 V76 M355 106 V128 M455 158 V180 M560 210 V232"/>
+            <!-- stage 5 -->
+            <text class="sop-stage" x="156" y="36" text-anchor="end">STAGE 5</text>
+            <text class="sop-name" x="156" y="52" text-anchor="end">Raw materials</text>
+            <rect class="seg-factor" x="170" y="24" width="85" height="30"/>
+            <rect class="seg-int" x="255" y="24" width="5" height="30"/>
+            <text class="sop-val" x="268" y="44">18</text>
+            <!-- stage 4 -->
+            <text class="sop-stage" x="156" y="88" text-anchor="end">STAGE 4</text>
+            <text class="sop-name" x="156" y="104" text-anchor="end">Components</text>
+            <rect class="seg-prior" x="170" y="76" width="90" height="30"/>
+            <rect class="seg-factor" x="260" y="76" width="85" height="30"/>
+            <rect class="seg-int" x="345" y="76" width="10" height="30"/>
+            <text class="sop-val" x="363" y="96">37</text>
+            <!-- stage 3 -->
+            <text class="sop-stage" x="156" y="140" text-anchor="end">STAGE 3</text>
+            <text class="sop-name" x="156" y="156" text-anchor="end">Manufacture</text>
+            <rect class="seg-prior" x="170" y="128" width="185" height="30"/>
+            <rect class="seg-factor" x="355" y="128" width="85" height="30"/>
+            <rect class="seg-int" x="440" y="128" width="15" height="30"/>
+            <text class="sop-val" x="463" y="148">57</text>
+            <!-- stage 2 -->
+            <text class="sop-stage" x="156" y="192" text-anchor="end">STAGE 2</text>
+            <text class="sop-name" x="156" y="208" text-anchor="end">Wholesale</text>
+            <rect class="seg-prior" x="170" y="180" width="285" height="30"/>
+            <rect class="seg-factor" x="455" y="180" width="85" height="30"/>
+            <rect class="seg-int" x="540" y="180" width="20" height="30"/>
+            <text class="sop-val" x="568" y="200">78</text>
+            <!-- stage 1 -->
+            <text class="sop-stage" x="156" y="244" text-anchor="end">STAGE 1</text>
+            <text class="sop-name" x="156" y="260" text-anchor="end">Retail</text>
+            <rect class="seg-prior" x="170" y="232" width="390" height="30"/>
+            <rect class="seg-factor" x="560" y="232" width="85" height="30"/>
+            <rect class="seg-int" x="645" y="232" width="25" height="30"/>
+            <text class="sop-val" x="678" y="252">100</text>
+          </svg>
+        </div>
+        <div class="legend" aria-hidden="true">
+          <span><i class="sw prior"></i>Bought from the stage above</span>
+          <span><i class="sw factor"></i>Paid to labour and land</span>
+          <span><i class="sw int"></i>Interest</span>
+        </div>
+        <figcaption>Illustrative numbers, about 5% interest per stage. Consumers spend 100, and all of it resolves into wages and rents (85) plus interest (15). Yet total spending across the five stages is 290: most economic activity is businesses buying from businesses.</figcaption>
+      </figure>
+    </article>
+
+    <article class="chapter mes" id="mes-6">
+      <p class="ch-label">Man, Economy, and State · Chapter 6</p>
+      <h3>Production: The Rate of Interest and Its Determination</h3>
+      <p class="gist">The analytical heart of the book: interest comes from time preference and nothing else.</p>
+      <ul class="points">
+        <li>Interest is not mainly about loans. It is the spread between what a capitalist pays for factors and what the product later sells for: the price of present goods in terms of future goods. The loan market is a small part of this wider <em>time market</em>.</li>
+        <li>On the time market, savers supply present goods in exchange for future ones. Workers and landowners, along with consumer borrowers, supply future goods in exchange for present money. The rate that clears this market is set by everyone’s time preferences.</li>
+        <li><strong>The pure time-preference theory</strong>, after Frank Fetter and Mises. The productivity of capital explains why roundabout methods are used, not why interest exists, because that productivity is already priced into capital goods. Böhm-Bawerk’s “technical superiority of present goods” is dropped as a separate cause.</li>
+        <li>Lower time preference means more saving, a longer structure of production, higher productivity and higher real wages. Higher time preference reverses each step.</li>
+        <li>Arbitrage pulls the loan rate toward this natural rate and pushes interest toward one uniform rate across stages and industries.</li>
+        <li>Rival theories are critiqued along the way, including productivity and “abstinence” explanations and the treatment of capital as a permanent, self-renewing fund.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-7">
+      <p class="ch-label">Man, Economy, and State · Chapter 7</p>
+      <h3>Production: General Pricing of the Factors</h3>
+      <p class="gist">Why each factor earns what it does: consumer demand, imputed back through the stages and discounted for time.</p>
+      <ul class="points">
+        <li>Factor prices derive from the expected prices of what the factors help produce. In the ERE each factor tends to earn its <strong>discounted marginal value product</strong> (DMVP): its marginal physical product, times the product’s price, discounted by the interest rate for the time until the product sells.</li>
+        <li>Rothbard widens “rent” to mean the price of any good’s services per period, not just land’s. Durable factors such as land and capital goods have capital values equal to their discounted expected rents.</li>
+        <li>Labour can’t be capitalised in a free society, because people own themselves. Only slavery puts a capital value on a person.</li>
+        <li>Capital goods earn no independent net return in the long run. Their gross rents are imputed back to the land, labour and time that produced them, so in the ERE all income resolves into wages, ground rents and interest.</li>
+        <li>The imputed shares add up exactly to the value of the product, so the “adding-up problem” that troubles mathematical marginal-productivity theory never arises.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-8">
+      <p class="ch-label">Man, Economy, and State · Chapter 8</p>
+      <h3>Production: Entrepreneurship and Change</h3>
+      <p class="gist">Leave the evenly rotating economy, let the future be uncertain, and the entrepreneur appears.</p>
+      <ul class="points">
+        <li>Entrepreneurs buy factors at today’s prices as a bet on tomorrow’s product prices. Accurate forecasts earn profits and mistaken ones earn losses.</li>
+        <li>Rothbard’s central figure is the <strong>capitalist-entrepreneur</strong>, the person who puts up the money and bears the uncertainty.</li>
+        <li>Profits and losses are the signals that move resources to where consumers want them most. Competition erodes profits over time and pulls the economy toward the equilibrium that current conditions imply.</li>
+        <li>Total profits and losses track net saving. In a growing economy with positive net saving, total profits exceed total losses; in a stationary one they cancel out; in a declining one losses win.</li>
+        <li>Technology is rarely the binding constraint. Better methods sit unused until savings provide the capital to adopt them. Capital accumulation lengthens the structure of production and raises real wages.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-9">
+      <p class="ch-label">Man, Economy, and State · Chapter 9</p>
+      <h3>Production: Particular Factor Prices and Productive Incomes</h3>
+      <p class="gist">The general theory applied to particular factors: land, natural resources, labour, location, and to cost.</p>
+      <ul class="points">
+        <li>Land prices follow the general capitalization rule. Owners of exhaustible resources use or conserve them according to their expectations of future prices, so private ownership handles conservation.</li>
+        <li>Wage rates tend toward each worker’s DMVP. Because most labour is non-specific, workers can move across many uses. Lasting involuntary unemployment can only come from wage rates held above the level that clears the market.</li>
+        <li>Idle resources are not waste in themselves. A factor sits unused either because it is submarginal or because its owner is holding out for a better price.</li>
+        <li><strong>Cost is subjective:</strong> it is the value of the best alternative forgone. Costs don’t determine prices. Expected prices determine what producers will pay for factors, and so determine costs.</li>
+        <li>The price of the same good tends to equalise across places, apart from transport costs, and that governs where industries locate.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-10">
+      <p class="ch-label">Man, Economy, and State · Chapter 10</p>
+      <h3>Monopoly and Competition</h3>
+      <p class="gist">The most provocative chapter: on a free market, “monopoly price” has no meaning.</p>
+      <ul class="points">
+        <li>“Consumers’ sovereignty” is the wrong frame, because producers are free to refuse, or to choose leisure or pleasant work over higher pay. Rothbard substitutes <em>individual sovereignty</em>: each person decides over their own property.</li>
+        <li>Cartels are voluntary joint ventures. They are unstable and tend to break up, and a cartel that restricts output can’t be shown to harm anyone by any standard outside the market itself.</li>
+        <li><strong>One big cartel is impossible.</strong> A firm that owned every stage of production for a good would have no external market prices for what passes between its divisions, so it couldn’t calculate profit or loss. That limits the size of firms, and it is Mises’s case against socialism applied to business.</li>
+        <li><strong>Monopoly price is an empty concept on the free market.</strong> Identifying one requires a “competitive price” to compare it with, and there is no such price apart from the market price itself. The meaningful sense of monopoly is the older one: an exclusive privilege granted by government.</li>
+        <li>“Perfect competition” is an unreal model, not an ideal. Monopolistic-competition theory (Chamberlin, Robinson) is wrong to treat product differentiation and “excess capacity” as waste, since both reflect what consumers actually want.</li>
+        <li>Predatory price-cutting is costly and self-defeating: the predator loses more than its rivals, and new entrants wait for prices to rise.</li>
+        <li>Unions can raise some wages only by restricting who may work, which pushes other workers into lower-paid jobs.</li>
+        <li><strong>Patents vs copyright:</strong> a copyright can arise from contract, for example selling a book on condition that it isn’t copied. A patent can’t, because it bars independent inventors who never agreed to anything. Patents are state monopoly grants.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-11">
+      <p class="ch-label">Man, Economy, and State · Chapter 11</p>
+      <h3>Money and Its Purchasing Power</h3>
+      <p class="gist">No single “price level”, no social gain from more money, and a gold standard as the market’s own outcome.</p>
+      <ul class="points">
+        <li>The purchasing power of money is set by the supply of and demand for money. It is an array of exchange ratios against every good, not one “price level” an index could capture.</li>
+        <li>The equation of exchange (MV = PT) and “velocity” treat averages as causes. Rothbard rejects the mechanical quantity theory but keeps its core truth: more money means lower purchasing power than there would otherwise be.</li>
+        <li><strong>Any quantity of money is optimal.</strong> More money adds nothing to the services money provides. It only dilutes purchasing power and shifts wealth to whoever receives the new money first, before prices adjust.</li>
+        <li>“Hoarding” is not a problem. All money is always held by someone, and a rise in the demand for money simply raises its purchasing power. Falling prices are not harmful in themselves.</li>
+        <li>A receipt fully backed by gold is a claim on money, not new money. Issuing claims beyond the gold held, which is what fractional-reserve banking does, creates <em>fiduciary media</em>. Rothbard treats this as a breach of the warehouse contract and argues for 100% reserves.</li>
+        <li>Coinage can be a private business. Gresham’s law operates only when law fixes the exchange ratio between two moneys.</li>
+        <li>Exchange rates between currencies tend toward purchasing-power parity.</li>
+        <li>A long critique of Keynes covers the consumption function, the multiplier, the saving–investment apparatus, liquidity preference and “underemployment equilibrium.” Rothbard traces the last to money wages held rigid, not to any failure of the market.</li>
+      </ul>
+    </article>
+
+    <article class="chapter mes" id="mes-12">
+      <p class="ch-label">Man, Economy, and State · Chapter 12</p>
+      <h3>The Economics of Violent Intervention in the Market</h3>
+      <p class="gist">The 1962 bridge to <cite>Power and Market</cite>, and the home of the book’s business-cycle theory.</p>
+      <ul class="points">
+        <li>This is a compressed survey of intervention that <cite>Power and Market</cite> later expands in full, following the same classification and arguments.</li>
+        <li>Inflation, meaning the creation of new money by government or banks, is treated as an intervention: the issuer acquires real resources without producing anything, at the expense of those who receive the money later.</li>
+        <li>Credit expansion produces the Austrian business cycle of Mises and Hayek, traced step by step below.</li>
+        <li>The policy corollary: in a depression, government should not prop up wages or prices, rescue failing firms or inflate again. Letting the liquidation run is the fastest route to recovery. Rothbard applies this to 1929–33 in <cite>America’s Great Depression</cite>.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · The Austrian business cycle, in sequence</p>
+        <ol class="cycle">
+          <li><div><p class="phase">Credit expansion</p><p>Banks, backed by a central bank, lend out newly created money. The loan rate falls below the natural rate that people’s time preferences would set.</p></div></li>
+          <li><div><p class="phase">Malinvestment</p><p>Entrepreneurs read cheap credit as a sign that people have saved more. They start longer, more capital-intensive projects in the higher stages: mining, construction, machinery.</p></div></li>
+          <li><div><p class="phase">Boom</p><p>The new money bids up wages and prices in those stages and spreads outward as income. It looks like prosperity.</p></div></li>
+          <li><div><p class="phase">Reassertion</p><p>Time preferences never changed. As the money reaches income earners, they go back to their old split between spending and saving. The savings needed to finish the new projects aren’t there, and demand shifts back toward consumer goods.</p></div></li>
+          <li><div><p class="phase">Bust</p><p>The projects are revealed as malinvestments and are abandoned or sold at a loss. The depression is the economy liquidating those errors and rebuilding a structure that matches what people actually want. It is the recovery, not the disease.</p></div></li>
+        </ol>
+      </figure>
+    </article>
+
+    <!-- PART II -->
+    <section class="part pm" id="part-2">
+      <p class="part-num">Part II</p>
+      <h2>Power and Market</h2>
+      <p class="part-lede">1970, seven chapters. Now force enters. Rothbard borrows Franz Oppenheimer’s distinction between the <em>economic means</em> of getting wealth (producing and trading) and the <em>political means</em> (taking it), and traces what the political means does to the market Part I described.</p>
+    </section>
+
+    <article class="chapter pm" id="pm-1">
+      <p class="ch-label">Power and Market · Chapter 1</p>
+      <h3>Defense Services on the Free Market</h3>
+      <p class="gist">Before analysing what the state does, Rothbard asks whether it is needed at all, and answers no.</p>
+      <ul class="points">
+        <li>Defending people and property through police, courts and arbitration is a service like any other. Competing private agencies, paid voluntarily much like insurance, could supply it.</li>
+        <li>Disputes between agencies would go to arbitrators or appeal courts that both accept. The market would settle on a common legal code grounded in self-ownership and property rights.</li>
+        <li>The classical-liberal ideal of limited government is unstable, he argues. A body with a monopoly of force, funded by compulsory taxes, has no market check to keep it limited.</li>
+        <li>The state is identified by how it gets its revenue: taxation, taken by coercion, together with a claimed monopoly of force over a territory. The analysis of intervention that follows applies to whoever uses force, state or private criminal.</li>
+      </ul>
+    </article>
+
+    <article class="chapter pm" id="pm-2">
+      <p class="ch-label">Power and Market · Chapter 2</p>
+      <h3>Fundamentals of Intervention</h3>
+      <p class="gist">A taxonomy of force, and a proof that no intervention can be shown to raise social welfare.</p>
+      <ul class="points">
+        <li>Intervention is the intrusion of force into free exchange. It comes in three shapes (see the figure below).</li>
+        <li>In a free exchange both parties expect to gain. Under intervention the intervener gains and at least one subject loses, because being coerced shows the subject would have chosen differently.</li>
+        <li>Economics can’t compare utility between people, so the only welfare judgement it can make is the unanimity one. The free market raises every participant’s expected utility; no intervention can be shown to raise social utility.</li>
+        <li>After the fact, the market corrects its own errors because mistaken entrepreneurs take losses. Government has no comparable test.</li>
+        <li>Interventions distort prices and production, and the problems they create invite further intervention.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Rothbard’s three types of intervention</p>
+        <div class="types">
+          <div>
+            <svg viewBox="0 0 240 140" role="img" aria-label="Autistic intervention: the intervener commands one subject, with no exchange">
+              <path class="t-arrow" d="M72 70 H160"/>
+              <polygon class="t-head" points="168,70 157,64 157,76"/>
+              <text class="t-lab" x="120" y="58" text-anchor="middle">command</text>
+              <circle class="n-i" cx="50" cy="70" r="20"/>
+              <text class="n-i-t" x="50" y="75" text-anchor="middle">I</text>
+              <circle class="n-s" cx="190" cy="70" r="20"/>
+              <text class="n-s-t" x="190" y="75" text-anchor="middle">S</text>
+            </svg>
+            <h4>Autistic</h4>
+            <p>The intervener commands a single subject, and no exchange takes place. Example: banning a form of speech or worship.</p>
+          </div>
+          <div>
+            <svg viewBox="0 0 240 140" role="img" aria-label="Binary intervention: a forced exchange between the intervener and the subject">
+              <path class="t-arrow" d="M170 60 H78"/>
+              <polygon class="t-head" points="70,60 81,54 81,66"/>
+              <path class="t-arrow" d="M70 80 H162"/>
+              <polygon class="t-head" points="170,80 159,74 159,86"/>
+              <text class="t-lab" x="120" y="47" text-anchor="middle">taxes, labour</text>
+              <text class="t-lab" x="120" y="102" text-anchor="middle">(services, if any)</text>
+              <circle class="n-i" cx="50" cy="70" r="20"/>
+              <text class="n-i-t" x="50" y="75" text-anchor="middle">I</text>
+              <circle class="n-s" cx="190" cy="70" r="20"/>
+              <text class="n-s-t" x="190" y="75" text-anchor="middle">S</text>
+            </svg>
+            <h4>Binary</h4>
+            <p>A forced exchange between the intervener and the subject. Examples: taxation, conscription, subsidies.</p>
+          </div>
+          <div>
+            <svg viewBox="0 0 240 140" role="img" aria-label="Triangular intervention: the intervener compels or forbids an exchange between two others">
+              <path class="t-ex" d="M72 110 H168"/>
+              <text class="t-lab" x="120" y="132" text-anchor="middle">exchange</text>
+              <path class="t-arrow" d="M120 50 V94"/>
+              <polygon class="t-head" points="120,102 114,91 126,91"/>
+              <text class="t-lab" x="130" y="78">must / must not</text>
+              <circle class="n-i" cx="120" cy="30" r="20"/>
+              <text class="n-i-t" x="120" y="35" text-anchor="middle">I</text>
+              <circle class="n-s" cx="50" cy="110" r="20"/>
+              <text class="n-s-t" x="50" y="115" text-anchor="middle">A</text>
+              <circle class="n-s" cx="190" cy="110" r="20"/>
+              <text class="n-s-t" x="190" y="115" text-anchor="middle">B</text>
+            </svg>
+            <h4>Triangular</h4>
+            <p>The intervener compels or forbids an exchange between two other people. Examples: price controls, product bans, licensing, tariffs.</p>
+          </div>
+        </div>
+      </figure>
+    </article>
+
+    <article class="chapter pm" id="pm-3">
+      <p class="ch-label">Power and Market · Chapter 3</p>
+      <h3>Triangular Intervention</h3>
+      <p class="gist">Controls on prices and products, and the long list of privileges that restrict who may sell.</p>
+      <ul class="points">
+        <li><strong>Maximum prices</strong> set below the market rate create shortages, queues, rationing, black markets and falling quality. <strong>Minimum prices</strong> set above it create unsold surpluses, and a minimum wage produces unemployment among the least productive workers.</li>
+        <li>Controls spread. A shortage in one market pushes demand, and then controls, into neighbouring ones.</li>
+        <li>Bribery under controls is analysed without moralising, as the market partly reasserting itself against the law.</li>
+        <li>Banning a product cuts consumers off from what they want and creates a black market.</li>
+        <li><strong>Grants of monopolistic privilege</strong> each restrict entry to benefit one group at others’ expense: licensing, tariffs and quotas, immigration restrictions, child-labour laws, compulsory cartels, conservation laws, patents, franchises, quality and safety standards, and antitrust law. Antitrust penalises efficiency under a concept of monopoly that does not survive Chapter 10.</li>
+        <li>In every case, consumers and excluded producers pay so the privileged group can gain.</li>
+      </ul>
+    </article>
+
+    <article class="chapter pm" id="pm-4">
+      <p class="ch-label">Power and Market · Chapter 4</p>
+      <h3>Binary Intervention: Taxation</h3>
+      <p class="gist">Who really pays, why no tax can be neutral, and how taxation divides society into two classes.</p>
+      <ul class="points">
+        <li><strong>No tax is neutral.</strong> Every tax, even a uniform head tax, changes production away from what the market would have produced.</li>
+        <li>A general sales tax can’t simply be passed on to consumers, because prices are set by demand and the money stock. It falls on the incomes of the owners of labour and land, so in effect it is an income tax.</li>
+        <li>Income taxes penalise work relative to leisure. By taxing the returns to saving they also raise effective time preference, which means less saving and less capital. Progressive rates hit the most productive hardest.</li>
+        <li>Taxes on accumulation, such as property, inheritance and capital-gains taxes, eat directly into the capital stock.</li>
+        <li>Henry George’s single tax on land is rejected. Ground rent is not an “unearned” return, and taxing all of it would wipe out land’s capital value and the price signals that allocate it efficiently.</li>
+        <li>The standard “canons of justice” in taxation all fail. “Ability to pay” and “equal sacrifice” require utility that can be measured and compared between people. The benefit principle can’t apply to compulsory payments, and true neutrality is impossible.</li>
+        <li>Taxation splits society into <strong>net taxpayers</strong> and <strong>net tax-consumers</strong>: government employees and subsidised groups. Rothbard takes the idea from John C. Calhoun.</li>
+      </ul>
+    </article>
+
+    <article class="chapter pm" id="pm-5">
+      <p class="ch-label">Power and Market · Chapter 5</p>
+      <h3>Binary Intervention: Government Expenditures</h3>
+      <p class="gist">Government spending doesn’t add to output. It redirects resources, and it can’t calculate.</p>
+      <ul class="points">
+        <li>Government spending diverts resources from the uses consumers would have chosen. National accounts that add it to output count a cost as if it were a product. Rothbard proposes <strong>Private Product Remaining</strong>: output net of what government absorbs.</li>
+        <li>Subsidies and transfer payments penalise the efficient and reward the inefficient. Subsidising a condition such as unemployment produces more of it.</li>
+        <li>Government enterprises can’t calculate. Their revenue is compulsory and taxes can cover their losses, so they face no profit-and-loss test. Free or underpriced services lead to overuse, shortages and rationing by politics.</li>
+        <li>Public ownership turns allocation into political conflict: who gets to use the road, the park or the school.</li>
+        <li>Complete government ownership, socialism, faces Mises’s calculation problem. With no market for capital goods there are no prices, and so no way to allocate rationally.</li>
+      </ul>
+    </article>
+
+    <article class="chapter pm" id="pm-6">
+      <p class="ch-label">Power and Market · Chapter 6</p>
+      <h3>Antimarket Ethics: A Praxeological Critique</h3>
+      <p class="gist">The ethical case against the market, tested for consistency and economic error rather than answered with a rival ethic.</p>
+      <ul class="points">
+        <li><strong>Immoral choices.</strong> If people choose badly, coercion can’t make them moral, since morality requires free choice. And the coercers are no less fallible than anyone else.</li>
+        <li><strong>Human nature.</strong> The market doesn’t need saints. It works with people as they are and channels self-interest into serving others.</li>
+        <li><strong>Equality.</strong> Human variety makes equal outcomes impossible without continual coercion.</li>
+        <li><strong>Security.</strong> No system can guarantee security. The market supplies as much of it as can be supplied, through saving and insurance.</li>
+        <li><strong>Power.</strong> “Economic power” is only the right to refuse an exchange. That is different in kind from political power, which is the power to use force.</li>
+        <li>Charges of luck, selfishness and materialism are taken one at a time and shown to rest on confusion about how the market works.</li>
+        <li>Human rights are property rights. Free speech, for example, is the right to use one’s own property and to make contracts.</li>
+      </ul>
+    </article>
+
+    <article class="chapter pm" id="pm-7">
+      <p class="ch-label">Power and Market · Chapter 7</p>
+      <h3>Conclusion: Economics and Public Policy</h3>
+      <p class="gist">What a value-free science can still say about politics.</p>
+      <ul class="points">
+        <li>Economics can’t choose ultimate ends. It can say whether a policy achieves the ends its own supporters want, and interventions routinely fail that test.</li>
+        <li>There are two ways to organise society, by contract or by command. The market produces harmony, since every exchange benefits both sides. Intervention produces caste conflict between those who gain and those who pay.</li>
+        <li>The mixed economy is unstable. Each intervention creates problems that seem to call for another, pushing toward full statism unless intervention is rolled back toward the free market.</li>
+      </ul>
+    </article>
+
+    <!-- MISES -->
+    <section class="sec" id="mises" style="margin-top:56px">
+      <p class="kicker">Context</p>
+      <h2>Where Rothbard parts from Mises</h2>
+      <p>The book set out to explain <cite>Human Action</cite> and ended up amending it. Their agreements run deeper than the disagreements, but the disagreements are what made Rothbard’s name.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Question</th><th scope="col">Mises</th><th scope="col">Rothbard</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">The action axiom</th><td>An a priori category of the human mind, in a broadly Kantian framing.</td><td>Self-evident from reflecting on one’s own experience: a realist, Aristotelian framing. Both deduce economics from it.</td></tr>
+            <tr><th scope="row">Monopoly price</th><td>Can arise on a free market when demand is inelastic above the competitive price, though rarely.</td><td>Meaningless on a free market. Monopoly means a privilege granted by the state.</td></tr>
+            <tr><th scope="row">Welfare</th><td>Ordinal utility, with no formal welfare economics.</td><td>Demonstrated preference and the unanimity rule: the free market maximises social utility, and no intervention can be shown to.</td></tr>
+            <tr><th scope="row">Banking</th><td>Free banking as the best check on credit expansion.</td><td>A gold standard with 100% reserves. Fractional reserves breach the warehouse contract.</td></tr>
+            <tr><th scope="row">The state</th><td>Government is needed to defend life and property, the classical-liberal position.</td><td>Defence can be supplied on the market (P&amp;M ch. 1).</td></tr>
+            <tr><th scope="row">Ethics</th><td>A utilitarian case for liberty.</td><td>Value-free in this book. He later grounds liberty in natural rights in <cite>The Ethics of Liberty</cite> (1982).</td></tr>
+            <tr><th scope="row">Interest</th><td>Pure time preference (“originary interest”).</td><td>The same theory, worked out in more detail through the structure of production.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DEBATES -->
+    <section class="sec" id="debates">
+      <p class="kicker">Context</p>
+      <h2>The arguments it started</h2>
+      <div class="debate"><h3>Method</h3><p>Most economists reject the idea that economic laws can be known a priori and want theories tested against data. The Austrian reply is that history never offers controlled repeats, so data can illustrate a theory but not test it.</p></div>
+      <div class="debate"><h3>Monopoly</h3><p>Israel Kirzner and others hold that a single owner of a unique resource can charge a true monopoly price even on a free market, contrary to Chapter 10.</p></div>
+      <div class="debate"><h3>Banking</h3><p>“Free banking” economists such as Lawrence White and George Selgin argue that competitive fractional-reserve banks are stable and legitimate. Rothbard’s heirs, including Joseph Salerno and Jesús Huerta de Soto, defend 100% reserves.</p></div>
+      <div class="debate"><h3>The state</h3><p>Robert Nozick’s <cite>Anarchy, State, and Utopia</cite> (1974) argued that competing protection agencies would converge on a dominant agency, in effect a minimal state. Rothbard replied in “Robert Nozick and the Immaculate Conception of the State” (1977).</p></div>
+      <div class="debate"><h3>The cycle</h3><p>Critics ask why entrepreneurs would be fooled by cheap credit again and again, and dispute how well the theory fits the data. Defenders answer that entrepreneurs must act on the interest rate they can actually borrow at, whatever they suspect.</p></div>
+    </section>
+
+    <!-- GLOSSARY -->
+    <section class="sec" id="glossary">
+      <p class="kicker">Terms of art</p>
+      <h2>Glossary</h2>
+      <dl class="gloss">
+        <dt>Praxeology</dt><dd>The science of human action. Economics is its most developed branch.</dd>
+        <dt>Evenly rotating economy</dt><dd>An imaginary economy where every period repeats and nothing is uncertain. It isolates interest from profit and loss.</dd>
+        <dt>Time preference</dt><dd>Preferring a satisfaction sooner rather than later. It is the sole source of interest.</dd>
+        <dt>Natural rate of interest</dt><dd>The rate set by time preferences on the time market. Credit expansion pushes the loan rate below it.</dd>
+        <dt>Demonstrated preference</dt><dd>The principle that preferences are known only through actual choices.</dd>
+        <dt>DMVP</dt><dd>Discounted marginal value product: what a factor of production tends to earn.</dd>
+        <dt>Capitalization</dt><dd>Valuing a durable good at the discounted sum of its expected future rents.</dd>
+        <dt>Rent</dt><dd>In Rothbard’s wider sense, the price of any good’s services per period, not just land’s.</dd>
+        <dt>Structure of production</dt><dd>The stages goods pass through, from raw resources to the consumer.</dd>
+        <dt>Regression theorem</dt><dd>Mises’s explanation of money’s value, traced back to the money commodity’s earlier value as an ordinary good.</dd>
+        <dt>Fiduciary media</dt><dd>Money substitutes with no money commodity behind them, such as bank credit created from nothing.</dd>
+        <dt>Malinvestment</dt><dd>Investment in projects that available savings can’t complete. The bust reveals it.</dd>
+        <dt>Autistic / binary / triangular</dt><dd>Force applied to one person; a forced exchange with the intervener; force applied to an exchange between two others.</dd>
+        <dt>Contractual vs hegemonic</dt><dd>Social relations based on voluntary agreement vs those based on command and force.</dd>
+        <dt>Economic vs political means</dt><dd>Oppenheimer’s terms for getting wealth by producing and trading vs by taking it.</dd>
+        <dt>Private Product Remaining</dt><dd>Rothbard’s measure of output net of what government absorbs.</dd>
+      </dl>
+    </section>
+
+    <!-- READING -->
+    <section class="sec" id="reading">
+      <p class="kicker">Using it</p>
+      <h2>A reading path through 1,400 pages</h2>
+      <p>If you won’t read it cover to cover, this order gets the core argument in roughly a third of the length.</p>
+      <ol class="cycle" style="margin-top:14px">
+        <li><div><p class="phase">MES ch. 1–2</p><p>The method and the logic of exchange. Everything else depends on these two chapters.</p></div></li>
+        <li><div><p class="phase">MES ch. 5–6</p><p>Capital and interest, the analytical core and the book’s most original economics.</p></div></li>
+        <li><div><p class="phase">MES ch. 10</p><p>Monopoly and competition, the most contested chapter.</p></div></li>
+        <li><div><p class="phase">MES ch. 11–12</p><p>Money, banking and the business cycle.</p></div></li>
+        <li><div><p class="phase">P&amp;M ch. 2–4</p><p>The typology of intervention, price controls and taxation.</p></div></li>
+      </ol>
+      <p style="margin-top:28px" class="kicker">Read alongside</p>
+      <ul class="books">
+        <li>Ludwig von Mises, <cite>Human Action</cite> (1949): the book this one set out to explain.</li>
+        <li>Rothbard, “Toward a Reconstruction of Utility and Welfare Economics” (1956): the welfare theory behind P&amp;M ch. 2.</li>
+        <li>Rothbard, <cite>What Has Government Done to Our Money?</cite> (1963): the monetary argument, short.</li>
+        <li>Rothbard, <cite>America’s Great Depression</cite> (1963): the cycle theory applied to 1929.</li>
+        <li>Rothbard, <cite>The Ethics of Liberty</cite> (1982): the natural-rights case this book deliberately leaves out.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer class="wrap foot">
+  <p>A study summary of Murray N. Rothbard, <cite>Man, Economy, and State with Power and Market</cite>. Paraphrased throughout; the only quotation is Mises’s phrase “an epochal contribution.” Chapter titles follow the original editions. The production figure uses illustrative numbers, not the book’s.</p>
+</footer>
+
+<script>
+(function () {
+  var canvas = document.getElementById('rosette');
+  function draw() {
+    if (!canvas || !canvas.getContext) return;
+    var size = Math.max(200, Math.round(canvas.getBoundingClientRect().width));
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = size * dpr;
+    canvas.height = size * dpr;
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, size, size);
+    var cs = getComputedStyle(document.documentElement);
+    var c1 = cs.getPropertyValue('--rosette').trim() || 'rgba(160,118,30,.4)';
+    var c2 = cs.getPropertyValue('--rosette-2').trim() || 'rgba(22,32,27,.14)';
+    var cx = size / 2, cy = size / 2, steps = 720, TAU = Math.PI * 2;
+    // Guilloché bands, as engraved on banknotes: phase-shifted sine rings around a common undulation.
+    var bands = [
+      { R: .44,  a: .046, p: 26, b: .010, q: 7, n: 18, col: c1 },
+      { R: .33,  a: .044, p: 18, b: .012, q: 5, n: 16, col: c2 },
+      { R: .225, a: .040, p: 13, b: .010, q: 4, n: 14, col: c1 },
+      { R: .115, a: .030, p: 9,  b: .006, q: 3, n: 12, col: c2 }
+    ];
+    ctx.lineWidth = .6;
+    bands.forEach(function (bd) {
+      ctx.strokeStyle = bd.col;
+      for (var i = 0; i < bd.n; i++) {
+        var ph = i * TAU / bd.n;
+        ctx.beginPath();
+        for (var k = 0; k <= steps; k++) {
+          var t = k / steps * TAU;
+          var r = size * (bd.R + bd.a * Math.sin(bd.p * t + ph) + bd.b * Math.sin(bd.q * t));
+          var x = cx + r * Math.cos(t), y = cy + r * Math.sin(t);
+          if (k) ctx.lineTo(x, y); else ctx.moveTo(x, y);
+        }
+        ctx.stroke();
+      }
+    });
+  }
+  draw();
+  var timer;
+  window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(draw, 150); });
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', draw);
+  }
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+
+  // Theme toggle, shared key with the other summaries on the site.
+  var root = document.documentElement, btn = document.getElementById('themeToggle');
+  if (btn) btn.addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('civ-theme', next); } catch (e) {}
+  });
+
+  // Highlight the current section in the side rail.
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a[href^="#"]'));
+  if (!('IntersectionObserver' in window) || !links.length) return;
+  var byId = {};
+  links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var a = byId[e.target.id];
+      if (!a) return;
+      links.forEach(function (l) { l.classList.remove('is-active'); });
+      a.classList.add('is-active');
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+  Object.keys(byId).forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) io.observe(el);
+  });
+})();
+</script>
+
+<script src="book-nav.js" defer></script>
+</body>
+</html>

@@ -27,6 +27,7 @@ The site is plain static HTML/CSS/JS with no build step. Open `index.html` local
 | [The Almanack of Naval Ravikant](almanack-naval-ravikant.html) | Eric Jorgenson | Markets, risk & enterprise | — | 2026-08-01 |
 | [The Book of Elon](the-book-of-elon.html) | Eric Jorgenson | Markets, risk & enterprise | — | 2026-08-01 |
 | [The Mobile Wave](the-mobile-wave.html) | Michael J. Saylor | Markets, risk & enterprise | — | 2026-07-31 |
+| [Man, Economy, and State](rothbard-man-economy-and-state.html) | Murray N. Rothbard | Markets, risk & enterprise | — | 2026-09-23 |
 <!-- contents:end -->
 
 The index lists the summaries only. The print PDFs are still in the repo and reachable by direct link, but they are no longer surfaced on the home page.
@@ -54,9 +55,11 @@ Neither runs at deploy time. Their output is committed, so the published site st
 
 ## Adding a summary
 
-1. Add `your-book.html` at the repo root, linking whichever shared stylesheets it needs with relative paths.
+**Default design for new summaries (Tim, 2026-09-23): the Rothbard page, `rothbard-man-economy-and-state.html`.** Start a new summary from its layout, not from `civ-plate.css`. That means one self-contained file with a palette and a Google Fonts pairing chosen for the book, a single bold hero moment drawn from the book's own world (Rothbard's is "Man acts." over a banknote guilloché), a sticky chapter rail, a one-paragraph "whole book in one breath", key ideas, a chapter-by-chapter section with inline SVG plates, a critics section, a glossary and a reading path. Keep the site chrome it carries: the "← All summaries" link, the theme toggle on the shared `civ-theme` key, an `--accent` token for `book-nav.css`, and full light and dark palettes. The earlier pages keep their existing design and are not being restyled.
+
+1. Add `your-book.html` at the repo root. It is self-contained, apart from the `book-nav` files that `sync.py` injects.
 2. Add its entry to `tools/books.json`, including two or three `related` links with a line on why each one is worth reading next.
-3. Run `python3 tools/sync.py` and `python3 tools/make-og-images.py`.
+3. Run `python3 tools/sync.py` and `python3 tools/make-og-images.py`. On the droplet, the OG script falls back to Linux fonts and redraws every card, so commit only the new book's PNG there.
 4. Commit and push — both hosts redeploy automatically from `main`.
 
 ## Publishing

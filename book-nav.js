@@ -282,6 +282,25 @@
             "why": "What actually happens when a new infrastructure gets organised."
           }
         ]
+      },
+      {
+        "slug": "rothbard-man-economy-and-state",
+        "title": "Man, Economy, and State",
+        "author": "Murray N. Rothbard",
+        "related": [
+          {
+            "slug": "why-nations-fail",
+            "why": "Producing versus taking, argued from history rather than deduced from an axiom."
+          },
+          {
+            "slug": "titan-rockefeller",
+            "why": "The monopoly Rothbard's Chapter 10 says a free market cannot hold, told as a life."
+          },
+          {
+            "slug": "popper-objective-knowledge",
+            "why": "The opposite method: conjecture and refutation instead of deduction from first principles."
+          }
+        ]
       }
     ]
   };
