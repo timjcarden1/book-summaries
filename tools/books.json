@@ -400,10 +400,10 @@
       "tag": "24 plates",
       "added": "2026-08-01",
       "blurb": "Specific knowledge, accountability and leverage; judgment, mental models, and what wealth is actually for.",
-      "accent": "#24518C",
-      "paper": "#EFEEEA",
-      "ink": "#17181B",
-      "muted": "#5F6166",
+      "accent": "#4B3FA0",
+      "paper": "#F0EFEA",
+      "ink": "#16161A",
+      "muted": "#6B6B72",
       "related": [
         {
           "slug": "the-book-of-elon",
@@ -428,10 +428,10 @@
       "tag": "4 parts",
       "added": "2026-08-01",
       "blurb": "Musk's method compiled from his own words: first-principles costing, The Algorithm, and what a curated record can carry.",
-      "accent": "#B4531F",
-      "paper": "#f4f1e9",
-      "ink": "#191b1d",
-      "muted": "#747a7d",
+      "accent": "#0B6E8F",
+      "paper": "#EEEFEF",
+      "ink": "#121417",
+      "muted": "#666C73",
       "related": [
         {
           "slug": "almanack-naval-ravikant",
@@ -456,10 +456,10 @@
       "tag": "Forecast",
       "added": "2026-07-31",
       "blurb": "A forecast from 2012, most striking where it has since become invisible infrastructure — and most useful in its blind spots.",
-      "accent": "#176BD6",
-      "paper": "#f4f1e9",
-      "ink": "#191b1d",
-      "muted": "#747a7d",
+      "accent": "#A62D69",
+      "paper": "#EFEEF0",
+      "ink": "#17161B",
+      "muted": "#6C6975",
       "related": [
         {
           "slug": "the-book-of-elon",
