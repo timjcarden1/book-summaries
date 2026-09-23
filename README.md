@@ -43,7 +43,7 @@ Each summary is a single HTML file that pulls in a subset of the shared styleshe
 - `book-figures.css` / `book-figures.js` — figure numbering and captions
 - `site-settings.js` + `settings.html` — the site-wide text size (80–160%), saved in `localStorage` and applied as CSS `zoom` on `<html>`, because the pages size type in a mix of px, rem and vw and zoom is the one lever that scales all of them. `sync.py` adds the script to the end of every page's `<head>`, so it runs before the first paint. Every page links to Settings through an "Aa" button: in the `book-toc` top bar, in the Rothbard-style chrome, and on the index
 
-Every page has its own light/dark theme toggle, persisted in `localStorage`. The index also carries a type-to-filter box (`/` focuses it, `Escape` clears it) and a shelf/recent ordering toggle, both plain inline JS.
+Every page has its own light/dark theme toggle, persisted in `localStorage`. The index also carries a type-to-filter box (`/` focuses it, `Escape` clears it) and a Shelf / Newest / Oldest ordering toggle. Every row shows the date the summary was added (`added` in `tools/books.json`), and `sync.py` keeps the hero's "Updated <month>" line on the newest date. All of it is plain inline JS.
 
 ## The manifest and its two scripts
 

@@ -18,6 +18,7 @@ tools/make-og-images.py if a title, blurb or palette changed.
 """
 
 import argparse
+import datetime
 import html
 import json
 import pathlib
@@ -219,6 +220,8 @@ def run(check):
     if rows is None:
         raise SystemExit("index.html is missing its book-list markers")
     after = re.sub(r"<li>\d+ books</li>", f"<li>{len(BOOKS)} books</li>", rows, count=1)
+    latest = datetime.date.fromisoformat(max(b["added"] for b in BOOKS))
+    after = re.sub(r"<li>Updated [A-Z][a-z]+ \d{4}</li>", f"<li>Updated {latest:%B %Y}</li>", after, count=1)
     write(index_path, before, after)
 
     # 4. README contents table
