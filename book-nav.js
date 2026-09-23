@@ -54,15 +54,15 @@
         "related": [
           {
             "slug": "durant-story-of-civilization-i-iv",
-            "why": "The eleven volumes this book is the distillation of."
+            "why": "The eleven volumes this book distils."
           },
           {
-            "slug": "guns-germs-and-steel",
-            "why": "A rival account of why civilisations diverge, built on evidence rather than pattern."
+            "slug": "the-mobile-wave",
+            "why": "Michael Saylor, whose forecast this is, recommends the Durants' book."
           },
           {
-            "slug": "fooled-by-randomness",
-            "why": "The case for reading less into historical patterns than they seem to offer."
+            "slug": "keegan-history-of-warfare",
+            "why": "The Durants' chapter on war, argued at full length."
           }
         ]
       },
@@ -72,20 +72,16 @@
         "author": "Jared Diamond",
         "related": [
           {
-            "slug": "palma-causas-do-atraso-portugues",
-            "why": "Geography versus institutions, argued over one country in detail."
-          },
-          {
-            "slug": "lessons-of-history",
-            "why": "The same question of what drives civilisations, answered from pattern instead."
-          },
-          {
-            "slug": "durant-story-of-civilization-i-iv",
-            "why": "The narrative version of the sweep this book explains."
-          },
-          {
             "slug": "why-nations-fail",
-            "why": "The institutional rebuttal, by authors Diamond reviewed in turn."
+            "why": "The institutional rebuttal to geography."
+          },
+          {
+            "slug": "the-beginning-of-infinity",
+            "why": "Deutsch's objection: explanations, not environments, drive history."
+          },
+          {
+            "slug": "keegan-history-of-warfare",
+            "why": "The horse and gunpowder conquests, told as military history."
           }
         ]
       },
@@ -157,15 +153,15 @@
         "related": [
           {
             "slug": "popper-objective-knowledge",
-            "why": "The epistemology this book is built directly on top of."
+            "why": "The epistemology this book is built on."
+          },
+          {
+            "slug": "guns-germs-and-steel",
+            "why": "The geographic explanation of history Deutsch argues against."
           },
           {
             "slug": "fooled-by-randomness",
-            "why": "Fallibilism from the other end — what you cannot learn from outcomes."
-          },
-          {
-            "slug": "the-mobile-wave",
-            "why": "A concrete forecast to test the book's claims about predicting progress."
+            "why": "Fallibilism from the trader's side: what outcomes can't teach you."
           }
         ]
       },
@@ -204,6 +200,25 @@
           {
             "slug": "almanack-naval-ravikant",
             "why": "The same discipline restated for a modern reader, minus the empire."
+          }
+        ]
+      },
+      {
+        "slug": "rothbard-ethics-of-liberty",
+        "title": "The Ethics of Liberty",
+        "author": "Murray N. Rothbard",
+        "related": [
+          {
+            "slug": "rothbard-man-economy-and-state",
+            "why": "The value-free economics this book supplies the ethics for."
+          },
+          {
+            "slug": "why-nations-fail",
+            "why": "States as extraction, argued by historians rather than from first principles."
+          },
+          {
+            "slug": "marcus-aurelius-meditations",
+            "why": "The Stoics, where the idea of a natural law began."
           }
         ]
       },

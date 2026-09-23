@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Ethics of Liberty — Murray N. Rothbard</title>
+<meta name="description" content="A chapter-by-chapter summary of Murray Rothbard's The Ethics of Liberty: natural law, self-ownership, homesteading, the nonaggression principle, contracts, punishment, the State, and his critiques of Berlin, Hayek and Nozick.">
+<script>try{var t=localStorage.getItem('civ-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* ------------------------------------------------------------
+   PALETTE: a deed on linen. Caslon, the face the Declaration of
+   Independence was first printed in, and a typewriter for the
+   clerk's marks. Green is property rightly held; crimson is
+   aggression against it. Every mark on the page uses one or the other.
+   ------------------------------------------------------------ */
+:root {
+  color-scheme: light;
+  --paper: #EDEBE4;
+  --paper-2: #E3E0D6;
+  --surface: #F6F4EE;
+  --ink: #1E2124;
+  --ink-2: #45484B;
+  --ink-3: #6A6C6E;
+  --rule: #CCC8BC;
+  --rule-strong: #A29E92;
+  --claim: #2E6A4B;
+  --breach: #9B1C2C;
+  --accent: #2E6A4B;          /* links, book-nav */
+  --display: "Libre Caslon Display", "Big Caslon", "Iowan Old Style", Georgia, serif;
+  --body: "Libre Caslon Text", "Iowan Old Style", Georgia, serif;
+  --mono: "Courier Prime", "Courier New", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #121412; --paper-2: #191C19; --surface: #1D211E;
+    --ink: #E6E4DC; --ink-2: #B9B7AE; --ink-3: #8D8C85;
+    --rule: #2C302C; --rule-strong: #474C46;
+    --claim: #7CC39C; --breach: #EE7C86; --accent: #7CC39C;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #121412; --paper-2: #191C19; --surface: #1D211E;
+  --ink: #E6E4DC; --ink-2: #B9B7AE; --ink-3: #8D8C85;
+  --rule: #2C302C; --rule-strong: #474C46;
+  --claim: #7CC39C; --breach: #EE7C86; --accent: #7CC39C;
+}
+
+* { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 1.06rem; line-height: 1.68;
+  overflow-x: clip; -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration-color: var(--claim); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--claim); outline-offset: 3px; border-radius: 2px; }
+cite { font-style: italic; }
+[hidden] { display: none !important; }
+.wrap { max-width: 1200px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 44px); }
+.kicker { font-family: var(--mono); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; }
+.home-link { color: var(--ink-2); text-decoration: none; }
+.home-link:hover { color: var(--ink); text-decoration: underline; }
+
+/* ---------- hero ---------- */
+.hero { border-bottom: 1px solid var(--rule); }
+.hero-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 60px); align-items: center; padding-block: clamp(48px, 8vw, 96px) clamp(40px, 6vw, 68px); }
+.eyebrow { font-family: var(--mono); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(3.1rem, 8.4vw, 6.2rem); line-height: .95; letter-spacing: -.01em; margin: 22px 0 0; text-wrap: balance; }
+.axiom { margin: 24px 0 0; padding: 14px 0 14px 18px; border-left: 3px solid var(--breach); max-width: 34ch; }
+.axiom p { margin: 0; font-family: var(--display); font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.25; }
+.axiom span { display: block; margin-top: 8px; font-family: var(--mono); font-size: .74rem; letter-spacing: .06em; color: var(--ink-3); }
+.byline { font-family: var(--mono); font-size: .8rem; letter-spacing: .06em; color: var(--ink-2); margin: 18px 0 0; }
+.breath { margin-top: 26px; max-width: 62ch; }
+.breath p:last-child { font-size: 1.08rem; line-height: 1.66; color: var(--ink-2); margin: 0; }
+.facts { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 14px 36px; margin: 30px 0 0; padding-top: 20px; border-top: 1px solid var(--rule); }
+.facts dt { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.facts dd { margin: 4px 0 0; font-family: var(--display); font-size: 1.3rem; }
+
+.plat { margin: 0; }
+.plat canvas { display: block; width: 100%; aspect-ratio: 5 / 4; }
+.plat figcaption { font-family: var(--mono); font-size: .74rem; line-height: 1.5; color: var(--ink-3); margin-top: 10px; }
+
+/* ---------- layout ---------- */
+.layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: clamp(32px, 5vw, 76px); padding-block: 44px 96px; }
+.content { min-width: 0; max-width: 780px; }
+.content p { max-width: 66ch; }
+
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 22px); align-self: start; max-height: calc(100vh - 44px); overflow-y: auto; scrollbar-width: thin; font-family: var(--mono); font-size: .76rem; padding: 4px 4px 12px 0; }
+.rail ol { list-style: none; margin: 0; padding: 0 0 0 16px; position: relative; }
+.rail ol::before { content: ""; position: absolute; left: 3px; top: 8px; bottom: 8px; width: 1px; background: var(--rule-strong); }
+.rail li.grp { margin: 16px 0 4px -16px; font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); background: var(--paper); position: relative; padding-left: 16px; }
+.rail a { display: flex; gap: 6px; padding: 3px 0; color: var(--ink-3); text-decoration: none; position: relative; line-height: 1.35; }
+.rail a::before { content: ""; position: absolute; left: -16px; top: .55em; width: 7px; height: 7px; background: var(--paper); border: 1px solid var(--rule-strong); }
+.rail .ch a::before { border-color: var(--claim); }
+.rail a:hover { color: var(--ink); }
+.rail a.is-active { color: var(--ink); }
+.rail a.is-active::before { background: var(--claim); border-color: var(--claim); }
+.rail .n { min-width: 1.9em; opacity: .75; }
+
+/* ---------- site chrome: contents (phones), text size, theme ---------- */
+.chrome { position: fixed; z-index: 40; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: calc(env(safe-area-inset-top, 0px) + 14px) 14px 0; pointer-events: none; }
+.chrome > * { pointer-events: auto; }
+.chrome__end { display: flex; gap: 6px; flex: none; }
+.chip { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; white-space: nowrap; padding: 7px 11px; border: 1px solid var(--rule); border-radius: 3px; cursor: pointer; background: color-mix(in srgb, var(--paper) 88%, transparent); color: var(--ink-2); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.chip:hover { color: var(--ink); border-color: var(--rule-strong); }
+.chip--aa { font-family: var(--body); font-size: 1rem; font-weight: 700; letter-spacing: 0; text-transform: none; }
+.chip--toc { display: none; min-width: 0; overflow: hidden; }
+.chip--toc svg { width: 15px; height: 15px; flex: none; }
+.chip--toc .where { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-family: var(--body); font-size: .88rem; letter-spacing: 0; text-transform: none; opacity: .82; }
+.chip--toc .where:empty { display: none; }
+.toc-backdrop { position: fixed; inset: 0; z-index: 38; background: rgba(14, 16, 14, .45); }
+.toc-sheet { position: fixed; z-index: 39; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 53px); max-height: min(76vh, 680px); overflow-y: auto; overscroll-behavior: contain; background: var(--surface); color: var(--ink); border-bottom: 1px solid var(--rule-strong); border-radius: 0 0 14px 14px; padding: 0 22px 18px; box-shadow: 0 14px 34px rgba(14, 16, 14, .2); }
+.toc-sheet__head { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 12px 0 10px; margin-bottom: 4px; background: var(--surface); border-bottom: 1px solid var(--rule); font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.toc-sheet__close { font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--ink-2); cursor: pointer; background: none; border: 1px solid var(--rule-strong); border-radius: 3px; padding: 9px 13px; }
+.toc-sheet ol { list-style: none; margin: 0; padding: 0 0 0 18px; position: relative; }
+.toc-sheet ol::before { content: ""; position: absolute; left: 4px; top: 14px; bottom: 14px; width: 1px; background: var(--rule-strong); }
+.toc-sheet li.grp { position: relative; margin: 14px 0 0 -18px; padding: 6px 0 2px 18px; background: var(--surface); font-family: var(--mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.toc-sheet a { position: relative; display: flex; align-items: baseline; gap: 10px; padding: 9px 0; min-height: 42px; color: var(--ink-2); text-decoration: none; font-size: 1.02rem; line-height: 1.35; }
+.toc-sheet a::before { content: ""; position: absolute; left: -18px; top: .95em; width: 9px; height: 9px; background: var(--surface); border: 1px solid var(--rule-strong); }
+.toc-sheet .ch a::before { border-color: var(--claim); }
+.toc-sheet .n { min-width: 1.9em; font-family: var(--mono); font-size: .78rem; color: var(--ink-3); }
+.toc-sheet a.is-active { color: var(--ink); font-weight: 700; }
+.toc-sheet a.is-active::before { background: var(--claim); border-color: var(--claim); }
+
+@media (max-width: 980px) {
+  .layout { grid-template-columns: minmax(0, 1fr); padding-block: 32px 72px; }
+  .rail { display: none; }
+  .chrome { justify-content: space-between; pointer-events: auto; padding: calc(env(safe-area-inset-top, 0px) + 8px) 12px 8px; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+  .chip { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .chip--toc { display: inline-flex; background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .chip--toc:hover { color: var(--paper); border-color: var(--ink); }
+  .hero-inner { padding-block-start: 92px; }
+  html section, html article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 70px); }
+}
+
+/* ---------- sections ---------- */
+section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px); }
+.sec { padding-block: 8px 52px; }
+.sec h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 4.4vw, 2.8rem); line-height: 1.05; margin: 0 0 18px; text-wrap: balance; }
+.sec > p { margin: 0 0 16px; }
+.points { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+.points li { position: relative; padding-left: 24px; }
+.points li::before { content: "§"; position: absolute; left: 0; top: 0; font-family: var(--display); color: var(--claim); }
+.points strong { font-weight: 700; }
+
+.ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 12px; }
+.idea { border-top: 1px solid var(--rule-strong); padding: 16px 0 26px; }
+.idea .tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--claim); margin: 0; }
+.idea h3 { font-family: var(--display); font-weight: 400; font-size: 1.45rem; line-height: 1.12; margin: 6px 0 8px; text-wrap: balance; }
+.idea p:last-child { margin: 0; font-size: .98rem; color: var(--ink-2); line-height: 1.58; }
+
+.part { margin-top: 40px; padding: 40px 0 6px; border-top: 3px double var(--ink); }
+.part-num { font-family: var(--mono); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--claim); margin: 0; }
+.part h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2.3rem, 5.4vw, 3.4rem); line-height: 1; margin: 6px 0 14px; text-wrap: balance; }
+.part-lede { font-size: 1.06rem; color: var(--ink-2); margin: 0 0 8px; }
+
+.chapter { padding: 30px 0 8px; border-top: 1px solid var(--rule); margin-top: 24px; }
+.part + .chapter { border-top: 0; margin-top: 0; }
+.ch-label { font-family: var(--mono); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.chapter h3 { font-family: var(--display); font-weight: 400; font-size: clamp(1.6rem, 3.2vw, 2.05rem); line-height: 1.1; margin: 8px 0 10px; text-wrap: balance; }
+.gist { font-style: italic; font-size: 1.1rem; color: var(--ink-2); margin: 0 0 14px; }
+
+/* ---------- figures ---------- */
+.fig { margin: 30px 0 10px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: clamp(14px, 3vw, 24px); }
+.fig-title { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+.fig figcaption { font-size: .95rem; color: var(--ink-2); margin-top: 14px; line-height: 1.55; }
+
+.owners { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.owners svg { display: block; width: 100%; max-width: 220px; height: auto; }
+.owners h4 { font-family: var(--display); font-weight: 400; font-size: 1.25rem; margin: 8px 0 4px; }
+.owners p { margin: 0; font-size: .92rem; color: var(--ink-2); line-height: 1.5; }
+.owners .verdict { margin-top: 8px; font-family: var(--mono); font-size: .74rem; letter-spacing: .04em; }
+.owners .ok { color: var(--claim); }
+.owners .no { color: var(--breach); }
+.o-node { fill: var(--surface); stroke: var(--ink-2); stroke-width: 1.5; }
+.o-master { fill: var(--breach); stroke: var(--breach); }
+.o-self { fill: none; stroke: var(--claim); stroke-width: 1.6; }
+.o-link { stroke: var(--ink-3); stroke-width: 1; fill: none; }
+.o-arrow { stroke: var(--breach); stroke-width: 1.6; fill: none; }
+.o-head { fill: var(--breach); }
+
+.flow { display: grid; gap: 0; border-top: 3px solid var(--ink); }
+.flow .q { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr) minmax(0, 1fr); gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+.flow .q b { font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1; color: var(--ink-3); }
+.flow .ask { font-size: 1rem; }
+.flow .yes { font-size: .94rem; color: var(--ink-2); padding-left: 12px; border-left: 2px solid var(--claim); }
+.flow .yes em { font-style: normal; font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--claim); display: block; }
+.flow .end { padding: 14px 0 4px 3.6rem; font-size: .95rem; color: var(--ink-2); }
+.flow .end em { font-style: normal; font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+
+/* ---------- tables, debates, glossary ---------- */
+.table-wrap { overflow-x: auto; margin: 22px 0 4px; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 600px; font-size: .96rem; line-height: 1.5; }
+th, td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+thead th { font-family: var(--mono); font-size: .68rem; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
+tbody th { font-family: var(--display); font-weight: 400; font-size: 1.08rem; width: 22%; }
+tbody td { color: var(--ink-2); }
+td.v-ok { color: var(--claim); font-family: var(--mono); font-size: .8rem; letter-spacing: .04em; white-space: nowrap; }
+td.v-no { color: var(--breach); font-family: var(--mono); font-size: .8rem; letter-spacing: .04em; white-space: nowrap; }
+
+.debate { padding: 16px 0 18px; border-top: 1px solid var(--rule); }
+.debate h3 { font-family: var(--display); font-weight: 400; font-size: 1.35rem; margin: 0 0 6px; }
+.debate p { margin: 0; color: var(--ink-2); font-size: 1rem; }
+
+.gloss { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); margin: 20px 0 0; }
+.gloss dt, .gloss dd { padding: 11px 0; border-top: 1px solid var(--rule); }
+.gloss dt { font-family: var(--display); font-size: 1.1rem; padding-right: 20px; line-height: 1.3; }
+.gloss dd { margin: 0; color: var(--ink-2); font-size: .98rem; line-height: 1.55; }
+
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 14px 0 0; display: grid; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-top: 1px solid var(--rule); }
+.steps li::before { content: counter(step); font-family: var(--display); font-size: 1.9rem; line-height: 1; color: var(--claim); }
+.steps .phase { font-family: var(--mono); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); margin: 2px 0 0; }
+.steps p { margin: 4px 0 0; font-size: 1rem; color: var(--ink-2); }
+.books { list-style: none; padding: 0; margin: 14px 0 0; display: grid; }
+.books li { padding: 11px 0; border-top: 1px solid var(--rule); font-size: 1rem; color: var(--ink-2); }
+.books cite { color: var(--ink); }
+
+.foot { border-top: 1px solid var(--rule); padding-block: 26px 40px; font-family: var(--mono); font-size: .76rem; color: var(--ink-3); line-height: 1.6; }
+.foot p { margin: 0; max-width: 90ch; }
+
+@media (max-width: 760px) {
+  body { font-size: 1.02rem; }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+  .ideas, .gloss, .owners { grid-template-columns: minmax(0, 1fr); }
+  .gloss dd { border-top: 0; padding-top: 0; }
+  .flow .q { grid-template-columns: 2rem minmax(0, 1fr); }
+  .flow .yes { grid-column: 2; }
+  .flow .end { padding-left: 3.1rem; }
+}
+</style>
+<!-- link-preview:start — generated by tools/sync.py -->
+<link rel="canonical" href="https://book-summaries-umber.vercel.app/rothbard-ethics-of-liberty.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Summaries">
+<meta property="og:title" content="The Ethics of Liberty — Murray N. Rothbard">
+<meta property="og:description" content="Self-ownership, homesteading and the rule against aggression, built into a legal code and turned on the State.">
+<meta property="og:url" content="https://book-summaries-umber.vercel.app/rothbard-ethics-of-liberty.html">
+<meta property="og:image" content="https://book-summaries-umber.vercel.app/og/rothbard-ethics-of-liberty.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Ethics of Liberty — Murray N. Rothbard">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Ethics of Liberty — Murray N. Rothbard">
+<meta name="twitter:description" content="Self-ownership, homesteading and the rule against aggression, built into a legal code and turned on the State.">
+<meta name="twitter:image" content="https://book-summaries-umber.vercel.app/og/rothbard-ethics-of-liberty.png">
+<!-- link-preview:end -->
+<link rel="stylesheet" href="book-nav.css">
+<script src="site-settings.js"></script>
+</head>
+<body>
+
+<div class="chrome">
+  <button class="chip chip--toc" id="tocOpen" type="button" aria-controls="tocSheet" aria-expanded="false">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span>Contents</span><span class="where"></span>
+  </button>
+  <div class="chrome__end">
+    <a class="chip chip--aa" href="settings.html" title="Text size" aria-label="Text size settings">Aa</a>
+    <button class="chip" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+  </div>
+</div>
+<div class="toc-backdrop" id="tocBackdrop" hidden></div>
+<div class="toc-sheet" id="tocSheet" role="dialog" aria-modal="true" aria-label="Contents" hidden>
+  <div class="toc-sheet__head"><span>Contents</span><button class="toc-sheet__close" id="tocClose" type="button">Close</button></div>
+</div>
+
+<header class="hero" id="overview">
+  <div class="wrap hero-inner">
+    <div>
+      <p class="eyebrow"><a class="home-link" href="index.html">← All summaries</a> · A reader’s summary</p>
+      <h1>The Ethics of Liberty</h1>
+      <div class="axiom">
+        <p>No one may initiate force against another person or their property.</p>
+        <span>The principle the book defends, in our words</span>
+      </div>
+      <p class="byline">Murray N. Rothbard · 1982</p>
+      <div class="breath">
+        <p class="kicker">The whole book in one breath</p>
+        <p><cite>Man, Economy, and State</cite> was value-free economics. This is the moral argument Rothbard kept out of it. He grounds ethics in natural law: what reason can discover about human nature. Each person owns himself. Unowned things become property when someone first puts them to use. And no one may start violence against anyone else’s person or property. From those three ideas he derives a whole legal code covering crime, punishment, contracts, children, speech and self-defence. Then he turns it on the State, which he defines as the one organisation that lives by taking money through taxation and claims a monopoly of force. Measured by the same rules as anyone else, he argues, the State is a criminal organisation. The book closes by taking apart rival defences of liberty (the utilitarians, Isaiah Berlin, Hayek and Nozick) and by setting out a strategy for getting there.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Published</dt><dd>1982 · 2nd ed. 1998</dd></div>
+        <div><dt>Structure</dt><dd>5 parts, 30 chapters</dd></div>
+        <div><dt>Tradition</dt><dd>Natural law</dd></div>
+        <div><dt>Companion to</dt><dd>Man, Economy, and State</dd></div>
+      </dl>
+    </div>
+    <figure class="plat">
+      <canvas id="plat" role="img" aria-label="A surveyor's plat of an island. Parcels in the west are surveyed and owned; one parcel at the frontier is marked as newly homesteaded; the east is unowned land open to homesteading."></canvas>
+      <figcaption>Crusoe’s island as a surveyor’s plat. Land becomes property when someone first puts it to use. What nobody has yet used is nobody’s, and open to the next person who does.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Contents">
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#origins">Origins</a></li>
+      <li><a href="#structure">The structure</a></li>
+      <li><a href="#ideas">Twelve ideas</a></li>
+      <li class="grp">I · Natural law</li>
+      <li class="ch"><a href="#ch-1"><span class="n">1</span>Natural law and reason</a></li>
+      <li class="ch"><a href="#ch-2"><span class="n">2</span>Natural law as science</a></li>
+      <li class="ch"><a href="#ch-3"><span class="n">3</span>Natural vs positive law</a></li>
+      <li class="ch"><a href="#ch-4"><span class="n">4</span>Natural rights</a></li>
+      <li class="ch"><a href="#ch-5"><span class="n">5</span>Political philosophy</a></li>
+      <li class="grp">II · A theory of liberty</li>
+      <li class="ch"><a href="#ch-6"><span class="n">6</span>Crusoe</a></li>
+      <li class="ch"><a href="#ch-7"><span class="n">7</span>Voluntary exchange</a></li>
+      <li class="ch"><a href="#ch-8"><span class="n">8</span>Ownership and aggression</a></li>
+      <li class="ch"><a href="#ch-9"><span class="n">9</span>Property and crime</a></li>
+      <li class="ch"><a href="#ch-10"><span class="n">10</span>Land theft</a></li>
+      <li class="ch"><a href="#ch-11"><span class="n">11</span>Land monopoly</a></li>
+      <li class="ch"><a href="#ch-12"><span class="n">12</span>Self-defence</a></li>
+      <li class="ch"><a href="#ch-13"><span class="n">13</span>Punishment</a></li>
+      <li class="ch"><a href="#ch-14"><span class="n">14</span>Children</a></li>
+      <li class="ch"><a href="#ch-15"><span class="n">15</span>Human rights</a></li>
+      <li class="ch"><a href="#ch-16"><span class="n">16</span>Knowledge, true and false</a></li>
+      <li class="ch"><a href="#ch-17"><span class="n">17</span>Bribery</a></li>
+      <li class="ch"><a href="#ch-18"><span class="n">18</span>The boycott</a></li>
+      <li class="ch"><a href="#ch-19"><span class="n">19</span>Contracts</a></li>
+      <li class="ch"><a href="#ch-20"><span class="n">20</span>Lifeboats</a></li>
+      <li class="ch"><a href="#ch-21"><span class="n">21</span>Animals</a></li>
+      <li class="grp">III · The State</li>
+      <li class="ch"><a href="#ch-22"><span class="n">22</span>Nature of the State</a></li>
+      <li class="ch"><a href="#ch-23"><span class="n">23</span>Its contradictions</a></li>
+      <li class="ch"><a href="#ch-24"><span class="n">24</span>Our relations to it</a></li>
+      <li class="ch"><a href="#ch-25"><span class="n">25</span>Interstate relations</a></li>
+      <li class="grp">IV · Rival theories</li>
+      <li class="ch"><a href="#ch-26"><span class="n">26</span>Utilitarians</a></li>
+      <li class="ch"><a href="#ch-27"><span class="n">27</span>Isaiah Berlin</a></li>
+      <li class="ch"><a href="#ch-28"><span class="n">28</span>Hayek</a></li>
+      <li class="ch"><a href="#ch-29"><span class="n">29</span>Nozick</a></li>
+      <li class="grp">V · Strategy</li>
+      <li class="ch"><a href="#ch-30"><span class="n">30</span>Strategy for liberty</a></li>
+      <li class="grp">Context</li>
+      <li><a href="#rivals">Rothbard vs his rivals</a></li>
+      <li><a href="#debates">Debates</a></li>
+      <li><a href="#glossary">Glossary</a></li>
+      <li><a href="#reading">Reading path</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+
+    <section class="sec" id="origins">
+      <p class="kicker">Origins</p>
+      <h2>The moral half of a two-part project</h2>
+      <p>Murray Rothbard (1926–1995) built his economics on Mises’s rule that economic science must be value-free: it can say what a policy does, never whether it is right. He agreed with that for economics, but thought a case for liberty needed more. It needed an ethics, and one that didn’t rest, as Mises’s did, on the claim that people who understood economics would all prefer the same results.</p>
+      <p><cite>The Ethics of Liberty</cite> (1982) is that ethics. Several chapters began as essays in the 1970s, including his critique of Robert Nozick. The 1998 edition, published by New York University Press, added an introduction by Hans-Hermann Hoppe. Where <cite>For a New Liberty</cite> (1973) was Rothbard’s popular manifesto, this is the systematic version.</p>
+    </section>
+
+    <section class="sec" id="structure">
+      <p class="kicker">The structure</p>
+      <h2>From one man on an island to a critique of every State</h2>
+      <ul class="points">
+        <li><strong>Part I, Natural Law</strong>: why ethics can be grounded in reason and human nature, and why that is a radical standard to hold governments to, not a conservative one.</li>
+        <li><strong>Part II, A Theory of Liberty</strong>: starting from Crusoe alone, then with Friday, Rothbard builds property, exchange and the rule against aggression. He then applies them to crime, land, self-defence, punishment, children, speech, contracts and emergencies.</li>
+        <li><strong>Part III, The State versus Liberty</strong>: the State judged by the same code as everyone else.</li>
+        <li><strong>Part IV, Modern Alternative Theories of Liberty</strong>: the utilitarians, Berlin, Hayek and Nozick, and why each fails.</li>
+        <li><strong>Part V, Strategy</strong>: how a movement should pursue the goal without losing it.</li>
+      </ul>
+      <p style="margin-top:16px">Rothbard is careful about scope. This is a political ethics: a theory of when force may be used. It does not tell anyone how to live well. People have a right to do many things that are foolish or wrong, and the book defends the right, not the choice.</p>
+    </section>
+
+    <section class="sec" id="ideas">
+      <p class="kicker">If you remember nothing else</p>
+      <h2>Twelve ideas that carry the book</h2>
+      <div class="ideas">
+        <div class="idea"><p class="tag">Ch. 1–4</p><h3>Ethics can be discovered by reason</h3><p>Natural law holds that what is good for human beings follows from what they are, and reason can work it out without revelation or a legislature.</p></div>
+        <div class="idea"><p class="tag">Ch. 3</p><h3>Natural law is a radical standard</h3><p>A law above the State’s law is a standard to judge governments by, and most of them fail it.</p></div>
+        <div class="idea"><p class="tag">Ch. 6, 8</p><h3>You own yourself</h3><p>The alternatives are that some people own others, or that everyone owns a share of everyone. The first is slavery; the second is unworkable. Self-ownership is what remains.</p></div>
+        <div class="idea"><p class="tag">Ch. 6</p><h3>First use makes property</h3><p>Unowned land becomes yours when you mix your labour with it. That is Locke’s homesteading principle, taken strictly.</p></div>
+        <div class="idea"><p class="tag">Ch. 8</p><h3>Never initiate force</h3><p>Aggression means starting violence, or threatening it, against another person or their property. It is the one thing the law may forbid.</p></div>
+        <div class="idea"><p class="tag">Ch. 9–10</p><h3>Stolen titles are void</h3><p>Property taken by force goes back to the victim or their heirs, including land seized by conquest and handed to feudal lords.</p></div>
+        <div class="idea"><p class="tag">Ch. 13</p><h3>Punishment belongs to the victim</h3><p>A criminal loses rights in proportion to what he took. The victim may demand restitution, forgive, or seek proportional punishment.</p></div>
+        <div class="idea"><p class="tag">Ch. 15</p><h3>All rights are property rights</h3><p>Free speech, for instance, is the right to use your own property and make contracts. Seen that way, rights never conflict.</p></div>
+        <div class="idea"><p class="tag">Ch. 19</p><h3>A contract transfers a title</h3><p>Contracts are enforceable as transfers of property, not as bare promises. You can’t sell yourself into slavery, because your will can’t be handed over.</p></div>
+        <div class="idea"><p class="tag">Ch. 22</p><h3>The State is aggression, organised</h3><p>Taxation is theft and conscription is slavery. Judged by the rules that bind everyone else, the State is a criminal band on a grand scale.</p></div>
+        <div class="idea"><p class="tag">Ch. 23</p><h3>Limited government can’t stay limited</h3><p>No one consented to it. It judges its own case, and nothing outside it can keep it within bounds.</p></div>
+        <div class="idea"><p class="tag">Ch. 26–29</p><h3>Other defences of liberty leak</h3><p>Utility, “negative liberty,” Hayek’s coercion and Nozick’s minimal state each leave a door open to State power.</p></div>
+      </div>
+    </section>
+
+    <!-- PART I -->
+    <section class="part" id="part-1">
+      <p class="part-num">Part I</p>
+      <h2>Introduction: Natural Law</h2>
+      <p class="part-lede">Before building anything, Rothbard defends the foundation: that there is an objective ethics grounded in the nature of man, discoverable by reason, and standing above whatever a government happens to decree.</p>
+    </section>
+
+    <article class="chapter" id="ch-1">
+      <p class="ch-label">Chapter 1</p>
+      <h3>Natural Law and Reason</h3>
+      <p class="gist">The nature of a thing tells us what is good for it, and that includes human beings.</p>
+      <ul class="points">
+        <li>Every entity has a nature, and reason can learn what helps or harms it: poison harms, food nourishes. Ethics for people works the same way.</li>
+        <li>The tradition runs from Aristotle and the Stoics through Aquinas. Rothbard stresses that it doesn’t depend on theology. Hugo Grotius held that natural law would bind even if God did not exist.</li>
+        <li>He answers critics who say “ought” can never be derived from “is.” If a nature can be known, then what serves or harms it can be known too.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-2">
+      <p class="ch-label">Chapter 2</p>
+      <h3>Natural Law as “Science”</h3>
+      <p class="gist">Natural law is a rational discipline, not a matter of taste.</p>
+      <ul class="points">
+        <li>Rothbard defends ethics as a field reason can investigate, against positivists and relativists who treat moral claims as mere preference.</li>
+        <li>The method is to study human nature and the conditions of human flourishing, then draw conclusions as one would in any science.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-3">
+      <p class="ch-label">Chapter 3</p>
+      <h3>Natural Law Versus Positive Law</h3>
+      <p class="gist">Law made by a legislature has to answer to a law it didn’t make.</p>
+      <ul class="points">
+        <li>Positive law is whatever the State enacts. Natural law gives a standard outside the State by which enacted law can be judged and found wanting.</li>
+        <li>That made natural law a revolutionary idea in the hands of the Levellers, Locke and the American revolutionaries. Rothbard insists it is radical, not conservative.</li>
+        <li>He discusses Bruno Leoni’s case for law discovered by judges, as in the common law, rather than made by legislators. It is sympathetic, but Rothbard says judge-made law still needs natural law to tell good rulings from bad.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-4">
+      <p class="ch-label">Chapter 4</p>
+      <h3>Natural Law and Natural Rights</h3>
+      <p class="gist">From natural law, which binds everyone, to natural rights, which belong to each person.</p>
+      <ul class="points">
+        <li>The seventeenth century turned natural law into a doctrine of individual rights. The Leveller Richard Overton argued that every person has a property in himself, and John Locke built his theory of property on the same idea.</li>
+        <li>Rothbard adopts the Lockean core, self-ownership plus property through labour, and aims to make it more consistent than Locke did.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-5">
+      <p class="ch-label">Chapter 5</p>
+      <h3>The Task of Political Philosophy</h3>
+      <p class="gist">The task is to say when force is justified, and nothing more.</p>
+      <ul class="points">
+        <li>Libertarianism, as Rothbard frames it, is a political philosophy only: a theory of the proper use of violence. It is not a complete ethics of how to live.</li>
+        <li>So a person may have a right to do something immoral. Defending the right is not endorsing the act.</li>
+        <li>The book sets out to build that political ethic systematically, then test existing institutions against it.</li>
+      </ul>
+    </article>
+
+    <!-- PART II -->
+    <section class="part" id="part-2">
+      <p class="part-num">Part II</p>
+      <h2>A Theory of Liberty</h2>
+      <p class="part-lede">Rothbard starts with the simplest society, one man alone, adds a second person, and derives a legal code step by step. Most of the book’s notorious conclusions are here, drawn with the same logic as the uncontroversial ones.</p>
+    </section>
+
+    <article class="chapter" id="ch-6">
+      <p class="ch-label">Chapter 6</p>
+      <h3>A Crusoe Social Philosophy</h3>
+      <p class="gist">Alone on an island, a man owns himself and whatever he first transforms.</p>
+      <ul class="points">
+        <li>Crusoe must use his mind to survive: learning, choosing and transforming nature. Ownership of himself follows from his nature as a reasoning, acting being.</li>
+        <li>When he clears a field or builds a hut, he mixes his labour with unowned land and makes it his. This is the homesteading principle: first use, first owner.</li>
+        <li>Land nobody has used remains unowned. Merely claiming it, or drawing a line on a map, is not enough.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-7">
+      <p class="ch-label">Chapter 7</p>
+      <h3>Interpersonal Relations: Voluntary Exchange</h3>
+      <p class="gist">Add Friday, and property can change hands by exchange or gift.</p>
+      <ul class="points">
+        <li>Two owners can swap goods or services, each expecting to gain, and the division of labour begins.</li>
+        <li>Everything legitimately owned was either homesteaded, produced, received in exchange or received as a gift. A free society is the network of those transfers.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-8">
+      <p class="ch-label">Chapter 8</p>
+      <h3>Interpersonal Relations: Ownership and Aggression</h3>
+      <p class="gist">The central chapter: the case for self-ownership and the rule against aggression.</p>
+      <ul class="points">
+        <li>There are only three possible answers to who owns a person (see the figure below). Rothbard rules out two, leaving universal self-ownership.</li>
+        <li>From self-ownership and homesteading follows the nonaggression rule. No one may initiate violence, or threaten it, against another’s person or legitimately owned property.</li>
+        <li>Everything else in the book is an application of that one rule.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Who owns a person? The three possible answers</p>
+        <div class="owners">
+          <div>
+            <svg viewBox="0 0 220 120" role="img" aria-label="Five people, each circled by their own ownership ring">
+              <circle class="o-node" cx="30" cy="60" r="12"/><circle class="o-self" cx="30" cy="60" r="18"/>
+              <circle class="o-node" cx="70" cy="34" r="12"/><circle class="o-self" cx="70" cy="34" r="18"/>
+              <circle class="o-node" cx="110" cy="72" r="12"/><circle class="o-self" cx="110" cy="72" r="18"/>
+              <circle class="o-node" cx="150" cy="36" r="12"/><circle class="o-self" cx="150" cy="36" r="18"/>
+              <circle class="o-node" cx="190" cy="66" r="12"/><circle class="o-self" cx="190" cy="66" r="18"/>
+            </svg>
+            <h4>Each owns himself</h4>
+            <p>Every person owns his own body and decides over it.</p>
+            <p class="verdict ok">Rothbard: the only universal ethic</p>
+          </div>
+          <div>
+            <svg viewBox="0 0 220 120" role="img" aria-label="Two masters with arrows pointing at three people they own">
+              <circle class="o-master" cx="70" cy="26" r="12"/><circle class="o-master" cx="150" cy="26" r="12"/>
+              <circle class="o-node" cx="40" cy="96" r="12"/><circle class="o-node" cx="110" cy="96" r="12"/><circle class="o-node" cx="180" cy="96" r="12"/>
+              <path class="o-arrow" d="M66 38 L44 80 M74 38 L106 80 M146 38 L114 80 M154 38 L176 80"/>
+              <polygon class="o-head" points="44,84 41,74 49,77"/><polygon class="o-head" points="106,84 101,76 109,75"/>
+              <polygon class="o-head" points="114,84 111,75 119,76"/><polygon class="o-head" points="176,84 171,77 179,74"/>
+            </svg>
+            <h4>Some own others</h4>
+            <p>A ruling class owns everyone else, as in slavery.</p>
+            <p class="verdict no">Rothbard: a two-tier ethic, not a universal one</p>
+          </div>
+          <div>
+            <svg viewBox="0 0 220 120" role="img" aria-label="Five people all connected to each other, each owning a share of every other">
+              <path class="o-link" d="M110 18 L182 58 L154 104 L66 104 L38 58 Z M110 18 L154 104 M110 18 L66 104 M182 58 L66 104 M182 58 L38 58 M154 104 L38 58"/>
+              <circle class="o-node" cx="110" cy="18" r="11"/><circle class="o-node" cx="182" cy="58" r="11"/>
+              <circle class="o-node" cx="154" cy="104" r="11"/><circle class="o-node" cx="66" cy="104" r="11"/><circle class="o-node" cx="38" cy="58" r="11"/>
+            </svg>
+            <h4>Everyone owns everyone</h4>
+            <p>Each person owns an equal share of every other person.</p>
+            <p class="verdict no">Rothbard: unworkable, since no one could act without everyone’s leave</p>
+          </div>
+        </div>
+      </figure>
+    </article>
+
+    <article class="chapter" id="ch-9">
+      <p class="ch-label">Chapter 9</p>
+      <h3>Property and Criminality</h3>
+      <p class="gist">A crime is an invasion of property, and stolen property keeps its true owner.</p>
+      <ul class="points">
+        <li>Crime is defined as aggression against a person or their property, and nothing else. There are no “victimless crimes” in Rothbard’s code.</li>
+        <li>A thief never acquires title. Stolen goods belong to the victim, or to the victim’s heirs, however many times they have changed hands.</li>
+        <li>When no victim can be identified, the current holder, if not the thief, may keep the goods as a new first user (see the figure below).</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Who gets stolen property back?</p>
+        <div class="flow">
+          <div class="q"><b>1</b><div class="ask">Is the present holder the thief, or did he knowingly receive stolen goods?</div><div class="yes"><em>If yes</em>Return it to the victim. The holder has no title.</div></div>
+          <div class="q"><b>2</b><div class="ask">Can the victim, or the victim’s heirs, be identified?</div><div class="yes"><em>If yes</em>Return it to them, however long ago it was taken.</div></div>
+          <div class="end"><em>Otherwise</em> the innocent present holder keeps it, in effect as its homesteader.</div>
+        </div>
+        <figcaption>Rothbard’s reasoning in Chapter 9, laid out as a sequence. The same test drives his conclusions about land in Chapters 10 and 11.</figcaption>
+      </figure>
+    </article>
+
+    <article class="chapter" id="ch-10">
+      <p class="ch-label">Chapter 10</p>
+      <h3>The Problem of Land Theft</h3>
+      <p class="gist">Land seized by conquest doesn’t become legitimate with age.</p>
+      <ul class="points">
+        <li>Much of the world’s land was taken by force: conquerors granting estates to lords, who then collected rent from the peasants actually working it.</li>
+        <li>Applying Chapter 9, the peasants and their heirs are the rightful owners, and the lords’ titles are void. Rothbard therefore supports land reform that returns land to its cultivators where titles trace back to such theft.</li>
+        <li>This cuts against conservatives who treat every existing title as sacred. It also cuts against the Left, because the reform is restitution to specific people, not nationalisation.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-11">
+      <p class="ch-label">Chapter 11</p>
+      <h3>Land Monopoly, Past and Present</h3>
+      <p class="gist">Governments block homesteading by claiming land nobody uses.</p>
+      <ul class="points">
+        <li>States claim vast unused lands and grant favoured interests (railroads, speculators) title to land they never homesteaded.</li>
+        <li>Rothbard shares the concern of land reformers like Henry George about “land monopoly,” but locates the cause in State grants and claims, not in private ownership of land.</li>
+        <li>His remedy is to open unused government land to homesteading.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-12">
+      <p class="ch-label">Chapter 12</p>
+      <h3>Self-Defense</h3>
+      <p class="gist">You may defend yourself and your property, but not by aggressing against innocent people.</p>
+      <ul class="points">
+        <li>The right to self-defence follows from self-ownership, and so does the right to have the means of it, including arms.</li>
+        <li>Defence must stay within limits. It stops at the aggressor. Using innocent third parties, for example as shields, is itself aggression.</li>
+        <li>You may defend others, and hire others to defend you. That is the basis for private defence agencies.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-13">
+      <p class="ch-label">Chapter 13</p>
+      <h3>Punishment and Proportionality</h3>
+      <p class="gist">A criminal forfeits rights to the extent he violated them, and the victim decides.</p>
+      <ul class="points">
+        <li>Restitution comes first: the criminal must repay the victim.</li>
+        <li>Beyond that, the victim may punish in proportion to the crime. Rothbard’s formula is roughly two teeth for a tooth: repay what was taken and suffer the same loss in turn.</li>
+        <li>Because the right belongs to the victim, the victim may also forgive, or sell the right to punish. Crimes are offences against people, not against “society” or the State.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-14">
+      <p class="ch-label">Chapter 14</p>
+      <h3>Children and Rights</h3>
+      <p class="gist">The book’s most controversial chapter: where a child’s rights begin.</p>
+      <ul class="points">
+        <li>On abortion, Rothbard argues that a woman owns her body and may expel an unwanted fetus, whatever its status. No one has a right to live inside another person against her will.</li>
+        <li>Parents may not aggress against their children, but in his account they have no enforceable legal duty to support them. The duty is moral, not a matter for law.</li>
+        <li>He would let parents transfer guardianship to others for payment, a “free market” in adoption, and argues this would benefit children compared with State placement.</li>
+        <li>A child becomes a full self-owner when he leaves home or shows he can support himself. The right to run away is his decisive right.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-15">
+      <p class="ch-label">Chapter 15</p>
+      <h3>“Human Rights” as Property Rights</h3>
+      <p class="gist">Every genuine right is a property right, which is why rights never conflict.</p>
+      <ul class="points">
+        <li>“Free speech” means the right to use your own voice, printing press or rented hall, and to address whoever agrees to listen. It is a right over property.</li>
+        <li>Justice Holmes’s example of falsely shouting fire in a crowded theatre isn’t a limit on free speech. It is a violation of the theatre owner’s and patrons’ contract and property.</li>
+        <li>Conflicts between rights, such as speech against privacy or assembly against order, dissolve once each is traced back to who owns what.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-16">
+      <p class="ch-label">Chapter 16</p>
+      <h3>Knowledge, True and False</h3>
+      <p class="gist">Libel, slander and blackmail, judged by the property test.</p>
+      <ul class="points">
+        <li>A reputation consists of what other people think, and you don’t own other people’s minds. So there is no property right in reputation, and libel and slander laws are unjustified.</li>
+        <li>By the same reasoning, blackmail should be legal. It is an offer to sell silence about information one has a right to publish.</li>
+        <li>Rothbard adds that ending libel law might even help reputations, because people would weigh unfounded accusations more sceptically.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-17">
+      <p class="ch-label">Chapter 17</p>
+      <h3>Bribery</h3>
+      <p class="gist">The wrong in bribery lies with the one who takes it.</p>
+      <ul class="points">
+        <li>An employee who takes a bribe to favour a supplier breaks his agreement with his employer, so he is the wrongdoer.</li>
+        <li>The briber has made an offer, and in Rothbard’s view offering is no crime.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-18">
+      <p class="ch-label">Chapter 18</p>
+      <h3>The Boycott</h3>
+      <p class="gist">Refusing to deal, and urging others to refuse, is always legitimate.</p>
+      <ul class="points">
+        <li>Everyone may decline to trade with anyone, for any reason, and may persuade others to do likewise.</li>
+        <li>That includes secondary boycotts. Only violence, or threats of it, crosses the line.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-19">
+      <p class="ch-label">Chapter 19</p>
+      <h3>Property Rights and the Theory of Contracts</h3>
+      <p class="gist">A contract is enforceable as a transfer of title, not as a promise.</p>
+      <ul class="points">
+        <li>The title-transfer theory holds that a contract binds when it transfers ownership of something, now or on a condition. A mere promise to do something in the future is not enforceable.</li>
+        <li>Failing to repay a loan is theft, because the creditor’s money or its equivalent now belongs to him.</li>
+        <li>You can’t sell yourself into slavery, or be forced to perform labour you promised. Your will can’t be transferred, so such “contracts” are void (see the table below).</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · What the title-transfer theory enforces</p>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <thead><tr><th scope="col">Agreement</th><th scope="col">Enforceable?</th><th scope="col">Why</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A loan</th><td class="v-ok">Yes</td><td>The borrower received money on condition of returning its title. Not paying is theft.</td></tr>
+              <tr><th scope="row">A conditional sale</th><td class="v-ok">Yes</td><td>“This is yours when you deliver” transfers title the moment the condition is met.</td></tr>
+              <tr><th scope="row">A promise to work</th><td class="v-no">No</td><td>Labour can’t be compelled. Quitting is allowed, though pay already given for work not done must be returned.</td></tr>
+              <tr><th scope="row">A promise to marry</th><td class="v-no">No</td><td>No title changed hands, only a promise of future conduct.</td></tr>
+              <tr><th scope="row">Selling yourself into slavery</th><td class="v-no">Void</td><td>The will is inalienable. It can’t be transferred, so the sale transfers nothing.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>Our examples, applying the theory as Chapter 19 states it.</figcaption>
+      </figure>
+    </article>
+
+    <article class="chapter" id="ch-20">
+      <p class="ch-label">Chapter 20</p>
+      <h3>Lifeboat Situations</h3>
+      <p class="gist">Emergencies don’t suspend property rights.</p>
+      <ul class="points">
+        <li>Critics test libertarian ethics with lifeboats and starving men. Rothbard answers that an ethics should be built for ordinary life, not for rare extremes.</li>
+        <li>Even in extremes, taking another’s property remains a wrong. The victim may choose not to prosecute, and sympathy may be appropriate.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-21">
+      <p class="ch-label">Chapter 21</p>
+      <h3>“Rights” of Animals</h3>
+      <p class="gist">Rights belong to beings that reason and choose.</p>
+      <ul class="points">
+        <li>Rights derive from human nature as rational and self-directing. Animals lack that nature and so, in Rothbard’s view, have no rights in the political sense.</li>
+        <li>This doesn’t mean cruelty is good, only that it isn’t a matter for law in his framework.</li>
+      </ul>
+    </article>
+
+    <!-- PART III -->
+    <section class="part" id="part-3">
+      <p class="part-num">Part III</p>
+      <h2>The State Versus Liberty</h2>
+      <p class="part-lede">With a code in hand that applies to everyone equally, Rothbard asks what happens when the State is held to it.</p>
+    </section>
+
+    <article class="chapter" id="ch-22">
+      <p class="ch-label">Chapter 22</p>
+      <h3>The Nature of the State</h3>
+      <p class="gist">The State is the organisation that lives by taxation and claims a monopoly of force.</p>
+      <ul class="points">
+        <li>Every other institution gets its income by production and exchange. The State alone takes it by compulsion. Taxation is therefore theft, and conscription is slavery.</li>
+        <li>War, carried out by the State, is mass murder on a scale no private criminal could manage.</li>
+        <li>Rothbard retells Augustine’s story of the pirate captured by Alexander the Great. The pirate asks why he is called a robber for using one ship when Alexander, who plunders with a navy, is called an emperor.</li>
+        <li>States survive by persuading the majority that their rule is legitimate. Court intellectuals, priests in the past and experts now, supply the justification.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-23">
+      <p class="ch-label">Chapter 23</p>
+      <h3>The Inner Contradictions of the State</h3>
+      <p class="gist">No story of consent can justify it, and no limit can bind it.</p>
+      <ul class="points">
+        <li>Social-contract theories fail because no one signed. Rothbard draws on Lysander Spooner’s <cite>No Treason</cite>, which argued that the Constitution binds no one who didn’t agree to it.</li>
+        <li>A State that holds a monopoly on final judgement decides disputes in which it is itself a party. Nothing outside it can hold it to its own limits.</li>
+        <li>The minimal State of the classical liberals is therefore unstable. It either grows or it isn’t really a State.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-24">
+      <p class="ch-label">Chapter 24</p>
+      <h3>The Moral Status of Relations to the State</h3>
+      <p class="gist">You owe the State no more than you would owe a gang.</p>
+      <ul class="points">
+        <li>Since the State’s claims rest on force, there is no moral duty to tell it the truth or to cooperate beyond what prudence dictates.</li>
+        <li>Paying taxes under threat is not a moral fault, any more than handing a wallet to a robber is.</li>
+        <li>Rothbard also asks who rightly owns property the State holds. His answer runs back to the homesteading and restitution principles: the victims, and those who actually use it.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-25">
+      <p class="ch-label">Chapter 25</p>
+      <h3>Interstate Relations</h3>
+      <p class="gist">War between States, judged by the rule against harming the innocent.</p>
+      <ul class="points">
+        <li>Even a defensive war is limited to force against the actual aggressors. Killing civilians is aggression, whatever the cause.</li>
+        <li>Weapons that can’t discriminate, above all nuclear weapons, can’t be used justly, so their use is ruled out.</li>
+        <li>Rothbard favours neutrality and non-intervention abroad. War enlarges the State at home, a point he takes from Randolph Bourne’s line that war is the health of the State.</li>
+      </ul>
+    </article>
+
+    <!-- PART IV -->
+    <section class="part" id="part-4">
+      <p class="part-num">Part IV</p>
+      <h2>Modern Alternative Theories of Liberty</h2>
+      <p class="part-lede">Four rival defences of freedom. In each, Rothbard finds a gap through which the State’s power returns (a summary table follows the book’s chapters).</p>
+    </section>
+
+    <article class="chapter" id="ch-26">
+      <p class="ch-label">Chapter 26</p>
+      <h3>Utilitarian Free-Market Economics</h3>
+      <p class="gist">Utility can’t ground rights, not even in Mises’s hands.</p>
+      <ul class="points">
+        <li>Economists who defend the market by its results (prosperity, efficiency) have nothing to say to someone who values something else more, such as equality or power.</li>
+        <li>Mises argued that almost everyone shares the goal of prosperity, so the case for the market is practically unanimous. Rothbard respects the argument but finds it hostage to that assumption.</li>
+        <li>Utility also can’t answer the question of justice: who rightly owns what to begin with.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-27">
+      <p class="ch-label">Chapter 27</p>
+      <h3>Isaiah Berlin on Negative Liberty</h3>
+      <p class="gist">Liberty is the absence of aggression, not the absence of obstacles.</p>
+      <ul class="points">
+        <li>Berlin distinguished negative liberty (freedom from interference) from positive liberty (self-mastery).</li>
+        <li>Rothbard welcomes the distinction but objects that Berlin later widened negative liberty to mean having more options and fewer obstacles of any kind. Once poverty counts as a lack of liberty, liberty becomes a case for State action.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-28">
+      <p class="ch-label">Chapter 28</p>
+      <h3>F. A. Hayek and the Concept of Coercion</h3>
+      <p class="gist">Hayek defines coercion too loosely and trusts general rules too much.</p>
+      <ul class="points">
+        <li>In <cite>The Constitution of Liberty</cite>, Hayek counts as coercion some things that are not aggression, such as a sole owner of a desert spring setting its price. He also excuses State coercion that follows general, known and equal rules.</li>
+        <li>Rothbard replies that general rules can be tyrannical: universal conscription is perfectly general. Only a property-based definition of coercion reliably protects liberty.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="ch-29">
+      <p class="ch-label">Chapter 29</p>
+      <h3>Robert Nozick and the Immaculate Conception of the State</h3>
+      <p class="gist">No invisible hand turns protection agencies into a legitimate State.</p>
+      <ul class="points">
+        <li>Nozick’s <cite>Anarchy, State, and Utopia</cite> (1974) argued that a minimal State could arise from anarchy without violating anyone’s rights. A dominant protection agency would forbid risky enforcement by others and compensate them.</li>
+        <li>Rothbard answers that no actual State arose that way, which is the “immaculate conception.” Banning others’ enforcement because it is merely risky is itself aggression, and Nozick’s compensation principle would license almost any prohibition.</li>
+      </ul>
+    </article>
+
+    <!-- PART V -->
+    <section class="part" id="part-5">
+      <p class="part-num">Part V</p>
+      <h2>Toward a Theory of Strategy for Liberty</h2>
+      <p class="part-lede">A short final part on how to pursue the goal.</p>
+    </section>
+
+    <article class="chapter" id="ch-30">
+      <p class="ch-label">Chapter 30</p>
+      <h3>Toward a Theory of Strategy for Liberty</h3>
+      <p class="gist">Hold to the goal of complete liberty, and never trade it for a step backwards.</p>
+      <ul class="points">
+        <li>Rothbard argues, as the abolitionists did about slavery, that the goal itself should be immediate liberty. Gradualism as a goal only prolongs injustice.</li>
+        <li>Transitional steps are acceptable if they reduce State power and never add new coercion elsewhere.</li>
+        <li>A movement needs a committed core that keeps the principles intact. It must avoid two errors: opportunism, which sells out the goal, and sectarianism, which refuses any real-world engagement.</li>
+        <li>Education and ideas come first, because States rest on public opinion.</li>
+      </ul>
+    </article>
+
+    <!-- CONTEXT -->
+    <section class="sec" id="rivals" style="margin-top:56px">
+      <p class="kicker">Context</p>
+      <h2>Rothbard vs his rivals</h2>
+      <p>Part IV in one table: where each rival defence of liberty sits, and the hole Rothbard finds in it.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Thinker</th><th scope="col">Their case for liberty</th><th scope="col">Rothbard’s objection</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Utilitarian economists, Mises</th><td>Markets produce the most prosperity, which nearly everyone wants.</td><td>Silent against those who value other ends, and unable to say who rightly owns what.</td></tr>
+            <tr><th scope="row">Isaiah Berlin</th><td>Negative liberty: freedom from interference.</td><td>Later widened to “fewer obstacles,” which lets poverty count as unfreedom and invites the State in.</td></tr>
+            <tr><th scope="row">F. A. Hayek</th><td>Freedom under general, known, equal rules; coercion minimised.</td><td>General rules can still be tyrannical, and coercion should mean aggression against property.</td></tr>
+            <tr><th scope="row">Robert Nozick</th><td>A minimal State can arise from anarchy without violating rights.</td><td>No State arose that way, and banning “risky” enforcement is itself aggression.</td></tr>
+            <tr><th scope="row">Classical liberals</th><td>Limited government protects rights.</td><td>A monopoly judge of its own limits won’t stay limited.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sec" id="debates">
+      <p class="kicker">Context</p>
+      <h2>Where it has been argued with</h2>
+      <div class="debate"><h3>The foundation</h3><p>Philosophers outside the natural-law tradition doubt that “ought” can be read off human nature as directly as Rothbard claims. Even sympathisers sought other foundations. Hans-Hermann Hoppe’s “argumentation ethics” (late 1980s) tried to derive self-ownership from the act of arguing itself.</p></div>
+      <div class="debate"><h3>Children</h3><p>Chapter 14’s positions, no legal duty to feed a child and a market in guardianship, are the most criticised in the book, including by libertarians who accept the rest. Defenders say they follow strictly from the premises. Critics say that is the problem with the premises.</p></div>
+      <div class="debate"><h3>Initial acquisition</h3><p>Locke qualified property with a proviso that “enough and as good” be left for others, and Nozick kept a version of it. Rothbard drops the proviso entirely. Critics ask whether first use can really justify permanent, unlimited ownership of scarce land.</p></div>
+      <div class="debate"><h3>Libel, blackmail and punishment</h3><p>Legal scholars dispute the claims that reputation isn’t ownable, that blackmail is a legitimate trade, and that the victim may set proportional punishment. They argue the reasoning ignores harms and incentives the law exists to handle.</p></div>
+      <div class="debate"><h3>Anarchy or minimal State</h3><p>Nozick and followers of Ayn Rand hold that some State is necessary and can be legitimate. Rothbard’s Chapter 29 is one side of a long exchange that remains the central split inside libertarian thought.</p></div>
+    </section>
+
+    <section class="sec" id="glossary">
+      <p class="kicker">Terms of art</p>
+      <h2>Glossary</h2>
+      <dl class="gloss">
+        <dt>Natural law</dt><dd>Ethics derived by reason from the nature of man and the world, binding regardless of any government.</dd>
+        <dt>Positive law</dt><dd>Whatever a State enacts and enforces.</dd>
+        <dt>Self-ownership</dt><dd>Each person’s exclusive right to control his own body.</dd>
+        <dt>Homesteading</dt><dd>Acquiring unowned land or resources by first putting them to use.</dd>
+        <dt>Aggression</dt><dd>Initiating physical force, or threatening it, against another’s person or property.</dd>
+        <dt>Nonaggression principle</dt><dd>The rule that no one may commit aggression. The single prohibition of the legal code.</dd>
+        <dt>Restitution</dt><dd>The criminal repaying the victim. For Rothbard, the first purpose of justice.</dd>
+        <dt>Proportionality</dt><dd>Punishment limited to the scale of the crime, set by the victim.</dd>
+        <dt>Title-transfer theory</dt><dd>The view that contracts are enforceable only as transfers of property titles.</dd>
+        <dt>Inalienability</dt><dd>The will cannot be transferred, so no one can sell himself into slavery.</dd>
+        <dt>The State</dt><dd>The organisation that obtains revenue by taxation and claims a monopoly of force over a territory.</dd>
+        <dt>Negative liberty</dt><dd>Berlin’s term for freedom from interference by others.</dd>
+        <dt>Abolitionism</dt><dd>Holding immediate liberty as the goal, while accepting steps that genuinely reduce coercion.</dd>
+      </dl>
+    </section>
+
+    <section class="sec" id="reading">
+      <p class="kicker">Using it</p>
+      <h2>A reading path</h2>
+      <p>The chapters are short and mostly independent. For the argument’s spine:</p>
+      <ol class="steps">
+        <li><div><p class="phase">Chapters 1, 3 and 5</p><p>What natural law is, why it is radical, and the limited scope of the project.</p></div></li>
+        <li><div><p class="phase">Chapters 6–9</p><p>Crusoe, exchange, self-ownership and crime: the whole system in four chapters.</p></div></li>
+        <li><div><p class="phase">Chapters 13, 15, 16, 19</p><p>The applications that show how far the logic runs.</p></div></li>
+        <li><div><p class="phase">Chapters 22–23</p><p>The State under the same rules as everyone else.</p></div></li>
+        <li><div><p class="phase">Chapters 28–29</p><p>Hayek and Nozick, the two critiques most often read on their own.</p></div></li>
+      </ol>
+      <p style="margin-top:28px" class="kicker">Read alongside</p>
+      <ul class="books">
+        <li>John Locke, <cite>Second Treatise of Government</cite> (1689): self-ownership and property through labour.</li>
+        <li>Murray N. Rothbard, <cite>For a New Liberty</cite> (1973): the popular manifesto version.</li>
+        <li>Robert Nozick, <cite>Anarchy, State, and Utopia</cite> (1974): the minimal-State case Chapter 29 answers.</li>
+        <li>Lysander Spooner, <cite>No Treason</cite> (1867–70): the case against consent that Chapter 23 builds on.</li>
+        <li><cite>Man, Economy, and State</cite>, summarised on this site: the economics this ethics is meant to stand beside.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer class="wrap foot">
+  <p>A study summary of Murray N. Rothbard, <cite>The Ethics of Liberty</cite> (1982; second edition 1998, introduction by Hans-Hermann Hoppe). Paraphrased throughout, with no direct quotation; the principle in the hero is our own wording. Chapter titles follow the book. The contracts table uses our examples to illustrate Chapter 19’s theory, and the plat is a drawing, not a map.</p>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  var btn = document.getElementById('themeToggle');
+  if (btn) btn.addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('civ-theme', next); } catch (e) {}
+  });
+
+  function rng(seed) {
+    return function () {
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+      var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  // Hero: Crusoe's island as a surveyor's plat. Surveyed parcels to the west, one fresh homestead at the frontier.
+  var canvas = document.getElementById('plat');
+  function drawPlat() {
+    if (!canvas || !canvas.getContext) return;
+    var w = Math.max(240, Math.round(canvas.getBoundingClientRect().width)), h = Math.round(w * 0.8);
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    var cs = getComputedStyle(root);
+    var ink = cs.getPropertyValue('--ink').trim(), ink3 = cs.getPropertyValue('--ink-3').trim(),
+        rule = cs.getPropertyValue('--rule-strong').trim(), land = cs.getPropertyValue('--surface').trim(),
+        claim = cs.getPropertyValue('--claim').trim();
+    var cx = w * 0.5, cy = h * 0.53, R = Math.min(w, h) * 0.43;
+    function coast(t) { return R * (1 + 0.09 * Math.sin(3 * t + 1) + 0.05 * Math.sin(5 * t + 2.3) + 0.025 * Math.sin(11 * t)); }
+    function island() {
+      ctx.beginPath();
+      for (var k = 0; k <= 240; k++) {
+        var t = k / 240 * Math.PI * 2, r = coast(t);
+        var x = cx + r * Math.cos(t), y = cy + r * 0.82 * Math.sin(t);
+        if (k) ctx.lineTo(x, y); else ctx.moveTo(x, y);
+      }
+      ctx.closePath();
+    }
+    // sea: short hatch strokes outside the coast
+    ctx.strokeStyle = rule; ctx.lineWidth = 0.8;
+    var r = rng(1689);
+    for (var s = 0; s < 150; s++) {
+      var sx = r() * w, sy = r() * h;
+      ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(sx + 9, sy); ctx.stroke();
+    }
+    island(); ctx.fillStyle = land; ctx.fill();
+    ctx.save(); island(); ctx.clip();
+    // jittered survey grid
+    var cols = 9, rows = 8, cw = w / cols, ch = h / rows, pts = [];
+    for (var i = 0; i <= cols; i++) {
+      pts[i] = [];
+      for (var j = 0; j <= rows; j++) pts[i][j] = [i * cw + (r() - 0.5) * cw * 0.45, j * ch + (r() - 0.5) * ch * 0.45];
+    }
+    var frontier = w * 0.56, homestead = null;
+    ctx.strokeStyle = ink; ctx.lineWidth = 0.9;
+    ctx.font = '10px "Courier Prime", monospace'; ctx.fillStyle = ink3;
+    var lot = 1;
+    for (i = 0; i < cols; i++) for (j = 0; j < rows; j++) {
+      var a = pts[i][j], b = pts[i + 1][j], c = pts[i + 1][j + 1], d = pts[i][j + 1];
+      var mx = (a[0] + b[0] + c[0] + d[0]) / 4, my = (a[1] + b[1] + c[1] + d[1]) / 4;
+      if (mx > frontier) {
+        if (!homestead && Math.abs(my - cy) < ch * 0.8 && mx < frontier + cw) homestead = [a, b, c, d, mx, my];
+        continue;
+      }
+      ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.lineTo(c[0], c[1]); ctx.lineTo(d[0], d[1]); ctx.closePath(); ctx.stroke();
+      if (r() < 0.55) ctx.fillText(String(lot++), mx - 4, my + 3);
+    }
+    // unowned east: sparse stipple
+    ctx.fillStyle = rule;
+    for (s = 0; s < 260; s++) {
+      var ux = frontier + cw * 0.9 + r() * (w - frontier), uy = r() * h;
+      ctx.fillRect(ux, uy, 1.2, 1.2);
+    }
+    if (homestead) {
+      var hq = homestead;
+      ctx.beginPath(); ctx.moveTo(hq[0][0], hq[0][1]); ctx.lineTo(hq[1][0], hq[1][1]); ctx.lineTo(hq[2][0], hq[2][1]); ctx.lineTo(hq[3][0], hq[3][1]); ctx.closePath();
+      ctx.globalAlpha = 0.28; ctx.fillStyle = claim; ctx.fill(); ctx.globalAlpha = 1;
+      ctx.strokeStyle = claim; ctx.lineWidth = 2; ctx.stroke();
+    }
+    ctx.restore();
+    island(); ctx.strokeStyle = ink; ctx.lineWidth = 1.6; ctx.stroke();
+    // labels
+    ctx.font = '11px "Courier Prime", monospace';
+    ctx.fillStyle = ink3; ctx.fillText('SURVEYED · OWNED', cx - R * 0.98, cy - R * 0.98);
+    ctx.fillText('UNOWNED', cx + R * 0.42, cy - R * 0.98);
+    if (homestead) {
+      ctx.fillStyle = claim; ctx.font = 'bold 11px "Courier Prime", monospace';
+      var lx = Math.min(w - 118, homestead[4] + 20), ly = homestead[5] + R * 0.52;
+      ctx.fillText('FIRST USE', lx, ly);
+      ctx.strokeStyle = claim; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(lx + 4, ly - 10); ctx.lineTo(homestead[4], homestead[5] + 6); ctx.stroke();
+    }
+    // north arrow
+    var nx = w - 26, ny = 30;
+    ctx.strokeStyle = ink; ctx.fillStyle = ink; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.moveTo(nx, ny + 16); ctx.lineTo(nx, ny - 10); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(nx, ny - 14); ctx.lineTo(nx - 5, ny - 4); ctx.lineTo(nx + 5, ny - 4); ctx.closePath(); ctx.fill();
+    ctx.font = 'bold 11px "Courier Prime", monospace'; ctx.fillText('N', nx - 3.5, ny + 29);
+  }
+
+  drawPlat();
+  var timer;
+  window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(drawPlat, 150); });
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', drawPlat);
+  }
+  new MutationObserver(drawPlat).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawPlat);
+
+  // Phone contents: the top-bar button opens a copy of the rail as a sheet.
+  var fab = document.getElementById('tocOpen'), sheet = document.getElementById('tocSheet'),
+      backdrop = document.getElementById('tocBackdrop'), closeBtn = document.getElementById('tocClose'),
+      railList = document.querySelector('.rail ol'), where = fab && fab.querySelector('.where');
+  if (fab && sheet && backdrop && closeBtn && railList) {
+    sheet.appendChild(railList.cloneNode(true));
+    var openSheet = function () {
+      sheet.hidden = false; backdrop.hidden = false; fab.setAttribute('aria-expanded', 'true');
+      var cur = sheet.querySelector('a.is-active');
+      if (cur) sheet.scrollTop += cur.getBoundingClientRect().top - sheet.getBoundingClientRect().top - sheet.clientHeight / 2;
+      (cur || closeBtn).focus({ preventScroll: true });
+    };
+    var closeSheet = function (refocus) {
+      sheet.hidden = true; backdrop.hidden = true; fab.setAttribute('aria-expanded', 'false');
+      if (refocus) fab.focus({ preventScroll: true });
+    };
+    fab.addEventListener('click', function () { if (sheet.hidden) openSheet(); else closeSheet(false); });
+    closeBtn.addEventListener('click', function () { closeSheet(true); });
+    backdrop.addEventListener('click', function () { closeSheet(true); });
+    sheet.addEventListener('click', function (e) { if (e.target.closest('a[href^="#"]')) closeSheet(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sheet.hidden) closeSheet(true); });
+  }
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a[href^="#"], .toc-sheet a[href^="#"]'));
+  if (!('IntersectionObserver' in window) || !links.length) return;
+  var byId = {};
+  links.forEach(function (a) {
+    var id = a.getAttribute('href').slice(1);
+    (byId[id] = byId[id] || []).push(a);
+  });
+  var labelFor = function (a) {
+    var n = a.querySelector('.n');
+    if (!n) return a.textContent.trim();
+    return 'Ch ' + n.textContent.trim() + ' · ' + a.textContent.replace(n.textContent, '').trim();
+  };
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var group = byId[e.target.id];
+      if (!group) return;
+      links.forEach(function (l) { l.classList.remove('is-active'); });
+      group.forEach(function (l) { l.classList.add('is-active'); });
+      if (where) where.textContent = labelFor(group[0]);
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+  Object.keys(byId).forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) io.observe(el);
+  });
+})();
+</script>
+<script src="book-nav.js" defer></script>
+</body>
+</html>

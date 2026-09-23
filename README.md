@@ -15,14 +15,15 @@ The site is plain static HTML/CSS/JS with no build step. Open `index.html` local
 | --- | --- | --- | --- | --- |
 | [The Story of Civilization I–IV](durant-story-of-civilization-i-iv.html) | Will Durant | History & civilisation | [PDF](Durant%20—%20The%20Story%20of%20Civilization%20I–IV.pdf) | 2026-07-31 |
 | [The History of Rome](livy-history-of-rome.html) | Livy | History & civilisation | [PDF](Livy%20—%20The%20History%20of%20Rome.pdf) | 2026-07-31 |
-| [The Lessons of History](lessons-of-history.html) | Will & Ariel Durant | History & civilisation | — | 2026-07-31 |
-| [Guns, Germs, and Steel](guns-germs-and-steel.html) | Jared Diamond | History & civilisation | — | 2026-07-31 |
+| [The Lessons of History](lessons-of-history.html) | Will & Ariel Durant | History & civilisation | — | 2026-09-23 |
+| [Guns, Germs, and Steel](guns-germs-and-steel.html) | Jared Diamond | History & civilisation | — | 2026-09-23 |
 | [The Causes of Portuguese Backwardness](palma-causas-do-atraso-portugues.html) | Nuno Palma | History & civilisation | — | 2026-08-01 |
 | [Why Nations Fail](why-nations-fail.html) | Daron Acemoglu & James A. Robinson | History & civilisation | — | 2026-08-02 |
 | [A History of Warfare](keegan-history-of-warfare.html) | John Keegan | History & civilisation | — | 2026-09-23 |
-| [The Beginning of Infinity](the-beginning-of-infinity.html) | David Deutsch | Knowledge & mind | — | 2026-07-31 |
+| [The Beginning of Infinity](the-beginning-of-infinity.html) | David Deutsch | Knowledge & mind | — | 2026-09-23 |
 | [Objective Knowledge](popper-objective-knowledge.html) | Karl Popper | Knowledge & mind | [PDF](Popper%20—%20Objective%20Knowledge.pdf) | 2026-07-31 |
 | [Meditations](marcus-aurelius-meditations.html) | Marcus Aurelius | Knowledge & mind | [PDF](Marcus%20Aurelius%20—%20Meditations.pdf) | 2026-07-31 |
+| [The Ethics of Liberty](rothbard-ethics-of-liberty.html) | Murray N. Rothbard | Knowledge & mind | — | 2026-09-23 |
 | [Fooled by Randomness](fooled-by-randomness.html) | Nassim Nicholas Taleb | Markets, risk & enterprise | — | 2026-09-23 |
 | [Titan](titan-rockefeller.html) | Ron Chernow | Markets, risk & enterprise | — | 2026-07-31 |
 | [The Almanack of Naval Ravikant](almanack-naval-ravikant.html) | Eric Jorgenson | Markets, risk & enterprise | — | 2026-08-01 |
