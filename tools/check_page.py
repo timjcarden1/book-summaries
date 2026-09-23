@@ -58,6 +58,7 @@ def main():
         check("related-books nav injected", desk.locator(".book-nav").count() == 1)
         check("desktop rail present", desk.locator(".rail a").count() > 3,
               f"{desk.locator('.rail a').count()} links")
+        check("desktop Back button visible", desk.locator(".chip--back").is_visible())
 
         ctx = browser.new_context(viewport={"width": 390, "height": 844}, is_mobile=True,
                                   has_touch=True, device_scale_factor=2)
@@ -66,6 +67,8 @@ def main():
         phone.goto(url, wait_until="networkidle")
         phone.wait_for_timeout(600)
         phone.screenshot(path=str(out / "phone-top.png"))
+        check("phone Back button visible", phone.locator(".chip--back").is_visible()
+              and phone.get_attribute(".chip--back", "href") == "index.html")
         check("phone Contents button visible", phone.locator("#tocOpen").is_visible())
         check("phone Aa button visible", phone.locator(".chip--aa").is_visible())
         check("phone Theme button visible", phone.locator("#themeToggle").is_visible())

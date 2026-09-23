@@ -120,11 +120,15 @@ cite { font-style: italic; }
 /* ---------- site chrome: contents (phones), text size, theme ---------- */
 .chrome {
   position: fixed; z-index: 40; top: 0; left: 0; right: 0;
-  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
   padding: calc(env(safe-area-inset-top, 0px) + 14px) 14px 0; pointer-events: none;
 }
 .chrome > * { pointer-events: auto; }
 .chrome__end { display: flex; gap: 6px; flex: none; }
+.chrome__start { display: flex; gap: 6px; min-width: 0; flex: 0 1 auto; }
+.chip--back { flex: none; }
+.chip--back span[aria-hidden] { font-size: 1.05rem; line-height: 1; letter-spacing: 0; }
+@media (max-width: 980px) { .chip--back .back-label { display: none; } }
 .chip {
   display: inline-flex; align-items: center; gap: 8px; min-height: 36px;
   font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
@@ -317,10 +321,13 @@ tbody td:nth-child(3) { color: var(--ink); }
 <body>
 
 <div class="chrome">
-  <button class="chip chip--toc" id="tocOpen" type="button" aria-controls="tocSheet" aria-expanded="false">
+  <div class="chrome__start">
+    <a class="chip chip--back" href="index.html" aria-label="All summaries"><span aria-hidden="true">←</span><span class="back-label">All summaries</span></a>
+    <button class="chip chip--toc" id="tocOpen" type="button" aria-controls="tocSheet" aria-expanded="false">
     <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
     <span>Contents</span><span class="where"></span>
   </button>
+  </div>
   <div class="chrome__end">
     <a class="chip chip--aa" href="settings.html" title="Text size" aria-label="Text size settings">Aa</a>
     <button class="chip" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
