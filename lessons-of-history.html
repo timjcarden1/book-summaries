@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Lessons of History — Will & Ariel Durant</title>
-<meta name="description" content="A chapter-by-chapter summary of Will and Ariel Durant's The Lessons of History: thirteen short chapters on geography, biology, race, character, morals, religion, economics, socialism, government, war, decay and progress.">
+<meta name="description" content="A detailed chapter-by-chapter summary of Will and Ariel Durant's The Lessons of History (1968): all thirteen chapters, on the earth, biology, race, character, morals, religion, economics, socialism, government, war, decay and progress, with the book's examples, its forecasts checked against what happened, and its critics.">
 <script>try{var t=localStorage.getItem('civ-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -221,6 +221,118 @@ tbody td { color: var(--ink-2); }
 .books cite { color: var(--ink); }
 .foot { border-top: 1px solid var(--rule); padding-block: 26px 40px; font-family: var(--label); font-size: .8rem; color: var(--ink-3); line-height: 1.6; }
 .foot p { margin: 0; max-width: 90ch; }
+.foot p + p { margin-top: 10px; }
+
+/* ---------- longer chapters: sub-heads and the preface ---------- */
+.sub { font-family: var(--label); font-weight: 600; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--war); margin: 24px 0 10px; }
+.gist + .sub { margin-top: 6px; }
+.preface { margin: 22px 0 0; padding: 16px 18px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; }
+.preface .kicker { margin-bottom: 6px; }
+.preface p:last-child { margin: 0; font-size: 1.08rem; color: var(--ink-2); }
+
+/* ---------- plate: the table of character elements (Ch V) ---------- */
+.pairs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.pair { background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 12px 14px 14px; }
+.pair__h { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 8px; align-items: baseline; margin: 0; font-family: var(--display); font-weight: 600; font-size: 1.32rem; line-height: 1.1; }
+.pair__h .pos { color: var(--war); }
+.pair__h .neg { color: var(--ink-3); text-align: right; }
+.pair__h i { font-style: normal; font-family: var(--label); font-size: .9rem; color: var(--rule-strong); }
+.pair dl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2px 14px; margin: 0; }
+.pair dt { grid-column: 1 / -1; margin-top: 9px; padding-top: 7px; border-top: 1px solid var(--rule); font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.pair dd { margin: 0; font-family: var(--label); font-size: .92rem; line-height: 1.4; color: var(--ink); }
+.pair dd.neg { text-align: right; color: var(--ink-3); }
+
+/* ---------- plate: three economies, three moral codes (Ch VI) ---------- */
+.stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.stage { background: var(--paper); border-top: 3px solid var(--war); border-radius: 0 0 3px 3px; padding: 12px 14px 14px; }
+.stage:nth-child(2) { border-top-color: var(--peace); }
+.stage:nth-child(3) { border-top-color: var(--ink-3); }
+.stage .k { margin: 0; font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.stage h4 { margin: 4px 0 4px; font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.05; }
+.stage dl { margin: 0; }
+.stage dt { margin-top: 9px; font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.stage dd { margin: 2px 0 0; font-size: 1rem; line-height: 1.42; color: var(--ink-2); }
+
+/* ---------- plate: redistributions, by law or by force (Ch VIII) ---------- */
+.episodes { list-style: none; margin: 18px 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.episodes li { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 12px; padding: 11px 0; border-bottom: 1px solid var(--rule); }
+.episodes li::before { content: ""; grid-row: 1 / span 2; width: 12px; height: 12px; margin-top: 5px; border-radius: 50%; background: var(--war); }
+.episodes li.law::before { background: var(--peace); }
+.episodes li.mixed::before { background: transparent; border: 2px solid var(--ink-3); }
+.episodes b { font-family: var(--label); font-weight: 600; font-size: 1rem; line-height: 1.35; color: var(--ink); }
+.episodes b span { font-weight: 500; color: var(--ink-3); }
+.episodes p { margin: 0; font-size: 1rem; line-height: 1.45; color: var(--ink-2); }
+.key { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 14px 0 0; font-family: var(--label); font-size: .86rem; color: var(--ink-3); }
+.key span::before { content: ""; display: inline-block; width: 11px; height: 11px; margin-right: 7px; vertical-align: -1px; border-radius: 50%; background: var(--war); }
+.key .law::before { background: var(--peace); }
+.key .mixed::before { background: transparent; border: 2px solid var(--ink-3); }
+
+/* socialist timeline: how each ended */
+.vtl em { display: block; margin-top: 3px; font-style: normal; font-size: 1rem; line-height: 1.45; color: var(--ink-2); }
+
+/* ---------- plate: who could vote in Attica (Ch X) ---------- */
+.attica__head { margin: 0 0 12px; font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.15; }
+.attica__head b { color: var(--peace); }
+.attica__bar { display: flex; gap: 2px; height: 44px; border-radius: 3px; overflow: hidden; }
+.attica__bar span { display: block; min-width: 0; }
+.s-slave { background: var(--war); }
+.s-free { background: var(--rule-strong); }
+.s-vote { background: var(--peace); }
+.attica__legend { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 9px; }
+.attica__legend li { display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 10px; align-items: baseline; font-family: var(--label); font-size: .98rem; line-height: 1.35; color: var(--ink-2); }
+.attica__legend li::before { content: ""; align-self: center; width: 14px; height: 14px; border-radius: 2px; background: var(--war); }
+.attica__legend li.free::before { background: var(--rule-strong); }
+.attica__legend li.vote::before { background: var(--peace); }
+.attica__legend b { font-family: var(--display); font-weight: 700; font-size: 1.3rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* ---------- plate: growth, decay and the heir (Ch XII) ---------- */
+.gd { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.gd__lane { background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 12px 14px 14px; }
+.gd__lane h4 { margin: 0 0 6px; font-family: var(--display); font-weight: 600; font-size: 1.45rem; color: var(--peace); }
+.gd__lane--decay h4 { color: var(--war); }
+.gd__lane ol { list-style: none; margin: 0; padding: 0; }
+.gd__lane li { padding: 4px 0; font-size: 1rem; line-height: 1.42; color: var(--ink-2); }
+.gd__lane li + li::before { content: "↓"; display: block; margin: 0 0 4px; font-family: var(--label); font-size: .95rem; line-height: 1; color: var(--rule-strong); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+.chips span { padding: 3px 9px; border: 1px solid var(--rule-strong); border-radius: 999px; font-family: var(--label); font-size: .84rem; line-height: 1.35; color: var(--ink-2); }
+.heir { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.heir p { margin: 0; font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.heir ol { list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 0; margin: 6px 0 0; padding: 0; }
+.heir li { font-family: var(--display); font-weight: 600; font-size: 1.25rem; }
+.heir li + li::before { content: "→"; margin: 0 9px 0 7px; font-family: var(--label); font-size: 1rem; color: var(--peace); }
+
+/* ---------- the general and the philosopher (Ch XI) ---------- */
+.duel { margin: 20px 0 6px; border-left: 3px solid var(--rule-strong); }
+.duel > div { padding: 8px 0 12px 18px; }
+.duel .who { margin: 0; font-family: var(--label); font-weight: 600; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--war); }
+.duel .who.phil { color: var(--peace); }
+.duel p + p { margin: 4px 0 0; font-size: 1.08rem; color: var(--ink-2); }
+
+/* ---------- forecasts ---------- */
+.fc { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 2px 16px; padding: 16px 0 18px; border-top: 1px solid var(--rule); }
+.fc__v { grid-row: 1 / span 2; align-self: start; margin: 5px 0 0; padding: 5px 6px; text-align: center; border: 1px solid currentColor; border-radius: 3px; font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+.fc__v--held { color: var(--peace); }
+.fc__v--partly { color: var(--ink-2); }
+.fc__v--missed { color: var(--war); }
+.fc h3 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 1.4rem; line-height: 1.15; }
+.fc h3 span { margin-left: 6px; font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+.fc p { margin: 4px 0 0; font-size: 1.06rem; color: var(--ink-2); }
+
+@media (max-width: 700px) {
+  .stages, .gd { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .pairs { grid-template-columns: minmax(0, 1fr); }
+  .theories table { min-width: 0; }
+  .theories thead { display: none; }
+  .theories tr { display: block; padding: 12px 16px 14px; border-bottom: 1px solid var(--rule); }
+  .theories tbody tr:last-child { border-bottom: 0; }
+  .theories th, .theories td { display: block; width: auto; padding: 0; border: 0; }
+  .theories td { margin-top: 8px; }
+  .theories td::before { content: attr(data-l); display: block; font-family: var(--label); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+  .fc { grid-template-columns: minmax(0, 1fr); }
+  .fc__v { grid-row: auto; justify-self: start; margin: 0 0 6px; }
+}
 
 @media (max-width: 760px) {
   body { font-size: 1.12rem; }
@@ -236,7 +348,7 @@ tbody td { color: var(--ink-2); }
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Book Summaries">
 <meta property="og:title" content="The Lessons of History — Will &amp; Ariel Durant">
-<meta property="og:description" content="Thirteen short chapters distilling five decades of writing history into what actually recurs.">
+<meta property="og:description" content="Thirteen short chapters distilling four decades of writing history into what actually recurs.">
 <meta property="og:url" content="https://book-summaries-umber.vercel.app/lessons-of-history.html">
 <meta property="og:image" content="https://book-summaries-umber.vercel.app/og/lessons-of-history.png">
 <meta property="og:image:width" content="1200">
@@ -244,7 +356,7 @@ tbody td { color: var(--ink-2); }
 <meta property="og:image:alt" content="The Lessons of History — Will &amp; Ariel Durant">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Lessons of History — Will &amp; Ariel Durant">
-<meta name="twitter:description" content="Thirteen short chapters distilling five decades of writing history into what actually recurs.">
+<meta name="twitter:description" content="Thirteen short chapters distilling four decades of writing history into what actually recurs.">
 <meta name="twitter:image" content="https://book-summaries-umber.vercel.app/og/lessons-of-history.png">
 <!-- link-preview:end -->
 <link rel="stylesheet" href="book-nav.css">
@@ -330,12 +442,12 @@ var FIG = (function () {
       <p class="saylor">About a hundred pages. Michael Saylor tells people to read it.</p>
       <div class="breath">
         <p class="kicker">The whole book in one breath</p>
-        <p>After four decades writing the eleven volumes of <cite>The Story of Civilization</cite>, the Durants asked what the whole story teaches. Their answer comes in thirteen short essays. Geography matters less as technology grows. History is a branch of biology: life competes, selects and breeds, and so inequality is natural. Race doesn’t make civilisations; civilisations make peoples. Human nature barely changes, while morals shift with the economy, and religion has almost always held the moral order together. Wealth concentrates until it is redistributed, peacefully or violently, and capitalism and socialism keep correcting each other. Governments cycle through familiar forms, and war is nearly constant. Civilisations rise by meeting challenges and decline when they stop. Yet progress is real, because each generation is born into a richer inheritance than the last.</p>
+        <p>After ten volumes of <cite>The Story of Civilization</cite>, the Durants reread the whole narrative and asked what it teaches. They answer in thirteen short essays. The record is too partial for laws, but some things recur. Geography sets the stage, less and less as technology grows. History is a branch of biology: life competes, selects and breeds, so freedom and equality pull against each other. Race doesn’t make civilisations; civilisations make peoples. Human nature barely changes, while morals follow the way people earn a living, and religion has almost always propped up the moral order. Wealth concentrates with ability until it is spread again, by law or by force. State-run economies are as old as Sumer, and capitalism and socialism keep correcting each other. Governments turn through Plato’s wheel, democracy is the hardest form and on balance the best, and war is nearly constant. Civilisations grow by meeting challenges and decay when their leaders stop. Yet progress is real, because each generation is born into a richer inheritance, if it bothers to learn it.</p>
       </div>
       <dl class="facts">
         <div><dt>Published</dt><dd>1968</dd></div>
-        <div><dt>Structure</dt><dd>13 short chapters</dd></div>
-        <div><dt>Distilled from</dt><dd>11 volumes</dd></div>
+        <div><dt>Length</dt><dd>13 chapters, ~100 pages</dd></div>
+        <div><dt>Distilled from</dt><dd>10 volumes, to 1789</dd></div>
         <div><dt>Authors</dt><dd>Will &amp; Ariel Durant</dd></div>
       </dl>
     </div>
@@ -351,7 +463,7 @@ var FIG = (function () {
   <nav class="rail" aria-label="Contents">
     <ol>
       <li><a href="#overview">Overview</a></li>
-      <li><a href="#authors">The authors</a></li>
+      <li><a href="#authors">The authors and the preface</a></li>
       <li><a href="#ideas">Twelve lessons</a></li>
       <li class="grp">Nature</li>
       <li class="ch"><a href="#ch-1"><span class="n">I</span>Hesitations</a></li>
@@ -371,6 +483,7 @@ var FIG = (function () {
       <li class="ch"><a href="#ch-13"><span class="n">XIII</span>Is progress real?</a></li>
       <li class="grp">Context</li>
       <li><a href="#theories">Durants vs other theorists</a></li>
+      <li><a href="#forecasts">Their forecasts, 58 years on</a></li>
       <li><a href="#debates">Debates</a></li>
       <li><a href="#glossary">Glossary</a></li>
       <li><a href="#reading">Reading it</a></li>
@@ -381,68 +494,105 @@ var FIG = (function () {
 
     <section class="sec" id="authors">
       <p class="kicker">The authors</p>
-      <h2>Forty years of history, boiled down</h2>
-      <p>Will Durant (1885–1981) and Ariel Durant (1898–1981) spent most of their lives writing <cite>The Story of Civilization</cite>, eleven volumes from ancient Sumer to Napoleon published between 1935 and 1975. Ariel, credited as co-author from the seventh volume on, worked on it from the beginning. The tenth volume, <cite>Rousseau and Revolution</cite>, won the Pulitzer Prize in 1968.</p>
-      <p>That same year they published <cite>The Lessons of History</cite>. It is a short book of about a hundred pages in which they review their own work and ask what, if anything, it teaches. The tone is humane, ironic and aphoristic, and the book is best read as distilled judgement rather than as argument with footnotes.</p>
+      <h2>Ten volumes, boiled down to a hundred pages</h2>
+      <p>Will Durant (1885–1981) was born in Massachusetts and trained for the priesthood before losing his faith. Ariel Durant (1898–1981) was born in Proskurov, in the Russian Empire, and emigrated to New York as a child. They married in 1913. Will’s <cite>The Story of Philosophy</cite> (1926) was a runaway bestseller, and its income paid for the work of their lives: <cite>The Story of Civilization</cite>, eleven volumes from ancient Sumer to Napoleon, published between 1935 and 1975.</p>
+      <p>Ariel worked on it from the start and was credited as co-author from the seventh volume (1961). The tenth, <cite>Rousseau and Revolution</cite>, won the Pulitzer Prize for general non-fiction in 1968, the year this book came out. They received the Presidential Medal of Freedom in 1977 and died within two weeks of each other in 1981.</p>
+      <p>The tone of <cite>The Lessons of History</cite> is humane, ironic and aphoristic. It argues from instances, not from data. Read it as the judgement of two people who had spent forty years with the record, not as a treatise with footnotes.</p>
+      <div class="preface">
+        <p class="kicker">What the preface says</p>
+        <p>Having finished the story up to 1789, they reread all ten volumes to prepare a corrected edition, noting as they went the events and remarks that seemed to bear on the present, on human nature and on how states behave. The references to their volumes, they explain, are offered as instances, not as authorities. They tried to hold their conclusions back until the survey was done, but they admit their existing opinions probably shaped what they picked. They don’t aim to be original, only inclusive: a survey of human experience, not a personal revelation. They thank their daughter Ethel for her help.</p>
+      </div>
     </section>
 
     <section class="sec" id="ideas">
       <p class="kicker">If you remember nothing else</p>
       <h2>Twelve lessons the Durants draw</h2>
       <div class="ideas">
-        <div class="idea"><p class="tag">I</p><h3>Hold history lightly</h3><p>The record is partial and historians are biased. Every lesson is a hypothesis, not a law.</p></div>
-        <div class="idea"><p class="tag">II</p><h3>Geography sets the stage, less and less</h3><p>Rivers, seas and climate shaped early civilisations. Technology keeps loosening their grip.</p></div>
-        <div class="idea"><p class="tag">III</p><h3>History is part of biology</h3><p>Life is competition, selection and reproduction. Societies are subject to the same laws.</p></div>
-        <div class="idea"><p class="tag">III</p><h3>Freedom and equality conflict</h3><p>Leave people free and natural differences produce unequal results. Enforce equality and freedom dies.</p></div>
-        <div class="idea"><p class="tag">IV</p><h3>Civilisation makes the people</h3><p>No race has a monopoly on civilisation. Conditions create civilisations, and civilisations shape peoples.</p></div>
-        <div class="idea"><p class="tag">V</p><h3>Human nature barely changes</h3><p>What changes is the balance between innovators and conservatives, and both are necessary.</p></div>
-        <div class="idea"><p class="tag">VI–VII</p><h3>Morals follow the economy</h3><p>Moral codes shift with how people make a living, and religion has almost always propped them up.</p></div>
-        <div class="idea"><p class="tag">VIII</p><h3>Wealth concentrates, then is spread</h3><p>Concentration is natural and recurring. It is relieved by redistribution, peaceful if wise, violent if not.</p></div>
-        <div class="idea"><p class="tag">IX</p><h3>Capitalism and socialism correct each other</h3><p>Each has pushed the other toward the virtue it lacked.</p></div>
-        <div class="idea"><p class="tag">X</p><h3>Democracy is the hardest government</h3><p>It asks the most intelligence of the most people, and it is fragile.</p></div>
-        <div class="idea"><p class="tag">XI</p><h3>War is the norm</h3><p>Nations compete as individuals do, without a sheriff above them.</p></div>
-        <div class="idea"><p class="tag">XII–XIII</p><h3>Progress is inheritance</h3><p>We aren’t born better than our ancestors, but we are born into more.</p></div>
+        <div class="idea"><p class="tag">I</p><h3>Hold history lightly</h3><p>Records are partial, historians are biased and change keeps accelerating. Every lesson is a probability, not a law.</p></div>
+        <div class="idea"><p class="tag">II</p><h3>Man, not the earth, makes civilisation</h3><p>Rivers, coasts and climate set the stage. Technology keeps loosening their grip, but leaders and workers turn the stage into a civilisation.</p></div>
+        <div class="idea"><p class="tag">III</p><h3>Freedom and equality are enemies</h3><p>Life is competition and selection. Leave people free and their differences multiply; enforce equality and freedom dies. The realistic goal is equal law and equal opportunity.</p></div>
+        <div class="idea"><p class="tag">IV</p><h3>Civilisation makes the people</h3><p>Great civilisations arose under every skin. Race is preliminary, not creative: circumstances make a culture, and the culture makes a human type.</p></div>
+        <div class="idea"><p class="tag">V</p><h3>Roots matter more than grafts</h3><p>Human nature is constant. The few innovate and the many imitate, and most new ideas are worse than the customs they would replace, so the conservative is as necessary as the radical.</p></div>
+        <div class="idea"><p class="tag">VI</p><h3>Every vice was once a virtue</h3><p>Moral codes follow the economy: hunting prized ferocity, farming prized thrift and chastity, and industry is dissolving the farm code before a new one has formed.</p></div>
+        <div class="idea"><p class="tag">VII</p><h3>Religion keeps coming back</h3><p>No society before ours kept its morals without religion. Faith and scepticism alternate, and religion has “a habit of resurrection”.</p></div>
+        <div class="idea"><p class="tag">VIII</p><h3>Wealth has a heartbeat</h3><p>Ability is concentrated, so wealth concentrates, until the many can match the few. Then it is spread again, peacefully by law like Solon, or violently when reform is refused, as in Rome.</p></div>
+        <div class="idea"><p class="tag">IX</p><h3>Capitalism and socialism correct each other</h3><p>State-run economies are as old as Sumer and usually rise under threat. Most fell to taxes, graft and lost incentive, and in the Durants’ view the two systems were converging.</p></div>
+        <div class="idea"><p class="tag">X</p><h3>Democracy is the hardest government</h3><p>It needs the widest spread of intelligence. It has done more good and less harm than any other form, but it opens the road to dictatorship if it can’t spread wealth and opportunity.</p></div>
+        <div class="idea"><p class="tag">XI</p><h3>War is the norm</h3><p>States have our instincts without our restraints, because no power stands above them. Peace holds only under acknowledged supremacy or equal power.</p></div>
+        <div class="idea"><p class="tag">XII–XIII</p><h3>Progress is inheritance</h3><p>Civilisations decay when leaders fail new challenges, not from old age. What survives is the heritage, which each generation must learn again.</p></div>
       </div>
     </section>
 
     <section class="part" id="the-book">
       <p class="kicker">The book, in order</p>
       <h2>Thirteen short chapters</h2>
-      <p class="part-lede">Each chapter pairs history with one force: the earth, biology, race, character, morals, religion, economics, socialism, government, war. The last two ask whether civilisations must decay and whether progress is real.</p>
+      <p class="part-lede">The first chapter asks whether history can teach anything. The next nine each pair history with one force: the earth, biology, race, character, morals, religion, economics, socialism, government, war. The last two ask whether civilisations must decay, and whether progress is real.</p>
     </section>
 
     <article class="chapter" id="ch-1">
       <p class="ch-label">Chapter I</p>
       <h3>Hesitations</h3>
-      <p class="gist">Can history teach anything, given how little we know?</p>
+      <p class="gist">Before drawing any lessons, the Durants list every reason not to trust them, and then go ahead anyway.</p>
       <ul class="points">
-        <li>The Durants admit the difficulties at the outset. Records are fragmentary, historians select and slant, and the present always colours the past.</li>
-        <li>Human history is a tiny episode on a tiny planet. Any lesson drawn from it is provisional.</li>
-        <li>Still, the attempt is worth making. The past is the present unrolled for understanding, and some patterns recur often enough to count.</li>
+        <li>The chapter opens with the question every historian faces at the end: what was it all for? Has the work taught more about human nature than the man in the street knows, given any guidance for policy, or found regularities that predict what nations will do? Or does history, as the title of a recent French book put it, have no sense at all?</li>
+        <li><strong>Doubt one: we don’t really know the past.</strong> What we know of any event is incomplete, probably inaccurate, and coloured by biased sources and by our own patriotic or religious loyalties. Even a historian who rises above party betrays his preferences in what he chooses and in his adjectives, and he always oversimplifies a crowd of events he can never fully take in.</li>
+        <li><strong>Doubt two: change is accelerating.</strong> Charles Péguy thought in 1909 that the world had changed less since Jesus than in the previous thirty years. Every year some new invention forces a fresh adjustment, so the past is a weaker guide to the future.</li>
+        <li><strong>Doubt three: chance, perhaps freedom.</strong> A quirk of character or circumstance can upset a nation’s course. Alexander drank himself to death in 323 BC and his new empire fell apart. Frederick the Great was saved from disaster in 1762 because a Tsar who admired Prussia came to the throne.</li>
+        <li>So writing history can’t be a science. It is an industry (digging out the facts), an art (finding a meaningful order in them) and a philosophy (seeking perspective). Total perspective is an illusion: there were probably civilisations before Sumer and Egypt that no one has yet dug up.</li>
+        <li>All formulas should be suspect, and history, the Durants say elsewhere, plays havoc with our generalisations. The modest hope is to learn enough from it to bear reality patiently and to respect one another’s delusions.</li>
+        <li>The plan of the book follows from what a person is: a moment in astronomical time, a guest of the earth, a member of a species and a stock, a bundle of character, a believer or doubter, a unit in an economy, perhaps a citizen or a soldier. Hence the chapters: earth, biology, race, character, morals, religion, economics, government and war.</li>
       </ul>
-      <p class="line">“Most history is guessing, and the rest is prejudice.”<span>Chapter I</span></p>
+      <p class="line">“Most history is guessing, and the rest is prejudice.”<span>Chapter I, quoting Will Durant’s <cite>Our Oriental Heritage</cite></span></p>
+      <p class="line">“Only a fool would try to compress a hundred centuries into a hundred pages of hazardous conclusions. We proceed.”<span>Chapter I</span></p>
     </article>
 
     <article class="chapter" id="ch-2">
       <p class="ch-label">Chapter II</p>
       <h3>History and the Earth</h3>
-      <p class="gist">Geography is the stage, and technology keeps enlarging it.</p>
+      <p class="gist">Geography is history’s mother and its discipline, and technology keeps loosening its hold.</p>
       <ul class="points">
-        <li>Rivers, seas, climate and resources shaped where civilisations arose and how they traded. Civilisation moved from the river valleys to the Mediterranean, then to the Atlantic and Pacific.</li>
-        <li>As technology advances, geography’s influence shrinks. Humanity becomes less the prisoner of its terrain.</li>
-        <li>But nature still has the last word. An ice age, a drought or an earthquake can undo human work.</li>
+        <li>History’s first lesson is modesty. Human history is a brief spot in space, and a stray comet could end it. The Durants answer the cosmos with Pascal: even when the universe crushes a man, he is nobler than what kills him, because he knows he is dying and the universe knows nothing of its victory.</li>
+        <li>History is subject to geology. Coasts advance and retreat, cities sink, rivers flood or change course, valleys turn to desert.</li>
+        <li>Climate no longer controls us as severely as Montesquieu and Buckle supposed, but it still limits us. Let rain become too rare and civilisation disappears under sand, as in Central Asia. Let it fall too heavily and jungle chokes it, as in Central America. A tornado can wreck in an hour a city that took a century to build.</li>
+        <li>Geography is the matrix of history, because water is life and rivers are cheap roads. Egypt was the gift of the Nile, and Mesopotamia grew between its two rivers. India grew along the Indus and the Ganges, Italy along the Tiber, Arno and Po, Germany along the Elbe and Rhine, and France along the Rhône, Loire and Seine. Petra and Palmyra lived on desert oases.</li>
+        <li>When the Greeks outgrew their land they planted colonies around the Mediterranean “like frogs around a pond”, as Plato put it. For two thousand years, from Salamis (480 BC) to the Spanish Armada (1588), the Mediterranean’s shores held the West’s centres of power.</li>
+        <li>Then Columbus and Vasco da Gama opened the oceans. Genoa, Pisa, Florence and Venice declined, the Renaissance faded, and the Atlantic nations rose. George Berkeley wrote around 1730 that the course of empire moves westward.</li>
+        <li>The Durants ask whether it will keep moving across the Pacific. Could Western industrial technique, exported to China as it had been to Japan, combine with Asian numbers to bring about the decline of the West?</li>
+        <li>They predict that the aeroplane will redraw the map again. Trade will follow rivers and coasts less. Countries like England and France will lose the advantage of indented coastlines, while land-heavy Russia, China and Brazil will overcome part of their handicap. The shift from sea power to air power, they say, would be one of history’s basic revolutions.</li>
+        <li>The conclusion reverses the chapter’s opening: geography’s influence shrinks as technology grows. Terrain offers possibilities, but only the imagination and initiative of leaders and the hard work of followers turn them into fact. Their example is the Israel of the 1960s, building a culture over a thousand natural obstacles.</li>
       </ul>
-      <p class="line">“Civilization exists by geological consent, subject to change without notice.”<span>Chapter II</span></p>
+      <p class="line">“Man, not the earth, makes civilization.”<span>Chapter II</span></p>
     </article>
 
     <article class="chapter" id="ch-3">
       <p class="ch-label">Chapter III</p>
       <h3>Biology and History</h3>
-      <p class="gist">History is a fragment of biology, and biology teaches three lessons.</p>
+      <p class="gist">History is a fragment of biology, and biology teaches three lessons: life is competition, life is selection, and life must breed.</p>
       <ul class="points">
-        <li><strong>Life is competition.</strong> Cooperation is real, but it is mostly a tool of competition: groups cooperate in order to compete with other groups.</li>
-        <li><strong>Life is selection.</strong> People are born unequal in ability, and the more complex a society becomes, the more that inequality shows in outcomes.</li>
-        <li><strong>Life must breed.</strong> Nature favours groups that reproduce. The Durants worry that the most educated groups have the fewest children, a passage that reads uncomfortably today.</li>
+        <li>Walking in the woods, the Durants write, you realise what a small minority humans are among the living things around them. All our economic competition, courtship and war are akin to what goes on under the fallen leaves. So the laws of biology are the fundamental lessons of history. Anyone who seems to escape the struggle is protected by a group, and the group itself must pass the test.</li>
+      </ul>
+      <p class="sub">1 · Life is competition</p>
+      <ul class="points">
+        <li>Competition is not only the life of trade but the trade of life, peaceful when food is plentiful and violent when mouths outrun food. Animals eat one another without qualm; civilised people consume one another by due process of law.</li>
+        <li>Co-operation is real and grows with civilisation, but mostly as a tool of competition. We co-operate in family, club, church, party, “race” or nation to strengthen the group against other groups.</li>
+        <li>Groups have the qualities of individuals: acquisitiveness, pugnacity, partisanship, pride. States are ourselves multiplied, writing our natures in bolder type. We are greedy and pugnacious because our blood remembers millennia of hunting, when you ate all you could because you might not eat again.</li>
+        <li>War, in the chapter’s phrase, is a nation’s way of eating. Until states belong to a larger group that effectively protects them, they will behave like families in the hunting stage.</li>
+      </ul>
+      <p class="sub">2 · Life is selection</p>
+      <ul class="points">
+        <li>Nature has not read the Declaration of Independence. We are born unfree, bound by heredity and by our group’s customs, and unequal in health, strength, intelligence and character. Nature loves difference as the raw material of selection: no two peas are alike.</li>
+        <li>Inequality grows with civilisation. Every invention is made or seized by exceptional people and makes the strong stronger. As the economy specialises, people become unequally valuable. The Durants guess that if we knew everyone well, we could pick 30% of a population whose combined ability would equal that of all the rest.</li>
+        <li>Hence the clash of freedom and equality. Leave people free and their inequalities multiply almost geometrically, as in nineteenth-century England and America under laissez-faire. Check inequality and liberty has to go, as in Russia after 1917. Only those below average in economic ability want equality, they claim; those conscious of superior ability want freedom, and in the end superior ability has its way.</li>
+        <li>So utopias of equality are biologically doomed. The most a philosopher can hope for is rough equality before the law and in education. A society that lets every ability develop will have an advantage in the competition of groups.</li>
+      </ul>
+      <p class="sub">3 · Life must breed</p>
+      <ul class="points">
+        <li>Nature wants quantity as the raw material for quality. She cares for the species more than the individual, and she sees that a nation with a low birth rate is periodically chastened by a more fertile one. The Durants’ example: Gaul survived the Germans with the help of Roman legions in Caesar’s day, and of British and American ones in theirs.</li>
+        <li>When people outrun food, nature restores the balance with famine, pestilence and war. That was Malthus’s argument in 1798. Nineteenth-century farming and contraception seemed to refute him, but Malthus would say that only postpones the reckoning.</li>
+        <li>The Durants hope that industry, cities and education will lower birth rates in poorer countries as they had in Europe and America. Until then they think it humane to spread knowledge of contraception. Parenthood, they write, should be a privilege of health, not a by-product of sexual agitation.</li>
+        <li>Is birth control dysgenic, because the educated use it most? They doubt it. Much of what we call intelligence comes from education and opportunity, not from genes, and no one knows how much talent lies undeveloped among the poor. Nietzsche thought the best blood in Germany was in peasant veins.</li>
+        <li>Rome had the same worry. Julius Caesar (59 BC) and later Augustus offered rewards for large families, to no effect. Birth control spread among the upper classes while immigrants refilled Italy, which the Durants think may have weakened its will to resist.</li>
+        <li>They end the chapter with a forecast: higher Catholic birth rates would make the Catholic Church the dominant force in American government by 2000, and might win back the lands of Voltaire, Calvin and Luther. “There is no humorist like history,” they add. (See <a href="#forecasts">the forecasts</a> for how that went.)</li>
       </ul>
       <p class="line">“Freedom and equality are sworn and everlasting enemies, and when one prevails the other dies.”<span>Chapter III</span></p>
     </article>
@@ -450,183 +600,506 @@ var FIG = (function () {
     <article class="chapter" id="ch-4">
       <p class="ch-label">Chapter IV</p>
       <h3>Race and History</h3>
-      <p class="gist">Race doesn’t explain civilisation.</p>
+      <p class="gist">The Durants set out the racial theories of history at length, then take them apart: civilisation makes the people, not the other way round.</p>
       <ul class="points">
-        <li>The Durants reject the racial theories of history of writers such as Gobineau and Houston Stewart Chamberlain.</li>
-        <li>Great civilisations arose among many peoples: in Egypt, Mesopotamia, India, China and Mesoamerica.</li>
-        <li>Their conclusion is that geographic, economic and political conditions create a civilisation, and the civilisation then shapes a human type.</li>
+        <li><strong>Gobineau</strong>, in his <cite>Essay on the Inequality of Human Races</cite> (1853–55), argued that races differ inherently, that one “Aryan” race created every civilisation, and that civilisations decay when that blood is mixed. Environment can’t explain civilisation, he said, because the fertile rivers that nourished Egypt produced none among the North American Indians.</li>
+        <li><strong>Houston Stewart Chamberlain</strong>, an Englishman living in Germany, narrowed the creative race to the Teutons in <cite>The Foundations of the Nineteenth Century</cite> (1899). The Durants trace the line on through Treitschke, Bernhardi, Wagner and Alfred Rosenberg to Hitler, who used it to rouse Germans to slaughter a people and try to conquer Europe.</li>
+        <li><strong>Madison Grant</strong>, an American, confined civilisation to the “Nordics” in <cite>The Passing of the Great Race</cite> (1916). He predicted that wars and low birth rates would bring them down by 2000, and Western civilisation with them.</li>
+        <li><strong>The answer.</strong> Chinese civilisation is the most enduring in history. There are the Maya, Aztec and Inca, the temple builders of Dravidian south India, and the Khmer at Angkor Wat. History, the Durants write, is colour-blind.</li>
+        <li>Even among white peoples the theory fails. Semitic peoples built Babylon, Assyria, Phoenicia, Carthage and Islam, and the Jews gave Europe the Bible. Muslim rulers, poets and scientists flourished from Baghdad to Córdoba while Western Europe groped through its Dark Ages.</li>
+        <li>Egypt, Greece and Rome were products of geographical opportunity and economic and political development, not of racial constitution, and much of their culture came from the East. Greece learned from Asia Minor, Crete, Phoenicia and Egypt; Rome from the Greek cities of south Italy and from Etruria; Western Europe from Rome; the Americas from Europe.</li>
+        <li>One summary of history they offer: the South creates civilisations, and the North conquers them, ruins them, borrows from them and spreads them.</li>
+        <li>Race’s role is preliminary rather than creative. Peoples arriving from different directions mix, and over centuries a new type forms, as Celts, Romans, Angles, Saxons, Jutes, Danes and Normans fused into the English. The civilisation then shapes the person: the Englishman who dresses for dinner in Timbuktu isn’t recreating his civilisation there, he is showing its hold over him.</li>
+        <li>In their view American civilisation was still in the stage of mixture. When a new type formed, America might have its own language, literature and arts.</li>
+        <li>“Racial” hostility, they argue, comes partly from ethnic origin but perhaps mostly from acquired culture: language, dress, habits, morals and religion. The only cure is broader education, and history teaches that civilisation is a co-operative product to which nearly every people has contributed.</li>
       </ul>
+      <p class="line">“It is not the race that makes the civilization, it is the civilization that makes the people.”<span>Chapter IV</span></p>
     </article>
 
     <article class="chapter" id="ch-5">
       <p class="ch-label">Chapter V</p>
       <h3>Character and History</h3>
-      <p class="gist">Human nature is constant, and society changes through a tug-of-war between innovators and conservatives.</p>
+      <p class="gist">Human nature has barely changed. History moves through the few who innovate and the many who imitate, and the conservative is as necessary as the radical.</p>
       <ul class="points">
-        <li>The basic instincts of acquisition, pugnacity, sex and sociability have changed little in recorded history. Only their expression changes.</li>
-        <li>Change comes from innovators, exceptional individuals who propose new ideas, and it is tested by the resistance of the majority.</li>
-        <li>That resistance is valuable. The conservative who resists change, the Durants argue, is as necessary as the radical who proposes it. Traditions carry accumulated experience, and new ideas should have to prove themselves.</li>
+        <li>Society rests not on people’s ideals but on their nature, and human nature rewrites the constitutions of states.</li>
+        <li>The Durants map that nature in a “Table of Character Elements”: six pairs of instincts, one positive and one negative in each, each producing habits and feelings (see the figure below). Most people carry both sides of every pair, to meet or to avoid life’s basic challenges as mood and circumstance dictate.</li>
+        <li>Natural selection must have changed us a little, but recorded history shows little change in conduct. The Greeks of Plato’s time behaved much like the modern French, and the Romans like the English. The means change; the motives and ends stay the same. The poor have the same impulses as the rich, with less chance to act on them. Successful rebels adopt the methods they used to condemn.</li>
+        <li>So evolution in recorded time has been social rather than biological: new economic, political, intellectual and moral ways passed on by imitation, custom and education. Custom plays the part of heredity and innovation the part of mutation. Social evolution is an interplay of custom with origination.</li>
+        <li>That gives the great man back his place, though not as the god Thomas Carlyle described. He grows out of his time, and a crisis swells his powers. But events pass through him as well as around him. Churchill’s eloquence could be worth a thousand regiments, Napoleon’s generalship could found states, and a prophet like Muhammad could raise a poor people to sudden power. Pasteur, Edison, Ford, the Wrights, Marx, Lenin and Mao were effects of countless causes and causes of endless effects.</li>
+        <li>Imitation is opposed to innovation in the table, but in practice they co-operate. The imitative majority follows the innovating minority, which follows the original individual.</li>
+        <li>Intellect is a vital force but also a solvent. Most new ideas are worse than the traditions they would replace, and no one mind can in one lifetime understand enough to safely dismiss customs that are the wisdom of generations. Their example is the young man who sees no reason to restrain his desires, before he learns that sex is a river of fire that must be banked and cooled by a hundred restraints.</li>
+        <li>So new ideas should be heard, for the sake of the few that can be used, but they should be made to pass through the mill of objection, opposition and contempt. It is good that the old resist the young and that the young prod the old. From that tension, as from the strife of the sexes and the classes, comes a creative strength.</li>
       </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · The Durants’ table of character elements</p>
+        <div class="pairs">
+          <div class="pair">
+            <p class="pair__h"><span class="pos">Action</span><i>vs</i><span class="neg">Sleep</span></p>
+            <dl><dt>Habits</dt><dd>play, work, curiosity, thought, innovation, art</dd><dd class="neg">rest, sloth, indifference, dreaming, imitation, disorder</dd>
+            <dt>Feelings</dt><dd>energy, eagerness, wonder</dd><dd class="neg">fatigue, boredom, doubt</dd></dl>
+          </div>
+          <div class="pair">
+            <p class="pair__h"><span class="pos">Fight</span><i>vs</i><span class="neg">Flight</span></p>
+            <dl><dt>Habits</dt><dd>approach, competition, pugnacity, mastery</dd><dd class="neg">retreat, co-operation, timidity, submission</dd>
+            <dt>Feelings</dt><dd>courage, rivalry, anger, pride</dd><dd class="neg">anxiety, friendliness, fear, humility</dd></dl>
+          </div>
+          <div class="pair">
+            <p class="pair__h"><span class="pos">Acquisition</span><i>vs</i><span class="neg">Avoidance</span></p>
+            <dl><dt>Habits</dt><dd>eating, hoarding, property</dd><dd class="neg">rejection, spending, poverty</dd>
+            <dt>Feelings</dt><dd>hunger, greed, possessiveness</dd><dd class="neg">disgust, prodigality, insecurity</dd></dl>
+          </div>
+          <div class="pair">
+            <p class="pair__h"><span class="pos">Association</span><i>vs</i><span class="neg">Privacy</span></p>
+            <dl><dt>Habits</dt><dd>communication, seeking approval, generosity</dd><dd class="neg">solitude, fearing disapproval, selfishness</dd>
+            <dt>Feelings</dt><dd>sociability, vanity, kindliness</dd><dd class="neg">secretiveness, shyness, hostility</dd></dl>
+          </div>
+          <div class="pair">
+            <p class="pair__h"><span class="pos">Mating</span><i>vs</i><span class="neg">Refusal</span></p>
+            <dl><dt>Habits</dt><dd>courtship</dd><dd class="neg">blushing</dd>
+            <dt>Feelings</dt><dd>sexual love</dd><dd class="neg">modesty</dd></dl>
+          </div>
+          <div class="pair">
+            <p class="pair__h"><span class="pos">Parental care</span><i>vs</i><span class="neg">Filial dependence</span></p>
+            <dl><dt>Habits</dt><dd>homemaking</dd><dd class="neg">filial rebellion</dd>
+            <dt>Feelings</dt><dd>parental love</dd><dd class="neg">filial resentment</dd></dl>
+          </div>
+        </div>
+        <figcaption>A selection of entries from the table in Chapter V, grouped under the instinct they sit beside in the book. Two placements are worth noticing: competition sits on the positive side and co-operation on the negative, and innovation is set against imitation.</figcaption>
+      </figure>
+      <p class="line">“So the conservative who resists change is as valuable as the radical who proposes it—perhaps as much more valuable as roots are more vital than grafts.”<span>Chapter V</span></p>
+      <p class="line">“History in the large is the conflict of minorities; the majority applauds the victor and supplies the human material of social experiment.”<span>Chapter V</span></p>
     </article>
 
     <article class="chapter" id="ch-6">
       <p class="ch-label">Chapter VI</p>
       <h3>Morals and History</h3>
-      <p class="gist">Moral codes adapt to how people live.</p>
+      <p class="gist">Moral codes change with the way people make a living. Sin has flourished in every age, and a lax era may be a transition rather than a decline.</p>
       <ul class="points">
-        <li>Morals are the rules a society teaches its members to keep order. They shift with economic life.</li>
-        <li>Hunting societies prized courage and pugnacity. Agricultural ones prized industry, thrift, chastity and large families, because children were economic assets. Industrial, urban life loosened those constraints.</li>
-        <li>Moral laxity is not new. Every age has had its sins, and periods of licence have been followed by restraint. The danger is a transition where the old code has lost its hold and no new one has formed.</li>
+        <li>The Durants define morals as the rules by which a society exhorts its members to behave in ways that keep it orderly, secure and growing, as laws are the rules by which it compels them. Their example: for sixteen centuries Jewish communities in Christendom kept order and continuity by a strict moral code, almost without help from the state.</li>
+        <li>A little knowledge of history stresses how much moral codes vary and concludes they don’t matter. A larger knowledge stresses how universal they are and concludes they are necessary.</li>
+        <li>Codes vary because they adapt to the economy. Divide economic history into hunting, farming and industry, and each stage rewrites the last one’s code (see the figure below).</li>
+        <li><strong>Hunting.</strong> A man had to be ready to chase, fight and kill, and to eat all he could, because insecurity is the mother of greed. Men died young in the hunt, so the Durants suppose some men took several women. Pugnacity, brutality, greed and sexual readiness helped people survive. Probably every vice was once a virtue, and our sins may be relics of our rise rather than marks of our fall.</li>
+        <li><strong>Farming.</strong> Industry mattered more than bravery, regularity and thrift more than violence, peace more than war. Children were economic assets, so birth control was immoral. The family was the unit of production under the father. Sons could support themselves by fifteen and married early, chastity was essential for women, and monogamy suited roughly equal numbers of men and women. This code of continence, early marriage, divorceless monogamy and many children held for fifteen hundred years in Christian Europe, and it produced some of the strongest characters in history.</li>
+        <li><strong>Industry.</strong> Men, women and children left the home to work as individually paid individuals. Economic maturity came later, children stopped being assets, and marriage was delayed. The city discouraged marriage and encouraged sex. Women were “emancipated”, which meant industrialised, and contraception separated sex from pregnancy. Parents lost the economic base of their authority, the anonymous city hid young people’s sins, and science and education eroded morality’s supernatural supports. The old farm code began to die.</li>
+        <li>War adds to the laxity. After the Peloponnesian War, Alcibiades flouted his ancestors’ code and Thrasymachus declared that might was right. After Rome’s civil wars the city was full of uprooted soldiers, ruined savers and a fashionable cynicism, which the Durants say is almost a picture of Western cities after two world wars.</li>
+        <li>History offers consolation: sin has flourished in every age. Homosexuality was more popular in Greece, Rome and Renaissance Italy than in 1968. Prostitution runs from Assyria’s state brothels to modern nightclubs. Luther complained in 1544 of bold girls at Wittenberg, obscene books sold well in Montaigne’s day, and <cite>Fanny Hill</cite> was as popular in 1749 as in 1965. Dice turn up near Nineveh, and sixteenth-century pamphlets denounced adulterated food. Man has never reconciled himself to the Ten Commandments.</li>
+        <li>History as written also misleads, because historians record the exceptional. Behind the facade of war and scandal were millions of orderly homes and devoted marriages. The Durants list kindnesses from their volumes: Farinelli providing for Domenico Scarlatti’s children, Joseph Black lending money to James Watt, Puchberg lending again and again to Mozart.</li>
+        <li>So the laxity of their time might be a painful (or pleasant) transition between a code that has lost its farming base and one that industrial society hasn’t yet forged. Civilisations decay slowly anyway. Greece produced masterpieces for 250 years after moral weakening began with the Sophists. Rome’s morals began to “decay” after 146 BC, yet it had great statesmen, philosophers and poets until Marcus Aurelius died in AD 180, and it was at its political low when Caesar arrived but did not fall to the barbarians for another five centuries.</li>
+        <li>Discipline may return through the military training that war’s challenges demand, because the freedom of the part varies with the security of the whole. Sexual licence may cure itself by its own excess. Meanwhile much of the new freedom is good: release from theological terrors, and pleasures that harm no one.</li>
       </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Three economies, three moral codes</p>
+        <div class="stages">
+          <div class="stage">
+            <p class="k">First</p>
+            <h4>Hunting</h4>
+            <dl>
+              <dt>Life demanded</dt><dd>Chasing, fighting and killing; eating to capacity, never sure of the next meal</dd>
+              <dt>Virtues</dt><dd>Courage, pugnacity, greed, sexual readiness</dd>
+              <dt>Family</dt><dd>Men died young in the hunt, so some took several women (the Durants’ surmise)</dd>
+            </dl>
+          </div>
+          <div class="stage">
+            <p class="k">Then</p>
+            <h4>Farming</h4>
+            <dl>
+              <dt>Life demanded</dt><dd>Industry, regularity, thrift, peace</dd>
+              <dt>Virtues</dt><dd>Continence, early marriage, divorceless monogamy, many children</dd>
+              <dt>Family</dt><dd>The unit of production under the father; children an asset</dd>
+            </dl>
+          </div>
+          <div class="stage">
+            <p class="k">Now</p>
+            <h4>Industry</h4>
+            <dl>
+              <dt>Life demanded</dt><dd>Individual wage work in the city; economic maturity comes late</dd>
+              <dt>Effects</dt><dd>Later marriage, contraception, weaker parents, religious doubt</dd>
+              <dt>Code</dt><dd>The farm code is dying, and no new one has formed yet</dd>
+            </dl>
+          </div>
+        </div>
+        <figcaption>The chapter’s three stages. Each column’s virtues were survival traits for that way of life, which is why, the Durants suggest, “every vice was once a virtue”.</figcaption>
+      </figure>
+      <p class="line">“Who will dare to write a history of human goodness?”<span>Chapter VI</span></p>
     </article>
 
     <article class="chapter" id="ch-7">
       <p class="ch-label">Chapter VII</p>
       <h3>Religion and History</h3>
-      <p class="gist">Religion has almost always carried the moral order.</p>
+      <p class="gist">Religion has almost always carried the moral order. It is declining in the West, but it has died and come back many times before.</p>
       <ul class="points">
-        <li>Religion has offered consolation, meaning and, above all, supernatural support for moral codes.</li>
-        <li>The Durants observe that history offers no significant example, before their own time, of a society that kept its moral life without the aid of religion. They leave it open whether the modern West will be the first.</li>
-        <li>Faith and scepticism alternate. Doubt spreads in prosperous, educated eras, and faith returns in hard times, so Puritan and pagan periods succeed each other.</li>
+        <li>Even a sceptical historian comes to respect religion, because he sees it working, and apparently indispensable, in every land and age. It has comforted the suffering and the bereaved, helped parents and teachers discipline the young, given meaning and dignity to the humblest lives, and turned human promises into solemn bonds with God. It kept the poor, said Napoleon, from murdering the rich.</li>
+        <li>Since natural inequality condemns many people to poverty or defeat, a supernatural hope may be the only alternative to despair. Destroy it and class war intensifies. Heaven and utopia, the Durants write, are buckets in a well: when religion goes down, Communism comes up.</li>
+        <li>At first religion had nothing to do with morals. Fear made the first gods: fear of the hidden forces in earth, rivers, winds and sky. It became a moral force when priests used it to back the law, as in the stories of Thoth giving laws to Menes, Shamash to Hammurabi, Yahweh to Moses and the nymph Egeria to Numa. In return, nearly every state shared its land and revenues with the priests.</li>
+        <li>Did religion ever make people better? Vice was everywhere in the Middle Ages. But the disorder left by five centuries of invasion and war would have been worse, the Durants argue, without the Church. It worked to reduce slavery, feuds and war, extended truces, replaced trial by combat with courts, softened punishments and organised charity on a vast scale.</li>
+        <li>The Church claimed to stand above all states, as morality should stand above power. Emperor Henry IV submitted to Pope Gregory VII at Canossa in 1077, and under Innocent III, a century later, the ideal of a moral superstate seemed close.</li>
+        <li>The dream broke under nationalism, scepticism and human frailty. There were venal clergy and pious frauds, such as the forged Donation of Constantine and the False Decretals. There were the Inquisition and religious wars. The Church played only a modest part in abolishing slavery, and it let the philosophers lead the humanitarian reforms of the modern age.</li>
+        <li>The Church is right, history suggests, that most people want a religion rich in miracle, mystery and myth. Religion and philosophy can only be reconciled if philosophers admit they have found no substitute for the Church’s moral function, and the Church accepts religious and intellectual freedom.</li>
+        <li>Does history support belief in a good and intelligent God? Their answer is a reluctant no. History is natural selection in which goodness gets no favours, and earthquakes and plagues are added to human cruelty. If it supports any theology, it is a dualism like the Zoroastrian or Manichaean, with a good and an evil spirit at war and no guarantee that the good one wins. The universe, they write, has no prejudice in favour of Christ as against Genghis Khan.</li>
+        <li>The decline of faith dates from Copernicus (1543). The Durants list its causes. Religious causes came first: the Reformation’s right of private judgement, the multiplying sects, critical study of the Bible, deism, comparisons with older religions’ myths, and exposés of miracles and massacres. Then came wider forces: industry replacing farming’s yearly miracle of rebirth with machines, sceptics like Bayle and Spinoza, the Enlightenment and the French Revolution, modern war’s slaughter of civilians, and technology’s triumphs.</li>
+        <li>Christianity also undermined itself. Its own moral sense could no longer stomach a vengeful God who created billions of people destined for hell, and hell faded even from sermons. As the Greeks’ moral growth weakened their belief in Olympus, so the Christian ethic eroded Christian theology. In their words, “Christ destroyed Jehovah.”</li>
+        <li>The replacement of Christian with secular institutions is the culminating result of the Industrial Revolution and one of the great experiments of the age. Laws once decreed by a god-given king are now the commands of fallible men. Schools pass from priests to teachers, patriotism or Communism replaces the creed, holy days become holidays. Catholicism survives because it appeals to imagination, hope and the senses, and because its faithful have more children.</li>
+        <li>But religion has many lives and a habit of resurrection. The god Amon was restored within a year of Ikhnaton’s death. Buddhism, founded without a god, grew gods, saints and hells. Paris set up the Goddess of Reason in 1793, Robespierre replaced her with the Supreme Being a year later, and Napoleon restored the Catholic Church in 1801. Victorian piety followed eighteenth-century English irreligion, and a religious revival followed the Founding Fathers’ rationalism.</li>
+        <li>Puritanism and paganism alternate. Religion and strict morals prevail when laws are weak and morals must carry the burden of order. Scepticism and paganism spread when strong government lets church and family decline without endangering the state. In their time strong states had let paganism resume its natural sway. Excess, they expect, will bring another reaction.</li>
+        <li>They quote the agnostic Renan in 1866, warning that rationalism which ignores the soul’s religious needs will repeat the French Revolution. Religion may be necessary to morality, because a natural ethic may be too weak against the savagery under civilisation. France and the United States separated church and state but still had religion’s help. Only a few Communist states repudiated it outright, and Communism may have worked there by serving as a religion itself.</li>
       </ul>
+      <p class="line">“There is no significant example in history, before our time, of a society successfully maintaining moral life without the aid of religion.”<span>Chapter VII</span></p>
+      <p class="line">“As long as there is poverty there will be gods.”<span>Chapter VII, quoting Will Durant’s <cite>The Mansions of Philosophy</cite></span></p>
     </article>
 
     <article class="chapter" id="ch-8">
       <p class="ch-label">Chapter VIII</p>
       <h3>Economics and History</h3>
-      <p class="gist">Marx was partly right, and wealth has a rhythm.</p>
+      <p class="gist">Marx’s economic reading explains much of history but not all of it. Wealth concentrates with ability, and is periodically spread again, by law or by force.</p>
+      <p class="sub">What the economic interpretation explains</p>
       <ul class="points">
-        <li>Economic forces shape politics and culture far more than older histories admitted. But ideas, religion and individuals matter too, so the economic interpretation is part of the truth, not all of it.</li>
-        <li>Wealth tends to concentrate in the hands of the able, naturally and inevitably. Periodically it is spread again, by reform or by revolution (see the figure below).</li>
-        <li>Solon’s cancellation of debts in Athens and the reforms of the Gracchi in Rome are the Durants’ examples of the two paths: peaceful redistribution, and failed reform followed by violence.</li>
+        <li>For Marx, history is economics in action: the contest for food, fuel, materials and economic power, with politics, religion and culture as its products. On that view the Industrial Revolution brought democracy, feminism, birth control, socialism, the decline of religion, looser morals and realism in fiction, and also the economic interpretation of history itself. Economic ambition, not Helen’s face, launched the thousand ships.</li>
+        <li>It illuminates a great deal. The Delian League’s money built the Parthenon, and Cleopatra’s treasury revived Augustus’s Italy. The Crusades, like Rome’s wars with Persia, were attempts to capture trade routes east, and the discovery of America followed from their failure. The Medici bank paid for the Florentine Renaissance. The French Revolution came not because of Voltaire’s satires but because the middle classes had risen to economic leadership and wanted political power to match.</li>
       </ul>
-      <p class="line">“The men who can manage men manage the men who can manage only things, and the men who can manage money manage all.”<span>Chapter VIII</span></p>
+      <p class="sub">What it misses</p>
+      <ul class="points">
+        <li>Marx didn’t claim that everyone acts from economic interest. But he may have underrated what drives crowds: religious fervour in Muslim and Spanish armies, nationalism in Hitler’s troops and Japan’s kamikazes, and the self-feeding fury of mobs in London’s Gordon riots (1780) and the Paris massacres of September 1792.</li>
+        <li>Often power came first and wealth followed: the Bolsheviks in 1917, the army coups of South America, the Moorish conquest of Spain, the Mongols and the Mughals. In those cases the poor beat the rich. The generals, the Durants remark, could write a military interpretation of history.</li>
+      </ul>
+      <p class="sub">What it teaches anyway</p>
+      <ul class="points">
+        <li>Rome is the lesson for farming. The legions had been farmers fighting for their own land. Slaves working vast estates replaced them, and the barbarians found Rome weak. The Durants see modern farming heading the same way, into large units, with the farmer choosing between working for a capitalist and working for a state.</li>
+        <li>Bankers rise to the top of the pyramid, from the Medici and the Fuggers to the Rothschilds and the Morgans, financing wars and popes. Perhaps one secret of their power is that, having studied prices, they know history is inflationary and that money is the last thing a wise man will hoard.</li>
+        <li>Every economic system must sooner or later rely on some form of the profit motive. The substitutes, slavery, police supervision and ideological enthusiasm, prove too unproductive, too expensive or too short-lived. People are generally judged by their ability to produce, except in war, when they are ranked by their ability to destroy.</li>
+      </ul>
+      <p class="sub">The rhythm of wealth</p>
+      <ul class="points">
+        <li>Practical ability is concentrated in a minority, so wealth concentrates too, and this recurs throughout history. How fast depends on how much economic freedom morals and laws allow: despotism can slow it, and democracy, allowing the most liberty, speeds it up. In their day the gap between America’s richest and poorest was the widest, they thought, since imperial Rome.</li>
+        <li>Eventually the strength of numbers among the many poor rivals the strength of ability among the few rich. That unstable balance has been resolved in two ways: by legislation redistributing wealth, or by revolution distributing poverty (see the figure below).</li>
+        <li><strong>Solon, Athens, 594 BC.</strong> Plutarch says the gap between rich and poor had reached its height and revolt was near. Solon, a businessman of noble family, was elected archon. He devalued the currency to ease debtors, though he was a creditor himself. He cut debts, ended imprisonment for debt, cancelled arrears of tax and mortgage interest, and brought in a graduated income tax under which the rich paid twelve times the rate of the poor. He also made the courts more popular and educated war orphans at public expense. The rich called it confiscation and the radicals said it didn’t go far enough, but within a generation nearly everyone agreed it had saved Athens from revolution.</li>
+        <li><strong>The Gracchi, Rome, 133–121 BC.</strong> The Senate took the opposite course. Tiberius Gracchus proposed limiting landholdings to 333 acres and giving the surplus to the city’s poor. The Senate called it confiscation, and he was killed in an election-day riot. His brother Caius took up the cause, and when it collapsed into violence he had a slave kill him, and three thousand of his followers were executed. Then came Marius, Catiline’s army of debtors, Caesar and his murder, and Antony. About a hundred years of class and civil war ended only with Augustus, whose Principate kept peace between the classes for 210 years.</li>
+        <li>Later rounds followed. The Reformation partly redistributed the Church’s accumulated wealth. The French Revolution tried violent redistribution but mostly moved property from the aristocracy to the middle class. The United States in 1933–52 and 1960–65 followed Solon’s peaceful path (“perhaps someone had studied history”), and its upper classes, the Durants note, cursed, complied, and resumed the concentration of wealth.</li>
+      </ul>
       <figure class="fig">
         <p class="fig-title">Figure · The rhythm of wealth</p>
         <svg id="rhythm" role="img" aria-label="Schematic: concentration of wealth climbs slowly, then drops at a redistribution, then climbs again, repeatedly"></svg>
-        <figcaption>A schematic of the chapter’s claim, not data. Concentration builds up slowly and is relieved suddenly. Where the relief comes by law, as with Solon, it is peaceful. Where reform fails, as with the Gracchi, it tends to come by force.</figcaption>
+        <ol class="episodes" aria-label="The redistributions the chapter names">
+          <li class="law"><b>Athens, 594 BC <span>· Solon</span></b><p>Debts cut, debt slavery ended, a graduated tax. It saved the city from revolution.</p></li>
+          <li><b>Rome, 133–30 BC <span>· the Gracchi to Augustus</span></b><p>Reform refused, then a century of class and civil war, ended by one-man rule.</p></li>
+          <li class="mixed"><b>Northern Europe, 16th century <span>· the Reformation</span></b><p>Payments to Rome cut and Church property taken over by lay rulers.</p></li>
+          <li><b>France, from 1789 <span>· the Revolution</span></b><p>Rural risings and city massacres. Property mainly moved from nobles to the middle class.</p></li>
+          <li class="law"><b>United States, 1933–52 and 1960–65</b><p>Solon’s peaceful method; the rich complied, then resumed.</p></li>
+        </ol>
+        <p class="key"><span class="law">by law</span><span>by force</span><span class="mixed">by seizure, partly peaceful</span></p>
+        <figcaption>The curve is a schematic of the chapter’s claim, not data: concentration builds slowly and is relieved suddenly. The episodes are the ones the Durants name, in their order.</figcaption>
       </figure>
+      <p class="line">“The men who can manage men manage the men who can manage only things, and the men who can manage money manage all.”<span>Chapter VIII, quoting the Durants’ <cite>The Age of Louis XIV</cite></span></p>
+      <p class="line">“All economic history is the slow heartbeat of the social organism, a vast systole and diastole of concentrating wealth and compulsive recirculation.”<span>Chapter VIII</span></p>
     </article>
 
     <article class="chapter" id="ch-9">
       <p class="ch-label">Chapter IX</p>
       <h3>Socialism and History</h3>
-      <p class="gist">Socialism is as old as civilisation, and so is its struggle with the profit motive.</p>
+      <p class="gist">State-run economies are as old as civilisation. Most rose under threat and were undone by taxes, bureaucracy, graft and lost incentive, and in the Durants’ view capitalism and socialism were converging.</p>
       <ul class="points">
-        <li>The contest between socialism and capitalism is part of the same rhythm of concentration and dispersal of wealth.</li>
-        <li>The Durants survey socialist experiments across history (see the figure below). They note that most ended in failure or reversal, often because they suppressed incentives.</li>
-        <li>Experience, they conclude, suggests that every economic system must sooner or later rely on some form of the profit motive.</li>
-        <li>But the two systems have improved each other, and the Durants foresaw them converging.</li>
+        <li>The struggle between socialism and capitalism is part of the same rhythm of concentration and dispersal.</li>
+        <li><strong>The capitalist’s case</strong>, which the Durants state fairly: he gathers the public’s savings into productive capital, finances mechanisation and efficient distribution, and has produced a flow of goods history never saw before. Competition and ownership stir people to produce and invent, nearly every ability finds its niche, and what gets made is decided by public demand rather than by decree. Competition also drives the capitalist himself to exhausting work and ever better products.</li>
+        <li>That is largely true, they grant, but it doesn’t explain why history resounds with revolts against industrial mastery, price manipulation, business trickery and irresponsible wealth. Those abuses must be ancient, because there have been socialist experiments in a dozen countries and centuries (see the figure below).</li>
+        <li><strong>Sumer and Babylon.</strong> Around 2100 BC in Sumer the crown owned most of the farmland, workers drew rations from royal storehouses, and tens of thousands of clay tablets recorded every delivery. Hammurabi’s code, around 1750 BC, fixed the wages of herdsmen and artisans and even surgeons’ fees.</li>
+        <li><strong>Ptolemaic Egypt (323–30 BC).</strong> The state owned the soil and told peasants what to plant. It nationalised oil, salt, papyrus and textiles, ran banking as a monopoly, and taxed every person, sale and document. It became the richest state of its time and founded the Museum and Library of Alexandria. Then the rulers turned to expensive wars and pleasure, officials squeezed the poor, strikes spread, farming and industry decayed, and order returned only when Rome annexed Egypt.</li>
+        <li><strong>Diocletian’s Rome.</strong> Facing poverty at home and barbarians at the frontier, Diocletian’s Edict of Prices (AD 301) set maximum prices and wages, put the unemployed to work on public projects, gave cheap or free food to the poor, and brought most industries under state control. When businessmen predicted ruin, he said the barbarians were at the gate. It was a war economy. But the bureaucracy grew corrupt and expensive, taxes killed the will to work, people fled to the barbarians to escape the tax collector, and the laws binding peasants to their fields and workers to their shops began medieval serfdom.</li>
+        <li><strong>China, three times.</strong> Emperor Wu Ti (140–87 BC) nationalised natural resources, taxed incomes, built canals, and bought and sold state stockpiles to steady prices. After his death floods and droughts sent prices out of control, and some people proposed boiling the scheme’s inventor alive. Wang Mang (AD 9–23) nationalised the land, divided it equally and abolished slavery. The rich Liu family led a revolt, killed him and repealed it all, and everything was as before. Wang An-shih (1068–85) nationalised commerce, lent to peasants at low interest, set wages and prices, and paid pensions to the old and the poor. He was undone by high taxes, conscription, bureaucratic corruption and a campaign funded by the rich, and dismissed after droughts, floods and a terrifying comet.</li>
+        <li><strong>The Incas.</strong> From some time in the thirteenth century until Pizarro’s conquest in 1533, the longest-lasting socialist regime known ran all farming, labour and trade. It used a census, a road system and relay runners, with every person an employee of the state.</li>
+        <li><strong>The Jesuits of the Uruguay River (c. 1620–1750).</strong> Some 150 Jesuits organised 200,000 Indians into communities where every able adult worked eight hours a day. There were choirs of a thousand voices, orchestras playing European music, and no death penalty. It ended after a 1750 treaty between Spain and Portugal redrew the border, rumours of gold spread, and the missions were ordered abandoned.</li>
+        <li><strong>The Reformation’s communists.</strong> Thomas Müntzer led peasants against princes, clergy and capitalists and was beheaded in 1525. Hans Hut’s Anabaptists at Austerlitz held property in common for almost a century (c. 1530–1622). John of Leiden’s Münster lasted fourteen months (1534–35). In Cromwell’s army the Levellers asked in vain for a communist utopia.</li>
+        <li><strong>Marx and Russia.</strong> The cruelty of early industry (child labour, long hours, slums) revived socialism, and Marx and Engels expected it to arrive first in industrial England. It came instead to barely industrial Russia. The Tsarist state had been disgraced by war, the economy had collapsed, peasants came home from the front armed, and Germany gave Lenin safe passage. It took a Communist form because the new state was under siege from inside and out, so this too was a war economy. Given a generation of peace, the Durants presume, human nature would erode it.</li>
+        <li><strong>Convergence.</strong> By 1968 Russia was restoring individual incentives, while capitalism limited acquisition through semi-socialist laws and the welfare state. Marx, they say, was an unfaithful disciple of Hegel. Applied properly, Hegel’s thesis and antithesis yield a synthesis of capitalism and socialism, and the West was visibly moving toward it.</li>
       </ul>
-      <p class="line">“The fear of capitalism has compelled socialism to widen freedom, and the fear of socialism has compelled capitalism to increase equality.”<span>Chapter IX</span></p>
       <figure class="fig">
-        <p class="fig-title">Figure · Socialist experiments the Durants survey</p>
-        <ol class="vtl" aria-label="Timeline of socialist experiments">
+        <p class="fig-title">Figure · Every state-run economy the chapter surveys</p>
+        <ol class="vtl" aria-label="Timeline of socialist experiments and how each ended">
           <li class="era">Ancient</li>
-          <li><b>Egypt under the Ptolemies</b><span>323–30 BC</span></li>
-          <li><b>China under Wang Mang</b><span>AD 9–23</span></li>
-          <li><b>Rome under Diocletian</b><span>c. AD 284–305</span></li>
+          <li><b>Sumer</b><span>c. 2100 BC</span><em>Crown land, rations from royal stores, every delivery on clay.</em></li>
+          <li><b>Babylon under Hammurabi</b><span>c. 1750 BC</span><em>The law code fixes wages, and surgeons’ fees.</em></li>
+          <li><b>Egypt under the Ptolemies</b><span>323–30 BC</span><em>Richest state of its day; ended in misrule and Roman annexation.</em></li>
+          <li><b>China under Wu Ti</b><span>140–87 BC</span><em>Reversed after his death, amid floods, droughts and soaring prices.</em></li>
+          <li><b>China under Wang Mang</b><span>AD 9–23</span><em>Land shared equally; he was killed and his laws repealed.</em></li>
+          <li><b>Rome under Diocletian</b><span>edict of AD 301</span><em>Price and wage caps; taxes and bureaucracy led to serfdom.</em></li>
           <li class="era">Medieval and early modern</li>
-          <li><b>China under Wang An-shih</b><span>from 1069</span></li>
-          <li><b>The Inca empire</b><span>15th–16th century</span></li>
-          <li><b>The Anabaptists of Münster</b><span>1534–35</span></li>
-          <li><b>The Jesuit missions of Paraguay</b><span>c. 1620–1750</span></li>
+          <li><b>China under Wang An-shih</b><span>1068–85</span><em>Taxes, conscription and graft; dismissed after a comet.</em></li>
+          <li><b>The Incas</b><span>13th century–1533</span><em>The longest-lasting; ended by Pizarro’s conquest.</em></li>
+          <li><b>Müntzer’s peasant army</b><span>1525</span><em>Defeated; Müntzer beheaded.</em></li>
+          <li><b>Anabaptists at Austerlitz</b><span>c. 1530–1622</span><em>Nearly a century of common property.</em></li>
+          <li><b>John of Leiden’s Münster</b><span>1534–35</span><em>Fourteen months.</em></li>
+          <li><b>Jesuit missions, Uruguay River</b><span>c. 1620–1750</span><em>Ended after a 1750 border treaty; the missions were ordered abandoned.</em></li>
+          <li class="era">Modern</li>
+          <li><b>Russia</b><span>from 1917</span><em>A war economy; restoring incentives by 1968.</em></li>
         </ol>
-        <figcaption>Approximate dates, in order. The chapter treats each as a state-directed economy and traces how it ended.</figcaption>
+        <figcaption>In order, with the Durants’ dates. The same causes of failure recur: taxes to pay a swelling bureaucracy, corruption, lost incentive, the organised resistance of the rich, and natural disasters blamed on the reformer.</figcaption>
       </figure>
+      <p class="line">“Other factors equal, internal liberty varies inversely as external danger.”<span>Chapter IX</span></p>
+      <p class="line">“The fear of capitalism has compelled socialism to widen freedom, and the fear of socialism has compelled capitalism to increase equality.”<span>Chapter IX</span></p>
     </article>
 
     <article class="chapter" id="ch-10">
       <p class="ch-label">Chapter X</p>
       <h3>Government and History</h3>
-      <p class="gist">Monarchy is the most common form, democracy the hardest, and every form tends to decay into the next.</p>
+      <p class="gist">Every form of government has its record. Monarchy is the most natural, most governments are oligarchies, revolutions mostly destroy, and democracy is the hardest form and on balance the best.</p>
+      <p class="sub">Order first</p>
       <ul class="points">
-        <li>Monarchy has been the usual government in history, and the Durants credit it with continuity and order. Aristocracy trains leaders but hardens into privilege.</li>
-        <li>Democracy is the most difficult form, because it requires the widest spread of intelligence. It is vulnerable to demagogues and to the concentration of wealth.</li>
-        <li>They recall Plato’s scheme: governments pass from monarchy to aristocracy to democracy to dictatorship, each failing by the excess of its own principle (see the figure below).</li>
+        <li>Alexander Pope thought only a fool would argue about forms of government, and history has a good word for each. Because individual freedom in society needs rules, the first condition of freedom is its limitation: make it absolute and it dies in chaos. So the prime task of government is order, and organised central force is the only alternative to unpredictable force in private hands.</li>
+        <li>Power naturally moves to a centre, because divided power doesn’t work, as Poland showed with its <i>liberum veto</i>. Historians praise Richelieu and Bismarck for centralising. In America “states’ rights” gave way because the economy ignored state lines. The Durants expected international government to grow as industry and finance crossed frontiers.</li>
+      </ul>
+      <p class="sub">Monarchy and aristocracy</p>
+      <ul class="points">
+        <li>Monarchy is the most natural government, extending a father’s or a war chief’s authority to the group. Judged by how common and lasting forms have been, it wins, and democracies have been hectic interludes.</li>
+        <li>Its best hour was Augustus’s Pax Romana (30 BC–AD 180), which the Durants call the greatest achievement in the history of statesmanship. From Nerva to Marcus Aurelius, the period Gibbon named the happiest in human history, the monarchy was adoptive: each emperor chose the ablest man he could find, adopted him and trained him. It worked partly because the emperors had no surviving sons. Marcus Aurelius did have one, Commodus, and soon chaos was king.</li>
+        <li>Overall monarchy has a middling record. Wars of succession did as much harm as legitimacy did good. Hereditary monarchy breeds stupidity, nepotism and extravagance more often than statesmanship, and France rejoiced when Louis XIV died.</li>
+        <li>Most governments have in fact been oligarchies: rule by a minority chosen by birth (aristocracy), by religion (theocracy) or by wealth (democracy). A majority can seldom organise for specific action, and a minority can, so minority rule is as inevitable as concentrated wealth. The majority can only throw out one minority and install another.</li>
+        <li>The aristocrat’s case: selection by birth beats selection by money, theology or violence. Aristocracy trains a few people from childhood for government and preserves manners, standards and taste against fads. But aristocrats patronised art without producing it, drifted into a lifelong holiday of privilege without responsibility, and fell when they monopolised power, oppressed the people and wasted the nation in dynastic wars.</li>
+      </ul>
+      <p class="sub">Revolution</p>
+      <ul class="points">
+        <li>Does history justify revolutions? It is an old debate: Luther’s break with Rome against Erasmus’s plea for patient reform, Fox’s support for the French Revolution against Burke’s defence of continuity. Sometimes rigid institutions seem to need overthrowing, as in Russia in 1917. But usually the results would have come anyway through economic change. America would have come to dominate the English-speaking world without a revolution, and England moved power from landowners to businessmen without bloodshed.</li>
+        <li>As an individual’s sanity lies in the continuity of his memories, a group’s lies in the continuity of its traditions, and a sharp break invites a neurotic reaction like the Paris massacres of September 1792.</li>
+        <li>Wealth is an order of production and exchange and a web of trust, not a heap of goods. So violent revolutions don’t so much redistribute wealth as destroy it. The land may be redivided, but natural inequality soon rebuilds inequality under a new minority with the same instincts.</li>
+      </ul>
+      <p class="sub">Democracy, ancient and modern</p>
+      <ul class="points">
+        <li>Strictly, democracy is modern: in America adult male suffrage began under Andrew Jackson and adult suffrage within the Durants’ own lifetime. Athens was far narrower (see the figure below).</li>
+        <li>Athenian politics was a class war fought with books, plays, speeches, ostracism, assassination and civil war. At Corcyra in 427 BC the oligarchs murdered sixty popular leaders, and the democrats then executed fifty oligarchs and starved hundreds more. Thucydides’ account reads, the Durants say, like Paris in 1792–93.</li>
+        <li>Plato’s <cite>Republic</cite> condemned the triumphant democracy: insolence called good breeding, anarchy called liberty, fathers afraid of sons, teachers flattering pupils. From the extreme of liberty, he said, comes the extreme of tyranny.</li>
+        <li>After Plato’s death, history seemed to prove him right. New commercial wealth brought a greed for more that the Greeks called <i>pleonexia</i>, showy new money, and what Plato called “two cities”, one of the rich and one of the poor, at war with each other. Some oligarchs swore an oath to do the people all the harm they could. Isocrates wrote that the rich would rather throw their goods into the sea than help the needy. The poor voted the rich’s money into the treasury. At Mytilene debtors massacred their creditors, and at Argos democrats killed hundreds of the rich. When Philip of Macedon took Greece in 338 BC, many rich Greeks welcomed him as better than revolution.</li>
+        <li>Rome turned the same wheel. Conquest wealth went to the patricians, slaves worked the great estates, and displaced farmers joined the city mob on the grain dole. Money replaced land as the instrument of power: one group of voters took ten million sesterces in 53 BC, and wrong voters were beaten and burned out. Pompey led the aristocrats and Caesar the commons. Caesar won and was murdered, and Augustus took power in 27 BC. Democracy ended and monarchy returned: “the Platonic wheel had come full turn” (see the second figure).</li>
+        <li>So ancient democracy, corroded by slavery, bribery and war, is no fair test. America’s had a wider base: English law from Magna Carta on, Protestant liberty of conscience, a middle-class revolt against an imported aristocracy, free land, minimal laws, and isolation behind two oceans.</li>
+        <li>Many of those conditions have gone: cities replaced isolation, workers depend on capital they don’t own, the shopkeeper is in the grip of the big distributor, and war consumes more. The Durants blame this not on the perversity of the rich, as they did in their hot youth, but on the impersonal course of economic development and on human nature. Every gain in economic complexity puts a premium on ability and concentrates wealth and power.</li>
+        <li>Democracy needs the widest spread of intelligence, and education has spread, but the fertility of the simple keeps holding intelligence back. Ignorance is not enthroned for long, because it lends itself to manipulation. Lincoln may have been right that you can’t fool all the people all the time, but you can fool enough of them to rule a large country.</li>
+        <li>Is democracy to blame for the debased art of the 1960s? The Durants admit they may just be stuck in the past. Democracy is responsible only in the sense that it hasn’t built the standards aristocracies once enforced. And art, they add, had exhausted its old forms and was floundering for new ones.</li>
+        <li>The verdict: democracy has done less harm and more good than any other form. It gave life zest and fellowship, gave thought, science and enterprise their freedom, broke down privilege, and raised ability from every rank. If equal access to education can be achieved, it will be real and justified. People cannot be equal, but their access to education and opportunity can be made more nearly equal. A right, they add, is not a gift of God or nature but a privilege it is good for the group that the individual should have.</li>
+        <li>They found democracy sounder than ever in 1968 in Britain, the United States, Scandinavia, Switzerland and Canada. They named three dangers. Endless war and a large military could wear its freedoms away. Race or class war could turn argument into blind hate. And if a free economy fails to distribute wealth as ably as it creates it, the road to dictatorship opens to anyone who can persuasively promise security to all.</li>
       </ul>
       <figure class="fig">
-        <p class="fig-title">Figure · Plato’s cycle of governments</p>
-        <svg class="cycle" id="plato" role="img" aria-label="A cycle of four forms of government: monarchy, aristocracy, democracy and dictatorship, each giving way to the next"></svg>
-        <figcaption>The sequence the Durants take from Plato’s <cite>Republic</cite>. History, they say, rhymes with it often enough to take it seriously, but not so reliably as to call it a law.</figcaption>
+        <p class="fig-title">Figure · Who could vote in Attica</p>
+        <p class="attica__head"><b>About 1 in 7</b> people in Attica could vote.</p>
+        <div class="attica__bar" role="img" aria-label="Attica's population of 315,000: 115,000 slaves, 157,000 free people without a vote, and 43,000 citizens with a vote">
+          <span class="s-slave" style="flex:115"></span><span class="s-free" style="flex:157"></span><span class="s-vote" style="flex:43"></span>
+        </div>
+        <ul class="attica__legend">
+          <li><span>Slaves</span><b>115,000 · 36.5%</b></li>
+          <li class="free"><span>Free, but no vote: women, children, resident aliens, most workers and traders</span><b>157,000 · 49.8%</b></li>
+          <li class="vote"><span>Citizens with the vote</span><b>43,000 · 13.7%</b></li>
+        </ul>
+        <figcaption>The Durants give a population of 315,000, of whom 115,000 were slaves and 43,000 were citizens entitled to vote (they took the figures from A. W. Gomme). The middle band and all three percentages are our arithmetic from those numbers.</figcaption>
       </figure>
+      <figure class="fig">
+        <p class="fig-title">Figure · Plato’s wheel of governments</p>
+        <svg class="cycle" id="plato" role="img" aria-label="A cycle of four forms of government: monarchy, aristocracy, democracy and dictatorship, each giving way to the next"></svg>
+        <figcaption>The sequence of Plato’s <cite>Republic</cite>, as the Durants summarise it. They illustrate it twice: Athens, from Solon to Philip of Macedon, and Rome, from the Senate’s oligarchy through Caesar’s popular dictatorship to Augustus.</figcaption>
+      </figure>
+      <p class="line">“Democracy is the most difficult of all forms of government, since it requires the widest spread of intelligence, and we forgot to make ourselves intelligent when we made ourselves sovereign.”<span>Chapter X</span></p>
+      <p class="line">“The only real revolution is in the enlightenment of the mind and the improvement of character, the only real emancipation is individual, and the only real revolutionists are philosophers and saints.”<span>Chapter X</span></p>
     </article>
 
     <article class="chapter" id="ch-11">
       <p class="ch-label">Chapter XI</p>
       <h3>History and War</h3>
-      <p class="gist">War is one of history’s constants.</p>
+      <p class="gist">War is a constant of history. Its causes are the instincts of individuals with no power above states to restrain them, and the chapter ends in a debate that the general wins on points.</p>
       <ul class="points">
-        <li>The Durants count only 268 years without war in 3,421 years of recorded history. The hero at the top of this page draws that ratio.</li>
-        <li>Wars have the same causes as competition between individuals: acquisitiveness, pugnacity and pride. Between states, though, there is no law or police above them to restrain those impulses.</li>
-        <li>The chapter closes with an imagined exchange between a general, who argues war is natural and inevitable, and a philosopher, who hopes for a wider order in which nations restrain themselves as individuals have learned to.</li>
+        <li>War has not diminished with civilisation or democracy. In 3,421 years of recorded history, the Durants count only 268 without war (the hero at the top of this page draws that ratio). Heraclitus called war the father of all things, the source of ideas, inventions, institutions and states. Peace is an unstable equilibrium, kept only by acknowledged supremacy or equal power.</li>
+        <li>The causes of war are the causes of competition between individuals: acquisitiveness, pugnacity and pride, and the desire for food, land, materials, fuel and mastery. An individual accepts morals and laws because the state protects his life and property. The state accepts no real restraint, because no superstate protects it and no international law has force. The state has our instincts without our restraints.</li>
+        <li>In a person, pride adds vigour; in a state, nationalism adds force. Once Europe’s states had freed themselves from the papacy, each cultivated nationalism as a supplement to its army, stirring up hatred of whichever country it expected to fight while stressing its own love of peace.</li>
+        <li>It wasn’t always total. Between the religious wars and the French Revolution, war was a contest of aristocracies rather than peoples. Englishmen travelled safely in France while the two countries were at war, and Frederick the Great and the French admired each other while fighting the Seven Years’ War. Modern transport, weapons and propaganda made war a struggle of whole peoples, and one war can now destroy the work of centuries.</li>
       </ul>
+      <div class="duel">
+        <div>
+          <p class="who">The general</p>
+          <p>Rulers have always smiled at philosophers’ dislike of war, with rare exceptions like Ashoka and Augustus. Charles Martel’s victory at Tours (732) kept France and Spain Christian, and arms saved the classical heritage from the Mongols. More young men die in car crashes than in battle, and many rot for lack of discipline. A long peace weakens a nation’s martial muscles, and when survival is at stake the Ten Commandments must be silent. Then his 1968 case: America must take up Britain’s nineteenth-century role, or Communism will spread through Asia, Africa and South America and encircle it. Better to fight now, on foreign soil.</p>
+        </div>
+        <div>
+          <p class="who phil">The philosopher</p>
+          <p>Yes, and the results will be in accord with history, multiplied by modern weapons. “There is something greater than history.” Apply the Golden Rule to nations, as the Buddhist king Ashoka did (262 BC), or at least do what Augustus did when he told Tiberius to stop invading Germany (AD 9). Refuse to make a hundred Hiroshimas in China. He imagines an American president telling China and Russia that America will break with history’s usual course and offer a standing conference, arms reduction, fair elections wherever the two sides compete for a people, cultural exchange and non-aggression pacts: a defiance of history.</p>
+        </div>
+        <div>
+          <p class="who">The general, last word</p>
+          <p>The general smiles and says the philosopher has forgotten all the lessons of history and all of human nature. Some conflicts are too deep to negotiate, and subversion would go on during the talks. World order will come only when one power wins decisively enough to dictate law, as Rome did from Augustus to Marcus Aurelius. States unite only against a common attack from outside, so perhaps against other planets one day. Then, and only then, will the earth be one.</p>
+        </div>
+      </div>
+      <ul class="points">
+        <li>The Durants give the general the closing speech and don’t step in to overrule him. Our reading: given the book’s own lessons about competition and the state, history sides with the general, and the authors’ hopes with the philosopher.</li>
+      </ul>
+      <p class="line">“The state has our instincts without our restraints.”<span>Chapter XI</span></p>
     </article>
 
     <article class="chapter" id="ch-12">
       <p class="ch-label">Chapter XII</p>
       <h3>Growth and Decay</h3>
-      <p class="gist">Civilisations rise by meeting challenges and decline when they can’t.</p>
+      <p class="gist">Civilisations grow by meeting challenges and decay when their leaders fail to. They don’t die of old age, and what they create outlives them.</p>
+      <p class="sub">Does history repeat?</p>
       <ul class="points">
-        <li>The Durants accept Arnold Toynbee’s idea of challenge and response: a civilisation grows when a creative minority finds answers to the problems it faces.</li>
-        <li>Decline comes when leadership fails to meet new challenges, not from an inevitable biological ageing of the kind Spengler imagined.</li>
-        <li>Civilisations don’t simply die. Their achievements pass to their successors, as Greece passed to Rome and Rome to Europe.</li>
+        <li>The Durants had defined civilisation, in their first volume, as social order promoting cultural creation: political order through custom, morals and law, economic order through steady production and exchange, and the freedom to create and test ideas and arts. It is an intricate and precarious web, laboriously built and readily destroyed.</li>
+        <li>Some thinkers expected exact repetition. Virgil’s Fourth Eclogue imagined a new Argo and a new Achilles sent again to Troy, and Nietzsche went mad with the vision of eternal recurrence. There is nothing so foolish, the Durants remark, that it can’t be found in the philosophers.</li>
+        <li>History repeats only in outline and in the large. Expect new states to rise and old ones to subside. New civilisations begin with pasture and farming, expand into commerce and industry, and luxuriate with finance. Thought moves, as Vico and Comte argued, from supernatural to legendary to naturalistic explanations. Each generation rebels and then conforms, and moral experiments loosen tradition. History repeats because human nature changes at geological speed. But complex societies produce more varied individuals and novel situations, so the future is less predictable. Every year is an adventure.</li>
+        <li>Two grand schemes get a hearing. Saint-Simon saw “organic” ages of shared belief alternating with “critical” ages of doubt and individualism. The medieval Church had begun an organic age that ended with the fifteenth-century Reformers, and he hoped socialism would begin the next one. Spengler treated each civilisation as an organism with its seasons, placed the West’s turn to decline around 1800, and looked back to aristocracy. If Communism triumphed, the Durants note, Saint-Simon would be vindicated.</li>
       </ul>
+      <p class="sub">Growth</p>
+      <ul class="points">
+        <li>No serious student believes states began with a social contract. Most began when one group conquered another, and the conqueror’s decrees became the first laws. When masters organised their subjects to exploit a river or an oasis, economic planning became another foundation. The tension between rulers and ruled could lift a people above the drift of tribal life.</li>
+        <li>Growth is spurred by challenges in the surroundings, such as invasion or a continuing lack of rain, met by better armies or irrigation canals. A footnote credits this to the opening theory of Arnold Toynbee’s <cite>A Study of History</cite>.</li>
+        <li>Whether a challenge is met depends on creative individuals with clarity of mind and energy of will, which is almost a definition of genius, able to respond to new situations, which is almost a definition of intelligence. Where such people come from sends us back to psychology, biology and chance. A challenge met raises a nation’s level for the next one, as with the United States in 1917, 1933 and 1941, unless it exhausts the victor, as it did England in 1945.</li>
+      </ul>
+      <p class="sub">Decay</p>
+      <ul class="points">
+        <li>The Durants reject the organism analogy. A group has no brain or stomach of its own; it thinks and feels only through its members. A civilisation declines not from some mystic limit on its life but because its political or intellectual leaders fail to meet the challenges of change.</li>
+        <li>The challenges can come from a dozen directions and combine (see the figure below). Rain fails, or the soil is exhausted. Slave labour replaces free labour and kills the incentive to produce. Trade routes shift, leaving Pisa and Venice becalmed after 1492. Taxes rise until they discourage investment. Markets are lost to more enterprising rivals and precious metals drain away. Concentrated wealth splits the nation in class or race war. Poverty piled up in cities forces a choice between a crippling dole and riot.</li>
+        <li>As inequality grows, a majority without standards of taste drags on the cultured minority, and its speech, dress, entertainment and thought spread upward. This “internal barbarization” is part of the price the minority pays for monopolising education and opportunity.</li>
+        <li>As education spreads, theology loses its hold, and the moral code loses force once its human origin is exposed. Greek philosophers dissolved the old faith, and modern ones did the same. The Durants pair them off: Protagoras became Voltaire, Diogenes Rousseau, Democritus Hobbes, Plato Kant, Thrasymachus Nietzsche, Aristotle Spencer, Epicurus Diderot.</li>
+        <li>Caught between one moral code and the next, an unmoored generation gives itself to luxury and disorder, and few feel any longer that it is beautiful and honourable to die for one’s country. Leaders may let the state weaken itself in internal strife. At the end, a decisive defeat in war, or barbarians from outside joining barbarism from within, finishes it.</li>
+      </ul>
+      <p class="sub">Survival</p>
+      <ul class="points">
+        <li>Is this depressing? Not quite. Life has no claim to eternity, and death in due time is natural and even useful. And civilisations don’t wholly die. Greek civilisation lost its frame and its home but survives everywhere: Homer has more readers now than in his own day, and a hundred thousand students are reading Plato at any moment.</li>
+        <li>Nations die, but people move on, taking their tools, arts and memories with them. If education has deepened those memories, civilisation migrates with them and builds another home. Rome imported Greek civilisation and passed it to Western Europe, and America was preparing to pass Europe’s on with means of transmission never seen before.</li>
+        <li>As life overcomes death by reproducing, an ageing culture hands its inheritance to its heirs across the years and the seas.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · How a civilisation grows, decays and hands on its heritage</p>
+        <div class="gd">
+          <div class="gd__lane">
+            <h4>Growth</h4>
+            <ol>
+              <li>A state forms, usually by conquest; the conqueror’s decrees become law</li>
+              <li>A challenge arrives: invasion, drought, a harder environment</li>
+              <li>Creative individuals respond, with better armies or canals</li>
+              <li>A challenge met raises the nation’s level for the next one</li>
+            </ol>
+          </div>
+          <div class="gd__lane gd__lane--decay">
+            <h4>Decay</h4>
+            <ol>
+              <li>Challenges pile up and combine
+                <span class="chips"><span>failing rain</span><span>exhausted soil</span><span>slave labour</span><span>shifted trade routes</span><span>crushing taxes</span><span>lost markets</span><span>concentrated wealth</span><span>urban poverty</span></span>
+              </li>
+              <li>Political and intellectual leaders fail to respond</li>
+              <li>Internal barbarisation, faith dissolved, a generation between moral codes</li>
+              <li>Defeat in war or invasion delivers the final blow</li>
+            </ol>
+          </div>
+        </div>
+        <div class="heir">
+          <p>What survives migrates</p>
+          <ol><li>Greece</li><li>Rome</li><li>Western Europe</li><li>America</li></ol>
+        </div>
+        <figcaption>Our diagram of the chapter’s argument. The challenges are the ones the Durants list, and the chain of heirs is the one they give. Nothing in it happens by a fixed life span; each step is a response that succeeds or fails.</figcaption>
+      </figure>
+      <p class="line">“History repeats itself, but only in outline and in the large.”<span>Chapter XII</span></p>
+      <p class="line">“This selective survival of creative minds is the most real and beneficent of immortalities.”<span>Chapter XII</span></p>
     </article>
 
     <article class="chapter" id="ch-13">
       <p class="ch-label">Chapter XIII</p>
       <h3>Is Progress Real?</h3>
-      <p class="gist">Yes, if progress means a richer inheritance.</p>
+      <p class="gist">If progress means happiness, no. If it means life’s growing control of its environment, yes, and it lives in the heritage that education passes on.</p>
+      <p class="sub">The case against</p>
       <ul class="points">
-        <li>The Durants define progress as the increasing control of the environment by life.</li>
-        <li>By that measure much has improved (knowledge, health, the reach of education and art), even though human nature, cruelty and war have not.</li>
-        <li>Progress lives in the heritage. We aren’t born wiser or better than our ancestors. We are born into a greater store of knowledge, art and institutions, passed on by education. Civilisation is that inheritance, and each generation must learn it anew.</li>
+        <li>If human nature hasn’t changed, every technical advance is just a new means to old ends: getting goods, pursuing a mate, beating rivals, making war. Science turns out to be neutral: it will kill as readily as it heals. Bacon’s “knowledge is power” looks inadequate, and the Middle Ages and the Renaissance, which put myth and art before power, may have been wiser than an age that keeps enlarging its instruments without improving its purposes.</li>
+        <li>Every gain has its cost. Comfort may have weakened body and character. We travel faster but are the same trousered apes at two thousand miles an hour. Medicine adds years, but not always good ones. We hear the news of the whole planet and envy ancestors disturbed only by their village. Skilled workers live better, but cities fester with slums.</li>
+        <li>Have we built a natural ethic, independent of religion, strong enough to hold back greed, violence and promiscuity? Or have we only moved intolerance from religion to nation, ideology and race? Have we given ourselves more freedom than our intelligence can digest?</li>
+        <li>And the arts: has philosophy progressed since Confucius, or literature since Aeschylus? Is modern music deeper than Palestrina’s? Is contemporary painting the replacement of order with chaos, and a symbol of a civilisation sliding into structureless decay?</li>
       </ul>
+      <p class="sub">Defining progress</p>
+      <ul class="points">
+        <li>History is so rich that you can prove almost anything by choosing instances, so first define terms. If progress means more happiness, the case is lost at once: we can always find reasons to be magnificently miserable, and a definition that makes the child more advanced than the sage, because happier, is silly.</li>
+        <li>The Durants’ definition is the increasing control of the environment by life. The test holds for the humblest organism as well as for humans.</li>
+        <li>Progress needn’t be continuous or universal. There are setbacks, as in any growing person. Some nations advance while others decline, and one country can advance in technology while falling back in the arts, as America did. Each age calls out the kinds of ability it needs. Don’t compare one time and place with the best of the entire past; ask whether the average person has gained control over the conditions of life.</li>
+      </ul>
+      <p class="sub">The case for</p>
+      <ul class="points">
+        <li>Against the ignorance, violence and disease of primitive life, the modern world doesn’t come off badly. Surviving tribal peoples have high infant mortality and short lives, and idealising the noble savage is a flight from our actual tasks. By the Durants’ figure, longevity among Europeans and Americans had tripled in three centuries. They cite a morticians’ convention worried that people were late for their appointments with death: if undertakers are miserable, progress is real.</li>
+        <li>Ancients against moderns, the moderns hold their own. Famine had been eliminated in modern states, and science had reduced superstition and religious intolerance. There were habeas corpus, trial by jury, religious and intellectual freedom and the emancipation of women, along with universities, publishers and public libraries. Shakespeare stands against the Athenian dramatists, Molière against Aristophanes, Gibbon against Herodotus and Thucydides, and the modern novel has no ancient rival. The Durants grant the ancients superiority in art, though some might still prefer Notre-Dame to the Parthenon.</li>
+        <li>Our civilisation will probably die like the others. As Frederick the Great asked his retreating troops at Kolin: “Would you live forever?” Perhaps it is good that new civilisations and centres take their turn, and the challenge of a rising East may reinvigorate the West.</li>
+      </ul>
+      <p class="sub">The heritage</p>
+      <ul class="points">
+        <li>Some achievements have survived every rise and fall: fire and light, the wheel and basic tools, language, writing, art and song, agriculture, the family and parental care, social organisation, morality and charity, and teaching to hand it all on. These are the elements of civilisation, the connective tissue of human history.</li>
+        <li>If education is the transmission of civilisation, we are unquestionably progressing. Civilisation isn’t inherited; each generation must learn and earn it again. Interrupt the transmission for a century and we would be savages again. So the finest achievement of the age, they say, is its unprecedented spending on higher education for all. We may not have surpassed the geniuses of antiquity, but we have raised the average of knowledge beyond any earlier age.</li>
+        <li>The experiment has barely begun and could be defeated by the fertility of ignorance. But imagine every child schooled to twenty with free access to universities, libraries and museums. Think of education not as memorising dates, nor only as job training, but as passing on our mental, moral, technical and aesthetic heritage as fully as possible to as many as possible.</li>
+        <li>That heritage is richer than ever. It is richer than Pericles’s, because it includes all the Greek flowering after him; richer than Leonardo’s, because it includes him; richer than Voltaire’s, because it includes the whole Enlightenment. We are not born healthier, better or wiser than past infants, but born to a richer heritage, on a higher step of the pedestal that accumulated knowledge and art build under us.</li>
+        <li>The closing page: history is above all the creation and recording of that heritage, and progress is its growing abundance, preservation, transmission and use. Studied that way, the past stops being a chamber of horrors and becomes a spacious country of the mind, where saints, statesmen, inventors, poets, musicians, lovers and philosophers still speak. The historian won’t mourn that life has no meaning but what we put into it; we can take pride in putting meaning there. A fortunate person gathers as much of the heritage as he can and passes it to his children, grateful to the end for the inexhaustible legacy.</li>
+      </ul>
+      <p class="line">“Civilization is not inherited; it has to be learned and earned by each generation anew.”<span>Chapter XIII</span></p>
+      <p class="line">“The heritage rises, and man rises in proportion as he receives it.”<span>Chapter XIII</span></p>
     </article>
 
-    <section class="sec" id="theories" style="margin-top:56px">
+    <section class="sec theories" id="theories" style="margin-top:56px">
       <p class="kicker">Context</p>
       <h2>Durants vs other theorists of history</h2>
-      <p>The book quietly positions itself among the grand theories of its day.</p>
+      <p>The book is a running conversation with the grand theories. It names most of its interlocutors and gives each a sentence of verdict.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th scope="col">Thinker</th><th scope="col">Their theory</th><th scope="col">The Durants</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Plato</th><td>Governments cycle from monarchy to tyranny.</td><td>A useful pattern, not a law.</td></tr>
-            <tr><th scope="row">Marx</th><td>Economics drives history, toward socialism.</td><td>Economics matters greatly but not solely, and systems converge.</td></tr>
-            <tr><th scope="row">Spengler</th><td>Civilisations are organisms that age and die.</td><td>They decline by failing challenges, and their heritage survives.</td></tr>
-            <tr><th scope="row">Toynbee</th><td>Growth by challenge and response.</td><td>Largely accepted.</td></tr>
-            <tr><th scope="row">Gobineau, Chamberlain</th><td>Race explains civilisation.</td><td>Rejected outright.</td></tr>
+            <tr><th scope="row">Montesquieu, Buckle</th><td data-l="Their theory">Climate shapes a people’s character and history.</td><td data-l="The Durants">It no longer controls us as severely as they thought, but it limits us. (II)</td></tr>
+            <tr><th scope="row">Malthus</th><td data-l="Their theory">Population outruns food and is checked by famine, pestilence and war (1798).</td><td data-l="The Durants">Apparently refuted by farming and contraception, perhaps only postponed; spread contraception meanwhile. (III)</td></tr>
+            <tr><th scope="row">Gobineau, Chamberlain, Grant</th><td data-l="Their theory">A superior race creates civilisation, and mixture destroys it.</td><td data-l="The Durants">Rejected: circumstances make a culture, and the culture makes the people. (IV)</td></tr>
+            <tr><th scope="row">Carlyle</th><td data-l="Their theory">History is the work of heroes.</td><td data-l="The Durants">The great man is a product of his time as well as its agent, but events really do pass through him. (V)</td></tr>
+            <tr><th scope="row">Marx</th><td data-l="Their theory">Economics drives history, and the struggle ends in socialism.</td><td data-l="The Durants">It illuminates much but not all; masses also move for faith, nation and fury. (VIII)</td></tr>
+            <tr><th scope="row">Hegel</th><td data-l="Their theory">Thesis and antithesis resolve into a synthesis.</td><td data-l="The Durants">Turned against Marx: the synthesis is a blend of capitalism and socialism. (IX)</td></tr>
+            <tr><th scope="row">Plato</th><td data-l="Their theory">Monarchy, aristocracy, democracy, dictatorship, and round again.</td><td data-l="The Durants">Illustrated twice, by Athens and by Rome. (X)</td></tr>
+            <tr><th scope="row">Virgil, Nietzsche</th><td data-l="Their theory">History repeats itself exactly.</td><td data-l="The Durants">Nothing is so foolish that it can’t be found in the philosophers. (XII)</td></tr>
+            <tr><th scope="row">Vico, Comte</th><td data-l="Their theory">Thought moves from supernatural to naturalistic explanation.</td><td data-l="The Durants">Accepted, “by and large”. (XII)</td></tr>
+            <tr><th scope="row">Saint-Simon</th><td data-l="Their theory">Organic and critical ages alternate.</td><td data-l="The Durants">Would be vindicated if Communism proved the new organic order. (XII)</td></tr>
+            <tr><th scope="row">Spengler</th><td data-l="Their theory">Civilisations are organisms that age and die.</td><td data-l="The Durants">No: a group has no brain of its own, and decline is failed leadership. (XII)</td></tr>
+            <tr><th scope="row">Toynbee</th><td data-l="Their theory">Civilisations grow by responding to challenges.</td><td data-l="The Durants">Adopted, with credit in a footnote. (XII)</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
+    <section class="sec" id="forecasts">
+      <p class="kicker">Context</p>
+      <h2>Their forecasts, 58 years on</h2>
+      <p>The Durants mostly avoid prediction, but the book makes a handful of datable calls. Here is how they look from 2026. The verdicts are our judgement; the outcomes are well documented.</p>
+      <div class="fc"><p class="fc__v fc__v--held">Held</p><h3>Birth rates will fall as poorer countries industrialise <span>III</span></h3><p>The world’s average number of children per woman has more than halved since the late 1960s, as they hoped, though they didn’t foresee rich countries falling well below replacement.</p></div>
+      <div class="fc"><p class="fc__v fc__v--held">Held</p><h3>Communism, given a generation of peace, will erode <span>IX</span></h3><p>China turned to markets from 1978 and the Soviet Union dissolved in 1991, though peace wasn’t the only cause.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>Capitalism and socialism will converge <span>IX</span></h3><p>Western economies kept large welfare states and most communist economies adopted markets, but no clean synthesis emerged, and the Soviet side collapsed rather than merging.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>Air power will redraw the map of trade <span>II</span></h3><p>People and high-value goods now fly, but more than four-fifths of world trade by volume still goes by sea, so coastlines and ports still matter.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>Western technique carried to China may bring the decline of the West <span>II</span></h3><p>Asked as a question, not asserted. China did become the world’s largest manufacturer; whether that means the West’s decline is still argued.</p></div>
+      <div class="fc"><p class="fc__v fc__v--missed">Missed</p><h3>By 2000 the Catholic Church will dominate American government <span>III</span></h3><p>Catholic birth rates converged with everyone else’s, and the Catholic share of Americans has since fallen, to about a fifth.</p></div>
+      <div class="fc"><p class="fc__v fc__v--missed">Missed</p><h3>“Russia progresses and England loses ground today” <span>XIII</span></h3><p>Said in passing, but the Soviet Union collapsed within 23 years of the book.</p></div>
+      <div class="fc"><p class="fc__v fc__v--partly">Partly</p><h3>The philosopher’s proposal in the war chapter <span>XI</span></h3><p>Within four years came something like his conference: Nixon went to Beijing and signed the first strategic arms limitation agreement with Moscow, both in 1972. The Cold War then ended without the general’s war, though not by the Golden Rule.</p></div>
+    </section>
+
     <section class="sec" id="debates">
       <p class="kicker">Context</p>
       <h2>Where it has been argued with</h2>
-      <div class="debate"><h3>Sweeping and uncited</h3><p>The book gives few sources, and its generalisations draw mostly on Western history. Historians value its wisdom more than its method. Some of its famous numbers, such as the count of years without war, can’t easily be traced.</p></div>
-      <div class="debate"><h3>Religion and morals</h3><p>The claim that no society has kept its morals without religion is contested by the record of highly secular modern societies. The Durants themselves left the question open.</p></div>
-      <div class="debate"><h3>Biology and inequality</h3><p>The passages on differential birth rates and natural inequality read today as dated, and some readers find them close to eugenic thinking. Others take them as the Durants’ unsentimental realism.</p></div>
-      <div class="debate"><h3>Is war really constant?</h3><p>Steven Pinker’s <cite>The Better Angels of Our Nature</cite> (2011) argued that violence, including war deaths per head, has declined over the long run. That challenges the Durants’ picture of war as a fixed feature, though not their account of its causes.</p></div>
+      <div class="debate"><h3>Sweeping, and sourced mostly to itself</h3><p>The book has about eighty notes, most pointing to the Durants’ own volumes, which the preface offers as instances rather than authorities. Its generalisations draw mostly on Western history. Some famous numbers, such as the 268 years without war, come with no source at all. Historians tend to value its judgement more than its method.</p></div>
+      <div class="debate"><h3>Religion and morals</h3><p>The claim that no society has kept its morals without religion is the book’s most contested. Phil Zuckerman’s <cite>Society without God</cite> (2008) studied Denmark and Sweden, among the least religious and most orderly societies on earth. The Durants wrote “before our time” and left their own era open.</p></div>
+      <div class="debate"><h3>Biology, birth rates and race</h3><p>The passages on differential birth rates, on parenthood as “a privilege of health” and on the ablest 30% read as dated, and some readers find them close to eugenics. The race chapter, a firm rejection of racial theories of history in 1968, still uses the language of its time and some judgements few historians would make now. Other readers take all this as the Durants’ unsentimental realism.</p></div>
+      <div class="debate"><h3>Is war really constant?</h3><p>Steven Pinker’s <cite>The Better Angels of Our Nature</cite> (2011) argued that violence, including deaths in war per head of population, has declined over the long run. That challenges the Durants’ picture of war as a fixed feature, though not their account of its causes.</p></div>
+      <div class="debate"><h3>Can wealth really be spread peacefully?</h3><p>Walter Scheidel’s <cite>The Great Leveler</cite> (2017) surveyed inequality across history and found that large reductions came mainly from violent shocks: mass-mobilisation war, transformative revolution, state collapse and plague. That cuts against the hope in Solon’s peaceful path. It is worth noticing that the Durants’ own American example, 1933–52, spans the Second World War.</p></div>
+      <div class="debate"><h3>What counts as progress</h3><p>The Durants define progress as control of the environment and locate it in the transmitted heritage, a cautious view. David Deutsch’s <cite>The Beginning of Infinity</cite> (2011) makes a bolder case: progress is the growth of good explanations, and it has no built-in limit.</p></div>
     </section>
 
     <section class="sec" id="glossary">
       <p class="kicker">Terms of art</p>
       <h2>Glossary</h2>
       <dl class="gloss">
-        <dt>Geological consent</dt><dd>The Durants’ phrase for civilisation’s dependence on a stable earth.</dd>
-        <dt>Selection</dt><dd>The biological process by which natural inequalities produce unequal outcomes.</dd>
-        <dt>Innovators and conservatives</dt><dd>The two forces whose tension produces orderly change.</dd>
-        <dt>Moral code</dt><dd>The rules a society enforces to keep order. The Durants tie them to its economy.</dd>
-        <dt>Concentration of wealth</dt><dd>The natural drift of wealth toward the able, periodically reversed.</dd>
-        <dt>Redistribution</dt><dd>The reversal, by legislation (Solon) or revolution.</dd>
-        <dt>Profit motive</dt><dd>The incentive the Durants think every economy must eventually use.</dd>
-        <dt>Plato’s cycle</dt><dd>Monarchy, aristocracy, democracy, dictatorship, and round again.</dd>
-        <dt>Challenge and response</dt><dd>Toynbee’s account of how civilisations grow.</dd>
-        <dt>Progress</dt><dd>In the Durants’ definition, the increasing control of the environment by life.</dd>
-        <dt>Heritage</dt><dd>The accumulated knowledge, art and institutions each generation inherits through education.</dd>
+        <dt>History</dt><dd>In the Durants’ “troublesome duplexity”, both the events of the past and the record of them.</dd>
+        <dt>The three biological lessons</dt><dd>Life is competition, life is selection, life must breed (Chapter III).</dd>
+        <dt>Table of Character Elements</dt><dd>Their map of human nature: six pairs of positive and negative instincts, each with its habits and feelings.</dd>
+        <dt>Innovators and conservatives</dt><dd>The minority who propose and the majority who test; both needed, “as roots are more vital than grafts”.</dd>
+        <dt>Moral code</dt><dd>The rules by which a society exhorts behaviour, as laws are the rules by which it compels it.</dd>
+        <dt>Hunting, farming, industry</dt><dd>The three economic stages, each with its own moral code.</dd>
+        <dt>Puritanism and paganism</dt><dd>Repression and expression of the senses, alternating as law weakens or strengthens.</dd>
+        <dt>Concentration of wealth</dt><dd>The natural drift of wealth toward the able, which democracy speeds up.</dd>
+        <dt>Systole and diastole</dt><dd>Their image for economic history: wealth concentrating and then forced back into circulation.</dd>
+        <dt>Profit motive</dt><dd>The incentive every economy, they conclude, must sooner or later use.</dd>
+        <dt>War economy</dt><dd>Their reading of Diocletian’s socialism and of Soviet Communism: control accepted under external threat.</dd>
+        <dt>Adoptive monarchy</dt><dd>Rome’s system from Nerva to Marcus Aurelius: each emperor adopted and trained the ablest man he could find.</dd>
+        <dt>Oligarchy</dt><dd>Rule by a minority, which the Durants think covers most governments, democracies included.</dd>
+        <dt>Pleonexia</dt><dd>The Greek word for the appetite for more and more that followed Athens’ new commercial wealth.</dd>
+        <dt>Plato’s wheel</dt><dd>Monarchy, aristocracy, democracy, dictatorship, and round again.</dd>
+        <dt>Civilisation</dt><dd>“Social order promoting cultural creation.”</dd>
+        <dt>Organic and critical ages</dt><dd>Saint-Simon’s alternation of eras of shared belief and eras of doubt.</dd>
+        <dt>Challenge and response</dt><dd>Toynbee’s account of growth, which the Durants adopt.</dd>
+        <dt>Internal barbarisation</dt><dd>The cultural drag of an excluded majority on a narrowing elite.</dd>
+        <dt>Progress</dt><dd>“The increasing control of the environment by life.”</dd>
+        <dt>Heritage</dt><dd>The accumulated knowledge, art, morals and institutions each generation must learn again through education.</dd>
       </dl>
     </section>
 
@@ -635,25 +1108,27 @@ var FIG = (function () {
       <h2>Reading it</h2>
       <p>At about a hundred pages it can be read in an evening, and that is the best way to read it. If you only have an hour:</p>
       <ol class="steps">
-        <li><div><p class="phase">Chapters II and III</p><p>The earth and biology: the foundations of the Durants’ realism.</p></div></li>
-        <li><div><p class="phase">Chapters VIII and IX</p><p>Wealth, redistribution and the convergence of systems.</p></div></li>
-        <li><div><p class="phase">Chapter X</p><p>Government, democracy and Plato’s cycle.</p></div></li>
+        <li><div><p class="phase">Chapters III and V</p><p>Biology and character: competition, selection, and why the conservative matters.</p></div></li>
+        <li><div><p class="phase">Chapters VIII and IX</p><p>Solon and the Gracchi, then five thousand years of state-run economies.</p></div></li>
+        <li><div><p class="phase">Chapter X</p><p>Monarchy, revolution, Plato’s wheel, and the case for democracy.</p></div></li>
         <li><div><p class="phase">Chapter XI</p><p>War, and the general’s argument with the philosopher.</p></div></li>
-        <li><div><p class="phase">Chapter XIII</p><p>The answer to whether any of it adds up to progress.</p></div></li>
+        <li><div><p class="phase">Chapter XIII</p><p>Read its last three pages slowly: the heritage, and why progress lives there.</p></div></li>
       </ol>
       <p style="margin-top:28px" class="kicker">Read alongside</p>
       <ul class="books">
-        <li><cite>The Story of Civilization</cite>, volumes I–IV summarised on this site: the narrative this book distils.</li>
-        <li><cite>The Mobile Wave</cite>, summarised on this site: Michael Saylor, who recommends the Durants’ book, on his own forecast of change.</li>
+        <li><cite>The Story of Civilization</cite>, volumes I–IV, <a href="durant-story-of-civilization-i-iv.html">summarised on this site</a>: the narrative this book distils.</li>
+        <li><cite>Guns, Germs, and Steel</cite>, <a href="guns-germs-and-steel.html">summarised on this site</a>: Chapters II and IV argued at book length, with geography in place of race.</li>
+        <li><cite>A History of Warfare</cite>, <a href="keegan-history-of-warfare.html">summarised on this site</a>: Keegan on war as culture, a counterpoint to Chapter XI.</li>
         <li>Arnold J. Toynbee, <cite>A Study of History</cite> (1934–61): challenge and response at full length.</li>
-        <li>Steven Pinker, <cite>The Better Angels of Our Nature</cite> (2011): the case that violence has declined.</li>
+        <li>Walter Scheidel, <cite>The Great Leveler</cite> (2017): the data-driven challenge to Chapter VIII.</li>
       </ul>
     </section>
   </main>
 </div>
 
 <footer class="wrap foot">
-  <p>A study summary of Will and Ariel Durant, <cite>The Lessons of History</cite> (1968). Paraphrased throughout, except the short lines in quotation marks, which are among the book’s best-known sentences. The year grid uses the Durants’ own count, and the wealth and government figures are our schematics of their chapters.</p>
+  <p>A study summary of Will and Ariel Durant, <cite>The Lessons of History</cite> (1968), checked against the text of the book. Paraphrased throughout. Words in quotation marks are the Durants’ own; a few are lines they themselves quote from Will Durant’s earlier books or their own volumes, and the attribution says so.</p>
+  <p>The year grid uses the Durants’ own count (Chapter XI). The Athens shares are our arithmetic from the chapter’s figures. The wealth curve, the government wheel and the growth-and-decay diagram are our schematics of their chapters. The character table is a selection of their entries. The forecast verdicts are our assessment.</p>
 </footer>
 
 <script>
