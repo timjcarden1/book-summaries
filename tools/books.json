@@ -198,6 +198,34 @@
       ]
     },
     {
+      "slug": "keegan-history-of-warfare",
+      "title": "A History of Warfare",
+      "author": "John Keegan",
+      "years": "1993",
+      "shelf": "history",
+      "tag": "Military history",
+      "added": "2026-09-23",
+      "blurb": "War as culture rather than policy: stone, flesh, iron and fire, and the limits of weather, walls, armies and supply.",
+      "accent": "#9E3A14",
+      "paper": "#E6E5DF",
+      "ink": "#1C1E20",
+      "muted": "#686C71",
+      "related": [
+        {
+          "slug": "guns-germs-and-steel",
+          "why": "Why some societies conquered others, argued from geography instead of culture."
+        },
+        {
+          "slug": "livy-history-of-rome",
+          "why": "The Roman way of war, as Rome's own historian told it."
+        },
+        {
+          "slug": "lessons-of-history",
+          "why": "The Durants on war as one of history's constants."
+        }
+      ]
+    },
+    {
       "slug": "the-beginning-of-infinity",
       "title": "The Beginning of Infinity",
       "author": "David Deutsch",

@@ -132,6 +132,25 @@
         ]
       },
       {
+        "slug": "keegan-history-of-warfare",
+        "title": "A History of Warfare",
+        "author": "John Keegan",
+        "related": [
+          {
+            "slug": "guns-germs-and-steel",
+            "why": "Why some societies conquered others, argued from geography instead of culture."
+          },
+          {
+            "slug": "livy-history-of-rome",
+            "why": "The Roman way of war, as Rome's own historian told it."
+          },
+          {
+            "slug": "lessons-of-history",
+            "why": "The Durants on war as one of history's constants."
+          }
+        ]
+      },
+      {
         "slug": "the-beginning-of-infinity",
         "title": "The Beginning of Infinity",
         "author": "David Deutsch",

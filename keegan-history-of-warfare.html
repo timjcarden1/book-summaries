@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A History of Warfare — John Keegan</title>
+<meta name="description" content="A chapter-by-chapter summary of John Keegan's A History of Warfare: war as culture rather than policy, told through stone, flesh, iron and fire, with the interludes on limits, walls, armies and supply.">
+<script>try{var t=localStorage.getItem('civ-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap">
+<style>
+/* ------------------------------------------------------------
+   PALETTE: chalk and gunmetal, with one colour per material
+   of war. Stone, flesh, iron and fire are the book's four ages;
+   every label, bullet and band on the page is keyed to them.
+   ------------------------------------------------------------ */
+:root {
+  color-scheme: light;
+  --paper: #E6E5DF;
+  --paper-2: #DCDBD3;
+  --surface: #F0EFEA;
+  --ink: #1C1E20;
+  --ink-2: #43474B;
+  --ink-3: #686C71;
+  --rule: #C5C4BC;
+  --rule-strong: #9C9B93;
+  --accent: #9E3A14;        /* links, book-nav */
+  --ember: #B8461B;
+  --stone: #857F72;
+  --flesh: #8B5636;
+  --iron: #4A5B68;
+  --fire: #C4501C;
+  --stone-t: #6A655A;       /* text-safe versions for labels */
+  --flesh-t: #7A4A2D;
+  --iron-t: #3F4F5B;
+  --fire-t: #9E3A14;
+  --display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+  --label: "Archivo", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #121315; --paper-2: #181A1D; --surface: #1C1F22;
+    --ink: #E4E3DE; --ink-2: #B7B8B3; --ink-3: #8B8E90;
+    --rule: #2B2E32; --rule-strong: #474B50;
+    --accent: #EC8A5E; --ember: #E0703F;
+    --stone: #A49E91; --flesh: #B97F5C; --iron: #8EA2B2; --fire: #EB7640;
+    --stone-t: #B3AD9F; --flesh-t: #CC946F; --iron-t: #A3B5C3; --fire-t: #F09266;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #121315; --paper-2: #181A1D; --surface: #1C1F22;
+  --ink: #E4E3DE; --ink-2: #B7B8B3; --ink-3: #8B8E90;
+  --rule: #2B2E32; --rule-strong: #474B50;
+  --accent: #EC8A5E; --ember: #E0703F;
+  --stone: #A49E91; --flesh: #B97F5C; --iron: #8EA2B2; --fire: #EB7640;
+  --stone-t: #B3AD9F; --flesh-t: #CC946F; --iron-t: #A3B5C3; --fire-t: #F09266;
+}
+
+* { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 1.1rem; line-height: 1.64;
+  overflow-x: clip; -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration-color: var(--ember); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; border-radius: 2px; }
+cite { font-style: italic; }
+[hidden] { display: none !important; }
+.wrap { max-width: 1200px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 44px); }
+.kicker {
+  font-family: var(--label); font-size: .72rem; font-weight: 600; font-stretch: 100%;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px;
+}
+.home-link { color: var(--ink-2); text-decoration: none; }
+.home-link:hover { color: var(--ink); text-decoration: underline; }
+
+/* ---------- hero ---------- */
+.hero { border-bottom: 1px solid var(--rule); }
+.hero-inner {
+  display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, .75fr);
+  gap: clamp(28px, 5vw, 72px); align-items: center;
+  padding-block: clamp(48px, 8vw, 100px) clamp(40px, 6vw, 72px);
+}
+.eyebrow { font-family: var(--label); font-size: .74rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.opening {
+  font-family: var(--body); font-style: italic; font-weight: 400;
+  font-size: clamp(1.45rem, 3.1vw, 2.1rem); line-height: 1.25; margin: 26px 0 0; max-width: 24ch; text-wrap: balance;
+}
+.opening b { font-style: normal; font-weight: 700; color: var(--ember); }
+.opening-note { font-family: var(--label); font-size: .74rem; letter-spacing: .06em; color: var(--ink-3); margin: 10px 0 0; }
+.hero h1 {
+  font-family: var(--display); font-weight: 850; font-stretch: 62%;
+  font-size: clamp(3.3rem, 11vw, 7.4rem); line-height: .86; letter-spacing: -.005em; text-transform: uppercase;
+  margin: 30px 0 0;
+}
+.byline { font-family: var(--label); font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin: 14px 0 0; }
+.breath { margin-top: 30px; max-width: 64ch; }
+.breath p:last-child { font-size: 1.14rem; line-height: 1.62; color: var(--ink-2); margin: 0; }
+.facts {
+  display: grid; grid-template-columns: repeat(4, auto); justify-content: start;
+  gap: 14px 40px; margin: 34px 0 0; padding-top: 20px; border-top: 1px solid var(--rule);
+}
+.facts dt { font-family: var(--label); font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.facts dd { margin: 4px 0 0; font-family: var(--display); font-stretch: 75%; font-weight: 700; font-size: 1.3rem; font-variant-numeric: tabular-nums; }
+
+/* the strata: the book's four ages as a geological column, oldest at the bottom */
+.strata { justify-self: end; width: 100%; max-width: 330px; }
+.strata svg { display: block; width: 100%; height: auto; }
+.st-fire { fill: var(--fire); }
+.st-iron { fill: var(--iron); }
+.st-flesh { fill: var(--flesh); }
+.st-stone { fill: var(--stone); }
+.st-tex { fill: var(--paper); opacity: .22; }
+.st-hatch { stroke: var(--paper); stroke-width: 1.2; opacity: .28; fill: none; }
+.st-name { fill: var(--paper); font: 850 30px var(--display); font-stretch: 62%; letter-spacing: .04em; }
+.st-when { fill: var(--paper); font: 600 11px var(--label); letter-spacing: .12em; opacity: .9; }
+.st-axis { stroke: var(--rule-strong); stroke-width: 1; fill: none; }
+.st-axis-t { fill: var(--ink-3); font: 600 10px var(--label); letter-spacing: .14em; }
+.strata figcaption { font-family: var(--label); font-size: .74rem; color: var(--ink-3); margin-top: 10px; line-height: 1.45; }
+
+/* ---------- layout ---------- */
+.layout { display: grid; grid-template-columns: 212px minmax(0, 1fr); gap: clamp(32px, 5vw, 76px); padding-block: 44px 96px; }
+.content { min-width: 0; max-width: 780px; }
+.content p { max-width: 66ch; }
+
+.rail {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 22px); align-self: start;
+  max-height: calc(100vh - 44px); overflow-y: auto; scrollbar-width: thin;
+  font-family: var(--label); font-size: .78rem; padding: 4px 4px 12px 0;
+}
+.rail ol { list-style: none; margin: 0; padding: 0 0 0 16px; position: relative; }
+.rail ol::before { content: ""; position: absolute; left: 3px; top: 8px; bottom: 8px; width: 1px; background: var(--rule-strong); }
+.rail li.grp { margin: 16px 0 4px -16px; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); background: var(--paper); position: relative; padding-left: 16px; }
+.rail a { display: flex; gap: 6px; padding: 3px 0; color: var(--ink-3); text-decoration: none; position: relative; line-height: 1.35; }
+.rail a::before {
+  content: ""; position: absolute; left: -16px; top: .6em; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--paper); border: 1px solid var(--rule-strong);
+}
+.rail .m-stone a::before { border-color: var(--stone); }
+.rail .m-flesh a::before { border-color: var(--flesh); }
+.rail .m-iron a::before { border-color: var(--iron); }
+.rail .m-fire a::before { border-color: var(--fire); }
+.rail a:hover { color: var(--ink); }
+.rail a.is-active { color: var(--ink); }
+.rail a.is-active::before { background: var(--ink-2); border-color: var(--ink-2); }
+.rail .m-stone a.is-active::before { background: var(--stone); border-color: var(--stone); }
+.rail .m-flesh a.is-active::before { background: var(--flesh); border-color: var(--flesh); }
+.rail .m-iron a.is-active::before { background: var(--iron); border-color: var(--iron); }
+.rail .m-fire a.is-active::before { background: var(--fire); border-color: var(--fire); }
+.rail .n { min-width: 1.9em; opacity: .75; }
+
+/* ---------- site chrome: contents (phones), text size, theme ---------- */
+.chrome {
+  position: fixed; z-index: 40; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  padding: calc(env(safe-area-inset-top, 0px) + 14px) 14px 0; pointer-events: none;
+}
+.chrome > * { pointer-events: auto; }
+.chrome__end { display: flex; gap: 6px; flex: none; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 36px;
+  font-family: var(--label); font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap;
+  padding: 7px 11px; border: 1px solid var(--rule); border-radius: 3px; cursor: pointer;
+  background: color-mix(in srgb, var(--paper) 88%, transparent); color: var(--ink-2);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.chip:hover { color: var(--ink); border-color: var(--rule-strong); }
+.chip--aa { font-family: var(--body); font-size: 1rem; font-weight: 600; letter-spacing: 0; text-transform: none; }
+.chip--toc { display: none; min-width: 0; overflow: hidden; }
+.chip--toc svg { width: 15px; height: 15px; flex: none; }
+.chip--toc .where { min-width: 0; overflow: hidden; text-overflow: ellipsis; font-family: var(--body); font-weight: 400; font-size: .88rem; letter-spacing: 0; text-transform: none; opacity: .82; }
+.chip--toc .where:empty { display: none; }
+.toc-backdrop { position: fixed; inset: 0; z-index: 38; background: rgba(12, 13, 14, .45); }
+.toc-sheet {
+  position: fixed; z-index: 39; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 53px);
+  max-height: min(76vh, 680px); overflow-y: auto; overscroll-behavior: contain;
+  background: var(--surface); color: var(--ink);
+  border-bottom: 1px solid var(--rule-strong); border-radius: 0 0 14px 14px;
+  padding: 0 22px 18px; box-shadow: 0 14px 34px rgba(12, 13, 14, .2);
+}
+.toc-sheet__head {
+  position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0 10px; margin-bottom: 4px; background: var(--surface); border-bottom: 1px solid var(--rule);
+  font-family: var(--label); font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2);
+}
+.toc-sheet__close { font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--ink-2); cursor: pointer; background: none; border: 1px solid var(--rule-strong); border-radius: 3px; padding: 9px 13px; }
+.toc-sheet ol { list-style: none; margin: 0; padding: 0 0 0 18px; position: relative; }
+.toc-sheet ol::before { content: ""; position: absolute; left: 4px; top: 14px; bottom: 14px; width: 1px; background: var(--rule-strong); }
+.toc-sheet li.grp { position: relative; margin: 14px 0 0 -18px; padding: 6px 0 2px 18px; background: var(--surface); font-family: var(--label); font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.toc-sheet a { position: relative; display: flex; align-items: baseline; gap: 10px; padding: 9px 0; min-height: 42px; color: var(--ink-2); text-decoration: none; font-size: 1.04rem; line-height: 1.35; }
+.toc-sheet a::before { content: ""; position: absolute; left: -18px; top: 1.02em; width: 9px; height: 9px; border-radius: 50%; background: var(--surface); border: 1px solid var(--rule-strong); }
+.toc-sheet .m-stone a::before { border-color: var(--stone); }
+.toc-sheet .m-flesh a::before { border-color: var(--flesh); }
+.toc-sheet .m-iron a::before { border-color: var(--iron); }
+.toc-sheet .m-fire a::before { border-color: var(--fire); }
+.toc-sheet .n { min-width: 1.9em; font-family: var(--label); font-size: .78rem; color: var(--ink-3); }
+.toc-sheet a.is-active { color: var(--ink); font-weight: 600; }
+.toc-sheet a.is-active::before { background: var(--ink-2); border-color: var(--ink-2); }
+
+@media (max-width: 980px) {
+  .layout { grid-template-columns: minmax(0, 1fr); padding-block: 32px 72px; }
+  .rail { display: none; }
+  .chrome {
+    justify-content: space-between; pointer-events: auto;
+    padding: calc(env(safe-area-inset-top, 0px) + 8px) 12px 8px;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .chip { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .chip--toc { display: inline-flex; background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .chip--toc:hover { color: var(--paper); border-color: var(--ink); }
+  .hero-inner { padding-block-start: 92px; }
+  html section, html article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 70px); }
+}
+
+/* ---------- sections ---------- */
+section, article { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 20px); }
+.sec { padding-block: 8px 52px; }
+.sec h2 {
+  font-family: var(--display); font-weight: 800; font-stretch: 70%;
+  font-size: clamp(2.1rem, 4.6vw, 3rem); line-height: 1; letter-spacing: 0; text-transform: uppercase;
+  margin: 0 0 18px; text-wrap: balance;
+}
+.sec > p { margin: 0 0 16px; }
+.pull { margin: 22px 0 !important; padding-left: 18px; border-left: 3px solid var(--ember); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--ink); }
+.pull cite { display: block; margin-top: 8px; font-family: var(--label); font-style: normal; font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+
+.points { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+.points li { position: relative; padding-left: 24px; }
+.points li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 9px; height: 9px; background: var(--ink-3); }
+.m-stone .points li::before { background: var(--stone); }
+.m-flesh .points li::before { background: var(--flesh); }
+.m-iron .points li::before { background: var(--iron); }
+.m-fire .points li::before { background: var(--fire); }
+.interlude .points li::before { background: transparent; border: 1.5px solid var(--ink-3); width: 8px; height: 8px; }
+.points strong { font-weight: 600; }
+
+.ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 12px; }
+.idea { border-top: 2px solid var(--ink); padding: 14px 0 26px; }
+.idea .tag { font-family: var(--label); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.idea.m-stone { border-top-color: var(--stone); } .idea.m-stone .tag { color: var(--stone-t); }
+.idea.m-flesh { border-top-color: var(--flesh); } .idea.m-flesh .tag { color: var(--flesh-t); }
+.idea.m-iron { border-top-color: var(--iron); } .idea.m-iron .tag { color: var(--iron-t); }
+.idea.m-fire { border-top-color: var(--fire); } .idea.m-fire .tag { color: var(--fire-t); }
+.idea h3 { font-family: var(--display); font-weight: 800; font-stretch: 75%; font-size: 1.42rem; line-height: 1.05; text-transform: uppercase; margin: 6px 0 8px; text-wrap: balance; }
+.idea p:last-child { margin: 0; font-size: .98rem; color: var(--ink-2); line-height: 1.55; }
+
+/* ---------- chapters ---------- */
+.part { margin-top: 40px; padding: 40px 0 6px; border-top: 3px solid var(--ink); }
+.part h2 {
+  font-family: var(--display); font-weight: 850; font-stretch: 62%;
+  font-size: clamp(2.8rem, 7vw, 4.4rem); line-height: .92; text-transform: uppercase; margin: 6px 0 14px; text-wrap: balance;
+}
+.part-lede { font-size: 1.1rem; color: var(--ink-2); margin: 0 0 8px; }
+
+.chapter { padding: 34px 0 10px; border-top: 1px solid var(--rule); margin-top: 28px; }
+.part + .chapter { border-top: 0; margin-top: 0; }
+.ch-label { font-family: var(--label); font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.m-stone .ch-label { color: var(--stone-t); }
+.m-flesh .ch-label { color: var(--flesh-t); }
+.m-iron .ch-label { color: var(--iron-t); }
+.m-fire .ch-label { color: var(--fire-t); }
+.chapter h3 {
+  font-family: var(--display); font-weight: 800; font-stretch: 70%;
+  font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: .98; text-transform: uppercase; margin: 8px 0 12px; text-wrap: balance;
+}
+.interlude { background: var(--paper-2); border-top: 0; margin-top: 34px; padding: 26px clamp(16px, 3vw, 28px) 22px; border-left: 3px solid var(--rule-strong); }
+.interlude h3 { font-size: clamp(1.5rem, 3vw, 1.9rem); }
+.gist { font-style: italic; font-size: 1.13rem; color: var(--ink-2); margin: 0 0 16px; }
+
+/* ---------- figures ---------- */
+.fig { margin: 30px 0 10px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: clamp(14px, 3vw, 24px); }
+.fig-title { font-family: var(--label); font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px; }
+.fig figcaption { font-size: .92rem; color: var(--ink-2); margin-top: 14px; line-height: 1.5; }
+
+.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.cases > div { background: var(--surface); padding: 16px 16px 18px; }
+.cases .k { font-family: var(--label); font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ember); margin: 0; }
+.cases h4 { font-family: var(--display); font-weight: 800; font-stretch: 75%; font-size: 1.3rem; text-transform: uppercase; margin: 6px 0 6px; line-height: 1; }
+.cases p:last-child { margin: 0; font-size: .95rem; color: var(--ink-2); line-height: 1.5; }
+
+.fence { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid var(--ink); }
+.fence > div { padding: 16px 18px 18px 0; }
+.fence > div + div { padding: 16px 0 18px 18px; border-left: 2px dashed var(--rule-strong); }
+.fence .k { font-family: var(--label); font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.fence h4 { font-family: var(--display); font-weight: 800; font-stretch: 75%; font-size: 1.45rem; text-transform: uppercase; margin: 6px 0 10px; line-height: 1; }
+.fence > div:first-child h4 { color: var(--iron-t); }
+.fence > div + div h4 { color: var(--flesh-t); }
+.fence dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; margin: 0; font-size: .94rem; }
+.fence dt { font-family: var(--label); font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); padding-top: .2em; }
+.fence dd { margin: 0; color: var(--ink-2); line-height: 1.45; }
+
+.armies { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.armies > div { background: var(--surface); padding: 14px 14px 16px; display: grid; gap: 6px; align-content: start; }
+.armies h4 { font-family: var(--display); font-weight: 800; font-stretch: 75%; font-size: 1.25rem; text-transform: uppercase; margin: 0; line-height: 1; }
+.armies .why { margin: 0; font-size: .92rem; color: var(--ink-2); line-height: 1.45; }
+.armies .eg { margin: 0; font-family: var(--label); font-size: .7rem; font-weight: 500; letter-spacing: .06em; color: var(--ink-3); line-height: 1.45; }
+.bond { display: flex; gap: 3px; margin-top: 2px; }
+.bond span { height: 6px; flex: 1; background: var(--rule); }
+.bond span.on { background: var(--ember); }
+.bond-key { font-family: var(--label); font-size: .72rem; color: var(--ink-3); margin: 12px 0 0; }
+
+/* ---------- comparison, debates, glossary ---------- */
+.table-wrap { overflow-x: auto; margin: 22px 0 4px; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 600px; font-size: .96rem; line-height: 1.5; }
+th, td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+thead th { font-family: var(--label); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); background: var(--paper-2); }
+thead th:nth-child(3) { color: var(--ember); }
+tbody th { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: 1.02rem; width: 20%; }
+tbody td { color: var(--ink-2); }
+tbody td:nth-child(3) { color: var(--ink); }
+
+.debate { padding: 16px 0 18px; border-top: 1px solid var(--rule); }
+.debate h3 { font-family: var(--display); font-weight: 800; font-stretch: 75%; font-size: 1.3rem; text-transform: uppercase; margin: 0 0 6px; }
+.debate p { margin: 0; color: var(--ink-2); font-size: 1rem; }
+
+.gloss { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); margin: 20px 0 0; }
+.gloss dt, .gloss dd { padding: 11px 0; border-top: 1px solid var(--rule); }
+.gloss dt { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: 1.02rem; padding-right: 20px; line-height: 1.3; }
+.gloss dd { margin: 0; color: var(--ink-2); font-size: .98rem; line-height: 1.5; }
+
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 14px 0 0; display: grid; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-top: 1px solid var(--rule); }
+.steps li::before { content: counter(step); font-family: var(--display); font-weight: 850; font-stretch: 62%; font-size: 2rem; line-height: 1; color: var(--ember); }
+.steps .phase { font-family: var(--label); font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); margin: 2px 0 0; }
+.steps p { margin: 4px 0 0; font-size: 1rem; color: var(--ink-2); }
+.books { list-style: none; padding: 0; margin: 14px 0 0; display: grid; }
+.books li { padding: 11px 0; border-top: 1px solid var(--rule); font-size: 1rem; color: var(--ink-2); }
+.books cite { color: var(--ink); }
+
+.foot { border-top: 1px solid var(--rule); padding-block: 26px 40px; font-family: var(--label); font-size: .78rem; color: var(--ink-3); line-height: 1.6; }
+.foot p { margin: 0; max-width: 90ch; }
+
+@media (max-width: 760px) {
+  body { font-size: 1.05rem; }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .strata { justify-self: start; max-width: 300px; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
+  .ideas, .cases, .gloss { grid-template-columns: minmax(0, 1fr); }
+  .armies { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gloss dd { border-top: 0; padding-top: 0; }
+  .fence { grid-template-columns: minmax(0, 1fr); }
+  .fence > div + div { padding: 16px 0 18px; border-left: 0; border-top: 2px dashed var(--rule-strong); }
+}
+@media (max-width: 440px) {
+  .armies { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+<!-- link-preview:start — generated by tools/sync.py -->
+<link rel="canonical" href="https://book-summaries-umber.vercel.app/keegan-history-of-warfare.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Summaries">
+<meta property="og:title" content="A History of Warfare — John Keegan">
+<meta property="og:description" content="War as culture rather than policy: stone, flesh, iron and fire, and the limits of weather, walls, armies and supply.">
+<meta property="og:url" content="https://book-summaries-umber.vercel.app/keegan-history-of-warfare.html">
+<meta property="og:image" content="https://book-summaries-umber.vercel.app/og/keegan-history-of-warfare.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A History of Warfare — John Keegan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A History of Warfare — John Keegan">
+<meta name="twitter:description" content="War as culture rather than policy: stone, flesh, iron and fire, and the limits of weather, walls, armies and supply.">
+<meta name="twitter:image" content="https://book-summaries-umber.vercel.app/og/keegan-history-of-warfare.png">
+<!-- link-preview:end -->
+<link rel="stylesheet" href="book-nav.css">
+<script src="site-settings.js"></script>
+</head>
+<body>
+
+<div class="chrome">
+  <button class="chip chip--toc" id="tocOpen" type="button" aria-controls="tocSheet" aria-expanded="false">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span>Contents</span><span class="where"></span>
+  </button>
+  <div class="chrome__end">
+    <a class="chip chip--aa" href="settings.html" title="Text size" aria-label="Text size settings">Aa</a>
+    <button class="chip" id="themeToggle" type="button" aria-label="Switch colour theme">Theme</button>
+  </div>
+</div>
+<div class="toc-backdrop" id="tocBackdrop" hidden></div>
+<div class="toc-sheet" id="tocSheet" role="dialog" aria-modal="true" aria-label="Contents" hidden>
+  <div class="toc-sheet__head"><span>Contents</span><button class="toc-sheet__close" id="tocClose" type="button">Close</button></div>
+</div>
+
+<header class="hero" id="overview">
+  <div class="wrap hero-inner">
+    <div>
+      <p class="eyebrow"><a class="home-link" href="index.html">← All summaries</a> · A reader’s summary</p>
+      <p class="opening">“War is <b>not</b> the continuation of policy by other means.”</p>
+      <p class="opening-note">The book’s first sentence, aimed straight at Clausewitz.</p>
+      <h1>A History of Warfare</h1>
+      <p class="byline">John Keegan · 1993</p>
+      <div class="breath">
+        <p class="kicker">The whole book in one breath</p>
+        <p>Keegan argues that war is older than the state, older than diplomacy and older than politics, so Clausewitz’s famous definition can’t be the whole truth. War is a cultural activity. How a people fights reflects what it values, and it can shape that society in return. Keegan tells the story through the materials men fought with: stone, flesh (the horse), iron and fire (gunpowder). Between them sit short interludes on what has always constrained war: climate and terrain, fortification, how armies are raised, and above all supply. The story ends with industrial total war and nuclear weapons, which in his view have made war between great powers self-defeating. If war is culture rather than nature, he concludes, it can change.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Published</dt><dd>1993</dd></div>
+        <div><dt>Structure</dt><dd>5 chapters + 4 interludes</dd></div>
+        <div><dt>Span</dt><dd>Prehistory → nuclear age</dd></div>
+        <div><dt>Author</dt><dd>Sandhurst, 1960–86</dd></div>
+      </dl>
+    </div>
+
+    <figure class="strata" aria-labelledby="strata-cap">
+      <svg viewBox="0 0 300 470" role="img" aria-label="The book's four ages drawn as rock strata: stone at the bottom, then flesh, iron, and fire at the top">
+        <defs>
+          <pattern id="p-stone" width="14" height="14" patternUnits="userSpaceOnUse">
+            <circle class="st-tex" cx="3" cy="4" r="1.3"/><circle class="st-tex" cx="10" cy="9" r="1"/><circle class="st-tex" cx="6" cy="12" r=".8"/>
+          </pattern>
+          <pattern id="p-flesh" width="26" height="12" patternUnits="userSpaceOnUse">
+            <path class="st-hatch" d="M0 9 Q6.5 2 13 9 T26 9"/>
+          </pattern>
+          <pattern id="p-iron" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line class="st-hatch" x1="0" y1="0" x2="0" y2="9"/>
+          </pattern>
+          <pattern id="p-fire" width="18" height="18" patternUnits="userSpaceOnUse">
+            <path class="st-tex" d="M5 16 Q2 10 6 6 Q6 10 9 11 Q9 7 12 4 Q14 11 11 16 Z"/>
+          </pattern>
+        </defs>
+        <!-- axis -->
+        <path class="st-axis" d="M18 8 V462"/>
+        <path class="st-axis" d="M14 14 L18 6 L22 14"/>
+        <text class="st-axis-t" transform="translate(10 250) rotate(-90)" text-anchor="middle">OLDER ↓   ·   NEWER ↑</text>
+        <!-- laid down oldest first; each newer layer's wavy lower edge covers the one beneath -->
+        <path class="st-stone" d="M34 320 H292 V462 H34 Z"/>
+        <path d="M34 320 H292 V462 H34 Z" fill="url(#p-stone)"/>
+        <path class="st-flesh" d="M34 205 H292 V332 Q210 326 140 334 T34 330 Z"/>
+        <path d="M34 205 H292 V332 Q210 326 140 334 T34 330 Z" fill="url(#p-flesh)"/>
+        <path class="st-iron" d="M34 110 H292 V218 Q230 212 170 220 T34 214 Z"/>
+        <path d="M34 110 H292 V218 Q230 212 170 220 T34 214 Z" fill="url(#p-iron)"/>
+        <rect class="st-fire" x="34" y="8" width="258" height="104"/>
+        <rect x="34" y="8" width="258" height="104" fill="url(#p-fire)"/>
+        <text class="st-name" x="50" y="58">FIRE</text>
+        <text class="st-when" x="50" y="80">GUNPOWDER · 1300s → 1945</text>
+        <text class="st-when" x="50" y="97">CHAPTER 5</text>
+        <text class="st-name" x="50" y="160">IRON</text>
+        <text class="st-when" x="50" y="182">FROM c. 1200 BC</text>
+        <text class="st-when" x="50" y="199">CHAPTER 4</text>
+        <text class="st-name" x="50" y="268">FLESH</text>
+        <text class="st-when" x="50" y="290">THE HORSE · CHARIOT → MONGOLS</text>
+        <text class="st-when" x="50" y="307">CHAPTER 3</text>
+        <text class="st-name" x="50" y="388">STONE</text>
+        <text class="st-when" x="50" y="410">PREHISTORY → FIRST CITIES</text>
+        <text class="st-when" x="50" y="427">CHAPTER 2</text>
+      </svg>
+      <figcaption id="strata-cap">Keegan’s four ages, drawn as rock strata. They overlap in reality: horsemen fought with iron, and stone-age warfare survived into the twentieth century.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Contents">
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#author">The author</a></li>
+      <li><a href="#argument">The argument</a></li>
+      <li><a href="#ideas">Ten ideas</a></li>
+      <li class="grp">The book</li>
+      <li><a href="#ch-1"><span class="n">1</span>War in human history</a></li>
+      <li><a href="#int-1"><span class="n">i</span>Limits on war</a></li>
+      <li class="m-stone"><a href="#ch-2"><span class="n">2</span>Stone</a></li>
+      <li><a href="#int-2"><span class="n">ii</span>Fortification</a></li>
+      <li class="m-flesh"><a href="#ch-3"><span class="n">3</span>Flesh</a></li>
+      <li><a href="#int-3"><span class="n">iii</span>Armies</a></li>
+      <li class="m-iron"><a href="#ch-4"><span class="n">4</span>Iron</a></li>
+      <li><a href="#int-4"><span class="n">iv</span>Logistics</a></li>
+      <li class="m-fire"><a href="#ch-5"><span class="n">5</span>Fire</a></li>
+      <li><a href="#conclusion"><span class="n">→</span>Conclusion</a></li>
+      <li class="grp">Context</li>
+      <li><a href="#clausewitz">Keegan vs Clausewitz</a></li>
+      <li><a href="#debates">Debates</a></li>
+      <li><a href="#glossary">Glossary</a></li>
+      <li><a href="#reading">Reading path</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+
+    <!-- AUTHOR -->
+    <section class="sec" id="author">
+      <p class="kicker">The author</p>
+      <h2>A soldiers’ teacher who never soldiered</h2>
+      <p>John Keegan (1934–2012) spent twenty-six years teaching military history to officer cadets at the Royal Military Academy Sandhurst, then became defence editor of the <cite>Daily Telegraph</cite>. A childhood illness left him unfit for military service, and his breakthrough book opens by admitting he had never been in a battle. That book, <cite>The Face of Battle</cite> (1976), asked what combat was like for the men in it at Agincourt, Waterloo and the Somme, not how generals moved arrows on maps.</p>
+      <p><cite>A History of Warfare</cite> widens that lens to the whole human past. It is less a narrative of wars than an essay on what war is, organised around the tools, animals and institutions that made fighting possible, and the cultures that decided how it was done.</p>
+    </section>
+
+    <!-- ARGUMENT -->
+    <section class="sec" id="argument">
+      <p class="kicker">The argument</p>
+      <h2>War as culture, not only policy</h2>
+      <p>Carl von Clausewitz, the Prussian officer whose <cite>On War</cite> (1832) still anchors military theory, defined war as the continuation of politics by other means: organised violence used by states to achieve political ends. Keegan’s objection is that this describes one kind of war, the kind fought by the European states Clausewitz knew. It cannot account for most of the fighting humans have done.</p>
+      <ul class="points">
+        <li><strong>War predates the state.</strong> Hunter-gatherers, tribes and chiefdoms fought for millennia before there was any “policy” to continue.</li>
+        <li><strong>Warriors often fight for reasons of culture:</strong> honour, captives, ritual, revenge and status. Some peoples fought in ways that made no political sense at all.</li>
+        <li><strong>Culture limits and shapes war.</strong> It decides who may fight, with what weapons and by what rules, sometimes against the plain logic of winning.</li>
+        <li><strong>Clausewitz was himself a product of culture:</strong> the Prussian officer corps and the regimental world of Napoleonic Europe. His theory universalises that world.</li>
+        <li><strong>Material and natural limits matter as much as ideas.</strong> Weather, terrain and food have bounded war everywhere, whatever anyone’s policy.</li>
+      </ul>
+      <p class="pull">If war is a cultural habit rather than an iron law of politics or biology, then it can be changed, as other deep-rooted institutions have been.<cite>The hope that runs underneath the book</cite></p>
+    </section>
+
+    <!-- IDEAS -->
+    <section class="sec" id="ideas">
+      <p class="kicker">If you remember nothing else</p>
+      <h2>Ten ideas that carry the book</h2>
+      <div class="ideas">
+        <div class="idea"><p class="tag">Ch. 1</p><h3>War is a form of culture</h3><p>How a society fights expresses what it values, and war in turn reshapes that society. Politics is one of war’s drivers, not its definition.</p></div>
+        <div class="idea"><p class="tag">Ch. 1</p><h3>Clausewitz described one culture’s war</h3><p>“Continuation of policy” fits the wars of European states from about 1800 to 1945. It fits tribal raids, steppe conquest and ritual war badly.</p></div>
+        <div class="idea"><p class="tag">Ch. 1</p><h3>Culture can overrule winning</h3><p>The Mamluks scorned firearms and were destroyed by armies that used them. Tokugawa Japan largely set guns aside for two centuries to protect the samurai order.</p></div>
+        <div class="idea"><p class="tag">Interludes i, iv</p><h3>Nature draws the map of war</h3><p>Climate, seasons, terrain and, above all, the ability to feed men and horses set hard limits on where and when armies could fight.</p></div>
+        <div class="idea m-stone"><p class="tag">Ch. 2 · Stone</p><h3>The state turned fighting into war</h3><p>Early war was often raiding and ritual, bounded by custom. Cities, surplus and walls brought organised armies and war for conquest.</p></div>
+        <div class="idea m-flesh"><p class="tag">Ch. 3 · Flesh</p><h3>The horse made the steppe a conqueror</h3><p>From the chariot to the Mongols, mounted peoples of the steppe raided and ruled settled civilisations for some three thousand years.</p></div>
+        <div class="idea m-flesh"><p class="tag">Ch. 3–4</p><h3>Two ways of war</h3><p>The West sought short, bloody, face-to-face decision. The steppe fought from a distance, by evasion, delay and harassment, and closed only when victory was sure.</p></div>
+        <div class="idea"><p class="tag">Interlude iii</p><h3>How you raise soldiers shapes society</h3><p>Warriors, mercenaries, slave soldiers, regulars, conscripts and militia each imply a different bargain between rulers, fighters and everyone else.</p></div>
+        <div class="idea m-iron"><p class="tag">Ch. 4 · Iron</p><h3>The Greeks invented decisive battle</h3><p>Citizen hoplites locked in a phalanx fought one short, deadly clash to settle a dispute. That habit became the core of the Western way of war.</p></div>
+        <div class="idea m-fire"><p class="tag">Ch. 5 · Fire</p><h3>Fire made war total, then suicidal</h3><p>Gunpowder, the mass army and industry turned war into the whole nation’s business. Nuclear weapons made that kind of war between great powers self-defeating.</p></div>
+      </div>
+    </section>
+
+    <!-- THE BOOK -->
+    <section class="part" id="the-book">
+      <p class="kicker">The book, in order</p>
+      <h2>Five chapters, four interludes</h2>
+      <p class="part-lede">Keegan’s chapters follow the materials of war, from stone to fire. Between them, short interludes step back to the constants that bound every age: natural limits, walls, the raising of armies, and supply.</p>
+    </section>
+
+    <article class="chapter" id="ch-1">
+      <p class="ch-label">Chapter 1</p>
+      <h3>War in Human History</h3>
+      <p class="gist">The thesis: war is older than politics and bound up with culture, and Clausewitz’s definition is too narrow.</p>
+      <ul class="points">
+        <li>The chapter opens by rejecting Clausewitz’s dictum. Keegan reads <cite>On War</cite> as the work of a Prussian regimental officer who universalised the wars of his own state and era.</li>
+        <li>Warrior peoples such as the Cossacks fought as a way of life, for booty and standing, rather than as the instrument of anyone’s policy.</li>
+        <li>Four societies show culture overriding the logic of victory (see the figure below).</li>
+        <li>The lesson Keegan draws is that military “efficiency” is not the only force at work. Societies choose how to fight, and those choices can doom them or preserve them.</li>
+        <li>He also grants that modern states did bring war under political control, and that this is what made the Clausewitzian era so destructive.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · When culture overruled the battlefield</p>
+        <div class="cases">
+          <div><p class="k">Pacific · an island with no outside enemy</p><h4>Easter Island</h4><p>A closed society whose clans turned on one another. Keegan uses it to show war arising and devouring a culture with no state politics behind it.</p></div>
+          <div><p class="k">Southern Africa · 1810s–1820s</p><h4>The Zulu</h4><p>Shaka reorganised his people’s young men into age regiments and turned largely ritual fighting into wars of annihilation, remaking the whole society around the army.</p></div>
+          <div><p class="k">Egypt and Syria · 1250–1517</p><h4>The Mamluks</h4><p>Slave-born horse archers who became a ruling class. They despised firearms as dishonourable, and the Ottomans’ guns destroyed them in 1516–17.</p></div>
+          <div><p class="k">Japan · 1600s–1800s</p><h4>The samurai</h4><p>Having used muskets to devastating effect, Japan under the Tokugawa largely set firearms aside, because the gun threatened the warrior caste’s place.</p></div>
+        </div>
+      </figure>
+    </article>
+
+    <article class="chapter interlude" id="int-1">
+      <p class="ch-label">Interlude i</p>
+      <h3>Limitations on Warmaking</h3>
+      <p class="gist">Nature, not only politics, decides where and when war can be fought.</p>
+      <ul class="points">
+        <li>Climate and weather confined most campaigning to certain seasons. Winter, rains and heat halted armies.</li>
+        <li>Terrain channels war. Mountains, forests, deserts and swamps block or funnel armies, and open plains and river valleys invite them. Most historic warfare happened in a limited band of temperate lands.</li>
+        <li>Disease and distance made the tropics and deep interiors graveyards for invaders long before enemies did.</li>
+        <li>These limits held for most of history. Railways, motor transport and air power loosened them only in the last two centuries.</li>
+      </ul>
+    </article>
+
+    <article class="chapter m-stone" id="ch-2">
+      <p class="ch-label">Chapter 2 · Stone</p>
+      <h3>Stone</h3>
+      <p class="gist">Where war comes from, what “primitive” war looked like, and how the first states changed it.</p>
+      <ul class="points">
+        <li>Keegan surveys the explanations for war: aggression as instinct, the hunting inheritance, and anthropology’s accounts. He finds no single cause. Humans have the capacity for violence, but war as an organised activity is learned and shaped by culture.</li>
+        <li>Among peoples such as the Yanomamö of Amazonia and the Maring of New Guinea, fighting took the form of raids, ambushes and ceremonial battles hedged by custom. People were killed, but often within limits that prevented a decisive result.</li>
+        <li>The Aztecs show ritual war on an imperial scale. Their “flower wars” aimed to take captives for sacrifice rather than to kill, which left them badly matched against Spaniards fighting to destroy.</li>
+        <li>With farming, surplus and cities came walls (Jericho is among the earliest), organised armies, and war for land and tribute in Mesopotamia and Egypt. The weapons of the age were the bow, sling, spear and mace.</li>
+        <li>The state is what turned fighting from a limited, customary activity into war aimed at conquest.</li>
+      </ul>
+    </article>
+
+    <article class="chapter interlude" id="int-2">
+      <p class="ch-label">Interlude ii</p>
+      <h3>Fortification</h3>
+      <p class="gist">Walls are as old as cities, and they shaped war as much as battles did.</p>
+      <ul class="points">
+        <li>Fortifications come in rough types: temporary refuges, permanent strongpoints such as citadels and castles, and strategic defences that guard whole frontiers, like the Roman <em>limes</em>, Hadrian’s Wall and China’s Great Wall.</li>
+        <li>Walls are expensive and static, but they protect wealth, buy time and force an attacker into slow, costly sieges.</li>
+        <li>Long frontier walls were less barriers than systems of watch and control, meant to deter raiders and channel trade.</li>
+        <li>Gunpowder artillery broke the high medieval wall and forced a new design: low, thick, angled bastions (the <em>trace italienne</em>), which made fortresses, and states, far more expensive.</li>
+      </ul>
+    </article>
+
+    <article class="chapter m-flesh" id="ch-3">
+      <p class="ch-label">Chapter 3 · Flesh</p>
+      <h3>Flesh</h3>
+      <p class="gist">The horse: how the steppe’s mounted peoples became the great conquerors of the settled world.</p>
+      <ul class="points">
+        <li>The horse was domesticated on the Eurasian steppe. Hitched to the light war chariot in the second millennium BC, it carried charioteer elites into power from Egypt and the Near East to India and China.</li>
+        <li>Riding, together with the composite bow, produced the horse archer: fast, far-ranging and able to strike from a distance. Scythians, Huns, Turks and Mongols raided and conquered settled civilisations for roughly three thousand years.</li>
+        <li>The Mongols under Genghis Khan and his successors built the largest contiguous land empire in history on mobility, discipline, intelligence and deliberate terror.</li>
+        <li>Steppe warfare avoided close combat until the enemy was worn down. It relied on evasion, feigned retreat and the arrow. Keegan calls this the “Oriental” tradition and contrasts it with the West’s face-to-face battle (see the figure below).</li>
+        <li>The steppe’s power ended only when gunpowder armies and expanding agrarian empires, Russia and Qing China above all, closed it in.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Two ways of war</p>
+        <div class="fence">
+          <div>
+            <p class="k">Greece → Rome → Europe</p>
+            <h4>Face to face</h4>
+            <dl>
+              <dt>Aim</dt><dd>One short decisive clash that settles the issue</dd>
+              <dt>Arm</dt><dd>Heavy infantry, shock weapons, close order</dd>
+              <dt>Ethic</dt><dd>Stand your ground; accept heavy losses for a result</dd>
+              <dt>Soldier</dt><dd>Citizen, then drilled professional</dd>
+            </dl>
+          </div>
+          <div>
+            <p class="k">The steppe · Keegan’s “Oriental” tradition</p>
+            <h4>At a distance</h4>
+            <dl>
+              <dt>Aim</dt><dd>Wear the enemy down; strike only when victory is sure</dd>
+              <dt>Arm</dt><dd>Horse archers, missiles, mobility</dd>
+              <dt>Ethic</dt><dd>Evasion, delay, feigned retreat, surprise</dd>
+              <dt>Soldier</dt><dd>Tribal horseman, raised to ride and shoot</dd>
+            </dl>
+          </div>
+        </div>
+        <figcaption>A simplification Keegan himself qualifies. Both traditions borrowed from each other, and the labels have drawn criticism, but the contrast organises much of the book.</figcaption>
+      </figure>
+    </article>
+
+    <article class="chapter interlude" id="int-3">
+      <p class="ch-label">Interlude iii</p>
+      <h3>Armies</h3>
+      <p class="gist">There are only a few ways to get men to fight, and each implies a whole social order.</p>
+      <ul class="points">
+        <li>Every society that fights has to answer who serves, who pays and who controls the armed men. The answers fall into a handful of types (see the figure below).</li>
+        <li>Each type has a characteristic danger. Mercenaries change sides, slave soldiers seize the state, conscripts need a nation willing to be conscripted, and warriors resist anyone who tries to discipline them.</li>
+        <li>The mass conscript army born in the French Revolution looks normal to modern eyes, but across the whole of history it is the exception, not the rule.</li>
+      </ul>
+      <figure class="fig">
+        <p class="fig-title">Figure · Six ways to raise an army</p>
+        <div class="armies">
+          <div><h4>Warriors</h4><p class="why">Fighting is the purpose of a caste or a whole people’s way of life.</p><p class="eg">Steppe horsemen, Zulu regiments, samurai</p><div class="bond" aria-label="How much of society is under arms: high"><span class="on"></span><span class="on"></span><span class="on"></span></div></div>
+          <div><h4>Mercenaries</h4><p class="why">Soldiers hired for pay by whoever can afford them.</p><p class="eg">Swiss pikemen, Italian condottieri</p><div class="bond" aria-label="How much of society is under arms: low"><span class="on"></span><span></span><span></span></div></div>
+          <div><h4>Slave soldiers</h4><p class="why">Captives or purchased youths raised to serve a ruler, with no other loyalty.</p><p class="eg">Mamluks, Ottoman Janissaries</p><div class="bond" aria-label="How much of society is under arms: low"><span class="on"></span><span></span><span></span></div></div>
+          <div><h4>Regulars</h4><p class="why">Long-service professionals paid and controlled by the state.</p><p class="eg">Roman legions, 18th-century European armies</p><div class="bond" aria-label="How much of society is under arms: medium"><span class="on"></span><span class="on"></span><span></span></div></div>
+          <div><h4>Conscripts</h4><p class="why">Citizens compelled to serve for a term, producing mass armies.</p><p class="eg">France’s levée en masse, 1793; the world wars</p><div class="bond" aria-label="How much of society is under arms: high"><span class="on"></span><span class="on"></span><span class="on"></span></div></div>
+          <div><h4>Militia</h4><p class="why">Part-time local defence by ordinary men who return to their work.</p><p class="eg">Greek citizen hoplites, English trained bands</p><div class="bond" aria-label="How much of society is under arms: medium"><span class="on"></span><span class="on"></span><span></span></div></div>
+        </div>
+        <p class="bond-key">Bars: a rough reading of how much of the society is under arms. Our gloss, not Keegan’s.</p>
+      </figure>
+    </article>
+
+    <article class="chapter m-iron" id="ch-4">
+      <p class="ch-label">Chapter 4 · Iron</p>
+      <h3>Iron</h3>
+      <p class="gist">Cheap metal, big infantry armies, and the Greek invention of decisive battle.</p>
+      <ul class="points">
+        <li>Iron was more plentiful than bronze. Once smiths mastered it, weapons and armour became cheap enough to arm large bodies of foot soldiers.</li>
+        <li>Assyria built the first great iron-age military state, with a standing army, siege engineering, mass deportations and calculated terror.</li>
+        <li>The Greeks created something new. Citizen farmers armed as hoplites fought in the close-packed phalanx, seeking one short, brutal collision that settled a quarrel in an afternoon. Keegan draws on Victor Davis Hanson’s account of this “Western way of war.”</li>
+        <li>Macedon joined the phalanx to heavy cavalry, and Alexander used that combination to conquer the Persian Empire.</li>
+        <li>Rome made war an institution: the legion, relentless discipline, engineering, roads and a professional army that held an empire for centuries.</li>
+        <li>After Rome, medieval Europe’s mounted knights and castles kept the face-to-face ethic alive in a new social form.</li>
+      </ul>
+    </article>
+
+    <article class="chapter interlude" id="int-4">
+      <p class="ch-label">Interlude iv</p>
+      <h3>Logistics and Supply</h3>
+      <p class="gist">Armies march on food. For most of history the limits of supply were the limits of war.</p>
+      <ul class="points">
+        <li>A soldier can carry only a few days’ food, and pack animals eat much of what they carry. Pre-modern armies had to live off the land, which tied campaigns to harvests and kept them moving.</li>
+        <li>Rivers and seas were the great supply routes. Armies that could use them went farther and stayed longer.</li>
+        <li>States gradually built supply systems: depots and magazines, then railways in the nineteenth century, then motor transport in the twentieth.</li>
+        <li>Industrial logistics made the vast armies of the world wars possible. By then the “tail” of supply and support far outnumbered the fighting “teeth.”</li>
+      </ul>
+    </article>
+
+    <article class="chapter m-fire" id="ch-5">
+      <p class="ch-label">Chapter 5 · Fire</p>
+      <h3>Fire</h3>
+      <p class="gist">Gunpowder, revolution and industry turn war into the business of whole nations, until the bomb.</p>
+      <ul class="points">
+        <li>Gunpowder came from China. In Europe from the fourteenth century, cannon broke medieval walls and forced the costly new bastioned fortress. Only rich, centralising states could afford the new warfare.</li>
+        <li>Gunpowder empires, the Ottomans, Safavids and Mughals as well as European states, used artillery and muskets to consolidate power. At sea, gun-armed sailing ships carried European power across the oceans.</li>
+        <li>Drill and discipline turned infantry into firing machines. Eighteenth-century armies were professional, expensive and fought for limited aims.</li>
+        <li>The French Revolution changed the scale. The <em>levée en masse</em> and Napoleon made war a national effort, which is the world Clausewitz saw and theorised.</li>
+        <li>Industry followed: railways, rifles, machine guns and massed artillery. The two world wars mobilised entire societies and killed tens of millions. This was Clausewitzian war taken to its extreme.</li>
+        <li>Nuclear weapons end the story. War between great powers can no longer serve any political purpose it was meant to achieve.</li>
+      </ul>
+    </article>
+
+    <article class="chapter" id="conclusion">
+      <p class="ch-label">Conclusion</p>
+      <h3>Is War Ending?</h3>
+      <p class="gist">Major war has lost its purpose among great powers, but war as culture has not gone away.</p>
+      <ul class="points">
+        <li>After 1945 the great powers avoided direct war with each other. Keegan reads the nuclear standoff and the cost of industrial war as signs that interstate war is losing its usefulness.</li>
+        <li>Yet the older kinds of war persist. Civil wars, ethnic conflict and warlordism, the kind of fighting that filled the early 1990s, look more like “primitive” warfare than like Clausewitz’s.</li>
+        <li>He looks to disciplined professional soldiers, serving international order and peacekeeping under civilised restraint, as the protectors of civilisation against that older kind of war.</li>
+        <li>The final claim returns to the first: because war is a cultural institution, not a biological necessity or a political law, human beings can change how they fight, and perhaps whether they do.</li>
+      </ul>
+    </article>
+
+    <!-- CLAUSEWITZ -->
+    <section class="sec" id="clausewitz" style="margin-top:56px">
+      <p class="kicker">Context</p>
+      <h2>Keegan vs Clausewitz</h2>
+      <p>The book is an argument with one man. Here is where the two part ways, in Keegan’s framing.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Question</th><th scope="col">Clausewitz, <cite>On War</cite></th><th scope="col">Keegan</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">What war is</th><td>“A continuation of politics by other means”: force used to compel the enemy to do our will.</td><td>A cultural activity, older than states, often fought for reasons politics does not capture.</td></tr>
+            <tr><th scope="row">Who fights</th><td>States, through their armies.</td><td>Warrior castes, tribes, steppe peoples, slave soldiers, citizens and states.</td></tr>
+            <tr><th scope="row">What limits it</th><td>Friction, chance and the political aim.</td><td>Also climate, terrain, supply and custom.</td></tr>
+            <tr><th scope="row">Model case</th><td>Napoleonic war between nations.</td><td>Everything from Easter Island and the Aztecs to Hiroshima.</td></tr>
+            <tr><th scope="row">Where it leads</th><td>War remains a rational instrument of state policy.</td><td>Industrial and nuclear war have made that instrument self-defeating between great powers.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DEBATES -->
+    <section class="sec" id="debates">
+      <p class="kicker">Context</p>
+      <h2>The arguments it started</h2>
+      <div class="debate"><h3>Did he misread Clausewitz?</h3><p>Clausewitz scholars say yes. Christopher Bassford’s “John Keegan and the Grand Tradition of Trashing Clausewitz” (1994) argues that Clausewitz’s <em>Politik</em> is broad enough to include culture and society, so the opposition Keegan draws is largely a misreading.</p></div>
+      <div class="debate"><h3>Was primitive war really so limited?</h3><p>Lawrence Keeley’s <cite>War Before Civilization</cite> (1996) marshals archaeological and ethnographic evidence that pre-state warfare was frequent and, relative to population, often deadlier than modern war. That cuts against any picture of early fighting as mostly ritual.</p></div>
+      <div class="debate"><h3>Is there a “Western way of war”?</h3><p>John Lynn’s <cite>Battle: A History of Combat and Culture</cite> (2003) accepts that culture shapes war but rejects a single continuous Western tradition running from the hoplites to today. The “Oriental” label has also been criticised as too sweeping.</p></div>
+      <div class="debate"><h3>Culture or human nature?</h3><p>Azar Gat’s <cite>War in Human Civilization</cite> (2006) roots war more deeply in evolved human behaviour and treats culture as working on top of it rather than instead of it.</p></div>
+      <div class="debate"><h3>What’s missing</h3><p>The book is overwhelmingly about land war. Sea power, which Keegan treated in <cite>The Price of Admiralty</cite> (1988), gets little space, and so does air power.</p></div>
+    </section>
+
+    <!-- GLOSSARY -->
+    <section class="sec" id="glossary">
+      <p class="kicker">Terms of art</p>
+      <h2>Glossary</h2>
+      <dl class="gloss">
+        <dt>Clausewitzian war</dt><dd>War as a rational instrument of state policy, fought by national armies. Keegan dates its heyday to roughly 1800–1945.</dd>
+        <dt>Primitive war</dt><dd>Keegan’s term for fighting in societies without states: raids, ambushes and ceremonial battles, often limited by custom.</dd>
+        <dt>Flower war</dt><dd>Aztec warfare arranged to take captives for sacrifice rather than to destroy the enemy.</dd>
+        <dt>Horse archer</dt><dd>A mounted warrior fighting with the composite bow. The core of steppe armies from the Scythians to the Mongols.</dd>
+        <dt>Chariot</dt><dd>A light, two-wheeled, horse-drawn war vehicle. It carried a new warrior elite to power across Eurasia in the second millennium BC.</dd>
+        <dt>Hoplite / phalanx</dt><dd>A Greek citizen heavy infantryman, and the dense formation hoplites fought in.</dd>
+        <dt>Western way of war</dt><dd>The tradition of seeking decisive, face-to-face battle, traced from the Greeks.</dd>
+        <dt>“Oriental” war</dt><dd>Keegan’s contested label for the steppe tradition of evasion, distance and delay.</dd>
+        <dt>Mamluk</dt><dd>A slave soldier, especially of the elite that ruled Egypt and Syria from 1250 to 1517.</dd>
+        <dt>Janissary</dt><dd>An Ottoman infantryman recruited as a boy through the levy of Christian children.</dd>
+        <dt>Limes</dt><dd>A Roman fortified frontier system of walls, roads, forts and watchtowers.</dd>
+        <dt>Trace italienne</dt><dd>The low, angled-bastion fortress designed to withstand cannon.</dd>
+        <dt>Levée en masse</dt><dd>Revolutionary France’s mass conscription of 1793, the start of the nation-in-arms.</dd>
+        <dt>Logistics</dt><dd>Moving and supplying armies: food, fodder, ammunition and transport.</dd>
+      </dl>
+    </section>
+
+    <!-- READING -->
+    <section class="sec" id="reading">
+      <p class="kicker">Using it</p>
+      <h2>A reading path</h2>
+      <p>The chapters are long and the interludes short. If you won’t read it cover to cover:</p>
+      <ol class="steps">
+        <li><div><p class="phase">Chapter 1</p><p>The thesis and the four case studies. The rest of the book depends on it.</p></div></li>
+        <li><div><p class="phase">Interlude iii</p><p>Armies: the shortest way into how war and society fit together.</p></div></li>
+        <li><div><p class="phase">Chapter 3</p><p>Flesh: the horse peoples, the book’s most original stretch.</p></div></li>
+        <li><div><p class="phase">Chapter 4</p><p>Iron: the Greeks and the birth of the Western way of war.</p></div></li>
+        <li><div><p class="phase">Chapter 5 and Conclusion</p><p>Fire: from gunpowder to the bomb, and whether war is ending.</p></div></li>
+      </ol>
+      <p style="margin-top:28px" class="kicker">Read alongside</p>
+      <ul class="books">
+        <li>Carl von Clausewitz, <cite>On War</cite> (1832): the book this one argues with.</li>
+        <li>John Keegan, <cite>The Face of Battle</cite> (1976): what combat was like at Agincourt, Waterloo and the Somme.</li>
+        <li>Victor Davis Hanson, <cite>The Western Way of War</cite> (1989): the hoplite argument behind Chapter 4.</li>
+        <li>Lawrence H. Keeley, <cite>War Before Civilization</cite> (1996): the strongest challenge to the picture of primitive war.</li>
+        <li>Azar Gat, <cite>War in Human Civilization</cite> (2006): the evolutionary account.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer class="wrap foot">
+  <p>A study summary of John Keegan, <cite>A History of Warfare</cite> (1993). Paraphrased throughout. The only quotations are the book’s first sentence and Clausewitz’s phrase. The strata and army figures are our own diagrams of Keegan’s structure, not reproductions from the book.</p>
+</footer>
+
+<script>
+(function () {
+  // Theme toggle, shared key with the other summaries on the site.
+  var root = document.documentElement, btn = document.getElementById('themeToggle');
+  if (btn) btn.addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('civ-theme', next); } catch (e) {}
+  });
+
+  // Phone contents: the top-bar button opens a copy of the rail as a sheet.
+  var fab = document.getElementById('tocOpen'), sheet = document.getElementById('tocSheet'),
+      backdrop = document.getElementById('tocBackdrop'), closeBtn = document.getElementById('tocClose'),
+      railList = document.querySelector('.rail ol'), where = fab && fab.querySelector('.where');
+  if (fab && sheet && backdrop && closeBtn && railList) {
+    sheet.appendChild(railList.cloneNode(true));
+    var openSheet = function () {
+      sheet.hidden = false; backdrop.hidden = false; fab.setAttribute('aria-expanded', 'true');
+      var cur = sheet.querySelector('a.is-active');
+      if (cur) sheet.scrollTop += cur.getBoundingClientRect().top - sheet.getBoundingClientRect().top - sheet.clientHeight / 2;
+      (cur || closeBtn).focus({ preventScroll: true });
+    };
+    var closeSheet = function (refocus) {
+      sheet.hidden = true; backdrop.hidden = true; fab.setAttribute('aria-expanded', 'false');
+      if (refocus) fab.focus({ preventScroll: true });
+    };
+    fab.addEventListener('click', function () { if (sheet.hidden) openSheet(); else closeSheet(false); });
+    closeBtn.addEventListener('click', function () { closeSheet(true); });
+    backdrop.addEventListener('click', function () { closeSheet(true); });
+    sheet.addEventListener('click', function (e) { if (e.target.closest('a[href^="#"]')) closeSheet(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sheet.hidden) closeSheet(true); });
+  }
+
+  // Highlight the current section in the rail and the sheet, and name it on the button.
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a[href^="#"], .toc-sheet a[href^="#"]'));
+  if (!('IntersectionObserver' in window) || !links.length) return;
+  var byId = {};
+  links.forEach(function (a) {
+    var id = a.getAttribute('href').slice(1);
+    (byId[id] = byId[id] || []).push(a);
+  });
+  var labelFor = function (a) {
+    var n = a.querySelector('.n');
+    if (!n) return a.textContent.trim();
+    var name = a.textContent.replace(n.textContent, '').trim();
+    var num = n.textContent.trim();
+    if (num === '→') return name;
+    return (/^[ivx]+$/.test(num) ? 'Interlude ' : 'Ch ') + num + ' · ' + name;
+  };
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var group = byId[e.target.id];
+      if (!group) return;
+      links.forEach(function (l) { l.classList.remove('is-active'); });
+      group.forEach(function (l) { l.classList.add('is-active'); });
+      if (where) where.textContent = labelFor(group[0]);
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+  Object.keys(byId).forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) io.observe(el);
+  });
+})();
+</script>
+<script src="book-nav.js" defer></script>
+</body>
+</html>
