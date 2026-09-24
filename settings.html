@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Settings — Book Summaries</title>
-<meta name="description" content="Reading settings for Book Summaries: text size across every page.">
+<meta name="description" content="Reading settings for Book Summaries: text size and font across every page.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- every font on offer, so each option previews in its own face -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..700;1,400..700&amp;family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&amp;display=swap">
 <meta name="color-scheme" content="light dark">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232f6f69'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23f4f1e9' text-anchor='middle'%3E%C2%B6%3C/text%3E%3C/svg%3E">
@@ -88,6 +92,20 @@ input[type="range"] { width: 100%; accent-color: var(--accent); height: 2rem; ma
 .reset:hover { color: var(--ink); border-color: var(--rule-2); }
 .status { font-size: .88rem; color: var(--ink-3); }
 
+.fonts { display: grid; gap: .6rem; margin: 1.2rem 0 0; padding: 0; border: 0; min-width: 0; }
+.font-option {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: .15rem .85rem;
+  padding: .85rem 1rem .9rem; border: 1px solid var(--rule); border-radius: 6px;
+  background: var(--paper); cursor: pointer;
+}
+.font-option:hover { border-color: var(--rule-2); }
+.font-option.is-on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.font-option input { grid-row: span 3; width: 1.15rem; height: 1.15rem; margin: .3rem 0 0; accent-color: var(--accent); }
+.font-option__name { font-weight: 600; font-size: 1.18rem; line-height: 1.3; }
+.font-option__note { font: 500 .64rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.font-option__sample { margin-top: .3rem; font-size: 1.02rem; line-height: 1.5; color: var(--ink-2); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
 footer { margin: 2.6rem auto 3rem; font-size: .85rem; color: var(--ink-3); }
 </style>
 <script src="site-settings.js"></script>
@@ -127,6 +145,21 @@ footer { margin: 2.6rem auto 3rem; font-size: .85rem; color: var(--ink-3); }
     </div>
   </section>
 
+  <section class="setting" aria-labelledby="font-h">
+    <div class="setting__head">
+      <h2 id="font-h">Font</h2>
+      <span class="value" id="fontValue" aria-live="polite"></span>
+    </div>
+    <p class="hint">Changes the reading text and headings on every summary. Diagrams keep each book’s own fonts so their labels still fit.</p>
+    <fieldset class="fonts" id="fonts">
+      <legend class="sr-only">Font for every summary</legend>
+    </fieldset>
+    <div class="actions">
+      <button type="button" class="reset" id="fontReset">Use each book’s own</button>
+      <span class="status" id="fontStatus"></span>
+    </div>
+  </section>
+
   <footer>Saved in this browser only. Open tabs update straight away.</footer>
 </main>
 
@@ -157,6 +190,50 @@ footer { margin: 2.6rem auto 3rem; font-size: .85rem; color: var(--ink-3); }
   reset.addEventListener('click', function () { set(1); });
   window.addEventListener('storage', function () { show(s.textScale()); });
   show(s.textScale());
+})();
+
+/* font: one radio per option, each drawn in its own face */
+(function () {
+  var s = window.bookSummarySettings;
+  var box = document.getElementById('fonts');
+  var value = document.getElementById('fontValue');
+  var reset = document.getElementById('fontReset');
+  var status = document.getElementById('fontStatus');
+  if (!s || !s.fonts) { status.textContent = 'Settings could not load. Reload the page to try again.'; return; }
+  var sample = 'Everyone prefers a good now to the same good later.';
+
+  s.fonts.forEach(function (font) {
+    var option = document.createElement('label'),
+        input = document.createElement('input'),
+        name = document.createElement('span'),
+        note = document.createElement('span'),
+        text = document.createElement('span');
+    option.className = 'font-option';
+    input.type = 'radio'; input.name = 'font'; input.value = font.id;
+    name.className = 'font-option__name'; name.textContent = font.name;
+    note.className = 'font-option__note'; note.textContent = font.note;
+    text.className = 'font-option__sample'; text.textContent = sample;
+    /* the default previews in this page's own fonts, not whichever one is chosen */
+    name.style.fontFamily = font.stack || 'var(--book-display, var(--display))';
+    text.style.fontFamily = font.stack || 'var(--book-body, var(--body))';
+    input.addEventListener('change', function () { set(font.id); });
+    option.appendChild(input); option.appendChild(name); option.appendChild(note); option.appendChild(text);
+    box.appendChild(option);
+  });
+
+  function show(id) {
+    Array.prototype.forEach.call(box.querySelectorAll('input'), function (input) {
+      input.checked = input.value === id;
+      input.parentNode.classList.toggle('is-on', input.checked);
+    });
+    s.fonts.forEach(function (font) { if (font.id === id) value.textContent = font.id === 'book' ? 'Default' : font.name; });
+    reset.disabled = id === 'book';
+  }
+  function set(id) { show(s.setFont(id)); status.textContent = 'Saved.'; }
+
+  reset.addEventListener('click', function () { set('book'); });
+  window.addEventListener('storage', function () { show(s.font()); });
+  show(s.font());
 })();
 </script>
 </body>

@@ -175,8 +175,8 @@
   var settings = document.createElement("a");
   settings.className = "book-toc-top__settings";
   settings.href = "settings.html";
-  settings.title = "Text size";
-  settings.setAttribute("aria-label", "Text size settings");
+  settings.title = "Text size and font";
+  settings.setAttribute("aria-label", "Reading settings: text size and font");
   settings.textContent = "Aa";
 
   top.appendChild(home);
