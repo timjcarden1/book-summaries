@@ -166,6 +166,8 @@ export default async function handler(req, res) {
 
     if (req.method !== 'POST') { res.setHeader('Allow', 'GET, POST'); return send(res, 405, { error: 'method' }); }
     if (!String(req.headers['content-type'] || '').includes('application/json')) return send(res, 415, { error: 'json only' });
+    /* Vercel's helpers parse the body before readBody sees it, so size it from the header too */
+    if (Number(req.headers['content-length'] || 0) > MAX_BODY) return send(res, 413, { error: 'too large' });
 
     const body = await readBody(req);
     const incoming = clean(body.state);

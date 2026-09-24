@@ -83,5 +83,5 @@ Text size, font and pins follow the reader to every linked device. `api/prefs.js
 
 The site is hosted twice, both from `main` at the repository root, and both redeploy automatically on push:
 
-- **Vercel** — `vercel.json` declares no build step and the repo root as the output directory. The project is connected to this GitHub repo.
+- **Vercel** — `vercel.json` declares no build step, the repo root as the output directory, and `cdg1` (Paris, beside the Blob store) as the region for `api/prefs.js`. The project is connected to this GitHub repo, on the `revenueflowteam` Vercel team. `package.json` only installs `@vercel/blob` for the function: `vercel build` leaves `node_modules`, `api/` and `package.json` out of the static output (checked 2026-09-24).
 - **GitHub Pages** — a `.nojekyll` file is present so Jekyll does not process or skip any files.
