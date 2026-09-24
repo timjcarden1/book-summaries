@@ -15,18 +15,22 @@
    them. `--label` and `--mono` (the small UI captions) are left alone.
 
    Pins: the books on the index's "Currently reading" shelf, newest first.
+   Bookmarks: saved spots inside a book (book-bookmarks.js draws them).
 
-   Sync (Tim, 2026-09-24): all three follow the reader across devices through
+   Sync (Tim, 2026-09-24): all of it follows the reader across devices through
    /api/prefs once a device has opened its sync link (settings.html#sync=…).
-   localStorage stays the working copy, so pages never wait on the network;
-   each setting carries the time it was set, and the newer copy wins. Pages
-   hear about changes through the `book-summaries-settings` event. */
+   localStorage stays the working copy, so pages never wait on the network.
+   Text size and font carry the time they were set and the newer one wins;
+   pins and bookmarks merge item by item. Pages hear about changes through the
+   `book-summaries-settings` event. */
 (function () {
   'use strict';
 
   var KEY = 'book-summaries-text-scale';
   var FONT_KEY = 'book-summaries-font';
-  var PIN_KEY = 'book-summaries-pinned';
+  var PIN_KEY = 'book-summaries-pinned';      /* the first pin format, migrated below */
+  var PINSET_KEY = 'book-summaries-pinset';
+  var MARK_KEY = 'book-summaries-bookmarks';
   var TIMES_KEY = 'book-summaries-set-at';
   var EVENT = 'book-summaries-settings';
   var API = '/api/prefs';
@@ -155,32 +159,119 @@
     return id;
   }
 
-  /* ---------- pins ---------- */
+  /* ---------- sets: pins and bookmarks ----------
+     Each is a map of id → { t, … }. A removal stays as a dated tombstone (pins
+     `on: 0`, bookmarks `d: 1`) so it can reach the other devices; merging keeps
+     the newer copy of each item, so adds on two devices never overwrite each other. */
 
-  function cleanPins(list) {
-    var seen = {};
-    return (Array.isArray(list) ? list : []).filter(function (slug) {
+  function readItems(key) {
+    var saved = null;
+    try { saved = JSON.parse(getItem(key)); } catch (e) {}
+    return saved && typeof saved === 'object' && !Array.isArray(saved) ? saved : {};
+  }
+  function storeItems(key, items) {
+    var cutoff = Date.now() - 180 * 864e5, kept = {};
+    Object.keys(items).forEach(function (id) {
+      var v = items[id];
+      if (!v || typeof v.t !== 'number') return;
+      if ((v.on === 0 || v.d) && v.t < cutoff) return;  /* an old removal has reached everyone */
+      kept[id] = v;
+    });
+    setItem(key, Object.keys(kept).length ? JSON.stringify(kept) : null);
+  }
+  function mergeItems(mine, theirs) {
+    var out = {}, changed = false;
+    Object.keys(mine).forEach(function (id) { out[id] = mine[id]; });
+    Object.keys(theirs || {}).forEach(function (id) {
+      var v = theirs[id];
+      if (v && typeof v.t === 'number' && (!out[id] || v.t > out[id].t)) { out[id] = v; changed = true; }
+    });
+    return { items: out, changed: changed };
+  }
+  function aheadOf(mine, theirs) {
+    theirs = theirs || {};
+    return Object.keys(mine).some(function (id) { return !theirs[id] || mine[id].t > theirs[id].t; });
+  }
+
+  /* pins: slug → { t, on }; the list is the pinned ones, newest pin first */
+  function readPins() {
+    var items = readItems(PINSET_KEY);
+    return Object.keys(items)
+      .filter(function (slug) { return items[slug].on && SLUG.test(slug); })
+      .sort(function (a, b) { return items[b].t - items[a].t; });
+  }
+  function writePins(list) {
+    var items = readItems(PINSET_KEY), now = Date.now(), before = readPins(), touched = false, seen = {};
+    list = (Array.isArray(list) ? list : []).filter(function (slug) {
       if (typeof slug !== 'string' || !SLUG.test(slug) || seen[slug]) return false;
       return (seen[slug] = true);
     });
+    /* only the books whose state changed get a new time; a new pin goes to the top */
+    list.forEach(function (slug, i) {
+      if (before.indexOf(slug) === -1) { items[slug] = { t: now - i, on: 1 }; touched = true; }
+    });
+    before.forEach(function (slug) {
+      if (list.indexOf(slug) === -1) { items[slug] = { t: now, on: 0 }; touched = true; }
+    });
+    if (touched) { storeItems(PINSET_KEY, items); changed('pins'); }
+    return readPins();
   }
-  function readPins() {
-    var saved = null;
-    try { saved = JSON.parse(getItem(PIN_KEY)); } catch (e) {}
-    return cleanPins(saved);
+
+  /* bookmarks: id → { b: book slug, i: block index, f: fraction through it, s: section id,
+     x: opening words, l: section label, n: book title, c: created, t: last change, d: deleted } */
+  function readBookmarks(slug) {
+    var items = readItems(MARK_KEY);
+    return Object.keys(items)
+      .filter(function (id) { return !items[id].d && (!slug || items[id].b === slug); })
+      .map(function (id) {
+        var v = items[id], copy = { id: id };
+        Object.keys(v).forEach(function (k) { copy[k] = v[k]; });
+        return copy;
+      })
+      .sort(function (a, b) { return (b.c || b.t) - (a.c || a.t); });
   }
-  function storePins(list) {
-    setItem(PIN_KEY, list.length ? JSON.stringify(list) : null);
+  function newId() {
+    var bytes = new Uint8Array(8), out = '';
+    try { crypto.getRandomValues(bytes); } catch (e) { for (var j = 0; j < 8; j++) bytes[j] = Math.random() * 256; }
+    for (var i = 0; i < bytes.length; i++) out += (bytes[i] % 36).toString(36);
+    return out + Date.now().toString(36).slice(-4);
   }
-  function writePins(list) {
-    list = cleanPins(list);
-    if (JSON.stringify(list) !== JSON.stringify(readPins())) { storePins(list); changed('pins'); }
-    return list;
+  function addBookmark(fields) {
+    var items = readItems(MARK_KEY), now = Date.now(), id = newId();
+    items[id] = {
+      b: fields.b, i: fields.i | 0, f: Math.min(Math.max(+fields.f || 0, 0), 1),
+      s: fields.s || '', x: String(fields.x || '').slice(0, 120), l: String(fields.l || '').slice(0, 160),
+      n: String(fields.n || '').slice(0, 160), c: now, t: now
+    };
+    storeItems(MARK_KEY, items);
+    changed('bookmarks');
+    return id;
   }
+  function removeBookmark(id) {
+    var items = readItems(MARK_KEY);
+    if (!items[id] || items[id].d) return;
+    items[id] = { b: items[id].b, t: Date.now(), d: 1 };
+    storeItems(MARK_KEY, items);
+    changed('bookmarks');
+  }
+
+  /* the first pins were a plain list; carry them over once, keeping their order */
+  (function migratePins() {
+    var old = null;
+    try { old = JSON.parse(getItem(PIN_KEY)); } catch (e) {}
+    if (!Array.isArray(old)) return;
+    if (!getItem(PINSET_KEY)) {
+      var items = {}, base = times().pins || Date.now();
+      old.forEach(function (slug, i) {
+        if (typeof slug === 'string' && SLUG.test(slug) && !items[slug]) items[slug] = { t: base - i, on: 1 };
+      });
+      storeItems(PINSET_KEY, items);
+    }
+    setItem(PIN_KEY, null);
+  })();
 
   /* ---------- sync ---------- */
 
-  var NAMES = ['textScale', 'font', 'pins'];
   var pushTimer = null;
   var lastPull = 0;
 
@@ -193,37 +284,46 @@
     return {
       textScale: { value: read(), t: t.textScale || 0 },
       font: { value: readFont(), t: t.font || 0 },
-      pins: { value: readPins(), t: t.pins || 0 }
+      pins: { items: readItems(PINSET_KEY) },
+      bookmarks: { items: readItems(MARK_KEY) }
     };
   }
-  /* take each remote setting that is newer than ours; report whether ours has newer ones */
+  /* take everything remote that is newer than ours; report whether ours has anything newer */
   function adopt(state) {
     if (!state) return false;
     var t = times(), took = [], ahead = false;
-    NAMES.forEach(function (name) {
+    ['textScale', 'font'].forEach(function (name) {
       var remote = state[name], mine = t[name] || 0;
       if (remote && remote.t > mine) {
         if (name === 'textScale') storeScale(clamp(remote.value));
         if (name === 'font') storeFont(fontById(remote.value).id);
-        if (name === 'pins') storePins(cleanPins(remote.value));
         stamp(name, remote.t);
         took.push(name);
       } else if (mine > ((remote && remote.t) || 0)) {
         ahead = true;
       }
     });
+    [['pins', PINSET_KEY], ['bookmarks', MARK_KEY]].forEach(function (pair) {
+      var name = pair[0], key = pair[1], mine = readItems(key),
+          theirs = state[name] && state[name].items || {},
+          merged = mergeItems(mine, theirs);
+      if (merged.changed) { storeItems(key, merged.items); took.push(name); }
+      if (aheadOf(mine, theirs)) ahead = true;
+    });
     if (took.length) notify(took);
     return ahead;
   }
   function call(query, body, keepalive) {
     if (!window.fetch) return Promise.reject(new Error('This browser can’t sync.'));
+    var payload = body ? JSON.stringify(body) : undefined;
     return fetch(API + query, {
       method: body ? 'POST' : 'GET',
       headers: body ? { 'Content-Type': 'application/json' } : {},
-      body: body ? JSON.stringify(body) : undefined,
+      body: payload,
       credentials: 'same-origin',
       cache: 'no-store',
-      keepalive: !!keepalive
+      /* browsers refuse keepalive bodies over 64 KB; a big one goes as a normal request */
+      keepalive: !!keepalive && (!payload || payload.length < 60000)
     }).then(function (response) {
       return response.json().catch(function () { return {}; }).then(function (data) {
         if (!response.ok) throw new Error(data.error || 'Sync is unavailable right now.');
@@ -245,14 +345,25 @@
     clearTimeout(pushTimer);
     pushTimer = setTimeout(function () { push(); }, 700);
   }
+  /* an upload that fails (offline, or losing a write race on the server) is
+     retried on its own; the change is safe in localStorage meanwhile */
+  var RETRY_MS = [2000, 5000, 15000, 30000];
+  var retries = 0;
+  var retryTimer = null;
   function push(keepalive) {
     clearTimeout(pushTimer);
+    clearTimeout(retryTimer);
     pushTimer = null;
     if (!syncing()) return Promise.resolve(false);
     return call('', { action: 'push', state: snapshot() }, keepalive).then(function (data) {
+      retries = 0;
       if (data.sync) adopt(data.state);
       return !!data.sync;
-    }, function () { return false; });
+    }, function () {
+      retryTimer = setTimeout(function () { push(); }, RETRY_MS[Math.min(retries, RETRY_MS.length - 1)]);
+      retries++;
+      return false;
+    });
   }
   function flush() {
     if (pushTimer) push(true);
@@ -289,6 +400,14 @@
   apply(read());
   applyFont(readFont());
 
+  /* a text size or font chosen before sync existed has no time, so no device
+     would ever count it as newer; date it now so it can reach the others */
+  (function dateOldSettings() {
+    var t = times();
+    if (!t.textScale && read() !== 1) stamp('textScale', Date.now());
+    if (!t.font && readFont() !== 'book') stamp('font', Date.now());
+  })();
+
   var joining = null;
   var match = /^#sync=([A-Za-z0-9_-]{22,64})$/.exec(location.hash || '');
   if (match) {
@@ -300,23 +419,32 @@
   }
 
   window.addEventListener('storage', function (event) {
-    var keys = event.key === null ? NAMES
-      : event.key === KEY ? ['textScale'] : event.key === FONT_KEY ? ['font'] : event.key === PIN_KEY ? ['pins'] : [];
+    var byKey = {}, keys;
+    byKey[KEY] = 'textScale'; byKey[FONT_KEY] = 'font'; byKey[PINSET_KEY] = 'pins'; byKey[MARK_KEY] = 'bookmarks';
+    keys = event.key === null ? ['textScale', 'font', 'pins', 'bookmarks'] : byKey[event.key] ? [byKey[event.key]] : [];
     if (keys.indexOf('textScale') > -1) apply(read());
     if (keys.indexOf('font') > -1) applyFont(readFont());
     if (keys.length) notify(keys);
   });
+  /* pick up the other devices' changes whenever this page comes back into use:
+     a tab switch, a window switch (desktop), a page restored from the back cache,
+     and once a minute while it stays on screen */
   document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'visible') pull();
     else flush();
   });
+  window.addEventListener('focus', function () { pull(); });
   window.addEventListener('pagehide', flush);
   window.addEventListener('pageshow', function (event) { if (event.persisted) pull(); });
+  setInterval(function () {
+    if (document.visibilityState === 'visible') pull(true);
+  }, 60000);
 
   window.bookSummarySettings = {
     textScale: read, setTextScale: write, min: MIN, max: MAX,
     font: readFont, setFont: writeFont, fonts: FONTS,
     pins: readPins, setPins: writePins,
+    bookmarks: readBookmarks, addBookmark: addBookmark, removeBookmark: removeBookmark,
     event: EVENT,
     sync: { on: syncing, enable: enable, link: link, disable: disable, pull: pull, joining: joining }
   };

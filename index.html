@@ -218,6 +218,10 @@ main { padding-bottom: 4rem; }
 }
 /* every row shows the date it was added; the date-ordered views drop the tag */
 .row__added { font-variant-numeric: tabular-nums; }
+.row__added.is-resume {
+  color: var(--accent); text-transform: none; letter-spacing: .02em;
+  overflow: hidden; text-overflow: ellipsis; min-width: 0;
+}
 .row__added.is-new { color: var(--accent); }
 .list--recent { padding-top: clamp(1.6rem, 4vw, 2.2rem); }
 .list--recent .tag { display: none; }
@@ -319,6 +323,7 @@ footer a { color: var(--ink-2); }
 <meta name="twitter:image" content="https://book-summaries-umber.vercel.app/og/index.png">
 <!-- link-preview:end -->
 <script src="site-settings.js"></script>
+<link rel="stylesheet" href="book-bookmarks.css">
 </head>
 <body>
 <div class="corner">
@@ -593,7 +598,19 @@ footer a { color: var(--ink-2); }
   }
   function renderPins() {
     pinnedList.textContent = '';
-    pinned = pins.map(function (href) { return pinnedList.appendChild(byHref[href].cloneNode(true)); });
+    pinned = pins.map(function (href) {
+      var item = pinnedList.appendChild(byHref[href].cloneNode(true)),
+          marks = settings.bookmarks ? settings.bookmarks(href) : [];
+      /* a book you're reading opens at your latest bookmark, and says where that is */
+      if (marks.length) {
+        var link = item.querySelector('.row'), added = item.querySelector('.row__added');
+        link.setAttribute('href', href + '#bm=' + marks[0].id);
+        added.textContent = 'Resume · ' + (marks[0].l || 'bookmark');
+        added.classList.add('is-resume');
+        added.removeAttribute('datetime');
+      }
+      return item;
+    });
     Array.prototype.forEach.call(document.querySelectorAll('.item'), function (item) {
       var on = pins.indexOf(item.dataset.href) > -1, pin = item.querySelector('.pin');
       pin.setAttribute('aria-pressed', on ? 'true' : 'false');
@@ -649,7 +666,7 @@ footer a { color: var(--ink-2); }
 
   /* pins changed elsewhere: another tab, or another device through sync */
   window.addEventListener(settings.event, function (event) {
-    if (event.detail && event.detail.keys.indexOf('pins') === -1) return;
+    if (event.detail && event.detail.keys.indexOf('pins') === -1 && event.detail.keys.indexOf('bookmarks') === -1) return;
     pins = readPins();
     renderPins();
     filter();
@@ -729,5 +746,6 @@ footer a { color: var(--ink-2); }
   filter();
 })();
 </script>
+<script src="book-bookmarks.js" defer></script>
 </body>
 </html>

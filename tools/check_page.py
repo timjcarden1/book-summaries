@@ -6,7 +6,8 @@
 Serves the repo over http (so localStorage and relative links behave as on the
 site), loads the page at desktop and phone width, and prints one line per check:
 script errors, sideways scrolling on a phone, the phone Contents button (opens,
-jumps, names the section), the Aa and Theme buttons, and the related-books nav.
+jumps, names the section), the Aa and Theme buttons, a bookmark and the jump back
+to it, and the related-books nav.
 Screenshots of the desktop hero and the phone view land in DIR for one look.
 Exit 0 only when every check passes.
 """
@@ -126,6 +127,34 @@ def main():
             check("button names the current section", len(label.split()) > 1, label)
         else:
             check("Contents jump", False, "no rail targets or no button")
+
+        # Bookmarks (Tim, 2026-09-24): the ribbon button in the top bar; bookmark the middle of
+        # the page, go back to the top, and jump back to it from the panel.
+        check("phone Bookmarks button visible", phone.locator(".chrome__end .chip--bm").is_visible())
+        phone.evaluate("document.documentElement.style.scrollBehavior = 'auto';"
+                       "window.scrollTo(0, document.documentElement.scrollHeight * 0.5)")
+        phone.wait_for_timeout(200)
+        phone.tap(".chip--bm")
+        phone.wait_for_timeout(200)
+        phone.tap(".bm-add")
+        phone.wait_for_timeout(300)
+        marks = phone.evaluate(f"window.bookSummarySettings.bookmarks('{args.slug}.html')")
+        if marks:
+            phone.evaluate("window.scrollTo(0, 0)")
+            phone.tap(".chip--bm")
+            phone.wait_for_timeout(200)
+            phone.locator(".bm-item__go").first.tap()
+            phone.wait_for_timeout(300)
+            spot = phone.evaluate("""() => {
+              const el = document.querySelector('main .bm-flag')?.parentElement || document.querySelector('main .bm-marked');
+              if (!el) return null;
+              const line = document.querySelector('.chrome').getBoundingClientRect().bottom + 8, r = el.getBoundingClientRect();
+              return { top: Math.round(r.top - line), bottom: Math.round(r.bottom - line) };
+            }""")
+            check("Bookmark jump lands on the bookmarked paragraph",
+                  spot is not None and spot["top"] <= 3 and spot["bottom"] > 0, f"{marks[0]['l']} {spot}")
+        else:
+            check("Bookmark added", False, "the panel's add button saved nothing")
 
         phone.evaluate("window.scrollTo({left: 400, top: window.scrollY, behavior: 'instant'})")
         check("no sideways scroll on a phone", phone.evaluate("window.scrollX") == 0)
