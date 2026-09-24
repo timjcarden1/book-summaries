@@ -1,0 +1,12 @@
+{
+  "name": "book-summaries",
+  "private": true,
+  "description": "Static site; the only server code is api/prefs.js (cross-device reader settings).",
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "@vercel/blob": "2.8.0"
+  }
+}

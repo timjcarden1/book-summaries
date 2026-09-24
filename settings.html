@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Settings — Book Summaries</title>
-<meta name="description" content="Reading settings for Book Summaries: text size and font across every page.">
+<meta name="description" content="Reading settings for Book Summaries: text size, font and sync across devices.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- every font on offer, so each option previews in its own face -->
@@ -104,6 +104,22 @@ input[type="range"] { width: 100%; accent-color: var(--accent); height: 2rem; ma
 .font-option__name { font-weight: 600; font-size: 1.18rem; line-height: 1.3; }
 .font-option__note { font: 500 .64rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
 .font-option__sample { margin-top: .3rem; font-size: 1.02rem; line-height: 1.5; color: var(--ink-2); }
+.primary {
+  padding: .7rem 1.15rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--paper);
+  font: 600 .72rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+}
+.primary:hover { filter: brightness(1.08); }
+.primary:disabled, .reset:disabled { opacity: .45; cursor: default; }
+.sync-link { margin-top: 1.1rem; }
+.sync-step { margin: 0 0 .5rem; font-size: .95rem; color: var(--ink-2); }
+.sync-row { display: flex; gap: .5rem; }
+.sync-row input {
+  flex: 1 1 auto; min-width: 0; padding: .55rem .7rem;
+  border: 1px solid var(--rule-2); border-radius: 6px; background: var(--paper); color: var(--ink);
+  font: 500 .8rem/1.4 var(--mono);
+}
+.sync-note { margin: .5rem 0 0; font-size: .82rem; color: var(--ink-3); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 footer { margin: 2.6rem auto 3rem; font-size: .85rem; color: var(--ink-3); }
@@ -116,7 +132,7 @@ footer { margin: 2.6rem auto 3rem; font-size: .85rem; color: var(--ink-3); }
   <div class="top">
     <a class="home" href="index.html">← All summaries</a>
     <h1>Settings</h1>
-    <p class="intro">These apply to every summary on this site, on this device.</p>
+    <p class="intro">These apply to every summary on this site, on this device and on any device you link below.</p>
   </div>
 
   <section class="setting" aria-labelledby="size-h">
@@ -160,7 +176,30 @@ footer { margin: 2.6rem auto 3rem; font-size: .85rem; color: var(--ink-3); }
     </div>
   </section>
 
-  <footer>Saved in this browser only. Open tabs update straight away.</footer>
+  <section class="setting" aria-labelledby="sync-h" id="syncBox">
+    <div class="setting__head">
+      <h2 id="sync-h">Sync across devices</h2>
+      <span class="value" id="syncValue" aria-live="polite">Off</span>
+    </div>
+    <p class="hint" id="syncHint">Keep text size, font and pinned books the same on your phone, tablet and computer.</p>
+    <div class="sync-link" id="syncLinkBox" hidden>
+      <p class="sync-step">Open this link once on each of your other devices:</p>
+      <div class="sync-row">
+        <input type="text" id="syncLink" readonly aria-label="Sync link" spellcheck="false">
+        <button type="button" class="reset" id="syncCopy">Copy</button>
+      </div>
+      <p class="sync-note">Anyone with this link can change your settings, so keep it to yourself.</p>
+    </div>
+    <div class="actions">
+      <button type="button" class="primary" id="syncOn">Turn on sync</button>
+      <button type="button" class="reset" id="syncShow" hidden>Link another device</button>
+      <button type="button" class="reset" id="syncShare" hidden>Share link</button>
+      <button type="button" class="reset" id="syncOff" hidden>Turn off on this device</button>
+      <span class="status" id="syncStatus" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <footer id="footNote">Saved in this browser only. Open tabs update straight away.</footer>
 </main>
 
 <script>
@@ -188,7 +227,7 @@ footer { margin: 2.6rem auto 3rem; font-size: .85rem; color: var(--ink-3); }
   smaller.addEventListener('click', function () { set(s.textScale() - 0.1); });
   larger.addEventListener('click', function () { set(s.textScale() + 0.1); });
   reset.addEventListener('click', function () { set(1); });
-  window.addEventListener('storage', function () { show(s.textScale()); });
+  window.addEventListener(s.event, function () { show(s.textScale()); });
   show(s.textScale());
 })();
 
@@ -232,8 +271,82 @@ footer { margin: 2.6rem auto 3rem; font-size: .85rem; color: var(--ink-3); }
   function set(id) { show(s.setFont(id)); status.textContent = 'Saved.'; }
 
   reset.addEventListener('click', function () { set('book'); });
-  window.addEventListener('storage', function () { show(s.font()); });
+  window.addEventListener(s.event, function () { show(s.font()); });
   show(s.font());
+})();
+
+/* sync: one link per reader; each device opens it once */
+(function () {
+  var s = window.bookSummarySettings;
+  var $ = function (id) { return document.getElementById(id); };
+  var value = $('syncValue'), hint = $('syncHint'), box = $('syncLinkBox'), field = $('syncLink'),
+      on = $('syncOn'), showLink = $('syncShow'), share = $('syncShare'), off = $('syncOff'),
+      copy = $('syncCopy'), status = $('syncStatus'), foot = $('footNote');
+  if (!s || !s.sync) { status.textContent = 'Settings could not load. Reload the page to try again.'; return; }
+  var sync = s.sync;
+
+  function render() {
+    var active = sync.on();
+    value.textContent = active ? 'On' : 'Off';
+    hint.textContent = active
+      ? 'Text size, font and pinned books follow you to every device you have linked.'
+      : 'Keep text size, font and pinned books the same on your phone, tablet and computer.';
+    on.hidden = active;
+    showLink.hidden = !active || !box.hidden;
+    off.hidden = !active;
+    share.hidden = !active || box.hidden || !navigator.share;
+    if (!active) box.hidden = true;
+    foot.textContent = active
+      ? 'Saved on this device and synced to the others you have linked.'
+      : 'Saved in this browser only. Open tabs update straight away.';
+  }
+  function reveal(link) {
+    if (!link) throw new Error('Sync is unavailable right now.');
+    field.value = link;
+    box.hidden = false;
+    render();
+  }
+  function fail(err) { status.textContent = err && err.message ? err.message : 'Sync is unavailable right now.'; }
+  function busy(button, flag) { button.disabled = flag; }
+
+  on.addEventListener('click', function () {
+    busy(on, true); status.textContent = 'Turning on…';
+    sync.enable().then(function (data) {
+      status.textContent = 'Sync is on. Now open the link on your other devices.';
+      reveal(data.link);
+    }).catch(fail).then(function () { busy(on, false); render(); });
+  });
+  showLink.addEventListener('click', function () {
+    busy(showLink, true);
+    sync.link().then(function (link) { status.textContent = ''; reveal(link); })
+      .catch(fail).then(function () { busy(showLink, false); });
+  });
+  copy.addEventListener('click', function () {
+    field.select();
+    var done = function () { status.textContent = 'Link copied.'; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(field.value).then(done, function () { document.execCommand('copy'); done(); });
+    else { document.execCommand('copy'); done(); }
+  });
+  share.addEventListener('click', function () {
+    navigator.share({ title: 'Book Summaries sync link', url: field.value }).catch(function () {});
+  });
+  off.addEventListener('click', function () {
+    busy(off, true);
+    sync.disable().then(function () {
+      status.textContent = 'Sync is off on this device. Your settings stay as they are here.';
+    }).catch(fail).then(function () { busy(off, false); render(); });
+  });
+
+  if (sync.joining) {
+    status.textContent = 'Linking this device…';
+    sync.joining.then(function (result) {
+      status.textContent = result.ok
+        ? 'This device is linked. Your text size, font and pins are here now.'
+        : result.error || 'That sync link did not work.';
+      render();
+    });
+  }
+  render();
 })();
 </script>
 </body>

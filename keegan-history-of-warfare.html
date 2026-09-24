@@ -346,7 +346,8 @@ tbody td:nth-child(3) { color: var(--ink); }
 @media (max-width: 760px) {
   body { font-size: 1.05rem; }
   .hero-inner { grid-template-columns: minmax(0, 1fr); }
-  .strata { justify-self: start; max-width: 340px; }
+  /* no default figure indent on phones: its 40px pushed the column 6px off screen */
+  .strata { justify-self: start; max-width: 340px; margin-inline: 0; }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; }
   .ideas, .cases, .gloss { grid-template-columns: minmax(0, 1fr); }
   .armies { grid-template-columns: repeat(2, minmax(0, 1fr)); }

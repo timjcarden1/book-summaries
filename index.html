@@ -51,6 +51,8 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0;
+  /* pinning moves rows; the script keeps the view still itself, the same in every browser */
+  overflow-anchor: none;
   background: var(--paper);
   color: var(--ink);
   font: 400 17px/1.6 var(--body);
@@ -249,6 +251,14 @@ main { padding-bottom: 4rem; }
   fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
 }
 .shelf--pinned .shelf__head .pin__head { fill: currentColor; }
+.toast {
+  position: fixed; left: 50%; bottom: max(1.2rem, env(safe-area-inset-bottom)); z-index: 60;
+  transform: translateX(-50%); width: max-content; max-width: calc(100% - 2rem);
+  margin: 0; padding: .6rem 1rem; border-radius: 999px;
+  color: var(--paper); background: var(--ink); box-shadow: var(--shadow);
+  font: 600 .8rem/1.35 var(--body); text-align: center;
+}
+
 /* the date views are headerless until a pinned shelf sits above them */
 #recentHead { padding-top: clamp(2.2rem, 5vw, 3rem); }
 #recentHead:not([hidden]) + .list--recent { padding-top: 0; }
@@ -487,10 +497,12 @@ footer a { color: var(--ink-2); }
   </div>
 
   <div class="shelf__head" id="recentHead" hidden>
-    <h2>All summaries</h2>
+    <h2>The rest of the library</h2>
     <span id="recentOrder"></span>
   </div>
   <div class="list list--recent" id="recentList" hidden></div>
+
+  <p class="toast" id="toast" role="status" aria-live="polite" hidden></p>
 
 </main>
 
@@ -526,8 +538,7 @@ footer a { color: var(--ink-2); }
       status = document.getElementById('status'),
       buttons = Array.prototype.slice.call(document.querySelectorAll('.toolbar__sort button')),
       rows = Array.prototype.slice.call(shelves.querySelectorAll('.row')),
-      key = 'book-summaries-order',
-      pinKey = 'book-summaries-pinned';
+      key = 'book-summaries-order';
 
   if (!input || !rows.length) return;
 
@@ -570,21 +581,15 @@ footer a { color: var(--ink-2); }
     if (when.getTime() >= fresh) node.classList.add('is-new');
   });
 
-  /* pins: the books being read now, newest pin first, kept in this browser.
-     The pinned shelf holds copies; each book also stays on its own shelf. */
+  /* pins: the books being read now, newest pin first. site-settings.js keeps them
+     (and syncs them across devices); a pinned book leaves its shelf and the date
+     lists and shows only under "Currently reading". */
+  var settings = window.bookSummarySettings || { pins: function () { return []; }, setPins: function (list) { return list; }, event: 'book-summaries-settings' };
   var byHref = {}, pins = [], pinned = [];
   shelved.forEach(function (item) { byHref[item.dataset.href] = item; });
 
   function readPins() {
-    var saved = null;
-    try { saved = JSON.parse(localStorage.getItem(pinKey)); } catch (e) {}
-    return Array.isArray(saved) ? saved.filter(function (href) { return byHref[href]; }) : [];
-  }
-  function savePins() {
-    try {
-      if (pins.length) localStorage.setItem(pinKey, JSON.stringify(pins));
-      else localStorage.removeItem(pinKey);
-    } catch (e) {}
+    return settings.pins().filter(function (href) { return byHref[href]; });
   }
   function renderPins() {
     pinnedList.textContent = '';
@@ -597,25 +602,54 @@ footer a { color: var(--ink-2); }
     });
   }
 
+  /* the first visible thing after the tapped row: it stays still on screen while
+     the row moves up to "Currently reading" or back down to its shelf */
+  function anchorAfter(item) {
+    var node = item;
+    while (node && node !== document.body) {
+      var next = node.nextElementSibling;
+      while (next && (next.hidden || next === item)) next = next.nextElementSibling;
+      if (next) return next;
+      node = node.parentElement;
+    }
+    return null;
+  }
+
+  var toast = document.getElementById('toast'), toastTimer = null;
+  function say(text) {
+    toast.textContent = text;
+    toast.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.hidden = true; }, 2400);
+  }
+
   document.addEventListener('click', function (event) {
     var pin = event.target.closest ? event.target.closest('.pin') : null;
     if (!pin) return;
-    var href = pin.parentNode.dataset.href, at = pins.indexOf(href),
-        /* the pinned shelf grows or shrinks above the tapped row; keep that row still */
-        anchor = pinnedList.contains(pin) ? null : pin,
+    var item = pin.parentNode, href = item.dataset.href, title = titleOf(item),
+        next = pins.indexOf(href) > -1
+          ? pins.filter(function (h) { return h !== href; })
+          : [href].concat(pins),
+        anchor = anchorAfter(item),
         before = anchor ? anchor.getBoundingClientRect().top : 0;
-    if (at > -1) pins.splice(at, 1); else pins.unshift(href);
-    savePins();
+    pins = settings.setPins(next).filter(function (h) { return byHref[h]; });
     renderPins();
     filter();
     if (anchor) {
       var shift = anchor.getBoundingClientRect().top - before;
-      if (shift) window.scrollBy(0, shift);
+      if (shift) {
+        /* a jump, not the page's smooth scroll: the view should not appear to move */
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.scrollBy(0, shift);
+        document.documentElement.style.scrollBehavior = '';
+      }
     }
+    say(pins.indexOf(href) > -1 ? title + ' is under Currently reading' : title + ' is back on its shelf');
   });
 
-  window.addEventListener('storage', function (event) {
-    if (event.key !== pinKey && event.key !== null) return;
+  /* pins changed elsewhere: another tab, or another device through sync */
+  window.addEventListener(settings.event, function (event) {
+    if (event.detail && event.detail.keys.indexOf('pins') === -1) return;
     pins = readPins();
     renderPins();
     filter();
@@ -623,14 +657,17 @@ footer a { color: var(--ink-2); }
 
   function filter() {
     var q = input.value.trim().toLowerCase(), shown = 0;
+    function hit(row) { return !q || row.dataset.search.indexOf(q) > -1; }
 
-    all.concat(pinned).forEach(function (row) {
-      var hit = !q || row.dataset.search.indexOf(q) > -1;
-      row.hidden = !hit;
+    all.forEach(function (row) {
+      row.hidden = !hit(row) || pins.indexOf(row.dataset.href) > -1;
     });
+    pinned.forEach(function (row) { row.hidden = !hit(row); });
 
     Array.prototype.forEach.call(shelves.querySelectorAll('.shelf'), function (section) {
-      var rows = Array.prototype.slice.call(section.querySelectorAll('.item')),
+      var rows = Array.prototype.slice.call(section.querySelectorAll('.item')).filter(function (row) {
+            return pins.indexOf(row.dataset.href) === -1;
+          }),
           visible = rows.filter(function (row) { return !row.hidden; }).length;
       section.hidden = visible === 0;
       section.querySelector('.shelf__count').textContent = q ? visible + '/' + rows.length : rows.length;
@@ -638,6 +675,7 @@ footer a { color: var(--ink-2); }
     });
 
     var pinShown = pinned.filter(function (row) { return !row.hidden; }).length;
+    shown += pinShown;
     pinnedShelf.hidden = pinShown === 0;
     pinnedCount.textContent = q ? pinShown + '/' + pinned.length : pinned.length;
     recentHead.hidden = recent.hidden || pinnedShelf.hidden;

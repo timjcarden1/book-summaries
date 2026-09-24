@@ -43,11 +43,11 @@ Each summary is a single HTML file that pulls in a subset of the shared styleshe
 - `book-toc.css` / `book-toc.js` — floating table of contents with scroll tracking, plus the “← All summaries” link back to `index.html` in the sticky top bar
 - `book-nav.css` / `book-nav.js` — related summaries and previous/next, appended to the end of every summary page
 - `book-figures.css` / `book-figures.js` — figure numbering and captions
-- `site-settings.js` + `settings.html` — the site-wide reader settings, saved in `localStorage`. `sync.py` adds the script to the end of every page's `<head>`, so it runs before the first paint. Every page links to Settings through an "Aa" button: in the `book-toc` top bar, in the Rothbard-style chrome, and on the index.
+- `site-settings.js` + `settings.html` — the site-wide reader settings (text size, font, pins), kept in `localStorage` and synced across devices (below). `sync.py` adds the script to the end of every page's `<head>`, so it runs before the first paint. Every page links to Settings through an "Aa" button: in the `book-toc` top bar, in the Rothbard-style chrome, and on the index.
   - **Text size** (80–160%), applied as CSS `zoom` on `<html>`, because the pages size type in a mix of px, rem and vw and zoom is the one lever that scales all of them.
   - **Font** (Tim, 2026-09-24): each book's own pairing (the default), Literata, Classic serif (Iowan Old Style), Atkinson Hyperlegible, or System sans. Every page draws its text from `--body` and `--display` on `:root`, so a chosen font redeclares both on `<body>`, and the Google Fonts stylesheet loads only when that font is picked. SVG plates keep the book's fonts (`FIG.fit` measures their labels, so another face would overflow them), and `--label` / `--mono` UI captions are untouched. **A new page must keep drawing its reading text and headings from `--body` and `--display`, or the font setting will skip it.**
 
-Every page has its own light/dark theme toggle, persisted in `localStorage`. The index also carries a type-to-filter box (`/` focuses it, `Escape` clears it) and a Shelf / Newest / Oldest ordering toggle. Each row has a pin button (Tim, 2026-09-24): pinned books show at the top under "Currently reading", newest pin first, in every ordering, and stay on their shelf too. Pins are saved in `localStorage` under `book-summaries-pinned`, so they are per browser. The script wraps each row link in an `.item` with its pin button beside it, because a button can't sit inside a link; the markup `sync.py` generates is unchanged. Every row shows the date the summary was added (`added` in `tools/books.json`), and `sync.py` keeps the hero's "Updated <month>" line on the newest date. All of it is plain inline JS.
+Every page has its own light/dark theme toggle, persisted in `localStorage`. The index also carries a type-to-filter box (`/` focuses it, `Escape` clears it) and a Shelf / Newest / Oldest ordering toggle. Each row has a pin button (Tim, 2026-09-24): a pinned book moves to the top under "Currently reading", newest pin first, and leaves its shelf and the date lists (Tim: "if I pin something I don't want it to still show up in the all books"). The view holds still while the row moves (manual anchoring; `overflow-anchor: none` so browsers don't double it) and a toast says where it went. Pins live in `site-settings.js` (`pins()` / `setPins()`), so they sync with the other settings. The script wraps each row link in an `.item` with its pin button beside it, because a button can't sit inside a link; the markup `sync.py` generates is unchanged. Every row shows the date the summary was added (`added` in `tools/books.json`), and `sync.py` keeps the hero's "Updated <month>" line on the newest date. All of it is plain inline JS.
 
 ## The manifest and its two scripts
 
@@ -69,6 +69,15 @@ Neither runs at deploy time. Their output is committed, so the published site st
 5. Commit and push. Both hosts redeploy automatically from `main`.
 
 **Redoing a summary** keeps its slug, replaces the page in the default design, updates the palette in `books.json`, and **sets `added` to the redo date** (Tim, 2026-09-23). The full procedure is the `/book-summary` skill in the revenueflow-automations repo.
+
+## Sync across devices (Tim, 2026-09-24)
+
+Text size, font and pins follow the reader to every linked device. `api/prefs.js` (the site's only server code, a Vercel Function) stores them in the private Vercel Blob store `book-summaries-prefs` (`store_tlKsCJrRkrhPzyY3`, cdg1, on the `revenueflowteam` Vercel team, connected to this project as `BLOB_READ_WRITE_TOKEN`), one JSON file per sync code at `prefs/<sha256(code)>.json`.
+
+- **Linking:** Settings → Sync across devices → Turn on sync gives a link, `settings.html#sync=<code>`. Opening it once on another device links that device. The code then lives in an HttpOnly first-party cookie (`bs_sync`, 400 days, renewed on every visit), with a readable flag cookie `bs_sync_on`, so Safari's 7-day purge of script storage doesn't unlink a device. Anyone with the link can change the settings.
+- **Merging:** each setting is stored as `{ value, t }` (`book-summaries-set-at` holds the local times), and the newer copy wins per setting. Linking a device keeps both devices' pins. Writes are conditional on the blob's ETag and reads skip the CDN cache, so a change shows up on the next page load or when a tab comes back into view.
+- **Pages never wait on it:** `localStorage` stays the working copy, and changes are uploaded 0.7 s after the last one (flushed on `pagehide`). An upload that fails offline is sent on the next successful pull. The GitHub Pages mirror has no `/api`, so it stays local-only.
+- **Local testing:** `npm install`, then serve the repo with `/api/prefs` routed to the handler and `PREFS_PREFIX=test/` set, so tests don't write into `prefs/`.
 
 ## Publishing
 
