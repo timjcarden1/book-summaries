@@ -136,7 +136,11 @@ def index_rows():
 ''')
         for book in shelf_books:
             haystack = esc(f'{book["title"]} {book["author"]} {book["tag"]} {shelf["name"]}'.lower())
+            # Decorative: the title beside it names the book, so alt stays empty.
+            cover = (f'<img class="row__cover" src="{esc(book["cover"])}" alt="" width="240" height="360" loading="lazy" decoding="async">'
+                     if book.get("cover") else '<span class="row__cover row__cover--none" aria-hidden="true"></span>')
             out.append(f'''          <a class="row" href="{book["slug"]}.html" data-added="{book["added"]}" data-search="{haystack}">
+            {cover}
             <span class="row__title">{esc(book["title"])}</span>
             <span class="row__author">{esc(book["author"])}</span>
             <span class="row__meta"><span class="tag">{esc(book["tag"])}</span><time class="row__added" datetime="{book["added"]}"></time><span class="row__arrow">→</span></span>

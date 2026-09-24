@@ -49,7 +49,7 @@ Every page has its own light/dark theme toggle, persisted in `localStorage`. The
 
 ## The manifest and its two scripts
 
-`tools/books.json` is the single source of truth for everything *about* the books — title, author, shelf, tag, date added, blurb, palette, related links, print PDF. Two scripts push it back out into the static files:
+`tools/books.json` is the single source of truth for everything *about* the books — title, author, shelf, tag, date added, blurb, palette, related links, print PDF. Each book's `cover` points at `covers/<slug>.jpg`, a 240×360 JPEG (2:3, cropped from an Open Library cover) that the index shows beside the title. Two scripts push it back out into the static files:
 
 - `python3 tools/sync.py` — rewrites the link-preview `<head>` block on every page, the shelf list in `index.html`, the book list inside `book-nav.js`, and the contents table above. All of it lands between marker comments, so the script is idempotent; `--check` reports drift without writing.
 - `python3 tools/make-og-images.py` — renders `og/*.png`, the 1200×630 link-preview cards, in each book's own palette. Needs Pillow and the macOS system fonts.
@@ -61,7 +61,7 @@ Neither runs at deploy time. Their output is committed, so the published site st
 **Default design for new summaries (Tim, 2026-09-23): the Rothbard page, `rothbard-man-economy-and-state.html`.** Start a new summary from its layout, not from `civ-plate.css`. That means one self-contained file with a palette and a Google Fonts pairing chosen for the book, a single bold hero moment drawn from the book's own world (Rothbard's is "Man acts." over a banknote guilloché), a sticky chapter rail on desktop and, on phones, a bar at the top with a Contents button that names the current section and opens the full chapter list, plus the Aa (text size) and Theme buttons, a one-paragraph "whole book in one breath", key ideas, a chapter-by-chapter section with inline SVG plates, a critics section, a glossary and a reading path. Keep the site chrome it carries: the "← All summaries" link, the theme toggle on the shared `civ-theme` key, an `--accent` token for `book-nav.css`, and full light and dark palettes. The earlier pages keep their existing design and are not being restyled.
 
 1. Add `your-book.html` at the repo root. It is self-contained, apart from the `book-nav` files that `sync.py` injects.
-2. Add its entry to `tools/books.json`, including two or three `related` links with a line on why each one is worth reading next.
+2. Add its entry to `tools/books.json`, including two or three `related` links with a line on why each one is worth reading next. Save its cover as `covers/<slug>.jpg` (240×360, 2:3) and set `cover`.
 3. Run `python3 tools/sync.py`, then `python3 tools/make-og-images.py <slug>`. With a slug it draws only that book's card. Without one it redraws every card, which on the droplet (Linux fonts) changes the Mac-made ones.
 4. Run `python3 tools/check_page.py <slug>` (Playwright). It must print all PASS: script errors, sideways scrolling on a phone, the phone Contents button and its jump, Aa and Theme, and the related-books nav. Take one look at the screenshots it saves.
 5. Commit and push. Both hosts redeploy automatically from `main`.
