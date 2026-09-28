@@ -1,0 +1,54 @@
+/* book-copy.css — the "Copy chapter" and "Copy the whole summary" buttons and
+   their toast. Drawn from each page's own tokens (--label or --mono, --rule,
+   --ink-2, --accent), so they follow every palette and both themes. */
+
+.cp-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  min-height: 34px; padding: 6px 11px;
+  border: 1px solid var(--rule); border-radius: 3px; cursor: pointer;
+  background: transparent; color: var(--ink-2);
+  font-family: var(--label, var(--mono)); font-weight: 600; font-size: .68rem; line-height: 1;
+  letter-spacing: .12em; text-transform: uppercase; white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.cp-btn svg {
+  width: 14px; height: 14px; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linejoin: round;
+}
+.cp-btn:hover { color: var(--ink); border-color: var(--rule-strong); }
+.cp-btn[data-state="done"] { color: var(--accent); border-color: var(--accent); }
+.cp-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* right-aligned on a chapter's label line and no taller than it (18-20px on
+   every page), so the label and the chapter title under it don't move; the
+   ::after pad makes the tap target 36px tall without taking any room */
+.cp-btn--chapter {
+  float: right; position: relative; z-index: 1;
+  min-height: 0; height: 18px; padding: 0 2px; margin: 0 0 0 14px; gap: 5px;
+  border: 0; border-radius: 2px; color: var(--accent); font-size: .66rem;
+}
+.cp-btn--chapter svg { width: 13px; height: 13px; }
+.cp-btn--chapter::after { content: ""; position: absolute; inset: -9px -8px; }
+.cp-btn--chapter:hover { color: var(--ink); }
+.cp-btn--chapter[data-state="done"] { color: var(--accent); }
+@media (max-width: 480px) {
+  .cp-btn__more { display: none; }
+}
+
+/* in the hero, just above "The whole book in one breath" */
+.cp-row { margin: 22px 0 0; }
+.cp-btn--all { background: color-mix(in srgb, var(--paper) 88%, transparent); }
+.cp-row + .breath { margin-top: 20px; }
+
+.cp-toast {
+  position: fixed; z-index: 80; left: 50%; bottom: max(1.2rem, calc(env(safe-area-inset-bottom) + .6rem));
+  transform: translateX(-50%); width: max-content; max-width: calc(100vw - 2rem);
+  padding: .6rem 1rem; border-radius: 999px;
+  background: var(--ink); color: var(--paper); box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  font: 600 .82rem/1.35 var(--body);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+@media print {
+  .cp-btn, .cp-row, .cp-toast { display: none !important; }
+}

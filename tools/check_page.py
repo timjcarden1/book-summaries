@@ -7,7 +7,8 @@ Serves the repo over http (so localStorage and relative links behave as on the
 site), loads the page at desktop and phone width, and prints one line per check:
 script errors, sideways scrolling on a phone, the phone Contents button (opens,
 jumps, names the section), the Aa and Theme buttons, a bookmark and the jump back
-to it, and the related-books nav.
+to it, the Copy chapter / Copy the whole summary buttons (read back from the
+clipboard), and the related-books nav.
 Screenshots of the desktop hero and the phone view land in DIR for one look.
 Exit 0 only when every check passes.
 """
@@ -63,6 +64,14 @@ FIGURE_PROBE = """([svgMin, htmlMin]) => {
 }"""
 
 
+CLIPBOARD = """async () => {
+  const out = {};
+  for (const item of await navigator.clipboard.read())
+    for (const type of item.types) out[type] = await (await item.getType(type)).text();
+  return out;
+}"""
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("slug")
@@ -102,6 +111,7 @@ def main():
 
         ctx = browser.new_context(viewport={"width": 390, "height": 844}, is_mobile=True,
                                   has_touch=True, device_scale_factor=2)
+        ctx.grant_permissions(["clipboard-read", "clipboard-write"], origin=url.rsplit("/", 1)[0])
         phone = ctx.new_page()
         phone.on("pageerror", lambda e: errors.append(str(e)))
         phone.goto(url, wait_until="networkidle")
@@ -155,6 +165,33 @@ def main():
                   spot is not None and spot["top"] <= 3 and spot["bottom"] > 0, f"{marks[0]['l']} {spot}")
         else:
             check("Bookmark added", False, "the panel's add button saved nothing")
+
+        # Copy (Tim, 2026-09-28): a "Copy chapter" button on every chapter and "Copy the whole
+        # summary" in the hero. Tap both and read the clipboard back.
+        chapters = phone.locator("main.content .chapter").count()
+        buttons = phone.locator("main.content .chapter > .cp-btn--chapter").count()
+        check("Copy button on every chapter", chapters > 0 and buttons == chapters, f"{buttons}/{chapters}")
+        if buttons:
+            mid = buttons // 2
+            title = phone.evaluate(f"document.querySelectorAll('main.content .chapter')[{mid}]"
+                                   ".querySelector('h3, h2').textContent.replace(/\\s+/g, ' ').trim()")
+            phone.locator("main.content .chapter > .cp-btn--chapter").nth(mid).tap()
+            phone.wait_for_timeout(300)
+            clip = phone.evaluate(CLIPBOARD)
+            text = clip.get("text/plain", "")
+            check("Copy chapter puts the chapter on the clipboard",
+                  text.startswith("# ") and title in text.split("\n", 1)[0] and "<h1>" in clip.get("text/html", ""),
+                  text.split("\n", 1)[0][:80])
+        check("phone Copy the whole summary button visible", phone.locator(".cp-btn--all").is_visible())
+        phone.evaluate("window.scrollTo(0, 0)")
+        phone.tap(".cp-btn--all")
+        phone.wait_for_timeout(500)
+        whole = phone.evaluate(CLIPBOARD).get("text/plain", "")
+        titles = phone.evaluate("[...document.querySelectorAll('main.content .chapter')].map(c => c.querySelector('h3, h2'))"
+                                ".filter(Boolean).map(h => h.textContent.replace(/\\s+/g, ' ').trim())")
+        lost = [t for t in titles if t not in whole]
+        check("Copy the whole summary includes every chapter", bool(whole) and not lost,
+              f"{len(whole.split()):,} words" + (f"; missing {lost[:3]}" if lost else ""))
 
         phone.evaluate("window.scrollTo({left: 400, top: window.scrollY, behavior: 'instant'})")
         check("no sideways scroll on a phone", phone.evaluate("window.scrollX") == 0)
