@@ -418,24 +418,19 @@
 
   function words(s) { return (s.match(/\S*[A-Za-z0-9À-ɏ]\S*/g) || []).length; }
 
-  /* label: "Copy<span class="cp-btn__more"> chapter</span>" (phones drop the rest) */
-  function button(kind, label, aria, build, what) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'cp-btn cp-btn--' + kind;
-    b.innerHTML = ICON + '<span class="cp-btn__label">' + label + '</span>';
-    b.setAttribute('aria-label', aria);
-    var timer = null;
+  /* copy on tap; the button shows "done" for a moment and the toast says what went */
+  function wire(b, build, what) {
+    var labelEl = b.querySelector('.cp-btn__label'), label = labelEl ? labelEl.innerHTML : '', timer = null;
     b.addEventListener('click', function () {
       var doc;
       try { doc = build(); } catch (e) { say('Couldn’t copy that, sorry.'); throw e; }
       write(doc.text, doc.html).then(function () {
         b.setAttribute('data-state', 'done');
-        b.querySelector('.cp-btn__label').textContent = 'Copied';
+        if (labelEl) labelEl.textContent = 'Copied';
         clearTimeout(timer);
         timer = setTimeout(function () {
           b.removeAttribute('data-state');
-          b.querySelector('.cp-btn__label').innerHTML = label;
+          if (labelEl) labelEl.innerHTML = label;
         }, 2200);
         say(what() + ' copied · ' + words(doc.text).toLocaleString('en-GB') + ' words');
       }, function () {
@@ -444,6 +439,17 @@
     });
     return b;
   }
+
+  /* label: "Copy<span class="cp-btn__more"> chapter</span>" (phones drop the rest) */
+  function button(kind, label, aria, build, what) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'cp-btn cp-btn--' + kind;
+    b.innerHTML = ICON + '<span class="cp-btn__label">' + label + '</span>';
+    b.setAttribute('aria-label', aria);
+    return wire(b, build, what);
+  }
+  var whole = function () { return 'Whole summary'; };
 
   each(main.querySelectorAll('.chapter'), function (ch) {
     var name = function () { return chapterName(ch); };
@@ -458,10 +464,22 @@
     if (anchor) {
       var row = document.createElement('div');
       row.className = 'cp-row';
-      row.appendChild(button('all', 'Copy the whole summary', 'Copy the whole summary', copyAll,
-        function () { return 'Whole summary'; }));
+      row.appendChild(button('all', 'Copy the whole summary', 'Copy the whole summary', copyAll, whole));
       anchor.parentNode.insertBefore(row, anchor);
     }
+  }
+
+  /* the same, one tap from anywhere: an icon in the top bar, before the bookmark
+     ribbon (Tim, 2026-09-28: "add it as well") */
+  var chromeEnd = document.querySelector('.chrome__end');
+  if (chromeEnd) {
+    var chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'chip chip--cp';
+    chip.innerHTML = ICON;
+    chip.title = 'Copy the whole summary';
+    chip.setAttribute('aria-label', 'Copy the whole summary');
+    chromeEnd.insertBefore(wire(chip, copyAll, whole), chromeEnd.firstChild);
   }
 
   window.bookSummaryCopy = { chapter: copyChapter, all: copyAll };

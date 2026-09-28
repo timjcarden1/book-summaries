@@ -192,6 +192,14 @@ def main():
         lost = [t for t in titles if t not in whole]
         check("Copy the whole summary includes every chapter", bool(whole) and not lost,
               f"{len(whole.split()):,} words" + (f"; missing {lost[:3]}" if lost else ""))
+        # the same from the top bar, halfway down the page
+        check("phone top-bar Copy button visible", phone.locator(".chrome__end .chip--cp").is_visible())
+        phone.evaluate("navigator.clipboard.writeText('')")
+        phone.evaluate("window.scrollTo(0, document.documentElement.scrollHeight * 0.5)")
+        phone.wait_for_timeout(200)
+        phone.tap(".chrome__end .chip--cp")
+        phone.wait_for_timeout(500)
+        check("top-bar Copy copies the whole summary", phone.evaluate(CLIPBOARD).get("text/plain", "") == whole)
 
         phone.evaluate("window.scrollTo({left: 400, top: window.scrollY, behavior: 'instant'})")
         check("no sideways scroll on a phone", phone.evaluate("window.scrollX") == 0)

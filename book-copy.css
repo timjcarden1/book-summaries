@@ -40,6 +40,16 @@
 .cp-btn--all { background: color-mix(in srgb, var(--paper) 88%, transparent); }
 .cp-row + .breath { margin-top: 20px; }
 
+/* the top-bar icon: the page's own .chip, sized like the bookmark ribbon beside it */
+.chip--cp svg {
+  width: 15px; height: 15px; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round;
+}
+.chip--cp[data-state="done"] { color: var(--accent); border-color: var(--accent); }
+@media (max-width: 480px) {
+  .chip--cp { padding-inline: 9px; }
+}
+
 .cp-toast {
   position: fixed; z-index: 80; left: 50%; bottom: max(1.2rem, calc(env(safe-area-inset-bottom) + .6rem));
   transform: translateX(-50%); width: max-content; max-width: calc(100vw - 2rem);
@@ -50,5 +60,5 @@
 }
 
 @media print {
-  .cp-btn, .cp-row, .cp-toast { display: none !important; }
+  .cp-btn, .cp-row, .cp-toast, .chip--cp { display: none !important; }
 }
