@@ -322,18 +322,46 @@
     return parts.join(' · ') || 'Chapter';
   }
 
-  function copyChapter(ch) {
+  /* one chapter, or one section of the page: its heading, the book's name, the text, a link back */
+  function copyPart(el) {
     var blocks = [], b = book();
     lists = 0;
-    walk(ch, blocks, { h: 3, label: null });
+    walk(el, blocks, { h: el.matches('.chapter') ? 3 : 2, label: null });
     var first = blocks[0] && blocks[0].t === 'h' ? 1 : 0;
     blocks.splice(first, 0, {
       t: 'p',
       md: '*' + b.title + '*' + (b.author ? ' — ' + b.author : ''),
       html: '<em>' + esc(b.title) + '</em>' + (b.author ? ' — ' + esc(b.author) : '')
     });
-    blocks.push(source(pageUrl(ch.id)));
-    return finish(blocks);
+    blocks.push(source(pageUrl(el.id)));
+    var doc = finish(blocks);
+    doc.name = first ? blocks[0].md : el.matches('.chapter') ? chapterName(el) : 'Section';
+    return doc;
+  }
+
+  /* what the reader is on. When the Contents button names a chapter, that
+     chapter, so what you see named is what you get (measured 2026-09-28: the
+     line alone split from it at 27 of 4,565 scroll positions, all at chapter
+     boundaries). Otherwise the chapter under a line 20% down the screen (the
+     middle of the band the scroll-spy watches), else the section (Glossary,
+     Debates…), else, up in the hero, nothing: the whole summary. */
+  function current() {
+    var active = document.querySelector('.rail a.is-active[href^="#"]');
+    var named = active && document.getElementById(decodeURIComponent(active.getAttribute('href').slice(1)));
+    if (named && named.matches('.chapter') && main.contains(named)) return named;
+    var y = window.innerHeight * 0.2, hit = null;
+    if (y < main.getBoundingClientRect().top) return null;
+    /* a chapter owns the gap after it, so the line never falls between two */
+    each(main.querySelectorAll('.chapter'), function (ch) {
+      var r = ch.getBoundingClientRect();
+      if (r.top <= y && r.bottom + 60 > y) hit = ch;
+    });
+    if (hit) return hit;
+    /* innermost section the line is in; in a gap, the last one started */
+    each(main.querySelectorAll('section'), function (s) {
+      if (s.getBoundingClientRect().top <= y) hit = s;
+    });
+    return hit;
   }
 
   function copyAll() {
@@ -432,7 +460,7 @@
           b.removeAttribute('data-state');
           if (labelEl) labelEl.innerHTML = label;
         }, 2200);
-        say(what() + ' copied · ' + words(doc.text).toLocaleString('en-GB') + ' words');
+        say(what(doc) + ' copied · ' + words(doc.text).toLocaleString('en-GB') + ' words');
       }, function () {
         say('Couldn’t reach the clipboard. Try again.');
       });
@@ -454,7 +482,7 @@
   each(main.querySelectorAll('.chapter'), function (ch) {
     var name = function () { return chapterName(ch); };
     var b = button('chapter', 'Copy<span class="cp-btn__more"> chapter</span>', 'Copy chapter: ' + name(),
-      function () { return copyChapter(ch); }, name);
+      function () { return copyPart(ch); }, name);
     ch.insertBefore(b, ch.firstChild);
   });
 
@@ -469,18 +497,22 @@
     }
   }
 
-  /* the same, one tap from anywhere: an icon in the top bar, before the bookmark
-     ribbon (Tim, 2026-09-28: "add it as well") */
+  /* the chapter you're reading, one tap from anywhere: an icon in the top bar,
+     before the bookmark ribbon (Tim, 2026-09-28: "copy the chapter that you're
+     currently reading"). In the hero it copies the whole summary. */
   var chromeEnd = document.querySelector('.chrome__end');
   if (chromeEnd) {
     var chip = document.createElement('button');
     chip.type = 'button';
     chip.className = 'chip chip--cp';
     chip.innerHTML = ICON;
-    chip.title = 'Copy the whole summary';
-    chip.setAttribute('aria-label', 'Copy the whole summary');
-    chromeEnd.insertBefore(wire(chip, copyAll, whole), chromeEnd.firstChild);
+    chip.title = 'Copy the chapter you’re reading';
+    chip.setAttribute('aria-label', 'Copy the chapter you’re reading');
+    chromeEnd.insertBefore(wire(chip, function () {
+      var el = current();
+      return el ? copyPart(el) : copyAll();
+    }, function (doc) { return doc.name || 'Whole summary'; }), chromeEnd.firstChild);
   }
 
-  window.bookSummaryCopy = { chapter: copyChapter, all: copyAll };
+  window.bookSummaryCopy = { chapter: copyPart, part: copyPart, all: copyAll, current: current };
 })();

@@ -192,14 +192,39 @@ def main():
         lost = [t for t in titles if t not in whole]
         check("Copy the whole summary includes every chapter", bool(whole) and not lost,
               f"{len(whole.split()):,} words" + (f"; missing {lost[:3]}" if lost else ""))
-        # the same from the top bar, halfway down the page
+        # The top-bar Copy copies what you're reading (Tim, 2026-09-28): scroll into the middle
+        # of a chapter, tap it, and it must copy that chapter, the one the Contents button names;
+        # in a later non-chapter section it copies that section.
         check("phone top-bar Copy button visible", phone.locator(".chrome__end .chip--cp").is_visible())
-        phone.evaluate("navigator.clipboard.writeText('')")
-        phone.evaluate("window.scrollTo(0, document.documentElement.scrollHeight * 0.5)")
-        phone.wait_for_timeout(200)
-        phone.tap(".chrome__end .chip--cp")
-        phone.wait_for_timeout(500)
-        check("top-bar Copy copies the whole summary", phone.evaluate(CLIPBOARD).get("text/plain", "") == whole)
+
+        def top_bar_copy(selector, pick):
+            placed = phone.evaluate(f"""() => {{
+              const els = [...document.querySelectorAll('{selector}')];
+              const el = els[({pick})(els.length)];
+              if (!el) return null;
+              document.documentElement.style.scrollBehavior = 'auto';
+              const r = el.getBoundingClientRect();
+              window.scrollTo(0, window.scrollY + r.top + Math.min(r.height / 2, 300) - innerHeight * 0.2);
+              el.setAttribute('data-check-copy', '');
+              return el.id || el.tagName;
+            }}""")
+            if placed is None:
+                return None, None, None
+            phone.wait_for_timeout(700)
+            phone.evaluate("navigator.clipboard.writeText('')")
+            phone.tap(".chrome__end .chip--cp")
+            phone.wait_for_timeout(500)
+            want = phone.evaluate("() => { const el = document.querySelector('[data-check-copy]'); el.removeAttribute('data-check-copy');"
+                                  " return window.bookSummaryCopy.part(el).text; }")
+            active = phone.evaluate("(document.querySelector('.rail a.is-active') || {}).hash || ''")
+            return placed, phone.evaluate(CLIPBOARD).get("text/plain", "") == want, active
+
+        placed, same, active = top_bar_copy("main.content .chapter", "n => Math.floor(n / 2)")
+        check("top-bar Copy copies the chapter being read", bool(same) and (not active or active == "#" + placed),
+              f"{placed}, Contents on {active or 'no rail link'}")
+        placed, same, _ = top_bar_copy("main.content > section:not(:has(.chapter))", "n => n - 1")
+        if placed is not None:
+            check("top-bar Copy outside a chapter copies that section", bool(same), placed)
 
         phone.evaluate("window.scrollTo({left: 400, top: window.scrollY, behavior: 'instant'})")
         check("no sideways scroll on a phone", phone.evaluate("window.scrollX") == 0)
